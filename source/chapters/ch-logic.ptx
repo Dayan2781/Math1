@@ -1,0 +1,1485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-logic" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Хэллэг ба Логик</title>
+
+  <introduction xml:id="intro-logic">
+    <p>Математикт бид <em>теорем</em>-уудыг батална. Гэхдээ "батлах" гэдэг яг
+    юу гэсэн үг вэ? Юуг үндэслэн юуг үнэн гэж үзнэ вэ? Энэ бүлэгт бид
+    математикийн логикийн хамгийн анхан шатны бүтцүүдийг авч үзнэ — учир нь
+    эдгээр бүтэц нь Математик Анализ I-ээс эхлээд бүх дээд математикийн
+    хичээлд цаашид хэрэглэгдэх юм.</p>
+
+    <p>Энэ бүлгийн төгсгөлд та дараах зүйлсийг хийж чадах болно:
+      <ul>
+        <li>Өгүүлбэр <em>хэллэг</em> мөн эсэхийг шинжих,</li>
+        <li>Логик холбоосуудыг (<m>\lnot, \land, \lor, \Rightarrow, \Leftrightarrow</m>)
+        ашиглан нийлмэл хэллэг үүсгэх ба түүний үнэний утгыг хүснэгтээр шалгах,</li>
+        <li>Контрапозиц, урвуу, эсрэг хэллэгүүдийг ялгах ба эквивалент чанарыг таних,</li>
+        <li>Шууд, контрапозицоор, эсрэгээс нь, эсрэг жишээгээр болон математик
+        индукцээр баталгаа хийх.</li>
+      </ul>
+    </p>
+  </introduction>
+
+  <!-- ============================================================
+       SECTION 1.1: Хэллэг ба үнэний утга
+       ============================================================ -->
+  <section xml:id="sec-propositions">
+    <title>Хэллэг ба үнэний утга</title>
+
+    <objectives>
+      <introduction>
+        <p>Энэ хэсэгт бид дараах асуултуудад хариулна:
+          <ul>
+            <li>Аль өгүүлбэрүүд "хэллэг" болох вэ?</li>
+            <li>Хэллэг ба ердийн өгүүлбэрийн гол ялгаа юу вэ?</li>
+            <li>Хувьсагчтай өгүүлбэрийг хэрхэн хэллэг болгох вэ?</li>
+          </ul>
+        </p>
+      </introduction>
+    </objectives>
+
+    <!-- ===== Preview Activity ===== -->
+    <introduction>
+      <activity xml:id="prev-1-1">
+        <title>Урьдчилсан дасгал</title>
+        <introduction>
+          <p>Дараах өгүүлбэрүүдийг авч үз:
+            <ol marker="(\alph*)">
+              <li>"Бороо орж байна."</li>
+              <li>"Хаалгаа хаа!"</li>
+              <li>"<m>5 \lt  9</m>."</li>
+              <li>"<m>x + 2 = 7</m>."</li>
+              <li>"Энэ ном сонирхолтой юу?"</li>
+              <li>"Бүх <m>x \in \R</m> хувьд <m>x^2 \ge 0</m>."</li>
+              <li>"Энэ үзүүлэгч мундаг."</li>
+            </ol>
+          </p>
+        </introduction>
+
+        <task>
+          <statement>
+            <p>Аль өгүүлбэрүүдийн "үнэн" эсвэл "худал" байдлыг тогтоож болох вэ?
+            Аль нь тогтоож болохгүй вэ? Үндэслэлийг тайлбарла.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>(г) "<m>x + 2 = 7</m>" өгүүлбэрийг ав. <m>x</m>-ийн утгыг мэдэхгүй
+            бол үнэн эсэхийг тогтоож болох уу? Хэрэв тогтоож болохгүй бол
+            энэ өгүүлбэрийг яаж засаж "үнэн/худал тогтоох боломжтой" болгох вэ?</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>(е) "Бүх <m>x \in \R</m> хувьд <m>x^2 \ge 0</m>" нь үнэн үү, худал уу?
+            Тайлбар хий.</p>
+          </statement>
+        </task>
+      </activity>
+    </introduction>
+
+    <!-- ===== Subsection: Хэллэгийн тодорхойлолт ===== -->
+    <subsection xml:id="subsec-prop-def">
+      <title>Хэллэг гэж юу вэ?</title>
+
+      <p>Урьдчилсан дасгалаас та анзаарсан байх ёстой: зарим өгүүлбэр (жишээ нь
+      "<m>5\lt 9</m>") нь "үнэн" эсвэл "худал" гэж <em>цэг тавих</em> боломжтой. Гэтэл
+      "Хаалгаа хаа!" эсвэл "Энэ ном сонирхолтой юу?" гэх мэт өгүүлбэрүүд тийм
+      биш. Математикт бидэнд эхний төрлийн өгүүлбэрүүд хэрэгтэй.</p>
+
+      <definition xml:id="def-proposition">
+        <statement>
+          <p><em>Үнэн эсвэл худал гэдгийг нь нэгэн утгатай тогтоож болох</em>
+          өгүүлбэрийг <term>хэллэг</term> (proposition) гэнэ.</p>
+        </statement>
+      </definition>
+
+      <p>Хэллэгийн "үнэний утга" нь хоёрхон байж болно: <term>үнэн</term> эсвэл
+      <term>худал</term>. Энэ хоёрыг тус тус <m>1</m> ба <m>0</m> гэж тэмдэглэдэг (зарим
+      бичилд <m>T</m> ба <m>F</m> гэх ч бий).</p>
+
+      <p>Бид хэллэгийг ихэвчлэн том үсгээр (жишээ нь <m>P, Q, R</m>) нэрлэдэг.
+      Жишээ нь
+      <me>P = \{11 &gt; 9\}, \qquad Q = \{\exists n \in \N, n^2 = -1\}</me>
+      гэвэл <m>P</m> үнэн (<m>P</m>-ийн утга нь <m>1</m>), <m>Q</m> худал (<m>Q</m>-ийн утга нь <m>0</m>).</p>
+
+      <activity xml:id="act-1-1-1">
+        <title>Дасгал. Хэллэг мөн эсэхийг тогтоох</title>
+        <introduction>
+          <p>Дараах өгүүлбэрүүдийн аль нь хэллэг вэ? Хэллэг бол үнэний утгыг
+          (<m>1</m> эсвэл <m>0</m>) тодорхойл; хэллэг биш бол яагаад биш гэдгийг
+          тайлбарла.</p>
+        </introduction>
+
+        <task>
+          <statement><p>"7 нь тэгш."</p></statement>
+        </task>
+        <task>
+          <statement><p>"<m>2 + 3 = 6</m>."</p></statement>
+        </task>
+        <task>
+          <statement><p>"<m>\pi</m> нь рационал тоо."</p></statement>
+        </task>
+        <task>
+          <statement><p>"Хаалгаа хаа!"</p></statement>
+        </task>
+        <task>
+          <statement><p>"<m>x \gt  2</m>" (энд <m>x</m> нь тодорхой утгагүй).</p></statement>
+        </task>
+        <task>
+          <statement><p>"Бүх <m>x \in \R</m> хувьд <m>x^2 \ge 0</m>."</p></statement>
+        </task>
+        <task>
+          <statement><p>"2026 оны 1-р сарын 1-нд МУИС-д цас орсон."</p></statement>
+        </task>
+      </activity>
+
+      <p>Дасгалаас харахад дараах төрлийн өгүүлбэрүүд <em>хэллэг биш</em> юм:
+        <ul>
+          <li><term>Тушаал, хүсэлт, асуулт</term> ("Хаалгаа хаа!", "Хаалга хаасан уу?").</li>
+          <li><term>Тодорхой утгагүй хувьсагчтай өгүүлбэр</term> ("<m>x \gt  2</m>").</li>
+          <li><term>Тодорхой бус, субъектив шинж чанартай өгүүлбэр</term>
+          ("Энэ ном сонирхолтой").</li>
+        </ul>
+      </p>
+    </subsection>
+
+    <!-- ===== Subsection: Кванторууд ===== -->
+    <subsection xml:id="subsec-quantifiers">
+      <title>Кванторууд: хувьсагчийг хэллэг болгох</title>
+
+      <p>"<m>x \gt  2</m>" гэдэг өгүүлбэр нь <m>x</m>-ийн утгыг мэдэхгүй цагт үнэн/худал
+      гэдгийг тогтоож чадахгүй. Гэхдээ <em>бүх</em> <m>x</m>-ийн тухай юм уу
+      <em>ямар нэгэн</em> <m>x</m>-ийн тухай ярьвал хэрэг болж эхэлнэ.</p>
+
+      <definition xml:id="def-quantifiers">
+        <statement>
+          <p>Дараах хоёр тэмдгийг <term>квантор</term> (quantifier) гэнэ:
+            <ul>
+              <li><m>\forall</m> — "бүх", "дурын", "аливаа" (universal quantifier).</li>
+              <li><m>\exists</m> — "оршино", "олдоно", "зарим" (existential quantifier).</li>
+            </ul>
+          Мөн <m>\exists!</m> нь "цор ганц олдоно" гэсэн утгатай.</p>
+        </statement>
+      </definition>
+
+      <example xml:id="ex-quantifier-reading">
+        <title>Кванторт хэллэг унших</title>
+        <p>
+          <ol>
+            <li><p><m>\forall x \in \R\ (x \gt  1 \Rightarrow x^2 \gt  1)</m></p>
+              <p><em>Уншилт:</em> Бүх бодит <m>x</m>-ийн хувьд, хэрэв <m>x \gt  1</m> бол
+              <m>x^2 \gt  1</m>. (Үнэн.)</p>
+            </li>
+
+            <li><p><m>\exists! n \in \N\ (n^2 = 25)</m></p>
+              <p><em>Уншилт:</em> Натурал тоонуудаас <m>n^2 = 25</m> байх <em>цор
+              ганц</em> <m>n</m> оршино, тухайлбал <m>n = 5</m>. (Үнэн.)</p>
+            </li>
+
+            <li><p><m>\exists x \in \R\ (x^2 = -1)</m></p>
+              <p><em>Уншилт:</em> <m>x^2 = -1</m> байх бодит <m>x</m> оршино. (Худал.)</p>
+            </li>
+          </ol>
+        </p>
+      </example>
+
+      <activity xml:id="act-1-1-2">
+        <title>Дасгал. Кванторт хэллэгийг шинжлэх</title>
+
+        <task>
+          <statement>
+            <p><m>\forall x \in \R\ (x^2 \ge 0)</m> хэллэг үнэн үү?
+            Тайлбарла.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p><m>\exists x \in \R\ (x^2 + 1 = 0)</m> хэллэг үнэн үү?
+            Тайлбарла.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p><m>\forall n \in \N\ (n \gt  0)</m> хэллэг үнэн үү? Тэгвэл
+            <m>\forall n \in \Z\ (n \gt  0)</m> ?</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Дараах хэллэгийг монгол хэлээр уншиж, үнэн эсэхийг тогтоо:
+            <me>\forall x \in \R\ (x \neq 0 \Rightarrow x^2 &gt; 0).</me>
+            </p>
+          </statement>
+        </task>
+      </activity>
+
+      <p>Та анзаарсан биз дээ — кванторгүй өгүүлбэр ("<m>x \gt  2</m>") нь хэллэг биш
+      боловч квантортой болсноор хэллэг болж байгаа юм.</p>
+    </subsection>
+
+    <subsection xml:id="subsec-summary-1-1">
+      <title>Хураангуй</title>
+      <p>
+        <ul>
+          <li>Үнэн эсвэл худал гэж тогтоож болох өгүүлбэрийг <term>хэллэг</term>
+          гэнэ.</li>
+          <li>Тушаал, асуулт, тодорхойгүй өгүүлбэрүүд хэллэг биш.</li>
+          <li>Хувьсагчтай өгүүлбэрийг <m>\forall</m> эсвэл <m>\exists</m> кванторын
+          тусламжтайгаар хэллэг болгож болно.</li>
+        </ul>
+      </p>
+    </subsection>
+
+    <!-- ===== End-of-section exercises ===== -->
+    <exercises xml:id="exer-1-1">
+      <title>Гэрийн даалгавар</title>
+
+      <exercise xml:id="ex-1-1-1">
+        <statement>
+          <p>Дараах өгүүлбэрүүдийн аль нь хэллэг вэ? Хэллэг бол үнэний утгыг тогтоо;
+          хэллэг биш бол яагаад биш болохыг тайлбарла.
+            <ol marker="(\alph*)">
+              <li><m>3 + 4 = 7</m></li>
+              <li>"Энэ ном хүнд."</li>
+              <li>"<m>y + 1 = 0</m>"</li>
+              <li><m>\forall x \in \R\ (x^2 + 1 \gt  0)</m></li>
+              <li>"Хэн вэ?"</li>
+              <li>"Дорж 19 настай."</li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-1-2">
+        <statement>
+          <p>Дараах хэллэгүүдийн үнэний утгыг тогтоо:
+            <ol marker="(\alph*)">
+              <li><m>\forall n \in \N\ (n^2 \ge n)</m></li>
+              <li><m>\exists n \in \N\ (n^2 = 16)</m></li>
+              <li><m>\exists! n \in \N\ (n^2 = 16)</m></li>
+              <li><m>\forall x \in \R\ (x^2 = x)</m></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-1-3">
+        <statement>
+          <p>"Энэ хичээл сонирхолтой" гэдэг өгүүлбэр хэллэг биш юм. Үүнийг
+          хэллэг болгохын тулд яаж засах хэрэгтэй вэ? Хоёр өөр аргаар
+          санал болго.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-1-4">
+        <statement>
+          <p>Дараах өгүүлбэрийг кванторт хэллэг болгож тэмдэглэгээгээр бич:
+          "Дурын бодит тоо нь түүний квадрат бус бол түүний квадрат нь түүнээсээ
+          их байна."</p>
+        </statement>
+      </exercise>
+    </exercises>
+
+<xi:include href="./exer-1-1-extra.ptx" />
+
+  </section>
+
+  <!-- ============================================================
+       SECTION 1.2: Логик холбоосууд
+       ============================================================ -->
+  <section xml:id="sec-connectives">
+    <title>Логик холбоосууд</title>
+
+    <objectives>
+      <introduction>
+        <p>Энэ хэсэгт бид дараах асуултуудад хариулна:
+          <ul>
+            <li>Олон хэллэгээс хэрхэн нийлмэл хэллэг үүсгэх вэ?</li>
+            <li>Үнэний хүснэгт гэж юу вэ, яаж байгуулах вэ?</li>
+            <li>"Хэрэв ... бол ..." хэллэгийн үнэний утгыг хэрхэн тооцох вэ —
+            ялангуяа нөхцөл нь худал үед?</li>
+          </ul>
+        </p>
+      </introduction>
+    </objectives>
+
+    <introduction>
+      <activity xml:id="prev-1-2">
+        <title>Урьдчилсан дасгал</title>
+        <introduction>
+          <p>Дорж амласан байг: <em>"Хэрэв шалгалтанд А үнэлгээ авбал, чи
+          цайны газар явна."</em> Энэ амлалт хэдэн янзаар "биелэгдэх" эсвэл
+          "биелэгдэхгүй" вэ?</p>
+        </introduction>
+
+        <task>
+          <statement>
+            <p>Дорж шалгалтанд А аваад, чи түүнийг цайны газар явуулсан гэж бод.
+            Дорж амлалтаа биелүүлсэн үү?</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Дорж шалгалтанд А аваад, чи түүнийг цайны газар <em>яваагүй</em>.
+            Дорж амлалтаа биелүүлсэн үү?</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Дорж шалгалтанд А <em>аваагүй</em>, гэхдээ чи түүнийг ямар ч
+            байсан цайны газар явуулсан. Дорж амлалтаа биелүүлсэн үү?
+            (Тэр амлалтыг зөрчсөн үү?)</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Дорж шалгалтанд А аваагүй, чи түүнийг цайны газар яваагүй.
+            Дорж амлалтаа биелүүлсэн үү?</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Эдгээр хариунаасаа дүгнэлт гарга: "Хэрэв ... бол ..." хэллэг хэзээ
+            <em>зөрчигддөг</em> вэ?</p>
+          </statement>
+        </task>
+      </activity>
+    </introduction>
+
+    <!-- ===== Subsection: Үгүйсгэл ба үндсэн холбоосууд ===== -->
+    <subsection xml:id="subsec-basic-connectives">
+      <title>Үндсэн логик холбоосууд</title>
+
+      <p>Цөөн хэллэгээс олон шинэ хэллэг үүсгэхийн тулд бид <term>логик
+      холбоосууд</term>-ийг ашигладаг. Эдгээр нь яг өдөр тутмын ярианы "биш",
+      "ба", "эсвэл", "хэрэв ... бол ..." гэсэн үгстэй адил.</p>
+
+      <definition xml:id="def-negation">
+        <statement>
+          <p><term>Үгүйсгэл</term>. Зөвхөн <m>A</m> хэллэг худал байхад үнэн байдаг
+          хэллэгийг <m>\lnot A</m> гэж тэмдэглэж, "<m>A</m> биш" гэж уншина.</p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-conj-disj">
+        <statement>
+          <p><term>Үржвэр (<m>\land</m>) ба нийлбэр (<m>\lor</m>).</term>
+            <ul>
+              <li><m>A \land B</m> ("<m>A</m> ба <m>B</m>") нь <m>A</m>, <m>B</m> хоёулаа үнэн байхад
+              <em>л</em> үнэн.</li>
+              <li><m>A \lor B</m> ("<m>A</m> эсвэл <m>B</m>") нь хоёулангийн ядаж нэг нь үнэн
+              үед үнэн.</li>
+            </ul>
+          </p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-implication">
+        <statement>
+          <p><term>Импликаци (<m>\Rightarrow</m>).</term> <m>A \Rightarrow B</m> ("Хэрэв
+          <m>A</m> бол <m>B</m>") нь зөвхөн нэг тохиолдолд худал болно: <m>A</m> үнэн, <m>B</m>
+          худал. Бусад бүх тохиолдолд <m>A \Rightarrow B</m> үнэн.</p>
+          <p><m>A</m>-г <term>нөхцөл</term>, <m>B</m>-г <term>мөрдөлгөө</term> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <p>Эдгээр тодорхойлолтыг нэг хүснэгтэд нэгтгэвэл:</p>
+
+      <table xml:id="tab-truth-table">
+        <title>Үндсэн логик холбоосуудын үнэний хүснэгт</title>
+        <tabular halign="center" top="major" bottom="minor">
+          <row bottom="medium">
+            <cell><m>A</m></cell>
+            <cell><m>B</m></cell>
+            <cell><m>\lnot A</m></cell>
+            <cell><m>A \land B</m></cell>
+            <cell><m>A \lor B</m></cell>
+            <cell><m>A \Rightarrow B</m></cell>
+          </row>
+          <row><cell>1</cell><cell>1</cell><cell>0</cell><cell>1</cell><cell>1</cell><cell>1</cell></row>
+          <row><cell>1</cell><cell>0</cell><cell>0</cell><cell>0</cell><cell>1</cell><cell>0</cell></row>
+          <row><cell>0</cell><cell>1</cell><cell>1</cell><cell>0</cell><cell>1</cell><cell>1</cell></row>
+          <row><cell>0</cell><cell>0</cell><cell>1</cell><cell>0</cell><cell>0</cell><cell>1</cell></row>
+        </tabular>
+      </table>
+
+      <activity xml:id="act-1-2-1">
+        <title>Дасгал. Жишээгээр холбоосуудыг шалгах</title>
+
+        <introduction>
+          <p><m>A = \{\text{өнөөдөр Лхагва гараг}\}</m>, <m>B = \{\text{</m>2 + 2 = 4<m>}\}</m>
+          гэе. Өнөөдөр Лхагва гараг гэе.</p>
+        </introduction>
+
+        <task>
+          <statement>
+            <p><m>A</m>, <m>B</m>, <m>\lnot A</m>, <m>\lnot B</m> хэллэгүүдийн үнэний утгыг
+            тогтоо.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p><m>A \land B</m>, <m>A \lor B</m>, <m>\lnot A \lor B</m>, <m>A \land \lnot B</m>
+            хэллэгүүдийн үнэний утгыг тогтоо.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p><m>A \Rightarrow B</m> ба <m>B \Rightarrow A</m>-ийн үнэний утгыг тогтоо.</p>
+          </statement>
+        </task>
+      </activity>
+    </subsection>
+
+    <!-- ===== Subsection: Импликацийн вакуум үнэн чанар ===== -->
+    <subsection xml:id="subsec-vacuous">
+      <title>"Хэрэв ... бол ..." хэллэгийн нарийн талууд</title>
+
+      <p>Урьдчилсан дасгалаас та анзаарсан байх ёстой: <em>нөхцөл худал үед</em>
+      импликаци ҮРГЭЛЖ үнэн гэж тооцогдож байна. Энэ нь жоохон хачирхалтай
+      санагдаж болзошгүй, тиймээс нэмэлт жишээгээр тайлбарлая.</p>
+
+      <example xml:id="ex-vacuous">
+        <title>Худал нөхцөлтэй импликаци</title>
+        <p>"Хэрэв чи Сансарт нисэх бол би сар хүртэл явна" гэсэн амлалт өгсөн
+        гэж бод. Чи Сансарт нисээгүй бол энэ амлалт <em>хэзээ ч зөрчигдөхгүй</em>
+        — нөхцөл нь биелээгүй учраас. Тиймээс энэ хэллэгийг "үнэн" гэж тооцдог.</p>
+
+        <p>Математикт ч ялгаагүй. Жишээ нь:
+        <me>\forall x \in \R\ (x^2 &lt; 0 \Rightarrow x = 100)</me>
+        гэдэг хэллэг ҮНЭН. Учир нь <m>x^2 \lt  0</m> байх бодит тоо <em>огт байхгүй</em>,
+        тиймээс мөрдөлгөө хэдий ч хударан сонсогдсон ч импликаци үнэн байна.</p>
+      </example>
+
+      <p>Энэ зарчим бол математикт сурах ёстой нэгэн нарийн талыг — "<em>хоосон
+      үнэн</em>" (vacuous truth) гэж нэрлэдэг.</p>
+
+      <activity xml:id="act-1-2-2">
+        <title>Дасгал. Үнэний хүснэгт байгуулах</title>
+
+        <task>
+          <statement>
+            <p><m>A \lor (\lnot A)</m> хэллэгийн үнэний хүснэгтийг байгуул. Гарсан үр
+            дүнгийн талаар юу хэлж болох вэ?</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p><m>A \land (\lnot A)</m> хэллэгийн үнэний хүснэгтийг байгуул. Энэ
+            хэллэг үнэн байх боломжтой юу?</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p><m>(A \Rightarrow B) \Leftrightarrow (\lnot A \lor B)</m> хэллэгийн
+            үнэний хүснэгтийг байгуулж, тавтологи болохыг шалга.
+            (Тавтологи гэдэг нь үргэлж үнэн хэллэг.)</p>
+          </statement>
+        </task>
+      </activity>
+    </subsection>
+
+    <!-- ===== Subsection: Тавтологи ба зөрчил ===== -->
+    <subsection xml:id="subsec-tautology">
+      <title>Тавтологи ба зөрчил</title>
+
+      <definition xml:id="def-tautology">
+        <statement>
+          <p>Хувьсагчдын ямар ч утганд үргэлж <em>үнэн</em> байдаг хэллэгийг
+          <term>тавтологи</term> гэнэ. Үргэлж <em>худал</em> байдаг хэллэгийг
+          <term>зөрчил</term> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <example xml:id="ex-tautology">
+        <title>Хамгийн энгийн тавтологи</title>
+        <p><m>P \lor \lnot P</m> нь тавтологи. Үнэний хүснэгт:
+        <me>\begin{array}{c|c|c} P &amp; \lnot P &amp; P \lor \lnot P \\ \hline
+        1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 1 \end{array}</me>
+        Бүх боломжит утганд <m>1</m> гарч байна. Энэ нь "<em>аливаа хэллэг үнэн эсвэл
+        худал, дунд утга байхгүй</em>" гэсэн "хоосны хууль"-ийг (law of
+        excluded middle) илэрхийлж байна.</p>
+      </example>
+
+      <theorem xml:id="thm-logic-laws">
+        <title>Логикийн чухал хуулиуд</title>
+        <statement>
+          <p><m>P, Q, R</m> дурын хэллэгүүд бол:
+            <ol>
+              <li><term>Коммутатив:</term>
+                <m>P \land Q \Leftrightarrow Q \land P</m>,
+                <m>P \lor Q \Leftrightarrow Q \lor P</m>.</li>
+              <li><term>Ассоциатив:</term>
+                <m>(P \land Q) \land R \Leftrightarrow P \land (Q \land R)</m>.</li>
+              <li><term>Дистрибутив:</term>
+                <m>P \land (Q \lor R) \Leftrightarrow (P \land Q) \lor (P \land R)</m>.</li>
+              <li><term>Давхар үгүйсгэл:</term>
+                <m>\lnot (\lnot P) \Leftrightarrow P</m>.</li>
+              <li><term>Де Морганы хууль:</term>
+                <m>\lnot (P \land Q) \Leftrightarrow (\lnot P) \lor (\lnot Q)</m>,
+                <m>\lnot (P \lor Q) \Leftrightarrow (\lnot P) \land (\lnot Q)</m>.</li>
+            </ol>
+          </p>
+        </statement>
+      </theorem>
+
+      <p>Эдгээр хууль бүр <em>тавтологи</em> юм. Тэд олон үнэний хүснэгт
+      байгуулах замаар, эсвэл өмнө батлагдсан хуулиудаас орлуулга хийн
+      батлагдана.</p>
+
+      <activity xml:id="act-1-2-3">
+        <title>Дасгал. Де Морганы хуулийг шалгах</title>
+
+        <task>
+          <statement>
+            <p><m>\lnot (P \land Q) \Leftrightarrow (\lnot P) \lor (\lnot Q)</m> нь
+            тавтологи болохыг үнэний хүснэгт байгуулж шалга.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>"Бороо орсон ба өвлийн улирал" гэсэн нийлмэл хэллэг худал гэе.
+            Де Морганы хуулиар үүний үгүйсгэлийг ярианы хэлээр илэрхийл.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>"<m>2 \le x \le 5</m>" нөхцлийг үгүйсгэн (<m>\lnot</m>) хэллэг үүсгэ —
+            үнэний хувьд эквивалент бөгөөд "<m>x \lt  2</m>" эсвэл "<m>x \gt  5</m>"
+            хэлбэртэй болгох.</p>
+          </statement>
+        </task>
+      </activity>
+    </subsection>
+
+    <subsection xml:id="subsec-summary-1-2">
+      <title>Хураангуй</title>
+      <p>
+        <ul>
+          <li>Логик холбоосууд: <m>\lnot</m> (биш), <m>\land</m> (ба), <m>\lor</m> (эсвэл),
+          <m>\Rightarrow</m> (хэрэв ... бол ...).</li>
+          <li><term>Үнэний хүснэгт</term>-ээр нийлмэл хэллэгийн үнэнийг бүх
+          боломжит утганд тооцож харуулна.</li>
+          <li><m>A \Rightarrow B</m> нь зөвхөн <m>A</m> үнэн, <m>B</m> худал үед худал
+          байдаг — нөхцөл худал үед үргэлж үнэн ("хоосон үнэн").</li>
+          <li>Үргэлж үнэн хэллэгийг <term>тавтологи</term>, үргэлж худал
+          хэллэгийг <term>зөрчил</term> гэнэ.</li>
+          <li>Де Морганы хууль: үгүйсгэлийг <m>\land</m> ба <m>\lor</m>-ын дунд
+          солилцоход <m>\land \leftrightarrow \lor</m> болж сольдог.</li>
+        </ul>
+      </p>
+    </subsection>
+
+    <exercises xml:id="exer-1-2">
+      <title>Гэрийн даалгавар</title>
+
+      <exercise xml:id="ex-1-2-1">
+        <statement>
+          <p><m>P</m>: "<m>3 \lt  5</m>", <m>Q</m>: "7 нь тэгш" хэллэгүүдийн хувьд
+          <m>P \land Q</m>, <m>P \lor Q</m>, <m>\lnot P</m>, <m>P \Rightarrow Q</m>,
+          <m>Q \Rightarrow P</m> хэллэгүүдийн үнэний утгыг тогтоо.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-2-2">
+        <statement>
+          <p>Үнэний хүснэгт байгуулж шалга:
+            <ol marker="(\alph*)">
+              <li><m>(P \land Q) \Rightarrow P</m> нь тавтологи.</li>
+              <li><m>(P \lor Q) \Leftrightarrow (\lnot P \Rightarrow Q)</m>.</li>
+              <li><m>P \land (P \lor Q) \Leftrightarrow P</m> (шингэрүүлэх хууль).</li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-2-3">
+        <statement>
+          <p>Де Морганы 2-р хуулийг үнэний хүснэгтээр батал:
+          <m>\lnot (P \lor Q) \Leftrightarrow (\lnot P) \land (\lnot Q)</m>.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-2-4">
+        <statement>
+          <p>Дараах хэллэгийн үгүйсгэлийг Де Морганы хууль ашиглан энгийн
+          хэлбэрт оруул:
+            <ol marker="(\alph*)">
+              <li><m>\lnot ((x \gt  0) \land (y \gt  0))</m></li>
+              <li><m>\lnot ((x \in \Q) \lor (x = \pi))</m></li>
+              <li><m>\lnot \forall x \in \R\ (x^2 \ge 0)</m> —
+              үндсэн хууль: <m>\lnot \forall x\ P(x) \Leftrightarrow \exists x\
+              \lnot P(x)</m>.</li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-2-5">
+        <statement>
+          <p>Хэрэв <m>A \Rightarrow B</m> нь үнэн ба <m>B</m> нь худал бол <m>A</m>-ийн
+          үнэний утга юу вэ? Үндэслэлтэйгээр тайлбарла.</p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       SECTION 1.3: Эквивалент, контрапозиц, нөхцлийн ангилал
+       ============================================================ -->
+  <section xml:id="sec-equivalence">
+    <title>Эквивалент, контрапозиц ба нөхцлийн ангилал</title>
+
+    <objectives>
+      <introduction>
+        <p>Энэ хэсэгт бид дараах асуултуудад хариулна:
+          <ul>
+            <li>"<m>A \Rightarrow B</m>" хэллэгээс үүсэх 4 хэллэг гэж юу вэ?</li>
+            <li>Эдгээрээс аль нь хоорондоо эквивалент вэ?</li>
+            <li>"Хүрэлцээтэй нөхцөл" ба "зайлшгүй нөхцөл" гэдэг ямар утгатай вэ?</li>
+          </ul>
+        </p>
+      </introduction>
+    </objectives>
+
+    <introduction>
+      <activity xml:id="prev-1-3">
+        <title>Урьдчилсан дасгал</title>
+        <introduction>
+          <p>"Хэрэв <m>x</m> нь 4-т хуваагдвал <m>x</m> нь тэгш" гэдэг хэллэг
+          (<m>A \Rightarrow B</m> хэлбэрийн) үнэн.</p>
+        </introduction>
+
+        <task>
+          <statement>
+            <p>Дараах "урвуу" гэгдэх хэллэгийг бич: "Хэрэв <m>x</m> нь тэгш бол
+            <m>x</m> нь 4-т хуваагдана." Энэ үнэн үү? Хэрэв худал бол эсрэг жишээг
+            ол.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>"Хэрэв <m>x</m> нь сондгой бол <m>x</m> нь 4-т хуваагдахгүй" гэдэг
+            хэллэгийг анхдагч хэллэгтэй харьцуул. Үнэн үү? Үргэлж эквивалент
+            байх уу?</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>"Хэрэв <m>x</m> нь 4-т хуваагдахгүй бол <m>x</m> нь сондгой" гэдэг хэллэгийг
+            бич. Үнэн үү? (Зөвлөмж: <m>x = 6</m> авч үз.)</p>
+          </statement>
+        </task>
+      </activity>
+    </introduction>
+
+    <subsection xml:id="subsec-equiv">
+      <title>Эквивалент хэллэгүүд</title>
+
+      <definition xml:id="def-equivalence">
+        <statement>
+          <p>Хэрэв <m>A \Rightarrow B</m> ба <m>B \Rightarrow A</m> хоёулаа үнэн бол <m>A</m>
+          ба <m>B</m>-г <term>эквивалент</term> (ижил үнэний утгатай) хэллэгүүд гээд
+          <m>A \Leftrightarrow B</m> гэж тэмдэглэнэ.</p>
+        </statement>
+      </definition>
+
+      <p>Энэ нь үнэндээ "<m>A</m>, <m>B</m> үнэний утгын хувьд бүрэн адил" гэсэн утгатай.
+      <m>A \Leftrightarrow B</m> үнэн байх <m>\iff</m> <m>A</m> ба <m>B</m> хоёулаа үнэн эсвэл
+      хоёулаа худал.</p>
+
+      <example xml:id="ex-equiv">
+        <title>Эквивалент жишээ</title>
+        <p>
+          <ul>
+            <li><m>x + 5 = y + 3 \Leftrightarrow x + 2 = y</m> — үнэн.</li>
+            <li><m>x = 2 \Leftrightarrow x^2 = 4</m> — <em>худал</em>! (<m>x = -2</m> үед
+            баруун тал үнэн боловч зүүн тал худал.)</li>
+            <li><m>\{n \in \Z : 10 \lt  n \lt  12\} \Leftrightarrow \{n = 11\}</m> —
+            үнэн.</li>
+          </ul>
+        </p>
+      </example>
+    </subsection>
+
+    <subsection xml:id="subsec-contrapositive">
+      <title>Контрапозиц, урвуу, эсрэг хэллэг</title>
+
+      <p>Урьдчилсан дасгалаас та анзаарсан байх ёстой: <m>A \Rightarrow B</m>
+      хэллэгээс өөр өөр аргаар хувиргасан хэд хэдэн хэллэг үүснэ. Тэдгээр нь
+      үнэндээ дөрөв.</p>
+
+      <definition xml:id="def-cond-types">
+        <statement>
+          <p><m>A \Rightarrow B</m> хэллэг өгөгдсөн бол:
+            <ul>
+              <li><m>\lnot B \Rightarrow \lnot A</m>-г <term>контрапозиц</term>
+              (contrapositive),</li>
+              <li><m>B \Rightarrow A</m>-г <term>урвуу хэллэг</term> (converse),</li>
+              <li><m>\lnot A \Rightarrow \lnot B</m>-г <term>эсрэг хэллэг</term>
+              (inverse) гэнэ.</li>
+            </ul>
+          </p>
+        </statement>
+      </definition>
+
+      <activity xml:id="act-1-3-1">
+        <title>Дасгал. Дөрвөн хэллэгийг харьцуулах</title>
+
+        <introduction>
+          <p>"Хэрэв <m>x</m> нь 4-т хуваагдвал <m>x</m> нь тэгш" гэсэн анхдагч хэллэгийг
+          (<m>A \Rightarrow B</m>) ав.</p>
+        </introduction>
+
+        <task>
+          <statement>
+            <p>Анхдагч хэллэг үнэн үү? Контрапозицийг бич ба үнэн эсэхийг шалга.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Урвуу хэллэгийг бич ба үнэн эсэхийг шалга. Хэрэв худал бол эсрэг
+            жишээг ол.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Эсрэг хэллэгийг бич ба үнэн эсэхийг шалга. Эсрэг жишээг ол.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Энэ дөрвөн хэллэгээс аль нь хоорондоо эквивалент байх вэ?
+            Таамаглал гарга.</p>
+          </statement>
+        </task>
+      </activity>
+
+      <p>Дасгалын төгсгөлд та таамагласан байх ёстой:</p>
+
+      <theorem xml:id="thm-contrapositive">
+        <title>Контрапозицийн хууль</title>
+        <statement>
+          <p><m>A \Rightarrow B</m> хэллэг ба түүний контрапозиц
+          <m>\lnot B \Rightarrow \lnot A</m> нь үргэлж эквивалент. Өөрөөр хэлбэл:
+          <me>(A \Rightarrow B) \Leftrightarrow (\lnot B \Rightarrow \lnot A).</me>
+          </p>
+        </statement>
+        <proof>
+          <p>Үнэний хүснэгт байгуулж шалгая:
+          <me>\begin{array}{c|c|c|c|c|c}
+          A &amp; B &amp; \lnot A &amp; \lnot B &amp; A \Rightarrow B &amp; \lnot B \Rightarrow \lnot A \\ \hline
+          1 &amp; 1 &amp; 0 &amp; 0 &amp; \mathbf{1} &amp; \mathbf{1} \\
+          1 &amp; 0 &amp; 0 &amp; 1 &amp; \mathbf{0} &amp; \mathbf{0} \\
+          0 &amp; 1 &amp; 1 &amp; 0 &amp; \mathbf{1} &amp; \mathbf{1} \\
+          0 &amp; 0 &amp; 1 &amp; 1 &amp; \mathbf{1} &amp; \mathbf{1}
+          \end{array}</me>
+          5- ба 6-р баганууд нь адилхан тул эквивалент.</p>
+        </proof>
+      </theorem>
+
+      <remark xml:id="rem-which-equiv">
+        <p><alert>Анхааруулга:</alert> Урвуу хэллэг (<m>B \Rightarrow A</m>) ба эсрэг
+        хэллэг (<m>\lnot A \Rightarrow \lnot B</m>) нь анхдагч хэллэгтэй
+        <em>ерөнхийдөө эквивалент биш</em>. Гэхдээ урвуу ба эсрэг хэллэгүүд
+        хоорондоо эквивалент байна (учир нь эсрэг хэллэг нь урвуу хэллэгийн
+        контрапозиц юм).</p>
+      </remark>
+    </subsection>
+
+    <subsection xml:id="subsec-nec-suff">
+      <title>Хүрэлцээтэй ба зайлшгүй нөхцөл</title>
+
+      <p>Импликацийн өөр нэг чухал тайлбар нь "нөхцлийн ангилал". Хэрэв
+      <m>A \Rightarrow B</m> үнэн бол <m>A</m>, <m>B</m> хоёрын хэн нь юу болж байна вэ?</p>
+
+      <definition xml:id="def-nec-suff">
+        <statement>
+          <p><m>A \Rightarrow B</m> хэллэг үнэн бол:
+            <ul>
+              <li><m>A</m> нь <m>B</m>-ийн <term>хүрэлцээтэй нөхцөл</term> (sufficient
+              condition),</li>
+              <li><m>B</m> нь <m>A</m>-ийн <term>зайлшгүй нөхцөл</term> (necessary
+              condition) болно.</li>
+            </ul>
+          </p>
+        </statement>
+      </definition>
+
+      <p>Үндэслэл: <m>A</m> үнэн байх <em>л</em> <m>B</m>-г үнэн болгоход хангалттай —
+      энэ нь "хүрэлцээтэй". Контрапозициар <m>\lnot B \Rightarrow \lnot A</m> —
+      <m>B</m> худал бол <m>A</m> ч худал — иймд <m>A</m> үнэн байхын тулд <m>B</m> үнэн байх
+      <em>зайлшгүй</em>.</p>
+
+      <example xml:id="ex-nec-suff">
+        <title>Хүрэлцээтэй ба зайлшгүй</title>
+        <p>"Хэрэв <m>x</m> нь 4-т хуваагдвал, <m>x</m> нь тэгш" — энэ үнэн.
+          <ul>
+            <li>"<m>x</m> нь 4-т хуваагдана" нь "<m>x</m> тэгш"-ийн <em>хүрэлцээтэй</em>
+            нөхцөл. (<m>x = 8</m> үед <m>B</m> автоматаар үнэн.)</li>
+            <li>"<m>x</m> тэгш" нь "<m>x</m> нь 4-т хуваагдана"-ын <em>зайлшгүй</em> нөхцөл.
+            (<m>x</m> 4-т хуваагдахын тулд эхлээд тэгш байх <em>зайлшгүй</em>.)
+            Гэхдээ хүрэлцээтэй биш — <m>x = 6</m> тэгш ч 4-т хуваагдахгүй.</li>
+          </ul>
+        </p>
+      </example>
+
+      <activity xml:id="act-1-3-2">
+        <title>Дасгал. Хүрэлцээтэй ба зайлшгүй ангилал</title>
+
+        <introduction>
+          <p>Дараах нөхцлүүдийн хувьд <m>A</m> нь <m>B</m>-ийн хүрэлцээтэй, зайлшгүй,
+          хоёулаа, аль нь ч биш үү гэдгийг шинжил.</p>
+        </introduction>
+
+        <task>
+          <statement>
+            <p><m>A</m>: "<m>x = 3</m>", <m>B</m>: "<m>x^2 = 9</m>".</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p><m>A</m>: "<m>x \gt  0</m>", <m>B</m>: "<m>x \ge 1</m>".</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p><m>A</m>: "<m>\triangle ABC</m> тэгш өнцөгт", <m>B</m>: "<m>\triangle ABC</m>
+            гипотенузтай".</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p><m>A</m>: "<m>n</m> нь анхны тоо ба <m>n \gt  2</m>", <m>B</m>: "<m>n</m> сондгой".</p>
+          </statement>
+        </task>
+      </activity>
+    </subsection>
+
+    <subsection xml:id="subsec-summary-1-3">
+      <title>Хураангуй</title>
+      <p>
+        <ul>
+          <li><m>A \Rightarrow B</m> хэллэгээс 4 хэллэг үүснэ: анхдагч, контрапозиц
+          (<m>\lnot B \Rightarrow \lnot A</m>), урвуу (<m>B \Rightarrow A</m>), эсрэг
+          (<m>\lnot A \Rightarrow \lnot B</m>).</li>
+          <li>Анхдагч ба контрапозиц <em>үргэлж эквивалент</em>; урвуу ба
+          эсрэг ч хоорондоо эквивалент.</li>
+          <li>Анхдагч ба урвуу нь <em>ерөнхийдөө эквивалент биш</em>.</li>
+          <li><m>A \Rightarrow B</m> үнэн бол: <m>A</m> нь <m>B</m>-ийн хүрэлцээтэй; <m>B</m> нь
+          <m>A</m>-ийн зайлшгүй нөхцөл.</li>
+        </ul>
+      </p>
+    </subsection>
+
+    <exercises xml:id="exer-1-3">
+      <title>Гэрийн даалгавар</title>
+
+      <exercise xml:id="ex-1-3-1">
+        <statement>
+          <p>"Хэрэв тоо 6-д хуваагдвал 3-т хуваагдана" гэсэн хэллэгийн контрапозиц,
+          урвуу, эсрэг хэллэгийг бич. Тус бүрийн үнэн эсэхийг тогтоо.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-3-2">
+        <statement>
+          <p>Үнэний хүснэгтээр шалга:
+          <m>(P \Rightarrow Q) \Leftrightarrow (\lnot P \lor Q)</m>.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-3-3">
+        <statement>
+          <p><m>(P \Rightarrow Q) \lor (Q \Rightarrow P)</m> нь тавтологи мөн
+          эсэхийг тогтоо. (Зөвлөмж: дөрвөн боломжит утганд шалга.)</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-3-4">
+        <statement>
+          <p>Дараах нөхцлүүдийн хувьд "<m>A</m> нь <m>B</m>-ийн ___ нөхцөл" гэсэн
+          гарчгаар хариул (хүрэлцээтэй, зайлшгүй, хоёулаа, аль нь ч биш):
+            <ol marker="(\alph*)">
+              <li><m>A</m>: "хэн нэгэн МУИС-ын оюутан", <m>B</m>: "хэн нэгэн оюутан"</li>
+              <li><m>A</m>: "<m>x</m> нь натурал тоо", <m>B</m>: "<m>x \gt  0</m>"</li>
+              <li><m>A</m>: "<m>\triangle ABC</m> нь тэгш талт", <m>B</m>: "<m>\triangle ABC</m>
+              нь иш талт"</li>
+              <li><m>A</m>: "<m>x</m> нь Рационал", <m>B</m>: "<m>x</m> нь бодит"</li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       SECTION 1.4: Баталгааны аргууд
+       ============================================================ -->
+  <section xml:id="sec-proof-methods">
+    <title>Баталгааны аргууд</title>
+
+    <objectives>
+      <introduction>
+        <p>Энэ хэсэгт бид дараах асуултуудад хариулна:
+          <ul>
+            <li>Математикийн "баталгаа" гэдэг яг юу вэ?</li>
+            <li>Шууд, контрапозицоор, эсрэгээс нь батлах гэж юу вэ?</li>
+            <li>Эсрэг жишээ хэрхэн гарган хэллэгийг худал болохыг харуулах вэ?</li>
+          </ul>
+        </p>
+      </introduction>
+    </objectives>
+
+    <introduction>
+      <activity xml:id="prev-1-4">
+        <title>Урьдчилсан дасгал</title>
+        <introduction>
+          <p>"Хэрэв <m>n</m> тэгш бол <m>n^2</m> тэгш" гэдэг хэллэгийг батлахыг
+          оролдъё.</p>
+        </introduction>
+
+        <task>
+          <statement>
+            <p>"<m>n</m> тэгш" гэдэг ямар утгатай вэ? Энэ нь <m>n</m>-г хэрхэн бичиж
+            болохыг таамаглаж бай.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p><m>n = 2k</m> гэвэл <m>n^2</m>-ыг бод. Энэ нь яагаад тэгш болохыг
+            тайлбарла.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Одоо <em>урвуу</em> хэллэг рүү шилжье: "Хэрэв <m>n^2</m> тэгш бол
+            <m>n</m> тэгш". Шууд "<m>n^2 = 2k</m> ⇒ ...?" гэж эхэлж үзвэл амар уу,
+            хэцүү юу?</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Эсрэгээс (<m>n</m> сондгой бол <m>n^2</m> ямар вэ?) бодвол арай хялбар
+            байж болох уу?</p>
+          </statement>
+        </task>
+      </activity>
+    </introduction>
+
+    <subsection xml:id="subsec-what-is-proof">
+      <title>Баталгаа гэж юу вэ?</title>
+
+      <definition xml:id="def-proof">
+        <statement>
+          <p>Аксиом, тодорхойлолт, эсвэл өмнө батлагдсан теоремуудаас эхлэн
+          логикийн дүгнэлтийн дүрмүүд (Modus Ponens, контрапозиц гэх мэт)
+          ашиглан зорилго болсон хэллэгт хүрэх төгсгөлөг алхамуудын дарааллыг
+          <term>баталгаа</term> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-theorem">
+        <statement>
+          <p>Баталгаатай үнэн хэллэгийг <term>теорем</term> гэнэ. Теорем нь
+          ихэвчлэн "Хэрэв (нөхцөл) бол (дүгнэлт)" хэлбэртэй байна.</p>
+        </statement>
+      </definition>
+    </subsection>
+
+    <subsection xml:id="subsec-direct-proof">
+      <title>Шууд батлах арга</title>
+
+      <p><m>A \Rightarrow B</m> хэлбэрийн теоремыг батлах хамгийн энгийн арга бол
+      <m>A</m> үнэн гэж үзэн, тодорхойлолт болон үндсэн хууль ашиглан <m>B</m>-г үнэн
+      болохыг гаргах юм.</p>
+
+      <example xml:id="ex-direct">
+        <title>Шууд баталгаа</title>
+        <statement>
+          <p>Хэрэв <m>n</m> тэгш бол <m>n^2</m> тэгш.</p>
+        </statement>
+        <proof>
+          <p><m>n</m> тэгш гэвэл тодорхойлолтоор <m>n = 2k</m> (<m>k \in \Z</m>). Тэгвэл
+          <me>n^2 = (2k)^2 = 4k^2 = 2(2k^2).</me>
+          <m>2k^2 \in \Z</m> тул <m>n^2</m> нь <m>2</m>-ын үржвэр, иймд тэгш.</p>
+        </proof>
+      </example>
+
+      <activity xml:id="act-1-4-1">
+        <title>Дасгал. Шууд баталгаа</title>
+
+        <task>
+          <statement>
+            <p>Хэрэв <m>a, b</m> тэгш бол <m>a + b</m> тэгш гэдгийг батал.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Хэрэв <m>a</m> нь <m>4</m>-т хуваагдвал <m>a^2</m> нь <m>8</m>-т хуваагдана гэдгийг
+            батал.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Хэрэв <m>a \in \Z</m> бол <m>a^2 + a</m> тэгш гэдгийг батал.
+            (Зөвлөмж: <m>a^2 + a = a(a+1)</m>.)</p>
+          </statement>
+        </task>
+      </activity>
+    </subsection>
+
+    <subsection xml:id="subsec-contrapositive-proof">
+      <title>Контрапозицоор батлах арга</title>
+
+      <p>Зарим тохиолдолд <m>A \Rightarrow B</m>-г шууд батлах нь хэцүү боловч
+      контрапозициар <m>\lnot B \Rightarrow \lnot A</m>-г батлах нь илүү хялбар
+      байдаг. Учир нь Теорем~<xref ref="thm-contrapositive" />-ээр эдгээр нь
+      эквивалент.</p>
+
+      <example xml:id="ex-contrapos">
+        <title>Контрапозицоор баталгаа</title>
+        <statement>
+          <p>Хэрэв <m>n^2</m> тэгш бол <m>n</m> тэгш.</p>
+        </statement>
+        <proof>
+          <p>Шууд "<m>n^2 = 2k</m> ⇒ ..." гэж эхлэх боломжгүй (<m>k</m>-аас <m>n</m>-г
+          гаргаж авахад квадрат язгуур орох тул бүхэл тоонд хадгалагдахгүй).
+          Иймд контрапозиц: "Хэрэв <m>n</m> сондгой бол <m>n^2</m> сондгой" гэдгийг
+          баталъя.</p>
+
+          <p><m>n</m> сондгой бол <m>n = 2k+1</m>. Тэгвэл
+          <me>n^2 = (2k+1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1.</me>
+          Энэ нь <m>2</m>-аас <m>1</m> илүү тоо, иймд <m>n^2</m> сондгой.</p>
+
+          <p>Бид <m>n</m> сондгой ⇒ <m>n^2</m> сондгой гэдгийг баталлаа. Контрапозицоор
+          <m>n^2</m> тэгш ⇒ <m>n</m> тэгш мөн үнэн.</p>
+        </proof>
+      </example>
+    </subsection>
+
+    <subsection xml:id="subsec-contradiction">
+      <title>Эсрэгээс нь батлах арга</title>
+
+      <p><m>A \Rightarrow B</m> батлах өөр нэг арга: <em><m>A</m> үнэн ба <m>B</m> худал
+      гэж таамаглаад</em> үүнээс зөрчилд хүрэх. Тэрхүү таамаглал боломжгүй
+      учраас анхны хэллэг үнэн байх ёстой. Энэ аргыг ялангуяа "оршихгүй" гэсэн
+      теоремуудыг батлахад түгээмэл хэрэглэдэг.</p>
+
+      <example xml:id="ex-sqrt2">
+        <title><m>\sqrt{2}</m> иррационал гэдгийг батлах</title>
+        <statement>
+          <p><m>\sqrt{2}</m> нь иррационал тоо юм.</p>
+        </statement>
+        <proof>
+          <p>Эсрэгээр нь таамаглая: <m>\sqrt{2}</m> нь рационал гэе. Тэгвэл
+          <m>\sqrt{2} = \dfrac{a}{b}</m> (<m>a, b \in \Z</m>, <m>b \ne 0</m>) хэлбэрээр
+          бичигдэнэ. Ерөнхийгүй байдлыг алдалгүйгээр <m>a, b</m>-ийн ХИЕХ нь <m>1</m> (өөрөөр
+          хэлбэл, бутархайг бүрэн хураасан) гэж үзэж болно.</p>
+
+          <p>Тэгш бичвэл: <m>2 = \dfrac{a^2}{b^2}</m>, ⇒ <m>a^2 = 2b^2</m>. Эндээс <m>a^2</m>
+          тэгш, иймд <m>a</m> ч тэгш (өмнөх жишээгээр). Тэгвэл <m>a = 2k</m>, ⇒
+          <m>a^2 = 4k^2</m>, ⇒ <m>4k^2 = 2b^2</m>, ⇒ <m>b^2 = 2k^2</m>. Эндээс <m>b^2</m> тэгш,
+          иймд <m>b</m> ч тэгш.</p>
+
+          <p>Гэвч энэ нь <m>a, b</m>-ийн ХИЕХ нь <m>1</m> гэсэн нөхцөлтэй зөрчилдөнө.
+          Иймд анхны таамаглал (<m>\sqrt{2}</m> рационал) худал. Тэгэхээр
+          <m>\sqrt{2}</m> иррационал.</p>
+        </proof>
+      </example>
+
+      <activity xml:id="act-1-4-2">
+        <title>Дасгал. Контрапозиц ба эсрэгээс батлах</title>
+
+        <task>
+          <statement>
+            <p>Контрапозицоор батал: Хэрэв <m>ab</m> сондгой бол <m>a</m> ба <m>b</m> хоёулаа
+            сондгой. (Контрапозиц: "Хэрэв <m>a</m> эсвэл <m>b</m> тэгш бол <m>ab</m> тэгш"
+            болохыг шалга.)</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Эсрэгээс нь батал: <m>\sqrt{6}</m> иррационал.
+            (Зөвлөмж: <m>\sqrt{6} = a/b</m> гэвэл <m>a^2 = 6b^2 = 2 \cdot 3 b^2</m>,
+            эндээс <m>a</m> нь <m>2</m>-т хуваагдах ба <m>3</m>-т хуваагдах хоёр төрлийн
+            аргументыг хийнэ.)</p>
+          </statement>
+        </task>
+      </activity>
+    </subsection>
+
+    <subsection xml:id="subsec-counterex">
+      <title>Эсрэг жишээгээр худал болохыг харуулах</title>
+
+      <p>"<m>\forall x\ P(x)</m>" хэлбэрийн хэллэгийг <em>худал</em> гэж батлах
+      хамгийн энгийн арга — <m>P(x)</m> худал байх <em>ганц</em> <m>x</m>-г олох явдал.
+      Энэ нь кванторын үгүйсгэлийн хууль:
+      <me>\lnot \forall x\ P(x) \Leftrightarrow \exists x\ \lnot P(x)</me>
+      -г шууд хэрэглэсэн хэрэг.</p>
+
+      <example xml:id="ex-counter">
+        <title>Эсрэг жишээ</title>
+        <p>"Бүх тэгш тоо <m>4</m>-т хуваагдана" гэдэг хэллэг <em>худал</em>. Учир
+        нь <m>6</m> нь тэгш ч <m>4</m>-т хуваагдахгүй.</p>
+      </example>
+
+      <activity xml:id="act-1-4-3">
+        <title>Дасгал. Эсрэг жишээ ол</title>
+
+        <task>
+          <statement><p>"Бүх анхны тоо сондгой."</p></statement>
+        </task>
+        <task>
+          <statement><p>"Хэрэв <m>ab</m> тэгш бол <m>a</m> ба <m>b</m> хоёулаа тэгш."</p></statement>
+        </task>
+        <task>
+          <statement><p>"Бүх бүхэл тоо нь анхны эсвэл тэгш."</p></statement>
+        </task>
+      </activity>
+    </subsection>
+
+    <subsection xml:id="subsec-summary-1-4">
+      <title>Хураангуй</title>
+      <p>
+        <ul>
+          <li><term>Шууд:</term> <m>A</m> үнэн ⇒ ... ⇒ <m>B</m> үнэн.</li>
+          <li><term>Контрапозиц:</term> <m>\lnot B</m> үнэн ⇒ ... ⇒ <m>\lnot A</m> үнэн.</li>
+          <li><term>Эсрэгээс нь:</term> "<m>A</m> үнэн ба <m>B</m> худал" таамаглалаас
+          зөрчилд хүрнэ.</li>
+          <li><term>Эсрэг жишээ:</term> "<m>\forall</m>" хэллэгийг худал гэж батлахад
+          ганц жишээ хангалттай.</li>
+        </ul>
+      </p>
+    </subsection>
+
+    <exercises xml:id="exer-1-4">
+      <title>Гэрийн даалгавар</title>
+
+      <exercise xml:id="ex-1-4-1">
+        <statement><p>Шууд батал: Хэрэв <m>n</m> сондгой бол <m>n^2</m> сондгой.</p></statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-4-2">
+        <statement><p>Контрапозицоор батал: Хэрэв <m>n^2</m> нь <m>3</m>-т хуваагдвал
+        <m>n</m> нь <m>3</m>-т хуваагдана. (Зөвлөмж: <m>3</m>-т хуваагддаггүй тоог
+        <m>n = 3k+1</m> эсвэл <m>n = 3k+2</m> хэлбэрээр бич.)</p></statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-4-3">
+        <statement><p>Эсрэгээс нь батал: <m>\sqrt{2} + \sqrt{3}</m> иррационал.
+        (Зөвлөмж: <m>\sqrt{2} + \sqrt{3} = a/b</m> таамаглаад квадратад
+        дэвшүүл.)</p></statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-4-4">
+        <statement>
+          <p>Дараах хэллэгүүд үнэн үү, худал уу? Үнэн бол батал, худал бол
+          эсрэг жишээ ол.
+            <ol marker="(\alph*)">
+              <li>"<m>\forall n \in \N\ (n^2 + n + 41</m> нь анхны)"</li>
+              <li>"<m>\forall x \in \R\ (x^2 \ge x)</m>"</li>
+              <li>"<m>\forall x, y \in \R\ ((x+y)^2 = x^2 + y^2)</m>"</li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-4-5">
+        <statement>
+          <p>Хэрэв <m>a</m> нь <m>\Z</m>-д харьяалагдах бол <m>a^2 + 1</m> нь хэзээ ч <m>4</m>-т
+          хуваагдахгүй. Батал. (Зөвлөмж: <m>a</m>-ийг <m>4k</m>, <m>4k+1</m>, <m>4k+2</m>, <m>4k+3</m>
+          гэсэн дөрвөн тохиолдолд хуваан үз.)</p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       SECTION 1.5: Математик индукц
+       ============================================================ -->
+  <section xml:id="sec-induction">
+    <title>Математик индукц</title>
+
+    <objectives>
+      <introduction>
+        <p>Энэ хэсэгт бид дараах асуултуудад хариулна:
+          <ul>
+            <li><m>\forall n \in \N</m> хэлбэрийн хэллэгийг хэрхэн нэгээр нь биш,
+            бүгдийг нь батлах вэ?</li>
+            <li>Математик индукцийн зарчим яаж ажилладаг вэ?</li>
+            <li>"Суурь" ба "шилжилт" гэдэг ямар утгатай вэ?</li>
+          </ul>
+        </p>
+      </introduction>
+    </objectives>
+
+    <introduction>
+      <activity xml:id="prev-1-5">
+        <title>Урьдчилсан дасгал</title>
+        <introduction>
+          <p><m>S(n) = 1 + 2 + 3 + \cdots + n</m> гэе.</p>
+        </introduction>
+
+        <task>
+          <statement>
+            <p><m>S(1), S(2), S(3), S(4), S(5)</m>-г бод. Тэдгээрийн дунд ямар нэг
+            дүрэм олдох уу? Жишээ нь <m>S(n)</m>-г <m>n</m>-ээр илэрхийлэх томьёо
+            таамаглаж бай.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Таамагласан томьёогоо <m>n = 6, 10</m> хувьд шалга.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Та томьёогоо <em>5 утганд</em> шалгасан байна. Энэ нь "Бүх <m>n</m>
+            хувьд томьёо үнэн" гэж дүгнэж болох уу? Яагаад болохгүй вэ?</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>"Бүх <m>n</m> хувьд үнэн" гэж батлахад ямар арга шаардагдах вэ гэж
+            та боддог?</p>
+          </statement>
+        </task>
+      </activity>
+    </introduction>
+
+    <subsection xml:id="subsec-induction-principle">
+      <title>Индукцийн зарчим</title>
+
+      <p>Урьдчилсан дасгалаас та анзаарах ёстой: тодорхой утгуудаар шалгах нь
+      хэзээ ч бүх <m>n</m>-д үнэн болохын баталгаа болохгүй. Гэвч "<em>хязгааргүй
+      олон</em>"-г бид хязгаартай ажил руу хувирган батлах боломжтой —
+      математик индукцийн тусламжтайгаар.</p>
+
+      <theorem xml:id="thm-induction">
+        <title>Математик индукцийн зарчим</title>
+        <statement>
+          <p><m>P(n)</m> нь <m>n \in \N</m>-ээс хамаарсан хэллэг гэе. Хэрэв
+            <ol>
+              <li><term>(Суурь)</term> <m>P(1)</m> үнэн,</li>
+              <li><term>(Шилжилт)</term> <m>\forall k \in \N</m>-ийн хувьд:
+              <m>P(k)</m> үнэн ⇒ <m>P(k+1)</m> үнэн</li>
+            </ol>
+          бол <m>\forall n \in \N</m> хувьд <m>P(n)</m> үнэн.</p>
+        </statement>
+      </theorem>
+
+      <p>Энэ нь "<em>домино</em>" аргатай төстэй: эхний домино унаад (суурь),
+      дараагийнх нь өмнөхөөсөө унавал (шилжилт), бүгд унаж дуусна.</p>
+
+      <example xml:id="ex-gauss">
+        <title>Гауссын нийлбэр</title>
+        <statement>
+          <p>Бүх <m>n \in \N</m> хувьд:
+          <men xml:id="eq-gauss">1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}.</men>
+          </p>
+        </statement>
+
+        <proof>
+          <p><alert>Суурь:</alert> <m>n = 1</m> үед ЗГТ<m>=1</m>, БГТ<m>=\frac{1 \cdot 2}{2}=1</m>. ✓</p>
+
+          <p><alert>Шилжилт:</alert> <m>n = k</m> үед үнэн гэе, өөрөөр хэлбэл
+          <me>1 + 2 + \cdots + k = \frac{k(k+1)}{2} \quad \text{(индукцийн таамаглал)}.</me>
+          Зорилго: <m>n = k+1</m>-д үнэн болохыг батлах. Тэгшитгэлийн зүүн талд
+          <m>(k+1)</m> нэмж:
+          <md>
+            <mrow>1 + 2 + \cdots + k + (k+1) &amp;= \frac{k(k+1)}{2} + (k+1)</mrow>
+            <mrow>&amp;= \frac{k(k+1) + 2(k+1)}{2}</mrow>
+            <mrow>&amp;= \frac{(k+1)(k+2)}{2}.</mrow>
+          </md>
+          Энэ нь яг <m>n = k+1</m>-ийн хувьд хүссэн хэлбэр. ✓</p>
+
+          <p>Иймд индукцийн зарчмаар <xref ref="eq-gauss" /> нь бүх <m>n \in \N</m>-д
+          үнэн.</p>
+        </proof>
+      </example>
+
+      <activity xml:id="act-1-5-1">
+        <title>Дасгал. Индукцийн ердийн жишээ</title>
+
+        <task>
+          <statement>
+            <p>Бүх <m>n \in \N</m>-д
+            <me>1^2 + 2^2 + 3^2 + \cdots + n^2 = \frac{n(n+1)(2n+1)}{6}</me>
+            гэдгийг индукцээр батал.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Бүх <m>n \in \N</m>-д <m>1 + 3 + 5 + \cdots + (2n-1) = n^2</m> гэдгийг
+            индукцээр батал.</p>
+          </statement>
+        </task>
+      </activity>
+    </subsection>
+
+    <subsection xml:id="subsec-induction-other">
+      <title>Индукцийг хэрэглэх бусад жишээ</title>
+
+      <p>Индукцийг зөвхөн нийлбэрт төдийгүй маш олон төрлийн "<m>\forall n \in \N</m>"
+      хэллэгт ашиглаж болно. Жишээ нь хуваагдах чанар, тэгш бус байдал, биномын
+      томьёо г.м.</p>
+
+      <example xml:id="ex-divisible">
+        <title>Хуваагдах чанарыг индукцээр батлах</title>
+        <statement>
+          <p><m>\forall n \in \N</m>-д <m>n^3 - n</m> нь <m>6</m>-т хуваагдана.</p>
+        </statement>
+        <proof>
+          <p><alert>Суурь:</alert> <m>n = 1</m>: <m>1^3 - 1 = 0</m>, <m>6 \mid 0</m>. ✓</p>
+
+          <p><alert>Шилжилт:</alert> <m>n = k</m> үед <m>6 \mid (k^3 - k)</m> гэе. Бид
+          <m>6 \mid ((k+1)^3 - (k+1))</m> болохыг харуулах хэрэгтэй.
+          <md>
+            <mrow>(k+1)^3 - (k+1) &amp;= k^3 + 3k^2 + 3k + 1 - k - 1</mrow>
+            <mrow>&amp;= (k^3 - k) + 3k^2 + 3k</mrow>
+            <mrow>&amp;= (k^3 - k) + 3k(k+1).</mrow>
+          </md>
+          Эхний гишүүн индукцээр <m>6</m>-т хуваагдана. Хоёр дахь гишүүн
+          <m>3k(k+1)</m> нь <m>3</m>-ийн үржвэр; үүнээс гадна <m>k(k+1)</m> нь дараалсан хоёр
+          бүхэл тооны үржвэр учир тэгш, иймд <m>3 k(k+1)</m> нь <m>6</m>-т хуваагдана.
+          Тэгэхээр <m>(k+1)^3 - (k+1)</m> нь <m>6</m>-ын үржвэрүүдийн нийлбэр —
+          <m>6</m>-т хуваагдана. ✓</p>
+        </proof>
+      </example>
+
+      <activity xml:id="act-1-5-2">
+        <title>Дасгал. Илүү өргөтгөсөн индукц</title>
+
+        <task>
+          <statement>
+            <p>Бүх <m>n \in \N</m>-д <m>7^n - 1</m> нь <m>6</m>-т хуваагдана гэдгийг индукцээр
+            батал.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>Бернуллийн тэгш бус байдал: бүх <m>n \in \N</m>, <m>x \gt  -1</m>
+            хувьд <m>(1+x)^n \ge 1 + nx</m>. Индукцээр батал.</p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>(Биномын томьёо) Бүх <m>n \in \N</m>, <m>a, b \in \R</m>-ийн хувьд
+            <me>(a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k.</me>
+            Индукцээр батал. (Зөвлөмж: <m>\binom{k}{j} + \binom{k}{j-1} =
+            \binom{k+1}{j}</m> томьёог ашигла.)</p>
+          </statement>
+        </task>
+      </activity>
+    </subsection>
+
+    <subsection xml:id="subsec-summary-1-5">
+      <title>Хураангуй</title>
+      <p>
+        <ul>
+          <li><m>\forall n \in \N</m> хэллэгийг батлах гол хэрэгсэл нь
+          <term>математик индукц</term>.</li>
+          <li>Индукц 2 алхамтай: <em>суурь</em> (<m>P(1)</m> үнэн) ба <em>шилжилт</em>
+          (<m>P(k) \Rightarrow P(k+1)</m>).</li>
+          <li>Хоёр алхам хоёул хийгдсэн үед бүх <m>n \in \N</m>-д <m>P(n)</m> үнэн.</li>
+        </ul>
+      </p>
+    </subsection>
+
+    <exercises xml:id="exer-1-5">
+      <title>Гэрийн даалгавар</title>
+
+      <exercise xml:id="ex-1-5-1">
+        <statement>
+          <p>Индукцээр батал:
+          <me>1 + 2 + 4 + 8 + \cdots + 2^{n-1} = 2^n - 1.</me>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-5-2">
+        <statement>
+          <p>Индукцээр батал: <m>\forall n \ge 4</m> хувьд <m>2^n \lt  n!</m>.
+          (Анхаар: суурь нь <m>n = 1</m> биш, <m>n = 4</m> — учир нь жижиг <m>n</m>-д тэгш
+          бус биелэхгүй.)</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-5-3">
+        <statement>
+          <p>Индукцээр батал: <m>\forall n \in \N</m>-д
+          <m>1 + \dfrac{1}{4} + \dfrac{1}{9} + \cdots + \dfrac{1}{n^2} \le 2 - \dfrac{1}{n}</m>.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-5-4">
+        <statement>
+          <p><m>a, b \in \R</m>, <m>n \in \N</m> бол индукцээр батал:
+          <me>a^n - b^n = (a - b) \sum_{k=0}^{n-1} a^{n-1-k} b^k.</me>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-1-5-5">
+        <statement>
+          <p><alert>Алдаа хайх:</alert> Дараах "баталгаа"-нд алдаа бий —
+          ол.</p>
+
+          <p>"Теорем": бүх адуу ижил өнгөтэй.</p>
+
+          <p>"Баталгаа" (индукц <m>n</m> адууны тоогоор):
+            <ul>
+              <li><m>n = 1</m>: ганц адуу өөртэйгөө ижил өнгөтэй. ✓</li>
+              <li><m>n</m> адуу ижил өнгөтэй гэе. Бид <m>n+1</m> адууны хувьд харуулъя.
+              <m>n+1</m> адуунаас нэгийг хасвал <m>n</m> адуу үлдэх — индукцээр ижил
+              өнгөтэй. Дахин нөгөө <m>n</m> адуунаас өөр нэгийг хасвал бас <m>n</m>
+              адуу үлдэх — ижил өнгөтэй. Иймд бүх <m>n+1</m> ижил өнгөтэй. ✓</li>
+            </ul>
+          </p>
+
+          <p>Энэ "баталгаа" хаана буруу вэ? (Зөвлөмж: <m>n = 1</m>-ээс <m>n = 2</m> рүү
+          шилжилт сайн ажиллах уу?)</p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+</chapter>

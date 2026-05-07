@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Хэллэг ба үнэний утга</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Математик Анализ I">
+<meta property="book:author" content="Д. Даян">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.13.5';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.52176322e2c1dde5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="math-anal-1" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href="https://num.edu.mn"><img src="external/logo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math1-book.html"><span class="title">Математик Анализ I</span> <span class="subtitle">Идэвхтэй сурах арга барилаар бичсэн ном</span></a></h1>
+<p class="byline">Д. Даян</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-logic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-logic.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-connectives.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface-students.html" class="internal"><span class="title">Оюутнуудад зориулсан өмнөх үг</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface-instructors.html" class="internal"><span class="title">Багш нарт зориулсан өмнөх үг</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-logic.html" class="internal"><span class="codenumber">1</span> <span class="title">Хэллэг ба Логик</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-propositions.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Хэллэг ба үнэний утга</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-propositions.html#subsec-prop-def" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Хэллэг гэж юу вэ?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-propositions.html#subsec-quantifiers" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Кванторууд: хувьсагчийг хэллэг болгох</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-propositions.html#subsec-summary-1-1" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Хураангуй</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-propositions.html#exer-1-1" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Гэрийн даалгавар</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-propositions.html#exer-1-1-extra" class="internal"><span class="codenumber">1.1.5</span> <span class="title">Нэмэлт дасгал. Хэллэг таних</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-connectives.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Логик холбоосууд</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-connectives.html#subsec-basic-connectives" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Үндсэн логик холбоосууд</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-connectives.html#subsec-vacuous" class="internal"><span class="codenumber">1.2.2</span> <span class="title">"Хэрэв ... бол ..." хэллэгийн нарийн талууд</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-connectives.html#subsec-tautology" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Тавтологи ба зөрчил</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-connectives.html#subsec-summary-1-2" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Хураангуй</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-connectives.html#exer-1-2" class="internal"><span class="codenumber">1.2.5</span> <span class="title">Гэрийн даалгавар</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-equivalence.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Эквивалент, контрапозиц ба нөхцлийн ангилал</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-equivalence.html#subsec-equiv" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Эквивалент хэллэгүүд</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-equivalence.html#subsec-contrapositive" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Контрапозиц, урвуу, эсрэг хэллэг</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-equivalence.html#subsec-nec-suff" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Хүрэлцээтэй ба зайлшгүй нөхцөл</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-equivalence.html#subsec-summary-1-3" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Хураангуй</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-equivalence.html#exer-1-3" class="internal"><span class="codenumber">1.3.5</span> <span class="title">Гэрийн даалгавар</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proof-methods.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Баталгааны аргууд</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-what-is-proof" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Баталгаа гэж юу вэ?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-direct-proof" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Шууд батлах арга</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-contrapositive-proof" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Контрапозицоор батлах арга</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-contradiction" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Эсрэгээс нь батлах арга</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-counterex" class="internal"><span class="codenumber">1.4.5</span> <span class="title">Эсрэг жишээгээр худал болохыг харуулах</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-summary-1-4" class="internal"><span class="codenumber">1.4.6</span> <span class="title">Хураангуй</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-proof-methods.html#exer-1-4" class="internal"><span class="codenumber">1.4.7</span> <span class="title">Гэрийн даалгавар</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-induction.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Математик индукц</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-induction.html#subsec-induction-principle" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Индукцийн зарчим</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-induction.html#subsec-induction-other" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Индукцийг хэрэглэх бусад жишээ</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-induction.html#subsec-summary-1-5" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Хураангуй</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-induction.html#exer-1-5" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Гэрийн даалгавар</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-propositions"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Хэллэг ба үнэний утга</span>
+</h2>
+<article class="objectives goal-like" id="sec-propositions-2"><h3 class="heading"><span class="type">Objectives</span></h3>
+<div class="introduction" id="sec-propositions-2-1"><div class="para logical" id="sec-propositions-2-1-1">
+<div class="para">Энэ хэсэгт бид дараах асуултуудад хариулна:</div>
+<ul class="disc" id="sec-propositions-2-1-1-1">
+<li id="sec-propositions-2-1-1-1-1">
+<div class="para" id="p-derived-sec-propositions-2-1-1-1-1">Аль өгүүлбэрүүд "хэллэг" болох вэ?</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-propositions-2-1-1-1-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-propositions-2-1-1-1-2">
+<div class="para" id="p-derived-sec-propositions-2-1-1-1-2">Хэллэг ба ердийн өгүүлбэрийн гол ялгаа юу вэ?</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-propositions-2-1-1-1-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-propositions-2-1-1-1-3">
+<div class="para" id="p-derived-sec-propositions-2-1-1-1-3">Хувьсагчтай өгүүлбэрийг хэрхэн хэллэг болгох вэ?</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-propositions-2-1-1-1-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-propositions-2-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<div class="autopermalink" data-description="Objectives 1.1"><a href="#sec-propositions-2" title="Copy heading and permalink for Objectives 1.1">🔗</a></div></article><section class="introduction" id="sec-propositions-3"><article class="activity project-like" id="prev-1-1"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Урьдчилсан дасгал.</span>
+</h3>
+<div class="introduction" id="prev-1-1-2"><div class="para logical" id="prev-1-1-2-1">
+<div class="para">Дараах өгүүлбэрүүдийг авч үз:</div>
+<ol class="lower-alpha ol-marker-1" id="prev-1-1-2-1-1">
+<li id="prev-1-1-2-1-1-1">
+<div class="para" id="p-derived-prev-1-1-2-1-1-1">"Бороо орж байна."</div>
+<div class="autopermalink" data-description="Item a"><a href="#prev-1-1-2-1-1-1" title="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="prev-1-1-2-1-1-2">
+<div class="para" id="p-derived-prev-1-1-2-1-1-2">"Хаалгаа хаа!"</div>
+<div class="autopermalink" data-description="Item b"><a href="#prev-1-1-2-1-1-2" title="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="prev-1-1-2-1-1-3">
+<div class="para" id="p-derived-prev-1-1-2-1-1-3">"<span class="process-math">\(5 \lt  9\text{.}\)</span>"</div>
+<div class="autopermalink" data-description="Item c"><a href="#prev-1-1-2-1-1-3" title="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="prev-1-1-2-1-1-4">
+<div class="para" id="p-derived-prev-1-1-2-1-1-4">"<span class="process-math">\(x + 2 = 7\text{.}\)</span>"</div>
+<div class="autopermalink" data-description="Item d"><a href="#prev-1-1-2-1-1-4" title="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+<li id="prev-1-1-2-1-1-5">
+<div class="para" id="p-derived-prev-1-1-2-1-1-5">"Энэ ном сонирхолтой юу?"</div>
+<div class="autopermalink" data-description="Item e"><a href="#prev-1-1-2-1-1-5" title="Copy heading and permalink for Item e">🔗</a></div>
+</li>
+<li id="prev-1-1-2-1-1-6">
+<div class="para" id="p-derived-prev-1-1-2-1-1-6">"Бүх <span class="process-math">\(x \in \R\)</span> хувьд <span class="process-math">\(x^2 \ge 0\text{.}\)</span>"</div>
+<div class="autopermalink" data-description="Item f"><a href="#prev-1-1-2-1-1-6" title="Copy heading and permalink for Item f">🔗</a></div>
+</li>
+<li id="prev-1-1-2-1-1-7">
+<div class="para" id="p-derived-prev-1-1-2-1-1-7">"Энэ үзүүлэгч мундаг."</div>
+<div class="autopermalink" data-description="Item g"><a href="#prev-1-1-2-1-1-7" title="Copy heading and permalink for Item g">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#prev-1-1-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<article class="task exercise-like" id="prev-1-1-3"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="prev-1-1-3-1-1">Аль өгүүлбэрүүдийн "үнэн" эсвэл "худал" байдлыг тогтоож болох вэ? Аль нь тогтоож болохгүй вэ? Үндэслэлийг тайлбарла.<div class="autopermalink" data-description="Paragraph"><a href="#prev-1-1-3-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.1.1.a"><a href="#prev-1-1-3" title="Copy heading and permalink for Task 1.1.1.a">🔗</a></div></article><article class="task exercise-like" id="prev-1-1-4"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="prev-1-1-4-1-1">(г) "<span class="process-math">\(x + 2 = 7\)</span>" өгүүлбэрийг ав. <span class="process-math">\(x\)</span>-ийн утгыг мэдэхгүй бол үнэн эсэхийг тогтоож болох уу? Хэрэв тогтоож болохгүй бол энэ өгүүлбэрийг яаж засаж "үнэн/худал тогтоох боломжтой" болгох вэ?<div class="autopermalink" data-description="Paragraph"><a href="#prev-1-1-4-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.1.1.b"><a href="#prev-1-1-4" title="Copy heading and permalink for Task 1.1.1.b">🔗</a></div></article><article class="task exercise-like" id="prev-1-1-5"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="prev-1-1-5-1-1">(е) "Бүх <span class="process-math">\(x \in \R\)</span> хувьд <span class="process-math">\(x^2 \ge 0\)</span>" нь үнэн үү, худал уу? Тайлбар хий.<div class="autopermalink" data-description="Paragraph"><a href="#prev-1-1-5-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.1.1.c"><a href="#prev-1-1-5" title="Copy heading and permalink for Task 1.1.1.c">🔗</a></div></article><div class="autopermalink" data-description="Activity 1.1.1: Урьдчилсан дасгал"><a href="#prev-1-1" title="Copy heading and permalink for Activity 1.1.1: Урьдчилсан дасгал">🔗</a></div></article></section><section class="subsection" id="subsec-prop-def"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="space"> </span><span class="title">Хэллэг гэж юу вэ?</span>
+</h3>
+<div class="para" id="subsec-prop-def-2">Урьдчилсан дасгалаас та анзаарсан байх ёстой: зарим өгүүлбэр (жишээ нь "<span class="process-math">\(5\lt 9\)</span>") нь "үнэн" эсвэл "худал" гэж <em class="emphasis">цэг тавих</em> боломжтой. Гэтэл "Хаалгаа хаа!" эсвэл "Энэ ном сонирхолтой юу?" гэх мэт өгүүлбэрүүд тийм биш. Математикт бидэнд эхний төрлийн өгүүлбэрүүд хэрэгтэй.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-prop-def-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-proposition"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-proposition-1-1">
+<em class="emphasis">Үнэн эсвэл худал гэдгийг нь нэгэн утгатай тогтоож болох</em> өгүүлбэрийг <dfn class="terminology">хэллэг</dfn> (proposition) гэнэ.<div class="autopermalink" data-description="Paragraph"><a href="#def-proposition-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 1.1.1"><a href="#def-proposition" title="Copy heading and permalink for Definition 1.1.1">🔗</a></div></article><div class="para" id="subsec-prop-def-4">Хэллэгийн "үнэний утга" нь хоёрхон байж болно: <dfn class="terminology">үнэн</dfn> эсвэл <dfn class="terminology">худал</dfn>. Энэ хоёрыг тус тус <span class="process-math">\(1\)</span> ба <span class="process-math">\(0\)</span> гэж тэмдэглэдэг (зарим бичилд <span class="process-math">\(T\)</span> ба <span class="process-math">\(F\)</span> гэх ч бий).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-prop-def-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-prop-def-5">
+<div class="para">Бид хэллэгийг ихэвчлэн том үсгээр (жишээ нь <span class="process-math">\(P, Q, R\)</span>) нэрлэдэг. Жишээ нь</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P = \{11 &gt; 9\}, \qquad Q = \{\exists n \in \N, n^2 = -1\}
+\end{equation*}
+</div>
+<div class="para">гэвэл <span class="process-math">\(P\)</span> үнэн (<span class="process-math">\(P\)</span>-ийн утга нь <span class="process-math">\(1\)</span>), <span class="process-math">\(Q\)</span> худал (<span class="process-math">\(Q\)</span>-ийн утга нь <span class="process-math">\(0\)</span>).</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-prop-def-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="activity project-like" id="act-1-1-1"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Дасгал. Хэллэг мөн эсэхийг тогтоох.</span>
+</h4>
+<div class="introduction" id="act-1-1-1-2"><div class="para" id="act-1-1-1-2-1">Дараах өгүүлбэрүүдийн аль нь хэллэг вэ? Хэллэг бол үнэний утгыг (<span class="process-math">\(1\)</span> эсвэл <span class="process-math">\(0\)</span>) тодорхойл; хэллэг биш бол яагаад биш гэдгийг тайлбарла.<div class="autopermalink" data-description="Paragraph"><a href="#act-1-1-1-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<article class="task exercise-like" id="act-1-1-1-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="act-1-1-1-3-1-1">"7 нь тэгш."<div class="autopermalink" data-description="Paragraph"><a href="#act-1-1-1-3-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.1.2.a"><a href="#act-1-1-1-3" title="Copy heading and permalink for Task 1.1.2.a">🔗</a></div></article><article class="task exercise-like" id="act-1-1-1-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="act-1-1-1-4-1-1">"<span class="process-math">\(2 + 3 = 6\text{.}\)</span>"<div class="autopermalink" data-description="Paragraph"><a href="#act-1-1-1-4-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.1.2.b"><a href="#act-1-1-1-4" title="Copy heading and permalink for Task 1.1.2.b">🔗</a></div></article><article class="task exercise-like" id="act-1-1-1-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="act-1-1-1-5-1-1">"<span class="process-math">\(\pi\)</span> нь рационал тоо."<div class="autopermalink" data-description="Paragraph"><a href="#act-1-1-1-5-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.1.2.c"><a href="#act-1-1-1-5" title="Copy heading and permalink for Task 1.1.2.c">🔗</a></div></article><article class="task exercise-like" id="act-1-1-1-6"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="act-1-1-1-6-1-1">"Хаалгаа хаа!"<div class="autopermalink" data-description="Paragraph"><a href="#act-1-1-1-6-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.1.2.d"><a href="#act-1-1-1-6" title="Copy heading and permalink for Task 1.1.2.d">🔗</a></div></article><article class="task exercise-like" id="act-1-1-1-7"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="para" id="act-1-1-1-7-1-1">"<span class="process-math">\(x \gt  2\)</span>" (энд <span class="process-math">\(x\)</span> нь тодорхой утгагүй).<div class="autopermalink" data-description="Paragraph"><a href="#act-1-1-1-7-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.1.2.e"><a href="#act-1-1-1-7" title="Copy heading and permalink for Task 1.1.2.e">🔗</a></div></article><article class="task exercise-like" id="act-1-1-1-8"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<div class="para" id="act-1-1-1-8-1-1">"Бүх <span class="process-math">\(x \in \R\)</span> хувьд <span class="process-math">\(x^2 \ge 0\text{.}\)</span>"<div class="autopermalink" data-description="Paragraph"><a href="#act-1-1-1-8-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.1.2.f"><a href="#act-1-1-1-8" title="Copy heading and permalink for Task 1.1.2.f">🔗</a></div></article><article class="task exercise-like" id="act-1-1-1-9"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<div class="para" id="act-1-1-1-9-1-1">"2026 оны 1-р сарын 1-нд МУИС-д цас орсон."<div class="autopermalink" data-description="Paragraph"><a href="#act-1-1-1-9-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.1.2.g"><a href="#act-1-1-1-9" title="Copy heading and permalink for Task 1.1.2.g">🔗</a></div></article><div class="autopermalink" data-description="Activity 1.1.2: Дасгал. Хэллэг мөн эсэхийг тогтоох"><a href="#act-1-1-1" title="Copy heading and permalink for Activity 1.1.2: Дасгал. Хэллэг мөн эсэхийг тогтоох">🔗</a></div></article><div class="para logical" id="subsec-prop-def-7">
+<div class="para">Дасгалаас харахад дараах төрлийн өгүүлбэрүүд <em class="emphasis">хэллэг биш</em> юм:</div>
+<ul class="disc" id="subsec-prop-def-7-2">
+<li id="subsec-prop-def-7-2-1">
+<div class="para" id="p-derived-subsec-prop-def-7-2-1">
+<dfn class="terminology">Тушаал, хүсэлт, асуулт</dfn> ("Хаалгаа хаа!", "Хаалга хаасан уу?").</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-prop-def-7-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-prop-def-7-2-2">
+<div class="para" id="p-derived-subsec-prop-def-7-2-2">
+<dfn class="terminology">Тодорхой утгагүй хувьсагчтай өгүүлбэр</dfn> ("<span class="process-math">\(x \gt  2\)</span>").</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-prop-def-7-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-prop-def-7-2-3">
+<div class="para" id="p-derived-subsec-prop-def-7-2-3">
+<dfn class="terminology">Тодорхой бус, субъектив шинж чанартай өгүүлбэр</dfn> ("Энэ ном сонирхолтой").</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-prop-def-7-2-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-prop-def-7" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.1.1: Хэллэг гэж юу вэ?"><a href="#subsec-prop-def" title="Copy heading and permalink for Subsection 1.1.1: Хэллэг гэж юу вэ?">🔗</a></div></section><section class="subsection" id="subsec-quantifiers"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="space"> </span><span class="title">Кванторууд: хувьсагчийг хэллэг болгох</span>
+</h3>
+<div class="para" id="subsec-quantifiers-2">"<span class="process-math">\(x \gt  2\)</span>" гэдэг өгүүлбэр нь <span class="process-math">\(x\)</span>-ийн утгыг мэдэхгүй цагт үнэн/худал гэдгийг тогтоож чадахгүй. Гэхдээ <em class="emphasis">бүх</em> <span class="process-math">\(x\)</span>-ийн тухай юм уу <em class="emphasis">ямар нэгэн</em> <span class="process-math">\(x\)</span>-ийн тухай ярьвал хэрэг болж эхэлнэ.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-quantifiers-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-quantifiers"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-quantifiers-1-1">
+<div class="para">Дараах хоёр тэмдгийг <dfn class="terminology">квантор</dfn> (quantifier) гэнэ:</div>
+<ul class="disc" id="def-quantifiers-1-1-2">
+<li id="def-quantifiers-1-1-2-1">
+<div class="para" id="p-derived-def-quantifiers-1-1-2-1">
+<span class="process-math">\(\forall\)</span> — "бүх", "дурын", "аливаа" (universal quantifier).</div>
+<div class="autopermalink" data-description="Item"><a href="#def-quantifiers-1-1-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="def-quantifiers-1-1-2-2">
+<div class="para" id="p-derived-def-quantifiers-1-1-2-2">
+<span class="process-math">\(\exists\)</span> — "оршино", "олдоно", "зарим" (existential quantifier).</div>
+<div class="autopermalink" data-description="Item"><a href="#def-quantifiers-1-1-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Мөн <span class="process-math">\(\exists!\)</span> нь "цор ганц олдоно" гэсэн утгатай.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-quantifiers-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 1.1.2"><a href="#def-quantifiers" title="Copy heading and permalink for Definition 1.1.2">🔗</a></div></article><details id="ex-quantifier-reading" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Кванторт хэллэг унших.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-quantifier-reading-2">
+<ol class="decimal" id="ex-quantifier-reading-2-1">
+<li id="ex-quantifier-reading-2-1-1">
+<div class="para" id="ex-quantifier-reading-2-1-1-1">
+<span class="process-math">\(\forall x \in \R\ (x \gt  1 \Rightarrow x^2 \gt  1)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-quantifier-reading-2-1-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-quantifier-reading-2-1-1-2">
+<em class="emphasis">Уншилт:</em> Бүх бодит <span class="process-math">\(x\)</span>-ийн хувьд, хэрэв <span class="process-math">\(x \gt  1\)</span> бол <span class="process-math">\(x^2 \gt  1\text{.}\)</span> (Үнэн.)<div class="autopermalink" data-description="Paragraph"><a href="#ex-quantifier-reading-2-1-1-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#ex-quantifier-reading-2-1-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-quantifier-reading-2-1-2">
+<div class="para" id="ex-quantifier-reading-2-1-2-1">
+<span class="process-math">\(\exists! n \in \N\ (n^2 = 25)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-quantifier-reading-2-1-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-quantifier-reading-2-1-2-2">
+<em class="emphasis">Уншилт:</em> Натурал тоонуудаас <span class="process-math">\(n^2 = 25\)</span> байх <em class="emphasis">цор ганц</em> <span class="process-math">\(n\)</span> оршино, тухайлбал <span class="process-math">\(n = 5\text{.}\)</span> (Үнэн.)<div class="autopermalink" data-description="Paragraph"><a href="#ex-quantifier-reading-2-1-2-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#ex-quantifier-reading-2-1-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="ex-quantifier-reading-2-1-3">
+<div class="para" id="ex-quantifier-reading-2-1-3-1">
+<span class="process-math">\(\exists x \in \R\ (x^2 = -1)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-quantifier-reading-2-1-3-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-quantifier-reading-2-1-3-2">
+<em class="emphasis">Уншилт:</em> <span class="process-math">\(x^2 = -1\)</span> байх бодит <span class="process-math">\(x\)</span> оршино. (Худал.)<div class="autopermalink" data-description="Paragraph"><a href="#ex-quantifier-reading-2-1-3-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#ex-quantifier-reading-2-1-3" title="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-quantifier-reading-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.1.3: Кванторт хэллэг унших"><a href="#ex-quantifier-reading" title="Copy heading and permalink for Example 1.1.3: Кванторт хэллэг унших">🔗</a></div></article></details><article class="activity project-like" id="act-1-1-2"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Дасгал. Кванторт хэллэгийг шинжлэх.</span>
+</h4>
+<article class="task exercise-like" id="act-1-1-2-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="act-1-1-2-2-1-1">
+<span class="process-math">\(\forall x \in \R\ (x^2 \ge 0)\)</span> хэллэг үнэн үү? Тайлбарла.<div class="autopermalink" data-description="Paragraph"><a href="#act-1-1-2-2-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.1.3.a"><a href="#act-1-1-2-2" title="Copy heading and permalink for Task 1.1.3.a">🔗</a></div></article><article class="task exercise-like" id="act-1-1-2-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="act-1-1-2-3-1-1">
+<span class="process-math">\(\exists x \in \R\ (x^2 + 1 = 0)\)</span> хэллэг үнэн үү? Тайлбарла.<div class="autopermalink" data-description="Paragraph"><a href="#act-1-1-2-3-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.1.3.b"><a href="#act-1-1-2-3" title="Copy heading and permalink for Task 1.1.3.b">🔗</a></div></article><article class="task exercise-like" id="act-1-1-2-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="act-1-1-2-4-1-1">
+<span class="process-math">\(\forall n \in \N\ (n \gt  0)\)</span> хэллэг үнэн үү? Тэгвэл <span class="process-math">\(\forall n \in \Z\ (n \gt  0)\)</span> ?<div class="autopermalink" data-description="Paragraph"><a href="#act-1-1-2-4-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.1.3.c"><a href="#act-1-1-2-4" title="Copy heading and permalink for Task 1.1.3.c">🔗</a></div></article><article class="task exercise-like" id="act-1-1-2-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para logical" id="act-1-1-2-5-1-1">
+<div class="para">Дараах хэллэгийг монгол хэлээр уншиж, үнэн эсэхийг тогтоо:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall x \in \R\ (x \neq 0 \Rightarrow x^2 &gt; 0).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#act-1-1-2-5-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.1.3.d"><a href="#act-1-1-2-5" title="Copy heading and permalink for Task 1.1.3.d">🔗</a></div></article><div class="autopermalink" data-description="Activity 1.1.3: Дасгал. Кванторт хэллэгийг шинжлэх"><a href="#act-1-1-2" title="Copy heading and permalink for Activity 1.1.3: Дасгал. Кванторт хэллэгийг шинжлэх">🔗</a></div></article><div class="para" id="subsec-quantifiers-6">Та анзаарсан биз дээ — кванторгүй өгүүлбэр ("<span class="process-math">\(x \gt  2\)</span>") нь хэллэг биш боловч квантортой болсноор хэллэг болж байгаа юм.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-quantifiers-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.1.2: Кванторууд: хувьсагчийг хэллэг болгох"><a href="#subsec-quantifiers" title="Copy heading and permalink for Subsection 1.1.2: Кванторууд: хувьсагчийг хэллэг болгох">🔗</a></div></section><section class="subsection" id="subsec-summary-1-1"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="space"> </span><span class="title">Хураангуй</span>
+</h3>
+<div class="para logical" id="subsec-summary-1-1-2">
+<ul class="disc" id="subsec-summary-1-1-2-1">
+<li id="subsec-summary-1-1-2-1-1">
+<div class="para" id="p-derived-subsec-summary-1-1-2-1-1">Үнэн эсвэл худал гэж тогтоож болох өгүүлбэрийг <dfn class="terminology">хэллэг</dfn> гэнэ.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-summary-1-1-2-1-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-summary-1-1-2-1-2">
+<div class="para" id="p-derived-subsec-summary-1-1-2-1-2">Тушаал, асуулт, тодорхойгүй өгүүлбэрүүд хэллэг биш.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-summary-1-1-2-1-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-summary-1-1-2-1-3">
+<div class="para" id="p-derived-subsec-summary-1-1-2-1-3">Хувьсагчтай өгүүлбэрийг <span class="process-math">\(\forall\)</span> эсвэл <span class="process-math">\(\exists\)</span> кванторын тусламжтайгаар хэллэг болгож болно.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-summary-1-1-2-1-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-summary-1-1-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.1.3: Хураангуй"><a href="#subsec-summary-1-1" title="Copy heading and permalink for Subsection 1.1.3: Хураангуй">🔗</a></div></section><section class="exercises" id="exer-1-1"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="space"> </span><span class="title">Гэрийн даалгавар</span>
+</h3>
+<article class="exercise exercise-like" id="ex-1-1-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="ex-1-1-1-1-1">
+<div class="para">Дараах өгүүлбэрүүдийн аль нь хэллэг вэ? Хэллэг бол үнэний утгыг тогтоо; хэллэг биш бол яагаад биш болохыг тайлбарла.</div>
+<ol class="lower-alpha ol-marker-1" id="ex-1-1-1-1-1-1">
+<li id="ex-1-1-1-1-1-1-1">
+<div class="para" id="p-derived-ex-1-1-1-1-1-1-1"><span class="process-math">\(\displaystyle 3 + 4 = 7\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.4.1.a"><a href="#ex-1-1-1-1-1-1-1" title="Copy heading and permalink for Item 1.1.4.1.a">🔗</a></div>
+</li>
+<li id="ex-1-1-1-1-1-1-2">
+<div class="para" id="p-derived-ex-1-1-1-1-1-1-2">"Энэ ном хүнд."</div>
+<div class="autopermalink" data-description="Item 1.1.4.1.b"><a href="#ex-1-1-1-1-1-1-2" title="Copy heading and permalink for Item 1.1.4.1.b">🔗</a></div>
+</li>
+<li id="ex-1-1-1-1-1-1-3">
+<div class="para" id="p-derived-ex-1-1-1-1-1-1-3">"<span class="process-math">\(y + 1 = 0\)</span>"</div>
+<div class="autopermalink" data-description="Item 1.1.4.1.c"><a href="#ex-1-1-1-1-1-1-3" title="Copy heading and permalink for Item 1.1.4.1.c">🔗</a></div>
+</li>
+<li id="ex-1-1-1-1-1-1-4">
+<div class="para" id="p-derived-ex-1-1-1-1-1-1-4"><span class="process-math">\(\displaystyle \forall x \in \R\ (x^2 + 1 \gt  0)\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.4.1.d"><a href="#ex-1-1-1-1-1-1-4" title="Copy heading and permalink for Item 1.1.4.1.d">🔗</a></div>
+</li>
+<li id="ex-1-1-1-1-1-1-5">
+<div class="para" id="p-derived-ex-1-1-1-1-1-1-5">"Хэн вэ?"</div>
+<div class="autopermalink" data-description="Item 1.1.4.1.e"><a href="#ex-1-1-1-1-1-1-5" title="Copy heading and permalink for Item 1.1.4.1.e">🔗</a></div>
+</li>
+<li id="ex-1-1-1-1-1-1-6">
+<div class="para" id="p-derived-ex-1-1-1-1-1-1-6">"Дорж 19 настай."</div>
+<div class="autopermalink" data-description="Item 1.1.4.1.f"><a href="#ex-1-1-1-1-1-1-6" title="Copy heading and permalink for Item 1.1.4.1.f">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-1-1-1-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.1.4.1"><a href="#ex-1-1-1" title="Copy heading and permalink for Exercise 1.1.4.1">🔗</a></div></article><article class="exercise exercise-like" id="ex-1-1-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="ex-1-1-2-1-1">
+<div class="para">Дараах хэллэгүүдийн үнэний утгыг тогтоо:</div>
+<ol class="lower-alpha ol-marker-1" id="ex-1-1-2-1-1-1">
+<li id="ex-1-1-2-1-1-1-1">
+<div class="para" id="p-derived-ex-1-1-2-1-1-1-1"><span class="process-math">\(\displaystyle \forall n \in \N\ (n^2 \ge n)\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.4.2.a"><a href="#ex-1-1-2-1-1-1-1" title="Copy heading and permalink for Item 1.1.4.2.a">🔗</a></div>
+</li>
+<li id="ex-1-1-2-1-1-1-2">
+<div class="para" id="p-derived-ex-1-1-2-1-1-1-2"><span class="process-math">\(\displaystyle \exists n \in \N\ (n^2 = 16)\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.4.2.b"><a href="#ex-1-1-2-1-1-1-2" title="Copy heading and permalink for Item 1.1.4.2.b">🔗</a></div>
+</li>
+<li id="ex-1-1-2-1-1-1-3">
+<div class="para" id="p-derived-ex-1-1-2-1-1-1-3"><span class="process-math">\(\displaystyle \exists! n \in \N\ (n^2 = 16)\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.4.2.c"><a href="#ex-1-1-2-1-1-1-3" title="Copy heading and permalink for Item 1.1.4.2.c">🔗</a></div>
+</li>
+<li id="ex-1-1-2-1-1-1-4">
+<div class="para" id="p-derived-ex-1-1-2-1-1-1-4"><span class="process-math">\(\displaystyle \forall x \in \R\ (x^2 = x)\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.4.2.d"><a href="#ex-1-1-2-1-1-1-4" title="Copy heading and permalink for Item 1.1.4.2.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-1-1-2-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.1.4.2"><a href="#ex-1-1-2" title="Copy heading and permalink for Exercise 1.1.4.2">🔗</a></div></article><article class="exercise exercise-like" id="ex-1-1-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="ex-1-1-3-1-1">"Энэ хичээл сонирхолтой" гэдэг өгүүлбэр хэллэг биш юм. Үүнийг хэллэг болгохын тулд яаж засах хэрэгтэй вэ? Хоёр өөр аргаар санал болго.<div class="autopermalink" data-description="Paragraph"><a href="#ex-1-1-3-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.1.4.3"><a href="#ex-1-1-3" title="Copy heading and permalink for Exercise 1.1.4.3">🔗</a></div></article><article class="exercise exercise-like" id="ex-1-1-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="ex-1-1-4-1-1">Дараах өгүүлбэрийг кванторт хэллэг болгож тэмдэглэгээгээр бич: "Дурын бодит тоо нь түүний квадрат бус бол түүний квадрат нь түүнээсээ их байна."<div class="autopermalink" data-description="Paragraph"><a href="#ex-1-1-4-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.1.4.4"><a href="#ex-1-1-4" title="Copy heading and permalink for Exercise 1.1.4.4">🔗</a></div></article><div class="autopermalink" data-description="Exercises 1.1.4: Гэрийн даалгавар"><a href="#exer-1-1" title="Copy heading and permalink for Exercises 1.1.4: Гэрийн даалгавар">🔗</a></div></section><section class="exercises" id="exer-1-1-extra"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="space"> </span><span class="title">Нэмэлт дасгал. Хэллэг таних</span>
+</h3>
+<section class="introduction" id="exer-1-1-extra-2"><div class="para" id="exer-1-1-extra-2-1">Доорх дасгалуудаар та хэллэг таних чадвараа жигшээгээр сорино. Дасгал бүр нь өөрийн нөхцлийн дагуу үнэн/худал/хэллэг биш гэсэн ангиллаар хариулагдана. Бодолт нь хариуны доор бий, гэхдээ эхлээд өөрөө бод!<div class="autopermalink" data-description="Paragraph"><a href="#exer-1-1-extra-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><article class="subexercises" id="exer-1-1-extra-3"><h4 class="heading"><span class="title">Хялбар түвшин</span></h4>
+<article class="exercise exercise-like" id="ex-prop-easy-1"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="para logical" id="ex-prop-easy-1-1-1">
+<div class="para">Дараах өгүүлбэрүүд хэллэг үү? Хэллэг бол үнэний утгыг тогтоо:</div>
+<ol class="lower-alpha ol-marker-1" id="ex-prop-easy-1-1-1-1">
+<li id="ex-prop-easy-1-1-1-1-1">
+<div class="para" id="p-derived-ex-prop-easy-1-1-1-1-1">“<span class="process-math">\(10\)</span> бол анхны тоо.”</div>
+<div class="autopermalink" data-description="Item 1.1.5.1.a"><a href="#ex-prop-easy-1-1-1-1-1" title="Copy heading and permalink for Item 1.1.5.1.a">🔗</a></div>
+</li>
+<li id="ex-prop-easy-1-1-1-1-2">
+<div class="para" id="p-derived-ex-prop-easy-1-1-1-1-2">“<span class="process-math">\(15\)</span> нь <span class="process-math">\(3\)</span>-т хуваагдана.”</div>
+<div class="autopermalink" data-description="Item 1.1.5.1.b"><a href="#ex-prop-easy-1-1-1-1-2" title="Copy heading and permalink for Item 1.1.5.1.b">🔗</a></div>
+</li>
+<li id="ex-prop-easy-1-1-1-1-3">
+<div class="para" id="p-derived-ex-prop-easy-1-1-1-1-3">“Намар бол сайхан улирал.”</div>
+<div class="autopermalink" data-description="Item 1.1.5.1.c"><a href="#ex-prop-easy-1-1-1-1-3" title="Copy heading and permalink for Item 1.1.5.1.c">🔗</a></div>
+</li>
+<li id="ex-prop-easy-1-1-1-1-4">
+<div class="para" id="p-derived-ex-prop-easy-1-1-1-1-4">“<span class="process-math">\(n + 5 = 12\)</span>” (энд <span class="process-math">\(n\)</span> нь тодорхой утгагүй)</div>
+<div class="autopermalink" data-description="Item 1.1.5.1.d"><a href="#ex-prop-easy-1-1-1-1-4" title="Copy heading and permalink for Item 1.1.5.1.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-easy-1-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ex-prop-easy-1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="ex-prop-easy-1-2-1">Үнэн/худал гэж тогтоохын тулд тодорхой нэгэн утгатай байх ёстой. Хэрэв тогтоохын тулд илүү мэдээлэл хэрэгтэй бол хэллэг биш.<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-easy-1-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.1.5.1.1"><a href="#ex-prop-easy-1-2" title="Copy heading and permalink for Hint 1.1.5.1.1">🔗</a></div>
+</div></details><details id="ex-prop-easy-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-prop-easy-1-3-1">
+<ol class="lower-alpha ol-marker-1" id="ex-prop-easy-1-3-1-1">
+<li id="ex-prop-easy-1-3-1-1-1">
+<div class="para" id="p-derived-ex-prop-easy-1-3-1-1-1">Хэллэг — <em class="emphasis">худал</em> (<span class="process-math">\(10 = 2 \cdot 5\text{,}\)</span> иймд <span class="process-math">\(10\)</span> анхны биш).</div>
+<div class="autopermalink" data-description="Item 1.1.5.1.a"><a href="#ex-prop-easy-1-3-1-1-1" title="Copy heading and permalink for Item 1.1.5.1.a">🔗</a></div>
+</li>
+<li id="ex-prop-easy-1-3-1-1-2">
+<div class="para" id="p-derived-ex-prop-easy-1-3-1-1-2">Хэллэг — <em class="emphasis">үнэн</em> (<span class="process-math">\(15 = 3 \cdot 5\)</span>).</div>
+<div class="autopermalink" data-description="Item 1.1.5.1.b"><a href="#ex-prop-easy-1-3-1-1-2" title="Copy heading and permalink for Item 1.1.5.1.b">🔗</a></div>
+</li>
+<li id="ex-prop-easy-1-3-1-1-3">
+<div class="para" id="p-derived-ex-prop-easy-1-3-1-1-3">Хэллэг биш — субъектив, тодорхой шалгуургүй.</div>
+<div class="autopermalink" data-description="Item 1.1.5.1.c"><a href="#ex-prop-easy-1-3-1-1-3" title="Copy heading and permalink for Item 1.1.5.1.c">🔗</a></div>
+</li>
+<li id="ex-prop-easy-1-3-1-1-4">
+<div class="para" id="p-derived-ex-prop-easy-1-3-1-1-4">Хэллэг биш — <span class="process-math">\(n\)</span>-ийн утгыг мэдэхгүй цагт үнэн/худлыг тогтоох боломжгүй.</div>
+<div class="autopermalink" data-description="Item 1.1.5.1.d"><a href="#ex-prop-easy-1-3-1-1-4" title="Copy heading and permalink for Item 1.1.5.1.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-easy-1-3-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.1.5.1.1"><a href="#ex-prop-easy-1-3" title="Copy heading and permalink for Solution 1.1.5.1.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.1.5.1"><a href="#ex-prop-easy-1" title="Copy heading and permalink for Exercise 1.1.5.1">🔗</a></div></article><article class="exercise exercise-like" id="ex-prop-easy-2"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="para logical" id="ex-prop-easy-2-1-1">
+<div class="para">Дараах өгүүлбэрүүдийн аль нь хэллэг вэ?</div>
+<ol class="lower-alpha ol-marker-1" id="ex-prop-easy-2-1-1-1">
+<li id="ex-prop-easy-2-1-1-1-1">
+<div class="para" id="p-derived-ex-prop-easy-2-1-1-1-1">“Гадуур цас орж байна.” (тодорхой үед, тодорхой газар)</div>
+<div class="autopermalink" data-description="Item 1.1.5.2.a"><a href="#ex-prop-easy-2-1-1-1-1" title="Copy heading and permalink for Item 1.1.5.2.a">🔗</a></div>
+</li>
+<li id="ex-prop-easy-2-1-1-1-2">
+<div class="para" id="p-derived-ex-prop-easy-2-1-1-1-2">“Хичнээн гүн нуур вэ?”</div>
+<div class="autopermalink" data-description="Item 1.1.5.2.b"><a href="#ex-prop-easy-2-1-1-1-2" title="Copy heading and permalink for Item 1.1.5.2.b">🔗</a></div>
+</li>
+<li id="ex-prop-easy-2-1-1-1-3">
+<div class="para" id="p-derived-ex-prop-easy-2-1-1-1-3">“<span class="process-math">\(2 \cdot 3 = 6\)</span>”</div>
+<div class="autopermalink" data-description="Item 1.1.5.2.c"><a href="#ex-prop-easy-2-1-1-1-3" title="Copy heading and permalink for Item 1.1.5.2.c">🔗</a></div>
+</li>
+<li id="ex-prop-easy-2-1-1-1-4">
+<div class="para" id="p-derived-ex-prop-easy-2-1-1-1-4">“Энэ ангид <span class="process-math">\(50\)</span> сурагч байна.”</div>
+<div class="autopermalink" data-description="Item 1.1.5.2.d"><a href="#ex-prop-easy-2-1-1-1-4" title="Copy heading and permalink for Item 1.1.5.2.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-easy-2-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-prop-easy-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-prop-easy-2-2-1">
+<ol class="lower-alpha ol-marker-1" id="ex-prop-easy-2-2-1-1">
+<li id="ex-prop-easy-2-2-1-1-1">
+<div class="para" id="p-derived-ex-prop-easy-2-2-1-1-1">Хэллэг — газар, цаг тодорхой бол үнэн эсэхийг тогтоож болно.</div>
+<div class="autopermalink" data-description="Item 1.1.5.2.a"><a href="#ex-prop-easy-2-2-1-1-1" title="Copy heading and permalink for Item 1.1.5.2.a">🔗</a></div>
+</li>
+<li id="ex-prop-easy-2-2-1-1-2">
+<div class="para" id="p-derived-ex-prop-easy-2-2-1-1-2">Хэллэг биш — асуулт.</div>
+<div class="autopermalink" data-description="Item 1.1.5.2.b"><a href="#ex-prop-easy-2-2-1-1-2" title="Copy heading and permalink for Item 1.1.5.2.b">🔗</a></div>
+</li>
+<li id="ex-prop-easy-2-2-1-1-3">
+<div class="para" id="p-derived-ex-prop-easy-2-2-1-1-3">Хэллэг — <em class="emphasis">үнэн</em>.</div>
+<div class="autopermalink" data-description="Item 1.1.5.2.c"><a href="#ex-prop-easy-2-2-1-1-3" title="Copy heading and permalink for Item 1.1.5.2.c">🔗</a></div>
+</li>
+<li id="ex-prop-easy-2-2-1-1-4">
+<div class="para" id="p-derived-ex-prop-easy-2-2-1-1-4">Хэллэг — анги, цаг тодорхой бол үнэн/худлыг тогтоож болно.</div>
+<div class="autopermalink" data-description="Item 1.1.5.2.d"><a href="#ex-prop-easy-2-2-1-1-4" title="Copy heading and permalink for Item 1.1.5.2.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-easy-2-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.1.5.2.1"><a href="#ex-prop-easy-2-2" title="Copy heading and permalink for Solution 1.1.5.2.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 1.1.5.2"><a href="#ex-prop-easy-2" title="Copy heading and permalink for Exercise 1.1.5.2">🔗</a></div></article><article class="exercise exercise-like" id="ex-prop-easy-3"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div class="para logical" id="ex-prop-easy-3-1-1">
+<div class="para">Дараах хэллэгүүдийн үнэний утгыг тогтоо:</div>
+<ol class="lower-alpha ol-marker-1" id="ex-prop-easy-3-1-1-1">
+<li id="ex-prop-easy-3-1-1-1-1">
+<div class="para" id="p-derived-ex-prop-easy-3-1-1-1-1"><span class="process-math">\(\displaystyle 7^2 = 49\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.5.3.a"><a href="#ex-prop-easy-3-1-1-1-1" title="Copy heading and permalink for Item 1.1.5.3.a">🔗</a></div>
+</li>
+<li id="ex-prop-easy-3-1-1-1-2">
+<div class="para" id="p-derived-ex-prop-easy-3-1-1-1-2"><span class="process-math">\(\displaystyle \sqrt{16} = 4\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.5.3.b"><a href="#ex-prop-easy-3-1-1-1-2" title="Copy heading and permalink for Item 1.1.5.3.b">🔗</a></div>
+</li>
+<li id="ex-prop-easy-3-1-1-1-3">
+<div class="para" id="p-derived-ex-prop-easy-3-1-1-1-3"><span class="process-math">\(\displaystyle 0.5 \in \Z\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.5.3.c"><a href="#ex-prop-easy-3-1-1-1-3" title="Copy heading and permalink for Item 1.1.5.3.c">🔗</a></div>
+</li>
+<li id="ex-prop-easy-3-1-1-1-4">
+<div class="para" id="p-derived-ex-prop-easy-3-1-1-1-4"><span class="process-math">\(\displaystyle -3 \in \N\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.5.3.d"><a href="#ex-prop-easy-3-1-1-1-4" title="Copy heading and permalink for Item 1.1.5.3.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-easy-3-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-prop-easy-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-prop-easy-3-2-1">
+<ol class="lower-alpha ol-marker-1" id="ex-prop-easy-3-2-1-1">
+<li id="ex-prop-easy-3-2-1-1-1">
+<div class="para" id="p-derived-ex-prop-easy-3-2-1-1-1">Үнэн.</div>
+<div class="autopermalink" data-description="Item 1.1.5.3.a"><a href="#ex-prop-easy-3-2-1-1-1" title="Copy heading and permalink for Item 1.1.5.3.a">🔗</a></div>
+</li>
+<li id="ex-prop-easy-3-2-1-1-2">
+<div class="para" id="p-derived-ex-prop-easy-3-2-1-1-2">Үнэн.</div>
+<div class="autopermalink" data-description="Item 1.1.5.3.b"><a href="#ex-prop-easy-3-2-1-1-2" title="Copy heading and permalink for Item 1.1.5.3.b">🔗</a></div>
+</li>
+<li id="ex-prop-easy-3-2-1-1-3">
+<div class="para" id="p-derived-ex-prop-easy-3-2-1-1-3">Худал — <span class="process-math">\(0.5\)</span> бүхэл биш.</div>
+<div class="autopermalink" data-description="Item 1.1.5.3.c"><a href="#ex-prop-easy-3-2-1-1-3" title="Copy heading and permalink for Item 1.1.5.3.c">🔗</a></div>
+</li>
+<li id="ex-prop-easy-3-2-1-1-4">
+<div class="para" id="p-derived-ex-prop-easy-3-2-1-1-4">Худал — <span class="process-math">\(-3\)</span> натурал биш (<span class="process-math">\(\N = \{1, 2, 3, \ldots\}\)</span>).</div>
+<div class="autopermalink" data-description="Item 1.1.5.3.d"><a href="#ex-prop-easy-3-2-1-1-4" title="Copy heading and permalink for Item 1.1.5.3.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-easy-3-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.1.5.3.1"><a href="#ex-prop-easy-3-2" title="Copy heading and permalink for Solution 1.1.5.3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 1.1.5.3"><a href="#ex-prop-easy-3" title="Copy heading and permalink for Exercise 1.1.5.3">🔗</a></div></article><article class="exercise exercise-like" id="ex-prop-easy-4"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="para logical" id="ex-prop-easy-4-1-1">
+<div class="para">Дараах өгүүлбэрүүдийг үнэн, худал, эсвэл хэллэг биш гэж ангил:</div>
+<ol class="lower-alpha ol-marker-1" id="ex-prop-easy-4-1-1-1">
+<li id="ex-prop-easy-4-1-1-1-1">
+<div class="para" id="p-derived-ex-prop-easy-4-1-1-1-1">“Чи хэдэн настай вэ?”</div>
+<div class="autopermalink" data-description="Item 1.1.5.4.a"><a href="#ex-prop-easy-4-1-1-1-1" title="Copy heading and permalink for Item 1.1.5.4.a">🔗</a></div>
+</li>
+<li id="ex-prop-easy-4-1-1-1-2">
+<div class="para" id="p-derived-ex-prop-easy-4-1-1-1-2">“<span class="process-math">\(1 + 1 = 3\)</span>”</div>
+<div class="autopermalink" data-description="Item 1.1.5.4.b"><a href="#ex-prop-easy-4-1-1-1-2" title="Copy heading and permalink for Item 1.1.5.4.b">🔗</a></div>
+</li>
+<li id="ex-prop-easy-4-1-1-1-3">
+<div class="para" id="p-derived-ex-prop-easy-4-1-1-1-3">“Хичээлдээ тогтмол ир!”</div>
+<div class="autopermalink" data-description="Item 1.1.5.4.c"><a href="#ex-prop-easy-4-1-1-1-3" title="Copy heading and permalink for Item 1.1.5.4.c">🔗</a></div>
+</li>
+<li id="ex-prop-easy-4-1-1-1-4">
+<div class="para" id="p-derived-ex-prop-easy-4-1-1-1-4">“<span class="process-math">\(\pi\)</span> нь <span class="process-math">\(3\)</span>-аас их.”</div>
+<div class="autopermalink" data-description="Item 1.1.5.4.d"><a href="#ex-prop-easy-4-1-1-1-4" title="Copy heading and permalink for Item 1.1.5.4.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-easy-4-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-prop-easy-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-prop-easy-4-2-1">
+<ol class="lower-alpha ol-marker-1" id="ex-prop-easy-4-2-1-1">
+<li id="ex-prop-easy-4-2-1-1-1">
+<div class="para" id="p-derived-ex-prop-easy-4-2-1-1-1">Хэллэг биш — асуулт.</div>
+<div class="autopermalink" data-description="Item 1.1.5.4.a"><a href="#ex-prop-easy-4-2-1-1-1" title="Copy heading and permalink for Item 1.1.5.4.a">🔗</a></div>
+</li>
+<li id="ex-prop-easy-4-2-1-1-2">
+<div class="para" id="p-derived-ex-prop-easy-4-2-1-1-2">Хэллэг — <em class="emphasis">худал</em>.</div>
+<div class="autopermalink" data-description="Item 1.1.5.4.b"><a href="#ex-prop-easy-4-2-1-1-2" title="Copy heading and permalink for Item 1.1.5.4.b">🔗</a></div>
+</li>
+<li id="ex-prop-easy-4-2-1-1-3">
+<div class="para" id="p-derived-ex-prop-easy-4-2-1-1-3">Хэллэг биш — тушаал.</div>
+<div class="autopermalink" data-description="Item 1.1.5.4.c"><a href="#ex-prop-easy-4-2-1-1-3" title="Copy heading and permalink for Item 1.1.5.4.c">🔗</a></div>
+</li>
+<li id="ex-prop-easy-4-2-1-1-4">
+<div class="para" id="p-derived-ex-prop-easy-4-2-1-1-4">Хэллэг — <em class="emphasis">үнэн</em> (<span class="process-math">\(\pi \approx 3.14159\)</span>).</div>
+<div class="autopermalink" data-description="Item 1.1.5.4.d"><a href="#ex-prop-easy-4-2-1-1-4" title="Copy heading and permalink for Item 1.1.5.4.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-easy-4-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.1.5.4.1"><a href="#ex-prop-easy-4-2" title="Copy heading and permalink for Solution 1.1.5.4.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 1.1.5.4"><a href="#ex-prop-easy-4" title="Copy heading and permalink for Exercise 1.1.5.4">🔗</a></div></article><div class="autopermalink" data-description="Subexercises: Хялбар түвшин"><a href="#exer-1-1-extra-3" title="Copy heading and permalink for Subexercises: Хялбар түвшин">🔗</a></div></article><article class="subexercises" id="exer-1-1-extra-4"><h4 class="heading"><span class="title">Дунд түвшин</span></h4>
+<article class="exercise exercise-like" id="ex-prop-med-1"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para logical" id="ex-prop-med-1-1-1">
+<div class="para">Дараах кванторт хэллэгүүдийн үнэний утгыг тогтоо:</div>
+<ol class="lower-alpha ol-marker-1" id="ex-prop-med-1-1-1-1">
+<li id="ex-prop-med-1-1-1-1-1">
+<div class="para" id="p-derived-ex-prop-med-1-1-1-1-1"><span class="process-math">\(\displaystyle \forall x \in \R\ (x^2 + 1 \gt 0)\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.5.5.a"><a href="#ex-prop-med-1-1-1-1-1" title="Copy heading and permalink for Item 1.1.5.5.a">🔗</a></div>
+</li>
+<li id="ex-prop-med-1-1-1-1-2">
+<div class="para" id="p-derived-ex-prop-med-1-1-1-1-2"><span class="process-math">\(\displaystyle \exists n \in \N\ (n^2 = 2n)\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.5.5.b"><a href="#ex-prop-med-1-1-1-1-2" title="Copy heading and permalink for Item 1.1.5.5.b">🔗</a></div>
+</li>
+<li id="ex-prop-med-1-1-1-1-3">
+<div class="para" id="p-derived-ex-prop-med-1-1-1-1-3"><span class="process-math">\(\displaystyle \forall n \in \N\ (n + 1 \gt n)\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.5.5.c"><a href="#ex-prop-med-1-1-1-1-3" title="Copy heading and permalink for Item 1.1.5.5.c">🔗</a></div>
+</li>
+<li id="ex-prop-med-1-1-1-1-4">
+<div class="para" id="p-derived-ex-prop-med-1-1-1-1-4"><span class="process-math">\(\displaystyle \exists x \in \Q\ (x^2 = 2)\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.5.5.d"><a href="#ex-prop-med-1-1-1-1-4" title="Copy heading and permalink for Item 1.1.5.5.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-med-1-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ex-prop-med-1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="ex-prop-med-1-2-1">(б)-д <span class="process-math">\(n^2 = 2n\)</span> тэгшитгэлийг бод: <span class="process-math">\(n(n - 2) = 0\text{,}\)</span> иймд <span class="process-math">\(n = 0\)</span> эсвэл <span class="process-math">\(n = 2\text{.}\)</span> Аль нь натурал тоо вэ?<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-med-1-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-prop-med-1-2-2">(г)-д <span class="process-math">\(x^2 = 2\)</span> бол <span class="process-math">\(x = \pm\sqrt{2}\)</span> — рационал уу?<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-med-1-2-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.1.5.5.1"><a href="#ex-prop-med-1-2" title="Copy heading and permalink for Hint 1.1.5.5.1">🔗</a></div>
+</div></details><details id="ex-prop-med-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-prop-med-1-3-1">
+<ol class="lower-alpha ol-marker-1" id="ex-prop-med-1-3-1-1">
+<li id="ex-prop-med-1-3-1-1-1">
+<div class="para" id="p-derived-ex-prop-med-1-3-1-1-1">Үнэн — <span class="process-math">\(x^2 \ge 0\)</span> тул <span class="process-math">\(x^2 + 1 \ge 1 \gt 0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 1.1.5.5.a"><a href="#ex-prop-med-1-3-1-1-1" title="Copy heading and permalink for Item 1.1.5.5.a">🔗</a></div>
+</li>
+<li id="ex-prop-med-1-3-1-1-2">
+<div class="para" id="p-derived-ex-prop-med-1-3-1-1-2">Үнэн — <span class="process-math">\(n = 2\)</span> үед <span class="process-math">\(4 = 4\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 1.1.5.5.b"><a href="#ex-prop-med-1-3-1-1-2" title="Copy heading and permalink for Item 1.1.5.5.b">🔗</a></div>
+</li>
+<li id="ex-prop-med-1-3-1-1-3">
+<div class="para" id="p-derived-ex-prop-med-1-3-1-1-3">Үнэн — энгийн арифметик.</div>
+<div class="autopermalink" data-description="Item 1.1.5.5.c"><a href="#ex-prop-med-1-3-1-1-3" title="Copy heading and permalink for Item 1.1.5.5.c">🔗</a></div>
+</li>
+<li id="ex-prop-med-1-3-1-1-4">
+<div class="para" id="p-derived-ex-prop-med-1-3-1-1-4">Худал — <span class="process-math">\(\sqrt{2}\)</span> иррационал, иймд <span class="process-math">\(\Q\)</span>-д харьяалагдахгүй.</div>
+<div class="autopermalink" data-description="Item 1.1.5.5.d"><a href="#ex-prop-med-1-3-1-1-4" title="Copy heading and permalink for Item 1.1.5.5.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-med-1-3-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.1.5.5.1"><a href="#ex-prop-med-1-3" title="Copy heading and permalink for Solution 1.1.5.5.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.1.5.5"><a href="#ex-prop-med-1" title="Copy heading and permalink for Exercise 1.1.5.5">🔗</a></div></article><article class="exercise exercise-like" id="ex-prop-med-2"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para logical" id="ex-prop-med-2-1-1">
+<div class="para">“<span class="process-math">\(x \gt 0\)</span>” гэдэг нь хэллэг биш (учир нь <span class="process-math">\(x\)</span> нь тодорхой утгагүй). Үүнийг доорх 4 өөр аргаар хэллэг болго:</div>
+<ol class="lower-alpha ol-marker-1" id="ex-prop-med-2-1-1-3">
+<li id="ex-prop-med-2-1-1-3-1">
+<div class="para" id="p-derived-ex-prop-med-2-1-1-3-1">тодорхой утга өг (жишээ нь <span class="process-math">\(x = 5\)</span>),</div>
+<div class="autopermalink" data-description="Item 1.1.5.6.a"><a href="#ex-prop-med-2-1-1-3-1" title="Copy heading and permalink for Item 1.1.5.6.a">🔗</a></div>
+</li>
+<li id="ex-prop-med-2-1-1-3-2">
+<div class="para" id="p-derived-ex-prop-med-2-1-1-3-2">
+<span class="process-math">\(\forall\)</span>-ыг ашиглан универсаль хэллэг хий,</div>
+<div class="autopermalink" data-description="Item 1.1.5.6.b"><a href="#ex-prop-med-2-1-1-3-2" title="Copy heading and permalink for Item 1.1.5.6.b">🔗</a></div>
+</li>
+<li id="ex-prop-med-2-1-1-3-3">
+<div class="para" id="p-derived-ex-prop-med-2-1-1-3-3">
+<span class="process-math">\(\exists\)</span>-ыг ашиглан экзистенциал хэллэг хий,</div>
+<div class="autopermalink" data-description="Item 1.1.5.6.c"><a href="#ex-prop-med-2-1-1-3-3" title="Copy heading and permalink for Item 1.1.5.6.c">🔗</a></div>
+</li>
+<li id="ex-prop-med-2-1-1-3-4">
+<div class="para" id="p-derived-ex-prop-med-2-1-1-3-4">"Хэрэв ... бол ..." хэлбэрийн импликаци хий.</div>
+<div class="autopermalink" data-description="Item 1.1.5.6.d"><a href="#ex-prop-med-2-1-1-3-4" title="Copy heading and permalink for Item 1.1.5.6.d">🔗</a></div>
+</li>
+</ol>
+<div class="para">Тэгээд гарсан 4 хэллэгийн үнэний утгыг тогтоо.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-med-2-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-prop-med-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-prop-med-2-2-1">
+<ol class="lower-alpha ol-marker-1" id="ex-prop-med-2-2-1-1">
+<li id="ex-prop-med-2-2-1-1-1">
+<div class="para" id="p-derived-ex-prop-med-2-2-1-1-1">
+<span class="process-math">\(5 \gt 0\)</span> — үнэн.</div>
+<div class="autopermalink" data-description="Item 1.1.5.6.a"><a href="#ex-prop-med-2-2-1-1-1" title="Copy heading and permalink for Item 1.1.5.6.a">🔗</a></div>
+</li>
+<li id="ex-prop-med-2-2-1-1-2">
+<div class="para" id="p-derived-ex-prop-med-2-2-1-1-2">
+<span class="process-math">\(\forall x \in \R\ (x \gt 0)\)</span> — худал (<span class="process-math">\(x = -1\)</span> үед хэллэг худал болно).</div>
+<div class="autopermalink" data-description="Item 1.1.5.6.b"><a href="#ex-prop-med-2-2-1-1-2" title="Copy heading and permalink for Item 1.1.5.6.b">🔗</a></div>
+</li>
+<li id="ex-prop-med-2-2-1-1-3">
+<div class="para" id="p-derived-ex-prop-med-2-2-1-1-3">
+<span class="process-math">\(\exists x \in \R\ (x \gt 0)\)</span> — үнэн (<span class="process-math">\(x = 1\)</span> үед үнэн).</div>
+<div class="autopermalink" data-description="Item 1.1.5.6.c"><a href="#ex-prop-med-2-2-1-1-3" title="Copy heading and permalink for Item 1.1.5.6.c">🔗</a></div>
+</li>
+<li id="ex-prop-med-2-2-1-1-4">
+<div class="para" id="p-derived-ex-prop-med-2-2-1-1-4">
+<span class="process-math">\(\forall x \in \R\ (x \in \N \Rightarrow x \gt 0)\)</span> — үнэн (натурал тоо нь <span class="process-math">\(1\)</span>-ээс эхэлдэг).</div>
+<div class="autopermalink" data-description="Item 1.1.5.6.d"><a href="#ex-prop-med-2-2-1-1-4" title="Copy heading and permalink for Item 1.1.5.6.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-med-2-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.1.5.6.1"><a href="#ex-prop-med-2-2" title="Copy heading and permalink for Solution 1.1.5.6.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 1.1.5.6"><a href="#ex-prop-med-2" title="Copy heading and permalink for Exercise 1.1.5.6">🔗</a></div></article><article class="exercise exercise-like" id="ex-prop-med-3"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div class="para logical" id="ex-prop-med-3-1-1">
+<div class="para">Дараах өгүүлбэрүүдийг ангил (хэллэг үү, хэллэг биш үү?). Хэллэг бол үнэний утгыг тогтоо:</div>
+<ol class="lower-alpha ol-marker-1" id="ex-prop-med-3-1-1-1">
+<li id="ex-prop-med-3-1-1-1-1">
+<div class="para" id="p-derived-ex-prop-med-3-1-1-1-1">“Бүх анхны тоо сондгой.”</div>
+<div class="autopermalink" data-description="Item 1.1.5.7.a"><a href="#ex-prop-med-3-1-1-1-1" title="Copy heading and permalink for Item 1.1.5.7.a">🔗</a></div>
+</li>
+<li id="ex-prop-med-3-1-1-1-2">
+<div class="para" id="p-derived-ex-prop-med-3-1-1-1-2">“Зарим бүхэл тоо нь <span class="process-math">\(\sqrt{2}\)</span>-той тэнцүү.”</div>
+<div class="autopermalink" data-description="Item 1.1.5.7.b"><a href="#ex-prop-med-3-1-1-1-2" title="Copy heading and permalink for Item 1.1.5.7.b">🔗</a></div>
+</li>
+<li id="ex-prop-med-3-1-1-1-3">
+<div class="para" id="p-derived-ex-prop-med-3-1-1-1-3">“Тэгш тоо <span class="process-math">\(+\)</span> сондгой тоо <span class="process-math">\(=\)</span> сондгой тоо.”</div>
+<div class="autopermalink" data-description="Item 1.1.5.7.c"><a href="#ex-prop-med-3-1-1-1-3" title="Copy heading and permalink for Item 1.1.5.7.c">🔗</a></div>
+</li>
+<li id="ex-prop-med-3-1-1-1-4">
+<div class="para" id="p-derived-ex-prop-med-3-1-1-1-4">“Хэрэв энэ ном их сонирхолтой бол би уншина.”</div>
+<div class="autopermalink" data-description="Item 1.1.5.7.d"><a href="#ex-prop-med-3-1-1-1-4" title="Copy heading and permalink for Item 1.1.5.7.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-med-3-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-prop-med-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-prop-med-3-2-1">
+<ol class="lower-alpha ol-marker-1" id="ex-prop-med-3-2-1-1">
+<li id="ex-prop-med-3-2-1-1-1">
+<div class="para" id="p-derived-ex-prop-med-3-2-1-1-1">Хэллэг — <em class="emphasis">худал</em> (<span class="process-math">\(2\)</span> анхны боловч тэгш).</div>
+<div class="autopermalink" data-description="Item 1.1.5.7.a"><a href="#ex-prop-med-3-2-1-1-1" title="Copy heading and permalink for Item 1.1.5.7.a">🔗</a></div>
+</li>
+<li id="ex-prop-med-3-2-1-1-2">
+<div class="para" id="p-derived-ex-prop-med-3-2-1-1-2">Хэллэг — <em class="emphasis">худал</em> (<span class="process-math">\(\sqrt{2}\)</span> иррационал).</div>
+<div class="autopermalink" data-description="Item 1.1.5.7.b"><a href="#ex-prop-med-3-2-1-1-2" title="Copy heading and permalink for Item 1.1.5.7.b">🔗</a></div>
+</li>
+<li id="ex-prop-med-3-2-1-1-3">
+<div class="para" id="p-derived-ex-prop-med-3-2-1-1-3">Хэллэг — <em class="emphasis">үнэн</em> (<span class="process-math">\(2k + (2m+1) = 2(k+m) + 1\)</span>).</div>
+<div class="autopermalink" data-description="Item 1.1.5.7.c"><a href="#ex-prop-med-3-2-1-1-3" title="Copy heading and permalink for Item 1.1.5.7.c">🔗</a></div>
+</li>
+<li id="ex-prop-med-3-2-1-1-4">
+<div class="para" id="p-derived-ex-prop-med-3-2-1-1-4">Хэллэг биш — "сонирхолтой" гэдэг шалгуургүй субъектив ойлголт. Гэхдээ хэрэв "сонирхолтой" гэдэгт тодорхой шалгуур (хуудасны тоо г.м.) тогтоовол хэллэг болж болно.</div>
+<div class="autopermalink" data-description="Item 1.1.5.7.d"><a href="#ex-prop-med-3-2-1-1-4" title="Copy heading and permalink for Item 1.1.5.7.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-med-3-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.1.5.7.1"><a href="#ex-prop-med-3-2" title="Copy heading and permalink for Solution 1.1.5.7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 1.1.5.7"><a href="#ex-prop-med-3" title="Copy heading and permalink for Exercise 1.1.5.7">🔗</a></div></article><article class="exercise exercise-like" id="ex-prop-med-4"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div class="para logical" id="ex-prop-med-4-1-1">
+<div class="para">
+<span class="process-math">\(P(n)\text{:}\)</span> “<span class="process-math">\(n^2 \lt 100\)</span>” гэж тэмдэглэе. (<span class="process-math">\(n \in \N\text{.}\)</span>)</div>
+<ol class="lower-alpha ol-marker-1" id="ex-prop-med-4-1-1-4">
+<li id="ex-prop-med-4-1-1-4-1">
+<div class="para" id="p-derived-ex-prop-med-4-1-1-4-1">
+<span class="process-math">\(P(5)\text{,}\)</span> <span class="process-math">\(P(10)\text{,}\)</span> <span class="process-math">\(P(15)\)</span> хэллэгүүдийн үнэний утгыг тус тус тогтоо.</div>
+<div class="autopermalink" data-description="Item 1.1.5.8.a"><a href="#ex-prop-med-4-1-1-4-1" title="Copy heading and permalink for Item 1.1.5.8.a">🔗</a></div>
+</li>
+<li id="ex-prop-med-4-1-1-4-2">
+<div class="para" id="p-derived-ex-prop-med-4-1-1-4-2">
+<span class="process-math">\(\forall n \in \N\ P(n)\)</span> үнэн үү?</div>
+<div class="autopermalink" data-description="Item 1.1.5.8.b"><a href="#ex-prop-med-4-1-1-4-2" title="Copy heading and permalink for Item 1.1.5.8.b">🔗</a></div>
+</li>
+<li id="ex-prop-med-4-1-1-4-3">
+<div class="para" id="p-derived-ex-prop-med-4-1-1-4-3">
+<span class="process-math">\(\exists n \in \N\ P(n)\)</span> үнэн үү?</div>
+<div class="autopermalink" data-description="Item 1.1.5.8.c"><a href="#ex-prop-med-4-1-1-4-3" title="Copy heading and permalink for Item 1.1.5.8.c">🔗</a></div>
+</li>
+<li id="ex-prop-med-4-1-1-4-4">
+<div class="para" id="p-derived-ex-prop-med-4-1-1-4-4">
+<span class="process-math">\(P(n)\)</span> үнэн байх <span class="process-math">\(n\)</span>-уудын олонлогийг тодорхойл.</div>
+<div class="autopermalink" data-description="Item 1.1.5.8.d"><a href="#ex-prop-med-4-1-1-4-4" title="Copy heading and permalink for Item 1.1.5.8.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-med-4-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-prop-med-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-prop-med-4-2-1">
+<ol class="lower-alpha ol-marker-1" id="ex-prop-med-4-2-1-1">
+<li id="ex-prop-med-4-2-1-1-1">
+<div class="para" id="p-derived-ex-prop-med-4-2-1-1-1">
+<span class="process-math">\(P(5)\text{:}\)</span> <span class="process-math">\(25 \lt 100\)</span> — үнэн. <span class="process-math">\(P(10)\text{:}\)</span> <span class="process-math">\(100 \lt 100\)</span> — худал. <span class="process-math">\(P(15)\text{:}\)</span> <span class="process-math">\(225 \lt 100\)</span> — худал.</div>
+<div class="autopermalink" data-description="Item 1.1.5.8.a"><a href="#ex-prop-med-4-2-1-1-1" title="Copy heading and permalink for Item 1.1.5.8.a">🔗</a></div>
+</li>
+<li id="ex-prop-med-4-2-1-1-2">
+<div class="para" id="p-derived-ex-prop-med-4-2-1-1-2">Худал — <span class="process-math">\(n = 10\)</span> үед худал.</div>
+<div class="autopermalink" data-description="Item 1.1.5.8.b"><a href="#ex-prop-med-4-2-1-1-2" title="Copy heading and permalink for Item 1.1.5.8.b">🔗</a></div>
+</li>
+<li id="ex-prop-med-4-2-1-1-3">
+<div class="para" id="p-derived-ex-prop-med-4-2-1-1-3">Үнэн — <span class="process-math">\(n = 1\)</span> үед үнэн.</div>
+<div class="autopermalink" data-description="Item 1.1.5.8.c"><a href="#ex-prop-med-4-2-1-1-3" title="Copy heading and permalink for Item 1.1.5.8.c">🔗</a></div>
+</li>
+<li id="ex-prop-med-4-2-1-1-4">
+<div class="para" id="p-derived-ex-prop-med-4-2-1-1-4"><span class="process-math">\(\{n \in \N : 1 \le n \le 9\} = \{1, 2, \ldots, 9\}\text{.}\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.5.8.d"><a href="#ex-prop-med-4-2-1-1-4" title="Copy heading and permalink for Item 1.1.5.8.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-med-4-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.1.5.8.1"><a href="#ex-prop-med-4-2" title="Copy heading and permalink for Solution 1.1.5.8.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 1.1.5.8"><a href="#ex-prop-med-4" title="Copy heading and permalink for Exercise 1.1.5.8">🔗</a></div></article><div class="autopermalink" data-description="Subexercises: Дунд түвшин"><a href="#exer-1-1-extra-4" title="Copy heading and permalink for Subexercises: Дунд түвшин">🔗</a></div></article><article class="subexercises" id="exer-1-1-extra-5"><h4 class="heading"><span class="title">Хүнд түвшин</span></h4>
+<article class="exercise exercise-like" id="ex-prop-hard-1"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para logical" id="ex-prop-hard-1-1-1">
+<div class="para">Дараах кванторт хэллэгүүд нь үнэн үү, худал уу? Хариунд тодорхой тайлбар эсвэл эсрэг жишээ дагалд:</div>
+<ol class="lower-alpha ol-marker-1" id="ex-prop-hard-1-1-1-1">
+<li id="ex-prop-hard-1-1-1-1-1">
+<div class="para" id="p-derived-ex-prop-hard-1-1-1-1-1"><span class="process-math">\(\displaystyle \forall x \in \R, \exists y \in \R\ (x + y = 0)\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.5.9.a"><a href="#ex-prop-hard-1-1-1-1-1" title="Copy heading and permalink for Item 1.1.5.9.a">🔗</a></div>
+</li>
+<li id="ex-prop-hard-1-1-1-1-2">
+<div class="para" id="p-derived-ex-prop-hard-1-1-1-1-2"><span class="process-math">\(\displaystyle \exists y \in \R, \forall x \in \R\ (x + y = 0)\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.5.9.b"><a href="#ex-prop-hard-1-1-1-1-2" title="Copy heading and permalink for Item 1.1.5.9.b">🔗</a></div>
+</li>
+<li id="ex-prop-hard-1-1-1-1-3">
+<div class="para" id="p-derived-ex-prop-hard-1-1-1-1-3"><span class="process-math">\(\displaystyle \forall x \in \R, \exists n \in \N\ (n \gt x)\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.5.9.c"><a href="#ex-prop-hard-1-1-1-1-3" title="Copy heading and permalink for Item 1.1.5.9.c">🔗</a></div>
+</li>
+<li id="ex-prop-hard-1-1-1-1-4">
+<div class="para" id="p-derived-ex-prop-hard-1-1-1-1-4"><span class="process-math">\(\displaystyle \exists n \in \N, \forall x \in \R\ (n \gt x)\)</span></div>
+<div class="autopermalink" data-description="Item 1.1.5.9.d"><a href="#ex-prop-hard-1-1-1-1-4" title="Copy heading and permalink for Item 1.1.5.9.d">🔗</a></div>
+</li>
+</ol>
+<div class="para">Кванторын дараалал нь хэллэгийн утгыг хэрхэн өөрчлөж байгааг тэмдэглэ.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-hard-1-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ex-prop-hard-1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="ex-prop-hard-1-2-1">Кванторын дарааллыг солихоор маш өөр зүйл болно. <span class="process-math">\(\forall x, \exists y\)</span> гэдэг нь "<span class="process-math">\(x\)</span> бүрд өөр өөр <span class="process-math">\(y\)</span> олдоно" гэсэн утгатай. Гэвч <span class="process-math">\(\exists y, \forall x\)</span> гэдэг нь "<em class="emphasis">нэг</em> <span class="process-math">\(y\)</span> бүх <span class="process-math">\(x\)</span>-д биелнэ" гэсэн утгатай.<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-hard-1-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.1.5.9.1"><a href="#ex-prop-hard-1-2" title="Copy heading and permalink for Hint 1.1.5.9.1">🔗</a></div>
+</div></details><details id="ex-prop-hard-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-prop-hard-1-3-1">
+<ol class="lower-alpha ol-marker-1" id="ex-prop-hard-1-3-1-1">
+<li id="ex-prop-hard-1-3-1-1-1">
+<div class="para" id="p-derived-ex-prop-hard-1-3-1-1-1">Үнэн — <span class="process-math">\(x\)</span> бүрд <span class="process-math">\(y = -x\)</span> авбал хангагдана.</div>
+<div class="autopermalink" data-description="Item 1.1.5.9.a"><a href="#ex-prop-hard-1-3-1-1-1" title="Copy heading and permalink for Item 1.1.5.9.a">🔗</a></div>
+</li>
+<li id="ex-prop-hard-1-3-1-1-2">
+<div class="para" id="p-derived-ex-prop-hard-1-3-1-1-2">Худал — нэг тогтсон <span class="process-math">\(y\)</span> нь бүх <span class="process-math">\(x\)</span>-тэй <span class="process-math">\(x + y = 0\)</span> байх боломжгүй (<span class="process-math">\(x = 0\)</span> ба <span class="process-math">\(x = 1\)</span> үед өөр өөр <span class="process-math">\(y\)</span> хэрэг).</div>
+<div class="autopermalink" data-description="Item 1.1.5.9.b"><a href="#ex-prop-hard-1-3-1-1-2" title="Copy heading and permalink for Item 1.1.5.9.b">🔗</a></div>
+</li>
+<li id="ex-prop-hard-1-3-1-1-3">
+<div class="para" id="p-derived-ex-prop-hard-1-3-1-1-3">Үнэн — Архимедийн зарчим: дурын бодит тоонд бөөн натурал тоо байна.</div>
+<div class="autopermalink" data-description="Item 1.1.5.9.c"><a href="#ex-prop-hard-1-3-1-1-3" title="Copy heading and permalink for Item 1.1.5.9.c">🔗</a></div>
+</li>
+<li id="ex-prop-hard-1-3-1-1-4">
+<div class="para" id="p-derived-ex-prop-hard-1-3-1-1-4">Худал — нэг <span class="process-math">\(n\)</span> нь бүх бодит тооноос их байх боломжгүй (<span class="process-math">\(x = n + 1\)</span> үед буруу).</div>
+<div class="autopermalink" data-description="Item 1.1.5.9.d"><a href="#ex-prop-hard-1-3-1-1-4" title="Copy heading and permalink for Item 1.1.5.9.d">🔗</a></div>
+</li>
+</ol>
+<div class="para"><div class="para" id="ex-prop-hard-1-3-1-2">Тэмдэглэл: (а) ба (б) ялгаа нь чухал. (а) бүх <span class="process-math">\(x\)</span>-д өөрийнх нь харгалзах <span class="process-math">\(y\)</span>-г олдог; (б) бол <em class="emphasis">нэг</em> <span class="process-math">\(y\)</span> бүх <span class="process-math">\(x\)</span>-д ажилладаг. Сүүлийн хувилбар хэцүү боловч мэдээж энэ нь хэллэгийг худал болгож байна.<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-hard-1-3-1-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-hard-1-3-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.1.5.9.1"><a href="#ex-prop-hard-1-3" title="Copy heading and permalink for Solution 1.1.5.9.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.1.5.9"><a href="#ex-prop-hard-1" title="Copy heading and permalink for Exercise 1.1.5.9">🔗</a></div></article><article class="exercise exercise-like" id="ex-prop-hard-2"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="para logical" id="ex-prop-hard-2-1-1">
+<div class="para">Хязгаарын <span class="process-math">\(\epsilon\)</span>-<span class="process-math">\(\delta\)</span> тодорхойлолт нь:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall \epsilon \gt 0, \exists \delta \gt 0, \forall x\ (0 \lt |x - a| \lt \delta \Rightarrow |f(x) - L| \lt \epsilon).
+\end{equation*}
+</div>
+<ol class="lower-alpha ol-marker-1" id="ex-prop-hard-2-1-1-4">
+<li id="ex-prop-hard-2-1-1-4-1">
+<div class="para" id="p-derived-ex-prop-hard-2-1-1-4-1">Энэ хэллэгийг монгол хэлээр уншиж тайлбарла.</div>
+<div class="autopermalink" data-description="Item 1.1.5.10.a"><a href="#ex-prop-hard-2-1-1-4-1" title="Copy heading and permalink for Item 1.1.5.10.a">🔗</a></div>
+</li>
+<li id="ex-prop-hard-2-1-1-4-2">
+<div class="para" id="p-derived-ex-prop-hard-2-1-1-4-2">Энэ хэллэгийн үгүйсгэлийг (буюу “<span class="process-math">\(\lim_{x \to a} f(x) \ne L\)</span>”-г) кванторын хууль ашиглан нь бич:<div class="displaymath process-math">
+\begin{equation*}
+\lnot \forall x\ P(x) \Leftrightarrow \exists x\ \lnot P(x), \quad
+\lnot \exists x\ P(x) \Leftrightarrow \forall x\ \lnot P(x).
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item 1.1.5.10.b"><a href="#ex-prop-hard-2-1-1-4-2" title="Copy heading and permalink for Item 1.1.5.10.b">🔗</a></div>
+</li>
+<li id="ex-prop-hard-2-1-1-4-3">
+<div class="para" id="p-derived-ex-prop-hard-2-1-1-4-3">Бид <span class="process-math">\(\lim_{x \to 0} f(x) \ne 1\)</span> гэдгийг батлахын тулд яг юуг үзүүлэх ёстой вэ?</div>
+<div class="autopermalink" data-description="Item 1.1.5.10.c"><a href="#ex-prop-hard-2-1-1-4-3" title="Copy heading and permalink for Item 1.1.5.10.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-hard-2-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ex-prop-hard-2-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para logical" id="ex-prop-hard-2-2-1">
+<div class="para">Кванторын үгүйсгэл хийхдээ:</div>
+<ul class="disc" id="ex-prop-hard-2-2-1-1">
+<li id="ex-prop-hard-2-2-1-1-1">
+<div class="para" id="p-derived-ex-prop-hard-2-2-1-1-1">
+<span class="process-math">\(\forall\)</span> ↔ <span class="process-math">\(\exists\)</span> солилцоно</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-prop-hard-2-2-1-1-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-prop-hard-2-2-1-1-2">
+<div class="para" id="p-derived-ex-prop-hard-2-2-1-1-2">Сүүлийн хэллэг (импликаци) ийг үгүйсгэхэд: <span class="process-math">\(\lnot (P \Rightarrow Q) \Leftrightarrow P \land \lnot Q\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-prop-hard-2-2-1-1-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-hard-2-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.1.5.10.1"><a href="#ex-prop-hard-2-2" title="Copy heading and permalink for Hint 1.1.5.10.1">🔗</a></div>
+</div></details><details id="ex-prop-hard-2-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-prop-hard-2-3-1">
+<ol class="lower-alpha ol-marker-1" id="ex-prop-hard-2-3-1-1">
+<li id="ex-prop-hard-2-3-1-1-1">
+<div class="para" id="p-derived-ex-prop-hard-2-3-1-1-1">
+<em class="emphasis">Уншилт:</em> Дурын эерэг <span class="process-math">\(\epsilon\)</span>-ийн хувьд, ямар нэг эерэг <span class="process-math">\(\delta\)</span> олдох ба түүний хувьд, бүх <span class="process-math">\(x\)</span>-ийн хувьд хэрэв <span class="process-math">\(x\)</span> нь <span class="process-math">\(a\)</span>-аас <span class="process-math">\(\delta\)</span>-ээс ойр (гэхдээ <span class="process-math">\(a\)</span> биш) бол <span class="process-math">\(f(x)\)</span> нь <span class="process-math">\(L\)</span>-ээс <span class="process-math">\(\epsilon\)</span>-ээс ойр.</div>
+<div class="autopermalink" data-description="Item 1.1.5.10.a"><a href="#ex-prop-hard-2-3-1-1-1" title="Copy heading and permalink for Item 1.1.5.10.a">🔗</a></div>
+</li>
+<li id="ex-prop-hard-2-3-1-1-2">
+<div class="para" id="p-derived-ex-prop-hard-2-3-1-1-2">Үгүйсгэл:<div class="displaymath process-math">
+\begin{equation*}
+\exists \epsilon \gt 0, \forall \delta \gt 0, \exists x\ (0 \lt |x - a| \lt \delta \land |f(x) - L| \ge \epsilon).
+\end{equation*}
+</div>
+<em class="emphasis">Уншилт:</em> Ямар нэг эерэг <span class="process-math">\(\epsilon\)</span> олдох ба түүний хувьд, дурын эерэг <span class="process-math">\(\delta\)</span>-ийн хувьд, ямар нэг <span class="process-math">\(x\)</span> олдох ба тэр <span class="process-math">\(x\)</span> нь <span class="process-math">\(a\)</span>-аас ойр (<span class="process-math">\(\delta\)</span>-аас бага зайтай) боловч <span class="process-math">\(f(x)\)</span> нь <span class="process-math">\(L\)</span>-ээс <span class="process-math">\(\epsilon\)</span> ба түүнээс холуур байна.</div>
+<div class="autopermalink" data-description="Item 1.1.5.10.b"><a href="#ex-prop-hard-2-3-1-1-2" title="Copy heading and permalink for Item 1.1.5.10.b">🔗</a></div>
+</li>
+<li id="ex-prop-hard-2-3-1-1-3">
+<div class="para" id="p-derived-ex-prop-hard-2-3-1-1-3">Бид доорх зүйлийг харуулах хэрэгтэй: ямар нэг <span class="process-math">\(\epsilon \gt 0\)</span> олдох ба, дурын <span class="process-math">\(\delta \gt 0\)</span>-ийн хувьд, <span class="process-math">\(0 \lt |x - 0| \lt \delta\)</span> ба <span class="process-math">\(|f(x) - 1| \ge \epsilon\)</span> байх <span class="process-math">\(x\)</span>-г олж болдог.</div>
+<div class="autopermalink" data-description="Item 1.1.5.10.c"><a href="#ex-prop-hard-2-3-1-1-3" title="Copy heading and permalink for Item 1.1.5.10.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-prop-hard-2-3-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.1.5.10.1"><a href="#ex-prop-hard-2-3" title="Copy heading and permalink for Solution 1.1.5.10.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.1.5.10"><a href="#ex-prop-hard-2" title="Copy heading and permalink for Exercise 1.1.5.10">🔗</a></div></article><div class="autopermalink" data-description="Subexercises: Хүнд түвшин"><a href="#exer-1-1-extra-5" title="Copy heading and permalink for Subexercises: Хүнд түвшин">🔗</a></div></article><div class="autopermalink" data-description="Exercises 1.1.5: Нэмэлт дасгал. Хэллэг таних"><a href="#exer-1-1-extra" title="Copy heading and permalink for Exercises 1.1.5: Нэмэлт дасгал. Хэллэг таних">🔗</a></div></section><div class="autopermalink" data-description="Section 1.1: Хэллэг ба үнэний утга"><a href="#sec-propositions" title="Copy heading and permalink for Section 1.1: Хэллэг ба үнэний утга">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-logic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-connectives.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+INFO    : Building target pdf
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : Generating any needed assets.
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : Finished generating assets.
+
+INFO    : Preparing to build into /Users/dayan/Desktop/math1/output/pdf.
+INFO    : discovering source file's directory name: /Users/dayan/Desktop/math1/source
+INFO    : verifying and expanding input directory: /Users/dayan/Desktop/math1/source/../generated-assets
+INFO    : input directory expanded to absolute path: /Users/dayan/Desktop/math1/generated-assets
+INFO    : verifying and expanding input directory: /Users/dayan/Desktop/math1/source/../assets
+INFO    : input directory expanded to absolute path: /Users/dayan/Desktop/math1/assets
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : converting /Users/dayan/Desktop/math1/source/main.ptx to LaTeX as /var/folders/3_/sn1glljx0cdg05__y47dc6v80000gn/T/ptx-k45v91jx/main.tex
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/pretext-latex.xsl
+INFO    : messages from the log for XSL processing:
+INFO    : * PTX:INFO:   checking ONLY the last TWO YEARS of element deprecations.
+Rerun with the string parameter "author.deprecations.all" set to "yes" to check your source against all deprecations.
+WARNING : * PTX:DEPRECATE: (2024-10-08) elements previously included in a "titlepage" element inside the "frontmatter" (author, editor, credit, date, and event) should now be placed in "frontmatter/bibinfo".  To ensure a title page is created, put only the empty element "titlepage-items" inside "titlepage".  Until you move these elements, we will try to honor your intent. (1 time)
+INFO    : *              located within: "frontmatter" (xml:id)
+INFO    : * --------------
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/pretext-latex.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/report-publisher-variables.xsl
+CRITICAL: PTX:ERROR: cannot locate executable with configuration name `xelatex` as command `xelatex`
+***  Edit the configuration file  ("pretext.cfg" or "project.ptx") and/or install  ***
+***  the necessary program and/or make sure the executable is on your PATH         ***
+INFO    : ------------------------
+CRITICAL: Failed to build.  Exiting...
+INFO    : 
+----------------------------------------------------
+INFO    : While running pretext, the following errors occurred:
+
+INFO    : (see log messages above or in the 'logs' folder for more information)
+INFO    : ----------------------------------------------------

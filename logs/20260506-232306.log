@@ -1,0 +1,68 @@
+INFO    : Building target html
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : Generating any needed assets.
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : Finished generating assets.
+
+INFO    : Preparing to build into /Users/dayan/Desktop/math1/output/html.
+WARNING : Node.js must be installed to build CSS files.  Please install node.js and npm.
+ Will try to use prebuilt CSS files instead.
+WARNING : Cannot find npm.  Will try to use prebuilt CSS files instead.
+WARNING : Unable to install npm packages to build css files.  Non-default CSS themes require node.js and npm to be installed.  See https://pretextbook.org/doc/guide/html/node-and-npm.html
+WARNING : 
+INFO    : discovering source file's directory name: /Users/dayan/Desktop/math1/source
+INFO    : verifying and expanding input directory: /Users/dayan/Desktop/math1/source/../generated-assets
+INFO    : input directory expanded to absolute path: /Users/dayan/Desktop/math1/generated-assets
+INFO    : verifying and expanding input directory: /Users/dayan/Desktop/math1/source/../assets
+INFO    : input directory expanded to absolute path: /Users/dayan/Desktop/math1/assets
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : Downloading rs services file from https://runestone.academy/cdn/runestone/latest/webpack_static_imports.xml.
+INFO    : Runestone Services via online CDN query: version 7.13.5
+INFO    : Downloading Runestone Services, version 7.13.5
+INFO    : Extracting Runestone Services from archive file
+INFO    : Node.js not available. Relying on prebuilt default-modern.
+INFO    : Using prebuilt CSS theme: default-modern with options: {'options': {'primary-color': '#195684', 'secondary-color': '#932c1c'}, 'contrast-checks': {'primary-color': '#fff', 'secondary-color': '#fff', 'primary-color-dark': '#23241f'}}
+INFO    : converting /Users/dayan/Desktop/math1/source/main.ptx to HTML in /var/folders/3_/sn1glljx0cdg05__y47dc6v80000gn/T/ptx-o633eufs
+INFO    : XSL conversion of /Users/dayan/Desktop/math1/source/main.ptx by /Users/dayan/.ptx/2.20.0/core/xsl/pretext-html.xsl
+INFO    : messages from the log for XSL processing:
+INFO    : * PTX:INFO:   checking ONLY the last TWO YEARS of element deprecations.
+Rerun with the string parameter "author.deprecations.all" set to "yes" to check your source against all deprecations.
+WARNING : * PTX:DEPRECATE: (2024-10-08) elements previously included in a "titlepage" element inside the "frontmatter" (author, editor, credit, date, and event) should now be placed in "frontmatter/bibinfo".  To ensure a title page is created, put only the empty element "titlepage-items" inside "titlepage".  Until you move these elements, we will try to honor your intent. (1 time)
+INFO    : *              located within: "frontmatter" (xml:id)
+INFO    : * --------------
+INFO    : successful application of /Users/dayan/.ptx/2.20.0/core/xsl/pretext-html.xsl
+INFO    : Removing temporary directory /var/folders/3_/sn1glljx0cdg05__y47dc6v80000gn/T/ptx-o633eufs
+INFO    : Removing temporary directory /var/folders/3_/sn1glljx0cdg05__y47dc6v80000gn/T/ptx-hskpk2bo
+INFO    : 
+Success! Run `pretext view html` to see the results.
+
+INFO    : 

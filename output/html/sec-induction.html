@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Математик индукц</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Математик Анализ I">
+<meta property="book:author" content="Д. Даян">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.13.5';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.52176322e2c1dde5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="math-anal-1" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href="https://num.edu.mn"><img src="external/logo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math1-book.html"><span class="title">Математик Анализ I</span> <span class="subtitle">Идэвхтэй сурах арга барилаар бичсэн ном</span></a></h1>
+<p class="byline">Д. Даян</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-proof-methods.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-logic.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface-students.html" class="internal"><span class="title">Оюутнуудад зориулсан өмнөх үг</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface-instructors.html" class="internal"><span class="title">Багш нарт зориулсан өмнөх үг</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-logic.html" class="internal"><span class="codenumber">1</span> <span class="title">Хэллэг ба Логик</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-propositions.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Хэллэг ба үнэний утга</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-propositions.html#subsec-prop-def" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Хэллэг гэж юу вэ?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-propositions.html#subsec-quantifiers" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Кванторууд: хувьсагчийг хэллэг болгох</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-propositions.html#subsec-summary-1-1" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Хураангуй</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-propositions.html#exer-1-1" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Гэрийн даалгавар</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-propositions.html#exer-1-1-extra" class="internal"><span class="codenumber">1.1.5</span> <span class="title">Нэмэлт дасгал. Хэллэг таних</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-connectives.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Логик холбоосууд</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-connectives.html#subsec-basic-connectives" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Үндсэн логик холбоосууд</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-connectives.html#subsec-vacuous" class="internal"><span class="codenumber">1.2.2</span> <span class="title">"Хэрэв ... бол ..." хэллэгийн нарийн талууд</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-connectives.html#subsec-tautology" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Тавтологи ба зөрчил</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-connectives.html#subsec-summary-1-2" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Хураангуй</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-connectives.html#exer-1-2" class="internal"><span class="codenumber">1.2.5</span> <span class="title">Гэрийн даалгавар</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-equivalence.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Эквивалент, контрапозиц ба нөхцлийн ангилал</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-equivalence.html#subsec-equiv" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Эквивалент хэллэгүүд</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-equivalence.html#subsec-contrapositive" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Контрапозиц, урвуу, эсрэг хэллэг</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-equivalence.html#subsec-nec-suff" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Хүрэлцээтэй ба зайлшгүй нөхцөл</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-equivalence.html#subsec-summary-1-3" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Хураангуй</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-equivalence.html#exer-1-3" class="internal"><span class="codenumber">1.3.5</span> <span class="title">Гэрийн даалгавар</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proof-methods.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Баталгааны аргууд</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-what-is-proof" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Баталгаа гэж юу вэ?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-direct-proof" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Шууд батлах арга</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-contrapositive-proof" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Контрапозицоор батлах арга</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-contradiction" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Эсрэгээс нь батлах арга</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-counterex" class="internal"><span class="codenumber">1.4.5</span> <span class="title">Эсрэг жишээгээр худал болохыг харуулах</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-summary-1-4" class="internal"><span class="codenumber">1.4.6</span> <span class="title">Хураангуй</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-proof-methods.html#exer-1-4" class="internal"><span class="codenumber">1.4.7</span> <span class="title">Гэрийн даалгавар</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-induction.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Математик индукц</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-induction.html#subsec-induction-principle" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Индукцийн зарчим</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-induction.html#subsec-induction-other" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Индукцийг хэрэглэх бусад жишээ</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-induction.html#subsec-summary-1-5" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Хураангуй</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-induction.html#exer-1-5" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Гэрийн даалгавар</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-induction"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.5</span><span class="space"> </span><span class="title">Математик индукц</span>
+</h2>
+<article class="objectives goal-like" id="sec-induction-2"><h3 class="heading"><span class="type">Objectives</span></h3>
+<div class="introduction" id="sec-induction-2-1"><div class="para logical" id="sec-induction-2-1-1">
+<div class="para">Энэ хэсэгт бид дараах асуултуудад хариулна:</div>
+<ul class="disc" id="sec-induction-2-1-1-1">
+<li id="sec-induction-2-1-1-1-1">
+<div class="para" id="p-derived-sec-induction-2-1-1-1-1">
+<span class="process-math">\(\forall n \in \N\)</span> хэлбэрийн хэллэгийг хэрхэн нэгээр нь биш, бүгдийг нь батлах вэ?</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-induction-2-1-1-1-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-induction-2-1-1-1-2">
+<div class="para" id="p-derived-sec-induction-2-1-1-1-2">Математик индукцийн зарчим яаж ажилладаг вэ?</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-induction-2-1-1-1-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-induction-2-1-1-1-3">
+<div class="para" id="p-derived-sec-induction-2-1-1-1-3">"Суурь" ба "шилжилт" гэдэг ямар утгатай вэ?</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-induction-2-1-1-1-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-induction-2-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<div class="autopermalink" data-description="Objectives 1.5"><a href="#sec-induction-2" title="Copy heading and permalink for Objectives 1.5">🔗</a></div></article><section class="introduction" id="sec-induction-3"><article class="activity project-like" id="prev-1-5"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Урьдчилсан дасгал.</span>
+</h3>
+<div class="introduction" id="prev-1-5-2"><div class="para" id="prev-1-5-2-1">
+<span class="process-math">\(S(n) = 1 + 2 + 3 + \cdots + n\)</span> гэе.<div class="autopermalink" data-description="Paragraph"><a href="#prev-1-5-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<article class="task exercise-like" id="prev-1-5-3"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="prev-1-5-3-1-1">
+<span class="process-math">\(S(1), S(2), S(3), S(4), S(5)\)</span>-г бод. Тэдгээрийн дунд ямар нэг дүрэм олдох уу? Жишээ нь <span class="process-math">\(S(n)\)</span>-г <span class="process-math">\(n\)</span>-ээр илэрхийлэх томьёо таамаглаж бай.<div class="autopermalink" data-description="Paragraph"><a href="#prev-1-5-3-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.5.1.a"><a href="#prev-1-5-3" title="Copy heading and permalink for Task 1.5.1.a">🔗</a></div></article><article class="task exercise-like" id="prev-1-5-4"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="prev-1-5-4-1-1">Таамагласан томьёогоо <span class="process-math">\(n = 6, 10\)</span> хувьд шалга.<div class="autopermalink" data-description="Paragraph"><a href="#prev-1-5-4-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.5.1.b"><a href="#prev-1-5-4" title="Copy heading and permalink for Task 1.5.1.b">🔗</a></div></article><article class="task exercise-like" id="prev-1-5-5"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="prev-1-5-5-1-1">Та томьёогоо <em class="emphasis">5 утганд</em> шалгасан байна. Энэ нь "Бүх <span class="process-math">\(n\)</span> хувьд томьёо үнэн" гэж дүгнэж болох уу? Яагаад болохгүй вэ?<div class="autopermalink" data-description="Paragraph"><a href="#prev-1-5-5-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.5.1.c"><a href="#prev-1-5-5" title="Copy heading and permalink for Task 1.5.1.c">🔗</a></div></article><article class="task exercise-like" id="prev-1-5-6"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="prev-1-5-6-1-1">"Бүх <span class="process-math">\(n\)</span> хувьд үнэн" гэж батлахад ямар арга шаардагдах вэ гэж та боддог?<div class="autopermalink" data-description="Paragraph"><a href="#prev-1-5-6-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.5.1.d"><a href="#prev-1-5-6" title="Copy heading and permalink for Task 1.5.1.d">🔗</a></div></article><div class="autopermalink" data-description="Activity 1.5.1: Урьдчилсан дасгал"><a href="#prev-1-5" title="Copy heading and permalink for Activity 1.5.1: Урьдчилсан дасгал">🔗</a></div></article></section><section class="subsection" id="subsec-induction-principle"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="space"> </span><span class="title">Индукцийн зарчим</span>
+</h3>
+<div class="para" id="subsec-induction-principle-2">Урьдчилсан дасгалаас та анзаарах ёстой: тодорхой утгуудаар шалгах нь хэзээ ч бүх <span class="process-math">\(n\)</span>-д үнэн болохын баталгаа болохгүй. Гэвч "<em class="emphasis">хязгааргүй олон</em>"-г бид хязгаартай ажил руу хувирган батлах боломжтой — математик индукцийн тусламжтайгаар.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-induction-principle-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-induction"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Математик индукцийн зарчим.</span>
+</h4>
+<div class="para logical" id="thm-induction-2-1">
+<div class="para">
+<span class="process-math">\(P(n)\)</span> нь <span class="process-math">\(n \in \N\)</span>-ээс хамаарсан хэллэг гэе. Хэрэв</div>
+<ol class="decimal" id="thm-induction-2-1-3">
+<li id="thm-induction-2-1-3-1">
+<div class="para" id="p-derived-thm-induction-2-1-3-1">
+<dfn class="terminology">(Суурь)</dfn> <span class="process-math">\(P(1)\)</span> үнэн,</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-induction-2-1-3-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-induction-2-1-3-2">
+<div class="para" id="p-derived-thm-induction-2-1-3-2">
+<dfn class="terminology">(Шилжилт)</dfn> <span class="process-math">\(\forall k \in \N\)</span>-ийн хувьд: <span class="process-math">\(P(k)\)</span> үнэн ⇒ <span class="process-math">\(P(k+1)\)</span> үнэн</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-induction-2-1-3-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="para">бол <span class="process-math">\(\forall n \in \N\)</span> хувьд <span class="process-math">\(P(n)\)</span> үнэн.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-induction-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 1.5.1: Математик индукцийн зарчим"><a href="#thm-induction" title="Copy heading and permalink for Theorem 1.5.1: Математик индукцийн зарчим">🔗</a></div></article><div class="para" id="subsec-induction-principle-4">Энэ нь "<em class="emphasis">домино</em>" аргатай төстэй: эхний домино унаад (суурь), дараагийнх нь өмнөхөөсөө унавал (шилжилт), бүгд унаж дуусна.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-induction-principle-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-gauss" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Гауссын нийлбэр.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-gauss-2-1">
+<div class="para">Бүх <span class="process-math">\(n \in \N\)</span> хувьд:</div>
+<div class="displaymath process-math" id="eq-gauss">
+\begin{equation}
+1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}.\tag{1.5.1}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-gauss-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.5.2: Гауссын нийлбэр"><a href="#ex-gauss" title="Copy heading and permalink for Example 1.5.2: Гауссын нийлбэр">🔗</a></div></article></details><article class="activity project-like" id="act-1-5-1"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Дасгал. Индукцийн ердийн жишээ.</span>
+</h4>
+<article class="task exercise-like" id="act-1-5-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para logical" id="act-1-5-1-2-1-1">
+<div class="para">Бүх <span class="process-math">\(n \in \N\)</span>-д</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1^2 + 2^2 + 3^2 + \cdots + n^2 = \frac{n(n+1)(2n+1)}{6}
+\end{equation*}
+</div>
+<div class="para">гэдгийг индукцээр батал.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#act-1-5-1-2-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.5.2.a"><a href="#act-1-5-1-2" title="Copy heading and permalink for Task 1.5.2.a">🔗</a></div></article><article class="task exercise-like" id="act-1-5-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="act-1-5-1-3-1-1">Бүх <span class="process-math">\(n \in \N\)</span>-д <span class="process-math">\(1 + 3 + 5 + \cdots + (2n-1) = n^2\)</span> гэдгийг индукцээр батал.<div class="autopermalink" data-description="Paragraph"><a href="#act-1-5-1-3-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.5.2.b"><a href="#act-1-5-1-3" title="Copy heading and permalink for Task 1.5.2.b">🔗</a></div></article><div class="autopermalink" data-description="Activity 1.5.2: Дасгал. Индукцийн ердийн жишээ"><a href="#act-1-5-1" title="Copy heading and permalink for Activity 1.5.2: Дасгал. Индукцийн ердийн жишээ">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.5.1: Индукцийн зарчим"><a href="#subsec-induction-principle" title="Copy heading and permalink for Subsection 1.5.1: Индукцийн зарчим">🔗</a></div></section><section class="subsection" id="subsec-induction-other"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="space"> </span><span class="title">Индукцийг хэрэглэх бусад жишээ</span>
+</h3>
+<div class="para" id="subsec-induction-other-2">Индукцийг зөвхөн нийлбэрт төдийгүй маш олон төрлийн "<span class="process-math">\(\forall n \in \N\)</span>" хэллэгт ашиглаж болно. Жишээ нь хуваагдах чанар, тэгш бус байдал, биномын томьёо г.м.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-induction-other-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-divisible" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Хуваагдах чанарыг индукцээр батлах.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-divisible-2-1">
+<span class="process-math">\(\forall n \in \N\)</span>-д <span class="process-math">\(n^3 - n\)</span> нь <span class="process-math">\(6\)</span>-т хуваагдана.<div class="autopermalink" data-description="Paragraph"><a href="#ex-divisible-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.5.3: Хуваагдах чанарыг индукцээр батлах"><a href="#ex-divisible" title="Copy heading and permalink for Example 1.5.3: Хуваагдах чанарыг индукцээр батлах">🔗</a></div></article></details><article class="activity project-like" id="act-1-5-2"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Дасгал. Илүү өргөтгөсөн индукц.</span>
+</h4>
+<article class="task exercise-like" id="act-1-5-2-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="act-1-5-2-2-1-1">Бүх <span class="process-math">\(n \in \N\)</span>-д <span class="process-math">\(7^n - 1\)</span> нь <span class="process-math">\(6\)</span>-т хуваагдана гэдгийг индукцээр батал.<div class="autopermalink" data-description="Paragraph"><a href="#act-1-5-2-2-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.5.3.a"><a href="#act-1-5-2-2" title="Copy heading and permalink for Task 1.5.3.a">🔗</a></div></article><article class="task exercise-like" id="act-1-5-2-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="act-1-5-2-3-1-1">Бернуллийн тэгш бус байдал: бүх <span class="process-math">\(n \in \N\text{,}\)</span> <span class="process-math">\(x \gt  -1\)</span> хувьд <span class="process-math">\((1+x)^n \ge 1 + nx\text{.}\)</span> Индукцээр батал.<div class="autopermalink" data-description="Paragraph"><a href="#act-1-5-2-3-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.5.3.b"><a href="#act-1-5-2-3" title="Copy heading and permalink for Task 1.5.3.b">🔗</a></div></article><article class="task exercise-like" id="act-1-5-2-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para logical" id="act-1-5-2-4-1-1">
+<div class="para">(Биномын томьёо) Бүх <span class="process-math">\(n \in \N\text{,}\)</span> <span class="process-math">\(a, b \in \R\)</span>-ийн хувьд</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k.
+\end{equation*}
+</div>
+<div class="para">Индукцээр батал. (Зөвлөмж: <span class="process-math">\(\binom{k}{j} + \binom{k}{j-1} =
+\binom{k+1}{j}\)</span> томьёог ашигла.)</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#act-1-5-2-4-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.5.3.c"><a href="#act-1-5-2-4" title="Copy heading and permalink for Task 1.5.3.c">🔗</a></div></article><div class="autopermalink" data-description="Activity 1.5.3: Дасгал. Илүү өргөтгөсөн индукц"><a href="#act-1-5-2" title="Copy heading and permalink for Activity 1.5.3: Дасгал. Илүү өргөтгөсөн индукц">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.5.2: Индукцийг хэрэглэх бусад жишээ"><a href="#subsec-induction-other" title="Copy heading and permalink for Subsection 1.5.2: Индукцийг хэрэглэх бусад жишээ">🔗</a></div></section><section class="subsection" id="subsec-summary-1-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="space"> </span><span class="title">Хураангуй</span>
+</h3>
+<div class="para logical" id="subsec-summary-1-5-2">
+<ul class="disc" id="subsec-summary-1-5-2-1">
+<li id="subsec-summary-1-5-2-1-1">
+<div class="para" id="p-derived-subsec-summary-1-5-2-1-1">
+<span class="process-math">\(\forall n \in \N\)</span> хэллэгийг батлах гол хэрэгсэл нь <dfn class="terminology">математик индукц</dfn>.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-summary-1-5-2-1-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-summary-1-5-2-1-2">
+<div class="para" id="p-derived-subsec-summary-1-5-2-1-2">Индукц 2 алхамтай: <em class="emphasis">суурь</em> (<span class="process-math">\(P(1)\)</span> үнэн) ба <em class="emphasis">шилжилт</em> (<span class="process-math">\(P(k) \Rightarrow P(k+1)\)</span>).</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-summary-1-5-2-1-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-summary-1-5-2-1-3">
+<div class="para" id="p-derived-subsec-summary-1-5-2-1-3">Хоёр алхам хоёул хийгдсэн үед бүх <span class="process-math">\(n \in \N\)</span>-д <span class="process-math">\(P(n)\)</span> үнэн.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-summary-1-5-2-1-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-summary-1-5-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.5.3: Хураангуй"><a href="#subsec-summary-1-5" title="Copy heading and permalink for Subsection 1.5.3: Хураангуй">🔗</a></div></section><section class="exercises" id="exer-1-5"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="space"> </span><span class="title">Гэрийн даалгавар</span>
+</h3>
+<article class="exercise exercise-like" id="ex-1-5-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="ex-1-5-1-1-1">
+<div class="para">Индукцээр батал:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1 + 2 + 4 + 8 + \cdots + 2^{n-1} = 2^n - 1.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-1-5-1-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.5.4.1"><a href="#ex-1-5-1" title="Copy heading and permalink for Exercise 1.5.4.1">🔗</a></div></article><article class="exercise exercise-like" id="ex-1-5-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="ex-1-5-2-1-1">Индукцээр батал: <span class="process-math">\(\forall n \ge 4\)</span> хувьд <span class="process-math">\(2^n \lt  n!\text{.}\)</span> (Анхаар: суурь нь <span class="process-math">\(n = 1\)</span> биш, <span class="process-math">\(n = 4\)</span> — учир нь жижиг <span class="process-math">\(n\)</span>-д тэгш бус биелэхгүй.)<div class="autopermalink" data-description="Paragraph"><a href="#ex-1-5-2-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.5.4.2"><a href="#ex-1-5-2" title="Copy heading and permalink for Exercise 1.5.4.2">🔗</a></div></article><article class="exercise exercise-like" id="ex-1-5-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="ex-1-5-3-1-1">Индукцээр батал: <span class="process-math">\(\forall n \in \N\)</span>-д <span class="process-math">\(1 + \dfrac{1}{4} + \dfrac{1}{9} + \cdots + \dfrac{1}{n^2} \le 2 - \dfrac{1}{n}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-1-5-3-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.5.4.3"><a href="#ex-1-5-3" title="Copy heading and permalink for Exercise 1.5.4.3">🔗</a></div></article><article class="exercise exercise-like" id="ex-1-5-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para logical" id="ex-1-5-4-1-1">
+<div class="para">
+<span class="process-math">\(a, b \in \R\text{,}\)</span> <span class="process-math">\(n \in \N\)</span> бол индукцээр батал:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a^n - b^n = (a - b) \sum_{k=0}^{n-1} a^{n-1-k} b^k.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-1-5-4-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.5.4.4"><a href="#ex-1-5-4" title="Copy heading and permalink for Exercise 1.5.4.4">🔗</a></div></article><article class="exercise exercise-like" id="ex-1-5-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="ex-1-5-5-1-1">
+<em class="alert">Алдаа хайх:</em> Дараах "баталгаа"-нд алдаа бий — ол.<div class="autopermalink" data-description="Paragraph"><a href="#ex-1-5-5-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-1-5-5-1-2">"Теорем": бүх адуу ижил өнгөтэй.<div class="autopermalink" data-description="Paragraph"><a href="#ex-1-5-5-1-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="ex-1-5-5-1-3">
+<div class="para">"Баталгаа" (индукц <span class="process-math">\(n\)</span> адууны тоогоор):</div>
+<ul class="disc" id="ex-1-5-5-1-3-2">
+<li id="ex-1-5-5-1-3-2-1">
+<div class="para" id="p-derived-ex-1-5-5-1-3-2-1">
+<span class="process-math">\(n = 1\text{:}\)</span> ганц адуу өөртэйгөө ижил өнгөтэй. ✓</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-1-5-5-1-3-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-1-5-5-1-3-2-2">
+<div class="para" id="p-derived-ex-1-5-5-1-3-2-2">
+<span class="process-math">\(n\)</span> адуу ижил өнгөтэй гэе. Бид <span class="process-math">\(n+1\)</span> адууны хувьд харуулъя. <span class="process-math">\(n+1\)</span> адуунаас нэгийг хасвал <span class="process-math">\(n\)</span> адуу үлдэх — индукцээр ижил өнгөтэй. Дахин нөгөө <span class="process-math">\(n\)</span> адуунаас өөр нэгийг хасвал бас <span class="process-math">\(n\)</span> адуу үлдэх — ижил өнгөтэй. Иймд бүх <span class="process-math">\(n+1\)</span> ижил өнгөтэй. ✓</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-1-5-5-1-3-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-1-5-5-1-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-1-5-5-1-4">Энэ "баталгаа" хаана буруу вэ? (Зөвлөмж: <span class="process-math">\(n = 1\)</span>-ээс <span class="process-math">\(n = 2\)</span> рүү шилжилт сайн ажиллах уу?)<div class="autopermalink" data-description="Paragraph"><a href="#ex-1-5-5-1-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.5.4.5"><a href="#ex-1-5-5" title="Copy heading and permalink for Exercise 1.5.4.5">🔗</a></div></article><div class="autopermalink" data-description="Exercises 1.5.4: Гэрийн даалгавар"><a href="#exer-1-5" title="Copy heading and permalink for Exercises 1.5.4: Гэрийн даалгавар">🔗</a></div></section><div class="autopermalink" data-description="Section 1.5: Математик индукц"><a href="#sec-induction" title="Copy heading and permalink for Section 1.5: Математик индукц">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-proof-methods.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

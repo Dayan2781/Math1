@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<docinfo>
+
+  <!-- Custom math macros -->
+  <macros>
+    \newcommand{\R}{\mathbb{R}}
+    \newcommand{\N}{\mathbb{N}}
+    \newcommand{\Z}{\mathbb{Z}}
+    \newcommand{\Q}{\mathbb{Q}}
+    \newcommand{\C}{\mathbb{C}}
+  </macros>
+
+  <!-- Brand logo / institutional identity (optional) -->
+  <brandlogo url="https://num.edu.mn" source="logo.png" />
+
+  <!-- Theme color (Active Calculus uses a friendly green/gold palette) -->
+  <document-id edition="first">math-anal-1</document-id>
+
+</docinfo>
