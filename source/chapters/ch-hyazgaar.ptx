@@ -1,0 +1,1508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="ch-hyazgaar" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Хязгаар ба Тасралтгүй Функц</title>
+
+  <introduction xml:id="intro-hyazgaar">
+    <p>Математик Анализын хамгийн гол ойлголт бол <em>хязгаар</em> юм.
+    Функцийн аргумент нь тодорхой цэгрүү дөхөхөд функцийн утга  нь тодорхой 
+    ямар утгад ойртож байгааг судлах нь анализын суурь болдог. Энэ бүлэгт бид 
+    хязгаарын нарийн тодорхойлолтуудыг судлан, түүний шинж чанаруудыг мэдэж,
+    тооцоолох аргуудыг судалж, тасралтгүй функцийн ойлголттой танилцана.</p>
+
+    <p>Энэ бүлгийн төгсгөлд та дараах мэдлэг, чадваруудыг эзэмших болно:
+      <ul>
+        <li><m>\varepsilon</m>-<m>\delta</m> тодорхойлолтыг ашиглан хязгаарыг батлах,</li>
+        <li>Хзгаарын тухай ойлголтыг бусад судлагдахуунд ашиглах,</li>
+        <li>Зүүн, баруун өрөөсгөл хязгаар болон тэдгээрийн хоорондын хамаарлыг тайлбарлах,</li>
+        <li>Хязгаарын арифметик, Хашилтын теоремыг хязгаарын бодлого бодоход хэрэглэх,</li>
+        <li>I ба II гайхамшигт хязгаарыг батлах ба хэрэглэх,</li>
+        <li>Функцийн тасралтгүй байдлыг тодорхойлж, тасралтын цэгийнтөрлийг ялгах.</li>
+      </ul>
+    </p>
+  </introduction>
+
+  <!-- ============================================================
+       SECTION 3.1: Хязгаарын тодорхойлолтууд
+       ============================================================ -->
+  <section xml:id="sec-hyazgaar-todorkhiilolt">
+    <title>Лекц 1. Хязгаарын тодорхойлолтууд</title>
+
+    <objectives>
+      <introduction>
+        <p>Энэ хэсэгт бид дараах асуултуудад хариулна:
+          <ul>
+            <li><q><m>x</m> нь <m>a</m> руу дөхдөг</q> гэдэг яг ямар утгатай вэ?</li>
+            <li>Хязгаарыг яаж нарийн тодорхойлох вэ (<m>\varepsilon</m>-<m>\delta</m>)?</li>
+            <li>Зүүн ба баруун өрөөсгөл хязгаар гэж юу вэ?</li>
+            <li>Дараалалын хязгаар хэрхэн тодорхойлогддог вэ?</li>
+          </ul>
+        </p>
+      </introduction>
+    </objectives>
+
+    <introduction>
+      <activity xml:id="odoogch-3-1">
+        <title>Урьдчилсан дасгал</title>
+        <introduction>
+          <p>Дараах тоонуудыг авч үз:
+            <me>0.9,\; 1.1,\; 0.99,\; 1.01,\; 0.999,\; 1.001,\;\ldots</me>
+          </p>
+        </introduction>
+        <task>
+          <statement>
+            <p>Эдгээр тоонууд ямар тооны орчимд байна вэ?
+            Тэд тэр тоотой тэнцэж байна уу?</p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>Зөвхөн <m>0.9, 0.99, 0.999, \ldots</m> тоонуудыг ав.
+            Тэд хаанаас ойртож байна?
+            Зөвхөн <m>1.1, 1.01, 1.001, \ldots</m>-ийн хувьд яах вэ?</p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>Вакуум орчинд гэрлийн хурд <m>c = 299{,}792{,}458</m> м/сек.
+            Бөөмийн хурд <m>x</m> нь <m>c</m>-д ойртож чадах уу?
+            <m>c</m>-аас хэтрэх боломжтой юу? Яагаад?</p>
+          </statement>
+        </task>
+      </activity>
+    </introduction>
+
+    <!-- ===== Subsection: a руу дөхөх ===== -->
+    <subsection xml:id="subsec-dokhokh">
+      <title><m>a</m> руу дөхөх ойлголт</title>
+
+      <definition xml:id="def-dokhokh">
+        <statement>
+          <p><m>x \in X \subset \mathbb{R}</m> хэмжигдэхүүн ба
+          <m>a \in \mathbb{R}</m> өгөгдсөн тогтмол тоо байг.
+            <ol>
+              <li>
+                <p>Дурын <m>\varepsilon \gt 0</m> тооны хувьд
+                <m>|x-a| \lt \varepsilon</m> байх <m>x</m> утга олддог бол
+                <m>x</m> хэмжигдэхүүнийг <term><m>a</m> руу дөхдөг</term> гэх ба
+                <m>x \to a</m> гэж тэмдэглэнэ.</p>
+                <p>Өөрөөр хэлбэл <m>x</m> хувьсагчийн тоон утга <m>a</m> тоотой
+                хангалттай ойрхон (гэхдээ <m>a</m>-тай тэнцэхгүй) байж чаддаг
+                бол <m>x</m> нь <m>a</m> руу дөхдөг.</p>
+              </li>
+              <li>
+                <p>Хэрэв <m>x</m> нь <m>a</m> руу дөхдөг ба үргэлж
+                <m>a</m>-аас бага (эсвэл их) байдаг бол <m>x</m>-г
+                <term><m>a</m> руу зүүн талаас дөхдөг</term> гэж
+                <m>x \to a-</m>,
+                (<term>баруун талаас дөхдөг</term> гэж <m>x \to a+</m>)
+                гэж тэмдэглэнэ.</p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </definition>
+
+      <example xml:id="ex-dokhokh-1">
+        <statement>
+          <p><m>x</m> хэмжигдэхүүн
+          <m>0.9,\; 1.1,\; 0.99,\; 1.01,\;\ldots</m>
+          утгуудыг авч байвал <m>x \to 1</m>.</p>
+          <p><m>x = 0.9, 0.99, 0.999, \ldots</m> бол <m>x \to 1-</m>;
+          <m>x = 1.1, 1.01, 1.001, \ldots</m> бол <m>x \to 1+</m>.</p>
+        </statement>
+      </example>
+
+      <definition xml:id="def-togsgolgui-dokhokh">
+        <title>Төгсгөлгүй рүү дөхөх</title>
+        <statement>
+          <p><m>x \in X \subset \mathbb{R}</m> байг.
+            <ol>
+              <li><p>Дурын <m>M</m> тооны хувьд <m>x \gt M</m> байх
+              <m>x</m> утга олдвол <m>x \to +\infty</m> гэнэ.</p></li>
+              <li><p>Дурын <m>M</m> тооны хувьд <m>x \lt M</m> байх
+              <m>x</m> утга олдвол <m>x \to -\infty</m> гэнэ.</p></li>
+            </ol>
+          </p>
+        </statement>
+      </definition>
+    </subsection>
+
+    <!-- ===== Subsection: Функцийн хязгаар ===== -->
+    <subsection xml:id="subsec-funktsiin-hyazgaar">
+      <title>Функцийн хязгаар</title>
+
+      <definition xml:id="def-hyazgaar-engin">
+        <title>Хязгаарын энгийн тодорхойлолт</title>
+        <statement>
+          <p><m>X, Y \subset \mathbb{R}</m>, <m>f\colon X \to Y</m>,
+          <m>a, E \in \mathbb{R}</m> байг.
+          Хэрэв <m>x \to a</m> үед <m>f(x) \to E</m> байвал
+          <m>E</m> тоог <m>f(x)</m> функцийн <m>x\to a</m> үеийн
+          <term>хязгаар</term> гэх ба
+          <me>\lim_{x \to a} f(x) = E</me>
+          гэж тэмдэглэнэ.</p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-epsilon-delta">
+        <title><m>\varepsilon</m>-<m>\delta</m> тодорхойлолт</title>
+        <statement>
+          <p><m>f\colon X \to Y</m> функц, <m>a, E \in \mathbb{R}</m> байг.
+          Дурын <m>\varepsilon \gt 0</m> тоонд <m>\delta \gt 0</m> олдож,
+          <m>0 \lt |x-a| \lt \delta</m> үед
+          <m>|f(x)-E| \lt \varepsilon</m> байвал
+          <m>E</m>-г <m>f(x)</m>-ийн <m>x\to a</m> үеийн хязгаар гэх ба
+          <me>\lim_{x \to a} f(x) = E</me>
+          гэж тэмдэглэнэ.</p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-togsgolgui-lim-inf">
+        <title>Төгсгөлгүй рүү тэмүүлэх үеийн хязгаар</title>
+        <statement>
+          <p>Дурын <m>\varepsilon \gt 0</m> тоонд <m>\delta \gt 0</m> олдож,
+          <m>x \gt \delta</m> үед <m>|f(x)-E| \lt \varepsilon</m> байвал
+          <me>\lim_{x \to +\infty} f(x) = E</me>
+          гэнэ. Адилхан байдлаар
+          <m>\lim_{x \to -\infty} f(x) = E</m> гэж тодорхойлно.</p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-togsgolgui-utgatai-lim">
+        <title>Төгсгөлгүй хязгаар</title>
+        <statement>
+          <p>Дурын <m>M \gt 0</m> тоонд <m>\delta \gt 0</m> олдож,
+          <m>0 \lt |x-a| \lt \delta</m> байх бүх <m>x</m>-ийн хувьд
+          <m>f(x) \gt M</m> байвал <m>\lim_{x \to a} f(x) = +\infty</m> гэнэ.
+          Адилхан байдлаар <m>\lim_{x \to a} f(x) = -\infty</m> гэж тодорхойлно.
+          Хэрэв <m>\lim_{x \to a} |f(x)| = +\infty</m> бол
+          <m>\lim_{x \to a} f(x) = \infty</m> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-oroosogol-lim">
+        <title>Өрөөсгөл хязгаар</title>
+        <statement>
+          <p>Дурын <m>\varepsilon \gt 0</m> тоонд <m>\delta \gt 0</m> олдож,
+          <me>0 \lt a - x \lt \delta \;\Rightarrow\; |f(x)-E| \lt \varepsilon</me>
+          байвал <m>E</m>-г <term>зүүн өрөөсгөл хязгаар</term> гэж
+          <m>\lim_{x\to a-}f(x)=E</m> гэнэ.
+          Баруун өрөөсгөл хязгаарыг
+          <m>0 \lt x-a \lt \delta</m> нөхцлөөр адил тодорхойлно.</p>
+        </statement>
+      </definition>
+
+      <figure xml:id="gg-epsilon-delta">
+        <caption>ε-δ тодорхойлолтын харааны загвар.
+        ε, δ утгуудыг гүйлгэгчээр өөрчил.</caption>
+        <interactive xml:id="gg-epsdelta-interactive"
+                     platform="geogebra"
+                     width="100%"
+                     aspect="4:3">
+          <slate xml:id="gg-epsdelta-slate"
+                 surface="geogebra"
+                 material="K9y28FAy"/>
+        </interactive>
+      </figure>
+
+      <activity xml:id="act-3-1-1">
+        <title>Дасгал. <m>\varepsilon</m>-<m>\delta</m> баталгаа</title>
+        <introduction>
+          <p><m>f(x)=2x+1</m>, <m>\lim_{x\to 3}(2x+1)=7</m> болохыг батлая.</p>
+        </introduction>
+        <task>
+          <statement>
+            <p><m>\varepsilon \gt 0</m> авъя.
+            <m>|f(x)-7| = |2x-6| = 2|x-3|</m> болохыг харуул.
+            <m>\delta</m>-г хэрхэн сонгох вэ?</p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p><m>\lim_{x\to 3}(2x+1) \neq 8</m> болохыг батал.
+            (Зөвлөмж: <m>\varepsilon = \tfrac{1}{2}</m> авъя.)</p>
+          </statement>
+        </task>
+      </activity>
+    </subsection>
+
+    <exercises xml:id="exer-3-1">
+      <title>Гэрийн даалгавар</title>
+
+      <exercise xml:id="ex-3-1-1">
+        <statement>
+          <p><m>f(x)=x^2+x</m> бол <m>\lim_{x\to 2}f(x)=6</m>
+          болохыг <m>\varepsilon</m>-<m>\delta</m> тодорхойлолтоор батал.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-3-1-2">
+        <statement>
+          <p><m>\lim_{x\to+\infty}\sin x</m> оршин байх уу?
+          Яагаад гэдгийг тайлбарла.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-3-1-3">
+        <statement>
+          <p><m>\lim_{x\to 3-}\{x\}=1</m>,
+          <m>\lim_{x\to 3+}\{x\}=0</m> болохыг харуул.
+          <m>\lim_{x\to 3}\{x\}</m> оршин байх уу?</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-3-1-4">
+        <statement>
+          <p>Дараахыг <m>\varepsilon</m>-<m>\delta</m> тодорхойлолтоор батал:
+            <ol marker="(a)">
+              <li><p><m>\lim\limits_{x\to 2}\sqrt{x}=\sqrt{2}</m></p></li>
+              <li><p><m>\lim\limits_{x\to 2}(3x+5)=11</m></p></li>
+              <li><p><m>\lim\limits_{n\to\infty}\dfrac{n^2+2n+1}{n^2+n+1}=1</m></p></li>
+              <li><p><m>\lim\limits_{n\to\infty}\dfrac{n}{n+1}=1</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3.2: Хязгаарын теоремүүд
+       ============================================================ -->
+  <section xml:id="sec-hyazgaar-teoremuud">
+    <title>Лекц 2. Хязгаарын теоремүүд ба техник</title>
+
+    <objectives>
+      <introduction>
+        <p>Энэ хэсэгт бид дараах асуултуудад хариулна:
+          <ul>
+            <li>Хязгаар ямар чанаруудтай байдаг вэ?</li>
+            <li>Функцүүдийн нийлбэр, үржвэр, харьцааны хязгаарыг хэрхэн тооцох вэ?</li>
+            <li>Хашилтын теорем ямар үед хэрэглэгддэг вэ?</li>
+          </ul>
+        </p>
+      </introduction>
+    </objectives>
+
+    <introduction>
+      <activity xml:id="odoogch-3-2">
+        <title>Урьдчилсан дасгал</title>
+        <introduction>
+          <p><m>\lim_{x\to 2}(x^2-1)</m> ба <m>\lim_{x\to 2}(x^3+3x)</m>-г
+          тооцоолъё.</p>
+        </introduction>
+        <task>
+          <statement>
+            <p>Хэрэв <m>\lim_{x\to 2} x = 2</m> болохыг мэдэж байвал,
+            <m>\lim_{x\to 2} x^2</m>-г хэрхэн тооцох вэ?</p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p><m>\lim_{x\to 2}(x^2-1)</m> ба <m>\lim_{x\to 2}(x^3+3x)</m>-г
+            бод. Тэгвэл <m>\lim_{x\to 2}\dfrac{x^2-1}{x^3+3x}</m> нь юу болох вэ?</p>
+          </statement>
+        </task>
+      </activity>
+    </introduction>
+
+    <subsection xml:id="subsec-hyazgaar-chanuud">
+      <title>Хязгаарын чанарууд</title>
+
+      <theorem xml:id="thm-uniqlim">
+        <title>Хязгаар ганц байх тухай</title>
+        <statement>
+          <p>Хэрэв <m>\lim_{x\to a}f(x)</m> хязгаар оршин байвал
+          цор ганц байна.</p>
+        </statement>
+        <proof>
+          <p><m>\lim_{x\to a}f(x)=b_1</m> ба
+          <m>\lim_{x\to a}f(x)=b_2</m>, <m>b_1 \gt b_2</m> гэе.
+          <m>\varepsilon=\dfrac{b_1-b_2}{3}</m> авбал
+          <m>(b_1-\varepsilon,b_1+\varepsilon)\cap(b_2-\varepsilon,b_2+\varepsilon)=\emptyset</m>.
+          Харин тодорхойлолтоор <m>f(x_0)</m> нь хоёуланд нь
+          харьяалагдана — зөрчил. Иймд <m>b_1=b_2</m>.</p>
+        </proof>
+      </theorem>
+
+      <theorem xml:id="thm-onesided-lim">
+        <title>Баруун, зүүн ба ердийн хязгаарын хамаарал</title>
+        <statement>
+          <ol>
+            <li><p><m>\lim_{x\to a}f(x)=E \;\Rightarrow\;
+            \lim_{x\to a+}f(x)=\lim_{x\to a-}f(x)=E</m>.</p></li>
+            <li><p><m>\lim_{x\to a+}f(x)=\lim_{x\to a-}f(x)=E \;\Rightarrow\;
+            \lim_{x\to a}f(x)=E</m>.</p></li>
+          </ol>
+        </statement>
+      </theorem>
+
+      <corollary xml:id="cor-no-lim">
+        <statement>
+          <p>Хэрэв <m>\lim_{x\to a+}f(x)\neq\lim_{x\to a-}f(x)</m> бол
+          <m>\lim_{x\to a}f(x)</m> оршдоггүй.</p>
+        </statement>
+      </corollary>
+
+      <theorem xml:id="thm-conslim">
+        <title>Хязгаарын энгийн чанарууд</title>
+        <statement>
+          <p><m>c,a</m> тогтмол тоонууд, <m>x\to a</m> байг.
+            <ul>
+              <li><p><em>(P1)</em>
+              <m>\displaystyle\lim_{x\to a}c = c</m></p></li>
+              <li><p><em>(P2)</em>
+              <m>\displaystyle\lim_{x\to a}x = a</m></p></li>
+              <li><p><em>(P3)</em> Хэрэв <m>\lim_{x\to a}f(x)=\infty</m> бол
+              <m>\displaystyle\lim_{x\to a}\dfrac{1}{f(x)}=0</m>.</p></li>
+            </ul>
+          </p>
+        </statement>
+        <proof>
+          <p><em>(P1)</em> <m>|f(x)-c|=0 \lt \varepsilon</m> ямар ч
+          <m>\delta</m> дээр.
+          <em>(P2)</em> <m>\delta=\varepsilon</m> гэвэл
+          <m>|x-a| \lt \delta</m> үед <m>|f(x)-a| \lt \varepsilon</m>.</p>
+        </proof>
+      </theorem>
+
+      <theorem xml:id="thm-aritlim">
+        <title>Хязгаар ба үйлдлүүд</title>
+        <statement>
+          <p><m>\lim_{x\to a}f(x)=A</m>,
+          <m>\lim_{x\to a}g(x)=B</m> байг. Тэгвэл:
+            <ul>
+              <li><p><em>(P4)</em> <m>f</m> нь <m>a</m>-ийн орчимд зааглагдсан.</p></li>
+              <li><p><em>(P5)</em>
+              <m>\lim_{x\to a}(f(x)\pm g(x))=A\pm B</m>.</p></li>
+              <li><p><em>(P6)</em>
+              <m>\lim_{x\to a}C\,f(x)=CA</m>;
+              <m>\lim_{x\to a}f(x)g(x)=AB</m>.</p></li>
+              <li><p><em>(P7)</em> <m>B\neq 0</m> бол
+              <m>\displaystyle\lim_{x\to a}\dfrac{f(x)}{g(x)}=\dfrac{A}{B}</m>.</p></li>
+            </ul>
+          </p>
+        </statement>
+        <proof>
+          <p><em>(P5)</em>
+          <m>\varepsilon_1=\varepsilon_2=\varepsilon/2</m>,
+          <m>\delta=\min(\delta_1,\delta_2)</m> авбал
+          <me>|(f\pm g)-(A\pm B)|\le|f-A|+|g-B| \lt \varepsilon.</me>
+          </p>
+          <p><em>(P6)</em>
+          <m>f(x)g(x)=(f-A)(g-B)+Ag+Bf-AB</m> задлаад (P5)-г хэрэглэнэ.</p>
+          <p><em>(P7)</em>
+          <m>|g(x)| \gt \tfrac{|B|}{2}</m> болохыг эхлээд батлаад, дараа нь
+          <me>\left|\frac{f}{g}-\frac{A}{B}\right|
+             =\frac{|B(f-A)-A(g-B)|}{|g||B|} \lt \varepsilon</me>
+          гэдгийг <m>\delta=\min(\delta_1,\delta_2,\delta_3)</m>
+          сонгон харуулна.</p>
+        </proof>
+      </theorem>
+
+      <theorem xml:id="thm-ineqlim">
+        <title>Хязгаар ба тэнцэтгэл биш</title>
+        <statement>
+          <ol>
+            <li><p><m>h(x)\ge 0</m> ба <m>\lim_{x\to a}h(x)=A</m> бол
+            <m>A\ge 0</m>.</p></li>
+            <li><p><m>f(x)\le g(x)</m> бол
+            <m>\lim f(x)\le\lim g(x)</m>.</p></li>
+            <li><p><em>Хашилтын теорем.</em>
+            <m>f(x)\le g(x)\le h(x)</m> ба
+            <m>\lim_{x\to a}f(x)=\lim_{x\to a}h(x)=A</m> бол
+            <m>\lim_{x\to a}g(x)=A</m>.</p></li>
+          </ol>
+        </statement>
+        <proof>
+          <p><em>(1)</em> <m>A \lt 0</m> гэвэл
+          <m>|f(x)-A| \lt |A|/2</m> болмогц <m>f(x) \lt 0</m> —
+          зөрчил <m>h(x)\ge 0</m>-тэй.</p>
+          <p><em>(2)</em> <m>h(x)=g(x)-f(x)\ge 0</m>-д (1) хэрэглэнэ.</p>
+          <p><em>(3)</em>
+          <m>|h(x)-f(x)| \lt \varepsilon</m> болмогц
+          нэмэгдэхүүн бүр <m>\varepsilon</m>-ээс бага тул
+          <m>\lim(g-f)=0</m>, <m>\lim(h-g)=0</m> гарна.</p>
+        </proof>
+      </theorem>
+
+      <theorem xml:id="thm-complim">
+        <title>Хязгаар ба композици</title>
+        <statement>
+          <p><m>\lim_{x\to a}g(x)=b</m>,
+          <m>\lim_{z\to b}f(z)=A</m> бол
+          <me>\lim_{x\to a}f\bigl(g(x)\bigr)=A.</me>
+          </p>
+        </statement>
+        <proof>
+          <p>Дурын <m>\varepsilon \gt 0</m>-д <m>\exists\,\delta_1</m> тийм,
+          <m>|z-b| \lt \delta_1\Rightarrow|f(z)-A| \lt \varepsilon</m>.
+          Мөн <m>\exists\,\delta</m> тийм,
+          <m>|x-a| \lt \delta\Rightarrow|g(x)-b| \lt \delta_1</m>.
+          Иймд <m>|x-a| \lt \delta</m> үед
+          <m>|f(g(x))-A| \lt \varepsilon</m>.</p>
+        </proof>
+      </theorem>
+
+      <theorem xml:id="thm-monoton-lim">
+        <title>Монотон дараалалын хязгаар</title>
+        <statement>
+          <p>Хэрэв дараалал монотон бөгөөд зааглагдсан бол нийлнэ.
+            <ol>
+              <li><p>Өсөх ба дээрээсээ зааглагдсан дараалал нийлнэ.</p></li>
+              <li><p>Буурах ба доороосоо зааглагдсан дараалал нийлнэ.</p></li>
+            </ol>
+          </p>
+        </statement>
+      </theorem>
+
+      <theorem xml:id="thm-boltsano-veiershtrass">
+        <title>Больцано–Вейерштрасс</title>
+        <statement>
+          <p>Зааглагдсан дараалал заавал нийлдэг дэд дараалалтай байдаг.</p>
+        </statement>
+      </theorem>
+
+      <activity xml:id="act-3-2-1">
+        <title>Дасгал. Теоремуудыг хэрэглэх</title>
+        <task>
+          <statement>
+            <p><xref ref="thm-onesided-lim"/> батал.</p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p><xref ref="cor-no-lim"/> батал.</p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p><xref ref="thm-ineqlim"/> батал.</p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p><m>0 \lt x \lt \dfrac{\pi}{2}</m> бол
+            <m>\sin x \lt x \lt \tan x</m> гэдгийг батал.</p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>Зааглагдсан, монотон дараалал хязгаартай байхыг батал.</p>
+          </statement>
+        </task>
+      </activity>
+    </subsection>
+
+    <!-- ===== Subsection: Хязгаар бодох ===== -->
+    <subsection xml:id="subsec-hyazgaar-bodolt">
+      <title>Хязгаар бодох</title>
+
+      <example xml:id="ex-bodolt-1">
+        <statement>
+          <p><m>\displaystyle\lim_{x\to 2}\frac{x^2-1}{x^3+3x}</m>.</p>
+          <p>(P6)-оор <m>\lim(x^2-1)=3</m>,
+          <m>\lim(x^3+3x)=14</m> тул хариу <m>\dfrac{3}{14}</m>.</p>
+        </statement>
+      </example>
+
+      <example xml:id="ex-bodolt-00">
+        <title><m>0/0</m> хэлбэр</title>
+        <statement>
+          <p><m>\displaystyle\lim_{x\to 2}\frac{x^2-2x}{x^2-4}</m>.</p>
+          <p><m>\dfrac{x(x-2)}{(x-2)(x+2)}=\dfrac{x}{x+2}</m>
+          (<m>x\neq 2</m>) тул хариу <m>\dfrac{1}{2}</m>.</p>
+        </statement>
+      </example>
+
+      <example xml:id="ex-bodolt-polynomial">
+        <title>Олон гишүүнт хязгаар</title>
+        <statement>
+          <p><m>\displaystyle\lim_{x\to\infty}
+          \frac{2x^3+5x-2}{3x^3-2x^2+x-1}</m>.</p>
+          <p><m>x^3</m>-д хуваавал
+          <m>\dfrac{2+5/x^2-2/x^3}{3-2/x+1/x^2-1/x^3}\to\dfrac{2}{3}</m>.</p>
+        </statement>
+      </example>
+
+      <activity xml:id="act-3-2-2">
+        <title>Дасгал. Хязгаар бод</title>
+        <introduction>
+          <p>Дараах хязгааруудыг бод. &#9733; тэмдэгтэй бодлогуудыг
+          <em>3.4 Интерактив дасгал</em> хэсэгт AI-аар шалгуул.</p>
+        </introduction>
+        <task>
+          <statement>
+            <p><m>\lim\limits_{x\to 0}\dfrac{\sqrt{1+x}-\sqrt{1-x}}{x}</m>
+            &#9733;</p>
+          </statement>
+          <hint><p>Тоо ба хуваарийг <m>(\sqrt{1+x}+\sqrt{1-x})</m>-ээр үржүүл.</p></hint>
+        </task>
+        <task>
+          <statement>
+            <p><m>\lim\limits_{x\to 0}\dfrac{(1+x)^5-(1+5x)}{x^2+x}</m></p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p><m>\lim\limits_{x\to+\infty}x(\sqrt{x^2+1}-x)</m>
+            &#9733;</p>
+          </statement>
+          <hint><p>Тоо ба хуваарийг <m>(\sqrt{x^2+1}+x)</m>-ээр үржүүл.</p></hint>
+        </task>
+        <task>
+          <statement>
+            <p><m>\lim\limits_{x\to 3}\dfrac{x^2-5x+6}{x^2-9}</m>
+            &#9733;</p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p><m>\lim\limits_{x\to\infty}\dfrac{2x^2-3x-4}{\sqrt{x^4+1}}</m></p>
+          </statement>
+        </task>
+      </activity>
+    </subsection>
+
+    <!-- ===== Subsection: Гайхамшигт хязгаарууд ===== -->
+    <subsection xml:id="subsec-remarkable-limits">
+      <title>Гайхамшигт хязгаарууд</title>
+
+      <example xml:id="ex-first-remarkable">
+        <title>I гайхамшигт хязгаар</title>
+        <statement>
+          <me>\lim_{x\to 0}\frac{\sin x}{x}=1.</me>
+        </statement>
+        <proof>
+          <p><m>x\in(0,\tfrac{\pi}{2})</m> үед нэгж тойрог дээрх
+          талбайнуудыг харьцуулъя:
+          <me>\frac{1}{2}\sin x \;\lt\; \frac{x}{2} \;\lt\;
+             \frac{1}{2}\tan x
+             \;\Longrightarrow\;
+             \cos x \lt \frac{\sin x}{x} \lt 1.</me>
+          <m>x\to 0^+</m> үед <m>\cos x\to 1</m> тул
+          Хашилтын теоремоор <m>\dfrac{\sin x}{x}\to 1</m>.
+          <m>\dfrac{\sin x}{x}</m> тэгш функц тул
+          <m>x\to 0-</m> үед ч ижил.</p>
+        </proof>
+      </example>
+
+      <figure xml:id="gg-sinx-over-x">
+        <caption><m>y=\dfrac{\sin x}{x}</m> функцийн график.
+        <m>x\to 0</m> үед функц 1 рүү ойртож байгааг харна уу.</caption>
+        <interactive xml:id="gg-sinx-interactive"
+                     platform="geogebra"
+                     width="100%"
+                     aspect="4:3">
+          <slate xml:id="gg-sinx-slate"
+                 surface="geogebra"
+                 material="gpyb8vbb"/>
+        </interactive>
+      </figure>
+
+      <example xml:id="ex-second-remarkable">
+        <title>II гайхамшигт хязгаар</title>
+        <statement>
+          <p><m>\lim_{n\to\infty}\bigl(1+\tfrac{1}{n}\bigr)^n</m>
+          дараалал нийлдэг.
+          <me>4 \gt \Bigl(1+\tfrac{1}{2n}\Bigr)^{2n}
+             \gt \Bigl(1+\tfrac{1}{2n-1}\Bigr)^{2n-1}</me>
+          тул дараалал өсөх, дээрээсээ зааглагдсан.
+          <xref ref="thm-monoton-lim"/>-ээр нийлнэ.
+          Энэ хязгаарыг <m>e\approx 2.71828\ldots</m> гэж нэрлэдэг.</p>
+        </statement>
+      </example>
+
+      <activity xml:id="act-3-2-3">
+        <title>Дасгал. Гайхамшигт хязгааруудыг хэрэглэх</title>
+        <task>
+          <statement>
+            <p><m>\lim\limits_{x\to 0}\dfrac{\sin 3x}{x}</m> &#9733;</p>
+          </statement>
+          <hint><p>I гайхамшигт хязгаарыг шууд ашигла:
+          <m>\dfrac{\sin 3x}{x} = 3\cdot\dfrac{\sin 3x}{3x}</m>.</p></hint>
+        </task>
+        <task>
+          <statement>
+            <p><m>\lim\limits_{x\to 0}\dfrac{1-\cos x}{x^2}</m> &#9733;</p>
+          </statement>
+          <hint><p><m>1-\cos x = 2\sin^2\tfrac{x}{2}</m> томьёог ашигла.</p></hint>
+        </task>
+        <task>
+          <statement>
+            <p><m>\lim\limits_{x\to 0}\dfrac{\tan x-\sin x}{x^3}</m></p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p><m>\lim\limits_{x\to\infty}\left(1+\dfrac{2}{x}\right)^{3x}</m>
+            &#9733;</p>
+          </statement>
+          <hint><p>II гайхамшигт хязгаар:
+          <m>\left(1+\dfrac{2}{x}\right)^x \to e^2</m>.</p></hint>
+        </task>
+        <task>
+          <statement>
+            <p><m>\lim\limits_{x\to 0}\dfrac{\arctan x}{x}</m> &#9733;</p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p><m>\lim\limits_{x\to 0}\dfrac{\ln(1+x)}{x}</m> &#9733;</p>
+          </statement>
+        </task>
+      </activity>
+
+      <subsection xml:id="subsec-summary-3-2">
+        <title>Нэгтгэл</title>
+        <p>
+          <ul>
+            <li>Хязгаар цор ганц байдаг.</li>
+            <li>Хязгаар нийлбэр, үржвэр, харьцааны дүрмийг дагадаг (P4–P7).</li>
+            <li>Хашилтын теорем:
+            <m>f\le g\le h</m> ба <m>f,h</m>-ийн хязгаар тэнцүү бол
+            <m>g</m>-ийн хязгаар ч тэнцүү.</li>
+            <li>I гайхамшигт хязгаар:
+            <m>\lim_{x\to 0}\dfrac{\sin x}{x}=1</m>.</li>
+            <li>II гайхамшигт хязгаар:
+            <m>\lim_{n\to\infty}\bigl(1+\tfrac{1}{n}\bigr)^n=e</m>.</li>
+          </ul>
+        </p>
+      </subsection>
+    </subsection>
+
+    <exercises xml:id="exer-3-2">
+      <title>Гэрийн даалгавар</title>
+
+      <exercisegroup xml:id="exgroup-hyazgaar-bod">
+        <title>§2. Хязгаар бод</title>
+        <exercise><statement><p><m>\lim\limits_{x\to -1}\dfrac{x^2+x-2}{x^2-1}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 1+}\dfrac{x^2+x-2}{x^2-1}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to+\infty}\dfrac{x^2-1}{2x^2-x-1}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{(1+mx)^n-(1+nx)^m}{x^2}</m>,<nbsp/><m>m,n\in\mathbb{N}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 1}\dfrac{x^{100}-2x+1}{x^{50}-2x+1}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to a}\dfrac{\sqrt{x}-\sqrt{a}+\sqrt{x-a}}{\sqrt{x^2-a^2}}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to-2}\dfrac{\sqrt[3]{x-2}+2}{x^3+8}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 7}\dfrac{\sqrt{x+2}-\sqrt[3]{x+20}}{\sqrt[4]{x+9}-2}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to+\infty}\sqrt{x+\sqrt{x+\sqrt{x}}}-\sqrt{x}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to+\infty}\sqrt[3]{x^3+3x^2}-\sqrt{x^2-2x}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 1}\!\left(\dfrac{1}{1-x}-\dfrac{2}{1-x^2}\right)</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{h\to 0}\dfrac{\sqrt{x+h}-\sqrt{x}}{h}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to\infty}\bigl(\sqrt{x^2+1}-\sqrt{x^2-1}\bigr)</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to+\infty}x(\sqrt{x^2+1}-x)</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{\sqrt[3]{1+x}-\sqrt[3]{1-x}}{x}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to -8}\dfrac{\sqrt{1-x}-3}{2+\sqrt[3]{x}}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to+\infty}\bigl(\sqrt[3]{x^3+x^2+1}-\sqrt[3]{x^3-x^2+1}\bigr)</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to\infty}\dfrac{2x^2-3x-4}{\sqrt{x^4+1}}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to\infty}\dfrac{(x-1)^3}{2x^3+3x+1}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to\infty}\dfrac{x}{\sqrt[3]{x^3+9}}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to a}\dfrac{x^2-(a+1)x+a}{x^3-a^3}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 1}\dfrac{2x^3-2x^2+x-1}{x^3-x^2+3x-3}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to -3}\dfrac{x^3+5x^2+3x-9}{x^3+8x^2+21x+18}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to+\infty}\dfrac{\sqrt{x}}{\sqrt{x+\sqrt{x}+\sqrt[4]{x}}}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to\infty}\dfrac{x^2-5x+1}{3x+7}</m></p></statement></exercise>
+      </exercisegroup>
+
+      <exercisegroup xml:id="exgroup-first-rem">
+        <title>§3. I гайхамшигт хязгаар</title>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{\tan 5x}{\sin 2x}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{\sin 4x}{\tan 3x}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{1-\cos 2x}{x^2}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{\arctan x}{x}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{\sin x - x}{x^3}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{\arcsin x}{x}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{\sin x}{1-\cos x}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to \pi/6}\dfrac{2\sin x-1}{1-2\cos 2x}</m></p></statement></exercise>
+      </exercisegroup>
+
+      <exercisegroup xml:id="exgroup-second-rem">
+        <title>§4. II гайхамшигт хязгаар ба <m>e</m></title>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{\ln(1+x)}{x}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{\ln(1+x)-x}{x^3}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{e^x-1-x}{x^2}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{(1+x)^n-1}{x}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{(1+7x)^9-1-63x}{x^2}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{e^{3x}-1}{x+x^2}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to\infty}\dfrac{\ln(x^2+1)}{\ln x}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to\infty}\dfrac{x^3}{e^x}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to\infty}\dfrac{\ln x}{\sqrt{x}}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 1}\dfrac{\ln x}{x-1}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{e^{2x}-1}{x}</m></p></statement></exercise>
+      </exercisegroup>
+
+      <exercisegroup xml:id="exgroup-daraalalal">
+        <title>§5. Дараалалын хязгаар</title>
+        <exercise><statement><p><m>\lim\limits_{n\to\infty}\dfrac{2^n}{3^n}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{n\to\infty}\dfrac{n!}{n^n}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{n\to\infty}\left(1+\dfrac{1}{n}\right)^n</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{n\to\infty}\sqrt[n]{n}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{n\to\infty}\dfrac{2^n}{n!}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{n\to\infty}\left(1+\dfrac{2}{n}\right)^n</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{n\to\infty}\sqrt[n]{3^n+5}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{n\to\infty}\dfrac{\sin(1/n)}{1/n}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{n\to\infty}\left(1+\dfrac{1}{n}\right)^{2n}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{n\to\infty}\dfrac{n^k}{e^n}</m>,<nbsp/><m>k</m> тогтмол</p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{n\to\infty}\sqrt[n]{n!}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{n\to\infty}\dfrac{1+2+\cdots+n}{n^2}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{n\to\infty}\dfrac{\sin n}{n^2}</m></p></statement></exercise>
+      </exercisegroup>
+
+      <exercisegroup xml:id="exgroup-nemelts-3-2">
+        <title>§7. Нэмэлт бодлогууд</title>
+        <exercise><statement><p><m>\lim\limits_{x\to 1}\dfrac{x^2-1}{x-1}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 4}\dfrac{\sqrt{x}-2}{x-4}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to\infty}\dfrac{3x^2+2}{5x^2-7}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 1}\dfrac{x^{n+1}-(n+1)x+n}{(x-1)^2}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to+\infty}\dfrac{\sqrt{x+\sqrt{x+\sqrt{x}}}}{\sqrt{x+1}}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 4}\dfrac{\sqrt{1+2x}-3}{\sqrt{x}-2}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 8}\dfrac{\sqrt{1+x}-3}{\sqrt[3]{x}-2}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to-\infty}\dfrac{x^2+1}{2x^2-3}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to 0}\dfrac{\sqrt{1+x}-1}{x}</m></p></statement></exercise>
+        <exercise><statement><p><m>\lim\limits_{x\to\infty}\dfrac{\sqrt{x^2+5x}}{x}</m></p></statement></exercise>
+      </exercisegroup>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3.3: Тасралтгүй функц
+       ============================================================ -->
+  <section xml:id="sec-tasraltgui">
+    <title>Лекц 3. Дараалалын хязгаар ба тасралтгүй функц</title>
+
+    <objectives>
+      <introduction>
+        <p>Энэ хэсэгт бид дараах асуултуудад хариулна:
+          <ul>
+            <li>Функц цэг дээр тасралтгүй байх гэдэг яг юу гэсэн үг вэ?</li>
+            <li>Тасралтгүй байхын 3 нөхцөл юу вэ?</li>
+            <li>Тасралтын ямар төрлүүд байдаг вэ?</li>
+            <li>Тасралтгүй функцүүд дээр ямар үйлдлүүд хийж болох вэ?</li>
+          </ul>
+        </p>
+      </introduction>
+    </objectives>
+
+    <introduction>
+      <activity xml:id="odoogch-3-3">
+        <title>Урьдчилсан дасгал</title>
+        <introduction>
+          <p>Дараах функцийг авч үз:
+          <me>f(x)=\begin{cases}
+            \dfrac{x^2-1}{x-1}, \amp x\ne 1,\\[4pt]
+            3, \amp x=1.
+          \end{cases}</me>
+          </p>
+        </introduction>
+        <task>
+          <statement>
+            <p><m>f(1)</m>-ийн утгыг тодорхойл.</p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p><m>\lim_{x\to 1}f(x)</m>-г тооцоол.</p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p><m>f(1)</m> ба <m>\lim_{x\to 1}f(x)</m> тэнцүү байна уу?
+            Энэ нь юуг илэрхийлж байна вэ?</p>
+          </statement>
+        </task>
+      </activity>
+    </introduction>
+
+    <subsection xml:id="subsec-daraalaliin-lim">
+      <title>Дараалалын хязгаар</title>
+      <introduction>
+        <p>Функцийн хязгаарын ойлголтыг дараалалд өргөтгөж үзнэ.</p>
+      </introduction>
+
+      <definition xml:id="def-niilekh-sarnikhi">
+        <statement>
+          <p>Дараалал <term>нийлдэг</term> (convergent) гэж нэрлэнэ хэрэв
+          төгсгөлөг хязгаартай бол.
+          Бусад тохиолдолд <term>сарних</term> (divergent) гэнэ.</p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-daraalaliin-lim">
+        <statement>
+          <p><m>a_1, a_2, a_3, \ldots</m> бодит тоон дараалал байг.
+          Дурын <m>\varepsilon \gt 0</m> тоонд <m>\delta \gt 0</m> олдож,
+          <m>n \gt \delta</m> байх бүх <m>n</m> натурал тооны хувьд
+          <m>|a_n - E| \lt \varepsilon</m> байвал
+          <me>\lim_{n \to \infty} a_n = E</me>
+          гэж бичнэ.</p>
+        </statement>
+      </definition>
+
+      <example xml:id="ex-niildeg-daraalalal">
+        <title>Нийлдэг дараалал</title>
+        <statement>
+          <p><m>a_n = \dfrac{n}{n+1}</m>,
+          <m>\lim_{n\to\infty}\dfrac{n}{n+1}=1</m>.</p>
+          <p><m>\varepsilon \gt 0</m> хувьд
+          <m>\delta=\dfrac{1}{\varepsilon}</m> гэвэл <m>n \gt \delta</m> үед
+          <me>\left|\dfrac{n}{n+1}-1\right|=\dfrac{1}{n+1} \lt \varepsilon.</me>
+          </p>
+        </statement>
+      </example>
+
+      <example xml:id="ex-sarnikhi-daraalalal">
+        <title>Сарних дараалал</title>
+        <statement>
+          <p><m>a_n = (-1)^n</m> дарааллын хязгаар оршдоггүй.</p>
+        </statement>
+        <proof>
+          <p><m>L</m> хязгаар оршино гэе. <m>\varepsilon=1</m> авъя.
+            <ul>
+              <li><p><m>L \gt 0</m> бол сондгой <m>n \gt N</m> дээр
+              <m>|a_n-L|=1+L \ge 1</m>: зөрчил.</p></li>
+              <li><p><m>L \le 0</m> бол тэгш <m>n \gt N</m> дээр
+              <m>|a_n-L|=1-L \ge 1</m>: зөрчил.</p></li>
+            </ul>
+          Аль ч тохиолдолд зөрчил гарна. Иймд хязгаар оршдоггүй.</p>
+        </proof>
+      </example>
+
+      <figure xml:id="gg-onesided">
+        <caption>Зүүн ба баруун өрөөсгөл хязгаар.
+        <m>f(x)=[x]</m> функцийн хувьд <m>x\to 1</m> үед
+        зүүн ба баруун хязгаар ялгаатай байгааг харна уу.</caption>
+        <interactive xml:id="gg-onesided-interactive"
+                     platform="geogebra"
+                     width="100%"
+                     aspect="4:3">
+          <slate xml:id="gg-onesided-slate"
+                 surface="geogebra"
+                 material="ycc8sunw"/>
+        </interactive>
+      </figure>
+
+      <activity xml:id="act-3-1-2">
+        <title>Дасгал. Хязгаар оршдоггүй болохыг харуулах</title>
+        <task>
+          <statement>
+            <p><m>f(x)=[x]</m>-ийн <m>x\to 1</m> үеийн хязгаар оршдоггүйг
+            зүүн ба баруун өрөөсгөл хязгаарыг ашиглан харуул.</p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p><m>f(x)=\dfrac{1}{(x-2)^2}</m>-ийн <m>x\to 2</m> үеийн
+            хязгаар <m>+\infty</m> болохыг батал.</p>
+          </statement>
+        </task>
+        <task xml:id="act-3-1-2-ai">
+          <title>Нэмэлт бодлогууд (AI шалгана)</title>
+          <statement>
+            <p>Дараах хязгааруудыг бодоод <em>Интерактив дасгал</em>
+            хэсэгт (3.4) бодолтоо оруулан шалгуул.</p>
+            <ol>
+              <li><p><m>\displaystyle\lim_{x\to -1}\dfrac{x^2+x-2}{x^2-1}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\to 5}\dfrac{x^2-25}{x-5}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\to 0^+}\dfrac{1}{x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\to +\infty}\dfrac{1}{x}</m></p></li>
+            </ol>
+          </statement>
+        </task>
+      </activity>
+
+      <subsection xml:id="subsec-summary-3-1">
+        <title>Нэгтгэл</title>
+        <p>
+          <ul>
+            <li><m>x \to a</m> гэдэг нь <m>x</m> нь <m>a</m>-тай тэнцэхгүйгээр
+            хангалттай ойрхон байж чадна гэсэн утгатай.</li>
+            <li><m>\varepsilon</m>-<m>\delta</m> тодорхойлолт нь хязгаарыг нарийн
+            математик хэлбэрт оруулсан.</li>
+            <li>Хязгаар оршихын тулд зүүн ба баруун өрөөсгөл хязгаар
+            тэнцүү байх шаардлагатай.</li>
+          </ul>
+        </p>
+      </subsection>
+    </subsection>
+
+    <subsection xml:id="subsec-tasraltgui-todorkhiilolt">
+      <title>Тасралтгүй байдлын тодорхойлолтууд</title>
+
+      <definition xml:id="def-tasraltgui-tseged">
+        <title>Цэг дээр тасралтгүй чанар</title>
+        <statement>
+          <p><m>y=f(x)</m> функцын хувьд
+          <me>\lim_{x\to a} f(x)=f(a)</me>
+          бол <m>y=f(x)</m> функцыг <m>x=a</m> цэгт
+          <term>тасралтгүй</term> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-tasraltgui-funkts">
+        <title>Тасралтгүй функц</title>
+        <statement>
+          <p><m>y=f(x)</m> функц тодорхойлогдох мужийнхаа бүх цэг дээр
+          тасралтгүй бол <term>тасралтгүй функц</term> гэнэ.
+          Хэрэв <m>(a,b)</m> завсрын бүх цэг дээр тасралтгүй бол
+          <m>(a,b)</m> дээр тасралтгүй гэнэ.</p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-tasralt">
+        <title>Цэг дээрх тасралт</title>
+        <statement>
+          <p><m>y=f(x)</m> функцын хувьд <m>x=a</m> цэгт тасралтгүй
+          чанар биелэхгүй бол (өөрөөр хэлбэл
+          <m>\displaystyle\lim_{x\to a} f(x)\neq f(a)</m>)
+          <m>x=a</m> цэгт <term>тасралттай</term> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <figure xml:id="gg-continuity">
+        <caption>Тасралтгүй ба тасралттай функцүүд.
+        Тасралтын төрлүүдийг харааны загвараар харна уу.</caption>
+        <interactive xml:id="gg-continuity-interactive"
+                     platform="geogebra"
+                     width="100%"
+                     aspect="4:3">
+          <slate xml:id="gg-continuity-slate"
+                 surface="geogebra"
+                 material="YhZNXyzm"/>
+        </interactive>
+      </figure>
+
+      <note xml:id="note-tasraltgui-3-umkhan">
+        <p><m>f</m> функц <m>x=a</m> цэгт тасралтгүй байх
+        <em>3 нөхцөл</em>:
+          <ol>
+            <li><p><m>f(a)</m> оршин (төгсгөлөг) байх.</p></li>
+            <li><p><m>\displaystyle\lim_{x\to a} f(x)</m>
+            оршин (төгсгөлөг) байх.</p></li>
+            <li><p><m>\displaystyle\lim_{x\to a} f(x)=f(a)</m> байх.</p></li>
+          </ol>
+        </p>
+      </note>
+
+      <example xml:id="ex-tasraltgui-shuluu">
+        <statement>
+          <p><m>y=f(x)=x+1</m> функц <m>x=1</m> цэг дээр тасралтгүй,
+          учир нь
+          <me>\lim_{x\to 1} f(x)=\lim_{x\to 1} (x+1)=2
+             \quad \text{ба} \quad f(1)=2.</me>
+          Иймээс <m>\displaystyle\lim_{x\to 1} f(x)=f(1)</m> биелнэ.</p>
+        </statement>
+      </example>
+
+      <example xml:id="ex-tasraltgui-piecewise">
+        <statement>
+          <remark>
+            <p>Хэрэв
+            <me>g(x)=\begin{cases}
+              \dfrac{x^2-1}{x-1}, \amp x\ne 1,\\[4pt]
+              2, \amp x=1
+            \end{cases}</me>
+            тодорхойлбол <m>g(x)</m> нь мөн <m>x=1</m> дээр тасралтгүй
+            болно, учир нь <m>g(x)=x+1</m> байна.</p>
+          </remark>
+        </statement>
+      </example>
+
+      <example xml:id="ex-tasralt-jishee">
+        <title>Тасралтын жишээ</title>
+        <statement>
+          <ol>
+            <li>
+              <p><m>f(x)=\dfrac{1}{x^2}</m> нь <m>(1,5)</m> дээр
+              тасралтгүй, харин <m>(-1,1)</m> дээр <m>x=0</m>-д
+              тодорхойлогдоогүй тул тасралттай.</p>
+            </li>
+            <li>
+              <p><me>f(x)=\begin{cases}
+                \dfrac{x^2-3-\sqrt{x-1}}{x-2}, \amp x\ne 2,\\[4pt]
+                3, \amp x=2
+              \end{cases}</me>
+              — <m>x=2</m>-д:</p>
+              <ol marker="a">
+                <li><p><m>f(2)=3</m>.</p></li>
+                <li>
+                  <p><m>\displaystyle\lim_{x\to 2}
+                  \frac{x^2-3-\sqrt{x-1}}{x-2}
+                  =\lim_{t\to 1}
+                  \frac{(t^2+1)^2-3-t}{t^2+1-2} = 3.5</m>
+                  (орлуулалт <m>t=\sqrt{x-1}</m>).</p>
+                </li>
+                <li>
+                  <p><m>f(2)\ne \lim\limits_{x\to 2} f(x)</m> тул
+                  тасралттай.
+                  (Хэрэв <m>f(2)=3.5</m> бол тасралтгүй байна.)</p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </statement>
+      </example>
+
+      <activity xml:id="act-3-3-1">
+        <title>Дасгал. Тасралтгүй байдлыг шинжлэх</title>
+        <task>
+          <statement>
+            <p>3 нөхцлийг ашиглан дараах функц <m>x=0</m> дээр
+            тасралтгүй эсэхийг шалга:
+            <me>f(x)=\begin{cases}
+              \dfrac{\sin x}{x}, \amp x\ne 0,\\[4pt]
+              1, \amp x=0.
+            \end{cases}</me>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p><m>f(x)=\dfrac{x^2-4}{x-2}</m> функц <m>x=2</m>-д
+            тасралттай. Яаж засаж тасралтгүй болгох вэ?</p>
+          </statement>
+        </task>
+        <task xml:id="act-3-3-1-seq-ai">
+          <title>Дараалалын бодлогууд (AI шалгана)</title>
+          <statement>
+            <p>Дараах дараалалын хязгааруудыг бодоод 3.4 хэсэгт шалгуул.</p>
+            <ol>
+              <li><p><m>\displaystyle\lim_{n\to\infty}\dfrac{n}{n+1}</m></p></li>
+              <li><p><m>\displaystyle\lim_{n\to\infty}\dfrac{2^n}{3^n}</m></p></li>
+              <li><p><m>\displaystyle\lim_{n\to\infty}\sqrt[n]{n}</m></p></li>
+              <li><p><m>\displaystyle\lim_{n\to\infty}\left(1+\dfrac{2}{n}\right)^n</m></p></li>
+            </ol>
+          </statement>
+        </task>
+      </activity>
+    </subsection>
+
+    <subsection xml:id="subsec-tasraltgui-teoremuud">
+      <title>Тасралтгүй функц дээрх теоремүүд</title>
+
+      <theorem xml:id="thm-tasraltgui-arifmetik">
+        <title>Арифметик үйлдлүүд</title>
+        <statement>
+          <p>Хэрэв <m>f, g</m> нь <m>x=a</m>-д тасралтгүй бол
+          <m>f\pm g</m>, <m>f\cdot g</m>,
+          мөн <m>g(a)\ne 0</m> үед <m>\dfrac{f}{g}</m> нь
+          <m>x=a</m>-д тасралтгүй.</p>
+        </statement>
+      </theorem>
+
+      <theorem xml:id="thm-tasraltgui-kompozitsi">
+        <title>Композици</title>
+        <statement>
+          <p>Хэрэв <m>g</m> нь <m>x=a</m>-д,
+          <m>f</m> нь <m>x=g(a)</m>-д тасралтгүй бол
+          <m>f\circ g</m> нь <m>x=a</m>-д тасралтгүй.</p>
+        </statement>
+      </theorem>
+
+      <theorem xml:id="thm-tasraltgui-urvuu">
+        <title>Урвуу функц</title>
+        <statement>
+          <p>Хэрэв <m>f</m> урвуутай бөгөөд <m>x=a</m>-д тасралтгүй бол
+          <m>f^{-1}</m> нь <m>x=f(a)</m>-д тасралтгүй.</p>
+        </statement>
+      </theorem>
+
+      <subsection xml:id="subsec-summary-3-3">
+        <title>Нэгтгэл</title>
+        <p>
+          <ul>
+            <li><m>f</m> функц <m>x=a</m>-д тасралтгүй:
+            <m>f(a)</m> оршино, <m>\lim_{x\to a}f(x)</m> оршино,
+            хоёр нь тэнцүү.</li>
+            <li>Тасралтгүй функцүүдийн нийлбэр, үржвэр, харьцаа,
+            композиц нь тасралтгүй байдаг.</li>
+          </ul>
+        </p>
+      </subsection>
+    </subsection>
+
+    <exercises xml:id="exer-3-3">
+      <title>Гэрийн даалгавар</title>
+
+      <exercise xml:id="ex-3-3-1">
+        <statement>
+          <p>Дараах функц <m>x=1</m>-д тасралтгүй эсэхийг 3 нөхцлээр шалга:
+          <me>f(x)=\begin{cases}
+            x^2+1, \amp x\le 1,\\
+            3x-1, \amp x \gt 1.
+          \end{cases}</me>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-3-3-2">
+        <statement>
+          <p><m>f(x)=\dfrac{1}{x^2}</m> нь ямар завсрын бүх цэг дээр
+          тасралтгүй вэ?</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-3-3-3">
+        <statement>
+          <p><xref ref="thm-tasraltgui-arifmetik"/> батал.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-3-3-4">
+        <statement>
+          <p><xref ref="thm-tasraltgui-kompozitsi"/> батал.</p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3.4: Интерактив AI дасгал
+       ============================================================ -->
+  <section xml:id="sec-hyazgaar-ai-dasgal">
+    <title>Интерактив дасгал</title>
+
+    <introduction>
+      <p>Доорх дасгалын цонхонд хязгаарын бодлогуудыг бодоорой.
+      Бодолтоо бичээд <em>Шалгах</em> товчийг дарвал Claude шалгана.
+      Hint хэрэгтэй бол <em>Hint авах</em> товчийг дар.
+      Шинэ бодлого үүсгэж ч болно.</p>
+    </introduction>
+
+    <interactive xml:id="ai-limits-interactive"
+                 platform="javascript"
+                 width="100%"
+                 aspect="4:3">
+      <slate xml:id="ai-limits-slate" surface="html">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+
+        <div id="ai-root" style="font-family:Georgia,serif;background:#f8f6f1;padding:20px 16px;min-height:480px;">
+
+          <div style="border-left:4px solid #c0392b;padding-left:14px;margin-bottom:20px;">
+            <div style="font-size:1.05rem;font-weight:700;color:#1a1a2e;">Хязгаар — AI дасгал</div>
+            <div style="font-size:0.82rem;color:#666;margin-top:2px;">Бодолтоо бичээд Claude шалгана</div>
+          </div>
+
+          <div id="ai-keybox" style="display:none;background:#fff;border:1.5px solid #c0392b;border-radius:6px;padding:14px 18px;margin-bottom:14px;">
+            <div style="font-size:0.8rem;font-weight:700;color:#c0392b;margin-bottom:6px;">&#128273; Anthropic API Key оруулна уу</div>
+            <div style="font-size:0.75rem;color:#666;margin-bottom:8px;">claude.ai → Settings → API Keys дээрээс авна уу</div>
+            <div style="display:flex;gap:8px;">
+              <input id="ai-key" type="password" placeholder="sk-ant-..." style="flex:1;border:1.5px solid #ddd;border-radius:4px;padding:7px 10px;font-size:0.85rem;font-family:Georgia,serif;background:#fafaf8;"/>
+              <button id="ai-keybtn" style="background:#1a1a2e;color:#fff;border:none;border-radius:4px;padding:7px 14px;font-size:0.82rem;font-family:Georgia,serif;cursor:pointer;">Хадгалах</button>
+            </div>
+          </div>
+
+          <div id="ai-nav" style="display:flex;gap:7px;margin-bottom:14px;flex-wrap:wrap;"></div>
+
+          <div style="background:#fff;border:1px solid #e0ddd6;border-radius:6px;padding:18px 20px;margin-bottom:14px;">
+            <div id="ai-plabel" style="font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#c0392b;margin-bottom:8px;">Бодлого 1</div>
+            <div id="ai-ptext" style="font-size:0.97rem;line-height:1.65;color:#1a1a2e;margin-bottom:6px;"></div>
+            <div id="ai-pformula" style="text-align:center;padding:12px 0 4px;overflow-x:auto;"></div>
+          </div>
+
+          <div style="background:#fff;border:1px solid #e0ddd6;border-radius:6px;padding:16px 20px;margin-bottom:12px;">
+            <div style="font-size:0.8rem;color:#555;margin-bottom:7px;font-style:italic;">Бодолтоо доор бич:</div>
+            <div style="display:flex;gap:9px;align-items:flex-start;">
+              <textarea id="ai-ans" rows="3" placeholder="Хариу болон аргаа тайлбарла..." style="flex:1;border:1.5px solid #ddd;border-radius:4px;padding:9px 11px;font-size:0.9rem;font-family:Georgia,serif;resize:vertical;background:#fafaf8;color:#1a1a2e;"></textarea>
+              <button id="ai-btncheck" style="background:#c0392b;color:#fff;border:none;border-radius:4px;padding:9px 16px;font-size:0.85rem;font-family:Georgia,serif;cursor:pointer;">Шалгах</button>
+            </div>
+            <button id="ai-btnhint" style="margin-top:7px;background:transparent;color:#666;border:1.5px solid #ccc;border-radius:4px;padding:4px 13px;font-size:0.78rem;font-family:Georgia,serif;cursor:pointer;">&#128161; Hint авах</button>
+          </div>
+
+          <div id="ai-resp" style="display:none;background:#fff;border:1px solid #e0ddd6;border-radius:6px;padding:16px 20px;margin-bottom:12px;">
+            <div style="display:flex;align-items:center;gap:7px;margin-bottom:9px;">
+              <div id="ai-ricon" style="width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;background:#f0f0f0;color:#888;">&#8230;</div>
+              <div id="ai-rtitle" style="font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#888;"></div>
+            </div>
+            <div id="ai-rbody" style="font-size:0.88rem;line-height:1.68;color:#2c2c2c;white-space:pre-wrap;"></div>
+          </div>
+
+          <div style="background:#fff;border:1px solid #e0ddd6;border-radius:6px;padding:14px 20px;">
+            <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#888;margin-bottom:10px;">&#127922; Шинэ бодлого үүсгэх</div>
+            <div style="display:flex;gap:9px;flex-wrap:wrap;align-items:center;">
+              <select id="ai-lec" style="border:1.5px solid #ddd;border-radius:4px;padding:5px 9px;font-size:0.82rem;font-family:Georgia,serif;background:#fafaf8;">
+                <option value="all">Бүх лекц</option>
+                <option value="lec1">Лекц 1 (Тодорхойлолт)</option>
+                <option value="lec2">Лекц 2 (Техник)</option>
+                <option value="lec3">Лекц 3 (Дараалал)</option>
+              </select>
+              <select id="ai-diff" style="border:1.5px solid #ddd;border-radius:4px;padding:5px 9px;font-size:0.82rem;font-family:Georgia,serif;background:#fafaf8;">
+                <option value="easy">Хялбар</option>
+                <option value="medium" selected="selected">Дунд</option>
+                <option value="hard">Хэцүү</option>
+              </select>
+              <select id="ai-topic" style="border:1.5px solid #ddd;border-radius:4px;padding:5px 9px;font-size:0.82rem;font-family:Georgia,serif;background:#fafaf8;">
+                <option value="algebraic">Алгебрийн хязгаар</option>
+                <option value="trig">Тригонометрийн хязгаар</option>
+                <option value="infinity">Тэмүүлэх хязгаар</option>
+                <option value="onesided">Өрөөсгөл хязгаар</option>
+                <option value="squeeze">Сэндвич теорем</option>
+                <option value="sequence">Дараалалын хязгаар</option>
+                <option value="continuity">Тасралтгүй байдал</option>
+              </select>
+              <button id="ai-btngen" style="background:#1a1a2e;color:#fff;border:none;border-radius:4px;padding:6px 14px;font-size:0.82rem;font-family:Georgia,serif;cursor:pointer;">Үүсгэх</button>
+            </div>
+            <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;">
+              <button onclick="filterProblems('all')" style="font-size:0.75rem;padding:3px 10px;border:1.5px solid #ccc;border-radius:12px;background:#fff;cursor:pointer;font-family:Georgia,serif;">Бүгд</button>
+              <button onclick="filterProblems('lec1')" style="font-size:0.75rem;padding:3px 10px;border:1.5px solid #c0392b;border-radius:12px;background:#fff;cursor:pointer;color:#c0392b;font-family:Georgia,serif;">Лекц 1</button>
+              <button onclick="filterProblems('lec2')" style="font-size:0.75rem;padding:3px 10px;border:1.5px solid #1a5276;border-radius:12px;background:#fff;cursor:pointer;color:#1a5276;font-family:Georgia,serif;">Лекц 2</button>
+              <button onclick="filterProblems('lec3')" style="font-size:0.75rem;padding:3px 10px;border:1.5px solid #1e8449;border-radius:12px;background:#fff;cursor:pointer;color:#1e8449;font-family:Georgia,serif;">Лекц 3</button>
+            </div>
+          </div>
+
+        </div>
+      </slate>
+      <script>
+(function() {
+
+var problems = [
+  // ── Лекц 1: Тодорхойлолт, өрөөсгөл хязгаар ──
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to 2} \\frac{x^2-4}{x-2}", answer:"4", topic:"lec1" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to 0^+} \\frac{1}{x}", answer:"+\\infty", topic:"lec1" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to -1} \\frac{x^2+x-2}{x^2-1}", answer:"3/2", topic:"lec1" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to 5} \\frac{x^2-25}{x-5}", answer:"10", topic:"lec1" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to +\\infty} \\frac{1}{x}", answer:"0", topic:"lec1" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to 2} \\frac{x^2-5x+6}{x^2-12x+20}", answer:"1/8", topic:"lec1" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to 0} \\frac{x^4+x^3}{x^4-2x^3}", answer:"-\\tfrac{1}{2}", topic:"lec1" },
+  // ── Лекц 2: Техник, гайхамшигт хязгаар ──
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to 0} \\frac{\\sin 3x}{x}", answer:"3", topic:"lec2" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to 0} \\frac{1-\\cos x}{x^2}", answer:"1/2", topic:"lec2" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to \\infty} \\frac{2x^2-3x+1}{x^2+5}", answer:"2", topic:"lec2" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to 0} \\frac{\\tan 5x}{\\sin 2x}", answer:"5/2", topic:"lec2" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to 0} \\frac{\\arctan x}{x}", answer:"1", topic:"lec2" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to 0} \\frac{e^x-1}{x}", answer:"1", topic:"lec2" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to 0} \\frac{\\ln(1+x)}{x}", answer:"1", topic:"lec2" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to \\infty} \\left(1+\\frac{2}{x}\\right)^{3x}", answer:"e^6", topic:"lec2" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to 0} \\frac{\\sqrt{1+x}-\\sqrt{1-x}}{x}", answer:"1", topic:"lec2" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to +\\infty} x\\left(\\sqrt{x^2+1}-x\\right)", answer:"1/2", topic:"lec2" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to 3} \\frac{x^2-5x+6}{x^2-9}", answer:"1/6", topic:"lec2" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{x \\to 0} \\frac{\\tan x - \\sin x}{x^3}", answer:"1/2", topic:"lec2" },
+  // ── Лекц 3: Дараалал, тасралтгүй ──
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{n \\to \\infty} \\frac{n}{n+1}", answer:"1", topic:"lec3" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{n \\to \\infty} \\left(1+\\frac{1}{n}\\right)^n", answer:"e", topic:"lec3" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{n \\to \\infty} \\frac{2^n}{3^n}", answer:"0", topic:"lec3" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{n \\to \\infty} \\sqrt[n]{n}", answer:"1", topic:"lec3" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{n \\to \\infty} \\left(1+\\frac{2}{n}\\right)^n", answer:"e^2", topic:"lec3" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{n \\to \\infty} \\frac{\\sin(1/n)}{1/n}", answer:"1", topic:"lec3" },
+  { text:"Дараах хязгаарыг бод:", latex:"\\displaystyle\\lim_{n \\to \\infty} \\frac{1+2+\\cdots+n}{n^2}", answer:"1/2", topic:"lec3" }
+];
+var cur = 0;
+var solved = [];
+
+function rk(el, tex) {
+  if (window.katex) {
+    try { katex.render(tex, el, { displayMode:true, throwOnError:false }); }
+    catch(e) { el.textContent = tex; }
+  } else {
+    setTimeout(function(){ rk(el, tex); }, 200);
+  }
+}
+
+function renderNav() {
+  var nav = document.getElementById('ai-nav');
+  if (!nav) return;
+  nav.innerHTML = '';
+  problems.forEach(function(_, i) {
+    var btn = document.createElement('button');
+    var isSolved = solved.indexOf(i) !== -1;
+    var isActive = i === cur;
+    var bg = isActive ? '#c0392b' : (isSolved ? '#27ae60' : '#fff');
+    var bc = isActive ? '#c0392b' : (isSolved ? '#27ae60' : '#ccc');
+    var fc = (isActive || isSolved) ? '#fff' : '#333';
+    btn.style.cssText = 'width:32px;height:32px;border-radius:50%;border:1.5px solid '+bc+';background:'+bg+';color:'+fc+';font-size:0.8rem;cursor:pointer;font-family:Georgia,serif;';
+    btn.textContent = i + 1;
+    btn.onclick = (function(idx){ return function(){ loadProblem(idx); }; })(i);
+    nav.appendChild(btn);
+  });
+}
+
+function loadProblem(idx) {
+  cur = idx;
+  var p = problems[idx];
+  document.getElementById('ai-plabel').textContent = 'Бодлого ' + (idx + 1);
+  document.getElementById('ai-ptext').textContent = p.text;
+  document.getElementById('ai-ans').value = '';
+  document.getElementById('ai-resp').style.display = 'none';
+  var fEl = document.getElementById('ai-pformula');
+  fEl.innerHTML = '';
+  rk(fEl, p.latex);
+  renderNav();
+}
+
+function showResp(type, title, body) {
+  var colors = {
+    correct:{ bg:'#d5f5e3', c:'#1e8449', icon:'&#10003;' },
+    wrong:  { bg:'#fde8e8', c:'#c0392b', icon:'&#10007;' },
+    partial:{ bg:'#fef9e7', c:'#b7950b', icon:'~' },
+    hint:   { bg:'#eaf0fb', c:'#1a5276', icon:'&#128161;' },
+    loading:{ bg:'#f0f0f0', c:'#888',    icon:'&#8230;' }
+  };
+  var cfg = colors[type] || colors.wrong;
+  var ic = document.getElementById('ai-ricon');
+  ic.style.background = cfg.bg; ic.style.color = cfg.c; ic.innerHTML = cfg.icon;
+  var tl = document.getElementById('ai-rtitle');
+  tl.style.color = cfg.c; tl.textContent = title;
+  document.getElementById('ai-rbody').textContent = body;
+  document.getElementById('ai-resp').style.display = 'block';
+}
+
+var aiApiKey = 'worker';
+
+function callAI(prompt, maxTok, cb) {
+  if (false) {
+    cb(new Error('API key байхгүй байна. Дээрх талбарт key оруулна уу.'));
+    return;
+  }
+  fetch('https://math1-proxy.num-math1v.workers.dev', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      
+      
+      
+    },
+    body: JSON.stringify({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: maxTok || 300,
+      messages: [{ role: 'user', content: prompt }]
+    })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(d){
+    if (d.error) { cb(new Error(d.error.message)); }
+    else { cb(null, d.content[0].text); }
+  })
+  .catch(function(e){ cb(e); });
+}
+
+document.getElementById('ai-btncheck').onclick = function() {
+  var ans = document.getElementById('ai-ans').value.trim();
+  if (!ans) { alert('Бодолтоо бич!'); return; }
+  var p = problems[cur];
+  var btn = this;
+  btn.disabled = true; btn.textContent = '...';
+  showResp('loading', 'Шалгаж байна', '...');
+  callAI(
+    'Математикийн багш. Хязгаарын бодлого:\n' +
+    'Бодлого: ' + p.latex + '\nЗөв хариу: ' + p.answer + '\n' +
+    'Оюутны хариу: "' + ans + '"\n\n' +
+    'Эхэнд "ЗӨВ", "БУРУУ", эсвэл "ХЭСЭГЧЛЭН" гэж бич, дараа нь 3 өгүүлбэрт Монголоор тайлбарла.',
+    300,
+    function(err, txt) {
+      if (err) { showResp('wrong','Алдаа','Сервертэй холбогдоход алдаа гарлаа.'); }
+      else {
+        var type='wrong', title='Буруу', body=txt;
+        if (txt.indexOf('ЗӨВ') === 0) {
+          type='correct'; title='Зөв!';
+          body = txt.replace(/^ЗӨВ\s*/, '');
+          if (solved.indexOf(cur) === -1) solved.push(cur);
+        } else if (txt.indexOf('ХЭСЭГЧЛЭН') === 0) {
+          type='partial'; title='Хэсэгчлэн зөв';
+          body = txt.replace(/^ХЭСЭГЧЛЭН\s*/, '');
+        } else {
+          body = txt.replace(/^БУРУУ\s*/, '');
+        }
+        showResp(type, title, body);
+        renderNav();
+      }
+      btn.disabled = false; btn.textContent = 'Шалгах';
+    }
+  );
+};
+
+document.getElementById('ai-btnhint').onclick = function() {
+  var p = problems[cur];
+  showResp('loading', 'Hint бэлдэж байна', '...');
+  callAI(
+    'Математикийн багш. Хязгаарын бодлого: ' + p.latex + '\n' +
+    'Оюутанд 2-3 өгүүлбэрт Монголоор hint өг. Хариуг шууд хэлж өгөх хэрэггүй.',
+    200,
+    function(err, txt) {
+      if (err) showResp('wrong','Алдаа','Сервертэй холбогдоход алдаа гарлаа.');
+      else showResp('hint', 'Hint', txt);
+    }
+  );
+};
+
+document.getElementById('ai-btngen').onclick = function() {
+  var diff = document.getElementById('ai-diff').value;
+  var topic = document.getElementById('ai-topic').value;
+  var diffMap = { easy:'хялбар', medium:'дунд', hard:'хэцүү' };
+  var topicMap = {
+    algebraic:'алгебрийн хялбарчлал (0/0 хэлбэр)',
+    trig:'тригонометрийн (sin, cos, tan, arcsin, arctan)',
+    infinity:'тэмүүлэх хязгаар (x→∞, ∞/∞, ∞-∞ хэлбэр)',
+    onesided:'өрөөсгөл хязгаар (x→a+ эсвэл x→a-)',
+    squeeze:'Хашилтын теорем ашиглан батлах',
+    sequence:'дараалалын хязгаар (n→∞)',
+    continuity:'тасралтгүй байдал шалгах'
+  };
+  var btn = this;
+  btn.disabled = true; btn.textContent = 'Үүсгэж байна...';
+  callAI(
+    'Хязгаарын бодлого үүсгэ. Төрөл: ' + topicMap[topic] + ', хэцүү байдал: ' + diffMap[diff] + '\n' +
+    'Зөвхөн JSON хариул: {"latex":"displaystyle lim latex","answer":"хариу"}',
+    150,
+    function(err, txt) {
+      if (!err) {
+        try {
+          var raw = txt.replace(/```json|```/g,'').trim();
+          var p = JSON.parse(raw);
+          problems.push({ text:'Дараах хязгаарыг бод:', latex:p.latex, answer:p.answer });
+          renderNav();
+          loadProblem(problems.length - 1);
+        } catch(e) { alert('Бодлого үүсгэхэд алдаа гарлаа.'); }
+      } else { alert('Сервертэй холбогдоход алдаа гарлаа.'); }
+      btn.disabled = false; btn.textContent = 'Үүсгэх';
+    }
+  );
+};
+
+document.getElementById('ai-keybtn').onclick = function() {
+  var k = document.getElementById('ai-key').value.trim();
+  if (k.indexOf('sk-ant-') === 0) {
+    aiApiKey = k;
+    var box = document.getElementById('ai-keybox');
+    box.style.borderColor = '#27ae60';
+    box.innerHTML = '<div style="font-size:0.8rem;color:#27ae60;font-weight:700;">&#10003; API Key хадгалагдлаа</div>';
+  } else {
+    alert('Key буруу байна. "sk-ant-" гэж эхэлсэн байх ёстой.');
+  }
+};
+
+function filterProblems(lec) {
+  var filtered = lec === 'all' ? problems.filter(function(p){ return p.topic; }) : problems.filter(function(p){ return p.topic === lec; });
+  if (filtered.length === 0) return;
+  var firstIdx = problems.indexOf(filtered[0]);
+  renderNav(lec);
+  loadProblem(firstIdx);
+}
+
+function renderNav(filterLec) {
+  var nav = document.getElementById('ai-nav');
+  if (!nav) return;
+  nav.innerHTML = '';
+  var display = filterLec ? problems.filter(function(p){ return !filterLec || filterLec === 'all' || p.topic === filterLec; }) : problems;
+  display.forEach(function(p) {
+    var i = problems.indexOf(p);
+    var btn = document.createElement('button');
+    var isSolved = solved.indexOf(i) !== -1;
+    var isActive = i === cur;
+    var bg = isActive ? '#c0392b' : (isSolved ? '#27ae60' : '#fff');
+    var bc = isActive ? '#c0392b' : (isSolved ? '#27ae60' : '#ccc');
+    var fc = (isActive || isSolved) ? '#fff' : '#333';
+    btn.style.cssText = 'width:32px;height:32px;border-radius:50%;border:1.5px solid '+bc+';background:'+bg+';color:'+fc+';font-size:0.8rem;cursor:pointer;font-family:Georgia,serif;margin:2px;';
+    btn.textContent = i + 1;
+    btn.onclick = (function(idx){ return function(){ loadProblem(idx); }; })(i);
+    nav.appendChild(btn);
+  });
+}
+
+loadProblem(0);
+
+})();
+      </script>
+    </interactive>
+
+  </section>
+
+</chapter>

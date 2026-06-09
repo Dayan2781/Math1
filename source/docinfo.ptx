@@ -17,4 +17,14 @@
   <!-- Theme color (Active Calculus uses a friendly green/gold palette) -->
   <document-id edition="first">math-anal-1</document-id>
 
+  <numbering>
+    <blocks level="2"/>
+  </numbering>
+
+  <rename element="chapter">Бүлэг</rename>
+  <rename element="objectives">Зорилго</rename>
+  <rename element="activity">Өдөөгч дасгал</rename>
+  <rename element="definition">Тодорхойлолт</rename>
+  <rename element="theorem">Теорем</rename>
+  <rename element="example">Жишээ</rename>
 </docinfo>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Хязгаар — AI Дасгал</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: #f8f6f1;
+    color: #1a1a2e;
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 32px 24px 60px;
+  }
+
+  /* Header */
+  .header {
+    border-left: 4px solid #c0392b;
+    padding-left: 16px;
+    margin-bottom: 32px;
+  }
+  .header h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    letter-spacing: 0.01em;
+  }
+  .header p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  /* Problem card */
+  .problem-card {
+    background: #fff;
+    border: 1px solid #e0ddd6;
+    border-radius: 6px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .problem-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c0392b;
+    margin-bottom: 10px;
+  }
+
+  .problem-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #1a1a2e;
+  }
+
+  .problem-formula {
+    text-align: center;
+    padding: 16px 0 8px;
+    font-size: 1.15rem;
+  }
+
+  /* Nav buttons */
+  .problem-nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .prob-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid #ccc;
+    background: #fff;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: #333;
+    font-family: 'Georgia', serif;
+  }
+  .prob-btn:hover { border-color: #c0392b; color: #c0392b; }
+  .prob-btn.active { background: #c0392b; border-color: #c0392b; color: #fff; }
+  .prob-btn.solved { background: #27ae60; border-color: #27ae60; color: #fff; }
+
+  /* Answer area */
+  .answer-section {
+    background: #fff;
+    border: 1px solid #e0ddd6;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+
+  .answer-section label {
+    font-size: 0.85rem;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+
+  .answer-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  textarea {
+    flex: 1;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    font-family: 'Georgia', serif;
+    resize: vertical;
+    min-height: 80px;
+    background: #fafaf8;
+    color: #1a1a2e;
+    transition: border-color 0.15s;
+    line-height: 1.5;
+  }
+  textarea:focus {
+    outline: none;
+    border-color: #c0392b;
+    background: #fff;
+  }
+
+  .btn-check {
+    background: #c0392b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-family: 'Georgia', serif;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s;
+    min-width: 90px;
+  }
+  .btn-check:hover { background: #a93226; }
+  .btn-check:disabled { background: #bbb; cursor: not-allowed; }
+
+  /* Hint button */
+  .btn-hint {
+    background: transparent;
+    color: #666;
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 14px;
+    font-size: 0.82rem;
+    font-family: 'Georgia', serif;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-top: 8px;
+  }
+  .btn-hint:hover { border-color: #c0392b; color: #c0392b; }
+
+  /* AI Response */
+  .ai-response {
+    background: #fff;
+    border: 1px solid #e0ddd6;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+  .ai-response.visible { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .response-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .response-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .icon-correct { background: #d5f5e3; color: #1e8449; }
+  .icon-wrong   { background: #fde8e8; color: #c0392b; }
+  .icon-partial { background: #fef9e7; color: #b7950b; }
+  .icon-hint    { background: #eaf0fb; color: #1a5276; }
+  .icon-loading { background: #f0f0f0; color: #888; }
+
+  .response-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-correct { color: #1e8449; }
+  .title-wrong   { color: #c0392b; }
+  .title-partial { color: #b7950b; }
+  .title-hint    { color: #1a5276; }
+  .title-loading { color: #888; }
+
+  .response-body {
+    font-size: 0.93rem;
+    line-height: 1.75;
+    color: #2c2c2c;
+    white-space: pre-wrap;
+  }
+
+  /* Loading dots */
+  .loading-dots span {
+    animation: blink 1.2s infinite;
+    font-size: 1.2rem;
+  }
+  .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+  .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes blink {
+    0%, 80%, 100% { opacity: 0.2; }
+    40% { opacity: 1; }
+  }
+
+  /* Generate new problem */
+  .generate-section {
+    background: #fff;
+    border: 1px solid #e0ddd6;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+
+  .generate-section h3 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 12px;
+  }
+
+  .generate-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  select {
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    padding: 7px 12px;
+    font-size: 0.88rem;
+    font-family: 'Georgia', serif;
+    background: #fafaf8;
+    color: #1a1a2e;
+    cursor: pointer;
+  }
+  select:focus { outline: none; border-color: #c0392b; }
+
+  .btn-generate {
+    background: #1a1a2e;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 18px;
+    font-size: 0.88rem;
+    font-family: 'Georgia', serif;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn-generate:hover { background: #2c2c4e; }
+  .btn-generate:disabled { background: #bbb; cursor: not-allowed; }
+
+  /* Footer note */
+  .footer-note {
+    font-size: 0.78rem;
+    color: #999;
+    text-align: center;
+    margin-top: 24px;
+    font-style: italic;
+  }
+
+  /* Divider */
+  hr.section-div {
+    border: none;
+    border-top: 1px solid #e8e4dc;
+    margin: 20px 0;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>Хязгаар — Интерактив дасгал</h1>
+    <p>Бодолтоо бичээд Claude шалгана. Дурын бодлого үүсгэж болно.</p>
+  </div>
+
+  <!-- Problem navigation -->
+  <div class="problem-nav" id="probNav"></div>
+
+  <!-- Problem display -->
+  <div class="problem-card">
+    <div class="problem-label">Бодлого <span id="probNum">1</span></div>
+    <div class="problem-text" id="probText"></div>
+    <div class="problem-formula" id="probFormula"></div>
+  </div>
+
+  <!-- Answer input -->
+  <div class="answer-section">
+    <label>Бодолтоо доор бич (хариу + тайлбар):</label>
+    <div class="answer-row">
+      <textarea id="answerInput" placeholder="Жишээ нь: x² - 4 = (x-2)(x+2) тул x → 2 үед хуваах боломжтой, хариу нь 4/4 = 1..."></textarea>
+      <button class="btn-check" id="btnCheck" onclick="checkAnswer()">Шалгах</button>
+    </div>
+    <button class="btn-hint" onclick="getHint()">💡 Hint авах</button>
+  </div>
+
+  <!-- AI Response area -->
+  <div class="ai-response" id="aiResponse">
+    <div class="response-header">
+      <div class="response-icon" id="respIcon">?</div>
+      <div class="response-title" id="respTitle">Шалгаж байна...</div>
+    </div>
+    <div class="response-body" id="respBody"></div>
+  </div>
+
+  <hr class="section-div"/>
+
+  <!-- Generate new problem -->
+  <div class="generate-section">
+    <h3>🎲 Шинэ бодлого үүсгэх</h3>
+    <div class="generate-controls">
+      <select id="diffSelect">
+        <option value="easy">Хялбар</option>
+        <option value="medium" selected>Дунд</option>
+        <option value="hard">Хэцүү</option>
+      </select>
+      <select id="topicSelect">
+        <option value="algebraic">Алгебрийн хязгаар</option>
+        <option value="trig">Тригонометрийн хязгаар</option>
+        <option value="infinity">Тэмүүлэх хязгаар</option>
+        <option value="onesided">Өрөөсгөл хязгаар</option>
+        <option value="squeeze">Сэндвич теорем</option>
+      </select>
+      <button class="btn-generate" id="btnGenerate" onclick="generateProblem()">Үүсгэх</button>
+    </div>
+  </div>
+
+  <div class="footer-note">Математик томьёог LaTeX хэлбэрээр бичиж болно: \lim_{x\to 2} гэх мэт</div>
+
+</div>
+
+<script>
+// ── Built-in problems ────────────────────────────────────────
+const builtinProblems = [
+  {
+    text: "Дараах хязгаарыг бод:",
+    formula: "\\(\\displaystyle\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2}\\)",
+    answer: 4,
+    topic: "algebraic"
+  },
+  {
+    text: "Дараах хязгаарыг бод:",
+    formula: "\\(\\displaystyle\\lim_{x \\to 0} \\frac{\\sin 3x}{x}\\)",
+    answer: 3,
+    topic: "trig"
+  },
+  {
+    text: "Дараах хязгаарыг бод:",
+    formula: "\\(\\displaystyle\\lim_{x \\to \\infty} \\frac{2x^2 - 3x + 1}{x^2 + 5}\\)",
+    answer: 2,
+    topic: "infinity"
+  },
+  {
+    text: "Дараах хязгаарыг бод:",
+    formula: "\\(\\displaystyle\\lim_{x \\to 0} \\frac{1 - \\cos x}{x^2}\\)",
+    answer: 0.5,
+    topic: "trig"
+  },
+  {
+    text: "Дараах хязгаарыг бод:",
+    formula: "\\(\\displaystyle\\lim_{x \\to 3} \\frac{x^2 - 5x + 6}{x^2 - 9}\\)",
+    answer: "1/6",
+    topic: "algebraic"
+  },
+  {
+    text: "Дараах хязгаарыг бод:",
+    formula: "\\(\\displaystyle\\lim_{x \\to 0^+} \\frac{1}{x}\\)",
+    answer: "+∞",
+    topic: "onesided"
+  },
+];
+
+let problems = [...builtinProblems];
+let currentIdx = 0;
+let solvedSet = new Set();
+
+// ── Init ─────────────────────────────────────────────────────
+function init() {
+  renderNav();
+  loadProblem(0);
+}
+
+function renderNav() {
+  const nav = document.getElementById('probNav');
+  nav.innerHTML = '';
+  problems.forEach((_, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'prob-btn' + (i === currentIdx ? ' active' : '') + (solvedSet.has(i) ? ' solved' : '');
+    btn.textContent = i + 1;
+    btn.onclick = () => loadProblem(i);
+    nav.appendChild(btn);
+  });
+}
+
+function loadProblem(idx) {
+  currentIdx = idx;
+  const p = problems[idx];
+  document.getElementById('probNum').textContent = idx + 1;
+  document.getElementById('probText').textContent = p.text;
+  document.getElementById('probFormula').innerHTML = p.formula;
+  document.getElementById('answerInput').value = '';
+  document.getElementById('aiResponse').classList.remove('visible');
+
+  if (window.MathJax) MathJax.typesetPromise();
+  renderNav();
+}
+
+// ── Check answer ─────────────────────────────────────────────
+async function checkAnswer() {
+  const answer = document.getElementById('answerInput').value.trim();
+  if (!answer) { alert('Бодолтоо бич!'); return; }
+
+  const p = problems[currentIdx];
+  setLoading(true);
+  showResponse('loading', 'Шалгаж байна', '<span class="loading-dots"><span>●</span><span>●</span><span>●</span></span>');
+
+  const prompt = `Та математикийн багш. Оюутан хязгаарын бодлого бодсон байна.
+
+Бодлого: ${p.formula.replace(/<[^>]*>/g, '')}
+Зөв хариу: ${p.answer}
+Оюутны бодолт: "${answer}"
+
+Дараах зүйлсийг хий:
+1. Оюутны хариу зөв эсэхийг тодорхойл (зөв / буруу / хэсэгчлэн зөв)
+2. Бодолт зөв аргаар хийгдсэн эсэхийг шинжил
+3. Алдаа байвал тайлбарла — гэхдээ шууд хариуг бүрэн хэлж өгөх хэрэггүй
+4. Урамшуулах үгтэй байж, Монгол хэлээр хариул
+5. Хариултыг 5-8 өгүүлбэрт багтаа
+
+Эхэнд нэг мөрөнд зөвхөн: ЗӨВХӨН "ЗӨВХӨН_ЗӨВ", "ЗӨВХӨН_БУРУУ", эсвэл "ЗӨВХӨН_ХЭСЭГЧЛЭН" гэж бич, дараа нь тайлбар.`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    const data = await res.json();
+    const text = data.content[0].text;
+
+    let type = 'wrong';
+    let title = 'Буруу';
+    let body = text;
+
+    if (text.startsWith('ЗӨВХӨН_ЗӨВ')) {
+      type = 'correct'; title = 'Зөв!';
+      body = text.replace('ЗӨВХӨН_ЗӨВ', '').trim();
+      solvedSet.add(currentIdx);
+    } else if (text.startsWith('ЗӨВХӨН_ХЭСЭГЧЛЭН')) {
+      type = 'partial'; title = 'Хэсэгчлэн зөв';
+      body = text.replace('ЗӨВХӨН_ХЭСЭГЧЛЭН', '').trim();
+    } else {
+      body = text.replace('ЗӨВХӨН_БУРУУ', '').trim();
+    }
+
+    showResponse(type, title, body);
+    renderNav();
+    if (window.MathJax) MathJax.typesetPromise();
+
+  } catch (e) {
+    showResponse('wrong', 'Алдаа', 'Сервертэй холбогдоход алдаа гарлаа. Дахин оролдоно уу.');
+  }
+
+  setLoading(false);
+}
+
+// ── Hint ─────────────────────────────────────────────────────
+async function getHint() {
+  const p = problems[currentIdx];
+  setLoading(true);
+  showResponse('loading', 'Дохио бэлдэж байна', '<span class="loading-dots"><span>●</span><span>●</span><span>●</span></span>');
+
+  const prompt = `Математикийн багшийн дүрд орж hint өг.
+
+Бодлого: ${p.formula.replace(/<[^>]*>/g, '')}
+
+Оюутанд зөв арга чиглэл заа, гэхдээ шууд хариуг бүрэн хэлж өгөх хэрэггүй. 
+3-4 өгүүлбэрт Монгол хэлээр hint өг.`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 400,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await res.json();
+    showResponse('hint', 'Hint', data.content[0].text);
+  } catch(e) {
+    showResponse('wrong', 'Алдаа', 'Сервертэй холбогдоход алдаа гарлаа.');
+  }
+  setLoading(false);
+}
+
+// ── Generate new problem ──────────────────────────────────────
+async function generateProblem() {
+  const diff = document.getElementById('diffSelect').value;
+  const topic = document.getElementById('topicSelect').value;
+
+  const diffMap = { easy: 'хялбар', medium: 'дунд', hard: 'хэцүү' };
+  const topicMap = {
+    algebraic: 'алгебрийн хялбарчлал шаардагдах',
+    trig: 'тригонометрийн (sin, cos, tan)',
+    infinity: 'тэмүүлэх (x→∞)',
+    onesided: 'өрөөсгөл хязгаар',
+    squeeze: 'Сэндвичийн теорем ашиглах'
+  };
+
+  document.getElementById('btnGenerate').disabled = true;
+  document.getElementById('btnGenerate').textContent = 'Үүсгэж байна...';
+
+  const prompt = `Математик Анализын хязгаарын бодлого үүсгэ.
+
+Төрөл: ${topicMap[topic]}
+Хэцүү байдал: ${diffMap[diff]}
+
+Дараах JSON форматаар хариул (өөр юм бичих хэрэггүй):
+{
+  "text": "Дараах хязгаарыг бод:",
+  "formula": "\\\\(\\\\displaystyle\\\\lim_{...} ...\\\\)",
+  "answer": "тоон хариу эсвэл ∞",
+  "solution_hint": "гол арга нэг өгүүлбэрт"
+}
+
+LaTeX дотор \\ гэж давхар бичихийг анхаар.`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 400,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    const data = await res.json();
+    let raw = data.content[0].text.trim();
+    raw = raw.replace(/```json|```/g, '').trim();
+    const parsed = JSON.parse(raw);
+
+    problems.push({
+      text: parsed.text,
+      formula: parsed.formula,
+      answer: parsed.answer,
+      topic: topic
+    });
+
+    renderNav();
+    loadProblem(problems.length - 1);
+
+  } catch(e) {
+    alert('Бодлого үүсгэхэд алдаа гарлаа. Дахин оролдоно уу.');
+  }
+
+  document.getElementById('btnGenerate').disabled = false;
+  document.getElementById('btnGenerate').textContent = 'Үүсгэх';
+}
+
+// ── UI helpers ────────────────────────────────────────────────
+function showResponse(type, title, body) {
+  const el = document.getElementById('aiResponse');
+  const icon = document.getElementById('respIcon');
+  const titleEl = document.getElementById('respTitle');
+  const bodyEl = document.getElementById('respBody');
+
+  const cfg = {
+    correct: { i: '✓', ic: 'icon-correct', tc: 'title-correct' },
+    wrong:   { i: '✗', ic: 'icon-wrong',   tc: 'title-wrong'   },
+    partial: { i: '~', ic: 'icon-partial',  tc: 'title-partial' },
+    hint:    { i: '💡', ic: 'icon-hint',    tc: 'title-hint'    }, // Hint
+    loading: { i: '…', ic: 'icon-loading',  tc: 'title-loading' },
+  };
+
+  const c = cfg[type] || cfg.wrong;
+  icon.className = 'response-icon ' + c.ic;
+  icon.textContent = c.i;
+  titleEl.className = 'response-title ' + c.tc;
+  titleEl.textContent = title;
+  bodyEl.innerHTML = body;
+
+  el.classList.add('visible');
+}
+
+function setLoading(on) {
+  document.getElementById('btnCheck').disabled = on;
+  document.getElementById('btnCheck').textContent = on ? '…' : 'Шалгах';
+}
+
+// ── Start ─────────────────────────────────────────────────────
+init();
+</script>
+</body>
+</html>

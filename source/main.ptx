@@ -10,7 +10,7 @@
     <frontmatter xml:id="frontmatter">
       <titlepage>
         <author>
-          <personname>Д. Даян</personname>
+          <personname>Д. Даянцолмон</personname>
           <institution>Монгол Улсын Их Сургууль</institution>
         </author>
         <date><today /></date>
@@ -67,7 +67,10 @@
     </frontmatter>
 
     <xi:include href="./chapters/ch-logic.ptx" />
-
+    <xi:include href="chapters/ch-sets-functions.ptx"/>
+    <xi:include href="./chapters/sec_limits_infty_mn.ptx"/>
+    <xi:include href="./chapters/ch-hyazgaar.ptx" />
+    <xi:include href="./chapters/lecture-15.ptx" />
     <backmatter xml:id="backmatter">
       <colophon>
         <p>Энэ ном нь <pubtitle>PreTeXt</pubtitle> систем дээр бичигдсэн.

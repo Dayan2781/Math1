@@ -238,10 +238,9 @@
       </p>
     </subsection>
 
-    <subsection xml:id="subsec-hw-1-1">
-      <title>Гэрийн даалгавар</title>
+    <!-- ===== End-of-section exercises ===== -->
     <exercises xml:id="exer-1-1">
-
+      <title>Гэрийн даалгавар</title>
 
       <exercise xml:id="ex-1-1-1">
         <statement>
@@ -290,7 +289,7 @@
     </exercises>
 
 <xi:include href="./exer-1-1-extra.ptx" />
-    </subsection>
+
   </section>
 
   <!-- ============================================================
@@ -589,10 +588,8 @@
       </p>
     </subsection>
 
-    <subsection xml:id="subsec-hw-1-2">
-      <title>Гэрийн даалгавар</title>
     <exercises xml:id="exer-1-2">
-
+      <title>Гэрийн даалгавар</title>
 
       <exercise xml:id="ex-1-2-1">
         <statement>
@@ -643,7 +640,6 @@
         </statement>
       </exercise>
     </exercises>
-    </subsection>
   </section>
 
   <!-- ============================================================
@@ -902,10 +898,8 @@
       </p>
     </subsection>
 
-    <subsection xml:id="subsec-hw-1-3">
-      <title>Гэрийн даалгавар</title>
     <exercises xml:id="exer-1-3">
-
+      <title>Гэрийн даалгавар</title>
 
       <exercise xml:id="ex-1-3-1">
         <statement>
@@ -943,7 +937,6 @@
         </statement>
       </exercise>
     </exercises>
-    </subsection>
   </section>
 
   <!-- ============================================================
@@ -1192,10 +1185,8 @@
       </p>
     </subsection>
 
-    <subsection xml:id="subsec-hw-1-4">
-      <title>Гэрийн даалгавар</title>
     <exercises xml:id="exer-1-4">
-
+      <title>Гэрийн даалгавар</title>
 
       <exercise xml:id="ex-1-4-1">
         <statement><p>Шууд батал: Хэрэв <m>n</m> сондгой бол <m>n^2</m> сондгой.</p></statement>
@@ -1234,7 +1225,6 @@
         </statement>
       </exercise>
     </exercises>
-    </subsection>
   </section>
 
   <!-- ============================================================
@@ -1435,10 +1425,8 @@
       </p>
     </subsection>
 
-    <subsection xml:id="subsec-hw-1-5">
-      <title>Гэрийн даалгавар</title>
     <exercises xml:id="exer-1-5">
-
+      <title>Гэрийн даалгавар</title>
 
       <exercise xml:id="ex-1-5-1">
         <statement>
@@ -1493,6 +1481,5 @@
         </statement>
       </exercise>
     </exercises>
-    </subsection>
   </section>
 </chapter>

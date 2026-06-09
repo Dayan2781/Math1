@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-limits-infty" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Хязгааргүйг агуулсан хязгаарууд</title>
+
+  <introduction>
+    <p>
+      Өмнөх параграфуудад хязгаарын тодорхойлолтод <m>c</m> болон <m>L</m> нь
+      тодорхой тоо байхыг шаардаж байсан. Энэ параграфт тэр нөхцлийг суларгаж,
+      <m>c</m> эсвэл <m>L</m> нь <q>хязгааргүй</q> байж болох тохиолдлуудыг
+      судлана.
+    </p>
+    <p>
+      Урам зориулах жишээ болгон <m>f(x) = \dfrac{1}{x^2}</m> функцийг авч үзье.
+      <m>x</m> нь <m>0</m>-рүү дөхөх тусам <m>f(x)</m> маш хурдтайгаар өсдгийг
+      анзаарна — үнэндээ хязгааргүй өснө. Тиймээс
+      <me>\lim_{x\to 0} \frac{1}{x^2}=\infty</me>
+      гэж бичих нь тохиромжтой. Нөгөөтэйгүүр, <m>x</m> маш том болоход
+      <m>f(x)</m> маш жижиг болдог:
+      <me>\lim_{x\to \infty} \frac{1}{x^2}=0.</me>
+    </p>
+
+    <figure xml:id="fig-one-over-x2-intro">
+      <caption><m>f(x)=\dfrac{1}{x^2}</m>-ийн графикт <m>x=0</m> дээр
+      босоо асимптот, <m>y=0</m> дээр хэвтээ асимптот байна.</caption>
+      <image width="50%">
+        <latex-image>
+\begin{tikzpicture}
+  \begin{scope}
+    \clip (-2.5,-0.3) rectangle (2.5,4.5);
+    \draw[domain=-2.5:-0.16,smooth,thick,blue] plot(\x,{1/(\x*\x)});
+    \draw[domain=0.16:2.5,smooth,thick,blue] plot(\x,{1/(\x*\x)});
+  \end{scope}
+  \draw[->] (-2.6,0)--(2.6,0) node[right]{$x$};
+  \draw[->] (0,-0.3)--(0,4.6) node[above]{$y$};
+  \draw[dashed,gray] (-2.5,0)--(2.5,0);
+  \node[right] at (0.8,3) {$f(x)=\dfrac{1}{x^2}$};
+\end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+  </introduction>
+
+  <!-- ============================================================ -->
+  <subsection xml:id="subsec-limit-infinite">
+    <title>Хязгааргүй хязгаарууд</title>
+
+    <p>
+      Дараах тодорхойлолт нь
+      <m>\lim_{x\to c}f(x)=\infty</m> гэсэн утгыг нарийвчлан тайлбарлана.
+    </p>
+
+    <definition xml:id="def-infinite-limit">
+      <title>Хязгааргүй хязгаар</title>
+      <statement>
+        <p>
+          <m>f</m> функц <m>c</m>-г агуулаагүй орчинд тодорхойлогдсон байг.
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>f(x)</m>-ийн <m>x\to c</m> үеийн хязгаар хязгааргүй гэнэ,
+              өөрөөр хэлбэл
+              <me>\lim_{x\to c}f(x)=\infty,</me>
+              хэрэв аливаа <m>M\gt 0</m>-ийн хувьд <m>\delta\gt 0</m> оршиж,
+              <m>0\lt |x-c|\lt \delta</m> байх үед <m>f(x)\gt M</m> байвал.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(x)</m>-ийн <m>x\to c</m> үеийн хязгаар сөрөг хязгааргүй гэнэ,
+              өөрөөр хэлбэл
+              <me>\lim_{x\to c}f(x)=-\infty,</me>
+              хэрэв аливаа <m>M\gt 0</m>-ийн хувьд <m>\delta\gt 0</m> оршиж,
+              <m>0\lt |x-c|\lt \delta</m> байх үед <m>f(x)\lt -M</m> байвал.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-infinite-limit">
+      <p>
+        <m>\lim_{x\to c}f(x)=\infty</m> гэж бичих нь <m>f(x)</m>-ийн хязгаар
+        оршдоггүй болохыг далдуур хэлж байна. Хязгаар зөвхөн тодорхой тоо рүү
+        дөхөх үед л оршдог. Хязгааргүй рүү дөхдөг хязгаарын ойлголтыг хэрэглэдэг
+        нь тохиромжтой бөгөөд тайлбарлахад хялбар юм — хязгаар оршдоггүйн нэг
+        тодорхой тохиолдол гэж ойлгох хэрэгтэй.
+      </p>
+    </remark>
+
+    <p>
+      Нэг талт хязгаарын хувьд ч адил тодорхойлолт хийнэ.
+    </p>
+
+    <definition xml:id="def-onesided-infinite-limit">
+      <title>Нэг талт хязгааргүй хязгаар</title>
+      <statement>
+        <p>
+          <m>f</m> функц <m>(a,c)</m> завсарт тодорхойлогдсон байг
+          (<m>a\lt c</m>). Хэрэв аливаа <m>N\gt 0</m>-ийн хувьд <m>\delta\gt 0</m>
+          оршиж, <m>a\lt x\lt c</m>, <m>|x-c|\lt \delta</m> байх үед
+          <m>f(x)\gt N</m> байвал
+          <me>\lim_{x\to c^-}f(x)=\infty</me>
+          гэнэ (зүүн талаас хязгааргүй рүү дөхнө). Баруун талт болон
+          <m>-\infty</m> тохиолдлуудыг адилаар тодорхойлно.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-inf-limit-1-over-x2">
+      <title><m>\dfrac{1}{(x-1)^2}</m>-ийн хязгаарыг тодорхойлолтоор батал</title>
+      <p>
+        §1.1-ийн 1.1.15 жишээнд <m>x=1</m>-д ойр утгуудыг шалгаж,
+        энэ хязгаар оршдоггүй гэж дүгнэсэн. Гэвч тэр хязгаар хязгааргүй
+        байж болно. Үнэндээ <m>f(0.99)=10^4</m>, <m>f(0.999)=10^6</m>,
+        <m>f(0.9999)=10^8</m> байгааг харж болно. Иймд
+        <me>\lim_{x\to 1}\frac{1}{(x-1)^2}=\infty</me>
+        гэж таамаглан тодорхойлолтоор баталъя.
+      </p>
+      <solution>
+        <p>
+          Тогтмол <m>N\gt 0</m> өгөгдсөн байг. <m>\delta=\dfrac{1}{\sqrt{N}}</m>
+          гэж тав. Хэрэв <m>|x-1|\lt \dfrac{1}{\sqrt{N}}</m> бол:
+          <md>
+            <mrow>|x-1| \amp\lt \frac{1}{\sqrt{N}}</mrow>
+            <mrow>(x-1)^2 \amp\lt \frac{1}{N}</mrow>
+            <mrow>\frac{1}{(x-1)^2} \amp\gt N.</mrow>
+          </md>
+          Тиймд тодорхойлолтын дагуу
+          <m>\lim_{x\to 1}\dfrac{1}{(x-1)^2}=\infty</m>
+          батлагдлаа.
+        </p>
+      </solution>
+    </example>
+
+    <figure xml:id="fig-one-over-xm1-sq">
+      <caption><m>f(x)=\dfrac{1}{(x-1)^2}</m>: <m>x=1</m> дээр хязгааргүй
+      рүү дөхнө.</caption>
+      <image width="50%">
+        <latex-image>
+\begin{tikzpicture}
+  \begin{scope}
+    \clip (-0.5,-0.3) rectangle (2.5,4.5);
+    \draw[domain=-0.5:0.68,smooth,thick,blue] plot(\x,{1/((\x-1)*(\x-1))});
+    \draw[domain=1.32:2.5,smooth,thick,blue] plot(\x,{1/((\x-1)*(\x-1))});
+  \end{scope}
+  \draw[->] (-0.6,0)--(2.6,0) node[right]{$x$};
+  \draw[->] (0,-0.3)--(0,4.6) node[above]{$y$};
+  \draw[dashed,gray] (1,-0.3)--(1,4.5);
+  \node[below] at (1,0) {$1$};
+  \node[right] at (1.6,3.2) {$\dfrac{1}{(x-1)^2}$};
+\end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+
+    <example xml:id="eg-inf-limit-1-over-x">
+      <title><m>\dfrac{1}{x}</m>-ийн <m>x\to 0</m> дахь хязгаар</title>
+      <p>
+        <m>f(x)=\dfrac{1}{x}</m>-ийн <m>x=0</m>-д ойр зан авирыг тодорхойл.
+      </p>
+      <solution>
+        <p>
+          Графикаас харахад функц <m>0</m>-д ойрхон хязгааргүй рүү
+          өснө — гэхдээ хоёр талд өөр өөр дохиотойгоор. <m>x\gt 0</m> талаас
+          функц маш их эерэг, <m>x\lt 0</m> талаас маш их сөрөг утга авдаг.
+          Тиймд зан авир нь тогтвортой биш учир
+          <m>\lim_{x\to 0}\dfrac{1}{x}</m> оршдоггүй гэнэ.
+          Гэхдээ нэг талт хязгаарын тухай мэдүүлэг хийж болно:
+          <me>
+            \lim_{x\to 0^+}\frac{1}{x}=+\infty
+            \qquad\text{ба}\qquad
+            \lim_{x\to 0^-}\frac{1}{x}=-\infty.
+          </me>
+        </p>
+      </solution>
+    </example>
+
+    <figure xml:id="fig-one-over-x">
+      <caption><m>f(x)=\dfrac{1}{x}</m>: <m>x=0</m> босоо асимптот,
+      <m>y=0</m> хэвтээ асимптот.</caption>
+      <image width="50%">
+        <latex-image>
+\begin{tikzpicture}
+  \begin{scope}
+    \clip (-2.5,-4) rectangle (2.5,4);
+    \draw[domain=-2.5:-0.25,smooth,thick,blue] plot(\x,{1/\x});
+    \draw[domain=0.25:2.5,smooth,thick,blue] plot(\x,{1/\x});
+  \end{scope}
+  \draw[->] (-2.6,0)--(2.6,0) node[right]{$x$};
+  \draw[->] (0,-4.3)--(0,4.4) node[above]{$y$};
+  \node[right] at (0.6,2.5) {$\dfrac{1}{x}$};
+\end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+  </subsection>
+
+  <!-- ============================================================ -->
+  <subsection xml:id="subsec-vertical-asymptotes">
+    <title>Босоо асимптот</title>
+
+    <p>
+      Өмнөх хоёр жишээнд функцийн хязгаар (нэг талт эсвэл хоёр талт) хязгааргүй
+      байх үед граф нь <m>x=c</m> босоо шугамтай ижил харагддаг. Энэ ажиглалтаас
+      дараах тодорхойлолт гарна.
+    </p>
+
+    <definition xml:id="def-vertical-asymptote">
+      <title>Босоо асимптот</title>
+      <statement>
+        <p>
+          <m>I</m> завсар нь <m>c</m>-г агуулах эсвэл <m>c</m>-г төгсгөлийн цэг
+          болгосон байг. <m>f</m> функц <m>I</m> дээр (<m>c</m>-г оруулаагүй)
+          тодорхойлогдсон байг. Хэрэв <m>f(x)</m>-ийн зүүн, баруун эсвэл хоёуланд
+          нь <m>x\to c</m> үед <m>\infty</m> эсвэл <m>-\infty</m> рүү дөхдөг бол
+          <m>x=c</m> шулуун нь <m>f</m>-ийн <term>босоо асимптот</term> байна.
+        </p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-vertical-asymptote-rational">
+      <p>
+        Рационал функцийн хувьд: хэрэв хуваарь нь тодорхой цэгт тэгтэй тэнцдэг
+        боловч тоолуур тэнцдэггүй бол тэр цэгт ихэвчлэн босоо асимптот байна.
+        Хэрэв тоолуур ба хуваарь хоёул тэгтэй тэнцвэл тухайн цэгт асимптот
+        байх эсэх нь тодорхойгүй — нэмэлт судалгаа шаардана.
+      </p>
+    </remark>
+
+    <example xml:id="eg-vert-asymptote-find">
+      <title>Босоо асимптотыг тодорхойл</title>
+      <p>
+        <m>f(x)=\dfrac{x^2-x-6}{x^2-3x-10}</m> функцийн босоо асимптотыг ол.
+      </p>
+      <solution>
+        <p>
+          Хуваарийг үржүүлбэр болгон задал:
+          <me>x^2-3x-10=(x-5)(x+2).</me>
+          Тиймд <m>x=5</m> болон <m>x=-2</m> дээр хуваарь тэгтэй тэнцдэг.
+        </p>
+        <p>
+          Тоолуурыг шалга: <m>x^2-x-6=(x-3)(x+2)</m>. Тиймд <m>x=-2</m>-д
+          тоолуур мөн тэгтэй тэнцдэг — хасаж болно:
+          <me>f(x)=\frac{(x-3)(x+2)}{(x-5)(x+2)}=\frac{x-3}{x-5}\quad (x\ne -2).</me>
+          Тиймд <m>x=-2</m> дээр засагдах тасрах цэг байна (босоо асимптот биш).
+          Харин <m>x=5</m> дээр тоолуур тэгтэй тэнцдэггүй, иймд
+          <me>\lim_{x\to5}f(x)=\pm\infty</me>
+          ба <m>x=5</m> нь <em>босоо асимптот</em> юм.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================ -->
+  <subsection xml:id="subsec-indeterminate-forms">
+    <title>Тодорхойгүй хэлбэрүүд</title>
+
+    <p>
+      §1.3-т <m>\lim_{x\to 0}\dfrac{\sin x}{x}</m> болон
+      <m>\lim_{x\to 1}\dfrac{x^2-1}{x-1}</m> гэсэн хязгаарыг шалгахад хоёул
+      <m>\dfrac{0}{0}</m> <term>тодорхойгүй хэлбэр</term> гэгдэх хэлбэрт
+      ирсэн. Гэхдээ <m>0/0</m> нь тодорхой утгатай биш — тус тусын хязгаар
+      <m>1</m> ба <m>2</m> байдаг нь харагдаж байна.
+    </p>
+
+    <p>
+      Бага зэрэг ухааналтаар <m>0/0</m> хэлбэрт хүрэх ч хязгаар нь
+      <m>\infty</m>, <m>0</m>, эсвэл бусад ямар ч тоо болох жишээ гаргаж болно.
+      Тиймд <m>0/0</m> хэлбэр дангаараа хязгаарын тухай юу ч хэлдэггүй —
+      нэмэлт судалгаа шаардана (алгебрийн хялбарчлал, тригонометрийн адилтгал,
+      хавчуурга теорем, эсвэл §6.7-т үзэх Лопиталийн дүрэм).
+    </p>
+
+    <p>
+      Бусад нийтлэг тодорхойгүй хэлбэрүүд:
+      <me>
+        \frac{\infty}{\infty},\quad \infty - \infty,\quad 0\cdot\infty,\quad
+        0^0,\quad \infty^0,\quad 1^{\infty}.
+      </me>
+      Эдгээр бүгдийг тодорхойгүй хэлбэр гэж нэрлэх нь тэдгээрт хандах
+      дашрамдаар шууд орлуулснаас хязгааррыг олж чадахгүй гэдгийг л илэрхийлнэ.
+      Жишээ нь, <m>\infty-\infty</m> нь <q>нэг хэмжигдэхүүнийг нөгөөгөөс
+      хасаж байгаа боловч хоёул хязгааргүй өснө</q> гэсэн утга бөгөөд
+      үр дүн нь аль ч тоо байж болно.
+    </p>
+  </subsection>
+
+  <!-- ============================================================ -->
+  <subsection xml:id="subsec-limits-at-infinity">
+    <title>Хязгааргүй дахь хязгаар ба хэвтээ асимптот</title>
+
+    <p>
+      Одоо <m>x\to\infty</m> ба <m>x\to-\infty</m> үеийн хязгаарыг
+      тодорхойлъё.
+    </p>
+
+    <definition xml:id="def-limit-at-infinity">
+      <title>Хязгааргүй дахь хязгаар</title>
+      <statement>
+        <p>
+          <m>f</m> функц <m>(a,\infty)</m> завсарт тодорхойлогдсон байг.
+          <me>\lim_{x\to\infty}f(x)=L</me>
+          гэнэ, хэрэв аливаа <m>\varepsilon\gt 0</m>-ийн хувьд
+          <m>M\gt 0</m> оршиж, <m>x\gt M</m> байх үед <m>|f(x)-L|\lt\varepsilon</m>
+          байвал.
+        </p>
+        <p>
+          Ижил байдлаар, <m>(-\infty, b)</m> завсарт тодорхойлогдсон
+          <m>f</m>-ийн хувьд
+          <me>\lim_{x\to-\infty}f(x)=L</me>
+          гэнэ, хэрэв аливаа <m>\varepsilon\gt 0</m>-ийн хувьд
+          <m>M\gt 0</m> оршиж, <m>x\lt -M</m> байх үед <m>|f(x)-L|\lt\varepsilon</m>
+          байвал.
+        </p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-limit-1-over-xp">
+      <title>Зэрэгт хуваасан <m>1</m>-ийн хязгаар</title>
+      <statement>
+        <p>
+          <m>p\gt 0</m> бол
+          <me>\lim_{x\to\infty}\frac{1}{x^p}=0.</me>
+          Хэрэв <m>p</m> нь сөрөг <m>x</m>-д тодорхойлогдох рационал тоо бол
+          <me>\lim_{x\to-\infty}\frac{1}{x^p}=0.</me>
+        </p>
+      </statement>
+    </theorem>
+
+    <definition xml:id="def-horizontal-asymptote">
+      <title>Хэвтээ асимптот</title>
+      <statement>
+        <p>
+          Хэрэв <m>\lim_{x\to\infty}f(x)=L</m> эсвэл
+          <m>\lim_{x\to-\infty}f(x)=L</m> байвал
+          <m>y=L</m> шулуун нь <m>f</m>-ийн <term>хэвтээ асимптот</term> юм.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Рационал функцийн хязгааргүй дахь хязгаарыг олохдоо тоолуур ба
+      хуваарийг хамгийн өндөр зэргийн гишүүнд хувааж хялбарчилна.
+    </p>
+
+    <example xml:id="eg-limit-at-infty-rational">
+      <title>Рационал функцийн хязгааргүй дахь хязгаар</title>
+      <p>
+        Дараах хязгаарыг ол:
+        <ol marker="a">
+          <li><p><m>\displaystyle\lim_{x\to\infty}\frac{x^2+2x-1}{5x^2-2x-3}</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\to\infty}\frac{x^3+2x-1}{4-x^2}</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\to\infty}\frac{x-1}{3-x^2}</m></p></li>
+        </ol>
+      </p>
+      <solution>
+        <p>
+          <em>(a)</em> Тоолуур ба хуваарийг <m>x^2</m>-д хув:
+          <me>
+            \lim_{x\to\infty}\frac{x^2+2x-1}{5x^2-2x-3}
+            =\lim_{x\to\infty}\frac{1+\frac{2}{x}-\frac{1}{x^2}}{5-\frac{2}{x}-\frac{3}{x^2}}
+            =\frac{1+0-0}{5-0-0}=\frac{1}{5}.
+          </me>
+          Тиймд <m>y=\tfrac{1}{5}</m> хэвтээ асимптот байна.
+        </p>
+        <p>
+          <em>(b)</em> Тоолуур ба хуваарийг <m>x^2</m>-д хув:
+          <me>
+            \lim_{x\to\infty}\frac{x^3+2x-1}{4-x^2}
+            =\lim_{x\to\infty}\frac{x+\frac{2}{x}-\frac{1}{x^2}}{\frac{4}{x^2}-1}
+            =\frac{\infty+0-0}{0-1}=-\infty.
+          </me>
+          Хязгаар оршдоггүй (хязгааргүй рүү явна), хэвтээ асимптот байхгүй.
+        </p>
+        <p>
+          <em>(c)</em> Тоолуур ба хуваарийг <m>x^2</m>-д хув:
+          <me>
+            \lim_{x\to\infty}\frac{x-1}{3-x^2}
+            =\lim_{x\to\infty}\frac{\frac{1}{x}-\frac{1}{x^2}}{\frac{3}{x^2}-1}
+            =\frac{0-0}{0-1}=0.
+          </me>
+          Тиймд <m>y=0</m> хэвтээ асимптот байна.
+        </p>
+      </solution>
+    </example>
+
+    <remark xml:id="rem-rational-degree-rule">
+      <p>
+        Рационал функцийн хязгааргүй дахь хязгаарын хувьд дараах дүрэм хамаарна:
+      </p>
+      <ul>
+        <li>
+          <p>
+            Тоолуурын зэрэг <m>\lt</m> хуваарийн зэрэг бол хязгаар <m>0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Тоолуурын зэрэг <m>=</m> хуваарийн зэрэг бол хязгаар нь
+            тэргүүлэх коэффициентүүдийн харьцаа.
+          </p>
+        </li>
+        <li>
+          <p>
+            Тоолуурын зэрэг <m>\gt</m> хуваарийн зэрэг бол хязгаар оршдоггүй
+            (<m>\pm\infty</m>).
+          </p>
+        </li>
+      </ul>
+    </remark>
+
+    <example xml:id="eg-limit-at-infty-sqrt">
+      <title>Язгуур агуулсан функцийн хязгааргүй дахь хязгаар</title>
+      <p>
+        Дараах хязгаарыг ол:
+        <ol marker="a">
+          <li><p><m>\displaystyle\lim_{x\to\infty}\frac{\sqrt{9x^2+5}}{2x+1}</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\to-\infty}\frac{\sqrt{9x^2+5}}{2x+1}</m></p></li>
+        </ol>
+      </p>
+      <solution>
+        <p>
+          <em>(a)</em> <m>x\to\infty</m> үед <m>x\gt 0</m>, иймд
+          <m>\sqrt{x^2}=x</m>. Тоолуур ба хуваарийг <m>x</m>-д хув:
+          <md>
+            <mrow>
+              \lim_{x\to\infty}\frac{\sqrt{9x^2+5}}{2x+1}
+              \amp=\lim_{x\to\infty}\frac{\sqrt{9+\frac{5}{x^2}}}{2+\frac{1}{x}}
+              =\frac{\sqrt{9+0}}{2+0}=\frac{3}{2}.
+            </mrow>
+          </md>
+        </p>
+        <p>
+          <em>(b)</em> <m>x\to-\infty</m> үед <m>x\lt 0</m>, иймд
+          <m>\sqrt{x^2}=|x|=-x</m>. Тоолуур ба хуваарийг <m>-x</m>-д хув:
+          <md>
+            <mrow>
+              \lim_{x\to-\infty}\frac{\sqrt{9x^2+5}}{2x+1}
+              \amp=\lim_{x\to-\infty}\frac{\sqrt{9+\frac{5}{x^2}}}{-2-\frac{1}{x}}
+              =\frac{\sqrt{9}}{-2}=-\frac{3}{2}.
+            </mrow>
+          </md>
+          Тиймд функцийн хоёр хэвтээ асимптот байна: <m>y=\tfrac{3}{2}</m>
+          ба <m>y=-\tfrac{3}{2}</m>.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================ -->
+  <exercises xml:id="exercises-limits-infty">
+    <title>Дасгал бодлогууд</title>
+
+    <exercisegroup xml:id="exgroup-inf-limit-graph">
+      <title>График дээр хязгаарыг тодорхойл</title>
+      <introduction>
+        <p>
+          Доорх бодлогуудад өгөгдсөн функцийн хязгаарыг ол.
+          Хязгаар оршдоггүй бол тэр утгаа (<m>\infty</m>, <m>-\infty</m>,
+          эсвэл <q>оршдоггүй</q>) бич.
+        </p>
+      </introduction>
+
+      <exercise xml:id="ex-inf1">
+        <statement>
+          <p>
+            <m>f(x)=\dfrac{1}{(x-2)^2}</m> функцийн хувьд:
+          </p>
+          <ol marker="a" cols="2">
+            <li><p><m>\displaystyle\lim_{x\to 2^-}f(x)</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to 2^+}f(x)</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to 2}f(x)</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to\infty}f(x)</m></p></li>
+          </ol>
+        </statement>
+        <answer>
+          <p>(a) <m>\infty</m>; (b) <m>\infty</m>; (c) <m>\infty</m>; (d) <m>0</m></p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-inf2">
+        <statement>
+          <p>
+            <m>f(x)=\dfrac{1}{x-3}</m> функцийн хувьд:
+          </p>
+          <ol marker="a" cols="2">
+            <li><p><m>\displaystyle\lim_{x\to 3^-}f(x)</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to 3^+}f(x)</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to 3}f(x)</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to -\infty}f(x)</m></p></li>
+          </ol>
+        </statement>
+        <answer>
+          <p>(a) <m>-\infty</m>; (b) <m>\infty</m>; (c) оршдоггүй; (d) <m>0</m></p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-inf3">
+        <statement>
+          <p>
+            <m>f(x)=\dfrac{x^2}{x^2-1}</m> функцийн хувьд:
+          </p>
+          <ol marker="a" cols="2">
+            <li><p><m>\displaystyle\lim_{x\to -1^-}f(x)</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to 1^-}f(x)</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to 1^+}f(x)</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to\infty}f(x)</m></p></li>
+          </ol>
+        </statement>
+        <answer>
+          <p>(a) <m>-\infty</m>; (b) <m>+\infty</m>; (c) <m>-\infty</m>; (d) <m>1</m></p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-inf4">
+        <statement>
+          <p>
+            <m>f(x)=e^{-x}</m> функцийн хувьд:
+          </p>
+          <ol marker="a" cols="2">
+            <li><p><m>\displaystyle\lim_{x\to\infty}f(x)</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to-\infty}f(x)</m></p></li>
+          </ol>
+        </statement>
+        <answer>
+          <p>(a) <m>0</m>; (b) <m>\infty</m></p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup xml:id="exgroup-vert-asymptotes">
+      <title>Босоо асимптот олох</title>
+      <introduction>
+        <p>
+          Доорх функцүүдийн бүх босоо асимптотыг ол.
+          Асимптот байхгүй бол тэгж бич.
+        </p>
+      </introduction>
+
+      <exercise xml:id="ex-va1">
+        <statement>
+          <p><m>f(x)=\dfrac{x^2-9}{x^2-3x}</m></p>
+        </statement>
+        <answer><p><m>x=0</m></p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-va2">
+        <statement>
+          <p><m>f(x)=\dfrac{x^2-1}{x^2+1}</m></p>
+        </statement>
+        <answer><p>Босоо асимптот байхгүй.</p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-va3">
+        <statement>
+          <p><m>f(x)=\dfrac{x^2+x-2}{x^2-x-6}</m></p>
+        </statement>
+        <answer><p><m>x=3</m></p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-va4">
+        <statement>
+          <p><m>f(x)=\dfrac{x^2-2x-8}{x^2-x-6}</m></p>
+        </statement>
+        <answer><p><m>x=3</m></p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-va5">
+        <statement>
+          <p><m>f(x)=\dfrac{\ln x}{x^2-1}</m></p>
+        </statement>
+        <answer><p><m>x=1</m></p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-va6">
+        <statement>
+          <p><m>f(x)=\dfrac{\sin x}{x^2-x}</m></p>
+        </statement>
+        <answer><p><m>x=1</m></p></answer>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup xml:id="exgroup-lim-at-infty">
+      <title>Хязгааргүй дахь хязгаар</title>
+      <introduction>
+        <p>
+          Дараах хязгаарыг ол. Хязгаар оршдоггүй бол
+          <m>\infty</m>, <m>-\infty</m> эсвэл <q>оршдоггүй</q> гэж бич.
+        </p>
+      </introduction>
+
+      <exercise xml:id="ex-li1">
+        <statement>
+          <p><m>\displaystyle\lim_{x\to\infty}\frac{4x^3-2x}{3x^3+x^2-5}</m></p>
+        </statement>
+        <answer><p><m>\dfrac{4}{3}</m></p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-li2">
+        <statement>
+          <p><m>\displaystyle\lim_{x\to\infty}\frac{x^4-x^2}{x^3-2}</m></p>
+        </statement>
+        <answer><p><m>\infty</m></p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-li3">
+        <statement>
+          <p><m>\displaystyle\lim_{x\to-\infty}\frac{3x^2-x}{4x^2+5}</m></p>
+        </statement>
+        <answer><p><m>\dfrac{3}{4}</m></p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-li4">
+        <statement>
+          <p><m>\displaystyle\lim_{x\to\infty}\frac{x^2-1}{x-1}</m></p>
+        </statement>
+        <answer><p><m>\infty</m></p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-li5">
+        <statement>
+          <p><m>\displaystyle\lim_{x\to\infty}\frac{\sqrt{4x^2+3}}{x+1}</m></p>
+        </statement>
+        <answer><p><m>2</m></p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-li6">
+        <statement>
+          <p><m>\displaystyle\lim_{x\to-\infty}\frac{\sqrt{4x^2+3}}{x+1}</m></p>
+        </statement>
+        <answer><p><m>-2</m></p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-li7">
+        <statement>
+          <p><m>\displaystyle\lim_{x\to\infty}\left(\sqrt{x^2+x}-x\right)</m></p>
+        </statement>
+        <hint>
+          <p>Хүйтэн хуваарийн аргаар (<m>\sqrt{x^2+x}+x</m>-д үржүүл).</p>
+        </hint>
+        <answer><p><m>\dfrac{1}{2}</m></p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-li8">
+        <statement>
+          <p><m>\displaystyle\lim_{x\to\infty}\frac{\cos x}{x}</m></p>
+        </statement>
+        <answer><p><m>0</m></p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-li9">
+        <statement>
+          <p><m>\displaystyle\lim_{x\to\infty}x\cdot e^{-x}</m></p>
+        </statement>
+        <answer><p><m>0</m></p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-li10">
+        <statement>
+          <p><m>\displaystyle\lim_{x\to\infty}\frac{\ln x}{x}</m></p>
+        </statement>
+        <answer><p><m>0</m></p></answer>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup xml:id="exgroup-horiz-asymptotes">
+      <title>Хэвтээ ба босоо асимптот олох</title>
+      <introduction>
+        <p>
+          Дараах функцүүдийн бүх хэвтээ болон босоо асимптотуудыг ол.
+        </p>
+      </introduction>
+
+      <exercise xml:id="ex-ha1">
+        <statement>
+          <p><m>f(x)=\dfrac{2x^2}{x^2-4}</m></p>
+        </statement>
+        <answer>
+          <p>Хэвтээ: <m>y=2</m>. Босоо: <m>x=2</m>, <m>x=-2</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-ha2">
+        <statement>
+          <p><m>f(x)=\dfrac{x+1}{x^2-3x+2}</m></p>
+        </statement>
+        <answer>
+          <p>Хэвтээ: <m>y=0</m>. Босоо: <m>x=1</m>, <m>x=2</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-ha3">
+        <statement>
+          <p><m>f(x)=\dfrac{3x^2-x-2}{x^2-x-6}</m></p>
+        </statement>
+        <answer>
+          <p>Хэвтээ: <m>y=3</m>. Босоо: <m>x=3</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-ha4">
+        <statement>
+          <p><m>f(x)=\dfrac{\sqrt{x^2+4}}{x-2}</m></p>
+        </statement>
+        <answer>
+          <p>Хэвтээ: <m>y=1</m> (<m>x\to+\infty</m>),
+          <m>y=-1</m> (<m>x\to-\infty</m>).
+          Босоо: <m>x=2</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-ha5">
+        <statement>
+          <p><m>f(x)=\dfrac{e^x}{1+e^x}</m></p>
+        </statement>
+        <answer>
+          <p>Хэвтээ: <m>y=1</m> (<m>x\to+\infty</m>),
+          <m>y=0</m> (<m>x\to-\infty</m>). Босоо байхгүй.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-ha6">
+        <statement>
+          <p><m>f(x)=\arctan x</m></p>
+        </statement>
+        <answer>
+          <p>Хэвтээ: <m>y=\dfrac{\pi}{2}</m> (<m>x\to+\infty</m>),
+          <m>y=-\dfrac{\pi}{2}</m> (<m>x\to-\infty</m>).</p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+
+    <exercise xml:id="ex-inf-squeeze">
+      <statement>
+        <p>
+          Хавчуурга теоремыг ашиглан дараах хязгаарыг батал:
+          <me>\lim_{x\to\infty}\frac{\sin x}{x}=0.</me>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          <m>-1\le\sin x\le 1</m> болон <m>x\gt 0</m> тул
+          <m>-\dfrac{1}{x}\le\dfrac{\sin x}{x}\le\dfrac{1}{x}</m> байдгийг
+          ашиглана.
+        </p>
+      </hint>
+    </exercise>
+
+    <exercise xml:id="ex-inf-indeterminate">
+      <statement>
+        <p>
+          Дараах тодорхойгүй хэлбэрт хамаарах хязгаарыг тодорхойлж,
+          утгыг ол.
+        </p>
+        <ol marker="a" cols="2">
+          <li><p><m>\displaystyle\lim_{x\to 0}\frac{\sin 3x}{x}</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\to 0}\frac{1-\cos x}{x}</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\to 0^+}x\ln x</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\to\infty}\frac{x^2}{e^x}</m></p></li>
+        </ol>
+      </statement>
+      <answer>
+        <p>(a) <m>3</m>; (b) <m>0</m>; (c) <m>0</m>; (d) <m>0</m></p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="ex-inf-comprehension">
+      <statement>
+        <p>
+          Хэрэв <m>\lim_{x\to 5}f(x)=\infty</m> ба
+          <m>\lim_{x\to 5}g(x)=\infty</m> бол
+          дараах илэрхийллийн хязгаарыг тодорхой хэлж болох уу? Тайлбарла.
+        </p>
+        <ol marker="a">
+          <li><p><m>\displaystyle\lim_{x\to 5}[f(x)+g(x)]</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\to 5}[f(x)-g(x)]</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\to 5}\frac{f(x)}{g(x)}</m></p></li>
+          <li><p><m>\displaystyle\lim_{x\to 5}[f(x)\cdot g(x)]</m></p></li>
+        </ol>
+      </statement>
+      <hint>
+        <p>
+          (b) ба (c)-д жишээ зохиож, хязгаар янз бүр байж болохыг харуул.
+        </p>
+      </hint>
+    </exercise>
+
+  </exercises>
+
+</section>
