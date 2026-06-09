@@ -68,7 +68,7 @@
 
     <xi:include href="./chapters/ch-logic.ptx" />
     <xi:include href="chapters/ch-sets-functions.ptx"/>
-    <xi:include href="./chapters/sec_limits_infty_mn.ptx"/>
+    <!--<xi:include href="./chapters/sec_limits_infty_mn.ptx"/>-->
     <!-- <xi:include href="./chapters/ch-hyazgaar.ptx" /> -->
     <xi:include href="./chapters/lecture-15.ptx" />
     <backmatter xml:id="backmatter">
