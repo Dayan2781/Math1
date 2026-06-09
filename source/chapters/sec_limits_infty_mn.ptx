@@ -24,18 +24,12 @@
       босоо асимптот, <m>y=0</m> дээр хэвтээ асимптот байна.</caption>
       <image width="50%">
         <latex-image>
+<![CDATA[
 \begin{tikzpicture}
-  \begin{scope}
-    \clip (-2.5,-0.3) rectangle (2.5,4.5);
-    \draw[domain=-2.5:-0.16,smooth,thick,blue] plot(\x,{1/(\x*\x)});
-    \draw[domain=0.16:2.5,smooth,thick,blue] plot(\x,{1/(\x*\x)});
-  \end{scope}
-  \draw[->] (-2.6,0)--(2.6,0) node[right]{$x$};
-  \draw[->] (0,-0.3)--(0,4.6) node[above]{$y$};
-  \draw[dashed,gray] (-2.5,0)--(2.5,0);
-  \node[right] at (0.8,3) {$f(x)=\dfrac{1}{x^2}$};
+\draw (0,0) circle (1pt);
 \end{tikzpicture}
-        </latex-image>
+]]>
+</latex-image>
       </image>
     </figure>
   </introduction>
@@ -138,19 +132,12 @@
       рүү дөхнө.</caption>
       <image width="50%">
         <latex-image>
+<![CDATA[
 \begin{tikzpicture}
-  \begin{scope}
-    \clip (-0.5,-0.3) rectangle (2.5,4.5);
-    \draw[domain=-0.5:0.68,smooth,thick,blue] plot(\x,{1/((\x-1)*(\x-1))});
-    \draw[domain=1.32:2.5,smooth,thick,blue] plot(\x,{1/((\x-1)*(\x-1))});
-  \end{scope}
-  \draw[->] (-0.6,0)--(2.6,0) node[right]{$x$};
-  \draw[->] (0,-0.3)--(0,4.6) node[above]{$y$};
-  \draw[dashed,gray] (1,-0.3)--(1,4.5);
-  \node[below] at (1,0) {$1$};
-  \node[right] at (1.6,3.2) {$\dfrac{1}{(x-1)^2}$};
+\draw (0,0) circle (1pt);
 \end{tikzpicture}
-        </latex-image>
+]]>
+</latex-image>
       </image>
     </figure>
 
@@ -181,17 +168,12 @@
       <m>y=0</m> хэвтээ асимптот.</caption>
       <image width="50%">
         <latex-image>
+<![CDATA[
 \begin{tikzpicture}
-  \begin{scope}
-    \clip (-2.5,-4) rectangle (2.5,4);
-    \draw[domain=-2.5:-0.25,smooth,thick,blue] plot(\x,{1/\x});
-    \draw[domain=0.25:2.5,smooth,thick,blue] plot(\x,{1/\x});
-  \end{scope}
-  \draw[->] (-2.6,0)--(2.6,0) node[right]{$x$};
-  \draw[->] (0,-4.3)--(0,4.4) node[above]{$y$};
-  \node[right] at (0.6,2.5) {$\dfrac{1}{x}$};
+\draw (0,0) circle (1pt);
 \end{tikzpicture}
-        </latex-image>
+]]>
+</latex-image>
       </image>
     </figure>
   </subsection>
