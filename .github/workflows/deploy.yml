@@ -1,27 +1,38 @@
 name: Deploy PreTeXt to GitHub Pages
+
 on:
   push:
     branches: [main]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
+      - name: Install LaTeX dependencies
+        run: sudo apt-get update && sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-latex-extra
+
       - name: Install PreTeXt
         run: pip install pretext
+
       - name: Build HTML
         run: pretext build html
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: output/html
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
