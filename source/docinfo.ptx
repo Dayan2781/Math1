@@ -11,6 +11,11 @@
     \newcommand{\C}{\mathbb{C}}
   </macros>
 
+ <latex-preamble>
+  \usepackage{pgfplots}
+  \pgfplotsset{compat=1.18}
+  \usepackage{tikz}
+</latex-preamble>
   <!-- Brand logo / institutional identity (optional) -->
   <brandlogo url="https://num.edu.mn" source="logo.png" />
 
