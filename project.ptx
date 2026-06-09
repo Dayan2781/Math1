@@ -2,6 +2,5 @@
 <project ptx-version="2">
   <targets>
     <target name="html" format="html" />
-    <target name="pdf" format="pdf" />
   </targets>
 </project>
