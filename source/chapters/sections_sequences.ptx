@@ -1,0 +1,208 @@
+<!-- ════════════════════════════════════════════════════
+     §2.5 Дараалал
+     ════════════════════════════════════════════════════ -->
+<section xml:id="sec-sequences">
+  <title>Дараалал</title>
+
+  <definition xml:id="def-sequence">
+    <title>Тоон дараалал</title>
+    <statement>
+      <p><m>f : \mathbb{N} \to \mathbb{R}</m> функцийг
+      <term>тоон дараалал</term> гэнэ.</p>
+    </statement>
+  </definition>
+
+  <p>Дарааллын хувьд <m>f(1) = a_1</m>, <m>f(2) = a_2</m>, <m>f(3) = a_3, \ldots</m>
+  утгуудаар тодорхойлогддог тул <m>a_1, a_2, a_3, \ldots</m> тоонуудын
+  жагсаалтаар <m>f</m> функцийг төлөөлүүлнэ.</p>
+
+  <example xml:id="ex-seq-basic">
+    <statement>
+      <p><m>f(n) = 2n + 1</m> дарааллыг <m>a_n = 2n + 1</m> гэж бичнэ.</p>
+    </statement>
+  </example>
+
+  <remark xml:id="rem-seq-properties">
+    <p>Дараалал функц учир монотон, өсөх, буурах, зааглагдсан гэх мэт
+    нэр томьёог шууд хэрэглэх болно.</p>
+  </remark>
+
+  <example xml:id="ex-seq-an-n">
+    <statement>
+      <p><m>a_n = n</m> дараалал монотон, өсдөг, доороосоо зааглагдсан,
+      дээрээсээ зааглагдаагүй дараалал байна.</p>
+    </statement>
+  </example>
+
+  <p>Дарааллыг тодорхойлоход дараах хоёр аргыг ашигладаг:</p>
+
+  <p>
+    <ol>
+      <li><p><term>Ерөнхий гишүүний томьёо.</term> Дарааллын аль ч гишүүнийг
+      олж болох <m>n</m>-ээс хамаарсан томьёо. Жишээ:
+      <m>a_n = 3n - 2</m>.</p></li>
+
+      <li><p><term>Рекуррент томьёо.</term> Дарааллын гишүүнийг олохдоо
+      өмнөх хэдэн гишүүнийг ашиглан олж болох томьёо. Жишээ:
+      <m>a_1 = 1</m>, <m>a_n = a_{n-1} + 3</m>.</p></li>
+    </ol>
+  </p>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     §2.6 Арифметик прогресс
+     ════════════════════════════════════════════════════ -->
+<section xml:id="sec-arithmetic-progression">
+  <title>Арифметик прогресс</title>
+
+  <definition xml:id="def-ap">
+    <title>Арифметик прогресс</title>
+    <statement>
+      <p><m>\{a_n\}</m> дарааллын хувьд</p>
+      <me>\forall n \in \mathbb{N}, \quad a_{n+1} = a_n + d</me>
+      <p>байвал <m>\{a_n\}</m>-г <term>арифметик прогресс</term>,
+      <m>d</m>-г <term>арифметик прогрессийн ялгавар</term> гэнэ.</p>
+    </statement>
+  </definition>
+
+  <p>Арифметик прогрессийн ерөнхий гишүүний томьёо:</p>
+  <me>a_n = a_1 + (n-1)d.</me>
+
+  <example xml:id="ex-ap-1">
+    <statement>
+      <p><m>a_1 = 3</m>, <m>d = 4</m> арифметик прогрессийн эхний 5
+      гишүүнийг ол.</p>
+    </statement>
+    <solution>
+      <me>a_1 = 3, \quad a_2 = 7, \quad a_3 = 11, \quad a_4 = 15, \quad a_5 = 19.</me>
+      <p>Ерөнхий гишүүн: <m>a_n = 3 + (n-1) \cdot 4 = 4n - 1</m>.</p>
+    </solution>
+  </example>
+
+  <example xml:id="ex-ap-2">
+    <statement>
+      <p><m>a_3 = 11</m>, <m>a_7 = 27</m> нөхцлийг хангах арифметик
+      прогрессийн <m>a_1</m> ба <m>d</m>-г ол.</p>
+    </statement>
+    <solution>
+      <p>Ерөнхий томьёоноос
+      <me>a_3 = a_1 + 2d = 11, \qquad a_7 = a_1 + 6d = 27.</me>
+      Дээрх тэгшитгэлийг бодвол <m>4d = 16</m>, тиймээс <m>d = 4</m>,
+      <m>a_1 = 3</m>. Иймд <m>a_n = 4n - 1</m> байна.</p>
+    </solution>
+  </example>
+
+  <theorem xml:id="thm-ap-sum">
+    <title>Арифметик прогрессийн эхний <m>k</m> гишүүний нийлбэр</title>
+    <statement>
+      <p><m>\{a_n\}</m> арифметик прогрессийн эхний <m>k</m> гишүүний
+      нийлбэрийг <m>S_k = a_1 + a_2 + a_3 + \cdots + a_k</m> гэвэл</p>
+      <me>S_k = \frac{k(a_1 + a_k)}{2} = \frac{k\bigl(2a_1 + (k-1)d\bigr)}{2}.</me>
+    </statement>
+    <proof>
+      <p>Индукцийн аргаар баталъя.</p>
+
+      <p><term>Суурь алхам</term> (<m>k = 1</m>):
+      <m>S_1 = a_1 = \dfrac{1 \cdot (2a_1 + 0)}{2} = a_1</m>.</p>
+
+      <p><term>Индукцийн таамаглал.</term> <m>k = m</m> үед томьёо
+      биелнэ гэж үзье:
+      <me>S_m = \frac{m\bigl(2a_1 + (m-1)d\bigr)}{2}.</me>
+      </p>
+
+      <p><term>Индукцийн алхам</term> (<m>k = m+1</m>):</p>
+      <md>
+        <mrow>S_{m+1} \amp= S_m + a_{m+1}</mrow>
+        <mrow>\amp= \frac{m\bigl(2a_1 + (m-1)d\bigr)}{2} + a_1 + md</mrow>
+        <mrow>\amp= \frac{m(2a_1 + (m-1)d) + 2a_1 + 2md}{2}</mrow>
+        <mrow>\amp= \frac{2a_1(m+1) + d\bigl(m(m-1) + 2m\bigr)}{2}</mrow>
+        <mrow>\amp= \frac{2a_1(m+1) + dm(m+1)}{2}</mrow>
+        <mrow>\amp= \frac{(m+1)\bigl(2a_1 + md\bigr)}{2}.</mrow>
+      </md>
+      <p>Энэ нь <m>k = m+1</m> үеийн томьёотой яг тохирч байна. Математик
+      индукцийн зарчмаар <m>\forall k \in \mathbb{N}</m>-ийн хувьд томьёо
+      биелнэ.</p>
+    </proof>
+  </theorem>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     §2.7 Геометр прогресс
+     ════════════════════════════════════════════════════ -->
+<section xml:id="sec-geometric-progression">
+  <title>Геометр прогресс</title>
+
+  <definition xml:id="def-gp">
+    <title>Геометр прогресс</title>
+    <statement>
+      <p><m>\{a_n\}</m> дарааллын (<m>a_n \ne 0</m>) хувьд</p>
+      <me>\forall n \in \mathbb{N}, \quad a_{n+1} = a_n \cdot q</me>
+      <p>бол <m>\{a_n\}</m>-г <term>геометр прогресс</term>, <m>q</m>-г
+      <term>геометр прогрессийн хуваарь</term> гэнэ.</p>
+    </statement>
+  </definition>
+
+  <p>Геометр прогрессийн ерөнхий гишүүний томьёо:</p>
+  <me>a_n = a_1 \cdot q^{\,n-1}.</me>
+
+  <example xml:id="ex-gp-1">
+    <statement>
+      <p><m>a_1 = 2</m>, <m>q = 3</m> геометр прогрессийн эхний 5
+      гишүүнийг бич.</p>
+    </statement>
+    <solution>
+      <me>a_1 = 2, \quad a_2 = 6, \quad a_3 = 18, \quad a_4 = 54, \quad a_5 = 162.</me>
+      <p>Ерөнхий гишүүн: <m>a_n = 2 \cdot 3^{\,n-1}</m>.</p>
+    </solution>
+  </example>
+
+  <example xml:id="ex-gp-2">
+    <statement>
+      <p><m>a_2 = 6</m>, <m>a_5 = 162</m> нөхцлийг хангах геометр
+      прогрессийн <m>a_1</m> ба <m>q</m>-г ол.</p>
+    </statement>
+    <solution>
+      <p>Ерөнхий гишүүний томьёоноос
+      <me>a_2 = a_1 q = 6, \qquad a_5 = a_1 q^4 = 162.</me>
+      Тэгшитгэлүүдийг хооронд нь хуваавал <m>q^3 = 27</m> гарах ба
+      эндээс <m>q = 3</m>, <m>a_1 = 2</m> болно. Иймд ерөнхий гишүүн
+      <m>a_n = 2 \cdot 3^{\,n-1}</m> байна.</p>
+    </solution>
+  </example>
+
+  <theorem xml:id="thm-gp-sum">
+    <title>Геометр прогрессийн эхний <m>k</m> гишүүний нийлбэр</title>
+    <statement>
+      <p><m>\{a_n\}</m> геометр прогрессийн эхний <m>k</m> гишүүний
+      нийлбэрийг <m>S_k = a_1 + a_2 + a_3 + \cdots + a_k</m> гэвэл</p>
+      <me>S_k =
+      \begin{cases}
+        \dfrac{a_1(q^k - 1)}{q - 1}, \amp q \ne 1, \\[6pt]
+        k \cdot a_1, \amp q = 1.
+      \end{cases}</me>
+    </statement>
+    <proof>
+      <p><m>q = 1</m> үед бүх <m>n</m>-ийн хувьд <m>a_n = a_1</m> тул
+      <m>S_k = k a_1</m> байна. <m>q \ne 1</m> гэж үзээд индукцийн
+      аргаар баталъя.</p>
+
+      <p><term>Суурь алхам</term> (<m>k = 1</m>):
+      <m>S_1 = a_1 = \dfrac{a_1(q - 1)}{q - 1} = a_1</m>.</p>
+
+      <p><term>Индукцийн таамаглал.</term> <m>k = m</m> үед томьёо биелнэ:
+      <me>S_m = \frac{a_1(q^m - 1)}{q - 1}.</me>
+      </p>
+
+      <p><term>Индукцийн алхам</term> (<m>k = m+1</m>):</p>
+      <md>
+        <mrow>S_{m+1} \amp= S_m + a_{m+1}</mrow>
+        <mrow>\amp= \frac{a_1(q^m - 1)}{q - 1} + a_1 q^m</mrow>
+        <mrow>\amp= \frac{a_1(q^m - 1) + a_1 q^m(q - 1)}{q - 1}</mrow>
+        <mrow>\amp= \frac{a_1\bigl(q^m - 1 + q^{m+1} - q^m\bigr)}{q - 1}</mrow>
+        <mrow>\amp= \frac{a_1(q^{m+1} - 1)}{q - 1}.</mrow>
+      </md>
+      <p>Иймд математик индукцийн зарчмаар <m>\forall k \in \mathbb{N}</m>-ийн
+      хувьд томьёо батлагдав.</p>
+    </proof>
+  </theorem>
+</section>

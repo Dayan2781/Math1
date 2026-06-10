@@ -1,13 +1,1620 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================
+     Бүлэг 3: Хязгаар
+     §3.1 Хязгаарын танилцуулга
+     §3.2 Хязгаарын ε-δ тодорхойлолт
+     §3.3 Хязгаар аналитикаар олох
+     ============================================================ -->
 
 <chapter xml:id="ch-limits" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Хязгаар</title>
 
-  <introduction>
-    <p>Математик анализын суурь ойлголт болох <em>хязгаар</em>-ыг
-    энэ бүлэгт танилцуулна. APEX Calculus-ын монгол хэлээрх орчуулга.</p>
+  <introduction xml:id="intro-limits">
+    <p>Математик анализын гол ойлголт болох <term>хязгаар</term> нь функцийн
+    төлөвийг тодорхой цэгт ямар байгааг тайлбарладаг. Энэ бүлэгт бид
+    хязгаарыг тодорхойлж, түүний чанаруудыг судлаад түүний тусламжтайгаар тасралтгүй чанартай танилцана.</p>
+
+    <p><alert>Бүлгийн зорилго:</alert>
+      <ul>
+        <li>Хязгаарын ойлголтыг интуитив болон тодорхойлолтоор
+        ойлгох.</li>
+        <li>ε-δ тодорхойлолт ашиглан хязгаарыг баталж сурах.</li>
+        <li>Хязгаарын теоремүүдийг ашиглан хязгаарыг аналитикаар
+        олох.</li>
+        <li>Өрөөсгөл хязгаар, тасралтгүй чанар, төгсгөлгүй хязгаарыг
+        судлах.</li>
+      </ul>
+    </p>
   </introduction>
 
-  <xi:include href="./sec-limit-intro.ptx" />
+  <!-- ============================================================
+       §3.1 Хязгаарын танилцуулга
+       ============================================================ -->
+  <section xml:id="sec-limit-intro">
+    <title>Хязгаарын танилцуулга</title>
+
+    <introduction>
+      <p>Хязгаарын ойлголт нь эхлээд тоон жишээгээр тайлбарлагдана.
+      Яагаад хязгаар хэрэгтэй вэ? Яагаад зүгээр л <m>f(a)</m>-г
+      тооцоолоод болдоггүй вэ? Зарим тохиолдолд функц тухайн цэгт
+      тодорхойлогдохгүй байж болдог, гэвч тэр цэгт <q>ямар утга авахыг
+      хүсдэг</q> нь тодорхой байж болно.</p>
+    </introduction>
+
+    <subsection xml:id="subsec-limit-intro-numerical">
+      <title>Тоон ба графикийн танилцуулга</title>
+
+      <p>Дараах функцийг авч үзье:</p>
+      <me>f(x) = \frac{\sin x}{x}.</me>
+      <p><m>x = 0</m> цэгт <m>f(0) = \frac{\sin 0}{0} = \frac{0}{0}</m>
+      тодорхойгүй байна. Гэвч <m>x</m> нь 0 руу дөхөх үед <m>f(x)</m>
+      ямар утга авдаг болохыг шалгая:</p>
+
+
+      <sidebyside widths="47% 47%" margins="0%">
+        <figure xml:id="fig-sinx-over-x-full">
+          <caption><m>\sin(x)/x</m></caption>
+          <image>
+            <shortdescription>sin(x)/x функцийн график, x=-7-аас 7 хүртэл</shortdescription>
+            <latex-image>
+              \begin{tikzpicture}[
+                declare function = {func(\x) = (\x != 0) * (sin(x*180/pi)/x) + (\x == 0) * (1);}
+              ]
+                \begin{axis}[ymin=-0.25,ymax=1.2,xmin=-7,xmax=7]
+                  \addplot+[infinite,domain=-7:7,samples=50] {func(x)};
+                  \addplot[hollowdot] coordinates {(0,1)};
+                \end{axis}
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+        <figure xml:id="fig-sinx-over-x-near1">
+          <caption><m>\sin(x)/x</m>, <m>x=1</m> орчимд</caption>
+          <image>
+            <shortdescription>sin(x)/x, x=1 орчимд томруулсан</shortdescription>
+            <latex-image>
+              \begin{tikzpicture}
+                \begin{axis}[
+                  xmin=.3,xmax=1.6,ymin=.4,ymax=1.1,
+                  xtick={0.5,1,1.5},ytick={0.6,0.8,1},
+                  xdiscontinuity,ydiscontinuity,grid=both,
+                ]
+                  \addplot+[infinite,domain=0.5:1.5] {sin(x*180/pi)/x};
+                \end{axis}
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+      </sidebyside>
+
+      <table xml:id="tbl-sinx-over-x">
+        <title><m>f(x) = \sin x / x</m>-ийн утгууд</title>
+        <tabular halign="center">
+          <row header="yes" bottom="minor">
+            <cell><m>x</m></cell>
+            <cell><m>f(x)</m></cell>
+          </row>
+          <row><cell><m>1{,}0</m></cell><cell><m>0{,}8415</m></cell></row>
+          <row><cell><m>0{,}5</m></cell><cell><m>0{,}9589</m></cell></row>
+          <row><cell><m>0{,}1</m></cell><cell><m>0{,}9983</m></cell></row>
+          <row><cell><m>0{,}01</m></cell><cell><m>0{,}99998</m></cell></row>
+          <row><cell><m>-0{,}01</m></cell><cell><m>0{,}99998</m></cell></row>
+          <row><cell><m>-0{,}1</m></cell><cell><m>0{,}9983</m></cell></row>
+          <row><cell><m>-1{,}0</m></cell><cell><m>0{,}8415</m></cell></row>
+        </tabular>
+      </table>
+
+      <p>Хүснэгтээс харахад <m>x \to 0</m> үед <m>f(x) \to 1</m>
+      болж байгаа юм шиг харагдаж байна. Энэ нь
+      <me>\lim_{x \to 0} \frac{\sin x}{x} = 1</me>
+      болохыг илтгэнэ. Бүлэг 3-д үүнийг нарийн батална.</p>
+
+      <definition xml:id="def-limit-informal">
+        <title>Хязгаарын энгийн тодорхойлолт</title>
+        <statement>
+          <p><m>f</m> функц <m>a</m>-гаас бусад цэгт тодорхойлогдсон байг.
+          Хэрэв <m>x</m> нь <m>a</m> руу дөхөх үед <m>f(x)</m> нь тодорхой
+          <m>L</m> тоо руу дөхдөг бол <m>L</m>-ийг <m>f(x)</m> функцийн
+          <m>x \to a</m> үеийн <term>хязгаар</term> гэж нэрлэн</p>
+          <me>\lim_{x \to a} f(x) = L</me>
+          <p>гэж тэмдэглэнэ.</p>
+        </statement>
+      </definition>
+
+      <remark xml:id="rem-limit-not-value">
+        <p>Хязгаарыг тодорхойлохдоо <m>f(a)</m>-ийн утга чухал биш — зөвхөн
+        <m>x</m> нь <m>a</m>-д <em>ойртох</em> үед <m>f(x)</m> хаашаа
+        Ойртож байгаа нь чухал. Тиймээс:
+          <ul>
+            <li><m>f(a)</m> тодорхойлогдсон байх шаардлагагүй.</li>
+            <li><m>f(a)</m> тодорхойлогдсон ч <m>\lim_{x \to a} f(x) \ne f(a)</m>
+            байж болно.</li>
+            <li><m>\lim_{x \to a} f(x) = f(a)</m> байвал функц тухайн цэгт
+            <em>тасралтгүй</em> болно — үүнийг §3.5-д үзнэ.</li>
+          </ul>
+        </p>
+      </remark>
+
+      <example xml:id="ex-limit-intro-1">
+        <title>Хязгаар тоон аргаар тооцоолох</title>
+        <statement>
+          <p><m>\displaystyle\lim_{x \to 1} \frac{x^2 - 1}{x - 1}</m>
+          хязгаарыг тооцоол.</p>
+        </statement>
+        <solution>
+          <p><m>x = 1</m> үед функцийн утга <m>\frac{0}{0}</m> болж тодорхойгүй байна. Гэвч
+          <m>x \ne 1</m> бол</p>
+          <me>\frac{x^2 - 1}{x - 1} = \frac{(x-1)(x+1)}{x-1} = x + 1.</me>
+          <p>Тиймээс <m>x \to 1</m> үед <m>f(x) = x + 1 \to 2</m>.
+          Иймд <m>\displaystyle\lim_{x \to 1} \frac{x^2 - 1}{x - 1} = 2</m>.</p>
+
+          <p><alert>Анхаар.</alert> <m>f(1)</m> тодорхойлогдохгүй боловч
+          хязгаар нь оршин байна.</p>
+        </solution>
+      </example>
+
+      <example xml:id="ex-limit-intro-2">
+        <title>Хязгаар оршихгүй тохиолдол</title>
+        <statement>
+          <p><m>f(x) = \frac{1}{x}</m> функцийн <m>x \to 0</m> үеийн
+          хязгаарыг ол.</p>
+        </statement>
+        <solution>
+          <p><m>x \to 0^+</m> (баруунаас) үед <m>\frac{1}{x} \to +\infty</m>,
+          харин <m>x \to 0^-</m> (зүүнээс) үед <m>\frac{1}{x} \to -\infty</m>.
+          Хоёр талаас тэмүүлэх үеийн утгууд нэг тоо руу дөхөхгүй тул
+          хязгаар оршихгүй.</p>
+        </solution>
+      </example>
+
+      <example xml:id="ex-limit-intro-3">
+        <title>Хязгаар байх боловч функцийн утгаас ялгаатай</title>
+        <statement>
+          <p>
+          <me>g(x) = \b\begin{cases} x + 1 \amp x \ne 2 \\ 0 \amp x = 2 \end{cases}</me>
+          функцийн <m>x \to 2</m> үеийн хязгаарыг ол.</p>
+        </statement>
+        <solution>
+          <p><m>x \ne 2</m> бол <m>g(x) = x + 1</m>, тиймээс <m>x \to 2</m>
+          үед <m>g(x) \to 3</m>. Иймд
+          <m>\displaystyle\lim_{x \to 2} g(x) = 3</m>.</p>
+          <p>Гэвч <m>g(2) = 0 \ne 3</m>. Энэ нь хязгаар ба функцийн утга
+          ялгаатай байж болохыг харуулж байна.</p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection xml:id="subsec-limit-dne">
+      <title>Хязгаар оршихгүй байх нөхцөл</title>
+
+      <p>Хязгаар оршихгүй байх гурван үндсэн шалтгаан байдаг:</p>
+
+      <p>
+        <ol>
+          <li><p><term>Зүүн ба баруун хязгаар ялгаатай:</term>
+          <m>x</m> зүүнээс болон баруунаас <m>a</m> руу дөхөх үед <m>f(x)</m>
+          өөр өөр утга руу дөхдөг. Жишээ нь <m>f(x) = [x]</m> (бүхэл
+          хэсгийн функц) <m>x = 1</m> цэгт.</p></li>
+
+          <li><p><term>Хэлбэлзэл:</term> <m>f(x)</m> нь
+          <m>x \to a</m> үед тогтмол утга руу дөхдөггүй.
+          Жишээ нь <m>f(x) = \sin\!\left(\frac{1}{x}\right)</m>
+          <m>x = 0</m> цэгт.</p></li>
+
+          <li><p><term>Төгсгөлгүй болох:</term> <m>|f(x)| \to \infty</m>
+          байдаг. Жишээ нь <m>f(x) = \frac{1}{x^2}</m>
+          <m>x = 0</m> цэгт.</p></li>
+        </ol>
+      </p>
+
+      <example xml:id="ex-limit-oscillation">
+        <title>Хэлбэлзлийн улмаас хязгаар байхгүй</title>
+        <statement>
+          <p><m>f(x) = \sin\!\left(\frac{1}{x}\right)</m> функцийн
+          <m>x \to 0</m> үеийн хязгаарыг ол.</p>
+        </statement>
+        <solution>
+          <p><m>x</m> нь 0 руу дөхөх тусам <m>\frac{1}{x}</m> хязгааргүй
+          их болж, <m>\sin\!\left(\frac{1}{x}\right)</m> функц
+          <m>[-1, 1]</m> завсарт хязгааргүй олон удаа хэлбэлзэнэ. Тиймээс
+          функц нэг тогтмол утга руу нийлдэггүй тул хязгаар оршихгүй.</p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection xml:id="subsec-limit-diff-quotient">
+      <title>Хэрэглээ: өөрчлөлтийн харьцаа ба хурд</title>
+
+      <p>Хязгаарын хамгийн чухал хэрэглээний нэг бол
+      <term>өөрчлөлтийн харьцаа</term> юм. Жишээ нь байршилын функц
+      <m>f(t)</m> өгөгдсөн бол <m>t = a</m> мөчид агшин зуурын хурд:</p>
+      <me>v(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}.</me>
+      <p>Энэ нь уламжлалын тодорхойлолт бөгөөд Бүлэг 4-д нарийвчлан
+      судална.</p>
+
+      <example xml:id="ex-diff-quotient">
+        <title>Агшин зуурын хурд</title>
+        <statement>
+          <p> Шулууны дагуу хөдлөж байгаа шавж хугацааны <m>t</m> мөчид <m>f(t) = -1{,}5t^2 + 11{,}5t</m> цэгт байдаг гэе. <m>t = 1</m> сек   
+        мөчид агшин зуурын хурдыг ол.</p>
+        </statement>
+        <solution>
+          <p>Өөрчлөлтийн харьцааг тооцоолъё:</p>
+          <md>
+            <mrow>\frac{f(1 + h) - f(1)}{h}
+            \amp= \frac{-1{,}5(1+h)^2 + 11{,}5(1+h) - (-1{,}5 + 11{,}5)}{h}</mrow>
+            <mrow>\amp= \frac{-1{,}5 - 3h - 1{,}5h^2 + 11{,}5 + 11{,}5h - 10}{h}</mrow>
+            <mrow>\amp= \frac{8{,}5h - 1{,}5h^2}{h} = 8{,}5 - 1{,}5h.</mrow>
+          </md>
+          <p><m>h \to 0</m> үед <m>8{,}5 - 1{,}5h \to 8{,}5</m>. Иймд
+          <m>t = 1</m> сек мөчид агшин зуурын хурд <m>8{,}5</m> м/сек
+          байна.</p>
+        </solution>
+      </example>
+    </subsection>
+
+    <exercises xml:id="exercises-limit-intro">
+      <title>§3.1 Дасгалууд</title>
+
+      <exercise xml:id="ex-lim-intro-1">
+        <statement>
+          <p>Дараах хязгаарыг тоон аргаар (хүснэгт хийж) тооцоол:
+          <m>\displaystyle\lim_{x \to 2} \frac{x^2 - 4}{x - 2}</m>.</p>
+        </statement>
+        <answer><p><m>4</m>.</p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-lim-intro-2">
+        <statement>
+          <p><m>\displaystyle\lim_{x \to 0} \frac{x^2 + x}{x}</m>
+          хязгаарыг ол.</p>
+        </statement>
+        <answer><p><m>1</m>.</p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-lim-intro-3">
+        <statement>
+          <p>Дараах функцийн хязгаар оршин байна уу? Тайлбарла.
+          <me>h(x) = \b\begin{cases} x^2 - 3x - 4 \amp x \le 3 \\ 3x - 13 \amp x \gt 3 \end{cases}</me>
+          <m>x \to 3</m> үед.</p>
+        </statement>
+        <answer><p>Хязгаар оршихгүй: зүүн хязгаар <m>-4</m>, баруун хязгаар
+        <m>-4</m>. Тиймээс хязгаар оршино, <m>-4</m>.</p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-lim-intro-4">
+        <statement>
+          <p><m>f(t) = t^2 + 3t</m> функцийн <m>t = 2</m> цэгт агшин зуурын
+          өөрчлөлтийн хурдыг ол.</p>
+        </statement>
+        <answer><p><m>7</m>.</p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-lim-intro-5">
+        <statement>
+          <p>Хязгаар оршихгүй байх гурван нөхцлийг жишээгээр тайлбарла.</p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       §3.2 Хязгаарын ε-δ тодорхойлолт
+       ============================================================ -->
+  <section xml:id="sec-limit-def">
+    <title>Хязгаарын <m>\varepsilon</m>-<m>\delta</m> тодорхойлолт</title>
+
+    <introduction>
+      <p>§3.1-д хязгаарын интуитив ойлголтыг авч үзсэн. Энэ хэсэгт
+      математикийн хувьд нарийн тодорхойлолтыг өгнө. Энэ тодорхойлолт нь
+      <q><m>x</m> нь <m>a</m>-д хангалттай ойрхон үед <m>f(x)</m> нь
+      <m>L</m>-д хангалттай ойрхон байдаг</q> гэсэн санааг нарийвчлан
+      тайлбарладаг.</p>
+    </introduction>
+
+    <definition xml:id="def-limit-epsilon-delta">
+      <title>Хязгаарын <m>\varepsilon</m>-<m>\delta</m> тодорхойлолт</title>
+      <statement>
+        <p><m>f</m> функц <m>a</m>-г агуулах нээлттэй завсарт тодорхойлогдсон
+        байг (магадгүй <m>a</m>-д тодорхойлогдохгүй байж болно).
+        Хэрэв дурын <m>\varepsilon \gt 0</m> тоонд харгалзах
+        <m>\delta \gt 0</m> тоо олдоод,</p>
+        <me>0 \lt |x - a| \lt \delta \quad \Longrightarrow \quad
+        |f(x) - L| \lt \varepsilon</me>
+        <p>байвал <m>L</m>-ийг <m>f(x)</m> функцийн <m>x \to a</m> үеийн
+        <term>хязгаар</term> гэж нэрлэн
+        <m>\displaystyle\lim_{x \to a} f(x) = L</m> гэж бичнэ.</p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-eps-delta-intuition">
+      <p>Тодорхойлолтыг тайлбарлая: <m>\varepsilon</m> нь <q>хэр ойр байх
+      вэ</q> гэсэн шаардлагыг илэрхийлдэг. Хэн нэгэн дурын
+      <m>\varepsilon \gt 0</m>-ийг зааж өгвөл бид харгалзах
+      <m>\delta \gt 0</m>-ийг олж чадах ёстой. Энэ нь <q>ямар ч нарийвчлалаар
+      <m>L</m>-д ойртож болно</q> гэсэн үг.</p>
+    </remark>
+
+    <example xml:id="ex-eps-delta-linear">
+      <title>Шугаман функцийн хязгаар батлах</title>
+      <statement>
+        <p><m>\displaystyle\lim_{x \to 3} (2x + 1) = 7</m> болохыг
+        <m>\varepsilon</m>-<m>\delta</m> тодорхойлолтоор батал.</p>
+      </statement>
+      <proof>
+        <p><m>0 \lt x \lt \dfrac{\pi}{2}</m> үед нэгж тойрог дээр
+        <m>O = (0,0)</m>, <m>A = (1,0)</m>,
+        <m>B = (\cos x, \sin x)</m> гэж авъя.
+        <m>A</m> дээрх шүргэгч <m>x = 1</m> шулуун нь <m>OB</m>
+        цацрагтай <m>C = (1, \tan x)</m> дээр огтлолцоно.</p>
+
+        <p>Гурван геометрийн дүрсийн талбайг харьцуулъя:
+        <md>
+          <mrow>S_{\triangle OAB} \amp= \frac{1}{2}\sin x,</mrow>
+          <mrow>S_{\text{сектор}} \amp= \frac{x}{2},</mrow>
+          <mrow>S_{\triangle OAC} \amp= \frac{1}{2}\tan x.</mrow>
+        </md>
+        <m>\triangle OAB \subset \text{сектор} \subset \triangle OAC</m> тул</p>
+        <me>\cos x \lt \frac{\sin x}{x} \lt 1.</me>
+        <p><m>x \to 0^+</m> үед <m>\cos x \to 1</m> тул хашилтын
+        теоремоор <m>\dfrac{\sin x}{x} \to 1</m>.
+        Функц тэгш тул <m>x \to 0^-</m> үед ч адилхан. Иймд</p>
+        <me>\lim_{x \to 0} \frac{\sin x}{x} = 1.</me>
+      </proof>
+    </example>
+
+    <example xml:id="ex-eps-delta-quadratic">
+      <title>Квадрат функцийн хязгаар</title>
+      <statement>
+        <p><m>\displaystyle\lim_{x \to 2} x^2 = 4</m> болохыг батал.</p>
+      </statement>
+      <proof>
+        <p>Дурын <m>\varepsilon \gt 0</m> авъя. Тооцоолъё:
+        <me>|x^2 - 4| = |x - 2| \cdot |x + 2|.</me>
+        <m>|x - 2| \lt 1</m> үед <m>1 \lt x \lt 3</m> тул
+        <m>|x + 2| \lt 5</m>. Иймд
+        <me>|x^2 - 4| \lt 5|x - 2|.</me>
+
+        <m>\delta = \min\!\left(1, \frac{\varepsilon}{5}\right)</m>
+        гэж авъя. Тэгвэл <m>0 \lt |x - 2| \lt \delta</m> байхад
+        <me>|x^2 - 4| \lt 5 \cdot \frac{\varepsilon}{5} = \varepsilon.</me>
+        </p>
+      </proof>
+    </example>
+
+    <theorem xml:id="thm-limit-unique">
+      <title>Хязгаар ганц байдаг</title>
+      <statement>
+        <p>Хэрэв <m>\displaystyle\lim_{x \to a} f(x) = L</m> ба
+        <m>\displaystyle\lim_{x \to a} f(x) = M</m> бол <m>L = M</m>.</p>
+      </statement>
+      <proof>
+        <p>Эсрэгээр <m>L \ne M</m> гэе. <m>\varepsilon = \frac{|L - M|}{2}
+        \gt 0</m> авъя. Тодорхойлолтоор <m>\delta_1, \delta_2 \gt 0</m>
+        олдоно. <m>\delta = \min(\delta_1, \delta_2)</m> авбал
+        <m>0 \lt |x - a| \lt \delta</m> байх бүх <m>x</m>-д:
+        <me>|L - M| \le |f(x) - L| + |f(x) - M| \lt \varepsilon + \varepsilon
+        = |L - M|,</me> байна. Энэ нь 
+        зөрчил. Иймд <m>L = M</m>.</p>
+      </proof>
+    </theorem>
+
+    <exercises xml:id="exercises-limit-def">
+      <title>§3.2 Дасгалууд</title>
+
+      <exercise xml:id="ex-eps-delta-1">
+        <statement>
+          <p><m>\displaystyle\lim_{x \to 4} (3x - 2) = 10</m> болохыг
+          <m>\varepsilon</m>-<m>\delta</m> тодорхойлолтоор батал.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-eps-delta-2">
+        <statement>
+          <p><m>\displaystyle\lim_{x \to 2} \sqrt{x} = \sqrt{2}</m>
+          болохыг батал.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-eps-delta-3">
+        <statement>
+          <p><m>\displaystyle\lim_{x \to 1} (3x + 5) = 8</m> болохыг батал.
+          (<em>Зөвлөмж:</em> <m>\delta = \varepsilon / 3</m> гэж ав.)</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-eps-delta-4">
+        <statement>
+          <p><m>\displaystyle\lim_{x \to 2} \frac{n}{n+1} = 1</m>
+          дараалалын хязгаарыг тодорхойлолтоор батал.</p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       §3.3 Хязгаар аналитикаар олох
+       ============================================================ -->
+  <section xml:id="sec-limit-analytically">
+    <title>Хязгаар аналитикаар олох</title>
+
+    <introduction>
+      <p>§3.2-ийн <m>\varepsilon</m>-<m>\delta</m> тодорхойлолт нь хязгаар
+      оршин байгааг баталдаг боловч практик тооцоонд хэрэглэхэд хэцүү. Энэ хэсэгт
+      хязгааруудыг олоход ашигладаг үндсэн теоремүүдийг авч үзнэ.</p>
+    </introduction>
+
+    <theorem xml:id="thm-limit-arithmetic">
+      <title>Хязгаарын арифметик үйлдлүүд</title>
+      <statement>
+        <p><m>\displaystyle\lim_{x \to a} f(x) = L</m> ба
+        <m>\displaystyle\lim_{x \to a} g(x) = M</m> байг. Тэгвэл:
+          <ol>
+            <li><p><m>\displaystyle\lim_{x \to a} \bigl(f(x) \pm g(x)\bigr)
+            = L \pm M</m></p></li>
+            <li><p><m>\displaystyle\lim_{x \to a} c \cdot f(x) = cL</m>
+            (<m>c</m> тогтмол)</p></li>
+            <li><p><m>\displaystyle\lim_{x \to a} f(x) \cdot g(x)
+            = L \cdot M</m></p></li>
+            <li><p><m>\displaystyle\lim_{x \to a} \frac{f(x)}{g(x)}
+            = \frac{L}{M}</m>, хэрэв <m>M \ne 0</m></p></li>
+            <li><p><m>\displaystyle\lim_{x \to a} \bigl[f(x)\bigr]^n
+            = L^n</m> (<m>n</m> натурал тоо)</p></li>
+            <li><p><m>\displaystyle\lim_{x \to a} \sqrt[n]{f(x)}
+            = \sqrt[n]{L}</m>, хэрэв шаардлагатай нөхцлүүд биелсэн бол</p></li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <corollary xml:id="cor-limit-polynomial">
+      <title>Олон гишүүнт функцийн хязгаар</title>
+      <statement>
+        <p><m>p(x)</m> ямар нэгэн олон гишүүнт функц бол
+        <me>\lim_{x \to a} p(x) = p(a).</me>
+        Өөрөөр хэлбэл олон гишүүнт функцийн хязгаарыг тооцоолохдоо
+        зүгээр л <m>x = a</m> орлуулна.</p>
+      </statement>
+    </corollary>
+
+    <p>Рационал функцийн хувьд хуваагч нь тэг биш бол адилхан:
+    <m>\displaystyle\lim_{x \to a} \frac{p(x)}{q(x)} = \frac{p(a)}{q(a)}</m>,
+    хэрэв <m>q(a) \ne 0</m>.</p>
+
+    <example xml:id="ex-limit-direct">
+      <title>Шууд орлуулах</title>
+      <statement>
+        <p>Хязгааруудыг ол:
+          <ol>
+            <li><m>\displaystyle\lim_{x \to 2} (3x^2 - 5x + 1)</m></li>
+            <li><m>\displaystyle\lim_{x \to 3} \frac{x^2 - 1}{x + 2}</m></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>а. Олон гишүүнт тул шууд орлуулна:
+        <m>3(4) - 5(2) + 1 = 12 - 10 + 1 = 3</m>.</p>
+
+        <p>б. <m>q(3) = 3 + 2 = 5 \ne 0</m> тул шууд орлуулна:
+        <m>\frac{9 - 1}{5} = \frac{8}{5}</m>.</p>
+      </solution>
+    </example>
+
+    <subsection xml:id="subsec-indeterminate">
+      <title>Тодорхойгүй <m>\frac{0}{0}</m> хэлбэр</title>
+
+      <p>Хэрэв шууд орлуулахад <m>\frac{0}{0}</m> гарвал функцийг
+      хялбарчлах хэрэгтэй.</p>
+
+      <example xml:id="ex-limit-factor">
+        <title>Үржигдэхүүнд задлах</title>
+        <statement>
+          <p><m>\displaystyle\lim_{x \to 1} \frac{x^2 + x - 2}{x^2 - 3x + 2}</m>
+          хязгаарыг ол.</p>
+        </statement>
+        <solution>
+          <p><m>x = 1</m> орлуулахад <m>\frac{0}{0}</m>. Үржигдэхүүнд
+          задалъя:
+          <me>\frac{x^2 + x - 2}{x^2 - 3x + 2}
+          = \frac{(x+2)(x-1)}{(x-1)(x-2)} = \frac{x+2}{x-2}, \quad x \ne 1.</me>
+          Тэгвэл
+          <me>\lim_{x \to 1} \frac{x^2 + x - 2}{x^2 - 3x + 2}
+          = \lim_{x \to 1} \frac{x+2}{x-2} = \frac{3}{-1} = -3.</me>
+          </p>
+        </solution>
+      </example>
+
+      <example xml:id="ex-limit-rationalize">
+        <title>Хосмогоор үржүүлэх</title>
+        <statement>
+          <p><m>\displaystyle\lim_{x \to 0} \frac{\sqrt{x + 4} - 2}{x}</m>
+          хязгаарыг ол.</p>
+        </statement>
+        <solution>
+          <p><m>x = 0</m> орлуулахад <m>\frac{0}{0}</m>. Хосмогоор
+          үржүүлье:
+          <me>\frac{\sqrt{x+4} - 2}{x} \cdot \frac{\sqrt{x+4} + 2}{\sqrt{x+4} + 2}
+          = \frac{(x+4) - 4}{x(\sqrt{x+4} + 2)}
+          = \frac{1}{\sqrt{x+4} + 2}.</me>
+          Тэгвэл
+          <me>\lim_{x \to 0} \frac{\sqrt{x+4}-2}{x}
+          = \lim_{x \to 0} \frac{1}{\sqrt{x+4}+2}
+          = \frac{1}{\sqrt{4}+2} = \frac{1}{4}.</me>
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection xml:id="subsec-squeeze-theorem">
+      <title>Хашилтын теорем</title>
+
+      <theorem xml:id="thm-squeeze">
+        <title>Хашилтын теорем</title>
+        <statement>
+          <p><m>a</m>-г агуулах <m>(c;d)</m> завсарт
+          <m>f(x) \le g(x) \le h(x)</m> биелдэг байг. Хэрэв
+          <me>\lim_{x \to a} f(x) = \lim_{x \to a} h(x) = L</me>
+          бол <m>\displaystyle\lim_{x \to a} g(x) = L</m>.</p>
+        </statement>
+      </theorem>
+
+      <example xml:id="ex-squeeze-sinx-over-x">
+        <title>I гайхамшигт хязгаар</title>
+        <statement>
+          <p><m>\displaystyle\lim_{x \to 0} \frac{\sin x}{x} = 1</m>
+          болохыг батал.</p>
+        </statement>
+        <proof>
+          <p><m>0 \lt x \lt \frac{\pi}{2}</m> үед нэгж тойрог дээрх
+          геометрийн аргументаар
+          <me>\cos x \lt \frac{\sin x}{x} \lt 1</me>
+          болохыг харж болно. <m>x \to 0^+</m> үед <m>\cos x \to 1</m>
+          тул хашилтын теоремоор
+          <m>\frac{\sin x}{x} \to 1</m>. <m>\frac{\sin x}{x}</m> нь
+          тэгш функц тул <m>x \to 0^-</m> үед ч адилхан. Иймд
+          <me>\lim_{x \to 0} \frac{\sin x}{x} = 1.</me>
+          </p>
+        </proof>
+      </example>
+
+      <example xml:id="ex-squeeze-cos-limit">
+        <title>Хашилтын теоремын хэрэглээ</title>
+        <statement>
+          <p><m>\displaystyle\lim_{x \to 0} x^2 \cos\!\left(\frac{1}{x}\right)
+          = 0</m> болохыг батал.</p>
+        </statement>
+        <proof>
+          <p><m>-1 \le \cos\!\left(\frac{1}{x}\right) \le 1</m> тул
+          <me>-x^2 \le x^2 \cos\!\left(\frac{1}{x}\right) \le x^2.</me>
+          <m>x \to 0</m> үед <m>-x^2 \to 0</m> ба <m>x^2 \to 0</m>
+          тул хашилтын теоремоор хязгаар <m>0</m>.</p>
+        </proof>
+      </example>
+    </subsection>
+
+    <exercises xml:id="exercises-limit-analytically">
+      <title>§3.3 Дасгалууд</title>
+
+      <exercise xml:id="ex-lim-anal-1">
+        <statement>
+          <p>Хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to -1} \frac{x^2 - 1}{x^2 + 3x + 2}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 5} \frac{x^2 - 25}{x - 5}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{\sqrt{1+x} - 1}{x}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>-2</m>; б. <m>10</m>; в. <m>\frac{1}{2}</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-lim-anal-2">
+        <statement>
+          <p>Хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to 1} \frac{x^4 - 3x + 2}{x^5 - 4x + 3}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to a} \frac{\sqrt{x} - \sqrt{a}}{x - a}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>\frac{1}{2}</m>; б. <m>\frac{1}{2\sqrt{a}}</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-lim-anal-3">
+        <statement>
+          <p>Хашилтын теорем ашиглан хязгаарыг ол:
+          <m>\displaystyle\lim_{x \to 0} x \sin\!\left(\frac{1}{x}\right)</m>.</p>
+        </statement>
+        <answer><p><m>0</m>.</p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-lim-anal-4">
+        <statement>
+          <p>I гайхамшигт хязгаар ашиглан хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{\sin 3x}{x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{\tan 5x}{\sin 2x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{1 - \cos x}{x^2}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>3</m>; б. <m>\frac{5}{2}</m>; в. <m>\frac{1}{2}</m>.</p>
+        </answer>
+      </exercise>
+    </exercises>
+  </section>
+
+<!-- ============================================================
+       §3.4 Өрөөсгөл хязгаар
+       ============================================================ -->
+  <section xml:id="sec-limits-one-sided">
+    <title>Өрөөсгөл хязгаар</title>
+
+    <introduction>
+      <p>§3.1-д зарим функцийн хязгаар байдаггүйг харсан — жишээ нь
+      бүхэл хэсгийн функц <m>x = 1</m> цэгт. Гэвч <m>x</m> нь зүүнээс
+      болон баруунаас дөхөх үед тус тусдаа хязгаар байдаг. Эдгээрийг
+      <term>өрөөсгөл хязгаар</term> гэнэ.</p>
+    </introduction>
+
+    <definition xml:id="def-one-sided-limits">
+      <title>Зүүн ба баруун өрөөсгөл хязгаар</title>
+      <statement>
+        <p>
+          <ol>
+            <li><p>Хэрэв дурын <m>\varepsilon \gt 0</m> тоонд
+            <m>a - \delta \lt x \lt a</m> байх бүх <m>x</m>-д
+            <m>|f(x) - L| \lt \varepsilon</m> болох <m>\delta \gt 0</m>
+            олдвол <m>L</m>-ийг <m>f(x)</m>-ийн <term>зүүн өрөөсгөл
+            хязгаар</term> гэж нэрлэн
+            <m>\displaystyle\lim_{x \to a^-} f(x) = L</m> гэж бичнэ.</p></li>
+
+            <li><p>Хэрэв дурын <m>\varepsilon \gt 0</m> тоонд
+            <m>a \lt x \lt a + \delta</m> байх бүх <m>x</m>-д
+            <m>|f(x) - L| \lt \varepsilon</m> болох <m>\delta \gt 0</m>
+            олдвол <m>L</m>-ийг <m>f(x)</m>-ийн <term>баруун өрөөсгөл
+            хязгаар</term> гэж нэрлэн
+            <m>\displaystyle\lim_{x \to a^+} f(x) = L</m> гэж бичнэ.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-two-sided-iff-one-sided">
+      <title>Ердийн хязгаар ба өрөөсгөл хязгаарын хамаарал</title>
+      <statement>
+        <p><m>\displaystyle\lim_{x \to a} f(x) = L</m> байх зайлшгүй
+        бөгөөд хүрэлцээтэй нөхцөл нь</p>
+        <me>\lim_{x \to a^-} f(x) = L \quad \text{ба} \quad
+        \lim_{x \to a^+} f(x) = L</me>
+        <p>хоёулаа биелэх явдал.</p>
+      </statement>
+    </theorem>
+
+    <corollary xml:id="cor-limit-dne-onesided">
+      <statement>
+        <p>Хэрэв <m>\displaystyle\lim_{x \to a^-} f(x) \ne
+        \lim_{x \to a^+} f(x)</m> бол
+        <m>\displaystyle\lim_{x \to a} f(x)</m> оршихгүй.</p>
+      </statement>
+    </corollary>
+
+    <example xml:id="ex-floor-function">
+      <title>Бүхэл хэсгийн функц</title>
+      <statement>
+        <p><m>f(x) = [x]</m> (бүхэл хэсгийн функц) функцийн
+        <m>x \to 1</m> үеийн өрөөсгөл хязгааруудыг ол.</p>
+      </statement>
+      <solution>
+        <p><m>x \to 1^-</m> (зүүнээс, <m>0 \lt x \lt 1</m>) үед
+        <m>[x] = 0</m>. Тиймээс
+        <m>\displaystyle\lim_{x \to 1^-} [x] = 0</m>.</p>
+
+        <p><m>x \to 1^+</m> (баруунаас, <m>1 \lt x \lt 2</m>) үед
+        <m>[x] = 1</m>. Тиймээс
+        <m>\displaystyle\lim_{x \to 1^+} [x] = 1</m>.</p>
+
+        <p>Хоёр өрөөсгөл хязгаар ялгаатай тул
+        <m>\displaystyle\lim_{x \to 1} [x]</m> оршихгүй.</p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-piecewise-onesided">
+      <title>Хэсэгчлэн тодорхойлогдсон функц</title>
+      <statement>
+        <p>
+        <me>f(x) = \b\begin{cases} x^2 \amp x \lt 1 \\ 2x - 1 \amp x \ge 1
+        \end{cases}</me>
+        функцийн <m>x \to 1</m> үеийн хязгаарыг ол.</p>
+      </statement>
+      <solution>
+        <p><m>\displaystyle\lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} x^2
+        = 1</m>.</p>
+        <p><m>\displaystyle\lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (2x-1)
+        = 1</m>.</p>
+        <p>Хоёр өрөөсгөл хязгаар тэнцүү тул
+        <m>\displaystyle\lim_{x \to 1} f(x) = 1</m>.</p>
+      </solution>
+    </example>
+
+    <exercises xml:id="exercises-one-sided">
+      <title>§3.4 Дасгалууд</title>
+
+      <exercise xml:id="ex-onesided-1">
+        <statement>
+          <p>
+          <me>f(x) = \b\begin{cases} x + 2 \amp x \le 3 \\ 2x + 1 \amp x \gt 3
+          \end{cases}</me>
+          функцийн <m>x \to 3</m> үеийн зүүн ба баруун өрөөсгөл хязгааруудыг
+          ол. Ердийн хязгаар оршин байна уу?</p>
+        </statement>
+        <answer>
+          <p>Зүүн: <m>5</m>, баруун: <m>7</m>. Ердийн хязгаар оршихгүй.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-onesided-2">
+        <statement>
+          <p>
+          <me>f(x) = \b\begin{cases} \cos x \amp x \le 0 \\ x^2 + 5x + 1
+          \amp x \gt 0 \end{cases}</me>
+          функцийн <m>x \to 0</m> үеийн хязгаарыг ол.</p>
+        </statement>
+        <answer><p><m>1</m>.</p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-onesided-3">
+        <statement>
+          <p><m>\displaystyle\lim_{x \to 1^-} \frac{x^2 + x - 2}{x^2 - 1}</m>
+          ба
+          <m>\displaystyle\lim_{x \to 1^+} \frac{x^2 + x - 2}{x^2 - 1}</m>
+          хязгааруудыг ол.</p>
+        </statement>
+        <answer>
+          <p>Хоёулаа <m>\frac{3}{2}</m>. (Хялбарчлахад <m>\frac{x+2}{x+1}</m>.)</p>
+        </answer>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       §3.5 Тасралтгүй чанар
+       ============================================================ -->
+
+  <!-- ============================================================
+       §3.6 Төгсгөлгүй хязгаар
+       ============================================================ -->
+
+  <section xml:id="sec-limits-infty">
+    <title>Төгсгөлгүй хязгаар</title>
+
+    <introduction>
+      <p>Энэ хэсэгт хоёр төрлийн <q>төгсгөлгүй</q> хязгаарыг авч үзнэ:
+        <ol>
+          <li><p><m>x \to a</m> үед <m>f(x) \to \pm\infty</m> (хязгаар нь
+          төгсгөлгүй болох — босоо асимптот).</p></li>
+          <li><p><m>x \to \pm\infty</m> үед <m>f(x) \to L</m> (хувьсагч
+          нь төгсгөлгүй рүү тэмүүлэх — хэвтээ асимптот).</p></li>
+        </ol>
+      </p>
+    </introduction>
+
+    <subsection xml:id="subsec-vertical-asymptotes">
+      <title>Босоо асимптот</title>
+
+      <definition xml:id="def-infinite-limit">
+        <title>Төгсгөлгүй хязгаар</title>
+        <statement>
+          <p>Хэрэв дурын <m>M \gt 0</m> тоонд <m>0 \lt |x - a| \lt \delta</m>
+          байх бүх <m>x</m>-д <m>f(x) \gt M</m> болох <m>\delta \gt 0</m>
+          олдвол
+          <me>\lim_{x \to a} f(x) = +\infty</me>
+          гэж бичнэ. Адилаар <m>f(x) \lt -M</m> үед
+          <m>\lim_{x \to a} f(x) = -\infty</m> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-vertical-asymptote">
+        <title>Босоо асимптот</title>
+        <statement>
+          <p>Хэрэв <m>\displaystyle\lim_{x \to a^-} f(x) = \pm\infty</m>
+          эсвэл <m>\displaystyle\lim_{x \to a^+} f(x) = \pm\infty</m> бол
+          <m>x = a</m> шулууныг <m>f</m> функцийн
+          <term>босоо асимптот</term> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <example xml:id="ex-vert-asymptote">
+        <title>Босоо асимптот олох</title>
+        <statement>
+          <p><m>f(x) = \frac{1}{(x-2)^2}</m> функцийн босоо асимптотыг
+          ол.</p>
+        </statement>
+        <solution>
+          <p><m>x \to 2</m> үед <m>(x-2)^2 \to 0^+</m> тул
+          <m>f(x) \to +\infty</m>. Иймд <m>x = 2</m> нь босоо асимптот.</p>
+        </solution>
+      </example>
+
+      <example xml:id="ex-vert-asymptote-2">
+        <title>Хуваарь тэг утга авах цэг</title>
+        <statement>
+          <p><m>f(x) = \frac{3x}{x^2 - 4}</m> функцийн босоо асимптотуудыг
+          ол.</p>
+        </statement>
+        <solution>
+          <p><m>x^2 - 4 = 0 \Rightarrow x = \pm 2</m>. Хуваагдагч нь
+          <m>x = \pm 2</m>-д тэг биш тул <m>x = 2</m> ба <m>x = -2</m>
+          хоёул босоо асимптот. Нарийвчилбал:
+          <me>\lim_{x \to 2^+} \frac{3x}{x^2 - 4} = +\infty, \quad
+          \lim_{x \to 2^-} \frac{3x}{x^2 - 4} = -\infty.</me>
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection xml:id="subsec-limits-at-infinity">
+      <title>Хэвтээ асимптот</title>
+
+      <definition xml:id="def-limit-at-infinity">
+        <title>Хязгааргүйд тэмүүлэх үеийн хязгаар</title>
+        <statement>
+          <p>Хэрэв дурын <m>\varepsilon \gt 0</m> тоонд <m>x \gt M</m>
+          байх бүх <m>x</m>-д <m>|f(x) - L| \lt \varepsilon</m> болох
+          <m>M</m> олдвол
+          <me>\lim_{x \to +\infty} f(x) = L</me>
+          гэж бичнэ.</p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-horizontal-asymptote">
+        <title>Хэвтээ асимптот</title>
+        <statement>
+          <p>Хэрэв <m>\displaystyle\lim_{x \to +\infty} f(x) = L</m> эсвэл
+          <m>\displaystyle\lim_{x \to -\infty} f(x) = L</m> бол
+          <m>y = L</m> шулууныг <term>хэвтээ асимптот</term> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <example xml:id="ex-horiz-asymptote">
+        <title>Рационал функцийн хязгаар тэгсгөлгүй рүү</title>
+        <statement>
+          <p>Хязгааруудыг ол:
+            <ol>
+              <li><m>\displaystyle\lim_{x \to \infty} \frac{2x^2 - 3}{5x^2 + x}</m></li>
+              <li><m>\displaystyle\lim_{x \to \infty} \frac{x^3 + 2}{x^2 - 5}</m></li>
+              <li><m>\displaystyle\lim_{x \to \infty} \frac{3x + 1}{x^2 - 4}</m></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>а. Хамгийн өндөр зэрэгт <m>x^2</m>-д хуваая:
+          <m>\frac{2 - 3/x^2}{5 + 1/x} \to \frac{2}{5}</m>.</p>
+
+          <p>б. Хуваагдагчийн зэрэг хуваагчаас өндөр тул
+          <m>\to +\infty</m>.</p>
+
+          <p>в. Хуваагдагчийн зэрэг хуваагчаас доогуур тул
+          <m>\to 0</m>.</p>
+        </solution>
+      </example>
+
+      <p><alert>Дүрэм.</alert> <m>f(x) = \frac{p(x)}{q(x)}</m>,
+      <m>p</m> нь <m>m</m> зэрэг, <m>q</m> нь <m>n</m> зэрэгтэй бол:
+        <ul>
+          <li><m>m \lt n</m>: хязгаар <m>0</m></li>
+          <li><m>m = n</m>: хязгаар нь ахлах коэффициентүүдийн харьцаа</li>
+          <li><m>m \gt n</m>: хязгаар <m>\pm\infty</m></li>
+        </ul>
+      </p>
+    </subsection>
+
+    <exercises xml:id="exercises-limits-infty">
+      <title>§3.6 Дасгалууд</title>
+
+      <exercise xml:id="ex-infty-1">
+        <statement>
+          <p>Хязгааруудыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to \infty} \frac{1-3x}{2x+3}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to \infty} \frac{x^3 - 5x + 2}{x + 10^{10}}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to \infty}(\sqrt{x^2+1} - \sqrt{x^2-1})</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>-\frac{3}{2}</m>; б. <m>+\infty</m>; в. <m>0</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-infty-2">
+        <statement>
+          <p><m>f(x) = \frac{2x^2 - 3x - 4}{\sqrt{x^4 + 1}}</m> функцийн
+          хэвтээ асимптотуудыг ол.</p>
+        </statement>
+        <answer>
+          <p><m>y = 2</m> ба <m>y = -2</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-infty-3">
+        <statement>
+          <p>Дараах функцүүдийн бүх асимптотыг ол (босоо ба хэвтээ):
+          <m>f(x) = \frac{x^2 - 1}{x^2 - 4}</m>.</p>
+        </statement>
+        <answer>
+          <p>Босоо: <m>x = \pm 2</m>. Хэвтээ: <m>y = 1</m>.</p>
+        </answer>
+      </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-ai-practice-l4">
+    <title>AI-тай дасгал хийх (Лекц 4)</title>
+    <introduction>
+      <p>Хязгаарын сэдвүүдээр Claude AI-тай дасгал хий. Сэдэв сонгоод
+      бодлого үүсгүүлж, өөрөө бодсоны дараа хариултаа шалгуул.</p>
+    </introduction>
+    <interactive xml:id="ai-practice-l4"
+      iframe="ai-practice.html?topics=хязгаарын тодорхойлолт,хязгаар аналитикаар,өрөөсгөл хязгаар,тасралтгүй чанар,төгсгөлгүй хязгаар&amp;label=Лекц 4-ийн сэдвүүд"
+      width="100%" aspect="4:3" />
+  </section>
+
+  <section xml:id="sec-seminar-4">
+    <title>Семинар 4</title>
+
+    <exercises xml:id="exercises-seminar-4">
+      <introduction>
+        <p>Хамрах сэдэв: хязгаарын тодорхойлолт, арифметик чанарууд,
+        тодорхойгүй хэлбэр, өрөөсгөл хязгаар, тасралтгүй чанар, төгсгөлгүй хязгаар.</p>
+      </introduction>
+
+      <exercise xml:id="sem7-ex-1">
+        <statement>
+          <p>Хязгааруудыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to -1} \frac{x^2-1}{x^2+3x+2}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 5} \frac{x^2-25}{x-5}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 2} \frac{x^2-5x+6}{x^2-12x+20}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 1} \frac{2x^3-2x^2+x-1}{x^3-x^2+3x-3}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>-2</m>; б. <m>10</m>; в. <m>\frac{1}{8}</m>; г. <m>\frac{1}{3}</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="sem7-ex-2">
+        <statement>
+          <p>Хязгааруудыг ол (язгуур агуулсан):
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{\sqrt{x^2+1}-1}{\sqrt{x^2+16}-4}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{\sqrt{1+x}-\sqrt{1-x}}{x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{h \to 0} \frac{\sqrt{x+h}-\sqrt{x}}{h}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to \infty} (\sqrt{x^2+1}-\sqrt{x^2-1})</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>\frac{4}{1} = 4</m> (хоёр нөхцөлдөн үржүүлэх); б. <m>1</m>; в. <m>\frac{1}{2\sqrt{x}}</m>; г. <m>0</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="sem7-ex-3">
+        <statement>
+          <p>Тодорхойгүй хэлбэрийг тайл.
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to 1} \frac{x^4-3x+2}{x^5-4x+3}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 1} \frac{x^{100}-2x+1}{x^{50}-2x+1}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to a} \frac{\sqrt{x}-\sqrt{a}+\sqrt{x-a}}{\sqrt{x^2-a^2}}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>\frac{1}{2}</m>; б. <m>2</m>; в. <m>\frac{1}{\sqrt{2}}</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="sem7-ex-4">
+        <statement>
+          <p>Тодорхойгүй хэлбэрийг тайл.
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to \infty} \frac{1-3x}{2x+3}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to \infty} \frac{2x^2-3x-4}{\sqrt{x^4+1}}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to \infty} \frac{x^2-5x+1}{3x+7}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>-\frac{3}{2}</m>; б. <m>2</m>; в. <m>+\infty</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="sem7-ex-5">
+        <statement>
+          <p>тасаралтын цэгүүдийг ол, тасаралтын төрлийг тогтоо:
+            <ol>
+              <li><p><m>f(x) = \frac{x^2 + x - 2}{x^2 - 1}</m></p></li>
+              <li><p><m>f(x) = \frac{1}{x(x-2)}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>x = 1</m>: засагдах (<m>\lim = \frac{3}{2}</m>),
+          <m>x = -1</m>: төгсгөлгүй;<nbsp/>
+          б. <m>x = 0</m> ба <m>x = 2</m>: хоёулаа төгсгөлгүй.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="sem7-ex-6">
+        <statement>
+          <p>Дараалалын хязгааруудыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{n \to \infty} \frac{n}{n+1}</m></p></li>
+              <li><p><m>\displaystyle\lim_{n \to \infty} \frac{2^n}{3^n}</m></p></li>
+              <li><p><m>\displaystyle\lim_{n \to \infty} \left(1 + \frac{2}{n}\right)^n</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>1</m>; б. <m>0</m>; в. <m>e^2</m>.</p>
+        </answer>
+      </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-homework-4">
+    <title>Гэрийн даалгавар 4</title>
+
+    <exercises xml:id="exercises-homework-4">
+      <introduction>
+        <p>Бодолтыг бүрэн үндэслэлтэй бичиж ирнэ.</p>
+      </introduction>
+
+      <exercise xml:id="hw7-ex-1">
+        <statement>
+          <p>Хязгаарыг тодорхойлолтын дагуу шалга:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to 2} \sqrt{x} = \sqrt{2}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 2} (3x+5) = 11</m></p></li>
+              <li><p><m>\displaystyle\lim_{n \to \infty} \frac{n^2+2n+1}{n^2+n+1} = 1</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="hw7-ex-2">
+        <statement>
+          <p>Хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to 1} \frac{x^2-1}{x-1}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 4} \frac{\sqrt{x}-2}{x-4}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to \infty} \frac{3x^2+2}{5x^2-7}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 4} \frac{\sqrt{1+2x}-3}{\sqrt{x}-2}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="hw7-ex-3">
+        <statement>
+          <p>I гайхамшигт хязгаар хэрэглэн хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{1 - \cos x}{x^2}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{\tan x}{x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{\arctan x}{x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to \pi/6} \frac{2\sin x - 1}{1 - 2\cos 2x}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="hw7-ex-4">
+        <statement>
+          <p>Дараалалын хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{n \to \infty} \frac{n^k}{e^n}</m> (<m>k</m> тогтмол)</p></li>
+              <li><p><m>\displaystyle\lim_{n \to \infty} \sqrt[n]{n}</m></p></li>
+              <li><p><m>\displaystyle\lim_{n \to \infty} \frac{1+2+\cdots+n}{n^2}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="hw7-ex-5">
+        <statement>
+          <p>II гайхамшигт хязгаар хэрэглэн хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{e^{2x}-1}{x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to \infty} \left(1 + \frac{2}{x}\right)^{3x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{\ln(1+2x)}{x}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-first-remarkable">
+    <title>I гайхамшигт хязгаар</title>
+
+    <theorem xml:id="thm-first-remarkable">
+      <title>I гайхамшигт хязгаар</title>
+      <statement>
+        <me>\lim_{x\to 0} \frac{\sin x}{x} = 1.</me>
+      </statement>
+      <proof>
+        <p><m>0 \lt x \lt \dfrac{\pi}{2}</m> үед нэгж тойрог дээр
+        <m>O = (0,0)</m>, <m>A = (1,0)</m>,
+        <m>B = (\cos x, \sin x)</m> гэж авъя.
+        <m>A</m> дээрх шүргэгч <m>x = 1</m> шулуун нь <m>OB</m>
+        цацрагтай <m>C = (1, \tan x)</m> дээр огтлолцоно.</p>
+
+        <p>Гурван геометрийн дүрсийн талбайг харьцуулъя:
+        <md>
+          <mrow>S_{\triangle OAB} \amp= \frac{1}{2}\sin x,</mrow>
+          <mrow>S_{\text{сектор}} \amp= \frac{x}{2},</mrow>
+          <mrow>S_{\triangle OAC} \amp= \frac{1}{2}\tan x.</mrow>
+        </md>
+        <m>\triangle OAB \subset \text{сектор} \subset \triangle OAC</m> тул</p>
+        <me>\\cos x \lt \frac{\sin x}{x} \lt 1.</me>
+        <p><m>x \to 0^+</m> үед <m>\cos x \to 1</m> тул хашилтын
+        теоремоор <m>\dfrac{\sin x}{x} \to 1</m>.
+        Функц тэгш тул <m>x \\to 0^-</m> үед ч адилхан. Иймд</p>
+        <me>\lim_{x \to 0} \frac{\sin x}{x} = 1.</me>
+      </proof>
+    </theorem>
+
+    <corollary xml:id="cor-first-remarkable-apps">
+      <statement>
+        <p>I гайхамшигт хязгаараас гаргаж авах чухал хязгаарууд:
+          <ol>
+            <li><p><m>\displaystyle\lim_{x\to 0} \frac{	\tan x}{x} = 1</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to 0} \frac{1-\cos x}{x^2} = \frac{1}{2}</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to 0} \frac{\arcsin x}{x} = 1</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to 0} \frac{\arctan x}{x} = 1</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>2-ыг баталъя:
+        <me>\frac{1-\cos x}{x^2} = \frac{(1-\cos x)(1+\cos x)}{x^2(1+\cos x)}
+        = \frac{\sin^2 x}{x^2} \cdot \frac{1}{1+\cos x}\to1 \cdot \frac{1}{2}.</me>
+        </p>
+      </proof>
+    </corollary>
+
+    <example xml:id="ex-first-remarkable-apps">
+      <title>I гайхамшигт хязгаарын хэрэглээ</title>
+      <statement>
+        <p>Хязгаарыг ол:
+          <ol>
+            <li><p><m>\displaystyle\lim_{x\to 0} \frac{\sin 5x}{3x}</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to 0} \frac{\sin^2 x}{x^2}</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>а. <m>\frac{\sin 5x}{3x} = \frac{5}{3} \cdot \frac{\sin 5x}{5x}\to\frac{5}{3}</m>.</p>
+        <p>б. <m>\left(\frac{\sin x}{x}\right)^2\to1^2 = 1</m>.</p>
+      </solution>
+    </example>
+  </section>
+
+  <section xml:id="sec-second-remarkable">
+    <title>II гайхамшигт хязгаар</title>
+
+    <theorem xml:id="thm-second-remarkable">
+      <title>II гайхамшигт хязгаар</title>
+      <statement>
+        <me>\lim_{n\to\infty} \left(1 + \frac{1}{n}
+\right)^n = e
+        \approx 2{,}71828\ldots</me>
+        <p>Эквивалент хэлбэрүүд:</p>
+        <me>\lim_{x\to 0} (1 + x)^{1/x} = e, \qquad
+        \lim_{x\to\infty} \left(1 + \frac{1}{x}
+\right)^x = e.</me>
+      </statement>
+      <proof>
+        <p><m>a_n = \left(1 + \frac{1}{n}
+\right)^n</m> дараалал
+        Эрс өсөх болохыг AM-GM тэнцэтгэл бишээс харж болно.
+        Мөн <m>a_n \lt 4</m> болохыг бинoмын теоремоор харуулж болно.
+        Тиймээс монотон, дээрээсээ зааглагдсан тул хязгаартай.
+        Уг хязгаарыг <m>e</m> гэж тэмдэглэн
+        <m>e \approx 2{,}71828\ldots</m> байна.</p>
+      </proof>
+    </theorem>
+
+    <corollary xml:id="cor-second-remarkable-apps">
+      <statement>
+        <p>II гайхамшигт хязгаараас гаргаж авах чухал хязгаарууд:
+          <ol>
+            <li><p><m>\displaystyle\lim_{x\to 0} \frac{\ln(1+x)}{x} = 1</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to 0} \frac{e^x-1}{x} = 1</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to\infty}\left(1+\frac{a}{x}
+\right)^x = e^a</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>1-ийг баталъя. <m>t = \ln(1+x)</m> гэвэл <m>x\to 0</m>
+        үед <m>t\to0</m>, <m>1+x = e^t</m>. Иймд
+        <me>\frac{\ln(1+x)}{x} = \frac{t}{e^t-1}\to1.</me>
+        </p>
+      </proof>
+    </corollary>
+
+    <example xml:id="ex-second-remarkable-apps">
+      <title>II гайхамшигт хязгаарын хэрэглээ</title>
+      <statement>
+        <p>Хязгаарыг ол:
+          <ol>
+            <li><p><m>\displaystyle\lim_{x\to 0} \frac{e^{2x}-1}{x}</m></p></li>
+            <li><p><m>\displaystyle\lim_{x\to\infty}\left(1+\frac{2}{x}
+\right)^{3x}</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>а. <m>\frac{e^{2x}-1}{x} = 2 \cdot \frac{e^{2x}-1}{2x}\to2 \cdot 1 = 2</m>.</p>
+        <p>б. <m>\left[\left(1+\frac{2}{x}
+\right)^{x/2}
+\right]^6\to e^6</m>.</p>
+      </solution>
+    </example>
+  </section>
+
+  <section xml:id="sec-continuity">
+    <title>Тасралтгүй чанар</title>
+
+    <introduction>
+      <p>Математикийн хувьд <q>тасралтгүй</q> функц гэдэг нь график нь
+      тасрахгүй, өөрөөр хэлбэл үзэг цааснаас салгахгүйгээр графикийг нь дүрслэж болох 
+      функц юм. Энэ хэсэгт тасралтгүй чанарыг нарийн тодорхойлж,
+      тасралтын цэгүүдийн төрлүүдийг авч үзнэ.</p>
+    </introduction>
+
+    <definition xml:id="def-continuous-at-point">
+      <title>Цэг дээрх тасралтгүй чанар</title>
+      <statement>
+        <p><m>f</m> функц <m>x = a</m> цэгт <term>тасралтгүй</term> байна
+        гэдэг нь дараах гурван нөхцөл биелэх явдал:
+          <ol>
+            <li><p><m>f(a)</m> тодорхойлогдсон (өөрөөр хэлбэл <m>a</m> нь
+            тодорхойлогдох мужид байна);</p></li>
+            <li><p><m>\displaystyle\lim_{x \to a} f(x)</m> оршин байна;</p></li>
+            <li><p><m>\displaystyle\lim_{x \to a} f(x) = f(a)</m>.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="def-continuous-on-interval">
+      <title>Завсар дээрх тасралтгүй чанар</title>
+      <statement>
+        <p>
+          <ul>
+            <li><p>Функц задгай <m>(a, b)</m> завсарт
+            <term>тасралтгүй</term> байна гэдэг нь тэр завсрын
+            аль ч цэгт тасралтгүй байхыг хэлнэ.</p></li>
+            <li><p>Функц <m>[a, b]</m> завсарт тасралтгүй байна гэдэг нь
+            <m>(a, b)</m>-д тасралтгүй, мөн
+            <m>\displaystyle\lim_{x \to a^+} f(x) = f(a)</m> ба
+            <m>\displaystyle\lim_{x \to b^-} f(x) = f(b)</m>
+            биелэхийг хэлнэ.</p></li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+
+    <subsection xml:id="subsec-types-discontinuity">
+      <title>Тасралтын төрлүүд</title>
+
+      <p>Функц <m>x = a</m> цэгт тасрах гурван үндсэн төрөл байна:</p>
+
+      <p>
+        <ol>
+          <li><p><term>Засагдах тасралт (removable discontinuity):</term>
+          <m>\displaystyle\lim_{x \to a} f(x)</m> оршин байна гэвч
+          <m>f(a)</m> тодорхойлогдоогүй эсвэл хязгаартай тэнцдэггүй.
+          Хязгаарт тэнцэх утгыг оноосноор тасралтыг арилгаж болно.</p></li>
+
+          <li><p><term>Үсрэлтийн тасралт (jump discontinuity):</term>
+          Зүүн ба баруун өрөөсгөл хязгаар оршин байх боловч хоорондоо тэнцдэггүй.</p></li>
+
+          <li><p><term>Төгсгөлгүй тасралт (infinite discontinuity):</term>
+          <m>|f(x)| \to \infty</m> байдаг. Рационал функцийн хуваарь
+          тэг болох цэгт ийм тасралт гарна.</p></li>
+        </ol>
+      </p>
+
+      <example xml:id="ex-removable-disc">
+        <title>Засагдах тасралт</title>
+        <statement>
+          <p><m>f(x) = \frac{x^2 - 1}{x - 1}</m> функц <m>x = 1</m>
+          цэгт тасралтгүй юу?</p>
+        </statement>
+        <solution>
+          <p><m>f(1)</m> тодорхойлогдохгүй (<m>\frac{0}{0}</m>). Гэвч
+          <m>x \ne 1</m> бол <m>f(x) = x + 1</m> тул
+          <m>\displaystyle\lim_{x \to 1} f(x) = 2</m>. Иймд тасралт нь засагдах
+          тасралт байна. Хэрэв <m>f(1) = 2</m> гэж тодорхойловол тасралтгүй болно.</p>
+        </solution>
+      </example>
+
+      <example xml:id="ex-jump-disc">
+        <title>Үсрэлтийн тасралт</title>
+        <statement>
+          <p><m>f(x) = [x]</m> (бүхэл хэсгийн функц) функц аль цэгүүдэд
+          тасардаг вэ?</p>
+        </statement>
+        <solution>
+          <p>Бүхэл тоо бүрт зүүн болон баруун хязгаарууд ялгаатай тул
+          үсрэлтийн тасралт гарна. Жишээ нь <m>x = n</m> бүхэл тоонд:
+          <m>\displaystyle\lim_{x \to n^-} [x] = n - 1</m>,
+          <m>\displaystyle\lim_{x \to n^+} [x] = n</m>.</p>
+        </solution>
+      </example>
+    </subsection>
+
+    <theorem xml:id="thm-continuity-algebra">
+      <title>Тасралтгүй функц ба арифметикийн үйлдлүүд</title>
+      <statement>
+        <p><m>f</m> ба <m>g</m> функцүүд <m>x = a</m> цэгт тасралтгүй
+        байг. Тэгвэл дараах функцүүд мөн тасралтгүй:
+          <ul>
+            <li><m>f \pm g</m></li>
+            <li><m>f \cdot g</m></li>
+            <li><m>f / g</m> (хэрэв <m>g(a) \ne 0</m>)</li>
+            <li><m>f \circ g</m> (хэрэв <m>g</m> нь <m>a</m> дээр,
+            <m>f</m> нь <m>g(a)</m> дээр тасралтгүй)</li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+
+    <theorem xml:id="thm-ivt">
+      <title>Завсарын утгын теорем (ЗУТ)</title>
+      <statement>
+        <p><m>f</m> функц <m>[a, b]</m> дээр тасралтгүй байг.
+        <m>f(a) \ne f(b)</m> ба <m>k</m> нь <m>f(a)</m> ба <m>f(b)</m>
+        хооронд оршдог дурын тоо байг. Тэгвэл <m>f(c) = k</m> байх <m>a \lt c \lt b</m> 
+        <m>c</m> тоо оршин байна.</p>
+      </statement>
+    </theorem>
+
+    <example xml:id="ex-ivt-root">
+      <title>ЗУТ ашиглан язгуур олох</title>
+      <statement>
+        <p><m>f(x) = x^3 - 5x + 3</m> функц <m>[1, 2]</m> завсарт
+        язгуур агуулдаг болохыг ЗУТ-ийн тусламжтайгаар харуул.</p>
+      </statement>
+      <solution>
+        <p><m>f</m> нь олон гишүүнт тул тасралтгүй. <m>f(1) = 1 - 5 + 3
+        = -1 \lt 0</m> ба <m>f(2) = 8 - 10 + 3 = 1 \gt 0</m>. ЗУТ-ийн
+        дагуу <m>f(c) = 0</m> байх <m>c \in (1, 2)</m> оршино.</p>
+      </solution>
+    </example>
+
+    <exercises xml:id="exercises-continuity">
+      <title>§3.5 Дасгалууд</title>
+
+      <exercise xml:id="ex-cont-1">
+        <statement>
+          <p>Дараах функцүүдийн тасаралтын цэгүүдийг ол, тасаралтын төрлийг
+          тогтоо:
+            <ol>
+              <li><p><m>f(x) = \frac{x^2 - 9}{x - 3}</m></p></li>
+              <li><p><m>g(x) = \frac{1}{x^2 - 1}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>x = 3</m>: засагдах тасрал
+          (<m>\lim = 6</m>);<nbsp/>
+          б. <m>x = \pm 1</m>: төгсгөлгүй тасрал.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-cont-2">
+        <statement>
+          <p><m>f(x) = \frac{x^2 + ax + b}{x^2 - 1}</m> функц
+          <m>x = 1</m>-д тасралтгүй болохын тулд <m>a, b</m> ямар утга
+          авах ёстой вэ?</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-cont-3">
+        <statement>
+          <p>ЗУТ ашиглан <m>f(x) = x^5 - 2x^3 - 2</m> функц бодит
+          язгууртай болохыг харуул.</p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-ai-practice-l5">
+    <title>AI-тай дасгал хийх (Лекц 5)</title>
+    <introduction>
+      <p>Лекц 5-д үзсэн сэдвүүдээр Claude AI-тай дасгал хий.</p>
+    </introduction>
+    <interactive xml:id="ai-practice-l5"
+      iframe="ai-practice.html?topics=I гайхамшигт хязгаар,II гайхамшигт хязгаар,тасралтгүй чанар,тасаралтын төрөл,завсарын утгын теорем&amp;label=Лекц 5-ийн сэдвүүд"
+      width="100%" aspect="4:3" />
+  </section>
+
+  <section xml:id="sec-seminar-5">
+    <title>Семинар 5</title>
+    <exercises xml:id="exercises-seminar-5">
+      <introduction>
+        <p>Хамрах сэдэв: I ба II гайхамшигт хязгаар, тасралтгүй чанар,
+        тасаралтын төрлүүд, завсарын утгын теорем.</p>
+      </introduction>
+      <exercise xml:id="sem5-ex-1">
+        <statement>
+          <p>I гайхамшигт хязгаар ашиглан хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x\to 0} \frac{\sin 3x}{x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\to 0} \frac{\tan 5x}{\sin 2x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\to 0} \frac{1-\cos x}{x^2}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\to 0} \frac{\sin^2 x}{x}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer><p>а. <m>3</m>; б. <m>\frac{5}{2}</m>; в. <m>\frac{1}{2}</m>; г. <m>0</m>.</p></answer>
+      </exercise>
+      <exercise xml:id="sem5-ex-2">
+        <statement>
+          <p>II гайхамшигт хязгаар ашиглан хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x\to 0} \frac{e^x - 1}{x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\to 0} \frac{\ln(1+2x)}{x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\to \infty}\left(1+\frac{3}{x}
+\right)^x</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\to \infty}\left(1+\frac{1}{x}
+\right)^{2x}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer><p>а. <m>1</m>; б. <m>2</m>; в. <m>e^3</m>; г. <m>e^2</m>.</p></answer>
+      </exercise>
+      <exercise xml:id="sem5-ex-3">
+        <statement>
+          <p>тасаралтын цэгүүдийг ол, тасаралтын төрлийг тогтоо:
+            <ol>
+              <li><p><m>f(x) = \frac{x^2-4}{x-2}</m></p></li>
+              <li><p><m>f(x) = \frac{\sin x}{x}</m></p></li>
+              <li><p><m>f(x) = \frac{1}{x^2-1}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>x=2</m>: засагдах; б. <m>x=0</m>: засагдах (<m>\lim=1</m>); в. <m>x=\pm1</m>: төгсгөлгүй.</p>
+        </answer>
+      </exercise>
+      <exercise xml:id="sem5-ex-4">
+        <statement>
+          <p>ЗУТ ашиглан дараах тэгшитгэлүүд <m>(0,1)</m> завсарт шийдтэй болохыг харуул:
+            <ol>
+              <li><p><m>x^3 + x - 1 = 0</m></p></li>
+              <li><p><m>e^x = 2 - x</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+      <exercise xml:id="sem5-ex-5">
+        <statement>
+          <p>Дараах функц тасралтгүй байхын тулд <m>a</m>-г ол:
+          <me>f(x) = \begin{cases} \frac{\sin 3x}{x} \amp x \ne 0 \\
+ a \amp x = 0 \end{cases}.</me>
+          </p>
+        </statement>
+        <answer><p><m>a = 3</m>.</p></answer>
+      </exercise>
+      <exercise xml:id="sem5-ex-6">
+        <statement>
+          <p>Дараах хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x\to 0} \frac{\ln(1+x) - x}{x^2}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\to 0} \frac{e^x - 1 - x}{x^2}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\to\pi/6} \frac{2\sin x - 1}{1 - 2\cos 2x}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer><p>а. <m>-\frac{1}{2}</m>; б. <m>\frac{1}{2}</m>; в. <m>\frac{1}{2\sqrt{3}}</m>.</p></answer>
+      </exercise>
+      <exercise xml:id="sem5-ex-7">
+        <statement>
+          <p>Дараалалын хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{n\to\infty} \frac{n}{\sqrt[n]{n!}}</m></p></li>
+              <li><p><m>\displaystyle\lim_{n\to\infty} n\ln\!\left(1+\frac{1}{n}
+\right)</m></p></li>
+              <li><p><m>\displaystyle\lim_{n\to\infty} \left(\frac{n+1}{n-1}
+\right)^n</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer><p>а. <m>e</m>; б. <m>1</m>; в. <m>e^2</m>.</p></answer>
+      </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-homework-5">
+    <title>Гэрийн даалгавар 5</title>
+    <exercises xml:id="exercises-homework-5">
+      <introduction>
+        <p>Бодолтыг бүрэн үндэслэлтэй бичиж ирнэ.</p>
+      </introduction>
+      <exercise xml:id="hw5-ex-1">
+        <statement>
+          <p>I гайхамшигт хязгаар ашиглан хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x\to 0} \frac{\sin(ax)}{bx}</m> (<m>b \ne 0</m>)</p></li>
+              <li><p><m>\displaystyle\lim_{x\to 0} \frac{1-\cos(3x)}{x^2}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\to 0} \frac{	\tan x - \sin x}{x^3}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+      <exercise xml:id="hw5-ex-2">
+        <statement>
+          <p>II гайхамшигт хязгаар ашиглан хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x\to 0} \frac{e^{3x}-1}{x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\to\infty}\left(1+\frac{2}{x}
+\right)^{3x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x\to\infty} \frac{\ln x}{\sqrt{x}}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+      <exercise xml:id="hw5-ex-3">
+        <statement>
+          <p>Дараах функц тасралтгүй байх тогтмол тоог ол:
+          <me>f(x) = \begin{cases} ax + 2 \amp x \lt 1 \\ 
+x^2 + b \amp x \ge 1 \end{cases}.</me>
+          (<em>Зөвлөмж:</em> зүүн ба баруун хязгаар тэнцүү байх нөхцөлийг ашигла.)
+          </p>
+        </statement>
+      </exercise>
+      <exercise xml:id="hw5-ex-4">
+        <statement>
+          <p>ЗУТ ашиглан <m>f(x) = x^4 - 2x^2 - 1</m> функц бодит язгууртай болохыг харуул.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="hw5-ex-5">
+        <statement>
+          <p>Дараалалын хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{n\to\infty} \sqrt[n]{2^n + 3^n}</m></p></li>
+              <li><p><m>\displaystyle\lim_{n\to\infty} \frac{\sin(1/n)}{1/n}</m></p></li>
+              <li><p><m>\displaystyle\lim_{n\to\infty} \left(1+\frac{1}{n}
+\right)^{2n}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       Семинар 7 — Хязгаар
+       ============================================================ -->
+
+  <!-- ============================================================
+       Гэрийн даалгавар 7 — Хязгаар
+       ============================================================ -->
+
+  <!-- ============================================================
+       AI-тай дасгал хийх (Лекц 4)
+       ============================================================ -->
 
 </chapter>

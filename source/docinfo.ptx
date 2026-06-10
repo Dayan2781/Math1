@@ -14,6 +14,16 @@
  <latex-preamble>
   \usepackage{pgfplots}
   \pgfplotsset{compat=1.18}
+  \pgfplotsset{xdiscontinuity/.style={axis x discontinuity=parallel}}
+  \pgfplotsset{ydiscontinuity/.style={axis y discontinuity=crunch}}
+  \pgfplotsset{hollowdot/.style={color=blue,fill=white,only marks,mark size=2.4pt,mark=*}}
+  \pgfplotsset{soliddot/.style={color=blue,only marks,mark size=2.4pt,mark=*}}
+  \pgfplotsset{infinite/.style={{Kite}-{Kite}}}
+  \pgfplotsset{infiniteleft/.style={{Kite}-}}
+  \pgfplotsset{infiniteright/.style={-{Kite}}}
+  \pgfplotsset{infiniteopen/.style={shorten &gt;=-2.4pt,{Kite}-{Circle[open]}}}
+  \pgfplotsset{openinfinite/.style={shorten &lt;=-2.4pt,{Circle[open]}-{Kite}}}
+  \usetikzlibrary{arrows.meta}
   \usepackage{tikz}
 </latex-preamble>
   <!-- Brand logo / institutional identity (optional) -->
@@ -28,8 +38,10 @@
 
   <rename element="chapter">Бүлэг</rename>
   <rename element="objectives">Зорилго</rename>
-  <rename element="activity">Өдөөгч дасгал</rename>
+  <rename element="activity">Сэдэлжүүлэх дасгал</rename>
   <rename element="definition">Тодорхойлолт</rename>
   <rename element="theorem">Теорем</rename>
   <rename element="example">Жишээ</rename>
+  <rename element="solution">Бодолт</rename>
+  <rename element="corollary">Мөрдөлгөө</rename>
 </docinfo>

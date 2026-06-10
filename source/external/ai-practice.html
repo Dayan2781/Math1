@@ -2,92 +2,135 @@
 <html lang="mn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Дасгал</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: system-ui, sans-serif; padding: 1rem; background: #fff; color: #111; font-size: 15px; }
-.topic-bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1rem; }
-.chip { font-size: 12px; padding: 4px 10px; border-radius: 20px; border: 1px solid #ccc; background: #f5f5f5; cursor: pointer; }
+body { font-family: system-ui, sans-serif; padding: 1rem; font-size: 14px; color: #111; }
+.topic-bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 0.75rem; }
+.chip { font-size: 12px; padding: 4px 10px; border-radius: 20px; border: 1px solid #ccc; background: #f5f5f5; cursor: pointer; user-select: none; }
 .chip.active { background: #dbeafe; color: #1d4ed8; border-color: #93c5fd; }
-.diff-row { display: flex; gap: 8px; align-items: center; margin-bottom: 1rem; font-size: 13px; color: #555; }
+.controls { display: flex; gap: 8px; align-items: center; margin-bottom: 1rem; font-size: 13px; color: #555; }
 select { font-size: 13px; padding: 4px 8px; border-radius: 6px; border: 1px solid #ccc; }
-.card { border: 1px solid #e5e7eb; border-radius: 10px; padding: 1rem; margin-bottom: 1rem; }
+.diff-hint { font-size: 12px; color: #888; margin-left: 4px; }
+.card { border: 1px solid #e5e7eb; border-radius: 10px; padding: 1rem; margin-bottom: 1rem; background: #fff; }
 .label { font-size: 11px; color: #888; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
-.problem-text { font-size: 15px; line-height: 1.7; min-height: 48px; }
-textarea { width: 100%; border: 1px solid #d1d5db; border-radius: 6px; padding: 8px 10px; font-size: 14px; font-family: inherit; background: #fafafa; resize: vertical; margin-top: 10px; min-height: 80px; }
-.btn-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
-button { font-size: 13px; padding: 7px 14px; border-radius: 6px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+.problem-text { font-size: 15px; line-height: 1.7; min-height: 48px; margin-bottom: 12px; white-space: pre-wrap; }
+input[type=text] { width: 100%; border: 1px solid #d1d5db; border-radius: 6px; padding: 10px 12px; font-size: 15px; font-family: inherit; }
+input[type=text]:focus { outline: none; border-color: #93c5fd; }
+.choices { display: flex; flex-direction: column; gap: 8px; }
+.choice { padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; cursor: pointer; transition: all 0.15s; }
+.choice:hover { background: #f3f4f6; }
+.choice.selected { background: #dbeafe; border-color: #93c5fd; }
+.choice.correct { background: #ecfdf5; border-color: #6ee7b7; }
+.choice.wrong { background: #fef2f2; border-color: #fca5a5; }
+.tf-row { display: flex; gap: 10px; }
+.tf-btn { flex: 1; padding: 14px; border: 1px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; font-size: 15px; font-weight: 500; }
+.tf-btn.selected { background: #dbeafe; border-color: #93c5fd; }
+.btn-row { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+button { font-size: 13px; padding: 7px 14px; border-radius: 6px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-family: inherit; }
 button:hover { background: #f3f4f6; }
 button.primary { background: #eff6ff; color: #1d4ed8; border-color: #93c5fd; }
 button:disabled { opacity: 0.5; cursor: default; }
-.feedback { margin-top: 10px; padding: 10px 12px; border-radius: 8px; font-size: 14px; line-height: 1.6; border: 1px solid #e5e7eb; background: #f9fafb; display: none; white-space: pre-wrap; }
-.feedback.show { display: block; }
+.result { margin-top: 12px; padding: 12px; border-radius: 8px; font-size: 14px; line-height: 1.6; display: none; white-space: pre-wrap; }
+.result.show { display: block; }
+.result.correct { background: #ecfdf5; border: 1px solid #6ee7b7; color: #065f46; }
+.result.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
 .spinner { display: inline-block; width: 13px; height: 13px; border: 2px solid #ddd; border-top-color: #1d4ed8; border-radius: 50%; animation: spin 0.7s linear infinite; vertical-align: -2px; margin-right: 5px; }
 @keyframes spin { to { transform: rotate(360deg); } }
+.hint { font-size: 12px; color: #888; margin-top: 6px; }
 </style>
 </head>
 <body>
 
-<div class="topic-bar" id="topics">
-  <span class="chip active" data-topic="тэгш ба сондгой функц">Тэгш/сондгой</span>
-  <span class="chip" data-topic="монотон функц">Монотон</span>
-  <span class="chip" data-topic="зааглагдсан функц">Зааглагдсан</span>
-  <span class="chip" data-topic="олон гишүүнт функц">Олон гишүүнт</span>
-  <span class="chip" data-topic="тригонометр функц">Тригонометр</span>
-  <span class="chip" data-topic="урвуу тригонометр функц">Урвуу триг</span>
-  <span class="chip" data-topic="илтгэгч ба логарифм функц">Илтгэгч/лог</span>
-  <span class="chip" data-topic="дараалал ба прогресс">Дараалал</span>
-</div>
+<div class="label" id="topic-label">Сэдэв</div>
+<div class="topic-bar" id="topics"></div>
 
-<div class="diff-row">
+<div class="controls">
   <span>Түвшин:</span>
   <select id="diff">
-    <option value="энгийн">Энгийн</option>
-    <option value="дунд" selected>Дунд</option>
-    <option value="хэцүү">Хэцүү</option>
+    <option value="энгийн">Энгийн (Зөв/Буруу)</option>
+    <option value="дунд" selected>Дунд (А/Б/В/Г)</option>
+    <option value="хэцүү">Хэцүү (Тоон хариут)</option>
   </select>
+  <button class="primary" id="gen-btn" onclick="generate()" style="margin-left:auto">Бодлого үүсгэх</button>
 </div>
 
-<div class="card">
+<div class="card" id="card" style="display:none">
   <div class="label">Бодлого</div>
-  <div class="problem-text" id="problem-text">Сэдэв сонгоод "Бодлого үүсгэх" товчийг дарна уу.</div>
-  <textarea id="answer" placeholder="Энд хариултаа бичнэ үү..."></textarea>
+  <div class="problem-text" id="problem-text"></div>
+  <div id="answer-area"></div>
   <div class="btn-row">
-    <button class="primary" id="gen-btn" onclick="generate()">Бодлого үүсгэх</button>
-    <button id="check-btn" onclick="checkAnswer()" disabled>Хариул шалгах</button>
-    <button onclick="generate()">Дараагийн бодлого</button>
+    <button class="primary" id="check-btn" onclick="check()">Шалгах</button>
+    <button onclick="generate()">Дараагийн</button>
+    <button id="explain-btn" onclick="explain()" style="display:none">Тайлбар үзэх</button>
   </div>
-  <div class="feedback" id="feedback"></div>
+  <div class="result" id="result"></div>
 </div>
 
 <script>
-let currentProblem = '';
-let currentTopic = 'тэгш ба сондгой функц';
+const API = 'https://math1-proxy.num-math1v.workers.dev/v1/messages';
+let topic = '';
+let currentQ = null;
+let currentType = null;
+let selectedAnswer = null;
 
-document.querySelectorAll('.chip').forEach(c => {
+// URL-аас сэдвүүдийг авах (жишээ: ?topics=тэгш ба сондгой функц,монотон функц)
+const params = new URLSearchParams(window.location.search);
+const topicsParam = params.get('topics');
+const labelParam = params.get('label');
+
+const DEFAULT_TOPICS = [
+  { v: 'тэгш ба сондгой функц', label: 'Тэгш/сондгой' },
+  { v: 'монотон функц', label: 'Монотон' },
+  { v: 'зааглагдсан функц', label: 'Зааглагдсан' },
+  { v: 'олон гишүүнт функц', label: 'Олон гишүүнт' },
+  { v: 'тригонометр функц', label: 'Тригонометр' },
+  { v: 'урвуу тригонометр функц', label: 'Урвуу триг' },
+  { v: 'илтгэгч ба логарифм функц', label: 'Илтгэгч/лог' },
+  { v: 'дараалал ба прогресс', label: 'Дараалал' }
+];
+
+let topics;
+if (topicsParam) {
+  topics = topicsParam.split(',').map(t => {
+    const trimmed = t.trim();
+    const found = DEFAULT_TOPICS.find(d => d.v === trimmed);
+    return { v: trimmed, label: found ? found.label : trimmed };
+  });
+} else {
+  topics = DEFAULT_TOPICS;
+}
+
+// Topic-уудыг render хийх
+const topicsContainer = document.getElementById('topics');
+topics.forEach((t, i) => {
+  const span = document.createElement('span');
+  span.className = 'chip' + (i === 0 ? ' active' : '');
+  span.dataset.topic = t.v;
+  span.textContent = t.label;
+  topicsContainer.appendChild(span);
+});
+topic = topics[0].v;
+
+// Шошго солих (хэрэв label parameter байвал)
+if (labelParam) {
+  document.getElementById('topic-label').textContent = labelParam;
+}
+
+document.querySelectorAll('#topics .chip').forEach(c => {
   c.addEventListener('click', () => {
-    document.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('#topics .chip').forEach(x => x.classList.remove('active'));
     c.classList.add('active');
-    currentTopic = c.dataset.topic;
-    reset();
+    topic = c.dataset.topic;
   });
 });
 
-function reset() {
-  document.getElementById('feedback').classList.remove('show');
-  document.getElementById('answer').value = '';
-  document.getElementById('check-btn').disabled = true;
-  document.getElementById('problem-text').textContent = '"Бодлого үүсгэх" товчийг дарна уу.';
-}
-
 async function callClaude(messages, system) {
-  const res = await fetch('https://math1-proxy.num-math1v.workers.dev/v1/messages', {
+  const res = await fetch(API, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1000,
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 1500,
       system,
       messages
     })
@@ -99,60 +142,132 @@ async function callClaude(messages, system) {
 async function generate() {
   const diff = document.getElementById('diff').value;
   const btn = document.getElementById('gen-btn');
-  const problemEl = document.getElementById('problem-text');
-  const fb = document.getElementById('feedback');
-
   btn.innerHTML = '<span class="spinner"></span>Үүсгэж байна...';
   btn.disabled = true;
-  fb.classList.remove('show');
-  document.getElementById('answer').value = '';
-  document.getElementById('check-btn').disabled = true;
+  document.getElementById('result').classList.remove('show');
+  document.getElementById('card').style.display = 'none';
+  document.getElementById('explain-btn').style.display = 'none';
+  selectedAnswer = null;
+
+  // Түвшнээс хариултын төрөл оноох
+  currentType = diff === 'энгийн' ? 'truefalse' : diff === 'дунд' ? 'choice' : 'numeric';
+
+  const system = "Та Монгол Улсын их сургуулийн Математик Анализ I хичээлийн бодлого үүсгэгч. ЧУХАЛ ДҮРМҮҮД: (1) Зөвхөн зөв JSON буцаа, өөр ямар ч текст оруулж болохгүй. (2) JSON-д шинэ мөр (newline) бүү оруул, бүгдийг нэг мөрөнд бич. (3) Математик томьёог энгийн текстээр (LaTeX биш) бич, жишээ: x^2 + 3x = 0. (4) Бүгдийг монгол хэлээр бич.";
+
+  let prompt = '';
+  if (currentType === 'truefalse') {
+    prompt = `"${topic}" сэдвээр энгийн түвшний нэг мэдлэг шалгах асуулт үүсгэ. Тодорхойлолт, чанар, эсвэл энгийн дүгнэлтийн тухай нэг өгүүлбэр байна. Оюутан мэдлэгээрээ зөв/буруу гэж шалгаж чадахаар бай.
+JSON формат:
+{"problem":"шалгах өгүүлбэр","answer":"зөв|буруу","explanation":"яагаад зөв/буруу болохыг 1-2 өгүүлбэрээр тайлбарла"}`;
+  } else if (currentType === 'choice') {
+    prompt = `"${topic}" сэдвээр дунд түвшний нэг бодлого үүсгэ. 4 сонголттой (А, Б, В, Г), зөвхөн нэг нь зөв. Бусад сонголтууд нь түгээмэл алдааны хариулт байх.
+JSON формат:
+{"problem":"бодлогын текст","choices":{"А":"...","Б":"...","В":"...","Г":"..."},"answer":"А|Б|В|Г","explanation":"шийдлийн тайлбар"}`;
+  } else {
+    prompt = `"${topic}" сэдвээр хэцүү түвшний нэг бодлого үүсгэ. Хариулт нь яг нэг тоо (бутархай, π-тэй ч байж болно) байх ёстой. Бодолт хийх шаардлагатай.
+JSON формат:
+{"problem":"бодлогын текст","answer":"яг нэг тоон утга","alternatives":["хариултын өөр зөв хэлбэрүүд жишээ нь 0.5 бол 1/2, 2/4 гэх мэт"],"explanation":"шийдлийн тайлбар алхам алхмаар"}`;
+  }
 
   try {
-    const text = await callClaude(
-      [{ role: 'user', content: `"${currentTopic}" сэдвээр нэг бодлого үүсгэ.` }],
-      `Та Монгол Улсын их сургуулийн Математик Анализ I хичээлийн бодлого үүсгэгч.
-Зөвхөн нэг тодорхой тооны бодлого өг. Хариулт бүү өг.
-Математик томьёог тодорхой бич (LaTeX биш, энгийн текстээр).
-Бодлого нь ${diff} түвшний байна. Монгол хэлээр бич.`
-    );
-    currentProblem = text.trim();
-    problemEl.textContent = currentProblem;
-    document.getElementById('check-btn').disabled = false;
-  } catch(e) {
-    problemEl.textContent = 'Алдаа гарлаа. Дахин оролдоно уу.';
+    const text = await callClaude([{ role: 'user', content: prompt }], system);
+    let jsonStr = text.match(/\{[\s\S]*\}/)?.[0];
+    if (!jsonStr) throw new Error('JSON олдсонгүй');
+    currentQ = null;
+    try {
+      currentQ = JSON.parse(jsonStr);
+    } catch(e1) {
+      try {
+        let s = jsonStr.replace(/[\n\r]/g, ' ').replace(/\s+/g, ' ');
+        currentQ = JSON.parse(s);
+      } catch(e2) {
+        console.error('JSON parse failed. Raw:', jsonStr);
+        throw new Error('JSON parse алдаа. Дахин үүсгэнэ үү.');
+      }
+    }
+    renderQuestion();
+  } catch (e) {
+    alert('Алдаа: ' + e.message);
   }
   btn.innerHTML = 'Бодлого үүсгэх';
   btn.disabled = false;
 }
 
-async function checkAnswer() {
-  const answer = document.getElementById('answer').value.trim();
-  if (!answer) { alert('Эхлээд хариултаа бичнэ үү.'); return; }
-  const btn = document.getElementById('check-btn');
-  const fb = document.getElementById('feedback');
+function renderQuestion() {
+  document.getElementById('card').style.display = 'block';
+  document.getElementById('problem-text').textContent = currentQ.problem;
+  const area = document.getElementById('answer-area');
 
-  btn.innerHTML = '<span class="spinner"></span>Шалгаж байна...';
-  btn.disabled = true;
-  fb.classList.remove('show');
-
-  try {
-    const text = await callClaude(
-      [{ role: 'user', content: `Бодлого: ${currentProblem}\n\nОюутны хариулт: ${answer}` }],
-      `Та математикийн багш. Оюутны хариултыг шалгаад дараах бүтцээр тайлбарла:
-1. Зөв эсэх (Зөв / Хэсэгчлэн зөв / Буруу)
-2. Зөв шийдийг алхам алхмаар харуул
-3. Оюутны алдааг тайлбарла (байвал)
-Монгол хэлээр, урамшуулах аялгуутай бай.`
-    );
-    fb.textContent = text;
-    fb.classList.add('show');
-  } catch(e) {
-    fb.textContent = 'Алдаа гарлаа.';
-    fb.classList.add('show');
+  if (currentType === 'numeric') {
+    area.innerHTML = `<input type="text" id="num-answer" placeholder="Хариултаа бичнэ үү..." autocomplete="off">
+      <div class="hint">π = pi, √ = sqrt(), бутархайг "/" -р бичиж болно</div>`;
+  } else if (currentType === 'choice') {
+    let html = '<div class="choices">';
+    for (const [k, v] of Object.entries(currentQ.choices)) {
+      html += `<div class="choice" data-key="${k}" onclick="selectChoice('${k}')"><strong>${k}.</strong> ${v}</div>`;
+    }
+    html += '</div>';
+    area.innerHTML = html;
+  } else {
+    area.innerHTML = `<div class="tf-row">
+      <button class="tf-btn" data-val="зөв" onclick="selectTF('зөв')">✓ Зөв</button>
+      <button class="tf-btn" data-val="буруу" onclick="selectTF('буруу')">✗ Буруу</button>
+    </div>`;
   }
-  btn.innerHTML = 'Хариул шалгах';
-  btn.disabled = false;
+}
+
+function selectChoice(k) {
+  selectedAnswer = k;
+  document.querySelectorAll('.choice').forEach(c => c.classList.toggle('selected', c.dataset.key === k));
+}
+
+function selectTF(v) {
+  selectedAnswer = v;
+  document.querySelectorAll('.tf-btn').forEach(b => b.classList.toggle('selected', b.dataset.val === v));
+}
+
+function normalize(s) {
+  return String(s).trim().toLowerCase().replace(/\s+/g, '').replace(',', '.');
+}
+
+function check() {
+  if (!currentQ) return;
+  let userAns;
+  if (currentType === 'numeric') {
+    userAns = document.getElementById('num-answer').value.trim();
+    if (!userAns) { alert('Хариултаа бичнэ үү.'); return; }
+  } else {
+    if (!selectedAnswer) { alert('Сонголтоо хийнэ үү.'); return; }
+    userAns = selectedAnswer;
+  }
+
+  const correct = currentQ.answer;
+  const alts = currentQ.alternatives || [];
+  const allCorrect = [correct, ...alts].map(normalize);
+  const isCorrect = allCorrect.includes(normalize(userAns));
+
+  const result = document.getElementById('result');
+  result.className = 'result show ' + (isCorrect ? 'correct' : 'wrong');
+  if (isCorrect) {
+    result.textContent = '✓ Зөв байна!' + (currentQ.explanation ? '\n\n' + currentQ.explanation : '');
+  } else {
+    result.textContent = `✗ Буруу. Зөв хариулт: ${correct}`;
+    document.getElementById('explain-btn').style.display = 'inline-block';
+  }
+
+  if (currentType === 'choice') {
+    document.querySelectorAll('.choice').forEach(c => {
+      if (c.dataset.key === correct) c.classList.add('correct');
+      else if (c.dataset.key === selectedAnswer) c.classList.add('wrong');
+    });
+  }
+  selectedAnswer = null;
+}
+
+function explain() {
+  const result = document.getElementById('result');
+  result.textContent += '\n\nТайлбар: ' + (currentQ.explanation || 'тайлбар алга');
+  document.getElementById('explain-btn').style.display = 'none';
 }
 </script>
 </body>

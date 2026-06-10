@@ -112,7 +112,7 @@
          ЦААШИД НЭМЭГДЭХ БҮЛГҮҮД (одоогоор comment)
          ═══════════════════════════════════════════════════════════ -->
     <!-- Бүлэг 3: Хязгаар (3 лекц + 3 семинар) -->
-    <!-- <xi:include href="./chapters/ch-hyazgaar.ptx" /> -->
+    <xi:include href="./chapters/ch-limits.ptx" />
 
     <!-- Бүлэг 4: Тасралтгүй чанар (1 лекц + 1 семинар) -->
     <!-- <xi:include href="./chapters/ch-continuity.ptx" /> -->

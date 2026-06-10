@@ -1,0 +1,206 @@
+<!-- ════════════════════════════════════════════════════
+     §2.12 Тригонометрийн урвуу функцүүд
+     ════════════════════════════════════════════════════ -->
+<section xml:id="sec-inverse-trig">
+  <title>Тригонометрийн урвуу функцүүд</title>
+
+  <p>Бид <m>y = \sin x</m> функц <m>\left[-\dfrac{\pi}{2}; \dfrac{\pi}{2}\right]</m>
+  завсар дээр биектив байдгийг мэднэ. Иймд</p>
+  <me>\sin : \left[-\frac{\pi}{2}; \frac{\pi}{2}\right] \to [-1; 1]</me>
+  <p>функц урвуутай бөгөөд түүний урвууг <m>\arcsin x</m> буюу
+  <m>\sin^{-1} x</m> гэж тэмдэглэнэ.</p>
+
+  <p>Үүнтэй ижлээр <m>y = \cos x</m> функц <m>[0; \pi]</m> завсар дээр
+  биектив байдаг. Иймд</p>
+  <me>\cos : [0; \pi] \to [-1; 1]</me>
+  <p>функц урвуутай бөгөөд түүний урвууг <m>\arccos x</m> буюу
+  <m>\cos^{-1} x</m> гэж тэмдэглэнэ.</p>
+
+  <p><m>y = \tan x</m> функц <m>\left(-\dfrac{\pi}{2}; \dfrac{\pi}{2}\right)</m>
+  завсар дээр биектив байгааг графикаас харж болно. Иймд</p>
+  <me>\tan : \left(-\frac{\pi}{2}; \frac{\pi}{2}\right) \to \mathbb{R}</me>
+  <p>функц урвуутай бөгөөд түүний урвууг <m>\arctan x</m> буюу
+  <m>\tan^{-1} x</m> гэж тэмдэглэнэ.</p>
+
+  <p>Үүнтэй ижлээр <m>y = \cot x</m> функц <m>(0; \pi)</m> завсар дээр
+  биектив байдаг. Иймд</p>
+  <me>\cot : (0; \pi) \to \mathbb{R}</me>
+  <p>функц урвуутай бөгөөд түүний урвууг <m>\operatorname{arccot} x</m>
+  буюу <m>\cot^{-1} x</m> гэж тэмдэглэнэ.</p>
+
+  <p>Тригонометрийн урвуу функцүүдийн үндсэн чанарууд:</p>
+
+  <table xml:id="tbl-inverse-trig">
+    <title>Тригонометрийн урвуу функцүүдийн чанар</title>
+    <tabular halign="center">
+      <row header="yes" bottom="minor">
+        <cell>Функц</cell>
+        <cell>Тодорхойлогдох муж</cell>
+        <cell>Утгын муж</cell>
+      </row>
+      <row>
+        <cell><m>\arcsin x</m></cell>
+        <cell><m>[-1; 1]</m></cell>
+        <cell><m>\left[-\frac{\pi}{2}; \frac{\pi}{2}\right]</m></cell>
+      </row>
+      <row>
+        <cell><m>\arccos x</m></cell>
+        <cell><m>[-1; 1]</m></cell>
+        <cell><m>[0; \pi]</m></cell>
+      </row>
+      <row>
+        <cell><m>\arctan x</m></cell>
+        <cell><m>\mathbb{R}</m></cell>
+        <cell><m>\left(-\frac{\pi}{2}; \frac{\pi}{2}\right)</m></cell>
+      </row>
+      <row>
+        <cell><m>\operatorname{arccot} x</m></cell>
+        <cell><m>\mathbb{R}</m></cell>
+        <cell><m>(0; \pi)</m></cell>
+      </row>
+    </tabular>
+  </table>
+
+  <example xml:id="ex-arcsin-values">
+    <statement>
+      <p>Дараах утгуудыг ол:
+      <m>\arcsin\dfrac{1}{2}</m>,
+      <m>\arccos\left(-\dfrac{\sqrt{3}}{2}\right)</m>,
+      <m>\arctan(-1)</m>.</p>
+    </statement>
+    <solution>
+      <p><m>\sin\dfrac{\pi}{6} = \dfrac{1}{2}</m> ба
+      <m>\dfrac{\pi}{6} \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]</m> тул
+      <m>\arcsin\dfrac{1}{2} = \dfrac{\pi}{6}</m>.</p>
+
+      <p><m>\cos\dfrac{5\pi}{6} = -\dfrac{\sqrt{3}}{2}</m> ба
+      <m>\dfrac{5\pi}{6} \in [0, \pi]</m> тул
+      <m>\arccos\left(-\dfrac{\sqrt{3}}{2}\right) = \dfrac{5\pi}{6}</m>.</p>
+
+      <p><m>\tan\left(-\dfrac{\pi}{4}\right) = -1</m> ба
+      <m>-\dfrac{\pi}{4} \in \left(-\frac{\pi}{2}, \frac{\pi}{2}\right)</m> тул
+      <m>\arctan(-1) = -\dfrac{\pi}{4}</m>.</p>
+    </solution>
+  </example>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     §2.13 Илтгэгч ба логарифм функц
+     ════════════════════════════════════════════════════ -->
+<section xml:id="sec-exp-log">
+  <title>Илтгэгч ба логарифм функц</title>
+
+  <subsection xml:id="subsec-exp">
+    <title>Илтгэгч функц</title>
+
+    <definition xml:id="def-exp">
+      <title>Илтгэгч функц</title>
+      <statement>
+        <p><term>Илтгэгч функц</term> гэдэг нь дараах хэлбэртэй функцийг хэлнэ:</p>
+        <me>f(x) = a^x, \quad a \gt 0, \; a \ne 1.</me>
+        <p>Хэрэв <m>a = e \approx 2{,}71828</m> бол функц</p>
+        <me>f(x) = e^x</me>
+        <p>хэлбэртэй болж, <term>натурал илтгэгч функц</term> гэж нэрлэгдэнэ.
+        Энэ нь математикт хамгийн өргөн хэрэглэгддэг илтгэгч функц юм.</p>
+      </statement>
+    </definition>
+
+    <p>Математикт <m>y = 3^x</m> гэх мэт функц бараг хэрэглэдэггүй. Учир нь
+    <m>e^{\,1{,}09861\ldots} \approx 3</m> тул
+    <m>3^x = (e^{\,1{,}09861\ldots})^x = e^{\,1{,}09861\ldots \cdot x}</m>
+    болох тул <m>e</m> тооны зэрэг рүү шилждэг.</p>
+
+    <p><m>f(x) = e^x</m> функцийн хувьд:
+      <ul>
+        <li><p><term>Тодорхойлогдох муж:</term> <m>(-\infty, \infty)</m></p></li>
+        <li><p><term>Утгын муж:</term> <m>(0, \infty)</m></p></li>
+        <li><p><term>Иньектив:</term> Хэрэв <m>x_1 \ne x_2</m> бол
+        <m>e^{x_1} \ne e^{x_2}</m>.</p></li>
+        <li><p><term>Сурьектив:</term> <m>(0, \infty)</m> мужид ямар ч
+        <m>y</m> тоонд <m>e^x = y</m> байх <m>x \in \mathbb{R}</m> ганц
+        оршино.</p></li>
+      </ul>
+    </p>
+
+    <p>Иймд <m>f</m> нь <term>биектив</term> тул урвуу функцтэй байна.
+    Түүний урвууг логарифм гэх ба
+    <me>f^{-1}(x) = \ln x</me>
+    гэж тэмдэглэнэ.</p>
+  </subsection>
+
+  <subsection xml:id="subsec-exp-properties">
+    <title>Илтгэгч функцийн чанарууд</title>
+
+    <p>Илтгэгч функцийн гол шинж чанарууд:
+      <ol>
+        <li><p><m>a^0 = 1</m> (<m>a \ne 0</m>)</p></li>
+        <li><p><m>a^m \cdot a^n = a^{m+n}</m></p></li>
+        <li><p><m>\dfrac{a^m}{a^n} = a^{m-n}</m></p></li>
+        <li><p><m>(a^m)^n = a^{mn}</m></p></li>
+        <li><p><m>(ab)^n = a^n \cdot b^n</m></p></li>
+        <li><p><m>\left(\dfrac{a}{b}\right)^n = \dfrac{a^n}{b^n}</m></p></li>
+        <li><p><m>f(x) = a^x</m> функц нь дараах шинжтэй:
+          <ul>
+            <li><p><m>a \gt 1 \Rightarrow f(x)</m> өсөх</p></li>
+            <li><p><m>0 \lt a \lt 1 \Rightarrow f(x)</m> буурах</p></li>
+          </ul>
+        </p></li>
+      </ol>
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-log">
+    <title>Логарифм функц</title>
+
+    <definition xml:id="def-log">
+      <title>Логарифм</title>
+      <statement>
+        <p><m>a \gt 0</m>, <m>a \ne 1</m> ба <m>x \gt 0</m> тооны хувьд
+        <m>a^y = x</m> биелж байвал <m>y</m> тоог <m>a</m> суурьтай
+        <m>x</m> тооны <term>логарифм</term> гэж нэрлэн
+        <m>y = \log_a x</m> гэж тэмдэглэнэ.</p>
+      </statement>
+    </definition>
+
+    <p>Тусгай тэмдэглэгээ: <m>\ln x = \log_e x</m>
+    (<term>натурал логарифм</term>), <m>\lg x = \log_{10} x</m>
+    (<term>аравтын логарифм</term>).</p>
+
+    <p>Логарифм функцийн гол шинж чанарууд:
+      <ol>
+        <li><p><m>\log_a 1 = 0</m> (<m>a \gt 0</m>, <m>a \ne 1</m>)</p></li>
+        <li><p><m>\log_a a = 1</m></p></li>
+        <li><p><m>\log_a(xy) = \log_a x + \log_a y</m></p></li>
+        <li><p><m>\log_a\left(\dfrac{x}{y}\right) = \log_a x - \log_a y</m></p></li>
+        <li><p><m>\log_a(x^r) = r \cdot \log_a x</m></p></li>
+        <li><p><m>\log_a x = \dfrac{\log_b x}{\log_b a}</m> (суурь солих
+        томьёо)</p></li>
+        <li><p><m>f(x) = \log_a x</m> функц нь дараах шинжтэй:
+          <ul>
+            <li><p><m>a \gt 1 \Rightarrow f(x)</m> өсөх</p></li>
+            <li><p><m>0 \lt a \lt 1 \Rightarrow f(x)</m> буурах</p></li>
+            <li><p><term>Тодорхойлогдох муж:</term> <m>(0, \infty)</m>,
+            <term>утгын муж:</term> <m>(-\infty, \infty)</m></p></li>
+          </ul>
+        </p></li>
+      </ol>
+    </p>
+
+    <p><term>Илтгэгч ба логарифмын уялдаа:</term></p>
+    <me>\log_a a^x = x \quad \text{ба} \quad a^{\log_a x} = x.</me>
+  </subsection>
+
+  <example xml:id="ex-log-eq">
+    <statement>
+      <p><m>\log_2(x - 1) + \log_2(x + 1) = 3</m> тэгшитгэлийг бод.</p>
+    </statement>
+    <solution>
+      <p>Тодорхойлогдох муж: <m>x - 1 \gt 0</m> ба <m>x + 1 \gt 0</m>,
+      өөрөөр хэлбэл <m>x \gt 1</m>. Логарифмын чанар ёсоор</p>
+      <me>\log_2\bigl((x-1)(x+1)\bigr) = 3 \quad\Longrightarrow\quad
+      x^2 - 1 = 2^3 = 8,</me>
+      <p>эндээс <m>x^2 = 9</m>, өөрөөр хэлбэл <m>x = \pm 3</m>. Гэвч
+      <m>x \gt 1</m> нөхцөлийг зөвхөн <m>x = 3</m> хангана.</p>
+    </solution>
+  </example>
+</section>

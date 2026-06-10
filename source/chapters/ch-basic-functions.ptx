@@ -765,195 +765,6 @@
   <!-- ============================================================
        SECTION 2.5: Тригонометр функцүүд
        ============================================================ -->
-  <section xml:id="sec-trigonometric">
-    <title>Тригонометр функцүүд</title>
-
-    <subsection xml:id="subsec-unit-circle">
-      <title>Нэгж тойргийн тригонометр функцүүд</title>
-
-      <definition xml:id="def-unit-circle">
-        <statement>
-          <p>Төв нь координатын эх дээр орших радиус нь <m>1</m> байх тойргийг
-          <term>нэгж тойрог</term> гэнэ.</p>
-        </statement>
-      </definition>
-
-      <p>Нэгж тойрог дээр <m>OX</m> тэнхлэгтэй <m>\theta</m> радиан өнцөг үүсгэх
-      <m>P</m> цэг авч үзье (<m>0 \lt \theta \lt \dfrac{\pi}{2}</m>). <m>OPA</m>
-      тэгш өнцөгт гурвалжны гипотенуз <m>OP = 1</m> юм. Иймд
-      <md>
-        <mrow>\cos\theta \amp= \frac{\text{Налсан катет}}{\text{Гипотенуз}} = \frac{OA}{1} = OA</mrow>
-        <mrow>\sin\theta \amp= \frac{\text{Эсрэг катет}}{\text{Гипотенуз}} = \frac{PB}{1} = PB</mrow>
-      </md>
-      болно. Эндээс <m>\theta</m> радиан өнцгийн цэгийн координат
-      <m>P = (\cos\theta, \sin\theta)</m> байна.</p>
-
-      <definition xml:id="def-trig-funcs">
-        <statement>
-          <p>Дурын <m>\theta</m> радиан өнцөгт харгалзах нэгж тойрог дээрх цэг
-          <m>P(x, y)</m> бол
-          <md>
-            <mrow>\cos\theta \amp:= x, \qquad \sin\theta := y</mrow>
-            <mrow>\tan\theta \amp:= \frac{y}{x} \quad (x \ne 0), \qquad \cot\theta := \frac{x}{y} \quad (y \ne 0)</mrow>
-          </md>
-          гэнэ.</p>
-        </statement>
-      </definition>
-
-      <example xml:id="ex-pi-4">
-        <statement>
-          <p><m>\dfrac{\pi}{4}</m> өнцөгт харгалзах нэгж тойргийн цэг
-          <m>P = \left(\dfrac{\sqrt{2}}{2}, \dfrac{\sqrt{2}}{2}\right)</m>
-          болно. Тиймээс
-          <me>\cos\!\left(\frac{\pi}{4}\right) = \frac{\sqrt{2}}{2}, \quad \sin\!\left(\frac{\pi}{4}\right) = \frac{\sqrt{2}}{2}.</me>
-          </p>
-        </statement>
-      </example>
-
-      <example xml:id="ex-special-angles">
-        <statement>
-          <p><m>\pi, \dfrac{3\pi}{2}, \dfrac{7\pi}{4}</m> радиан өнцөгтэй цэгүүдийн
-          координат ба тригонометрийн утгуудыг хүснэгтэд оруулъя:
-          <me>\begin{array}{c|cccc} \amp \cos \amp \sin \amp \tan \amp \cot \\ \hline \pi \amp -1 \amp 0 \amp 0 \amp \nexists \\[6pt] \dfrac{3\pi}{2} \amp 0 \amp -1 \amp \nexists \amp 0 \\[8pt] \dfrac{7\pi}{4} \amp \dfrac{\sqrt{2}}{2} \amp -\dfrac{\sqrt{2}}{2} \amp -1 \amp -1 \end{array}</me>
-          </p>
-        </statement>
-      </example>
-    
-  <project xml:id="ai-unit-circle">
-    <title>AI-тай ажиллах</title>
-    <introduction>
-      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
-      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
-      үүсгүүлж бод.</p>
-    </introduction>
-    <task xml:id="ai-unit-circle-t1"><statement><p><m>\cos x = -\dfrac{5}{13}</m>, <m>x \in (\pi, \frac{3\pi}{2})</m> бол <m>\sin x</m>, <m>\tg x</m>-ийг ол.</p></statement></task>
-    <task xml:id="ai-unit-circle-t2"><statement><p><m>\tg x = \sqrt{3}</m> ба <m>x \in (0, \frac{\pi}{2})</m> бол <m>\sin x</m>, <m>\cos x</m>-ийг ол.</p></statement></task>
-    <task xml:id="ai-unit-circle-t3"><statement><p><m>\sin^2 x + \cos^2 x = 1</m> адилтгалаас <m>1 + \tg^2 x = \sec^2 x</m> гарга.</p></statement></task>
-    <task xml:id="ai-unit-circle-t4"><statement><p><m>\sin 15°</m>-ийн яг утгыг <m>\sin(45°-30°)</m> томьёогоор ол.</p></statement></task>
-    <task xml:id="ai-unit-circle-t5"><statement><p><m>\cos 3x</m>-ийг <m>\cos x</m>-ийн функцээр илэрхийл.</p></statement></task>
-    <conclusion>
-      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
-      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
-      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
-    </conclusion>
-  </project>
-  </subsection>
-
-    <subsection xml:id="subsec-periodic">
-      <title>Үет функц</title>
-
-      <definition xml:id="def-periodic">
-        <statement>
-          <p><m>f(x)</m> функц ямар нэг <m>T \gt 0</m> тооны хувьд бүх
-          <m>x \in \mathbb{R}</m> дээр
-          <me>f(x + T) = f(x)</me>
-          нөхцлийг хангаж байвал түүнийг <term>үет функц</term> гэнэ. Дээрх
-          нөхцлийг хангах хамгийн бага эерэг <m>T</m> тоог тухайн функцийн
-          <term>үндсэн үе</term> гэнэ.</p>
-        </statement>
-      </definition>
-
-      <example xml:id="ex-trig-periods">
-        <title>Тригонометр функцүүдийн үндсэн үе</title>
-        <statement>
-          <p>
-            <ul>
-              <li><m>\sin(x + 2\pi) = \sin x</m> ⇒ <m>\sin x</m>-ийн үндсэн үе
-              <m>2\pi</m>.</li>
-              <li><m>\cos(x + 2\pi) = \cos x</m> ⇒ <m>\cos x</m>-ийн үндсэн үе
-              <m>2\pi</m>.</li>
-              <li><m>\tan(x + \pi) = \tan x</m> ⇒ <m>\tan x</m>-ийн үндсэн үе
-              <m>\pi</m>.</li>
-              <li><m>\cot(x + \pi) = \cot x</m> ⇒ <m>\cot x</m>-ийн үндсэн үе
-              <m>\pi</m>.</li>
-            </ul>
-          </p>
-        </statement>
-      </example>
-    
-  <project xml:id="ai-periodic">
-    <title>AI-тай ажиллах</title>
-    <introduction>
-      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
-      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
-      үүсгүүлж бод.</p>
-    </introduction>
-    <task xml:id="ai-periodic-t1"><statement><p><m>f(x) = \sin 2x + \cos 3x</m> функцийн үеийг ол.</p></statement></task>
-    <task xml:id="ai-periodic-t2"><statement><p>Үет функцийн тодорхойлолтыг бич. <m>f(x) = c</m> тогтмол функц үет үү?</p></statement></task>
-    <task xml:id="ai-periodic-t3"><statement><p><m>f(x) = \sin^2 x</m> функцийн үндсэн үеийг ол.</p></statement></task>
-    <task xml:id="ai-periodic-t4"><statement><p>Үет функцийн нийлбэр заавал үет байх уу? Жишээ ба эсрэг жишээ өг.</p></statement></task>
-    <task xml:id="ai-periodic-t5"><statement><p><m>f(x) = |\sin x|</m> функцийн үндсэн үеийг ол.</p></statement></task>
-    <conclusion>
-      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
-      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
-      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
-    </conclusion>
-  </project>
-  </subsection>
-
-    <subsection xml:id="subsec-trig-formulas">
-      <title>Чухал тригонометрийн томьёонууд</title>
-
-      <p><alert>I. Тэгш ба сондгой чанар, үндсэн шинж чанарууд:</alert>
-      <md>
-        <mrow>\sin(-x) \amp= -\sin x \quad \text{(сондгой)}</mrow>
-        <mrow>\cos(-x) \amp= \cos x \quad \text{(тэгш)}</mrow>
-        <mrow>\sin(x + \pi) \amp= -\sin x</mrow>
-        <mrow>\cos(x + \pi) \amp= -\cos x</mrow>
-        <mrow>\sin\!\left(\frac{\pi}{2} - x\right) \amp= \cos x</mrow>
-        <mrow>\cos\!\left(\frac{\pi}{2} - x\right) \amp= \sin x</mrow>
-      </md>
-      </p>
-
-      <p><alert>II. Үндсэн адилтгал:</alert>
-      <me>\sin^2 x + \cos^2 x = 1.</me>
-      </p>
-
-      <p><alert>III. Нийлбэрийн томьёо:</alert>
-      <md>
-        <mrow>\sin(x + y) \amp= \sin x \cos y + \cos x \sin y</mrow>
-        <mrow>\sin(x - y) \amp= \sin x \cos y - \cos x \sin y</mrow>
-        <mrow>\cos(x + y) \amp= \cos x \cos y - \sin x \sin y</mrow>
-        <mrow>\cos(x - y) \amp= \cos x \cos y + \sin x \sin y</mrow>
-      </md>
-      </p>
-
-      <p><alert>IV. Нийлбэрийг үржвэрт хувиргах:</alert>
-      <md>
-        <mrow>\sin x + \sin y \amp= 2\sin\!\left(\frac{x + y}{2}\right)\cos\!\left(\frac{x - y}{2}\right)</mrow>
-        <mrow>\sin x - \sin y \amp= 2\cos\!\left(\frac{x + y}{2}\right)\sin\!\left(\frac{x - y}{2}\right)</mrow>
-        <mrow>\cos x + \cos y \amp= 2\cos\!\left(\frac{x + y}{2}\right)\cos\!\left(\frac{x - y}{2}\right)</mrow>
-        <mrow>\cos x - \cos y \amp= -2\sin\!\left(\frac{x + y}{2}\right)\sin\!\left(\frac{x - y}{2}\right)</mrow>
-      </md>
-      </p>
-
-      <p><alert>V. Давхар өнцгийн томьёо:</alert>
-      <md>
-        <mrow>\sin 2x \amp= 2\sin x \cos x</mrow>
-        <mrow>\cos 2x \amp= \cos^2 x - \sin^2 x = 1 - 2\sin^2 x = 2\cos^2 x - 1</mrow>
-      </md>
-      </p>
-    
-  <project xml:id="ai-trig-formulas">
-    <title>AI-тай ажиллах</title>
-    <introduction>
-      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
-      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
-      үүсгүүлж бод.</p>
-    </introduction>
-    <task xml:id="ai-trig-formulas-t1"><statement><p><m>\sin 75°</m>-ийн яг утгыг нэмэх өнцгийн томьёогоор ол.</p></statement></task>
-    <task xml:id="ai-trig-formulas-t2"><statement><p><m>\cos^4 x - \sin^4 x</m> илэрхийллийг хялбарчил.</p></statement></task>
-    <task xml:id="ai-trig-formulas-t3"><statement><p><m>\sin x + \cos x = \frac{1}{2}</m> бол <m>\sin x \cos x</m>-ийг ол.</p></statement></task>
-    <task xml:id="ai-trig-formulas-t4"><statement><p><m>\dfrac{1 - \cos 2x}{\sin 2x} = \tg x</m> болохыг батал.</p></statement></task>
-    <task xml:id="ai-trig-formulas-t5"><statement><p><m>\sin^4 x + \cos^4 x</m>-ийг <m>\cos 2x</m>-ийн функцээр илэрхийл.</p></statement></task>
-    <conclusion>
-      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
-      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
-      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
-    </conclusion>
-  </project>
-  </subsection>
-  </section>
 <!-- ════════════ БҮЛЭГ 2-ЫН СЕМИНАРУУД (3 семинар) ════════════
      Семинар 2: §2.1-2.4  (тэгш/сондгой, монотон, зааглагдсан,
                            олон гишүүнт ба рационал функц)
@@ -963,13 +774,378 @@
      ════════════════════════════════════════════════════════════ -->
 
 
-<section xml:id="sec-ai-practice">
-  <title>AI-тай дасгал хийх</title>
+
+<section xml:id="sec-sequences">
+  <title>Дараалал</title>
+
+  <definition xml:id="def-sequence">
+    <title>Тоон дараалал</title>
+    <statement>
+      <p>Натурал тооны олонлогоос бодит тоонд буулгасан
+      <m>f : \mathbb{N} \to \mathbb{R}</m> функцийг <term>бодит тоон
+      дараалал</term> гэж нэрлэнэ. <m>a_n = f(n)</m> утгыг дарааллын
+      <term><m>n</m>-р гишүүн</term>, <m>a_n</m>-ийг <m>n</m>-ээр
+      илэрхийлсэн томьёог <term>ерөнхий гишүүний томьёо</term> гэж нэрлэн
+      дараалалыг <m>(a_n)</m> буюу <m>a_1, a_2, a_3, \ldots</m> гэж
+      тэмдэглэнэ.</p>
+    </statement>
+  </definition>
+
+  <p>Дараалал өгөх гурван үндсэн арга байна:
+    <ol>
+      <li><p><em>Ерөнхий гишүүний томьёогоор:</em>
+      <m>a_n = \dfrac{n}{n+1}</m> бол
+      <m>a_1 = \dfrac{1}{2},\ a_2 = \dfrac{2}{3},\ a_3 = \dfrac{3}{4},
+      \ldots</m></p></li>
+
+      <li><p><em>Рекуррент томьёогоор</em> — дараагийн гишүүнийг өмнөх
+      гишүүдээр илэрхийлнэ. Жишээ нь Фибоначчийн дараалал:
+      <m>F_1 = F_2 = 1</m>, <m>F_{n+2} = F_{n+1} + F_n</m>, өөрөөр хэлбэл
+      <m>1, 1, 2, 3, 5, 8, 13, \ldots</m></p></li>
+
+      <li><p><em>Үгэн тодорхойлолтоор:</em> <m>p_n</m> нь <m>n</m>-р анхны
+      тоо: <m>2, 3, 5, 7, 11, \ldots</m> (ерөнхий гишүүний энгийн томьёо
+      мэдэгддэггүй).</p></li>
+    </ol>
+  </p>
+
+  <definition xml:id="def-monotone-seq">
+    <title>Монотон дараалал</title>
+    <statement>
+      <p>Хэрэв бүх <m>n \in \mathbb{N}</m>-ийн хувьд
+        <ol>
+          <li><p><m>a_{n+1} \gt a_n</m> биелж байвал <m>(a_n)</m>-ийг
+          <term>эрс өсөх</term>;</p></li>
+          <li><p><m>a_{n+1} \geq a_n</m> биелж байвал <term>үл буурах</term>;</p></li>
+          <li><p><m>a_{n+1} \lt a_n</m> биелж байвал <term>эрс буурах</term>;</p></li>
+          <li><p><m>a_{n+1} \leq a_n</m> биелж байвал <term>үл өсөх</term></p></li>
+        </ol>
+      дараалал гэж нэрлэнэ. Эдгээрийн аль нэг нөхцөлийг хангадаг дарааллыг
+      <term>монотон дараалал</term> гэнэ.</p>
+    </statement>
+  </definition>
+
+  <definition xml:id="def-bounded-seq">
+    <title>Зааглагдсан дараалал</title>
+    <statement>
+      <p>Хэрэв бүх <m>n \in \mathbb{N}</m>-ийн хувьд <m>a_n \leq M</m>
+      байх <m>M</m> тоо орших бол <m>(a_n)</m>-ийг <term>дээрээс
+      зааглагдсан</term>, <m>a_n \geq m</m> байх <m>m</m> тоо орших бол
+      <term>доороос зааглагдсан</term> гэж нэрлэнэ. Дээрээс ба доороос
+      зааглагдсан, өөрөөр хэлбэл <m>|a_n| \leq M</m> байх <m>M \gt 0</m>
+      орших дарааллыг <term>зааглагдсан дараалал</term> гэнэ.</p>
+    </statement>
+  </definition>
+
+  <example xml:id="ex-seq-monotone-bounded">
+    <title>Монотон ба зааглагдсан чанарыг шинжлэх</title>
+    <statement>
+      <p><m>a_n = \dfrac{n}{n+1}</m> дарааллыг монотон, зааглагдсан
+      эсэхийг шинж.</p>
+    </statement>
+    <solution>
+      <p>Хоёр зэргэлдээ гишүүний ялгаврыг бодвол</p>
+      <me>a_{n+1} - a_n = \frac{n+1}{n+2} - \frac{n}{n+1}
+      = \frac{(n+1)^2 - n(n+2)}{(n+1)(n+2)}
+      = \frac{1}{(n+1)(n+2)} \gt 0,</me>
+      <p>тиймээс <m>(a_n)</m> эрс өсөх. Мөн
+      <m>a_n = 1 - \dfrac{1}{n+1}</m> гэж бичвэл бүх <m>n</m>-ийн хувьд</p>
+      <me>\frac{1}{2} \leq a_n \lt 1</me>
+      <p>тул зааглагдсан дараалал болно.</p>
+    </solution>
+  </example>
+
+  <example xml:id="ex-seq-various">
+    <title>Бусад жишээ</title>
+    <statement>
+      <p><m>b_n = (-1)^n</m> ба <m>c_n = 2^n</m> дарааллуудыг шинж.</p>
+    </statement>
+    <solution>
+      <p><m>(b_n) = -1, 1, -1, 1, \ldots</m> дараалал <m>|b_n| = 1</m> тул
+      зааглагдсан боловч гишүүд нь ээлжлэн өсөж, буурч байгаа тул монотон
+      биш.</p>
+
+      <p><m>(c_n) = 2, 4, 8, 16, \ldots</m> дараалал
+      <m>c_{n+1} = 2c_n \gt c_n</m> тул эрс өсөх, доороос зааглагдсан
+      (<m>c_n \geq 2</m>) боловч дээрээс зааглагдаагүй: ямар ч <m>M</m>
+      тооноос их гишүүн олдоно.</p>
+    </solution>
+  </example>
+
+  <p><alert>Тайлбар.</alert> Монотон ба зааглагдсан чанар нь Бүлэг 3-д
+  үзэх <em>дарааллын хязгаар</em>-ын онолын гол түлхүүр болно: монотон,
+  зааглагдсан дараалал бүр хязгаартай (Вейерштрассын теорем).</p>
+</section>
+
+<section xml:id="sec-arithmetic-progression">
+  <title>Арифметик прогресс</title>
+
+  <definition xml:id="def-arithmetic-progression">
+    <title>Арифметик прогресс</title>
+    <statement>
+      <p>Хэрэв дараалал бүх <m>n \in \mathbb{N}</m>-ийн хувьд</p>
+      <me>a_{n+1} = a_n + d</me>
+      <p>нөхцөлийг хангаж байвал (<m>d</m> — тогтмол тоо) түүнийг
+      <term>арифметик прогресс</term> гэж нэрлэн <m>d</m> тоог прогрессийн
+      <term>ялгавар</term> гэнэ.</p>
+    </statement>
+  </definition>
+
+  <p>Жишээ нь <m>3, 7, 11, 15, \ldots</m> бол <m>a_1 = 3</m>,
+  <m>d = 4</m> ялгавартай арифметик прогресс. <m>d \gt 0</m> бол прогресс
+  эрс өсөх, <m>d \lt 0</m> бол эрс буурах, <m>d = 0</m> бол тогтмол
+  дараалал болно.</p>
+
+  <theorem xml:id="thm-ap-general-term">
+    <title>Ерөнхий гишүүний томьёо</title>
+    <statement>
+      <p>Арифметик прогрессийн <m>n</m>-р гишүүн</p>
+      <me>a_n = a_1 + (n-1)d.</me>
+    </statement>
+    <proof>
+      <p>Индукцээр баталъя. <m>n = 1</m> үед <m>a_1 = a_1 + 0 \cdot d</m>
+      үнэн. Томьёо <m>n</m> үед үнэн, өөрөөр хэлбэл
+      <m>a_n = a_1 + (n-1)d</m> гэж үзье. Тэгвэл тодорхойлолт ёсоор</p>
+      <me>a_{n+1} = a_n + d = a_1 + (n-1)d + d = a_1 + nd,</me>
+      <p>өөрөөр хэлбэл томьёо <m>n+1</m> үед мөн үнэн. Математик
+      индукцийн зарчмаар томьёо бүх <m>n</m>-ийн хувьд биелнэ.</p>
+    </proof>
+  </theorem>
+
+  <theorem xml:id="thm-ap-characteristic">
+    <title>Онцлох чанар</title>
+    <statement>
+      <p>Дараалал арифметик прогресс байх зайлшгүй бөгөөд хүрэлцээтэй
+      нөхцөл нь хоёр дахь гишүүнээс эхлэн гишүүн бүр хөрш хоёр гишүүнийхээ
+      арифметик дундаж байх явдал юм:</p>
+      <me>a_n = \frac{a_{n-1} + a_{n+1}}{2}, \qquad n \geq 2.</me>
+    </statement>
+    <proof>
+      <p>Хэрэв <m>(a_n)</m> арифметик прогресс бол
+      <m>a_{n-1} = a_n - d</m>, <m>a_{n+1} = a_n + d</m> тул</p>
+      <me>\frac{a_{n-1} + a_{n+1}}{2} = \frac{(a_n - d) + (a_n + d)}{2}
+      = a_n.</me>
+      <p>Эсрэгээр, хэрэв <m>2a_n = a_{n-1} + a_{n+1}</m> бүх
+      <m>n \geq 2</m>-ийн хувьд биелж байвал
+      <m>a_{n+1} - a_n = a_n - a_{n-1}</m>, өөрөөр хэлбэл зэргэлдээ
+      гишүүдийн ялгавар тогтмол тул дараалал арифметик прогресс болно.</p>
+    </proof>
+  </theorem>
+
+  <theorem xml:id="thm-ap-sum">
+    <title>Эхний <m>n</m> гишүүний нийлбэр</title>
+    <statement>
+      <p>Арифметик прогрессийн эхний <m>n</m> гишүүний нийлбэр</p>
+      <me>S_n = a_1 + a_2 + \cdots + a_n
+      = \frac{(a_1 + a_n)\,n}{2} = \frac{\bigl(2a_1 + (n-1)d\bigr)n}{2}.</me>
+    </statement>
+    <proof>
+      <p>Нийлбэрийг урагш, хойш дарааллаар хоёр удаа бичье:</p>
+      <md>
+        <mrow>S_n \amp = a_1 + a_2 + \cdots + a_{n-1} + a_n,</mrow>
+        <mrow>S_n \amp = a_n + a_{n-1} + \cdots + a_2 + a_1.</mrow>
+      </md>
+      <p>Багана баганаар нь нэмбэл багана бүрийн нийлбэр
+      <m>a_k + a_{n+1-k} = a_1 + (k-1)d + a_1 + (n-k)d = a_1 + a_n</m>
+      гэсэн нэг ижил тоо болно. Ийм багана <m>n</m> ширхэг тул</p>
+      <me>2S_n = (a_1 + a_n)\,n
+      \quad\Longrightarrow\quad S_n = \frac{(a_1 + a_n)\,n}{2}.</me>
+      <p>Хоёр дахь хэлбэр нь <m>a_n = a_1 + (n-1)d</m> орлуулснаар
+      гарна.</p>
+    </proof>
+  </theorem>
+
+  <p><alert>Түүхэн тэмдэглэл.</alert> Домогт өгүүлснээр багш нь бага насны
+  Гаусст <m>1 + 2 + \cdots + 100</m> нийлбэрийг бодохыг даалгахад тэрбээр
+  <m>(1 + 100) + (2 + 99) + \cdots = 101 \cdot 50 = 5050</m> гэж хэдхэн
+  хоромд бодсон гэдэг. Дээрх баталгаа яг энэ санаан дээр тулгуурласан.</p>
+
+  <example xml:id="ex-ap-compute">
+    <title>Гишүүн ба нийлбэр бодох</title>
+    <statement>
+      <p>Арифметик прогрессийн <m>a_1 = 5</m>, <m>d = 3</m> бол
+      <m>a_{20}</m> ба <m>S_{20}</m>-ийг ол.</p>
+    </statement>
+    <solution>
+      <p>Ерөнхий гишүүний томьёогоор
+      <m>a_{20} = 5 + 19 \cdot 3 = 62</m>. Нийлбэрийн томьёогоор</p>
+      <me>S_{20} = \frac{(a_1 + a_{20}) \cdot 20}{2}
+      = \frac{(5 + 62) \cdot 20}{2} = 670.</me>
+    </solution>
+  </example>
+
+  <example xml:id="ex-ap-three-numbers">
+    <title>Прогресс үүсгэх гурван тоо</title>
+    <statement>
+      <p>Арифметик прогресс үүсгэх гурван тооны нийлбэр <m>15</m>, үржвэр
+      <m>80</m> бол эдгээр тоог ол.</p>
+    </statement>
+    <solution>
+      <p>Гурван тоог <m>x - d</m>, <m>x</m>, <m>x + d</m> гэж тэмдэглэх нь
+      ашигтай. Нийлбэрээс</p>
+      <me>(x - d) + x + (x + d) = 3x = 15
+      \quad\Longrightarrow\quad x = 5.</me>
+      <p>Үржвэрээс</p>
+      <me>(5-d) \cdot 5 \cdot (5+d) = 5(25 - d^2) = 80
+      \quad\Longrightarrow\quad 25 - d^2 = 16
+      \quad\Longrightarrow\quad d = \pm 3.</me>
+      <p>Хоёр тохиолдолд адилхан <m>2, 5, 8</m> гэсэн гурван тоо
+      (зөвхөн дараалал нь урвуу) гарна.</p>
+    </solution>
+  </example>
+</section>
+
+<section xml:id="sec-geometric-progression">
+  <title>Геометр прогресс</title>
+
+  <subsection xml:id="subsec-gp">
+    <title>Геометр прогресс</title>
+
+    <definition xml:id="def-geometric-progression">
+      <title>Геометр прогресс</title>
+      <statement>
+        <p>Хэрэв <m>b_1 \ne 0</m> ба дараалал бүх
+        <m>n \in \mathbb{N}</m>-ийн хувьд</p>
+        <me>b_{n+1} = b_n \cdot q</me>
+        <p>нөхцөлийг хангаж байвал (<m>q \ne 0</m> — тогтмол тоо) түүнийг
+        <term>геометр прогресс</term> гэж нэрлэн <m>q</m> тоог прогрессийн
+        <term>хуваарь</term> гэнэ.</p>
+      </statement>
+    </definition>
+
+    <p>Жишээ нь <m>3, 6, 12, 24, \ldots</m> бол <m>b_1 = 3</m>,
+    <m>q = 2</m> хуваарьтай геометр прогресс.</p>
+
+    <theorem xml:id="thm-gp-general-term">
+      <title>Ерөнхий гишүүн ба онцлох чанар</title>
+      <statement>
+        <p>Геометр прогрессийн хувьд:
+          <ol>
+            <li><p><m>b_n = b_1 \cdot q^{\,n-1}</m>;</p></li>
+            <li><p><m>b_n^2 = b_{n-1} \cdot b_{n+1}</m> бүх
+            <m>n \geq 2</m>-ийн хувьд, өөрөөр хэлбэл
+            <m>|b_n| = \sqrt{b_{n-1}\,b_{n+1}}</m> — гишүүн бүр хөрш хоёр
+            гишүүнийхээ геометр дундаж (модулиараа).</p></li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>1 нь арифметик прогрессийн ерөнхий гишүүний баталгаатай
+        адилаар индукцээр гарна. 2-ын хувьд
+        <m>b_{n-1} = \dfrac{b_n}{q}</m>, <m>b_{n+1} = b_n q</m> тул</p>
+        <me>b_{n-1} \cdot b_{n+1} = \frac{b_n}{q} \cdot b_n q = b_n^2.</me>
+      </proof>
+    </theorem>
+
+    <theorem xml:id="thm-gp-sum">
+      <title>Эхний <m>n</m> гишүүний нийлбэр</title>
+      <statement>
+        <p>Хэрэв <m>q \ne 1</m> бол геометр прогрессийн эхний <m>n</m>
+        гишүүний нийлбэр</p>
+        <me>S_n = b_1 + b_2 + \cdots + b_n
+        = \frac{b_1 (q^n - 1)}{q - 1}.</me>
+      </statement>
+      <proof>
+        <p>Нийлбэрийг <m>q</m>-ээр үржүүлбэл</p>
+        <md>
+          <mrow>S_n \amp = b_1 + b_1 q + b_1 q^2 + \cdots + b_1 q^{n-1},</mrow>
+          <mrow>q S_n \amp = \phantom{b_1 + {}} b_1 q + b_1 q^2 + \cdots
+          + b_1 q^{n-1} + b_1 q^n.</mrow>
+        </md>
+        <p>Хоёр тэнцэтгэлийг хооронд нь хасахад дунд гишүүд устаж</p>
+        <me>q S_n - S_n = b_1 q^n - b_1
+        \quad\Longrightarrow\quad S_n = \frac{b_1(q^n - 1)}{q - 1}.</me>
+      </proof>
+    </theorem>
+
+    <example xml:id="ex-gp-compute">
+      <title>Гишүүн ба нийлбэр бодох</title>
+      <statement>
+        <p>Геометр прогрессийн <m>b_1 = 3</m>, <m>q = 2</m> бол
+        <m>b_8</m> ба <m>S_8</m>-ийг ол.</p>
+      </statement>
+      <solution>
+        <p><m>b_8 = 3 \cdot 2^7 = 384</m>, харин</p>
+        <me>S_8 = \frac{3\,(2^8 - 1)}{2 - 1} = 3 \cdot 255 = 765.</me>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-infinite-gp">
+    <title>Төгсгөлгүй буурах геометр прогресс</title>
+
+    <p>Хэрэв <m>|q| \lt 1</m> бол <m>n</m> өсөхөд <m>q^n</m> тэг рүү
+    дөхнө (үүнийг Бүлэг 3-д нарийн батална). Тиймээс нийлбэрийн томьёонд
+    <m>q^n \to 0</m> гэж үзвэл</p>
+    <me>S = b_1 + b_1 q + b_1 q^2 + \cdots = \frac{b_1}{1 - q},
+    \qquad |q| \lt 1</me>
+    <p>гэсэн <term>төгсгөлгүй буурах геометр прогрессийн нийлбэр</term>-ийн
+    томьёо гарна. Энэ бол төгсгөлгүй олон тооны нийлбэрт анх удаа утга
+    оноож байгаа хэрэг бөгөөд цаана нь хязгаарын ойлголт нуугдаж байна.</p>
+
+    <example xml:id="ex-repeating-decimal">
+      <title>Үелсэн бутархайг энгийн бутархай болгох</title>
+      <statement>
+        <p><m>0{,}(7) = 0{,}777\ldots</m> тоог энгийн бутархайгаар
+        илэрхийл.</p>
+      </statement>
+      <solution>
+        <p>Үелсэн бутархайг төгсгөлгүй буурах геометр прогрессийн нийлбэр
+        гэж бичье:</p>
+        <me>0{,}777\ldots = \frac{7}{10} + \frac{7}{100} + \frac{7}{1000}
+        + \cdots</me>
+        <p>Энд <m>b_1 = \dfrac{7}{10}</m>, <m>q = \dfrac{1}{10}</m> тул</p>
+        <me>0{,}(7) = \frac{7/10}{1 - 1/10} = \frac{7/10}{9/10}
+        = \frac{7}{9}.</me>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-loan">
+    <title>Хэрэглээ: зээлийн төлбөрийн тооцоо</title>
+
+    <p>Геометр прогрессийн нийлбэрийн томьёо банк санхүүгийн тооцоонд
+    шууд хэрэглэгддэг. Сар бүр тэнцүү төлбөртэй зээлийн төлбөрийг
+    тооцъё.</p>
+
+    <example xml:id="ex-mortgage">
+      <title>Ипотекийн зээлийн сарын төлбөр</title>
+      <statement>
+        <p>Иргэн жилийн <m>6\,\%</m>-ийн хүүтэй (сарын
+        <m>r = 0{,}005</m>) ипотекийн хөтөлбөрөөр <m>100</m> сая төгрөгийн
+        зээлийг <m>20</m> жилийн (<m>n = 240</m> сар) хугацаатай авчээ.
+        Сар бүрийн тэнцүү төлбөр <m>x</m>-ийг ол.</p>
+      </statement>
+      <solution>
+        <p>Сар бүр үлдэгдэл өр <m>(1+r)</m> дахин үржиж, төлбөр <m>x</m>
+        хасагдана. <m>n</m> сарын дараа өр тэглэгдэх нөхцөл:</p>
+        <me>L(1+r)^n - x(1+r)^{n-1} - x(1+r)^{n-2} - \cdots - x = 0.</me>
+        <p>Төлбөрүүдийн нийлбэр нь <m>q = 1+r</m> хуваарьтай геометр
+        прогрессийн нийлбэр тул</p>
+        <me>L(1+r)^n = x \cdot \frac{(1+r)^n - 1}{r}
+        \quad\Longrightarrow\quad
+        x = \frac{L\,r\,(1+r)^n}{(1+r)^n - 1}.</me>
+        <p>Тоон утга орлуулбал <m>(1{,}005)^{240} \approx 3{,}310</m>
+        тул</p>
+        <me>x \approx \frac{100\,000\,000 \cdot 0{,}005 \cdot 3{,}310}
+        {3{,}310 - 1} \approx 716\,400 \text{ төгрөг}.</me>
+        <p>Нийт төлөх дүн <m>240 \cdot 716\,400 \approx 172</m> сая
+        төгрөг, өөрөөр хэлбэл хүүгийн нийт төлбөр зээлийн үндсэн дүнгийн
+        <m>72\,\%</m> орчим болж байна.</p>
+      </solution>
+    </example>
+  </subsection>
+</section>
+
+<section xml:id="sec-ai-practice-l2">
+  <title>AI-тай дасгал хийх (Лекц 2)</title>
   <introduction>
-    <p>Доорх хэрэгслийг ашиглан Бүлэг 2-ын дурын сэдвээр бодлого үүсгүүлж,
-    хариулаа шалгуулаарай. Бодлогыг өөрөө бодсоны дараа хариулаа бичнэ үү.</p>
+    <p>Лекц 2-т үзсэн сэдвүүдээр Claude AI-тай дасгал хий. Сэдэв сонгоод
+    бодлого үүсгүүлж, өөрөө бодсоны дараа хариулаа шалгуул.</p>
   </introduction>
-  <interactive xml:id="ai-practice-ch2" iframe="ai-practice.html" width="100%" aspect="4:3" />
+  <interactive xml:id="ai-practice-l2"
+    iframe="ai-practice.html?topics=тэгш ба сондгой функц,монотон функц,зааглагдсан функц,олон гишүүнт функц,дараалал,арифметик прогресс,геометр прогресс&amp;label=Лекц 2-ийн сэдвүүд"
+    width="100%" aspect="4:3" />
 </section>
 
 <section xml:id="sec-seminar-2">
@@ -1233,6 +1409,563 @@
 <!-- ============================================================
      Бүлэг 2: Үндсэн функцүүд — ХОЁР ДАХЬ ХАГАС (Лекц 3)
      ============================================================ -->
+<section xml:id="sec-trigonometric">
+    <title>Тригонометр функцүүд</title>
+
+    <subsection xml:id="subsec-unit-circle">
+      <title>Нэгж тойргийн тригонометр функцүүд</title>
+
+      <definition xml:id="def-unit-circle">
+        <statement>
+          <p>Төв нь координатын эх дээр орших радиус нь <m>1</m> байх тойргийг
+          <term>нэгж тойрог</term> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <p>Нэгж тойрог дээр <m>OX</m> тэнхлэгтэй <m>\theta</m> радиан өнцөг үүсгэх
+      <m>P</m> цэг авч үзье (<m>0 \lt \theta \lt \dfrac{\pi}{2}</m>). <m>OPA</m>
+      тэгш өнцөгт гурвалжны гипотенуз <m>OP = 1</m> юм. Иймд
+      <md>
+        <mrow>\cos\theta \amp= \frac{\text{Налсан катет}}{\text{Гипотенуз}} = \frac{OA}{1} = OA</mrow>
+        <mrow>\sin\theta \amp= \frac{\text{Эсрэг катет}}{\text{Гипотенуз}} = \frac{PB}{1} = PB</mrow>
+      </md>
+      болно. Эндээс <m>\theta</m> радиан өнцгийн цэгийн координат
+      <m>P = (\cos\theta, \sin\theta)</m> байна.</p>
+
+      <definition xml:id="def-trig-funcs">
+        <statement>
+          <p>Дурын <m>\theta</m> радиан өнцөгт харгалзах нэгж тойрог дээрх цэг
+          <m>P(x, y)</m> бол
+          <md>
+            <mrow>\cos\theta \amp:= x, \qquad \sin\theta := y</mrow>
+            <mrow>\tan\theta \amp:= \frac{y}{x} \quad (x \ne 0), \qquad \cot\theta := \frac{x}{y} \quad (y \ne 0)</mrow>
+          </md>
+          гэнэ.</p>
+        </statement>
+      </definition>
+
+      <example xml:id="ex-pi-4">
+        <statement>
+          <p><m>\dfrac{\pi}{4}</m> өнцөгт харгалзах нэгж тойргийн цэг
+          <m>P = \left(\dfrac{\sqrt{2}}{2}, \dfrac{\sqrt{2}}{2}\right)</m>
+          болно. Тиймээс
+          <me>\cos\!\left(\frac{\pi}{4}\right) = \frac{\sqrt{2}}{2}, \quad \sin\!\left(\frac{\pi}{4}\right) = \frac{\sqrt{2}}{2}.</me>
+          </p>
+        </statement>
+      </example>
+
+      <example xml:id="ex-special-angles">
+        <statement>
+          <p><m>\pi, \dfrac{3\pi}{2}, \dfrac{7\pi}{4}</m> радиан өнцөгтэй цэгүүдийн
+          координат ба тригонометрийн утгуудыг хүснэгтэд оруулъя:
+          <me>\begin{array}{c|cccc} \amp \cos \amp \sin \amp \tan \amp \cot \\ \hline \pi \amp -1 \amp 0 \amp 0 \amp \nexists \\[6pt] \dfrac{3\pi}{2} \amp 0 \amp -1 \amp \nexists \amp 0 \\[8pt] \dfrac{7\pi}{4} \amp \dfrac{\sqrt{2}}{2} \amp -\dfrac{\sqrt{2}}{2} \amp -1 \amp -1 \end{array}</me>
+          </p>
+        </statement>
+      </example>
+    
+  <project xml:id="ai-unit-circle">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-unit-circle-t1"><statement><p><m>\cos x = -\dfrac{5}{13}</m>, <m>x \in (\pi, \frac{3\pi}{2})</m> бол <m>\sin x</m>, <m>\tg x</m>-ийг ол.</p></statement></task>
+    <task xml:id="ai-unit-circle-t2"><statement><p><m>\tg x = \sqrt{3}</m> ба <m>x \in (0, \frac{\pi}{2})</m> бол <m>\sin x</m>, <m>\cos x</m>-ийг ол.</p></statement></task>
+    <task xml:id="ai-unit-circle-t3"><statement><p><m>\sin^2 x + \cos^2 x = 1</m> адилтгалаас <m>1 + \tg^2 x = \sec^2 x</m> гарга.</p></statement></task>
+    <task xml:id="ai-unit-circle-t4"><statement><p><m>\sin 15°</m>-ийн яг утгыг <m>\sin(45°-30°)</m> томьёогоор ол.</p></statement></task>
+    <task xml:id="ai-unit-circle-t5"><statement><p><m>\cos 3x</m>-ийг <m>\cos x</m>-ийн функцээр илэрхийл.</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+
+    <subsection xml:id="subsec-periodic">
+      <title>Үет функц</title>
+
+      <definition xml:id="def-periodic">
+        <statement>
+          <p><m>f(x)</m> функц ямар нэг <m>T \gt 0</m> тооны хувьд бүх
+          <m>x \in \mathbb{R}</m> дээр
+          <me>f(x + T) = f(x)</me>
+          нөхцлийг хангаж байвал түүнийг <term>үет функц</term> гэнэ. Дээрх
+          нөхцлийг хангах хамгийн бага эерэг <m>T</m> тоог тухайн функцийн
+          <term>үндсэн үе</term> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <example xml:id="ex-trig-periods">
+        <title>Тригонометр функцүүдийн үндсэн үе</title>
+        <statement>
+          <p>
+            <ul>
+              <li><m>\sin(x + 2\pi) = \sin x</m> ⇒ <m>\sin x</m>-ийн үндсэн үе
+              <m>2\pi</m>.</li>
+              <li><m>\cos(x + 2\pi) = \cos x</m> ⇒ <m>\cos x</m>-ийн үндсэн үе
+              <m>2\pi</m>.</li>
+              <li><m>\tan(x + \pi) = \tan x</m> ⇒ <m>\tan x</m>-ийн үндсэн үе
+              <m>\pi</m>.</li>
+              <li><m>\cot(x + \pi) = \cot x</m> ⇒ <m>\cot x</m>-ийн үндсэн үе
+              <m>\pi</m>.</li>
+            </ul>
+          </p>
+        </statement>
+      </example>
+    
+  <project xml:id="ai-periodic">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-periodic-t1"><statement><p><m>f(x) = \sin 2x + \cos 3x</m> функцийн үеийг ол.</p></statement></task>
+    <task xml:id="ai-periodic-t2"><statement><p>Үет функцийн тодорхойлолтыг бич. <m>f(x) = c</m> тогтмол функц үет үү?</p></statement></task>
+    <task xml:id="ai-periodic-t3"><statement><p><m>f(x) = \sin^2 x</m> функцийн үндсэн үеийг ол.</p></statement></task>
+    <task xml:id="ai-periodic-t4"><statement><p>Үет функцийн нийлбэр заавал үет байх уу? Жишээ ба эсрэг жишээ өг.</p></statement></task>
+    <task xml:id="ai-periodic-t5"><statement><p><m>f(x) = |\sin x|</m> функцийн үндсэн үеийг ол.</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+
+    <subsection xml:id="subsec-trig-formulas">
+      <title>Чухал тригонометрийн томьёонууд</title>
+
+      <p><alert>I. Тэгш ба сондгой чанар, үндсэн шинж чанарууд:</alert>
+      <md>
+        <mrow>\sin(-x) \amp= -\sin x \quad \text{(сондгой)}</mrow>
+        <mrow>\cos(-x) \amp= \cos x \quad \text{(тэгш)}</mrow>
+        <mrow>\sin(x + \pi) \amp= -\sin x</mrow>
+        <mrow>\cos(x + \pi) \amp= -\cos x</mrow>
+        <mrow>\sin\!\left(\frac{\pi}{2} - x\right) \amp= \cos x</mrow>
+        <mrow>\cos\!\left(\frac{\pi}{2} - x\right) \amp= \sin x</mrow>
+      </md>
+      </p>
+
+      <p><alert>II. Үндсэн адилтгал:</alert>
+      <me>\sin^2 x + \cos^2 x = 1.</me>
+      </p>
+
+      <p><alert>III. Нийлбэрийн томьёо:</alert>
+      <md>
+        <mrow>\sin(x + y) \amp= \sin x \cos y + \cos x \sin y</mrow>
+        <mrow>\sin(x - y) \amp= \sin x \cos y - \cos x \sin y</mrow>
+        <mrow>\cos(x + y) \amp= \cos x \cos y - \sin x \sin y</mrow>
+        <mrow>\cos(x - y) \amp= \cos x \cos y + \sin x \sin y</mrow>
+      </md>
+      </p>
+
+      <p><alert>IV. Нийлбэрийг үржвэрт хувиргах:</alert>
+      <md>
+        <mrow>\sin x + \sin y \amp= 2\sin\!\left(\frac{x + y}{2}\right)\cos\!\left(\frac{x - y}{2}\right)</mrow>
+        <mrow>\sin x - \sin y \amp= 2\cos\!\left(\frac{x + y}{2}\right)\sin\!\left(\frac{x - y}{2}\right)</mrow>
+        <mrow>\cos x + \cos y \amp= 2\cos\!\left(\frac{x + y}{2}\right)\cos\!\left(\frac{x - y}{2}\right)</mrow>
+        <mrow>\cos x - \cos y \amp= -2\sin\!\left(\frac{x + y}{2}\right)\sin\!\left(\frac{x - y}{2}\right)</mrow>
+      </md>
+      </p>
+
+      <p><alert>V. Давхар өнцгийн томьёо:</alert>
+      <md>
+        <mrow>\sin 2x \amp= 2\sin x \cos x</mrow>
+        <mrow>\cos 2x \amp= \cos^2 x - \sin^2 x = 1 - 2\sin^2 x = 2\cos^2 x - 1</mrow>
+      </md>
+      </p>
+    
+  <project xml:id="ai-trig-formulas">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-trig-formulas-t1"><statement><p><m>\sin 75°</m>-ийн яг утгыг нэмэх өнцгийн томьёогоор ол.</p></statement></task>
+    <task xml:id="ai-trig-formulas-t2"><statement><p><m>\cos^4 x - \sin^4 x</m> илэрхийллийг хялбарчил.</p></statement></task>
+    <task xml:id="ai-trig-formulas-t3"><statement><p><m>\sin x + \cos x = \frac{1}{2}</m> бол <m>\sin x \cos x</m>-ийг ол.</p></statement></task>
+    <task xml:id="ai-trig-formulas-t4"><statement><p><m>\dfrac{1 - \cos 2x}{\sin 2x} = \tg x</m> болохыг батал.</p></statement></task>
+    <task xml:id="ai-trig-formulas-t5"><statement><p><m>\sin^4 x + \cos^4 x</m>-ийг <m>\cos 2x</m>-ийн функцээр илэрхийл.</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+</section>
+
+<section xml:id="sec-inverse-trig">
+  <title>Тригонометрийн урвуу функцүүд</title>
+
+  <p>Бүлэг 1-д бид зөвхөн <em>биектив</em> функц урвуу функцтэй байдгийг
+  үзсэн. Тригонометр функцүүд үет учраас <m>\mathbb{R}</m> дээрээ биектив
+  биш: жишээ нь <m>\sin x = \dfrac{1}{2}</m> тэгшитгэл төгсгөлгүй олон
+  шийдтэй. Тиймээс урвуу функц тодорхойлохын тулд тригонометр функц бүрийн
+  тодорхойлогдох мужийг тухайн функц <em>хатуу монотон</em> байх завсар
+  хүртэл нь багасгана.</p>
+
+  <definition xml:id="def-arcsin-arccos">
+    <title>Арксинус, арккосинус</title>
+    <statement>
+      <p>
+        <ol>
+          <li><p>Хэрэв <m>x \in [-1,\,1]</m> ба
+          <m>y \in \left[-\dfrac{\pi}{2},\,\dfrac{\pi}{2}\right]</m> тооны хувьд
+          <m>\sin y = x</m> биелж байвал <m>y</m> тоог <m>x</m> тооны
+          <term>арксинус</term> гэж нэрлэн <m>y = \arcsin x</m> гэж
+          тэмдэглэнэ.</p></li>
+
+          <li><p>Хэрэв <m>x \in [-1,\,1]</m> ба <m>y \in [0,\,\pi]</m> тооны
+          хувьд <m>\cos y = x</m> биелж байвал <m>y</m> тоог <m>x</m> тооны
+          <term>арккосинус</term> гэж нэрлэн <m>y = \arccos x</m> гэж
+          тэмдэглэнэ.</p></li>
+        </ol>
+      </p>
+    </statement>
+  </definition>
+
+  <definition xml:id="def-arctg-arcctg">
+    <title>Арктангенс, арккотангенс</title>
+    <statement>
+      <p>
+        <ol>
+          <li><p>Хэрэв <m>x \in \mathbb{R}</m> ба
+          <m>y \in \left(-\dfrac{\pi}{2},\,\dfrac{\pi}{2}\right)</m> тооны
+          хувьд <m>\tg y = x</m> биелж байвал <m>y</m> тоог <m>x</m> тооны
+          <term>арктангенс</term> гэж нэрлэн
+          <m>y = \operatorname{arctg} x</m> гэж тэмдэглэнэ.</p></li>
+
+          <li><p>Хэрэв <m>x \in \mathbb{R}</m> ба <m>y \in (0,\,\pi)</m> тооны
+          хувьд <m>\ctg y = x</m> биелж байвал <m>y</m> тоог <m>x</m> тооны
+          <term>арккотангенс</term> гэж нэрлэн
+          <m>y = \operatorname{arcctg} x</m> гэж тэмдэглэнэ.</p></li>
+        </ol>
+      </p>
+    </statement>
+  </definition>
+
+  <p>Дөрвөн урвуу функцийн үндсэн шинжийг нэгтгэвэл:</p>
+
+  <table xml:id="tbl-inverse-trig">
+    <title>Тригонометрийн урвуу функцүүдийн шинж</title>
+    <tabular halign="center">
+      <row header="yes" bottom="minor">
+        <cell>Функц</cell>
+        <cell>Тодорхойлогдох муж</cell>
+        <cell>Утгын муж</cell>
+        <cell>Монотон чанар</cell>
+        <cell>Тэгш/сондгой</cell>
+      </row>
+      <row>
+        <cell><m>\arcsin x</m></cell>
+        <cell><m>[-1,\,1]</m></cell>
+        <cell><m>\left[-\frac{\pi}{2},\,\frac{\pi}{2}\right]</m></cell>
+        <cell>өсөх</cell>
+        <cell>сондгой</cell>
+      </row>
+      <row>
+        <cell><m>\arccos x</m></cell>
+        <cell><m>[-1,\,1]</m></cell>
+        <cell><m>[0,\,\pi]</m></cell>
+        <cell>буурах</cell>
+        <cell>аль нь ч биш</cell>
+      </row>
+      <row>
+        <cell><m>\operatorname{arctg} x</m></cell>
+        <cell><m>\mathbb{R}</m></cell>
+        <cell><m>\left(-\frac{\pi}{2},\,\frac{\pi}{2}\right)</m></cell>
+        <cell>өсөх</cell>
+        <cell>сондгой</cell>
+      </row>
+      <row>
+        <cell><m>\operatorname{arcctg} x</m></cell>
+        <cell><m>\mathbb{R}</m></cell>
+        <cell><m>(0,\,\pi)</m></cell>
+        <cell>буурах</cell>
+        <cell>аль нь ч биш</cell>
+      </row>
+    </tabular>
+  </table>
+
+  <theorem xml:id="thm-inverse-trig-identities">
+    <title>Урвуу тригонометр функцийн үндсэн адилтгалууд</title>
+    <statement>
+      <p>Дараах адилтгалууд биелнэ:
+        <ol>
+          <li><p><m>\sin(\arcsin x) = x</m>, <m>\cos(\arccos x) = x</m> бүх
+          <m>x \in [-1,1]</m>-ийн хувьд; <m>\tg(\operatorname{arctg} x) = x</m>
+          бүх <m>x \in \mathbb{R}</m>-ийн хувьд.</p></li>
+
+          <li><p><m>\arcsin(-x) = -\arcsin x</m>,
+          <m>\operatorname{arctg}(-x) = -\operatorname{arctg} x</m>,
+          <m>\arccos(-x) = \pi - \arccos x</m>.</p></li>
+
+          <li><p><m>\arcsin x + \arccos x = \dfrac{\pi}{2}</m> бүх
+          <m>x \in [-1,1]</m>-ийн хувьд;
+          <m>\operatorname{arctg} x + \operatorname{arcctg} x = \dfrac{\pi}{2}</m>
+          бүх <m>x \in \mathbb{R}</m>-ийн хувьд.</p></li>
+        </ol>
+      </p>
+    </statement>
+    <proof>
+      <p>3-ын эхний адилтгалыг баталъя. <m>\alpha = \arcsin x</m> гэвэл
+      тодорхойлолт ёсоор <m>\sin\alpha = x</m> ба
+      <m>\alpha \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]</m>. Эндээс</p>
+      <me>\cos\!\left(\frac{\pi}{2} - \alpha\right) = \sin\alpha = x
+      \qquad \text{ба} \qquad \frac{\pi}{2} - \alpha \in [0,\,\pi].</me>
+      <p>Арккосинусын тодорхойлолт ёсоор
+      <m>\arccos x = \dfrac{\pi}{2} - \alpha</m>, өөрөөр хэлбэл
+      <m>\arcsin x + \arccos x = \dfrac{\pi}{2}</m>. Бусад адилтгал мөн
+      тодорхойлолтоос шууд мөрдөнө.</p>
+    </proof>
+  </theorem>
+
+  <example xml:id="ex-inverse-trig-values">
+    <title>Урвуу тригонометр функцийн утга бодох</title>
+    <statement>
+      <p>Дараах утгуудыг ол:
+      <m>\arcsin\dfrac{1}{2}</m>, <m>\arccos\left(-\dfrac{\sqrt{3}}{2}\right)</m>,
+      <m>\operatorname{arctg}(-1)</m>.</p>
+    </statement>
+    <solution>
+      <p><m>\sin\dfrac{\pi}{6} = \dfrac{1}{2}</m> ба
+      <m>\dfrac{\pi}{6} \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]</m> тул
+      <m>\arcsin\dfrac{1}{2} = \dfrac{\pi}{6}</m>.</p>
+
+      <p><m>\cos\dfrac{5\pi}{6} = -\dfrac{\sqrt{3}}{2}</m> ба
+      <m>\dfrac{5\pi}{6} \in [0, \pi]</m> тул
+      <m>\arccos\left(-\dfrac{\sqrt{3}}{2}\right) = \dfrac{5\pi}{6}</m>.</p>
+
+      <p><m>\tg\left(-\dfrac{\pi}{4}\right) = -1</m> ба
+      <m>-\dfrac{\pi}{4} \in \left(-\frac{\pi}{2}, \frac{\pi}{2}\right)</m> тул
+      <m>\operatorname{arctg}(-1) = -\dfrac{\pi}{4}</m>.</p>
+    </solution>
+  </example>
+
+  <example xml:id="ex-simplify-inverse-trig">
+    <title>Илэрхийлэл хялбарчлах</title>
+    <statement>
+      <p><m>\cos(\arcsin x)</m> илэрхийллийг хялбарчил
+      (<m>x \in [-1,1]</m>).</p>
+    </statement>
+    <solution>
+      <p><m>\alpha = \arcsin x</m> гэвэл <m>\sin\alpha = x</m> ба
+      <m>\alpha \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]</m>. Энэ завсарт
+      <m>\cos\alpha \geq 0</m> тул</p>
+      <me>\cos(\arcsin x) = \cos\alpha
+      = \sqrt{1 - \sin^2\alpha} = \sqrt{1 - x^2}.</me>
+      <p>Үүнтэй адилаар <m>\sin(\arccos x) = \sqrt{1 - x^2}</m>,
+      <m>\tg(\arcsin x) = \dfrac{x}{\sqrt{1 - x^2}}</m> <m>(|x| \lt 1)</m>
+      болохыг харж болно.</p>
+    </solution>
+  </example>
+
+  <example xml:id="ex-arcsin-sin-warning">
+    <title>Анхаар: <m>\arcsin(\sin t) = t</m> үргэлж биш</title>
+    <statement>
+      <p><m>\arcsin\left(\sin\dfrac{5\pi}{6}\right)</m>-ийг бод.</p>
+    </statement>
+    <solution>
+      <p><m>\sin\dfrac{5\pi}{6} = \dfrac{1}{2}</m> тул</p>
+      <me>\arcsin\!\left(\sin\frac{5\pi}{6}\right)
+      = \arcsin\frac{1}{2} = \frac{\pi}{6} \ne \frac{5\pi}{6}.</me>
+      <p><alert>Тайлбар.</alert> <m>\arcsin(\sin t) = t</m> адилтгал зөвхөн
+      <m>t \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]</m> үед биелнэ.
+      Бусад үед <m>t</m>-тэй ижил синустай, энэ завсарт орших өнцгийг олох
+      хэрэгтэй.</p>
+    </solution>
+  </example>
+</section>
+
+<section xml:id="sec-exp-log">
+  <title>Илтгэгч ба логарифм функц</title>
+
+  <subsection xml:id="subsec-exp">
+    <title>Илтгэгч функц</title>
+
+    <definition xml:id="def-exponential">
+      <title>Илтгэгч функц</title>
+      <statement>
+        <p>Хэрэв <m>a \gt 0</m>, <m>a \ne 1</m> тогтмол тоо бол</p>
+        <me>f(x) = a^x, \qquad x \in \mathbb{R}</me>
+        <p>функцийг <m>a</m> суурьтай <term>илтгэгч функц</term> гэж
+        нэрлэнэ.</p>
+      </statement>
+    </definition>
+
+    <p><alert>Тайлбар.</alert> Рационал илтгэгчтэй зэргийг сургуулийн
+    хөтөлбөрөөс мэднэ: <m>a^{p/q} = \sqrt[q]{a^p}</m>. Дурын бодит
+    илтгэгчтэй <m>a^x</m> зэргийг нарийн тодорхойлохдоо рационал
+    илтгэгчүүдийн хязгаар болгон авдаг бөгөөд үүнийг Бүлэг 3-д хязгаарын
+    ойлголт дээр тулгуурлан тайлбарлана.</p>
+
+    <theorem xml:id="thm-exp-properties">
+      <title>Илтгэгч функцийн шинж чанарууд</title>
+      <statement>
+        <p><m>a \gt 0</m>, <m>a \ne 1</m> ба <m>x, y \in \mathbb{R}</m> бол:
+          <ol>
+            <li><p><m>a^x \gt 0</m>, өөрөөр хэлбэл утгын муж нь
+            <m>(0, +\infty)</m>;</p></li>
+            <li><p><m>a^x \cdot a^y = a^{x+y}</m>, <m>\quad</m>
+            <m>\dfrac{a^x}{a^y} = a^{x-y}</m>, <m>\quad</m>
+            <m>(a^x)^y = a^{xy}</m>, <m>\quad</m>
+            <m>(ab)^x = a^x b^x</m>;</p></li>
+            <li><p>хэрэв <m>a \gt 1</m> бол <m>a^x</m> эрс өсөх, харин
+            <m>0 \lt a \lt 1</m> бол эрс буурах функц;</p></li>
+            <li><p><m>a^x</m> нь <m>\mathbb{R} \to (0, +\infty)</m> биектив
+            буулгалт.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <p>Математик анализад онцгой үүрэгтэй суурь бол</p>
+    <me>e \approx 2{,}718281828\ldots</me>
+    <p>гэсэн иррационал тоо юм. <m>e</m> тооны нарийн тодорхойлолтыг
+    (<m>e = \lim\limits_{n\to\infty}\left(1 + \frac{1}{n}\right)^n</m>)
+    Бүлэг 3-д өгнө. <m>f(x) = e^x</m> функцийг <term>натурал илтгэгч
+    функц</term> гэж нэрлэнэ.</p>
+
+    <!-- GeoGebra applet оруулах бол энд:
+    <interactive xml:id="gg-exp-graphs" platform="geogebra"
+                 width="90%" aspect="4:3">
+      <slate surface="geogebra" material="MATERIAL_ID" />
+    </interactive>
+    -->
+  </subsection>
+
+  <subsection xml:id="subsec-log">
+    <title>Логарифм функц</title>
+
+    <p><m>a^x</m> биектив тул урвуу функцтэй. Энэ урвуу функцийг логарифм
+    гэж нэрлэнэ.</p>
+
+    <definition xml:id="def-logarithm">
+      <title>Логарифм</title>
+      <statement>
+        <p>Хэрэв <m>a \gt 0</m>, <m>a \ne 1</m> ба <m>x \gt 0</m> тооны хувьд
+        <m>a^y = x</m> биелж байвал <m>y</m> тоог <m>a</m> суурьтай <m>x</m>
+        тооны <term>логарифм</term> гэж нэрлэн <m>y = \log_a x</m> гэж
+        тэмдэглэнэ.</p>
+      </statement>
+    </definition>
+
+    <p>Өөрөөр хэлбэл <m>\log_a : (0, +\infty) \to \mathbb{R}</m> нь
+    <m>a^x</m>-ийн урвуу функц:</p>
+    <me>a^{\log_a x} = x \quad (x \gt 0), \qquad
+    \log_a a^x = x \quad (x \in \mathbb{R}).</me>
+    <p>Хоёр функцийн график <m>y = x</m> шулууны хувьд тэгш хэмтэй
+    байрлана. Тусгай тэмдэглэгээ: <m>\ln x = \log_e x</m>
+    (<term>натурал логарифм</term>), <m>\lg x = \log_{10} x</m>
+    (<term>аравтын логарифм</term>).</p>
+
+    <theorem xml:id="thm-log-properties">
+      <title>Логарифмын үндсэн чанарууд</title>
+      <statement>
+        <p><m>a, b \gt 0</m>, <m>a, b \ne 1</m> ба <m>x, y \gt 0</m> бол:
+          <ol>
+            <li><p><m>\log_a (xy) = \log_a x + \log_a y</m>;</p></li>
+            <li><p><m>\log_a \dfrac{x}{y} = \log_a x - \log_a y</m>;</p></li>
+            <li><p><m>\log_a x^p = p \log_a x</m> <m>(p \in \mathbb{R})</m>;</p></li>
+            <li><p><m>\log_a x = \dfrac{\log_b x}{\log_b a}</m> (суурь солих
+            томьёо);</p></li>
+            <li><p>хэрэв <m>a \gt 1</m> бол <m>\log_a x</m> эрс өсөх, харин
+            <m>0 \lt a \lt 1</m> бол эрс буурах функц.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>1-ийг баталъя. <m>u = \log_a x</m>, <m>v = \log_a y</m> гэвэл
+        <m>a^u = x</m>, <m>a^v = y</m>. Зэргийн хууль ёсоор</p>
+        <me>xy = a^u \cdot a^v = a^{u+v},</me>
+        <p>тиймээс логарифмын тодорхойлолт ёсоор
+        <m>\log_a(xy) = u + v = \log_a x + \log_a y</m>.</p>
+
+        <p>4-ийг баталъя. <m>u = \log_a x</m> гэвэл <m>a^u = x</m>. Хоёр
+        талаас <m>b</m> суурьтай логарифм авбал 3-р чанар ёсоор</p>
+        <me>\log_b x = \log_b a^u = u \log_b a,</me>
+        <p>эндээс <m>u = \dfrac{\log_b x}{\log_b a}</m>. Бусад чанар мөн
+        зэргийн хуулиас адилхан мөрдөнө.</p>
+      </proof>
+    </theorem>
+
+    <example xml:id="ex-exp-equation">
+      <title>Илтгэгч тэгшитгэл бодох</title>
+      <statement>
+        <p><m>9^x - 4 \cdot 3^x + 3 = 0</m> тэгшитгэлийг бод.</p>
+      </statement>
+      <solution>
+        <p><m>t = 3^x</m> орлуулга хийвэл <m>9^x = (3^x)^2 = t^2</m> тул</p>
+        <me>t^2 - 4t + 3 = 0 \quad\Longrightarrow\quad t = 1
+        \ \text{эсвэл}\ t = 3.</me>
+        <p><m>3^x = 1</m>-ээс <m>x = 0</m>, <m>3^x = 3</m>-аас <m>x = 1</m>.
+        Хариу: <m>x \in \{0,\ 1\}</m>.</p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-log-equation">
+      <title>Логарифм тэгшитгэл бодох</title>
+      <statement>
+        <p><m>\log_2 (x-1) + \log_2 (x+1) = 3</m> тэгшитгэлийг бод.</p>
+      </statement>
+      <solution>
+        <p>Тодорхойлогдох муж: <m>x - 1 \gt 0</m> ба <m>x + 1 \gt 0</m>,
+        өөрөөр хэлбэл <m>x \gt 1</m>. Логарифмын 1-р чанар ёсоор</p>
+        <me>\log_2\bigl((x-1)(x+1)\bigr) = 3
+        \quad\Longrightarrow\quad x^2 - 1 = 2^3 = 8,</me>
+        <p>эндээс <m>x^2 = 9</m>, өөрөөр хэлбэл <m>x = \pm 3</m>. Гэвч
+        <m>x \gt 1</m> нөхцөлийг зөвхөн <m>x = 3</m> хангана.
+        Хариу: <m>x = 3</m>.</p>
+
+        <p><alert>Анхаар.</alert> Логарифм тэгшитгэл бодохдоо
+        тодорхойлогдох мужийг заавал шалгана: <m>x = -3</m> бол анхны
+        тэгшитгэлийн логарифмууд тодорхойлогдохгүй.</p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-exp-growth">
+    <title>Хэрэглээ: илтгэгч өсөлт</title>
+
+    <p>Илтгэгч функц нь хүн амын өсөлт, банкны хүү, цацраг идэвхт задрал
+    зэрэг <q>өөрчлөлтийн хурд нь хэмжээтэйгээ пропорциональ</q> үзэгдлийг
+    загварчилдаг.</p>
+
+    <example xml:id="ex-bank-doubling">
+      <title>Хадгаламж хэзээ хоёр дахин нэмэгдэх вэ?</title>
+      <statement>
+        <p>Банкинд жилийн <m>16\,\%</m>-ийн нийлмэл хүүтэй хадгаламж
+        нээв. Хэдэн жилийн дараа мөнгөн дүн хоёр дахин нэмэгдэх вэ?</p>
+      </statement>
+      <solution>
+        <p>Эхний дүн <m>A_0</m> бол <m>n</m> жилийн дараах дүн
+        <m>A_n = A_0 (1{,}16)^n</m>. <m>A_n = 2A_0</m> нөхцөлөөс</p>
+        <me>(1{,}16)^n = 2 \quad\Longrightarrow\quad
+        n = \log_{1{,}16} 2 = \frac{\ln 2}{\ln 1{,}16}
+        \approx \frac{0{,}6931}{0{,}1484} \approx 4{,}7.</me>
+        <p>Тиймээс ойролцоогоор <m>4{,}7</m> жилийн дараа, өөрөөр хэлбэл
+        тав дахь жилийн дунд үед хоёр дахин нэмэгдэнэ.</p>
+      </solution>
+    </example>
+  </subsection>
+</section>
+
+<section xml:id="sec-ai-practice-l3">
+  <title>AI-тай дасгал хийх (Лекц 3)</title>
+  <introduction>
+    <p>Лекц 3-т үзсэн сэдвүүдээр Claude AI-тай дасгал хий. Сэдэв сонгоод
+    бодлого үүсгүүлж, өөрөө бодсоны дараа хариулаа шалгуул.</p>
+  </introduction>
+  <interactive xml:id="ai-practice-l3"
+    iframe="ai-practice.html?topics=тригонометр функц,урвуу тригонометр функц,илтгэгч ба логарифм функц&amp;label=Лекц 3-ийн сэдвүүд"
+    width="100%" aspect="4:3" />
+</section>
+
 <section xml:id="sec-seminar-3">
   <title>Семинар 3</title>
 
