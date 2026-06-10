@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-limits" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Хязгаар</title>
+
+  <introduction>
+    <p>Математик анализын суурь ойлголт болох <em>хязгаар</em>-ыг
+    энэ бүлэгт танилцуулна. APEX Calculus-ын монгол хэлээрх орчуулга.</p>
+  </introduction>
+
+  <xi:include href="./sec-limit-intro.ptx" />
+
+</chapter>

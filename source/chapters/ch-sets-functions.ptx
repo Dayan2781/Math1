@@ -1,929 +1,740 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ============================================================
+     Бүлэг 1: Олонлог, буулгалт, функц
+     Active Calculus + APEX Calculus стилд тохируулсан
+     Зохиогч: Д. Даянцолмон, МУИС
+     ============================================================ -->
+
 <chapter xml:id="ch-sets-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Олонлог, буулгалт, функц</title>
 
-  <objectives>
-    <ul>
-      <li><p>Олонлог тэдгээрийн үйлдлүүдийг мэдэж гүйцэтгэж сурах</p></li>
-      <li><p>Функц, буулгалт, композици, график</p></li>
-    </ul>
-  </objectives>
+  <introduction xml:id="intro-sets">
+    <p><alert>Лекцийн зорилго:</alert>
+      <ul>
+        <li>Олонлогийн ойлголт, түүн дээрх үйлдлүүдийг (нэгдэл, огтлолцол,
+        ялгавар, гүйцээлт, декарт үржвэр) тодорхойлох.</li>
+        <li>Олонлогийн үйлдлийн чанарууд (коммутатив, ассоциатив, дистрибутив,
+        Де Морган) болон тэдгээрийг батлах аргыг эзэмшүүлэх.</li>
+        <li>Буулгалт, функцийн ойлголтыг тодорхойлох ба тэдгээрийн ангиллыг
+        (иньектив, сурьектив, биектив) ялгах.</li>
+        <li>Буулгалтын композици, урвуу буулгалт болон тэдгээрийн чанаруудыг
+        судлах.</li>
+        <li>Олонлогийн чадал (кардинал) ба тоологдом олонлогийн тухай
+        танилцуулах.</li>
+      </ul>
+    </p>
 
-  <!-- ==================== SECTION 1: Олонлог ==================== -->
+    <p>Энэхүү бүлэг нь Математик Анализ-ын бүх цаашдын ойлголтуудын суурь
+    нэр томьёог агуулна. Хязгаар, тасралтгүй чанар, уламжлал, интеграл —
+    эдгээр нь бүгд функцийн тухай ярьдаг. Иймд функц гэж юу болохыг,
+    функцийг хэрхэн ангилах, хэрхэн дүрслэхийг сайтар ойлгох нь нэн чухал юм.</p>
+  </introduction>
+
+  <!-- ============================================================
+       SECTION 1.1: Олонлог
+       ============================================================ -->
   <section xml:id="sec-sets">
-    <title>Олонлог</title>
+    <title>Олонлог ба түүний үйлдлүүд</title>
 
-    <p>
-      Бид математикт ямар нэг ерөнхий шинжтэй юмсын цуглуулгыг <term>олонлог</term> гэж ойлгодог.
-      Олонлогийг бүрдүүлж байгаа юмыг олонлогийн <term>элемент</term> гэдэг.
-    </p>
+    <introduction>
+      <p>Математикт ямар нэг ерөнхий шинжтэй юмсын цуглуулгыг
+      <term>олонлог</term> гэж ойлгодог. Олонлогийг бүрдүүлж байгаа юмыг
+      олонлогийн <term>элемент</term> гэнэ.</p>
 
-    <p>
-      Цаашид олонлогийг том үсгээр, түүний элементийг жижиг үсгээр тэмдэглэнэ.
-      <m>a</m> элемент <m>A</m> олонлогт харьяалагдах бол <m>a\in A</m> гэж,
-      харьяалагдахгүй бол <m>a\notin A</m> гэж тэмдэглэнэ.
-    </p>
+      <p>Цаашид олонлогийг том үсгээр, түүний элементийг жижиг үсгээр
+      тэмдэглэнэ. <m>a</m> элемент <m>A</m> олонлогт харьяалагдах бол
+      <m>a \in A</m> гэж, харьяалагдахгүй бол <m>a \notin A</m> гэж тэмдэглэнэ.</p>
+    </introduction>
 
-    <example xml:id="ex-set-A">
-      <statement>
-        <p>
-          <m>A</m> олонлог <m>2, 0, 1, 6</m> гэсэн 4 элементээс тогтох бол
-          <me>A=\{2, 0, 1, 6\}</me>
-          гэж бичнэ. Мөн
-          <me>A=\{0, 1, 2, 6\}</me>
-          гэж бичиж болно.
-        </p>
-      </statement>
-    </example>
+    <subsection xml:id="subsec-set-notation">
+      <title>Олонлог тэмдэглэх</title>
 
-    <p>
-      Олонлог цөөхөн (төгсгөлөг) элементтэй бол бүх элементийг цувуулан бичиж болно.
-      Хэрэв төгсгөлгүй олон элементтэй бол цувуулан бүгдийг бичих боломжгүй.
-      Энэ тохиолдолд олонлогийн элементүүдийн ерөнхий шинжийг ашиглан
-      <me>A=\{\text{төрөл}\mid \text{ерөнхий шинж}\}</me>
-      гэсэн байдлаар бичиж болно.
-    </p>
+      <example xml:id="ex-set-listing">
+        <statement>
+          <p><m>A</m> олонлог <m>2, 0, 1, 6</m> гэсэн 4 элементээс тогтох бол
+          <me>A = \{2, 0, 1, 6\}</me>
+          гэж бичнэ. Олонлогт элементийн дараалал хамаагүй тул
+          <me>A = \{0, 1, 2, 6\}</me>
+          гэж бичсэн ч ялгаагүй болно.</p>
+        </statement>
+      </example>
 
-    <example xml:id="ex-set-B">
-      <statement>
-        <p>
-          Хэрэв <m>B</m> бүх тэгш тооны олонлог бол түүнийг
-          <me>B=\{x \mid x=2k,\ k\in\mathbb{Z}\}</me>
-          гэх мэтээр бичиж болно.
-        </p>
-      </statement>
-    </example>
+      <p>Олонлог цөөхөн (төгсгөлөг) элементтэй бол бүх элементийг цувуулан бичиж
+      болно. Хэрэв төгсгөлгүй олон элементтэй бол цувуулан бүгдийг бичих
+      боломжгүй. Энэ тохиолдолд олонлогийн элементүүдийн ерөнхий шинжийг
+      ашиглан
+      <me>A = \{\text{төрөл} \mid \text{ерөнхий шинж}\}</me>
+      хэлбэрээр бичдэг.</p>
 
-    <definition xml:id="def-subset">
-      <title>Дэд олонлог</title>
-      <statement>
-        <p>
-          Хэрэв <m>X</m> олонлогийн бүх элемент <m>Y</m> олонлогийн элемент болдог бол
-          <m>X</m>-г <m>Y</m> олонлогийн <term>дэд олонлог</term> гээд
-          <me>X\subset Y</me>
-          гэж тэмдэглэнэ.
-        </p>
-      </statement>
-    </definition>
+      <example xml:id="ex-set-even">
+        <statement>
+          <p>Хэрэв <m>B</m> бүх тэгш тооны олонлог бол түүнийг
+          <me>B = \{\text{тоо} \mid 2\text{-т бүхлээр хуваагддаг}\}</me>
+          эсвэл
+          <me>B = \{2k \mid k \text{ бүхэл тоо}\}</me>
+          эсвэл
+          <me>B = \{x \mid x = 2k, k \text{ бүхэл тоо}\}</me>
+          гэх мэтээр бичиж болно.</p>
+        </statement>
+      </example>
 
-    <p>
-      <xref ref="ex-set-A"/> ба <xref ref="ex-set-B"/>-д тодорхойлсон <m>A</m> олонлог
-      <m>B</m> олонлогийн дэд олонлог биш. Учир нь <m>1\in A</m> ба <m>1</m> тэгш тоо биш юм.
-    </p>
+      <remark xml:id="rem-russell-paradox">
+        <title>Анхааруулга. Олонлогийн нээлттэй тодорхойлолтын парадокс</title>
+        <p>Олонлогийг зөвхөн <em>ерөнхий шинж</em> <m>\varphi(x)</m> дээр
+        тулгуурлан
+        <me>A = \{x \mid \varphi(x)\}</me>
+        хэлбэрээр, <m>x</m> элемент дээр тодорхой <em>хязгааргүйгээр</em>
+        (<m>x \in A</m> маягийн зааг байхгүй) тодорхойлох нь заримдаа зөрчилд
+        хүргэдэг.</p>
 
-    <definition xml:id="def-equal-sets">
-      <title>Тэнцүү олонлог</title>
-      <statement>
-        <p>
-          Хэрэв <m>X</m> ба <m>Y</m> олонлогууд яг адилхан элементүүдээс тогтох бол
-          тэдгээрийг <term>тэнцүү олонлогууд</term> гэнэ.
-        </p>
-      </statement>
-    </definition>
+        <p><em>Үсчний парадокс:</em> Нэг тосгонд <q>өөрийнхөө сахлыг хусдаггүй
+        бүх эрчүүдийн сахлыг <em>зөвхөн</em> үсчин л хусдаг</q> байв. Тэгвэл
+        үсчин өөрийнхөө сахлыг хусах уу? — Хэрэв хуссан бол өөрийнхөө сахлыг
+        хусч буй учир тодорхойлолтоор үсчин түүнийг хусч болохгүй. Хэрэв
+        хусаагүй бол өөрийгөө хусдаггүй учир үсчин түүнийг хусах ёстой. Энэ
+        нь зөрчил.</p>
 
-    <theorem xml:id="thm-set-equality">
-      <title>Олонлог тэнцэх нөхцөл</title>
-      <statement>
-        <p>
-          <me>X=Y\;\Leftrightarrow\; X\subset Y \text{ ба } X\supset Y</me>
-        </p>
-      </statement>
-      <proof>
-        <p>
-          (<m>\Rightarrow</m>) <m>X=Y</m> бол <m>x\in X\Rightarrow x\in Y</m>,
-          тэгэхээр <m>X\subseteq Y</m> ба адилаар <m>Y\subseteq X</m>.
-        </p>
-        <p>
-          (<m>\Leftarrow</m>) Хэрэв <m>X\subseteq Y</m> ба <m>Y\subseteq X</m> бол
-          <m>x\in X\Rightarrow x\in Y</m> мөн <m>x\in Y\Rightarrow x\in X</m>,
-          иймд <m>X</m> ба <m>Y</m> ижил элементтэй тул <m>X=Y</m>.
-        </p>
-      </proof>
-    </theorem>
+        <p>Иймд олонлог тодорхойлоход болгоомжтой хандах хэрэгтэй. Энэ
+        парадоксыг шийдэхийн тулд орчин үеийн олонлогийн онол нь олонлогийг
+        илүү хатуу аксиомуудын дагуу (Zermelo-Fraenkel) тодорхойлдог.</p>
+      </remark>
+    </subsection>
 
-    <definition xml:id="def-set-operations">
+    <subsection xml:id="subsec-subset">
+      <title>Дэд олонлог ба тэнцүү олонлог</title>
+
+      <definition xml:id="def-subset">
+        <title>Дэд олонлог</title>
+        <statement>
+          <p>Хэрэв <m>X</m> олонлогийн бүх элемент <m>Y</m> олонлогийн элемент
+          болдог бол <m>X</m>-г <m>Y</m> олонлогийн <term>дэд олонлог</term>
+          гээд <m>X \subset Y</m> гэж тэмдэглэнэ.</p>
+        </statement>
+      </definition>
+
+      <p>Жишээ~<xref ref="ex-set-listing" /> ба <xref ref="ex-set-even" />-д
+      тодорхойлсон <m>A</m> олонлог <m>B</m> олонлогийн дэд олонлог биш. Учир
+      нь <m>1 \in A</m> ба <m>1</m> тэгш тоо биш. Иймд <m>1</m> гэсэн элемент
+      <m>B</m> олонлогт байхгүй.</p>
+
+      <definition xml:id="def-equal-sets">
+        <title>Тэнцүү олонлог</title>
+        <statement>
+          <p>Хэрэв <m>X</m> ба <m>Y</m> олонлогууд яг адилхан элементүүдээс
+          тогтох бол тэдгээрийг <term>тэнцүү олонлогууд</term> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <theorem xml:id="thm-set-equality">
+        <title>Олонлог тэнцэх нөхцөл</title>
+        <statement>
+          <p><m>X = Y \Leftrightarrow X \subset Y</m> ба <m>X \supset Y</m>.</p>
+        </statement>
+        <proof>
+          <p>(<m>\Rightarrow</m>) <m>X = Y</m> бол <m>x \in X \Rightarrow x \in Y</m>,
+          иймд <m>X \subseteq Y</m> ба адилаар <m>Y \subseteq X</m>.</p>
+
+          <p>(<m>\Leftarrow</m>) Хэрэв <m>X \subseteq Y</m> ба <m>Y \subseteq X</m>
+          бол <m>x \in X \Rightarrow x \in Y</m> мөн <m>x \in Y \Rightarrow x \in X</m>,
+          иймд <m>X</m> ба <m>Y</m> ижил элементтэй тул <m>X = Y</m>.</p>
+        </proof>
+      </theorem>
+    </subsection>
+
+    <subsection xml:id="subsec-set-operations">
       <title>Олонлогийн үйлдлүүд</title>
-      <statement>
-        <p>Өгөгдсөн <m>A</m> ба <m>B</m> олонлогуудаас дараах олонлогуудыг үүсгэж болно.</p>
-        <ol>
-          <li><p><m>\emptyset:=\{x\mid x\neq x\}</m> — хоосон олонлог</p></li>
-          <li><p><m>A\cup B:=\{x\mid x\in A \lor x\in B\}</m> — нэгдэл</p></li>
-          <li><p><m>A\cap B:=\{x\mid x\in A \land x\in B\}</m> — огтлолцол</p></li>
-          <li><p><m>A\setminus B:=\{x\mid x\in A \land x\notin B\}</m> — ялгавар</p></li>
-          <li><p><m>U\supset A</m> бол <m>A^c:=U\setminus A</m> — гүйцээлт</p></li>
-          <li><p><m>A\times B=\{(a,b)\mid a\in A \land b\in B\}</m> — декарт үржвэр</p></li>
-          <li><p><m>\mathcal{P}(A)=\{X\mid X\subset A\}</m> — бүх дэд олонлогийн бүл (power set)</p></li>
-        </ol>
-      </statement>
-    </definition>
 
-    <remark>
-      <p>Бид дараах олонлогуудыг цаашид байнга ашиглах болно.</p>
-      <ol>
-        <li><p><m>\mathbb{N}=\{1, 2, 3, 4, \ldots\}</m> — натурал тоон олонлог</p></li>
-        <li><p><m>\mathbb{Z}=\{0, 1, -1, 2, -2, \ldots\}</m> — бүхэл тоон олонлог</p></li>
-        <li><p><m>\mathbb{Q}=\left\{\dfrac{m}{n}\mid m\in\mathbb{Z},\ n\in\mathbb{N}\right\}</m> — рационал тоон олонлог</p></li>
-        <li><p><m>\mathbb{R}</m> — бодит тоон олонлог</p></li>
-        <li><p><m>E=\mathbb{R}\setminus\mathbb{Q}</m> — иррационал тоон олонлог</p></li>
-      </ol>
-    </remark>
+      <definition xml:id="def-set-operations">
+        <statement>
+          <p>Өгөгдсөн <m>A</m> ба <m>B</m> олонлогуудаас дараах олонлогуудыг
+          үүсгэж болно:
+            <ol>
+              <li><m>\emptyset := \{x \mid x \ne x\}</m> — <term>хоосон олонлог</term></li>
+              <li><m>A \cup B := \{x \mid x \in A \lor x \in B\}</m> — <term>нэгдэл</term></li>
+              <li><m>A \cap B := \{x \mid x \in A \land x \in B\}</m> — <term>огтлолцол</term></li>
+              <li><m>A \setminus B := \{x \mid x \in A \land x \notin B\}</m> — <term>ялгавар</term></li>
+              <li><m>U \supset A</m> бол <m>A^c := U \setminus A</m> — <term>гүйцээлт</term></li>
+              <li><m>A \times B = \{(a, b) \mid a \in A \land b \in B\}</m> — <term>декарт үржвэр</term></li>
+              <li><m>\mathcal{P}(A) = \{X \mid X \subset A\}</m> — <term>бүх дэд олонлогийн бүл</term> (power set)</li>
+            </ol>
+          </p>
+        </statement>
+      </definition>
 
-    <example xml:id="ex-set-ops">
-      <statement>
-        <p>
-          <m>U=\mathbb{Z}</m>, <m>A=\{\text{тэгш бүхэл тоо}\}</m>,
-          <m>B=\{\text{3-д хуваагддаг бүхэл тоо}\}</m> байг. Тэгвэл
+      <remark xml:id="rem-number-sets">
+        <p>Бид дараах олонлогуудыг цаашид байнга ашиглана:
+          <ol>
+            <li><m>\mathbb{N} = \{1, 2, 3, 4, 5, \ldots\}</m> — натурал тоон олонлог</li>
+            <li><m>\mathbb{Z} = \{0, 1, -1, 2, -2, 3, -3, \ldots\}</m> — бүхэл тоон олонлог</li>
+            <li><m>\mathbb{Q} = \left\{\dfrac{m}{n} \mid m \in \mathbb{Z}, n \in \mathbb{N}\right\}</m> — рационал тоон олонлог</li>
+            <li><m>\mathbb{R}</m> — бодит тоон олонлог</li>
+            <li><m>E = \mathbb{R} \setminus \mathbb{Q}</m> — иррационал тоон олонлог</li>
+          </ol>
         </p>
-        <md>
-          <mrow>A\cap B \amp =\{\text{6-д хуваагддаг бүхэл тоо}\}</mrow>
-          <mrow>A\cup B \amp =\{\text{тэгш эсвэл 3-д хуваагддаг бүхэл тоо}\}</mrow>
-          <mrow>A\setminus B \amp =\{\text{тэгш боловч 3-д хуваагддаггүй бүхэл тоо}\}</mrow>
-          <mrow>A^c \amp =\{\text{сондгой бүхэл тоо}\}</mrow>
-        </md>
-        <p>байна.</p>
-      </statement>
-    </example>
+      </remark>
 
-    <note xml:id="note-set-logic">
-      <p>
-        <me>x\in A\cup B \;\Leftrightarrow\; (x\in A)\lor(x\in B)</me>
-        <me>x\in A\cap B \;\Leftrightarrow\; (x\in A)\land(x\in B)</me>
-        гэх мэт олонлогийн тэнцэлийг батлах нь логикийн холбоосуудаар бичигдсэн
-        хэллэгийг батлахтай ижил байна.
-      </p>
-    </note>
-
-    <theorem xml:id="thm-set-laws">
-      <title>Олонлогийн үйлдлийн чанарууд</title>
-      <statement>
-        <p>
-          <m>A, B, C</m> дурын олонлогууд, <m>A\subset U</m> бол дараах чанарууд биелнэ.
-        </p>
-        <ol>
-          <li>
-            <title>Коммутатив</title>
-            <p><m>A\cup B=B\cup A</m>, <m>\quad A\cap B=B\cap A</m>.</p>
-          </li>
-          <li>
-            <title>Ассоциатив</title>
-            <p><m>(A\cup B)\cup C=A\cup(B\cup C)</m>, <m>\quad (A\cap B)\cap C=A\cap(B\cap C)</m>.</p>
-          </li>
-          <li>
-            <title>Дистрибутив</title>
-            <p><m>A\cap(B\cup C)=(A\cap B)\cup(A\cap C)</m>, <m>\quad A\cup(B\cap C)=(A\cup B)\cap(A\cup C)</m>.</p>
-          </li>
-          <li>
-            <title>Де Морганы дүрэм</title>
-            <p><m>(A\cup B)^c=A^c\cap B^c</m>, <m>\quad (A\cap B)^c=A^c\cup B^c</m>.</p>
-          </li>
-        </ol>
-      </statement>
-      <proof>
-        <p>
-          Жишээ болгон Де Морганы дүрэм <m>(A\cup B)^c=A^c\cap B^c</m> батлъя.
-          <xref ref="thm-set-equality"/> ёсоор
-          <m>(A\cup B)^c\subset A^c\cap B^c</m> ба <m>(A\cup B)^c\supset A^c\cap B^c</m>
-          гэсэн хоёр хэсгийг батална.
-        </p>
-        <p>
-          <m>(A\cup B)^c\subset A^c\cap B^c</m> батлахын тулд
-          <m>\forall x\in(A\cup B)^c</m>-д:
+      <example xml:id="ex-set-ops-integers">
+        <statement>
+          <p><m>U = \mathbb{Z}</m>, <m>A = \{\text{тэгш бүхэл тоо}\}</m>,
+          <m>B = \{3\text{-д хуваагддаг бүхэл тоо}\}</m> байг. Тэгвэл:
           <md>
-            <mrow>x\in(A\cup B)^c \amp \Rightarrow x\notin A\cup B</mrow>
-            <mrow> \amp \Rightarrow (x\notin A)\land(x\notin B)</mrow>
-            <mrow> \amp \Rightarrow (x\in A^c)\land(x\in B^c)</mrow>
-            <mrow> \amp \Rightarrow x\in A^c\cap B^c.</mrow>
+            <mrow>A \cap B \amp= \{\text{6-д хуваагддаг бүхэл тоо}\}</mrow>
+            <mrow>A \cup B \amp= \{\text{тэгш эсвэл 3-д хуваагддаг бүхэл тоо}\}</mrow>
+            <mrow>A \setminus B \amp= \{\text{тэгш боловч 3-д хуваагддаггүй бүхэл тоо}\}</mrow>
+            <mrow>A^c \amp= \{\text{сондгой бүхэл тоо}\}</mrow>
           </md>
-          Ижлээр <m>A^c\cap B^c\subset(A\cup B)^c</m> хялбар батлагдана.
-        </p>
-      </proof>
-    </theorem>
+          байна.</p>
+        </statement>
+      </example>
 
+      <example xml:id="ex-cartesian">
+        <title>Декарт үржвэрийн жишээ</title>
+        <statement>
+          <p><m>A = \{1, 2, 3\}</m>, <m>B = \{a, b\}</m> бол:
+          <me>A \times B = \{(1,a), (1,b), (2,a), (2,b), (3,a), (3,b)\}.</me>
+          <m>|A \times B| = 3 \cdot 2 = 6</m>. Ерөнхийдөө хэрэв <m>A</m>, <m>B</m>
+          төгсгөлөг олонлогууд бол <m>|A \times B| = |A| \cdot |B|</m>.</p>
+
+          <p><m>\mathbb{R} \times \mathbb{R} = \mathbb{R}^2</m> бол хавтгай —
+          бид бүгд сайн мэдэх <m>(x, y)</m> цэгүүдийн олонлог. Мөн адил
+          <m>\mathbb{R}^3</m> нь 3-хэмжээст огторгуй.</p>
+        </statement>
+      </example>
+
+      <example xml:id="ex-power-set">
+        <title>Бүх дэд олонлогийн бүлийн жишээ</title>
+        <statement>
+          <p><m>A = \{1, 2, 3\}</m> бол түүний бүх дэд олонлог:
+          <me>\mathcal{P}(A) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \{1,2,3\}\}.</me>
+          Иймд <m>|\mathcal{P}(A)| = 2^3 = 8</m>. Ерөнхийдөө хэрэв
+          <m>|A| = n</m> бол <m>|\mathcal{P}(A)| = 2^n</m>.</p>
+        </statement>
+      </example>
+
+      <note xml:id="note-set-logic">
+        <p>Олонлогийн тэнцлийг батлах нь логикийн холбоосуудаар бичигдсэн
+        хэллэгийг батлахтай ижил юм. Учир нь:
+        <md>
+          <mrow>x \in A \cup B \amp\Leftrightarrow (x \in A) \lor (x \in B)</mrow>
+          <mrow>x \in A \cap B \amp\Leftrightarrow (x \in A) \land (x \in B)</mrow>
+          <mrow>x \in A \setminus B \amp\Leftrightarrow (x \in A) \land (x \notin B)</mrow>
+          <mrow>x \in A^c \amp\Leftrightarrow x \notin A</mrow>
+        </md>
+        </p>
+      </note>
+    </subsection>
+
+    <subsection xml:id="subsec-set-laws">
+      <title>Олонлогийн үйлдлийн чанарууд</title>
+
+      <theorem xml:id="thm-set-laws">
+        <title>Олонлогийн тэнцэтгэлцлийн хууль</title>
+        <statement>
+          <p><m>A, B, C</m> дурын олонлогууд, <m>A \subset U</m> бол дараах
+          чанарууд биелнэ.
+            <ol>
+              <li><term>Коммутатив:</term> <m>A \cup B = B \cup A</m>,
+              <m>A \cap B = B \cap A</m>.</li>
+
+              <li><term>Ассоциатив:</term>
+              <m>(A \cup B) \cup C = A \cup (B \cup C)</m>,
+              <m>(A \cap B) \cap C = A \cap (B \cap C)</m>.</li>
+
+              <li><term>Дистрибутив:</term>
+              <m>A \cap (B \cup C) = (A \cap B) \cup (A \cap C)</m>,
+              <m>A \cup (B \cap C) = (A \cup B) \cap (A \cup C)</m>.</li>
+
+              <li><term>Де Морганы дүрэм:</term>
+              <m>(A \cup B)^c = A^c \cap B^c</m>,
+              <m>(A \cap B)^c = A^c \cup B^c</m>.</li>
+            </ol>
+          </p>
+        </statement>
+        <proof>
+          <p>Жишээ болгон Де Морганы дүрэм
+          <m>(A \cup B)^c = A^c \cap B^c</m>-г баталъя. Теорем~<xref ref="thm-set-equality" />
+          ёсоор <m>(A \cup B)^c \subset A^c \cap B^c</m> ба
+          <m>(A \cup B)^c \supset A^c \cap B^c</m> хоёрыг батлана.</p>
+
+          <p><m>(A \cup B)^c \subset A^c \cap B^c</m> батлахын тулд
+          <m>\forall x \in (A \cup B)^c \Rightarrow x \in A^c \cap B^c</m>
+          байхыг харуулна:
+          <md>
+            <mrow>\forall x \in (A \cup B)^c \amp\Rightarrow x \notin A \cup B</mrow>
+            <mrow>\amp\Rightarrow (x \notin A) \land (x \notin B)</mrow>
+            <mrow>\amp\Rightarrow (x \in A^c) \land (x \in B^c)</mrow>
+            <mrow>\amp\Rightarrow x \in A^c \cap B^c.</mrow>
+          </md>
+          Ижлээр <m>A^c \cap B^c \subset (A \cup B)^c</m> хялбар батлагдана.</p>
+        </proof>
+      </theorem>
+    </subsection>
   </section>
 
-  <!-- ==================== SECTION 2: Функц ==================== -->
+  <!-- ============================================================
+       SECTION 1.2: Буулгалт ба функц
+       ============================================================ -->
   <section xml:id="sec-functions">
-    <title>Функц</title>
+    <title>Буулгалт ба функц</title>
 
-    <definition xml:id="def-mapping">
-      <title>Функц (буулгалт)</title>
-      <statement>
-        <p>
-          <m>X, Y</m> олонлогууд байг. <m>\forall x\in X</m> бүрт <m>Y</m> олонлогийн
-          элемент <m>y</m>-г харгалзуулах <m>f</m> дүрмийг <m>X</m>-г <m>Y</m>-т
-          буулгасан <term>буулгалт</term> гээд
-          <me>f:X\to Y</me>
-          гэж тэмдэглэнэ. <m>f</m> дүрмээр <m>x</m>-т харгалзах элемент <m>y</m>-г
-          <m>f</m> буулгалтын <m>x</m> дээрх <term>утга</term> гээд <m>y=f(x)</m> гэж бичнэ.
-        </p>
-        <p>
-          <m>X</m>-г <term>тодорхойлогдох муж</term>, <m>Y</m>-г <term>утгийн муж</term>,
-          <me>f(X)=\{y\in Y\mid \exists x\in X,\ y=f(x)\}\subset Y</me>
-          олонлогийг <m>X</m> олонлогийн <m>f</m> буулгалтаарх <term>дүр</term> гэнэ.
-        </p>
-        <p>
-          Хэрэв <m>X</m> ба <m>Y</m> тоон олонлог бол <m>f</m>-г <term>функц</term> гэнэ.
-        </p>
-      </statement>
-    </definition>
+    <subsection xml:id="subsec-function-def">
+      <title>Буулгалтын тодорхойлолт</title>
 
-    <definition xml:id="def-graph">
-      <title>График</title>
-      <statement>
-        <p>
-          <m>f:X\to Y</m> буулгалт бол
-          <me>\Gamma(f):=\{(x,f(x))\mid x\in X\}\subset X\times Y</me>
-          олонлогийг <m>f</m>-ийн <term>график</term> гэнэ.
-        </p>
-      </statement>
-    </definition>
+      <definition xml:id="def-function">
+        <title>Функц (буулгалт)</title>
+        <statement>
+          <p><m>X</m>, <m>Y</m> олонлогууд байг. <m>\forall x \in X</m> бүрт
+          <m>Y</m> олонлогийн элемент <m>y</m>-г харгалзуулах <m>f</m> дүрмийг
+          <m>X</m>-г <m>Y</m>-т буулгасан <term>буулгалт</term> гээд
+          <me>f: X \to Y</me>
+          гэж тэмдэглэнэ. <m>f</m> дүрмээр <m>x</m>-т харгалзах элемент
+          <m>y</m>-г <m>f</m> буулгалтын <m>x</m> дээрх <term>утга</term> гээд
+          <m>y = f(x)</m> гэж бичнэ.</p>
 
-    <theorem xml:id="thm-graph-prop">
-      <statement>
-        <p><m>f:X\to Y</m> буулгалт бол</p>
-        <ol marker="(a)">
-          <li><p><m>\forall x\in X</m> хувьд <m>\exists y\in Y</m>, <m>(x,y)\in\Gamma(f)</m></p></li>
-          <li><p><m>(x,y)\in\Gamma(f)</m>, <m>(x,z)\in\Gamma(f)</m> бол <m>y=z</m></p></li>
-        </ol>
-      </statement>
-    </theorem>
+          <p><m>X</m>-г <term>тодорхойлогдох муж</term>, <m>Y</m>-г
+          <term>утгийн муж</term>,
+          <me>f(X) = \{y \in Y \mid \exists x \in X, y = f(x)\} \subset Y</me>
+          олонлогийг <m>X</m> олонлогийн <m>f</m> буулгалтаарх
+          <term>дүр</term> гэнэ.</p>
+        </statement>
+      </definition>
 
-    <p>
-      <m>f</m> буулгалтын график <m>\Gamma(f)</m> олонлог нь <m>f:X\to Y</m>
-      буулгалтыг бүрэн тодорхойлно.
-    </p>
+      <p>Хэрэв <m>X</m> ба <m>Y</m> тоон олонлог бол <m>f</m>-г
+      <term>функц</term> гэнэ.</p>
 
-    <definition xml:id="def-equal-maps">
-      <statement>
-        <p>
-          <m>f:X\to Y</m>, <m>g:X\to Y</m> буулгалтууд байг. Хэрэв
-          <m>\forall x\in X</m> хувьд <m>f(x)=g(x)</m>
-          бол эдгээр буулгалтуудыг <term>тэнцүү буулгалтууд</term> гэнэ.
-        </p>
-      </statement>
-    </definition>
+      <definition xml:id="def-graph">
+        <title>График</title>
+        <statement>
+          <p><m>f: X \to Y</m> буулгалт бол
+          <me>\Gamma(f) := \{(x, f(x)) \mid x \in X\} \subset X \times Y</me>
+          олонлогийг <m>f</m>-ийн <term>график</term> гэнэ.</p>
+        </statement>
+      </definition>
 
-    <definition xml:id="def-surjective">
-      <title>Сурьектив</title>
-      <statement>
-        <p>
-          <m>f:X\to Y</m> буулгалтын хувьд <m>\forall y\in Y</m> бүрт
-          <m>y=f(x)</m> байх <m>x\in X</m> элемент олддог бол
-          <m>f</m>-г <term>сурьектив буулгалт</term> гэнэ.
-        </p>
-      </statement>
-    </definition>
+      <theorem xml:id="thm-graph-props">
+        <statement>
+          <p><m>f: X \to Y</m> буулгалт бол:
+            <ol marker="(\alph*)">
+              <li><m>\forall x \in X</m> хувьд
+              <m>\exists y \in Y, (x, y) \in \Gamma(f)</m></li>
 
-    <definition xml:id="def-injective">
-      <title>Иньектив</title>
-      <statement>
-        <p>
-          <m>f:X\to Y</m> буулгалтын хувьд ялгаатай <m>x, z\in X</m> бүрт
-          ялгаатай утга <m>f(x), f(z)</m> харгалздаг бол
-          <m>f</m>-г <term>иньектив буулгалт</term> гэнэ.
-        </p>
-      </statement>
-    </definition>
+              <li><m>(x, y) \in \Gamma(f)</m>, <m>(x, z) \in \Gamma(f)</m> бол
+              <m>y = z</m>.</li>
+            </ol>
+          </p>
+        </statement>
+      </theorem>
 
-    <definition xml:id="def-bijective">
-      <title>Биектив</title>
-      <statement>
-        <p>
-          <m>f:X\to Y</m> буулгалт иньектив ба сурьектив бол
-          түүнийг <term>биектив</term> гэнэ.
-        </p>
-      </statement>
-    </definition>
+      <p><m>f</m> буулгалтын график <m>\Gamma(f)</m> олонлог нь
+      <m>f: X \to Y</m> буулгалтыг бүрэн тодорхойлно. Энд тодорхойлсон
+      <m>\Gamma(f)</m> нь бидний сайн мэдэх <q>функцийн график</q> юм.</p>
 
-    <example xml:id="ex-sheep-lamb">
-      <title>Хонь–хурганы жишээ</title>
-      <statement>
-        <p>
-          <m>A</m> хашаанд байгаа хургануудын олонлогийг <m>X</m>,
-          <m>B</m> хашаанд байгаа хонинуудын олонлогийг <m>Y</m> гэе.
-          Хурга бүрийн ээж <m>B</m> хашаанд байдаг гэе. Тэгвэл
-          <me>f:X\to Y,\qquad f(x)=\text{``}x\text{ хурганы ээж''}</me>
-          гэдэг дүрэм нь буулгалт болно.
-        </p>
-        <ul>
-          <li>
-            <p>
-              Хэрэв ихэр хургатай хонь байвал <m>f</m> <em>иньектив биш</em>:
-              ихэр хурга <m>x\neq z</m> бол тэдгээрийн ээж ижил тул <m>f(x)=f(z)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>f</m> <em>сурьектив</em> эсэх нь <m>Y</m>-гийн бүх хонь
-              дор хаяж нэг хургатай байгаа эсэхээс хамаарна.
-            </p>
-          </li>
-          <li>
-            <p>
-              Хэрэв ихэр хургатай хонь байхгүй ба бүх хонь хургатай бол
-              <m>f</m> буулгалт <em>биектив</em> байна.
-            </p>
-          </li>
-        </ul>
-      </statement>
-    </example>
-
-    <theorem xml:id="thm-surj-char">
-      <statement>
-        <p>
-          <m>f:X\to Y</m> буулгалт сурьектив байх
-          <m>\Longleftrightarrow</m> <m>f(X)=Y</m>.
-        </p>
-      </statement>
-    </theorem>
-
-    <theorem xml:id="thm-inj-char">
-      <statement>
-        <p>
-          <m>f:X\to Y</m> буулгалт иньектив байх
-          <m>\Longleftrightarrow</m> <m>x, z\in X</m> хувьд
-          хэрэв <m>f(x)=f(z)</m> бол <m>x=z</m> байх юм.
-        </p>
-      </statement>
-    </theorem>
-
-    <theorem xml:id="thm-bij-char">
-      <statement>
-        <p>
-          <m>f:X\to Y</m> буулгалт биектив байх <m>\Longleftrightarrow</m>
-          <me>\forall y\in Y \text{ хувьд }\ y=f(x) \text{ байх цор ганц } x\in X \text{ олдох юм.}</me>
-        </p>
-      </statement>
-    </theorem>
-
-    <p>
-      Энд олдох <m>x</m>-г <m>y</m>-н <term>эх дүр</term> гээд
-      <m>x=f^{-1}(y)</m> гэж тэмдэглэнэ.
-    </p>
-
-    <definition xml:id="def-inverse">
-      <title>Урвуу буулгалт</title>
-      <statement>
-        <p>
-          Хэрэв <m>f:X\to Y</m> буулгалт биектив бол
-          <m>\forall y\in Y</m> хувьд <m>x=f^{-1}(y)</m> дүрмээр
-          <me>f^{-1}:Y\to X</me>
-          шинэ буулгалт тодорхойлж болно.
-          Энэ <m>f^{-1}</m> буулгалтыг <m>f</m>-н <term>урвуу буулгалт</term> гэнэ.
-        </p>
-      </statement>
-    </definition>
-
-    <example xml:id="ex-cos-arccos">
-      <statement>
-        <p>
-          <m>X=[0;\pi]</m>, <m>Y=[-1;1]</m> ба <m>f, g:X\to Y</m> функцуудыг
-          <me>f(x)=\cos x, \qquad g(x)=\sin x</me>
-          гэж тодорхойлоё. Тэдгээрийн графикийг доор харуулав.
-        </p>
-
-        <figure xml:id="fig-surjection">
-          <caption><m>f(x)=\cos x</m> (улаан) ба <m>g(x)=\sin x</m> (ногоон) функцүүдийн график, <m>x\in[0;\pi]</m></caption>
-          <image source="images/surjection.png" width="65%">
-            <description>cos x улаан, sin x ногоон өнгөөр зурагдсан график. cos x бүхэл [-1,1] мужийг хамарч, sin x зөвхөн [0,1] мужийг хамарна.</description>
-          </image>
-        </figure>
-
-        <p>
-          Графикаас харахад <m>f(X)=[-1;1]=Y</m> тул
-          <xref ref="thm-surj-char"/> ёсоор <m>f(x)=\cos x</m> сурьектив.
-          Мөн <m>x_1\neq x_2\in[0;\pi]</m> үед
-          <me>\cos x_1-\cos x_2=-2\sin\!\left(\frac{x_1-x_2}{2}\right)\sin\!\left(\frac{x_1+x_2}{2}\right)\neq 0</me>
-          тул <m>f(x)=\cos x</m> иньектив, иймд биектив байна.
-        </p>
-        <p>
-          Харин <m>g(X)=[0;1]\neq Y</m> тул <m>g(x)=\sin x</m> сурьектив биш.
-          Мөн <m>x=\frac{\pi}{3}</m>, <m>x=\frac{2\pi}{3}</m> үед
-          <m>g\!\left(\frac{\pi}{3}\right)=g\!\left(\frac{2\pi}{3}\right)</m>
-          учир иньектив биш байна.
-        </p>
-        <p>
-          Иймд <m>f(x)=\cos x</m> функц <m>[0;\pi]</m> дээр биектив ба
-          түүний урвуу <m>f^{-1}=\arccos x</m> бөгөөд тодорхойлогдох муж
-          нь <m>[-1;1]</m>, утгийн муж нь <m>[0;\pi]</m> байна.
-          <m>y=\arccos x</m> функцын графикийг доор харуулав.
-        </p>
-
-        <figure xml:id="fig-arccos">
-          <caption><m>y=\arccos x</m> функцын график</caption>
-          <image source="images/arccos.png" width="65%">
-            <description>y=arccos x функцын график. Тодорхойлогдох муж [-1,1], утгийн муж [0,pi].</description>
-          </image>
-        </figure>
-
-        <p>
-          Хэрэв <m>f:X\to Y</m> биектив функц бол
-          <m>(x,y)\in\Gamma(f)\Longleftrightarrow(y,x)\in\Gamma(f^{-1})</m>
-          байх тул <m>\Gamma(f)</m> ба <m>\Gamma(f^{-1})</m> графикууд
-          <m>y=x</m> шулууны хувьд тэгш хэмтэй байна.
-          Жишээ болгон <m>f(x)=\cos x</m> ба <m>y=\arccos x</m> функцүүдийн
-          графикийг хамт харуулав.
-        </p>
-
-        <figure xml:id="fig-inverse">
-          <caption><m>y=\cos x</m> ба <m>y=\arccos x</m> функцүүдийн графикууд <m>y=x</m> шулууны хувьд тэгш хэмтэй</caption>
-          <image source="images/inverse.png" width="65%">
-            <description>cos x ба arccos x функцүүдийн графикууд. y=x шулууны хувьд тэгш хэмтэй байна.</description>
-          </image>
-        </figure>
-
-      </statement>
-    </example>
-
-    <definition xml:id="def-composition">
-      <title>Композици</title>
-      <statement>
-        <p>
-          <m>f:X\to Y</m>, <m>g:Y\to Z</m> байг.
-          <me>x\mapsto g(f(x))</me>
-          дүрмээр тодорхойлогдох
-          <me>g\circ f:X\to Z</me>
-          буулгалтыг <m>f</m> ба <m>g</m> буулгалтуудын
-          <term>үржвэр (композици)</term> гэнэ.
-        </p>
-      </statement>
-    </definition>
-
-    <example xml:id="ex-composition">
-      <statement>
-        <p>
-          <m>f(x)=2x+1</m>, <m>g(x)=x^2</m> гэж тодорхойлъё. Тэгвэл
-        </p>
-        <ul>
-          <li><p><m>(g\circ f)(x)=g(f(x))=(2x+1)^2=4x^2+4x+1</m></p></li>
-          <li><p><m>(f\circ g)(x)=f(g(x))=2x^2+1</m></p></li>
-        </ul>
-        <p>
-          Тухайлбал <m>x=1</m> үед
-          <m>(g\circ f)(1)=9</m>, <m>(f\circ g)(1)=3</m> тул
-          <m>g\circ f\neq f\circ g</m>, өөрөөр хэлбэл
-          <em>композици нь коммутатив биш</em> байна.
-        </p>
-      </statement>
-    </example>
-
-    <theorem xml:id="thm-inv-comp">
-      <statement>
-        <p>
-          <m>f:X\to Y</m> буулгалт биектив бол
-          <m>\forall x\in X</m> хувьд <m>(f^{-1}\circ f)(x)=x</m> ба
-          <m>\forall y\in Y</m> хувьд <m>(f\circ f^{-1})(y)=y</m> байна.
-        </p>
-      </statement>
-      <proof>
-        <p>
-          <m>f</m> биектив тул <xref ref="def-inverse"/>-с
-          <m>\forall y\in Y</m> хувьд <m>x=f^{-1}(y)</m> байх <m>\exists x\in X</m> ба
-          <me>f\!\left(f^{-1}(y)\right)=f(x)=y</me>
-          байна.
-        </p>
-        <p>
-          Нөгөө талаас <m>\forall x\in X</m> хувьд <m>f(x)=y\in Y</m> гэвэл
-          <m>f^{-1}(y)=x</m> учраас
-          <me>(f^{-1}\circ f)(x)=f^{-1}(f(x))=f^{-1}(y)=x.</me>
-        </p>
-      </proof>
-    </theorem>
-
-    <example xml:id="ex-exp-ln">
-      <statement>
-        <p>
-          <m>f(x)=e^x</m>, <m>g(x)=\ln x</m> гэж тодорхойлъё. Тэгвэл
-        </p>
-        <ul>
-          <li><p><m>(g\circ f)(x)=\ln(e^x)=x</m></p></li>
-          <li><p><m>(f\circ g)(x)=e^{\ln x}=x</m></p></li>
-        </ul>
-        <p>
-          <xref ref="def-inverse"/>-с харахад <m>g=f^{-1}</m> ба <m>f=g^{-1}</m>,
-          өөрөөр хэлбэл <m>\ln x</m> ба <m>e^x</m> функцууд
-          бие биенийхээ урвуу функц болно.
-        </p>
-      </statement>
-    </example>
-
+      <definition xml:id="def-equal-functions">
+        <statement>
+          <p><m>f: X \to Y</m>, <m>g: X \to Y</m> буулгалтууд байг. Хэрэв
+          <me>\forall x \in X \text{ хувьд } f(x) = g(x)</me>
+          бол эдгээр буулгалтуудыг <term>тэнцүү буулгалтууд</term> гэнэ.</p>
+        </statement>
+      </definition>
+    </subsection>
   </section>
 
-  <!-- ==================== SECTION 3: Олонлогийн чадал ==================== -->
+  <!-- ============================================================
+       SECTION 1.3: Иньектив, сурьектив, биектив
+       ============================================================ -->
+  <section xml:id="sec-injection-surjection">
+    <title>Иньектив, сурьектив, биектив буулгалт</title>
+
+    <subsection xml:id="subsec-isb-defs">
+      <title>Тодорхойлолтууд</title>
+
+      <definition xml:id="def-surjective">
+        <title>Сурьектив</title>
+        <statement>
+          <p><m>f: X \to Y</m> буулгалтын хувьд <m>\forall y \in Y</m> бүрт
+          <m>y = f(x)</m> байх <m>x \in X</m> элемент олддог бол <m>f</m>-г
+          <term>сурьектив</term> буулгалт гэнэ.</p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-injective">
+        <title>Иньектив</title>
+        <statement>
+          <p><m>f: X \to Y</m> буулгалтын хувьд ялгаатай
+          <m>x, z \in X</m> бүрт ялгаатай утга <m>f(x), f(z)</m> харгалздаг бол
+          <m>f</m>-г <term>иньектив</term> буулгалт гэнэ.</p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-bijective">
+        <title>Биектив</title>
+        <statement>
+          <p><m>f: X \to Y</m> буулгалт иньектив ба сурьектив бол түүнийг
+          <term>биектив</term> гэнэ.</p>
+        </statement>
+      </definition>
+    </subsection>
+
+    <subsection xml:id="subsec-lamb-example">
+      <title>Хонь-хурганы жишээ</title>
+
+      <example xml:id="ex-sheep-lamb">
+        <statement>
+          <p><m>A</m> хашаанд байгаа <em>хургануудын</em> олонлогийг <m>X</m>,
+          <m>B</m> хашаанд байгаа <em>хонинуудын</em> олонлогийг <m>Y</m> гэе.
+          Хурга бүрийн ээж <m>B</m> хашаанд байдаг гэе. Тэгвэл
+	<me>f: X \to Y, \qquad f(x) = \text{$x$ хурганы ээж}</me>
+          гэдэг дүрэм нь буулгалт болно. Учир нь <m>\forall x \in X</m> хувьд
+          яг <em>нэг</em> л ээж <m>f(x) \in Y</m> байх ба нэг хурганд хоёр өөр
+          ээж байхгүй тул <m>f</m> буулгалт тодорхой, цорын ганц утгатай байна.</p>
+
+          <p>
+            <ul>
+              <li>Хэрэв ихэр хургатай хонь байвал <m>f</m>
+              <em>иньектив биш</em>: ихэр хурга <m>x \ne z</m> бол тэдгээрийн
+              ээж ижил тул <m>f(x) = f(z)</m> болно. Хэрэв ихэр хургатай хонь
+              байхгүй бол <m>f</m> буулгалт иньектив байна.</li>
+
+              <li><m>f</m> <em>сурьектив</em> эсэх нь <m>Y</m>-гийн бүх хонь
+              дор хаяж нэг хургатай байгаа эсэхээс хамаарна. Хэрэв <m>B</m>
+              хашааны хонь бүр хургатай бол <m>f</m> буулгалт сурьектив байна.</li>
+
+              <li>Хэрэв ихэр хургатай хонь байхгүй ба бүх хонь хургатай бол
+              <m>f</m> буулгалт <em>биектив</em> байна.</li>
+            </ul>
+          </p>
+
+          <p>Харин
+          <me>g: Y \to X, \qquad g(y) = \text{$y$ хонины хурга}</me>
+          гэж тодорхойлвол:
+            <ul>
+              <li>Хэрэв зарим хонь хургагүй бол <m>g</m> <em>буулгалт биш</em>
+              байна. Учир нь <m>y</m> хонины хувьд <m>g(y)</m> <em>оршихгүй</em>.</li>
+
+              <li>Хэрэв ихэр хургатай <m>y</m> хонь байвал <m>g(y)</m>-ийн
+              <em>хоёр ба түүнээс олон</em> боломжит утга байна. Иймд
+              <em>цорын ганц</em> байх нөхцөл зөрчинө.</li>
+            </ul>
+          </p>
+
+          <p>Иймд <m>f</m> буулгалт биектив байвал
+          <me>g: Y \to X, \qquad g(y) = \text{<q>$y$ хонины хурга</q>}</me>
+          нь буулгалт болно.</p>
+        </statement>
+      </example>
+    </subsection>
+
+    <subsection xml:id="subsec-isb-theorems">
+      <title>Эквивалент тодорхойлолтууд</title>
+
+      <theorem xml:id="thm-surj-equiv">
+        <statement>
+          <p><m>f: X \to Y</m> буулгалт сурьектив байх
+          <m>\Longleftrightarrow</m> нь <m>f(X) = Y</m>.</p>
+        </statement>
+      </theorem>
+
+      <theorem xml:id="thm-inj-equiv">
+        <statement>
+          <p><m>f: X \to Y</m> буулгалт иньектив байх
+          <m>\Longleftrightarrow</m> нь <m>x, z \in X</m> хувьд хэрэв
+          <m>f(x) = f(z)</m> бол <m>x = z</m> байх юм.</p>
+        </statement>
+      </theorem>
+
+      <theorem xml:id="thm-bij-equiv">
+        <statement>
+          <p><m>f: X \to Y</m> буулгалт биектив байх
+          <m>\Longleftrightarrow</m> нь
+          <me>\forall y \in Y \text{ хувьд } y = f(x) \text{ байх цор ганц } x \in X \text{ олдох юм.}</me>
+          </p>
+        </statement>
+      </theorem>
+
+      <p>Энд олдох <m>x</m>-г <m>y</m>-н <term>эх дүр</term> гээд
+      <m>x = f^{-1}(y)</m> гэж тэмдэглэнэ.</p>
+    </subsection>
+
+    <subsection xml:id="subsec-cos-example">
+      <title>Жишээ: косинус ба синус</title>
+
+      <example xml:id="ex-cos-sin-bijection">
+        <statement>
+          <p><m>X = [0; \pi]</m>, <m>Y = [-1; 1]</m> ба
+          <m>f, g: X \to Y</m> функцүүдийг
+          <me>f(x) = \cos x, \qquad g(x) = \sin x</me>
+          гэж тодорхойлъё.</p>
+
+          <p>Графикаас харахад:
+            <ul>
+              <li><m>f(X) = [-1; 1] = Y</m> тул Теорем~<xref ref="thm-surj-equiv" />
+              ёсоор <m>f(x) = \cos x</m> сурьектив.</li>
+
+              <li><m>g(X) = [0; 1] \ne Y</m> тул <m>g(x) = \sin x</m> сурьектив
+              биш байна.</li>
+            </ul>
+          </p>
+
+          <p><m>x_1 \ne x_2 \in [0; \pi]</m> үед
+          <me>\cos x_1 - \cos x_2 = -2\sin\!\left(\frac{x_1 - x_2}{2}\right)\sin\!\left(\frac{x_1 + x_2}{2}\right) \ne 0</me>
+          тул <m>f(x) = \cos x</m> иньектив байна.</p>
+
+          <p><m>x = \dfrac{\pi}{3}</m>, <m>x = \dfrac{2\pi}{3}</m> байхад
+          <m>g\!\left(\dfrac{\pi}{3}\right) = g\!\left(\dfrac{2\pi}{3}\right)</m>
+          учир <m>g(x) = \sin x</m> иньектив биш.</p>
+
+          <p>Иймд <m>f(x) = \cos x</m> функц <m>[0; \pi]</m> олонлог дээр биектив
+          ба түүний урвууг <m>f^{-1} = \arccos x</m> гэнэ. Энд <m>f^{-1}</m>
+          функцийн тодорхойлогдох муж <m>f(X) = Y</m>, утгийн муж <m>X</m>
+          байна.</p>
+        </statement>
+      </example>
+    </subsection>
+  </section>
+
+  <!-- ============================================================
+       SECTION 1.4: Композици ба урвуу буулгалт
+       ============================================================ -->
+  <section xml:id="sec-composition">
+    <title>Композици ба урвуу буулгалт</title>
+
+    <subsection xml:id="subsec-inverse">
+      <title>Урвуу буулгалт</title>
+
+      <definition xml:id="def-inverse">
+        <title>Урвуу</title>
+        <statement>
+          <p>Хэрэв <m>f: X \to Y</m> буулгалт биектив бол <m>\forall y \in Y</m>
+          хувьд <m>x = f^{-1}(y)</m> дүрмээр
+          <me>f^{-1}: Y \to X</me>
+          шинэ буулгалт тодорхойлж болно. Энэ <m>f^{-1}</m> буулгалтыг
+          <m>f</m>-н <term>урвуу буулгалт</term> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <p>Хэрэв <m>f: X \to Y</m> биектив функц бол
+      <m>(x, y) \in \Gamma(f) \Longleftrightarrow (y, x) \in \Gamma(f^{-1})</m>
+      байх тул <m>\Gamma(f)</m> ба <m>\Gamma(f^{-1})</m> графикууд <m>y = x</m>
+      шулууны хувьд тэгш хэмтэй байна.</p>
+    </subsection>
+
+    <subsection xml:id="subsec-composition">
+      <title>Композици</title>
+
+      <definition xml:id="def-composition">
+        <statement>
+          <p><m>f: X \to Y</m>, <m>g: Y \to Z</m> байг.
+          <me>x \to g(f(x))</me>
+          дүрмээр тодорхойлогдох
+          <me>g \circ f: X \to Z</me>
+          буулгалтыг <m>f</m> ба <m>g</m> буулгалтуудын <term>үржвэр</term>
+          (композици) гэнэ.</p>
+        </statement>
+      </definition>
+
+      <example xml:id="ex-composition">
+        <statement>
+          <p><m>f: \mathbb{R} \to \mathbb{R}</m> ба
+          <m>g: \mathbb{R} \to [0, +\infty)</m> функцүүдийг
+          <me>f(x) = 2x + 1, \qquad g(x) = x^2</me>
+          гэж тодорхойлъё. Тэгвэл:
+            <ul>
+              <li><m>(g \circ f)(x) = g(f(x)) = g(2x+1) = (2x+1)^2 = 4x^2 + 4x + 1</m></li>
+              <li><m>(f \circ g)(x) = f(g(x)) = f(x^2) = 2x^2 + 1</m></li>
+            </ul>
+          </p>
+
+          <p>Дээрх жишээнээс харахад <m>(g \circ f)(x) \ne (f \circ g)(x)</m>
+          байна. Тухайлбал <m>x = 1</m> үед
+          <me>(g \circ f)(1) = (2 \cdot 1 + 1)^2 = 9, \qquad (f \circ g)(1) = 2 \cdot 1^2 + 1 = 3.</me>
+          Иймд ерөнхийдөө <m>g \circ f \ne f \circ g</m>, өөрөөр хэлбэл
+          <em>композици нь коммутатив биш</em> байна.</p>
+        </statement>
+      </example>
+
+      <theorem xml:id="thm-inv-comp">
+        <statement>
+          <p><m>f: X \to Y</m> буулгалт биектив бол
+          <m>\forall x \in X</m> хувьд
+          <me>(f^{-1} \circ f)(x) = x</me>
+          ба <m>\forall y \in Y</m> хувьд
+          <me>(f \circ f^{-1})(y) = y</me>
+          байна.</p>
+        </statement>
+        <proof>
+          <p><m>f</m> биектив тул Тодорхойлолт~<xref ref="def-inverse" />-с
+          <m>\forall y \in Y</m> хувьд <m>x = f^{-1}(y)</m> байх
+          <m>\exists x \in X</m> ба
+          <me>f(f^{-1}(y)) = f(x) = y</me>
+          байна.</p>
+
+          <p>Нөгөө талаас <m>\forall x \in X</m> хувьд <m>f(x) = y \in Y</m>
+          гэвэл <m>f^{-1}(y) = x</m> учраас
+          <me>(f^{-1} \circ f)(x) = f^{-1}(f(x)) = f^{-1}(y) = x.</me>
+          </p>
+        </proof>
+      </theorem>
+
+      <example xml:id="ex-exp-ln">
+        <title>Илтгэгч ба логарифм нь бие биенийхээ урвуу</title>
+        <statement>
+          <p><m>f: \mathbb{R} \to (0, +\infty)</m> ба
+          <m>g: (0, +\infty) \to \mathbb{R}</m> функцүүдийг
+          <me>f(x) = e^x, \qquad g(x) = \ln x</me>
+          гэж тодорхойлъё. Тэгвэл:
+            <ul>
+              <li><m>(g \circ f)(x) = g(e^x) = \ln(e^x) = x</m></li>
+              <li><m>(f \circ g)(x) = f(\ln x) = e^{\ln x} = x</m></li>
+            </ul>
+          Тодорхойлолт~<xref ref="def-inverse" />-с харахад <m>g = f^{-1}</m> ба
+          <m>f = g^{-1}</m>, өөрөөр хэлбэл <m>\ln x</m> ба <m>e^x</m>
+          функцүүд бие биенийхээ урвуу функц болно.</p>
+        </statement>
+      </example>
+    </subsection>
+  </section>
+
+  <!-- ============================================================
+       SECTION 1.5: Олонлогийн чадал
+       ============================================================ -->
   <section xml:id="sec-cardinality">
     <title>Олонлогийн чадал</title>
 
-    <definition xml:id="def-cardinality">
-      <title>Олонлогийн чадал (кардиналь)</title>
-      <statement>
-        <p>
-          <m>A, B</m> олонлогуудийн хувьд <m>f:A\to B</m> биектив буулгалт оршивол
-          тэдгээрийг <term>тэнцүү чадалтай олонлогууд</term> гэнэ.
-          Энэ үед <m>|A|=|B|</m> гэж бичнэ.
-        </p>
-        <p>Хэрэв</p>
-        <ol>
-          <li>
-            <p><m>A</m> олонлог <m>\{1, 2, \ldots, n\}</m> олонлогтой ижил чадалтай бол
-            түүнийг <term>төгсгөлөг олонлог</term> гээд <m>|A|=n</m></p>
-          </li>
-          <li>
-            <p><m>A</m> олонлог <m>\mathbb{N}</m> олонлогтой ижил чадалтай бол
-            түүнийг <term>тоологдом олонлог</term> гээд <m>|A|=\aleph_0</m></p>
-          </li>
-          <li>
-            <p><m>A</m> олонлог <m>\mathbb{R}</m> олонлогтой ижил чадалтай бол
-            түүнийг <term>континуум олонлог</term> гээд <m>|A|=\mathfrak{c}</m></p>
-          </li>
-        </ol>
-        <p>гэнэ.</p>
-      </statement>
-    </definition>
+    <introduction>
+      <p>Хоёр төгсгөлөг олонлогийн чадлыг харьцуулахад тэдгээрийн элементийн тоог
+      л харьцуулахад хангалттай. Гэхдээ <em>хязгааргүй</em> олонлогуудыг
+      хэрхэн харьцуулах вэ? Жишээ нь, <m>\mathbb{N}</m> ба <m>\mathbb{Z}</m>
+      аль нь <q>илүү олон</q> элементтэй вэ? Хоёулаа хязгааргүй, гэхдээ
+      сонин үр дүн нь — тэдгээр нь ижил <q>тооны элемэнттэй</q> байдаг. Энэ
+      үзэгдлийг Георг Кантор 19-р зуунд тогтоосон.</p>
+    </introduction>
 
-    <definition xml:id="def-card-compare">
-      <title>Олонлогийн чадалын харьцуулалт</title>
-      <statement>
-        <p>
-          Хэрэв <m>f:A\to B</m> байх иньектив буулгалт оршин байвал
-          <m>B</m> олонлогийг <m>A</m> олонлогоос цөөнгүй элементтэй гээд
-          <m>|A|\le|B|</m> гэж бичнэ.
-          Хэрэв <m>|A|\le|B|</m> ба <m>|A|\ne|B|</m> бол <m>|A|\lt|B|</m> гэнэ.
-        </p>
-      </statement>
-    </definition>
+    <subsection xml:id="subsec-cardinality-def">
+      <title>Чадалын тодорхойлолт</title>
 
-    <example xml:id="ex-card-finite">
-      <statement>
-        <p><m>|\emptyset|=0</m>, <m>\quad |\{a,b,c\}|=3</m>.</p>
-      </statement>
-    </example>
-
-    <example xml:id="ex-card-NZ">
-      <statement>
-        <p>
-          <m>|\mathbb{N}|=|\mathbb{Z}|</m> байна, өөрөөр хэлбэл
-          <me>|\{1, 2, 3, \ldots\}|=|\{0, 1, -1, 2, -2, \ldots\}|</me>
-          байна.
-        </p>
-        <p>
-          Үүнийг батлахын тулд <m>f:\mathbb{N}\to\mathbb{Z}</m> биектив буулгалт
-          <me>
-            f(n)=\begin{cases}
-              \dfrac{n}{2}, \amp n \text{ тэгш,}\\[6pt]
-              -\dfrac{n-1}{2}, \amp n \text{ сондгой}
-            \end{cases}
-          </me>
-          авна. Функцийн утгуудыг хүснэгтээр харуулбал
-        </p>
-        <tabular halign="center">
-          <row header="yes" bottom="minor">
-            <cell><m>n</m></cell>
-            <cell>1</cell><cell>2</cell><cell>3</cell><cell>4</cell>
-            <cell>5</cell><cell>6</cell><cell>7</cell><cell>8</cell>
-            <cell><m>\cdots</m></cell>
-          </row>
-          <row>
-            <cell><m>f(n)</m></cell>
-            <cell>0</cell><cell>1</cell><cell><m>-1</m></cell><cell>2</cell>
-            <cell><m>-2</m></cell><cell>3</cell><cell><m>-3</m></cell><cell>4</cell>
-            <cell><m>\cdots</m></cell>
-          </row>
-        </tabular>
-        <p>
-          <m>f(m)=f(n)</m> гэж үзье. Тэгш/сондгой гурван тохиолдолд шалгахад
-          бүгдэд <m>m=n</m> тул <m>f</m> иньектив. Дурын <m>k\in\mathbb{Z}</m>-д
-          <m>f(n)=k</m> байх <m>n\in\mathbb{N}</m> олдох тул <m>f</m> сурьектив.
-          Иймд <m>f</m> биектив бөгөөд <m>|\mathbb{N}|=|\mathbb{Z}|</m> байна.
-        </p>
-      </statement>
-    </example>
-
-    <example xml:id="ex-card-continuum">
-      <statement>
-        <ol>
-          <li><p><m>|(0,1)|=|\mathbb{R}|=\mathfrak{c}</m> (континуум, тоологдошгүй).</p></li>
-          <li><p>Дурын <m>A</m> олонлогийн хувьд <m>|\mathcal{P}(A)|=2^{|A|}\gt|A|</m> байна.</p></li>
-        </ol>
-      </statement>
-    </example>
-
-  </section>
-
-  <!-- ==================== SEMINAR ==================== -->
-  <section xml:id="sec-seminar-2">
-    <title>Семинар 2 — Олонлог, функц</title>
-
-    <subsection xml:id="subsec-seminar-2">
-      <title>Семинарын бодлогууд</title>
-    <exercises xml:id="exercises-seminar-2">
-
-      <exercise xml:id="prob-s2-1">
+      <definition xml:id="def-cardinality">
+        <title>Олонлогийн чадал (кардиналь)</title>
         <statement>
-          <p>Дараахыг логик хэлбэрээр бич: <m>x\in A\cup B</m>, <m>x\in A\cap B</m>, <m>x\in A\setminus B</m>.</p>
+          <p><m>A, B</m> олонлогуудын хувьд <m>f: A \to B</m> <em>биектив</em>
+          буулгалт оршивол тэдгээрийг <term>тэнцүү чадалтай</term> олонлогууд
+          гэнэ. Энэ үед <m>|A| = |B|</m> гэж бичнэ.</p>
+
+          <p>Хэрэв:
+            <ol>
+              <li><m>A</m> олонлог <m>\{1, 2, 3, \ldots, n\}</m> олонлогтой
+              ижил чадалтай бол түүнийг <term>төгсгөлөг олонлог</term> гээд
+              <m>|A| = n</m> гэнэ.</li>
+
+              <li><m>A</m> олонлог <m>\mathbb{N}</m> олонлогтой ижил чадалтай
+              бол түүнийг <term>тоологдом олонлог</term> гээд <m>|A| = \aleph_0</m>
+              гэнэ.</li>
+
+              <li><m>A</m> олонлог <m>\mathbb{R}</m> олонлогтой ижил чадалтай
+              бол түүнийг <term>континуум олонлог</term> гээд <m>|A| = \mathfrak{c}</m>
+              гэнэ.</li>
+            </ol>
+          <m>|A|</m> нь <m>A</m>-дахь элементүүдийн тоог илэрхийлнэ.</p>
         </statement>
-      </exercise>
+      </definition>
 
-      <exercise xml:id="prob-s2-2">
+      <definition xml:id="def-card-compare">
+        <title>Олонлогийн чадалын харьцуулалт</title>
         <statement>
-          <p>Батал:</p>
-          <ol marker="(a)">
-            <li><p><m>A\subseteq B\;\Leftrightarrow\;A\cap B=A</m>.</p></li>
-            <li><p><m>A\subseteq B\;\Leftrightarrow\;A\cup B=B</m>.</p></li>
-          </ol>
+          <p>Хэрэв <m>f: A \to B</m> байх <em>иньектив</em> буулгалт <m>f</m>
+          оршин байвал <m>B</m> олонлогийг <m>A</m> олонлогоос цөөнгүй
+          элементтэй гээд <m>|A| \le |B|</m> гэж бичнэ.</p>
+
+          <p>Хэрэв <m>|A| \le |B|</m> ба <m>|A| \ne |B|</m> бол
+          <m>|A| \lt |B|</m> гэнэ.</p>
         </statement>
-      </exercise>
+      </definition>
 
-      <exercise xml:id="prob-s2-3">
+      <example xml:id="ex-finite-cards">
         <statement>
-          <p>
-            <m>A=\{x\in\mathbb{R}\mid x^3+2x^2-x-2>0\}</m>,
-            <m>B=\{x\in\mathbb{R}\mid x^2+ax+b\leq 0\}</m> байг.
-            <m>A\cup B=\{x\in\mathbb{R}\mid x+2>0\}</m>,
-            <m>A\cap B=\{x\in\mathbb{R}\mid 1\lt x\leq 3\}</m>
-            байх <m>a, b</m> бүх утгыг ол.
+          <p><m>|\emptyset| = 0</m>, <m>|\{a, b, c\}| = 3</m>.</p>
+        </statement>
+      </example>
+    </subsection>
+
+    <subsection xml:id="subsec-N-Z-equal">
+      <title><m>\mathbb{N}</m> ба <m>\mathbb{Z}</m> ижил чадалтай</title>
+
+      <example xml:id="ex-N-Z-bijection">
+        <statement>
+          <p><m>|\mathbb{N}| = |\mathbb{Z}|</m> байна. Өөрөөр хэлбэл
+          <me>|\{1, 2, 3, \ldots\}| = |\{0, 1, -1, 2, -2, \ldots\}|.</me>
           </p>
         </statement>
-      </exercise>
+        <proof>
+          <p>Үүнийг батлахын тулд <m>f: \mathbb{N} \to \mathbb{Z}</m> биектив
+          буулгалт олоход хангалттай.
+          <me>f(n) = \begin{cases} \dfrac{n}{2}, \amp n \text{ тэгш,} \\[8pt] -\dfrac{n-1}{2}, \amp n \text{ сондгой.} \end{cases}</me>
+          гэе.</p>
 
-      <exercise xml:id="prob-s2-4">
+          <p>Функцийн утгуудыг хүснэгтээр харуулбал:
+          <me>\begin{array}{c|cccccccc} n \amp 1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \amp 7 \amp \cdots \\ \hline f(n) \amp 0 \amp 1 \amp -1 \amp 2 \amp -2 \amp 3 \amp -3 \amp \cdots \end{array}</me>
+          болно.</p>
+
+          <p><alert>Иньектив:</alert> <m>f(m) = f(n)</m> гэж үзье.
+            <ul>
+              <li><m>m, n</m> хоёул тэгш бол <m>\dfrac{m}{2} = \dfrac{n}{2}</m>,
+              тиймээс <m>m = n</m>.</li>
+
+              <li><m>m, n</m> хоёул сондгой бол
+              <m>-\dfrac{m-1}{2} = -\dfrac{n-1}{2}</m>, тиймээс <m>m = n</m>.</li>
+
+              <li><m>m</m> тэгш, <m>n</m> сондгой бол <m>f(m) \ge 1 \gt 0</m>
+              ба <m>f(n) \le 0</m> тул <m>f(m) = f(n)</m> байх боломжгүй.</li>
+            </ul>
+          Бүх тохиолдолд <m>f(m) = f(n) \Rightarrow m = n</m> тул <m>f</m>
+          иньектив байна.</p>
+
+          <p><alert>Сурьектив:</alert> Дурын <m>k \in \mathbb{Z}</m>-г авъя.
+            <ul>
+              <li><m>k \gt 0</m> бол <m>n = 2k</m> тэгш тооны хувьд
+              <m>f(2k) = k</m>.</li>
+              <li><m>k = 0</m> бол <m>n = 1</m> үед <m>f(1) = 0 = k</m>.</li>
+              <li><m>k \lt 0</m> бол <m>n = 1 - 2k</m> сондгой тооны хувьд
+              <m>f(1 - 2k) = -\dfrac{(1-2k) - 1}{2} = k</m>.</li>
+            </ul>
+          Бүх <m>k \in \mathbb{Z}</m>-д <m>f(n) = k</m> байх
+          <m>n \in \mathbb{N}</m> олдох тул <m>f</m> сурьектив байна.</p>
+
+          <p><m>f</m> иньектив ба сурьектив тул биектив байна. Тиймээс
+          <m>|\mathbb{N}| = |\mathbb{Z}|</m>.</p>
+        </proof>
+      </example>
+    </subsection>
+
+    <subsection xml:id="subsec-continuum">
+      <title>Континуум олонлогийн жишээ</title>
+
+      <example xml:id="ex-continuum">
         <statement>
           <p>
-            <m>U=\mathbb{Z}</m>, <m>A=\{\text{тэгш}\}</m>, <m>B=\{\text{3-т хуваагддаг}\}</m>.
-            <m>A^c</m>, <m>B^c</m>, <m>A\triangle B</m>-г тодорхойл.
-            Энд <m>A\triangle B:=(A\setminus B)\cup(B\setminus A)</m>.
+            <ol>
+              <li><m>|(0, 1)| = |\mathbb{R}| = \mathfrak{c}</m> (континуум,
+              тоологдошгүй).</li>
+
+              <li>Дурын <m>A</m> олонлогийн хувьд
+              <m>|\mathcal{P}(A)| = 2^{|A|} \gt |A|</m> байна.</li>
+            </ol>
           </p>
         </statement>
-      </exercise>
+      </example>
 
-      <exercise xml:id="prob-s2-5">
-        <statement>
-          <p><m>|A|=5</m>, <m>|B|=7</m>, <m>A\cap B=\emptyset</m>. <m>|A\cup B|</m> хэд вэ?</p>
-        </statement>
-        <solution>
-          <p><m>|A\cup B|=5+7=12</m>.</p>
-        </solution>
-      </exercise>
-
-      <exercise xml:id="prob-s2-6">
-        <statement>
-          <p><m>|A|+|B|-|A\cap B|=|A\cup B|</m> батал.</p>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="prob-s2-7">
-        <statement>
-          <p><m>A\subseteq B\subseteq C</m> бол <m>C\setminus B\subseteq C\setminus A</m> батал.</p>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="prob-s2-8">
-        <statement>
-          <p><m>A\times(B\cup C)=(A\times B)\cup(A\times C)</m>-г батал.</p>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="prob-s2-9">
-        <statement>
-          <p><m>A\times B=B\times A</m> байх нөхцөлийг ол.</p>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="prob-s2-10">
-        <statement>
-          <p><m>X=\{a,b\}</m>, <m>Y=\{1,2,3\}</m>. <m>X\to Y</m> бүх буулгалтын тоог ол.</p>
-        </statement>
-        <solution>
-          <p><m>3^2=9</m> буулгалт байна.</p>
-        </solution>
-      </exercise>
-
-      <exercise xml:id="prob-s2-11">
-        <statement>
-          <p>
-            <m>f:[-1;1]\to[0;2]</m> байх
-          </p>
-          <ol marker="(a)">
-            <li><p>иньектив ба сурьектив биш,</p></li>
-            <li><p>иньектив биш ба сурьектив,</p></li>
-            <li><p>биектив</p></li>
-          </ol>
-          <p>буулгалтын жишээ болох график зур.</p>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="prob-s2-12">
-        <statement>
-          <p><m>f:X\to Y</m> иньектив, <m>g:Y\to Z</m> иньектив бол <m>g\circ f</m> иньектив гэдгийг батал.</p>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="prob-s2-13">
-        <statement>
-          <p><m>f:X\to Y</m> сурьектив, <m>g:Y\to Z</m> сурьектив бол <m>g\circ f</m> сурьектив гэдгийг батал.</p>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="prob-s2-14">
-        <statement>
-          <p>
-            <m>f:\mathbb{R}\to\mathbb{R}</m>, <m>f(x)=x^3-3x</m>.
-            Иньектив, сурьектив, биектив эсэхийг тодорхойл. Урвуутай бол урвууг ол.
-          </p>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="prob-s2-15">
-        <statement>
-          <p>
-            <m>f:\mathbb{R}\to\mathbb{R}</m>, <m>f(x)=x^2+1</m>.
-            Иньектив, сурьектив, биектив эсэхийг тодорхойл. Дүрийг ол.
-          </p>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="prob-s2-16">
-        <statement>
-          <p><m>f:[0,\pi]\to[-1,1]</m>, <m>f(x)=\cos x</m>. Урвууг нь бич.</p>
-        </statement>
-        <solution>
-          <p><m>f^{-1}(x)=\arccos x</m>.</p>
-        </solution>
-      </exercise>
-
-      <exercise xml:id="prob-s2-17">
-        <statement>
-          <p><m>g:\left[-\tfrac{\pi}{2},\tfrac{\pi}{2}\right]\to[-1,1]</m>, <m>g(x)=\sin x</m>. Урвууг нь бич.</p>
-        </statement>
-        <solution>
-          <p><m>g^{-1}(x)=\arcsin x</m>.</p>
-        </solution>
-      </exercise>
-
-      <exercise xml:id="prob-s2-18">
-        <statement>
-          <p>
-            <m>h(x)=\dfrac{x}{1+x^2}</m>. Тэгш/сондгой эсэхийг тодорхойл.
-          </p>
-        </statement>
-        <solution>
-          <p>
-            <m>h(-x)=\dfrac{-x}{1+(-x)^2}=\dfrac{-x}{1+x^2}=-h(x)</m> тул <m>h</m> сондгой функц.
-          </p>
-        </solution>
-      </exercise>
-
-      <exercise xml:id="prob-s2-19">
-        <statement>
-          <p><m>g(x)=\dfrac{f(x)+f(-x)}{2}</m> бол <m>g(x)</m> тэгш функц байхыг батал.</p>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="prob-s2-20">
-        <statement>
-          <p>Дараах функцүүдийн график зур.</p>
-          <ol marker="(a)">
-            <li><p><m>y=2x-3</m></p></li>
-            <li><p><m>y=-x^2-2x+3</m></p></li>
-            <li><p><m>y=x^3-3x</m></p></li>
-            <li><p><m>y=\dfrac{\sin x}{x}</m></p></li>
-            <li><p><m>y=\ln x</m></p></li>
-          </ol>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="prob-s2-21">
-        <statement>
-          <p>
-            <m>f(x)=x^2+1</m>, <m>g(x)=3x-1</m>, <m>h(x)=\dfrac{x+1}{3}</m> бол
-            дараахыг ол.
-          </p>
-          <ol marker="(a)">
-            <li><p><m>f\circ g</m></p></li>
-            <li><p><m>g\circ g</m></p></li>
-            <li><p><m>g\circ f</m></p></li>
-            <li><p><m>g\circ h</m></p></li>
-            <li><p><m>(f\circ g)\circ h</m></p></li>
-            <li><p><m>f\circ(g\circ h)</m></p></li>
-          </ol>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="prob-s2-22">
-        <statement>
-          <p>Дараах функцүүдийн тодорхойлогдох муж ол.</p>
-          <ol marker="(a)">
-            <li><p><m>y=\sqrt{x^3-3x+2}</m></p></li>
-            <li><p><m>y=\arcsin(2x-1)</m></p></li>
-            <li><p><m>y=\dfrac{x^3-3x}{x^2-1}</m></p></li>
-            <li><p><m>y=\ln(3-x-2x^2)</m></p></li>
-          </ol>
-        </statement>
-      </exercise>
-
-    </exercises>
+      <remark xml:id="rem-cantor">
+        <p>Кантор 1874 онд <m>|\mathbb{N}| \lt |\mathbb{R}|</m> болохыг
+        батласан. Энэ нь хязгааргүй олонлогуудын <em>өөр өөр хэмжээ</em>
+        байдгийг анх удаа харуулсан гайхалтай үр дүн юм. Тиймээс
+        <m>\mathbb{Q}</m> рационал тоонууд тоологдом боловч,
+        <m>\mathbb{R}</m> бодит тоонууд тоологдомоос олон гэдгийг бид мэднэ.</p>
+      </remark>
     </subsection>
   </section>
 
-  <!-- ==================== ГЭРИЙН ДААЛГАВАР ==================== -->
-  <section xml:id="sec-hw-2">
-    <title>Гэрийн даалгавар</title>
-    <subsection xml:id="subsec-hw-2">
-      <title>Гэрийн даалгавар</title>
-    <exercises xml:id="exercises-hw-2">
-
-      <exercise xml:id="hw2-1">
-        <statement><p>Батал: <m>(A\cup B)\setminus C=(A\setminus C)\cup(B\setminus C)</m>.</p></statement>
-      </exercise>
-
-      <exercise xml:id="hw2-2">
-        <statement><p>Батал: <m>(A\cap B)^c=A^c\cup B^c</m>.</p></statement>
-      </exercise>
-
-      <exercise xml:id="hw2-3">
-        <statement>
-          <p>
-            <m>A\subset\mathbb{N}</m> ба дараах нөхцлүүдийг хангах бол
-            <m>2, 17, 2025, 1000000\in A</m> байх уу?
-          </p>
-          <ol marker="(a)">
-            <li><p><m>1\in A</m></p></li>
-            <li><p><m>n\in A\Leftarrow 2n+1\in A</m></p></li>
-            <li><p><m>3n+1\in A\Leftarrow n\in A</m></p></li>
-          </ol>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="hw2-4">
-        <statement><p><m>|A|=5</m>, <m>|B|=4</m>, <m>|A\cap B|=2</m>. <m>|A\cup B|</m> хэд вэ?</p></statement>
-        <solution><p><m>|A\cup B|=5+4-2=7</m>.</p></solution>
-      </exercise>
-
-      <exercise xml:id="hw2-5">
-        <statement><p><m>A\subseteq U</m>. Батал: <m>A\cup A^c=U</m>, <m>A\cap A^c=\emptyset</m>.</p></statement>
-      </exercise>
-
-      <exercise xml:id="hw2-6">
-        <statement><p><m>A\triangle B=(A\setminus B)\cup(B\setminus A)</m>. Батал: <m>A\triangle B=(A\cup B)\setminus(A\cap B)</m>.</p></statement>
-      </exercise>
-
-      <exercise xml:id="hw2-7">
-        <statement><p><m>X=\{0,1\}^3</m>. <m>|X|</m>-ийг ол; элементүүдийг жагсаа.</p></statement>
-        <solution><p><m>|X|=2^3=8</m>. Элементүүд: <m>(0,0,0),(0,0,1),(0,1,0),(0,1,1),(1,0,0),(1,0,1),(1,1,0),(1,1,1)</m>.</p></solution>
-      </exercise>
-
-      <exercise xml:id="hw2-8">
-        <statement><p><m>f:\mathbb{R}\to\mathbb{R}</m>, <m>f(x)=ax+b</m>. Иньектив/сурьектив байх <m>a, b</m>-ийн нөхцөлийг ол.</p></statement>
-      </exercise>
-
-      <exercise xml:id="hw2-9">
-        <statement><p><m>f:\mathbb{R}\to\mathbb{R}</m>, <m>f(x)=x^2</m>. Яагаад урвуу үгүй вэ? Ямар домэйнд хязгаарлавал урвуу үүсэх вэ?</p></statement>
-      </exercise>
-
-      <exercise xml:id="hw2-10">
-        <statement><p><m>f, g:\mathbb{R}\to\mathbb{R}</m> тэгш байвал <m>f\cdot g</m> тэгш болохыг батал.</p></statement>
-      </exercise>
-
-      <exercise xml:id="hw2-11">
-        <statement><p><m>f</m> сондгой, <m>g</m> сондгой бол <m>f\cdot g</m> тэгш болохыг батал.</p></statement>
-      </exercise>
-
-      <exercise xml:id="hw2-12">
-        <statement><p><m>f</m> тэгш, <m>g</m> сондгой бол <m>f\circ g</m> сондгой болох эсэхийг шалга.</p></statement>
-      </exercise>
-
-      <exercise xml:id="hw2-13">
-        <statement><p><m>h(x)=x^4-3x^2+2</m>. Тэгш/сондгой эсэхийг дүгнэ.</p></statement>
-      </exercise>
-
-      <exercise xml:id="hw2-14">
-        <statement><p><m>p(x)=x^5-2x^3+x</m>. Тэгш/сондгой эсэхийг дүгнэ.</p></statement>
-      </exercise>
-
-      <exercise xml:id="hw2-15">
-        <statement><p><m>a_1=2</m>, <m>a_{n+1}=2a_n+1</m>. Ерөнхий гишүүнийг ол.</p></statement>
-      </exercise>
-
-      <exercise xml:id="hw2-16">
-        <statement><p><m>b_1=1</m>, <m>b_{n+1}=3b_n-2</m>. <m>b_n</m>-ийг ол.</p></statement>
-      </exercise>
-
-      <exercise xml:id="hw2-17">
-        <statement><p><m>g(x)=\dfrac{f(x)-f(-x)}{2}</m> бол <m>g(x)</m> сондгой функц байхыг батал.</p></statement>
-      </exercise>
-
-      <exercise xml:id="hw2-18">
-        <statement><p><m>d_n=n^2</m>. Өсөх, үл буурах, буурах аль нь вэ?</p></statement>
-      </exercise>
-
-      <exercise xml:id="hw2-19">
-        <statement><p><m>e_n=(-1)^n</m>. Монотон эсэх? Зааглагдсан эсэх?</p></statement>
-      </exercise>
-
-      <exercise xml:id="hw2-20">
-        <statement><p><m>a_n=\dfrac{n}{n+1}</m>. Монотон эсэх? Дээд/доод хязгаар?</p></statement>
-      </exercise>
-
-    </exercises>
-    </subsection>
-  </section>
+  <!-- ============================================================
+       Семинар: 7 даалгавар × (а, б, в)
+       ============================================================ -->
 </chapter>

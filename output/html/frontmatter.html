@@ -78,7 +78,7 @@ window.MathJax = {
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="Математик Анализ I">
+<meta property="book:title" content="Математик I В">
 <meta property="book:author" content="Д. Даянцолмон">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
@@ -102,14 +102,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.0.0';
+eBookConfig.runestone_version = '8.1.1';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.ce7e0a2163cb330f.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.f4a2ffb04bb978bb.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
+<script src="_static/prefix-runtime.dcab57465a404e85.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.79fbb790b185d712.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.87414d180ebeebd6.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -117,7 +117,7 @@ eBookConfig.enable_chatcodes =  false;
 <body id="math-anal-1" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href="https://num.edu.mn"><img src="external/logo.png" alt="Logo image"></a><div class="title-container">
-<h1 class="heading"><a href="math1-book.html"><span class="title">Математик Анализ I</span> <span class="subtitle">Идэвхтэй сурах арга барилаар бичсэн ном</span></a></h1>
+<h1 class="heading"><a href="math1-book.html"><span class="title">Математик I В</span> <span class="subtitle">Идэвхтэй бие даан сурах арга барилаар бичсэн гарын авлага</span></a></h1>
 <p class="byline">Д. Даянцолмон</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
@@ -146,7 +146,7 @@ var ggbApp = new GGBApplet({"appName": "graphing",
     "autoHeight": true,
     "disableAutoScale": false},
 true);
-</script><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><a class="up-button button" href="math1-book.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-logic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</script><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><a class="up-button button" href="math1-book.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-sets-functions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -168,171 +168,124 @@ true);
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-logic.html" class="internal"><span class="codenumber">1</span> <span class="title">Хэллэг ба Логик</span></a></div>
+<div class="toc-title-box"><a href="ch-sets-functions.html" class="internal"><span class="codenumber">1</span> <span class="title">Олонлог, буулгалт, функц</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-propositions.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Хэллэг ба үнэний утга</span></a></div>
+<div class="toc-title-box"><a href="sec-sets.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Олонлог ба түүний үйлдлүүд</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-propositions.html#subsec-prop-def" class="internal"><span class="title">Хэллэг гэж юу вэ?</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-propositions.html#subsec-quantifiers" class="internal"><span class="title">Кванторууд: хувьсагчийг хэллэг болгох</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-propositions.html#subsec-summary-1-1" class="internal"><span class="title">Нэгтгэл</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-propositions.html#subsec-hw-1-1" class="internal"><span class="title">Гэрийн даалгавар</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-propositions.html#exer-1-1" class="internal"><span class="title">Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-propositions.html#exer-1-1-extra" class="internal"><span class="title">Нэмэлт дасгал. Хэллэг таних</span></a></div></li>
-</ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sets.html#subsec-set-notation" class="internal"><span class="title">Олонлог тэмдэглэх</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sets.html#subsec-subset" class="internal"><span class="title">Дэд олонлог ба тэнцүү олонлог</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sets.html#subsec-set-operations" class="internal"><span class="title">Олонлогийн үйлдлүүд</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sets.html#subsec-set-laws" class="internal"><span class="title">Олонлогийн үйлдлийн чанарууд</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-connectives.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Логик холбоосууд</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-connectives.html#subsec-basic-connectives" class="internal"><span class="title">Үндсэн логик холбоосууд</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-connectives.html#subsec-vacuous" class="internal"><span class="title">"Хэрэв ... бол ..." хэллэгийн нарийн талууд</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-connectives.html#subsec-tautology" class="internal"><span class="title">Тавтологи ба зөрчил</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-connectives.html#subsec-summary-1-2" class="internal"><span class="title">Нэгтгэл</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-connectives.html#subsec-hw-1-2" class="internal"><span class="title">Гэрийн даалгавар</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-connectives.html#exer-1-2" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-functions.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Буулгалт ба функц</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functions.html#subsec-function-def" class="internal"><span class="title">Буулгалтын тодорхойлолт</span></a></div></li></ul>
 </li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-injection-surjection.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Иньектив, сурьектив, биектив буулгалт</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injection-surjection.html#subsec-isb-defs" class="internal"><span class="title">Тодорхойлолтууд</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injection-surjection.html#subsec-lamb-example" class="internal"><span class="title">Хонь-хурганы жишээ</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injection-surjection.html#subsec-isb-theorems" class="internal"><span class="title">Эквивалент тодорхойлолтууд</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injection-surjection.html#subsec-cos-example" class="internal"><span class="title">Жишээ: косинус ба синус</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-equivalence.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Эквивалент, контрапозиц ба нөхцлийн ангилал</span></a></div>
+<div class="toc-title-box"><a href="sec-composition.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Композици ба урвуу буулгалт</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-equivalence.html#subsec-equiv" class="internal"><span class="title">Эквивалент хэллэгүүд</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-equivalence.html#subsec-contrapositive" class="internal"><span class="title">Контрапозиц, урвуу, эсрэг хэллэг</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-equivalence.html#subsec-nec-suff" class="internal"><span class="title">Хүрэлцээтэй ба зайлшгүй нөхцөл</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-equivalence.html#subsec-summary-1-3" class="internal"><span class="title">Нэгтгэл</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-equivalence.html#subsec-hw-1-3" class="internal"><span class="title">Гэрийн даалгавар</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-equivalence.html#exer-1-3" class="internal"><span class="title">Exercises</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-composition.html#subsec-inverse" class="internal"><span class="title">Урвуу буулгалт</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-composition.html#subsec-composition" class="internal"><span class="title">Композици</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-proof-methods.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Баталгааны аргууд</span></a></div>
+<div class="toc-title-box"><a href="sec-cardinality.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Олонлогийн чадал</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-what-is-proof" class="internal"><span class="title">Баталгаа гэж юу вэ?</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-direct-proof" class="internal"><span class="title">Шууд батлах арга</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-contrapositive-proof" class="internal"><span class="title">Контрапозицоор батлах арга</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-contradiction" class="internal"><span class="title">Эсрэгээс нь батлах арга</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-counterex" class="internal"><span class="title">Эсрэг жишээгээр худал болохыг харуулах</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-methods.html#subsec-summary-1-4" class="internal"><span class="title">Нэгтгэл</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-proof-methods.html#subsec-hw-1-4" class="internal"><span class="title">Гэрийн даалгавар</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-proof-methods.html#exer-1-4" class="internal"><span class="title">Exercises</span></a></div></li></ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-induction.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Математик индукц</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-induction.html#subsec-induction-principle" class="internal"><span class="title">Индукцийн зарчим</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-induction.html#subsec-induction-other" class="internal"><span class="title">Индукцийг хэрэглэх бусад жишээ</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-induction.html#subsec-summary-1-5" class="internal"><span class="title">Нэгтгэл</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-induction.html#subsec-hw-1-5" class="internal"><span class="title">Гэрийн даалгавар</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-induction.html#exer-1-5" class="internal"><span class="title">Exercises</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cardinality.html#subsec-cardinality-def" class="internal"><span class="title">Чадалын тодорхойлолт</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cardinality.html#subsec-N-Z-equal" class="internal"><span class="title"><span class="process-math">\(\mathbb{N}\)</span> ба <span class="process-math">\(\mathbb{Z}\)</span> ижил чадалтай</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cardinality.html#subsec-continuum" class="internal"><span class="title">Континуум олонлогийн жишээ</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-sets-functions.html" class="internal"><span class="codenumber">2</span> <span class="title">Олонлог, буулгалт, функц</span></a></div>
+<div class="toc-title-box"><a href="ch-basic-functions.html" class="internal"><span class="codenumber">2</span> <span class="title">Үндсэн функцүүд</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sets.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Олонлог</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-functions.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Функц</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-cardinality.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Олонлогийн чадал</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-seminar-2.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Семинар 2 — Олонлог, функц</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-seminar-2.html#subsec-seminar-2" class="internal"><span class="title">Семинарын бодлогууд</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-seminar-2.html#exercises-seminar-2" class="internal"><span class="title">Exercises</span></a></div></li></ul>
-</li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-hw-2.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Гэрийн даалгавар</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-hw-2.html#subsec-hw-2" class="internal"><span class="title">Гэрийн даалгавар</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-hw-2.html#exercises-hw-2" class="internal"><span class="title">Exercises</span></a></div></li></ul>
-</li></ul>
-</li>
+<div class="toc-title-box"><a href="sec-even-odd.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Функцийн тэгш ба сондгой чанар</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-even-odd.html#subsec-even-odd-def" class="internal"><span class="title">Тодорхойлолт</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-even-odd.html#subsec-even-odd-graph" class="internal"><span class="title">Графикийн тайлбар</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-even-odd.html#subsec-even-odd-examples" class="internal"><span class="title">Жишээнүүд</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-even-odd.html#subsec-even-odd-properties" class="internal"><span class="title">Тэгш/сондгой функцүүдийн үйлдлүүдийн чанар</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-limits-infty.html" class="internal"><span class="codenumber">1</span> <span class="title">Хязгааргүйг агуулсан хязгаарууд</span></a></div>
+<div class="toc-title-box"><a href="sec-monotonic.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Өсөх, буурах ба монотон чанар</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="subsec-limit-infinite.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Хязгааргүй хязгаарууд</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="subsec-vertical-asymptotes.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Босоо асимптот</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="subsec-indeterminate-forms.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Тодорхойгүй хэлбэрүүд</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="subsec-limits-at-infinity.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Хязгааргүй дахь хязгаар ба хэвтээ асимптот</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="exercises-limits-infty.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Дасгал бодлогууд</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-hyazgaar.html" class="internal"><span class="codenumber">3</span> <span class="title">Хязгаар ба Тасралтгүй Функц</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-hyazgaar-todorkhiilolt.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Лекц 1. Хязгаарын тодорхойлолтууд</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hyazgaar-todorkhiilolt.html#subsec-dokhokh" class="internal"><span class="title"><span class="process-math">\(a\)</span> руу дөхөх ойлголт</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hyazgaar-todorkhiilolt.html#subsec-funktsiin-hyazgaar" class="internal"><span class="title">Функцийн хязгаар</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-hyazgaar-todorkhiilolt.html#exer-3-1" class="internal"><span class="title">Гэрийн даалгавар</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-monotonic.html#subsec-monotonic-def" class="internal"><span class="title">Тодорхойлолт</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-monotonic.html#subsec-monotonic-examples" class="internal"><span class="title">Жишээнүүд</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-hyazgaar-teoremuud.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Лекц 2. Хязгаарын теоремүүд ба техник</span></a></div>
+<div class="toc-title-box"><a href="sec-bounded.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Зааглагдсан функц</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hyazgaar-teoremuud.html#subsec-hyazgaar-chanuud" class="internal"><span class="title">Хязгаарын чанарууд</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hyazgaar-teoremuud.html#subsec-hyazgaar-bodolt" class="internal"><span class="title">Хязгаар бодох</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-hyazgaar-teoremuud.html#subsec-remarkable-limits" class="internal"><span class="title">Гайхамшигт хязгаарууд</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hyazgaar-teoremuud.html#subsec-summary-3-2" class="internal"><span class="title">Нэгтгэл</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-hyazgaar-teoremuud.html#exer-3-2" class="internal"><span class="title">Гэрийн даалгавар</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bounded.html#subsec-bounded-def" class="internal"><span class="title">Тодорхойлолт</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bounded.html#subsec-bounded-examples" class="internal"><span class="title">Жишээнүүд</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bounded.html#subsec-three-properties" class="internal"><span class="title">Гурван чанарыг хамт авч үзэх</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-tasraltgui.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Лекц 3. Дараалалын хязгаар ба тасралтгүй функц</span></a></div>
+<div class="toc-title-box"><a href="sec-polynomial-rational.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Олон гишүүнт ба рационал функц</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-tasraltgui.html#subsec-daraalaliin-lim" class="internal"><span class="title">Дараалалын хязгаар</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tasraltgui.html#subsec-summary-3-1" class="internal"><span class="title">Нэгтгэл</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tasraltgui.html#subsec-tasraltgui-todorkhiilolt" class="internal"><span class="title">Тасралтгүй байдлын тодорхойлолтууд</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-tasraltgui.html#subsec-tasraltgui-teoremuud" class="internal"><span class="title">Тасралтгүй функц дээрх теоремүүд</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tasraltgui.html#subsec-summary-3-3" class="internal"><span class="title">Нэгтгэл</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-tasraltgui.html#exer-3-3" class="internal"><span class="title">Гэрийн даалгавар</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-polynomial-rational.html#subsec-polynomial" class="internal"><span class="title">Олон гишүүнт функц</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-polynomial-rational.html#subsec-rational" class="internal"><span class="title">Рационал функц</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hyazgaar-ai-dasgal.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Интерактив дасгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-trigonometric.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Тригонометр функцүүд</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trigonometric.html#subsec-unit-circle" class="internal"><span class="title">Нэгж тойргийн тригонометр функцүүд</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trigonometric.html#subsec-periodic" class="internal"><span class="title">Үет функц</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trigonometric.html#subsec-trig-formulas" class="internal"><span class="title">Чухал тригонометрийн томьёонууд</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-integral-app.html" class="internal"><span class="codenumber">4</span> <span class="title">Өргөтгөсөн тодорхой интеграл ба хэрэглээ</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="exer-lecture-15-ai.html" class="internal"><span class="codenumber">4</span> <span class="title">Нэмэлт дасгал. Интегралын хэрэглээ (AI үүсгэсэн)</span></a></div></li></ul>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ai-practice.html" class="internal"><span class="codenumber">2.6</span> <span class="title">AI-тай дасгал хийх</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-seminar-2.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Семинар 2</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-seminar-2.html#exercises-seminar-2" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-homework-2.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Гэрийн даалгавар 2</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-homework-2.html#exercises-homework-2" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-seminar-3.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Семинар 3</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-seminar-3.html#exercises-seminar-3" class="internal"><span class="codenumber">2.9</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-homework-3.html" class="internal"><span class="codenumber">2.10</span> <span class="title">Гэрийн даалгавар 3</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-homework-3.html#exercises-homework-3" class="internal"><span class="codenumber">2.10</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="frontmatter" id="frontmatter"><h2 class="heading">
-<span class="title">Математик Анализ I</span><span class="subtitle">Идэвхтэй сурах арга барилаар бичсэн ном</span>
+<span class="title">Математик I В</span><span class="subtitle">Идэвхтэй бие даан сурах арга барилаар бичсэн гарын авлага</span>
 </h2>
 <div class="author">
 <div class="author-name">Д. Даянцолмон</div>
 <div class="author-info">Монгол Улсын Их Сургууль</div>
 </div>
-<div class="date">May 19, 2026</div>
+<div class="date">June 10, 2026</div>
 <nav class="summary-links"><ul>
 <li><a href="preface-students.html" class="internal"><span class="title">Оюутнуудад зориулсан өмнөх үг</span></a></li>
 <li><a href="preface-instructors.html" class="internal"><span class="title">Багш нарт зориулсан өмнөх үг</span></a></li>
 </ul></nav></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-logic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-sets-functions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

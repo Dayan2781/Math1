@@ -1,0 +1,1496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ============================================================
+     Бүлэг 2: Үндсэн функцүүд
+     2 лекцэд хуваагдсан (Лекц 2-3)
+     Зохиогч: Д. Даянцолмон, МУИС
+     ============================================================ -->
+
+<chapter xml:id="ch-basic-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Үндсэн функцүүд</title>
+
+  <introduction xml:id="intro-basic-fns">
+    <p><alert>Лекцийн зорилго:</alert>
+      <ul>
+        <li>Функцийн чанаруудыг (тэгш/сондгой, монотон, зааглагдсан) ялгах,
+        тогтоох арга барилыг эзэмшүүлэх.</li>
+        <li>Үндсэн функцүүдийг (олон гишүүнт, рационал, тригонометр, илтгэгч,
+        логарифм) бүхэлд нь танилцуулах.</li>
+        <li>Тригонометрийн урвуу функцүүдтэй танилцах.</li>
+        <li>Дараалал, түүний ерөнхий томьёо, монотон ба зааглагдсан чанарыг
+        авч үзэх.</li>
+        <li>Арифметик, геометр, арифметик-геометр прогрессийг судлах.</li>
+      </ul>
+    </p>
+
+    <p>Бүлэг 1-д бид функцийн ерөнхий ойлголтыг авч үзсэн. Энэ бүлэгт бид
+    <em>тодорхой нэрлэгдсэн үндсэн функцүүд</em>-ийг (полином, тригонометр,
+    илтгэгч г.м.) нарийвчлан судална. Эдгээр функцүүд нь бүх Математик Анализ-ын
+    хичээлд (хязгаар, уламжлал, интеграл) хэрэглэгдэх <em>үндсэн материал</em>
+    юм. Тэдгээрийн график, чанарыг сайтар мэдэх нь нэн чухал.</p>
+  </introduction>
+
+  <!-- ============================================================
+       SECTION 2.1: Тэгш ба сондгой чанар
+       ============================================================ -->
+  <section xml:id="sec-even-odd">
+    <title>Функцийн тэгш ба сондгой чанар</title>
+
+    <subsection xml:id="subsec-even-odd-def">
+      <title>Тодорхойлолт</title>
+
+      <definition xml:id="def-symmetric-domain">
+        <title>Тэгш хэмтэй муж</title>
+        <statement>
+          <p><m>X \subset \mathbb{R}</m> олонлог <term>тэгш хэмтэй</term>
+          гэдэг нь <m>x \in X \Rightarrow -x \in X</m> гэсэн үг.</p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-even-odd">
+        <title>Тэгш ба сондгой функц</title>
+        <statement>
+          <p>Тэгш хэмтэй <m>X</m> мужид тодорхойлогдсон
+          <m>f: X \to \mathbb{R}</m> функцийг:
+            <ul>
+              <li><m>\forall x \in X</m> үед <m>f(-x) = f(x)</m> бол
+              <term>тэгш функц</term>,</li>
+
+              <li><m>\forall x \in X</m> үед <m>f(-x) = -f(x)</m> бол
+              <term>сондгой функц</term>,</li>
+
+              <li>Дээрх хоёрын алийг нь ч хангахгүй бол
+              <term>аль ч биш</term> функц гэнэ.</li>
+            </ul>
+          </p>
+        </statement>
+      </definition>
+
+      <remark xml:id="rem-symm-required">
+        <p>Тэгш/сондгой эсэхийг ярихдаа заавал <m>X</m> муж нь тэгш хэмтэй байх
+        ёстой. Хэрэв <m>X</m> тэгш хэмгүй (жишээ нь <m>[0, 1]</m>) бол
+        <m>f(-x)</m>-ийн утга тодорхой биш тул "тэгш/сондгой" гэж ангилах
+        боломжгүй. Жишээ нь <m>\ln x</m>-ийн муж нь <m>(0, +\infty)</m> —
+        тэгш хэмгүй тул тэгш/сондгой эсэх асуудал хамаарахгүй.</p>
+      </remark>
+    
+  <project xml:id="ai-even-odd-def">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-even-odd-def-t1"><statement><p><m>f(x) = x^4 - 2x^2 + 1</m> функц тэгш эсэхийг тодорхойлолтоор шалга.</p></statement></task>
+    <task xml:id="ai-even-odd-def-t2"><statement><p><m>g(x) = x^3 - x</m> функц сондгой эсэхийг батал.</p></statement></task>
+    <task xml:id="ai-even-odd-def-t3"><statement><p><m>h(x) = x^2 + x + 1</m> функц тэгш ч, сондгой ч биш болохыг харуул.</p></statement></task>
+    <task xml:id="ai-even-odd-def-t4"><statement><p>Тэгш хэмтэй мужид тодорхойлогдсон <m>f</m> функц тэгш бөгөөд сондгой хоёулаа байвал <m>f \equiv 0</m> болохыг батал.</p></statement></task>
+    <task xml:id="ai-even-odd-def-t5"><statement><p><m>f(x) = |x^3|</m> функцийг тэгш, сондгой эсэхийг тогтоо.</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+
+    <subsection xml:id="subsec-even-odd-graph">
+      <title>Графикийн тайлбар</title>
+
+      <p><term>Тэгш функцийн</term> график <m>OY</m> тэнхлэгийн хувьд тэгш
+      хэмтэй; <term>сондгой функцийн</term> график координатын <m>(0, 0)</m>
+      эхийн хувьд тэгш хэмтэй байна.</p>
+
+      <p><em>Тэгш функц.</em> <m>f(-x) = f(x)</m> гэдэг нь <m>x</m> ба <m>-x</m>
+      нь <m>y</m> тэнхлэгийн хоёр талд тэгш хэмтэй оршдог бөгөөд тэдгээрийн
+      функцийн утга яг тэнцүү байна. Иймд
+      <me>(x, f(x)) \in \Gamma(f) \Longleftrightarrow (-x, f(x)) \in \Gamma(f).</me>
+      Өөрөөр хэлбэл графикийн <m>(x, y)</m> цэгийг <m>OY</m> тэнхлэгийн хувьд
+      тэгш хэмтэй хувиргавал <m>(-x, y)</m> цэг гарах бөгөөд энэ цэг мөн
+      графикт байна.</p>
+
+      <p><em>Сондгой функц.</em> <m>f(-x) = -f(x)</m> гэдэг нь
+      <me>(x, f(x)) \in \Gamma(f) \Longleftrightarrow (-x, -f(x)) \in \Gamma(f).</me>
+      <m>(x, y)</m> цэгийг координатын эхийн хувьд тэгш хэмтэй хувиргавал
+      <m>(-x, -y)</m> цэг гарна. Иймд график координатын эх <m>(0, 0)</m>-ийн
+      хувьд тэгш хэмтэй байна.</p>
+    
+  <project xml:id="ai-even-odd-graph">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-even-odd-graph-t1"><statement><p>Тэгш функцийн графикийн тэгш хэмийн тэнхлэг аль вэ? Жишээгээр тайлбарла.</p></statement></task>
+    <task xml:id="ai-even-odd-graph-t2"><statement><p>Сондгой функцийн график ямар цэгийн хувьд тэгш хэмтэй байдаг вэ?</p></statement></task>
+    <task xml:id="ai-even-odd-graph-t3"><statement><p><m>f(x) = x^2 - 4</m> функцийн графикийг зур, тэгш хэмийг тэмдэглэ.</p></statement></task>
+    <task xml:id="ai-even-odd-graph-t4"><statement><p><m>g(x) = x^3 - x</m> функцийн графикийг зур, эгц хэмийг тэмдэглэ.</p></statement></task>
+    <task xml:id="ai-even-odd-graph-t5"><statement><p>Тэгш функцийн графикаас сондгой функцийн графикийг хэрхэн ялгах вэ?</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+
+    <subsection xml:id="subsec-even-odd-examples">
+      <title>Жишээнүүд</title>
+
+      <example xml:id="ex-x-squared-even">
+        <statement>
+          <p><m>f(x) = x^2</m> функц <m>\mathbb{R}</m> дээр тэгш функц юм. Учир
+          нь <m>f(-x) = (-x)^2 = x^2 = f(x)</m>. График нь <m>OY</m> тэнхлэгийн
+          хувьд тэгш хэмтэй.</p>
+        </statement>
+      </example>
+
+      <example xml:id="ex-x-cubed-odd">
+        <statement>
+          <p><m>g(x) = x^3</m> функц <m>\mathbb{R}</m> дээр сондгой функц юм.
+          Учир нь <m>g(-x) = (-x)^3 = -x^3 = -g(x)</m>. График нь координатын
+          эхийн хувьд тэгш хэмтэй.</p>
+        </statement>
+      </example>
+
+      <example xml:id="ex-neither">
+        <statement>
+          <p><m>h(x) = x^2 + x</m> функц нь тэгш ч биш, сондгой ч биш. Учир нь
+          <me>h(-x) = (-x)^2 + (-x) = x^2 - x.</me>
+          <m>h(-x) \ne h(x)</m> (учир нь <m>x \ne -x</m> ерөнхийдөө) бөгөөд
+          <m>h(-x) \ne -h(x)</m>.</p>
+        </statement>
+      </example>
+
+      <example xml:id="ex-poly-classification">
+        <title>Олон гишүүнтийн тэгш/сондгой чанар</title>
+        <statement>
+          <p><m>p(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n</m> олон
+          гишүүнтийн хувьд:
+            <ul>
+              <li>Зөвхөн <em>тэгш зэрэгтэй</em> гишүүнтэй бол <m>p</m> нь
+              <em>тэгш функц</em>.</li>
+              <li>Зөвхөн <em>сондгой зэрэгтэй</em> гишүүнтэй бол <m>p</m> нь
+              <em>сондгой функц</em>.</li>
+              <li>Тэгш ба сондгой зэрэгтэй гишүүд хамт орсон бол <em>аль ч биш</em>.</li>
+            </ul>
+          </p>
+
+          <p>Тухайлбал:
+            <ol>
+              <li><m>f(x) = x^4 - 3x^2 + 2</m>:
+              <m>f(-x) = x^4 - 3x^2 + 2 = f(x)</m> тул тэгш.</li>
+
+              <li><m>g(x) = x^5 - 2x^3 + x</m>:
+              <m>g(-x) = -x^5 + 2x^3 - x = -g(x)</m> тул сондгой.</li>
+
+              <li><m>h(x) = x^2 + x</m>: аль ч биш (өмнө харуулсан).</li>
+            </ol>
+          </p>
+        </statement>
+      </example>
+
+      <example xml:id="ex-rational-odd">
+        <title>Рационал функцийн жишээ</title>
+        <statement>
+          <p><m>f(x) = \dfrac{x}{1 + x^2}</m> функцийн хувьд
+          <me>f(-x) = \frac{-x}{1 + (-x)^2} = -\frac{x}{1 + x^2} = -f(x).</me>
+          Иймд сондгой функц.</p>
+        </statement>
+      </example>
+
+      <example xml:id="ex-trig-classification">
+        <title>Тригонометрийн суурь жишээ</title>
+        <statement>
+          <p>
+            <ul>
+              <li><m>\cos(-x) = \cos x</m> тул <m>\cos x</m> нь <em>тэгш</em>.</li>
+              <li><m>\sin(-x) = -\sin x</m> тул <m>\sin x</m> нь <em>сондгой</em>.</li>
+              <li><m>\tan(-x) = \dfrac{\sin(-x)}{\cos(-x)} = -\tan x</m> тул
+              <m>\tan x</m> нь <em>сондгой</em>.</li>
+              <li><m>\cot(-x) = -\cot x</m> тул <m>\cot x</m> нь <em>сондгой</em>.</li>
+            </ul>
+          </p>
+        </statement>
+      </example>
+    
+  <project xml:id="ai-even-odd-examples">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-even-odd-examples-t1"><statement><p><m>f(x) = \dfrac{x^2}{x^4+1}</m> функц тэгш эсэхийг шалга.</p></statement></task>
+    <task xml:id="ai-even-odd-examples-t2"><statement><p><m>g(x) = x \sin x</m> функц тэгш эсэхийг шалга.</p></statement></task>
+    <task xml:id="ai-even-odd-examples-t3"><statement><p><m>h(x) = x + \cos x</m> функц тэгш ч, сондгой ч биш болохыг харуул.</p></statement></task>
+    <task xml:id="ai-even-odd-examples-t4"><statement><p><m>f(x) = (x+1)^2 - (x-1)^2</m> функцийг хялбарчлаад тэгш/сондгой эсэхийг тогтоо.</p></statement></task>
+    <task xml:id="ai-even-odd-examples-t5"><statement><p><m>f(x) = 0</m> функц тэгш бөгөөд сондгой хоёулаа болохыг харуул.</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+
+    <subsection xml:id="subsec-even-odd-properties">
+      <title>Тэгш/сондгой функцүүдийн үйлдлүүдийн чанар</title>
+
+      <theorem xml:id="thm-even-odd-ops">
+        <title>Арифметик үйлдэл ба тэгш хэмт чанар</title>
+        <statement>
+          <p><m>X</m> нь тэгш хэмтэй, <m>f, g: X \to \mathbb{R}</m> байг.
+            <ol>
+              <li>Хэрэв <m>f, g</m> хоёулаа тэгш бол <m>f \pm g</m> тэгш.</li>
+
+              <li>Хэрэв <m>f, g</m> хоёулаа сондгой бол <m>f \pm g</m> сондгой.</li>
+
+              <li>Хэрэв <m>f</m> тэгш, <m>g</m> сондгой бол <m>f \pm g</m> аль ч
+              биш (ерөнхийдөө).</li>
+
+              <li>Үржвэрийн хувьд:
+                <ul>
+                  <li>тэгш <m>\cdot</m> тэгш <m>=</m> тэгш</li>
+                  <li>сондгой <m>\cdot</m> сондгой <m>=</m> тэгш</li>
+                  <li>тэгш <m>\cdot</m> сондгой <m>=</m> сондгой</li>
+                </ul>
+              </li>
+
+              <li><m>c</m> тогтмол тоо байг. Тэгш <m>f</m>-ийн <m>c \cdot f</m>
+              тэгш; сондгой <m>f</m>-ийн <m>c \cdot f</m> сондгой.</li>
+            </ol>
+          </p>
+        </statement>
+      </theorem>
+
+      <example xml:id="ex-classify-functions">
+        <title>Функц ангилах дасгал</title>
+        <statement>
+          <p>Доорх функцүүдийг ангил:
+            <ol>
+              <li><m>f(x) = \dfrac{x}{1 + x^2}</m></li>
+              <li><m>g(x) = e^x</m> (<m>\mathbb{R}</m> дээр)</li>
+              <li><m>h(x) = \sin x + \cos x</m></li>
+              <li><m>p(x) = x^5 - 2x^3 + x</m></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol>
+              <li><m>f(-x) = -\dfrac{x}{1 + x^2} = -f(x)</m> → <em>сондгой</em>.</li>
+
+              <li><m>e^{-x} \ne e^x</m>, <m>e^{-x} \ne -e^x</m> → <em>аль ч биш</em>.</li>
+
+              <li><m>h(-x) = -\sin x + \cos x \ne h(x)</m> ба <m>\ne -h(x)</m>
+              → <em>аль ч биш</em>.</li>
+
+              <li><m>p(-x) = -p(x)</m> → <em>сондгой</em>.</li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+    
+  <project xml:id="ai-even-odd-props">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-even-odd-props-t1"><statement><p>Хоёр тэгш функцийн нийлбэр тэгш болохыг батал.</p></statement></task>
+    <task xml:id="ai-even-odd-props-t2"><statement><p>Тэгш ба сондгой функцийн үржвэр ямар функц болох вэ? Жишээ өг.</p></statement></task>
+    <task xml:id="ai-even-odd-props-t3"><statement><p>Хоёр сондгой функцийн нийлбэр сондгой болохыг батал.</p></statement></task>
+    <task xml:id="ai-even-odd-props-t4"><statement><p><m>f</m> тэгш, <m>g</m> сондгой бол <m>f \circ g</m> ямар функц вэ?</p></statement></task>
+    <task xml:id="ai-even-odd-props-t5"><statement><p>Дурын функцийг тэгш ба сондгой функцийн нийлбэрт задлах томьёог гарга.</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2.2: Монотон чанар
+       ============================================================ -->
+  <section xml:id="sec-monotonic">
+    <title>Өсөх, буурах ба монотон чанар</title>
+
+    <subsection xml:id="subsec-monotonic-def">
+      <title>Тодорхойлолт</title>
+
+      <definition xml:id="def-monotonic">
+        <statement>
+          <p><m>X, Y \subset \mathbb{R}</m> ба <m>f: X \to Y</m> функц байг.
+            <ol>
+              <li>Хэрэв <m>a \lt b</m> байх бүх <m>a, b \in X</m>-ийн хувьд
+              <m>f(a) \lt f(b)</m> бол <m>f</m>-г <m>X</m> муж дээр
+              <term>өсөх функц</term> гэнэ. (<em>Их тоонд их утга авдаг.</em>)</li>
+
+              <li>Хэрэв <m>a \lt b</m> байх бүх <m>a, b \in X</m>-ийн хувьд
+              <m>f(a) \gt f(b)</m> бол <m>f</m>-г <m>X</m> муж дээр
+              <term>буурах функц</term> гэнэ. (<em>Их тоонд бага утга авдаг.</em>)</li>
+
+              <li>Хэрэв <m>a \lt b</m> үед <m>f(a) \le f(b)</m> бол
+              <term>үл буурах</term>; <m>f(a) \ge f(b)</m> бол
+              <term>үл өсөх</term> функц гэнэ.</li>
+
+              <li>Дээрх нөхцлүүдийн ядаж нэгийг хангадаг бол <term>монотон</term>,
+              алийг нь ч хангадаггүй бол <term>монотон биш</term> функц гэнэ.</li>
+            </ol>
+          </p>
+        </statement>
+      </definition>
+    
+  <project xml:id="ai-mono-def">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-mono-def-t1"><statement><p><m>f(x) = 3x - 5</m> функц <m>\mathbb{R}</m> дээр эрс өсөх болохыг тодорхойлолтоор батал.</p></statement></task>
+    <task xml:id="ai-mono-def-t2"><statement><p><m>f(x) = -2x + 1</m> функц эрс буурах болохыг батал.</p></statement></task>
+    <task xml:id="ai-mono-def-t3"><statement><p><m>f(x) = x^2</m> функц <m>[0,+\infty)</m> дээр эрс өсөх болохыг батал.</p></statement></task>
+    <task xml:id="ai-mono-def-t4"><statement><p>Эрс өсөх функцийн тодорхойлолтыг бич. <m>x_1 \lt x_2</m> нөхцөлөөс яг юу дүгнэх вэ?</p></statement></task>
+    <task xml:id="ai-mono-def-t5"><statement><p><m>f(x) = c</m> (тогтмол) функц өсөх үү, буурах уу? Тайлбарла.</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+
+    <subsection xml:id="subsec-monotonic-examples">
+      <title>Жишээнүүд</title>
+
+      <example xml:id="ex-x-squared-monotonic">
+        <title>Өсөх, буурах, монотон биш</title>
+        <statement>
+          <p><m>f(x) = x^2</m> функц ба <m>X = [0; 1]</m>, <m>Y = [-1; 0]</m>,
+          <m>Z = [-1; 1]</m> мужуудыг авч үзье.
+            <ol>
+              <li><alert>Өсөх:</alert> <m>0 \le a \lt b \le 1</m> бол
+              <m>a + b \gt 0</m>, <m>b - a \gt 0</m> тул
+              <me>f(b) - f(a) = b^2 - a^2 = (b - a)(b + a) \gt 0.</me>
+              Иймд <m>f</m> функц <m>X = [0; 1]</m> муж дээр өсдөг.</li>
+
+              <li><alert>Буурах:</alert> <m>-1 \le a \lt b \le 0</m> бол
+              <m>a + b \lt 0</m>, <m>b - a \gt 0</m> тул
+              <me>f(b) - f(a) = (b - a)(b + a) \lt 0.</me>
+              Иймд <m>f</m> функц <m>Y = [-1; 0]</m> муж дээр буурдаг.</li>
+
+              <li><alert>Монотон биш:</alert> <m>Z = [-1; 1]</m> муж дээр
+              <m>a + b</m> нь эерэг ч, сөрөг ч утга авах тул
+              <m>(b - a)(b + a)</m> тэмдэг нь тогтмол биш. Иймд <m>f</m> функц
+              <m>Z</m> муж дээр монотон биш байна.</li>
+            </ol>
+          </p>
+        </statement>
+      </example>
+
+      <example xml:id="ex-rational-decreasing">
+        <title>Рационал функцийн монотон чанар</title>
+        <statement>
+          <p><m>f(x) = \dfrac{1}{x}</m> функц <m>X = (0; +\infty)</m> муж дээр
+          буурдаг. Учир нь <m>0 \lt a \lt b</m> бол <m>ab \gt 0</m> тул
+          <me>f(b) - f(a) = \frac{1}{b} - \frac{1}{a} = \frac{a - b}{ab} \lt 0.</me>
+          </p>
+        </statement>
+      </example>
+
+      <example xml:id="ex-trig-monotonic">
+        <title>Тригонометр функцийн монотон чанар</title>
+        <statement>
+          <p>
+            <ol>
+              <li><m>\sin x</m> функц <m>\left[-\dfrac{\pi}{2}; \dfrac{\pi}{2}\right]</m>
+              дээр <em>өсдөг</em>,
+              <m>\left[\dfrac{\pi}{2}; \dfrac{3\pi}{2}\right]</m> дээр <em>буурдаг</em>.</li>
+
+              <li><m>\cos x</m> функц <m>[0; \pi]</m> дээр <em>буурдаг</em>,
+              <m>[\pi; 2\pi]</m> дээр <em>өсдөг</em>.</li>
+
+              <li><m>\tan x</m> функц <m>\left(-\dfrac{\pi}{2}; \dfrac{\pi}{2}\right)</m>
+              дээр <em>өсдөг</em>.</li>
+
+              <li><m>\cot x</m> функц <m>(0; \pi)</m> дээр <em>буурдаг</em>.</li>
+            </ol>
+          </p>
+        </statement>
+        <proof>
+          <p><m>\sin x</m>-ийн монотон чанарыг тоймлон баталъя.
+          <m>-\dfrac{\pi}{2} \le a \lt b \le \dfrac{\pi}{2}</m> бол:
+          <me>\sin b - \sin a = 2\cos\!\left(\frac{a + b}{2}\right)\sin\!\left(\frac{b - a}{2}\right).</me>
+          <m>\dfrac{b - a}{2} \in \left(0; \dfrac{\pi}{2}\right)</m> тул
+          <m>\sin\!\left(\dfrac{b - a}{2}\right) \gt 0</m>;
+          <m>\dfrac{a + b}{2} \in \left(-\dfrac{\pi}{2}; \dfrac{\pi}{2}\right)</m>
+          тул <m>\cos\!\left(\dfrac{a + b}{2}\right) \gt 0</m>. Иймд
+          <m>\sin b - \sin a \gt 0</m>, өөрөөр хэлбэл <m>\sin x</m> өсдөг.</p>
+        </proof>
+      </example>
+
+      <example xml:id="ex-exp-log-monotonic">
+        <title>Илтгэгч ба логарифм функцийн монотон чанар</title>
+        <statement>
+          <p><m>f(x) = a^x</m> (<m>a \gt 0</m>, <m>a \ne 1</m>) функцийн хувьд:
+            <ul>
+              <li><m>a \gt 1</m> бол <m>f</m> нь <m>\mathbb{R}</m> дээр өсдөг.</li>
+              <li><m>0 \lt a \lt 1</m> бол <m>f</m> нь <m>\mathbb{R}</m> дээр буурдаг.</li>
+            </ul>
+          Тухайлбал <m>e \gt 1</m> тул <m>e^x</m> нь <m>\mathbb{R}</m> дээр
+          өсдөг. <m>a \lt b</m> үед <m>e^b - e^a = e^a(e^{b-a} - 1) \gt 0</m>
+          тул батлагдав.</p>
+
+          <p>Адилаар <m>\log_a x</m> функц <m>a \gt 1</m> үед өсдөг,
+          <m>0 \lt a \lt 1</m> үед буурдаг. <m>\ln x</m> нь <m>(0, +\infty)</m>
+          дээр өсдөг: <m>0 \lt a \lt b</m> үед
+          <m>\ln b - \ln a = \ln\dfrac{b}{a} \gt 0</m>.</p>
+        </statement>
+      </example>
+    
+  <project xml:id="ai-mono-ex">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-mono-ex-t1"><statement><p><m>f(x) = \dfrac{1}{x}</m> функц <m>(0,+\infty)</m> дээр эрс буурах болохыг тодорхойлолтоор батал.</p></statement></task>
+    <task xml:id="ai-mono-ex-t2"><statement><p><m>f(x) = x^3</m> функц <m>\mathbb{R}</m> дээр эрс өсөх болохыг батал.</p></statement></task>
+    <task xml:id="ai-mono-ex-t3"><statement><p><m>f(x) = |x|</m> функц <m>\mathbb{R}</m> дээрээ монотон биш болохыг харуул.</p></statement></task>
+    <task xml:id="ai-mono-ex-t4"><statement><p><m>f(x) = \sqrt{x}</m> функц <m>[0,+\infty)</m> дээр эрс өсөх болохыг батал.</p></statement></task>
+    <task xml:id="ai-mono-ex-t5"><statement><p>Эрс өсөх функц биектив болохыг батал.</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2.3: Зааглагдсан функц
+       ============================================================ -->
+  <section xml:id="sec-bounded">
+    <title>Зааглагдсан функц</title>
+
+    <subsection xml:id="subsec-bounded-def">
+      <title>Тодорхойлолт</title>
+
+      <definition xml:id="def-bounded">
+        <statement>
+          <p><m>X \subset \mathbb{R}</m> ба <m>f: X \to \mathbb{R}</m> функц
+          байг.
+            <ul>
+              <li><m>f</m> функц <term>дээрээс зааглагдсан</term>
+              <m>\Leftrightarrow</m> <m>\exists M \in \mathbb{R}</m>,
+              <m>\forall x \in X</m>-д <m>f(x) \le M</m>. Ийм <m>M</m>-г
+              <term>дээд зааг</term> гэнэ.</li>
+
+              <li><m>f</m> функц <term>доороос зааглагдсан</term>
+              <m>\Leftrightarrow</m> <m>\exists m \in \mathbb{R}</m>,
+              <m>\forall x \in X</m>-д <m>f(x) \ge m</m>. Ийм <m>m</m>-г
+              <term>доод зааг</term> гэнэ.</li>
+
+              <li><m>f</m> функц <term>зааглагдсан</term>
+              <m>\Leftrightarrow</m> <m>\exists m, M \in \mathbb{R}</m>,
+              <m>\forall x \in X</m>-д <m>m \le f(x) \le M</m>.</li>
+            </ul>
+          </p>
+        </statement>
+      </definition>
+    
+  <project xml:id="ai-bounded-def">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-bounded-def-t1"><statement><p><m>f(x) = \sin x</m> функц зааглагдсан болохыг батал.</p></statement></task>
+    <task xml:id="ai-bounded-def-t2"><statement><p><m>f(x) = x^2</m> функц доороос зааглагдсан боловч дээрээс зааглагдаагүй болохыг харуул.</p></statement></task>
+    <task xml:id="ai-bounded-def-t3"><statement><p><m>f(x) = \dfrac{1}{1+x^2}</m> функцийн зааглагдах байдлыг шинж.</p></statement></task>
+    <task xml:id="ai-bounded-def-t4"><statement><p>Зааглагдсан функцийн тодорхойлолтыг бич. <m>|f(x)| \leq M</m> нөхцөл яг юуг хэлж байна вэ?</p></statement></task>
+    <task xml:id="ai-bounded-def-t5"><statement><p><m>f(x) = \dfrac{x}{|x|+1}</m> функц зааглагдсан болохыг батал.</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+
+    <subsection xml:id="subsec-bounded-examples">
+      <title>Жишээнүүд</title>
+
+      <example xml:id="ex-bounded-types">
+        <title>Зааглагдсан функцийн төрлүүд</title>
+        <statement>
+          <p>
+            <ol marker="(\alph*)">
+              <li><alert>Зааглагдсан:</alert> <m>f(x) = \sin x</m>
+              (<m>X = \mathbb{R}</m>). <m>-1 \le \sin x \le 1</m>, тиймээс
+              <m>M \ge 1</m>, <m>m \le -1</m>. Үүнээс гадна
+              <m>f\!\left(\tfrac{\pi}{2}\right) = 1 = M</m> ба
+              <m>f\!\left(-\tfrac{\pi}{2}\right) = -1 = m</m> тул зааг утгуудад
+              хүрч байна.</li>
+
+              <li><alert>Зөвхөн доороос зааглагдсан:</alert>
+              <m>f(x) = x^2</m> (<m>X = \mathbb{R}</m>). <m>x^2 \ge 0</m> тул
+              доод зааг <m>0</m>, харин дээд зааг байхгүй.</li>
+
+              <li><alert>Зөвхөн дээрээс зааглагдсан:</alert>
+              <m>f(x) = -e^x</m> (<m>X = \mathbb{R}</m>). <m>e^x \gt 0</m>
+              тул <m>-e^x \lt 0</m>, иймд <m>M = 0</m> нь дээд зааг. Харин
+              <m>f(x) \to -\infty</m> (<m>x \to +\infty</m>) тул доороос
+              зааглагдаагүй.</li>
+
+              <li><alert>Зааглагдсан, заагтаа хүрэхгүй:</alert>
+              <m>f(x) = \dfrac{1}{x}</m> (<m>X = [1, +\infty)</m>).
+              <m>0 \lt \dfrac{1}{x} \le 1</m> тул дээд зааг <m>1</m> (биелнэ),
+              доод зааг <m>0</m> (биелэхгүй).</li>
+
+              <li><alert>Зааглагдаагүй:</alert> <m>f(x) = x</m>
+              (<m>X = \mathbb{R}</m>). Дээд ч, доод ч зааг байхгүй.</li>
+            </ol>
+          </p>
+        </statement>
+      </example>
+    
+  <project xml:id="ai-bounded-ex">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-bounded-ex-t1"><statement><p><m>f(x) = \cos 2x + \sin x</m> функц зааглагдсан болохыг батал.</p></statement></task>
+    <task xml:id="ai-bounded-ex-t2"><statement><p><m>f(x) = \dfrac{x^2}{x^2+1}</m> функцийн утгын мужийг ол, зааглагдсан эсэхийг шинж.</p></statement></task>
+    <task xml:id="ai-bounded-ex-t3"><statement><p><m>f(x) = x \sin x</m> функц зааглагдаагүй болохыг харуул.</p></statement></task>
+    <task xml:id="ai-bounded-ex-t4"><statement><p>Зааглагдсан хоёр функцийн нийлбэр зааглагдсан болохыг батал.</p></statement></task>
+    <task xml:id="ai-bounded-ex-t5"><statement><p><m>f(x) = \arctan x</m> функц зааглагдсан болохыг батал.</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+
+    <subsection xml:id="subsec-three-properties">
+      <title>Гурван чанарыг хамт авч үзэх</title>
+
+      <p>Функцийг бүрэн ангилахын тулд бид <em>гурван</em> чанарыг (тэгш/сондгой,
+      монотон, зааглагдсан) хамтад нь шинжих ёстой. Доорх хүснэгт нь үндсэн
+      функцүүдийн ангилал.</p>
+
+      <table xml:id="tab-classification-summary">
+        <title>Үндсэн функцүүдийн чанарын хүснэгт</title>
+        <tabular halign="left" top="major" bottom="minor">
+          <row bottom="medium">
+            <cell>Функц</cell>
+            <cell>Тэгш/сондгой</cell>
+            <cell>Монотон</cell>
+            <cell>Зааглагдах</cell>
+          </row>
+          <row><cell><m>x^2</m></cell><cell>тэгш</cell><cell>биш</cell><cell>доороос</cell></row>
+          <row><cell><m>x^3</m></cell><cell>сондгой</cell><cell>өсдөг</cell><cell>биш</cell></row>
+          <row><cell><m>\tfrac{1}{x}\ (x \gt 0)</m></cell><cell>хамаарахгүй</cell><cell>буурдаг</cell><cell>доороос</cell></row>
+          <row><cell><m>\sin x</m></cell><cell>сондгой</cell><cell>биш</cell><cell>зааглагдсан</cell></row>
+          <row><cell><m>\cos x</m></cell><cell>тэгш</cell><cell>биш</cell><cell>зааглагдсан</cell></row>
+          <row><cell><m>\tan x</m></cell><cell>сондгой</cell><cell>өсдөг</cell><cell>биш</cell></row>
+          <row><cell><m>e^x</m></cell><cell>аль ч биш</cell><cell>өсдөг</cell><cell>доороос</cell></row>
+          <row><cell><m>\ln x\ (x \gt 0)</m></cell><cell>хамаарахгүй</cell><cell>өсдөг</cell><cell>биш</cell></row>
+        </tabular>
+      </table>
+    
+  <project xml:id="ai-three-props">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-three-props-t1"><statement><p>Тэгш, эрс өсөх функц байж болох уу? Жишээ өг.</p></statement></task>
+    <task xml:id="ai-three-props-t2"><statement><p>Зааглагдсан, эрс өсөх функцийн жишээ өг.</p></statement></task>
+    <task xml:id="ai-three-props-t3"><statement><p><m>f(x) = \dfrac{1}{x^2+1}</m> функцийн тэгш/сондгой, монотон, зааглагдсан чанарыг бүгдийг нь шинж.</p></statement></task>
+    <task xml:id="ai-three-props-t4"><statement><p>Зааглагдсан функцийн урвуу функц байх шаардлага юу вэ?</p></statement></task>
+    <task xml:id="ai-three-props-t5"><statement><p><m>f(x) = xe^{-x^2}</m> функцийн тэгш/сондгой чанарыг тогтоо.</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2.4: Олон гишүүнт ба рационал функц
+       ============================================================ -->
+  <section xml:id="sec-polynomial-rational">
+    <title>Олон гишүүнт ба рационал функц</title>
+
+    <subsection xml:id="subsec-polynomial">
+      <title>Олон гишүүнт функц</title>
+
+      <definition xml:id="def-polynomial">
+        <statement>
+          <p><m>P(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0</m>
+          (<m>a_i \in \mathbb{R}</m>, <m>a_n \ne 0</m>) хэлбэрийн функцийг
+          <term>олон гишүүнт</term> функц гэнэ.
+            <ul>
+              <li>Олон гишүүнтэд байгаа хамгийн их зэрэг (<m>n</m>) -ийг
+              <term>олон гишүүнтийн зэрэг</term>, <m>a_n x^n</m> гишүүнийг
+              <term>ахлах гишүүн</term> гэнэ.</li>
+
+              <li><m>x</m> агуулаагүй гишүүн (<m>a_0</m>)-ийг
+              <term>сул гишүүн</term> гэнэ.</li>
+            </ul>
+          </p>
+        </statement>
+      </definition>
+
+      <p>Олон гишүүнт функцийн чухал чанарууд:
+        <ul>
+          <li>Тодорхойлогдох муж нь үргэлж <m>\mathbb{R}</m>.</li>
+          <li><m>P(x) = 0</m> тэгшитгэлийн шийдүүдийг олон гишүүнтийн
+          <term>язгуурууд</term> (графикийн <m>x</m> тэнхлэгтэй огтлолцох
+          цэгүүд) гэнэ.</li>
+          <li><m>n</m> зэргийн олон гишүүнт нь хамгийн ихдээ <m>n</m> язгууртай.</li>
+        </ul>
+      </p>
+
+      <example xml:id="ex-polynomial">
+        <statement>
+          <p><m>P(x) = 2x^3 - 4x^2 + 2</m> олон гишүүнтийг авч үзье:
+            <ul>
+              <li>Тодорхойлогдох муж: <m>\mathbb{R}</m>.</li>
+              <li>3 зэргийн олон гишүүнт. Ахлах гишүүн <m>2x^3</m>, сул гишүүн
+              <m>2</m>.</li>
+              <li>Язгууруудыг олох: <m>P(1) = 2 - 4 + 2 = 0</m> тул <m>x = 1</m>
+              нэг язгуур. <m>P(x) = (x - 1) \cdot Q(x)</m> гэвэл олон гишүүнтийг
+              хуваан <m>Q(x) = 2x^2 - 2x - 2</m>-г олно. Дискриминант:
+              <m>D = 4 + 16 = 20</m>, иймд бусад хоёр язгуур:
+              <m>x = \dfrac{1 \pm \sqrt{5}}{2}</m>, ойролцоогоор <m>-0.62</m>
+              ба <m>1.62</m>.</li>
+            </ul>
+          </p>
+        </statement>
+      </example>
+    
+  <project xml:id="ai-poly">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-poly-t1"><statement><p><m>P(x) = x^3 - 6x^2 + 11x - 6</m> олон гишүүнтийн бүх язгуурыг Хорнерийн схемээр ол.</p></statement></task>
+    <task xml:id="ai-poly-t2"><statement><p><m>P(x) = 2x^4 - x^3 - 8x^2 + x + 6</m> олон гишүүнтийн <m>x = 2</m> язгуур болохыг шалга.</p></statement></task>
+    <task xml:id="ai-poly-t3"><statement><p>Безугийн теоремоор <m>P(x) = x^4 - 1</m>-ийг <m>x - 1</m>-д хуваахад гарах үлдэгдлийг ол.</p></statement></task>
+    <task xml:id="ai-poly-t4"><statement><p><m>P(x) = x^3 + ax^2 + bx + c</m> олон гишүүнтийн язгуурууд нь <m>1, 2, 3</m> бол <m>a, b, c</m>-г ол.</p></statement></task>
+    <task xml:id="ai-poly-t5"><statement><p><m>P(x) = x^5 - x</m> олон гишүүнтийн бүх бодит язгуурыг ол.</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+
+    <subsection xml:id="subsec-rational">
+      <title>Рационал функц</title>
+
+      <definition xml:id="def-rational">
+        <statement>
+          <p><m>P(x), Q(x)</m> олон гишүүнтүүд бол
+          <me>f(x) = \frac{P(x)}{Q(x)}</me>
+          функцийг <term>рационал функц</term> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <p>Рационал функцийн онцлог:
+        <ul>
+          <li>Тодорхойлогдох муж нь <m>\{x \in \mathbb{R} \mid Q(x) \ne 0\}</m>.</li>
+          <li><m>Q(x) = 0</m> цэгүүд дээр функц тодорхойлогдохгүй — эдгээр нь
+          ихэвчлэн босоо асимптотууд байдаг.</li>
+        </ul>
+      </p>
+
+      <example xml:id="ex-rational">
+        <statement>
+          <p><m>f(x) = \dfrac{x^2 - 1}{x - 2}</m> функцийг авч үзье:
+            <ul>
+              <li><m>x = 2</m> дээр тодорхойлогдохгүй тул тодорхойлогдох муж
+              <m>(-\infty; 2) \cup (2; +\infty)</m>.</li>
+
+              <li><m>x</m> тэнхлэгийг огтлох цэгүүд: <m>x^2 - 1 = 0</m> ⇒
+              <m>x = \pm 1</m>. Иймд <m>A(-1, 0)</m> ба <m>B(1, 0)</m>.</li>
+
+              <li><m>x = 2</m> цэг дээр босоо асимптот.</li>
+            </ul>
+          </p>
+        </statement>
+      </example>
+    
+  <project xml:id="ai-rational">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-rational-t1"><statement><p><m>f(x) = \dfrac{x^2-9}{x-3}</m> функцийн тодорхойлогдох мужийг олоод хялбарчил.</p></statement></task>
+    <task xml:id="ai-rational-t2"><statement><p><m>f(x) = \dfrac{2x+1}{x-2}</m> функцийн урвуу функцийг ол.</p></statement></task>
+    <task xml:id="ai-rational-t3"><statement><p><m>f(x) = \dfrac{x^2+1}{x}</m> функц сондгой болохыг батал.</p></statement></task>
+    <task xml:id="ai-rational-t4"><statement><p><m>f(x) = \dfrac{x}{x^2+1}</m> функцийн утгын мужийг ол.</p></statement></task>
+    <task xml:id="ai-rational-t5"><statement><p><m>f(x) = \dfrac{ax+b}{cx+d}</m> функцийн урвуу функц ижил хэлбэртэй болохыг харуул.</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2.5: Тригонометр функцүүд
+       ============================================================ -->
+  <section xml:id="sec-trigonometric">
+    <title>Тригонометр функцүүд</title>
+
+    <subsection xml:id="subsec-unit-circle">
+      <title>Нэгж тойргийн тригонометр функцүүд</title>
+
+      <definition xml:id="def-unit-circle">
+        <statement>
+          <p>Төв нь координатын эх дээр орших радиус нь <m>1</m> байх тойргийг
+          <term>нэгж тойрог</term> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <p>Нэгж тойрог дээр <m>OX</m> тэнхлэгтэй <m>\theta</m> радиан өнцөг үүсгэх
+      <m>P</m> цэг авч үзье (<m>0 \lt \theta \lt \dfrac{\pi}{2}</m>). <m>OPA</m>
+      тэгш өнцөгт гурвалжны гипотенуз <m>OP = 1</m> юм. Иймд
+      <md>
+        <mrow>\cos\theta \amp= \frac{\text{Налсан катет}}{\text{Гипотенуз}} = \frac{OA}{1} = OA</mrow>
+        <mrow>\sin\theta \amp= \frac{\text{Эсрэг катет}}{\text{Гипотенуз}} = \frac{PB}{1} = PB</mrow>
+      </md>
+      болно. Эндээс <m>\theta</m> радиан өнцгийн цэгийн координат
+      <m>P = (\cos\theta, \sin\theta)</m> байна.</p>
+
+      <definition xml:id="def-trig-funcs">
+        <statement>
+          <p>Дурын <m>\theta</m> радиан өнцөгт харгалзах нэгж тойрог дээрх цэг
+          <m>P(x, y)</m> бол
+          <md>
+            <mrow>\cos\theta \amp:= x, \qquad \sin\theta := y</mrow>
+            <mrow>\tan\theta \amp:= \frac{y}{x} \quad (x \ne 0), \qquad \cot\theta := \frac{x}{y} \quad (y \ne 0)</mrow>
+          </md>
+          гэнэ.</p>
+        </statement>
+      </definition>
+
+      <example xml:id="ex-pi-4">
+        <statement>
+          <p><m>\dfrac{\pi}{4}</m> өнцөгт харгалзах нэгж тойргийн цэг
+          <m>P = \left(\dfrac{\sqrt{2}}{2}, \dfrac{\sqrt{2}}{2}\right)</m>
+          болно. Тиймээс
+          <me>\cos\!\left(\frac{\pi}{4}\right) = \frac{\sqrt{2}}{2}, \quad \sin\!\left(\frac{\pi}{4}\right) = \frac{\sqrt{2}}{2}.</me>
+          </p>
+        </statement>
+      </example>
+
+      <example xml:id="ex-special-angles">
+        <statement>
+          <p><m>\pi, \dfrac{3\pi}{2}, \dfrac{7\pi}{4}</m> радиан өнцөгтэй цэгүүдийн
+          координат ба тригонометрийн утгуудыг хүснэгтэд оруулъя:
+          <me>\begin{array}{c|cccc} \amp \cos \amp \sin \amp \tan \amp \cot \\ \hline \pi \amp -1 \amp 0 \amp 0 \amp \nexists \\[6pt] \dfrac{3\pi}{2} \amp 0 \amp -1 \amp \nexists \amp 0 \\[8pt] \dfrac{7\pi}{4} \amp \dfrac{\sqrt{2}}{2} \amp -\dfrac{\sqrt{2}}{2} \amp -1 \amp -1 \end{array}</me>
+          </p>
+        </statement>
+      </example>
+    
+  <project xml:id="ai-unit-circle">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-unit-circle-t1"><statement><p><m>\cos x = -\dfrac{5}{13}</m>, <m>x \in (\pi, \frac{3\pi}{2})</m> бол <m>\sin x</m>, <m>\tg x</m>-ийг ол.</p></statement></task>
+    <task xml:id="ai-unit-circle-t2"><statement><p><m>\tg x = \sqrt{3}</m> ба <m>x \in (0, \frac{\pi}{2})</m> бол <m>\sin x</m>, <m>\cos x</m>-ийг ол.</p></statement></task>
+    <task xml:id="ai-unit-circle-t3"><statement><p><m>\sin^2 x + \cos^2 x = 1</m> адилтгалаас <m>1 + \tg^2 x = \sec^2 x</m> гарга.</p></statement></task>
+    <task xml:id="ai-unit-circle-t4"><statement><p><m>\sin 15°</m>-ийн яг утгыг <m>\sin(45°-30°)</m> томьёогоор ол.</p></statement></task>
+    <task xml:id="ai-unit-circle-t5"><statement><p><m>\cos 3x</m>-ийг <m>\cos x</m>-ийн функцээр илэрхийл.</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+
+    <subsection xml:id="subsec-periodic">
+      <title>Үет функц</title>
+
+      <definition xml:id="def-periodic">
+        <statement>
+          <p><m>f(x)</m> функц ямар нэг <m>T \gt 0</m> тооны хувьд бүх
+          <m>x \in \mathbb{R}</m> дээр
+          <me>f(x + T) = f(x)</me>
+          нөхцлийг хангаж байвал түүнийг <term>үет функц</term> гэнэ. Дээрх
+          нөхцлийг хангах хамгийн бага эерэг <m>T</m> тоог тухайн функцийн
+          <term>үндсэн үе</term> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <example xml:id="ex-trig-periods">
+        <title>Тригонометр функцүүдийн үндсэн үе</title>
+        <statement>
+          <p>
+            <ul>
+              <li><m>\sin(x + 2\pi) = \sin x</m> ⇒ <m>\sin x</m>-ийн үндсэн үе
+              <m>2\pi</m>.</li>
+              <li><m>\cos(x + 2\pi) = \cos x</m> ⇒ <m>\cos x</m>-ийн үндсэн үе
+              <m>2\pi</m>.</li>
+              <li><m>\tan(x + \pi) = \tan x</m> ⇒ <m>\tan x</m>-ийн үндсэн үе
+              <m>\pi</m>.</li>
+              <li><m>\cot(x + \pi) = \cot x</m> ⇒ <m>\cot x</m>-ийн үндсэн үе
+              <m>\pi</m>.</li>
+            </ul>
+          </p>
+        </statement>
+      </example>
+    
+  <project xml:id="ai-periodic">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-periodic-t1"><statement><p><m>f(x) = \sin 2x + \cos 3x</m> функцийн үеийг ол.</p></statement></task>
+    <task xml:id="ai-periodic-t2"><statement><p>Үет функцийн тодорхойлолтыг бич. <m>f(x) = c</m> тогтмол функц үет үү?</p></statement></task>
+    <task xml:id="ai-periodic-t3"><statement><p><m>f(x) = \sin^2 x</m> функцийн үндсэн үеийг ол.</p></statement></task>
+    <task xml:id="ai-periodic-t4"><statement><p>Үет функцийн нийлбэр заавал үет байх уу? Жишээ ба эсрэг жишээ өг.</p></statement></task>
+    <task xml:id="ai-periodic-t5"><statement><p><m>f(x) = |\sin x|</m> функцийн үндсэн үеийг ол.</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+
+    <subsection xml:id="subsec-trig-formulas">
+      <title>Чухал тригонометрийн томьёонууд</title>
+
+      <p><alert>I. Тэгш ба сондгой чанар, үндсэн шинж чанарууд:</alert>
+      <md>
+        <mrow>\sin(-x) \amp= -\sin x \quad \text{(сондгой)}</mrow>
+        <mrow>\cos(-x) \amp= \cos x \quad \text{(тэгш)}</mrow>
+        <mrow>\sin(x + \pi) \amp= -\sin x</mrow>
+        <mrow>\cos(x + \pi) \amp= -\cos x</mrow>
+        <mrow>\sin\!\left(\frac{\pi}{2} - x\right) \amp= \cos x</mrow>
+        <mrow>\cos\!\left(\frac{\pi}{2} - x\right) \amp= \sin x</mrow>
+      </md>
+      </p>
+
+      <p><alert>II. Үндсэн адилтгал:</alert>
+      <me>\sin^2 x + \cos^2 x = 1.</me>
+      </p>
+
+      <p><alert>III. Нийлбэрийн томьёо:</alert>
+      <md>
+        <mrow>\sin(x + y) \amp= \sin x \cos y + \cos x \sin y</mrow>
+        <mrow>\sin(x - y) \amp= \sin x \cos y - \cos x \sin y</mrow>
+        <mrow>\cos(x + y) \amp= \cos x \cos y - \sin x \sin y</mrow>
+        <mrow>\cos(x - y) \amp= \cos x \cos y + \sin x \sin y</mrow>
+      </md>
+      </p>
+
+      <p><alert>IV. Нийлбэрийг үржвэрт хувиргах:</alert>
+      <md>
+        <mrow>\sin x + \sin y \amp= 2\sin\!\left(\frac{x + y}{2}\right)\cos\!\left(\frac{x - y}{2}\right)</mrow>
+        <mrow>\sin x - \sin y \amp= 2\cos\!\left(\frac{x + y}{2}\right)\sin\!\left(\frac{x - y}{2}\right)</mrow>
+        <mrow>\cos x + \cos y \amp= 2\cos\!\left(\frac{x + y}{2}\right)\cos\!\left(\frac{x - y}{2}\right)</mrow>
+        <mrow>\cos x - \cos y \amp= -2\sin\!\left(\frac{x + y}{2}\right)\sin\!\left(\frac{x - y}{2}\right)</mrow>
+      </md>
+      </p>
+
+      <p><alert>V. Давхар өнцгийн томьёо:</alert>
+      <md>
+        <mrow>\sin 2x \amp= 2\sin x \cos x</mrow>
+        <mrow>\cos 2x \amp= \cos^2 x - \sin^2 x = 1 - 2\sin^2 x = 2\cos^2 x - 1</mrow>
+      </md>
+      </p>
+    
+  <project xml:id="ai-trig-formulas">
+    <title>AI-тай ажиллах</title>
+    <introduction>
+      <p>Доорх бодлогуудыг Claude AI-д бодуулж, тайлбарыг нь уншаарай.
+      Дараа нь өөрөө ойлгосон эсэхээ шалгахын тулд төстэй бодлого
+      үүсгүүлж бод.</p>
+    </introduction>
+    <task xml:id="ai-trig-formulas-t1"><statement><p><m>\sin 75°</m>-ийн яг утгыг нэмэх өнцгийн томьёогоор ол.</p></statement></task>
+    <task xml:id="ai-trig-formulas-t2"><statement><p><m>\cos^4 x - \sin^4 x</m> илэрхийллийг хялбарчил.</p></statement></task>
+    <task xml:id="ai-trig-formulas-t3"><statement><p><m>\sin x + \cos x = \frac{1}{2}</m> бол <m>\sin x \cos x</m>-ийг ол.</p></statement></task>
+    <task xml:id="ai-trig-formulas-t4"><statement><p><m>\dfrac{1 - \cos 2x}{\sin 2x} = \tg x</m> болохыг батал.</p></statement></task>
+    <task xml:id="ai-trig-formulas-t5"><statement><p><m>\sin^4 x + \cos^4 x</m>-ийг <m>\cos 2x</m>-ийн функцээр илэрхийл.</p></statement></task>
+    <conclusion>
+      <p><url href="https://claude.ai" visual="claude.ai">Claude AI</url>-д
+      нэвтэрч: <q>Математик анализын [СЭДЭВ] сэдвээр надад 3 дасгал
+      бодлого өг, хариултыг нь тайлбарла</q> гэж бич.</p>
+    </conclusion>
+  </project>
+  </subsection>
+  </section>
+<!-- ════════════ БҮЛЭГ 2-ЫН СЕМИНАРУУД (3 семинар) ════════════
+     Семинар 2: §2.1-2.4  (тэгш/сондгой, монотон, зааглагдсан,
+                           олон гишүүнт ба рационал функц)
+     Семинар 3: §2.5-2.7  (тригонометр, урвуу тригонометр,
+                           илтгэгч ба логарифм)
+     Семинар 4: §2.8-2.10 (дараалал, арифметик ба геометр прогресс)
+     ════════════════════════════════════════════════════════════ -->
+
+
+<section xml:id="sec-ai-practice">
+  <title>AI-тай дасгал хийх</title>
+  <introduction>
+    <p>Доорх хэрэгслийг ашиглан Бүлэг 2-ын дурын сэдвээр бодлого үүсгүүлж,
+    хариулаа шалгуулаарай. Бодлогыг өөрөө бодсоны дараа хариулаа бичнэ үү.</p>
+  </introduction>
+  <interactive xml:id="ai-practice-ch2" iframe="ai-practice.html" width="100%" aspect="4:3" />
+</section>
+
+<section xml:id="sec-seminar-2">
+  <title>Семинар 2</title>
+
+  <exercises xml:id="exercises-seminar-2">
+    <introduction>
+      <p>Хамрах сэдэв: функцийн тэгш ба сондгой чанар, монотон чанар,
+      зааглагдсан функц, олон гишүүнт ба рационал функц. Даалгавар бүр
+      (а), (б), (в) гэсэн гурван бодлоготой.</p>
+    </introduction>
+
+    <exercise xml:id="sem2-ex-1">
+      <title>Тэгш ба сондгой чанар</title>
+      <statement>
+        <p>Дараах функцүүдийг тэгш, сондгой, аль нь ч биш эсэхийг тогтоо.
+          <ol>
+            <li><p><m>f(x) = x^4 - 3x^2</m></p></li>
+            <li><p><m>f(x) = x^3 + \dfrac{1}{x}</m></p></li>
+            <li><p><m>f(x) = x^2 + x</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <answer>
+        <p>а. тэгш;<nbsp/> б. сондгой (<m>x \ne 0</m>);<nbsp/>
+        в. аль нь ч биш (<m>f(1) = 2</m>, <m>f(-1) = 0</m>).</p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="sem2-ex-2">
+      <title>Тэгш ба сондгой хэсэгт задлах</title>
+      <statement>
+        <p>Функц бүрийг тэгш ба сондгой функцийн нийлбэрт задал.
+        (<em>Зөвлөмж:</em>
+        <m>f(x) = \dfrac{f(x) + f(-x)}{2} + \dfrac{f(x) - f(-x)}{2}</m>.)
+          <ol>
+            <li><p><m>f(x) = x^2 + 3x - 1</m></p></li>
+            <li><p><m>f(x) = x^3 - 2x^2 + x</m></p></li>
+            <li><p><m>f(x) = \dfrac{1}{x - 1}</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <answer>
+        <p>а. <m>(x^2 - 1) + 3x</m>;<nbsp/>
+        б. <m>-2x^2 + (x^3 + x)</m>;<nbsp/>
+        в. <m>\dfrac{1}{x^2 - 1} + \dfrac{x}{x^2 - 1}</m>
+        (<m>x \ne \pm 1</m>).</p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="sem2-ex-3">
+      <title>Монотон чанарыг тодорхойлолтоор батлах</title>
+      <statement>
+        <p>Тодорхойлолт ашиглан батал.
+          <ol>
+            <li><p><m>f(x) = 2x + 3</m> функц <m>\mathbb{R}</m> дээр хатуу
+            өсөх.</p></li>
+            <li><p><m>f(x) = x^2</m> функц <m>[0, +\infty)</m> дээр хатуу
+            өсөх, <m>(-\infty, 0]</m> дээр эрс буурах.</p></li>
+            <li><p><m>f(x) = \dfrac{1}{x}</m> функц <m>(0, +\infty)</m>
+            дээр эрс буурах.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <answer>
+        <p><m>x_1 \lt x_2</m> авч <m>f(x_2) - f(x_1)</m> ялгаврын тэмдгийг
+        тогтооно. Жишээ нь б-д
+        <m>x_2^2 - x_1^2 = (x_2 - x_1)(x_2 + x_1)</m> үржигдэхүүн болгож
+        завсар тус бүрд хоёр үржигдэхүүний тэмдгийг шинжилнэ.</p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="sem2-ex-4">
+      <title>Зааглагдсан чанар</title>
+      <statement>
+        <p>Дараах функцүүд зааглагдсан эсэхийг шинж.
+          <ol>
+            <li><p><m>f(x) = \dfrac{x}{1 + x^2}</m></p></li>
+            <li><p><m>f(x) = \dfrac{1}{1 + x^2}</m></p></li>
+            <li><p><m>f(x) = x^2 - 2x</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <answer>
+        <p>а. зааглагдсан: <m>1 + x^2 \geq 2|x|</m> тул
+        <m>|f(x)| \leq \dfrac{1}{2}</m>;<nbsp/>
+        б. зааглагдсан: <m>0 \lt f(x) \leq 1</m>;<nbsp/>
+        в. <m>f(x) = (x-1)^2 - 1 \geq -1</m> тул доороос зааглагдсан,
+        дээрээс зааглагдаагүй.</p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="sem2-ex-5">
+      <title>Олон гишүүнтийн язгуур, Хорнерийн схем</title>
+      <statement>
+        <p>Олон гишүүнт бүрийн бүх язгуурыг ол (Хорнерийн схем хэрэглэ).
+          <ol>
+            <li><p><m>P(x) = x^3 - 2x^2 - 5x + 6</m></p></li>
+            <li><p><m>P(x) = 2x^3 + 3x^2 - 8x + 3</m></p></li>
+            <li><p><m>P(x) = x^4 - 5x^2 + 4</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <answer>
+        <p>а. <m>x \in \{1,\ 3,\ -2\}</m>;<nbsp/>
+        б. <m>x \in \left\{1,\ \dfrac{1}{2},\ -3\right\}</m>;<nbsp/>
+        в. <m>x \in \{\pm 1,\ \pm 2\}</m>
+        (<m>P(x) = (x^2 - 1)(x^2 - 4)</m>).</p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="sem2-ex-6">
+      <title>Безугийн теорем</title>
+      <statement>
+        <p>
+          <ol>
+            <li><p><m>P(x) = x^3 + 2x^2 - 4x + 1</m> олон гишүүнтийг
+            <m>x - 2</m>-т хуваахад гарах үлдэгдлийг хуваалт хийлгүйгээр
+            ол.</p></li>
+
+            <li><p><m>P(x) = x^3 + ax + 2</m> олон гишүүнт <m>x + 1</m>-д
+            үлдэгдэлгүй хуваагддаг бол <m>a</m>-г ол.</p></li>
+
+            <li><p><m>P(x) = x^4 - 3x^3 + kx - 2</m> олон гишүүнт
+            <m>x - 1</m>-д үлдэгдэлгүй хуваагддаг бол <m>k</m>-г ол.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <answer>
+        <p>а. <m>P(2) = 9</m>;<nbsp/> б. <m>a = 1</m>;<nbsp/>
+        в. <m>k = 4</m>.</p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="sem2-ex-7">
+      <title>Рационал функц</title>
+      <statement>
+        <p>
+          <ol>
+            <li><p><m>f(x) = \dfrac{x^2 - 1}{x - 1}</m> функцийн
+            тодорхойлогдох мужийг олоод илэрхийллийг хялбарчил. Энэ функц
+            <m>g(x) = x + 1</m> функцтэй тэнцүү юу?</p></li>
+
+            <li><p><m>f(x) = \dfrac{2x + 1}{x - 3}</m> функцийн
+            тодорхойлогдох муж, утгын мужийг олоод урвуу функцийг нь
+            бич.</p></li>
+
+            <li><p><m>f(x) = \dfrac{1}{x^2 - 4}</m> функцийн
+            тодорхойлогдох мужийг олоод тэгш эсэхийг тогтоо.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <answer>
+        <p>а. <m>D(f) = \mathbb{R} \setminus \{1\}</m>; тодорхойлогдох
+        муж өөр тул <m>f \ne g</m>;<nbsp/>
+        б. <m>D(f) = \mathbb{R} \setminus \{3\}</m>,
+        <m>E(f) = \mathbb{R} \setminus \{2\}</m>,
+        <m>f^{-1}(x) = \dfrac{3x + 1}{x - 2}</m>;<nbsp/>
+        в. <m>D(f) = \mathbb{R} \setminus \{\pm 2\}</m>, тэгш.</p>
+      </answer>
+    </exercise>
+  </exercises>
+</section>
+
+<section xml:id="sec-homework-2">
+  <title>Гэрийн даалгавар 2</title>
+
+  <exercises xml:id="exercises-homework-2">
+    <introduction>
+      <p>Даалгавар бүр (а), (б), (в) гэсэн гурван бодлоготой. Бодолтыг
+      бүрэн үндэслэлтэй бичиж ирнэ.</p>
+    </introduction>
+
+    <exercise xml:id="hw2-ex-1">
+      <title>Тэгш ба сондгой чанар</title>
+      <statement>
+        <p>Дараах функцүүдийг тэгш, сондгой, аль нь ч биш эсэхийг тогтоо.
+          <ol>
+            <li><p><m>f(x) = x^5 - x</m></p></li>
+            <li><p><m>f(x) = x^2 \, |x|</m></p></li>
+            <li><p><m>f(x) = (x + 1)^2</m></p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="hw2-ex-2">
+      <title>Монотон чанар</title>
+      <statement>
+        <p>Тодорхойлолт ашиглан батал.
+          <ol>
+            <li><p><m>f(x) = \sqrt{x}</m> функц <m>[0, +\infty)</m> дээр
+            эрс өсөх.</p></li>
+            <li><p><m>f(x) = -3x + 2</m> функц <m>\mathbb{R}</m> дээр хатуу
+            буурах.</p></li>
+            <li><p><m>f(x) = x^3</m> функц <m>\mathbb{R}</m> дээр хатуу
+            өсөх. (<em>Зөвлөмж:</em>
+            <m>x_2^3 - x_1^3 = (x_2 - x_1)(x_2^2 + x_1 x_2 + x_1^2)</m>
+            задаргааг ашигла.)</p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="hw2-ex-3">
+      <title>Зааглагдсан чанар</title>
+      <statement>
+        <p>Дараах функцүүд зааглагдсан эсэхийг шинж.
+          <ol>
+            <li><p><m>f(x) = \dfrac{x^2}{1 + x^2}</m></p></li>
+            <li><p><m>f(x) = 2 - x^2</m></p></li>
+            <li><p><m>f(x) = \dfrac{|x|}{1 + |x|}</m></p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="hw2-ex-4">
+      <title>Олон гишүүнт</title>
+      <statement>
+        <p>
+          <ol>
+            <li><p>Хорнерийн схемээр <m>P(x) = x^3 - 7x + 6</m>-ийн бүх
+            язгуурыг ол.</p></li>
+
+            <li><p><m>P(x) = 2x^3 - x^2 + 3</m>-ыг <m>x + 2</m>-т хуваахад
+            гарах үлдэгдлийг Безугийн теоремоор ол.</p></li>
+
+            <li><p><m>P(x) = x^3 + px + q</m> олон гишүүнтийн язгуур нь
+            <m>x = 1</m> ба <m>x = -2</m> бол <m>p</m>, <m>q</m>-г олоод
+            гурав дахь язгуурыг ол.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="hw2-ex-5">
+      <title>Рационал функц</title>
+      <statement>
+        <p>
+          <ol>
+            <li><p><m>f(x) = \dfrac{x + 2}{x^2 - x - 6}</m> функцийн
+            тодорхойлогдох мужийг ол.</p></li>
+
+            <li><p><m>f(x) = \dfrac{x^2 + 1}{x}</m> функц сондгой болохыг
+            батал.</p></li>
+
+            <li><p><m>f(x) = \dfrac{3x - 2}{x + 1}</m> функцийн урвуу
+            функцийг ол.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>
+
+
+
+
+
+<!-- ============================================================
+     Бүлэг 2: Үндсэн функцүүд — ХОЁР ДАХЬ ХАГАС (Лекц 3)
+     ============================================================ -->
+<section xml:id="sec-seminar-3">
+  <title>Семинар 3</title>
+
+  <exercises xml:id="exercises-seminar-3">
+    <introduction>
+      <p>Хамрах сэдэв: тригонометр функц, тригонометрийн урвуу функц,
+      илтгэгч ба логарифм функц. Даалгавар бүр (а), (б), (в) гэсэн гурван
+      бодлоготой.</p>
+    </introduction>
+
+    <exercise xml:id="sem3-ex-1">
+      <title>Тригонометр функцийн утга</title>
+      <statement>
+        <p>
+          <ol>
+            <li><p><m>\sin x = \dfrac{3}{5}</m> ба
+            <m>x \in \left(\dfrac{\pi}{2},\ \pi\right)</m> бол
+            <m>\cos x</m>, <m>\tg x</m>-ийг ол.</p></li>
+
+            <li><p><m>\tg x = 2</m> бол <m>\sin x \cos x</m>-ийг
+            ол.</p></li>
+
+            <li><p><m>\sin^4 x + \cos^4 x = 1 - \dfrac{1}{2}\sin^2 2x</m>
+            болохыг батал.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <answer>
+        <p>а. <m>\cos x = -\dfrac{4}{5}</m>,
+        <m>\tg x = -\dfrac{3}{4}</m>;<nbsp/>
+        б. <m>\sin x \cos x = \dfrac{\tg x}{1 + \tg^2 x}
+        = \dfrac{2}{5}</m>;<nbsp/>
+        в. <m>(\sin^2 x + \cos^2 x)^2 - 2\sin^2 x \cos^2 x</m> гэж
+        задал.</p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="sem3-ex-2">
+      <title>Үе, тэгш ба сондгой чанар</title>
+      <statement>
+        <p>Функц бүрийн үндсэн үеийг олоод тэгш, сондгой эсэхийг тогтоо.
+          <ol>
+            <li><p><m>f(x) = \sin 3x</m></p></li>
+            <li><p><m>f(x) = \cos^2 x</m></p></li>
+            <li><p><m>f(x) = \tg \dfrac{x}{2}</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <answer>
+        <p>а. үе <m>\dfrac{2\pi}{3}</m>, сондгой;<nbsp/>
+        б. <m>\cos^2 x = \dfrac{1 + \cos 2x}{2}</m> тул үе <m>\pi</m>,
+        тэгш;<nbsp/>
+        в. үе <m>2\pi</m>, сондгой.</p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="sem3-ex-3">
+      <title>Урвуу тригонометр функцийн утга</title>
+      <statement>
+        <p>Дараах утгуудыг ол.
+          <ol>
+            <li><p><m>\arcsin\dfrac{\sqrt{3}}{2}</m>,<nbsp/>
+            <m>\arccos\left(-\dfrac{1}{2}\right)</m>,<nbsp/>
+            <m>\operatorname{arctg}\sqrt{3}</m></p></li>
+
+            <li><p><m>\arcsin\left(-\dfrac{\sqrt{2}}{2}\right)</m>,<nbsp/>
+            <m>\arccos 0</m>,<nbsp/>
+            <m>\operatorname{arcctg}(-1)</m></p></li>
+
+            <li><p><m>\arcsin\left(\sin\dfrac{3\pi}{4}\right)</m>,<nbsp/>
+            <m>\arccos\left(\cos\dfrac{7\pi}{6}\right)</m>,<nbsp/>
+            <m>\operatorname{arctg}\left(\tg\dfrac{2\pi}{3}\right)</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <answer>
+        <p>а. <m>\dfrac{\pi}{3}</m>, <m>\dfrac{2\pi}{3}</m>,
+        <m>\dfrac{\pi}{3}</m>;<nbsp/>
+        б. <m>-\dfrac{\pi}{4}</m>, <m>\dfrac{\pi}{2}</m>,
+        <m>\dfrac{3\pi}{4}</m>;<nbsp/>
+        в. <m>\dfrac{\pi}{4}</m>, <m>\dfrac{5\pi}{6}</m>,
+        <m>-\dfrac{\pi}{3}</m>.</p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="sem3-ex-4">
+      <title>Урвуу тригонометр илэрхийлэл хялбарчлах</title>
+      <statement>
+        <p>Дараах илэрхийллийг хялбарчил.
+          <ol>
+            <li><p><m>\sin(\arccos x)</m>, <m>x \in [-1, 1]</m></p></li>
+            <li><p><m>\tg(\arccos x)</m>, <m>x \in (0, 1]</m></p></li>
+            <li><p><m>\sin(2\arcsin x)</m>, <m>x \in [-1, 1]</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <answer>
+        <p>а. <m>\sqrt{1 - x^2}</m>;<nbsp/>
+        б. <m>\dfrac{\sqrt{1 - x^2}}{x}</m>;<nbsp/>
+        в. <m>2x\sqrt{1 - x^2}</m>.</p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="sem3-ex-5">
+      <title>Илтгэгч тэгшитгэл</title>
+      <statement>
+        <p>Тэгшитгэлийг бод.
+          <ol>
+            <li><p><m>2^{x+1} = 16</m></p></li>
+            <li><p><m>9^x - 4 \cdot 3^x + 3 = 0</m></p></li>
+            <li><p><m>4^x + 2^{x+1} - 8 = 0</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <answer>
+        <p>а. <m>x = 3</m>;<nbsp/>
+        б. <m>x \in \{0, 1\}</m>;<nbsp/>
+        в. <m>x = 1</m> (<m>t = 2^x</m> орлуулгаар <m>t = 2</m>,
+        <m>t = -4</m> тохирохгүй).</p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="sem3-ex-6">
+      <title>Логарифм тэгшитгэл</title>
+      <statement>
+        <p>Тэгшитгэлийг бод (тодорхойлогдох мужийг заавал шалга).
+          <ol>
+            <li><p><m>\log_2 (x - 3) = 4</m></p></li>
+            <li><p><m>\lg(x+1) + \lg(x-2) = 1</m></p></li>
+            <li><p><m>\log_3 x + \log_9 x = 3</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <answer>
+        <p>а. <m>x = 19</m>;<nbsp/>
+        б. <m>x = 4</m> (<m>x = -3</m> мужид багтахгүй);<nbsp/>
+        в. <m>x = 9</m> (суурь солих томьёогоор
+        <m>\log_9 x = \frac{1}{2}\log_3 x</m>).</p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="sem3-ex-7">
+      <title>Логарифмын чанарууд</title>
+      <statement>
+        <p>Дараах утгуудыг логарифмын чанар ашиглан бод.
+          <ol>
+            <li><p><m>\lg 8 + \lg 125</m></p></li>
+            <li><p><m>\log_5 75 - \log_5 3</m></p></li>
+            <li><p><m>3^{\,2 + \log_3 4}</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <answer>
+        <p>а. <m>\lg 1000 = 3</m>;<nbsp/>
+        б. <m>\log_5 25 = 2</m>;<nbsp/>
+        в. <m>9 \cdot 3^{\log_3 4} = 36</m>.</p>
+      </answer>
+    </exercise>
+  </exercises>
+</section>
+<section xml:id="sec-homework-3">
+  <title>Гэрийн даалгавар 3</title>
+
+  <exercises xml:id="exercises-homework-3">
+    <introduction>
+      <p>Даалгавар бүр (а), (б), (в) гэсэн гурван бодлоготой. Бодолтыг
+      бүрэн үндэслэлтэй бичиж ирнэ.</p>
+    </introduction>
+
+    <exercise xml:id="hw3-ex-1">
+      <title>Тригонометр функц</title>
+      <statement>
+        <p>
+          <ol>
+            <li><p><m>\cos x = -\dfrac{5}{13}</m> ба
+            <m>x \in \left(\pi,\ \dfrac{3\pi}{2}\right)</m> бол
+            <m>\sin x</m>, <m>\ctg x</m>-ийг ол.</p></li>
+
+            <li><p><m>\dfrac{1 - \cos 2x}{\sin 2x} = \tg x</m> болохыг
+            батал.</p></li>
+
+            <li><p><m>\sin x + \cos x = \dfrac{1}{2}</m> бол
+            <m>\sin x \cos x</m>-ийг ол.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="hw3-ex-2">
+      <title>Урвуу тригонометр функц</title>
+      <statement>
+        <p>
+          <ol>
+            <li><p><m>\arccos\dfrac{\sqrt{2}}{2}
+            + \arcsin\left(-\dfrac{1}{2}\right)</m> утгыг ол.</p></li>
+
+            <li><p><m>\tg\left(\arcsin\dfrac{3}{5}\right)</m> утгыг
+            ол.</p></li>
+
+            <li><p><m>\operatorname{arctg} 2 + \operatorname{arctg} 3
+            = \dfrac{3\pi}{4}</m> болохыг батал.
+            (<em>Зөвлөмж:</em> тангенсын нэмэх өнцгийн томьёог хэрэглээд
+            нийлбэр өнцөг аль завсарт оршихыг тогтоо.)</p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="hw3-ex-3">
+      <title>Илтгэгч ба логарифм тэгшитгэл</title>
+      <statement>
+        <p>Тэгшитгэлийг бод.
+          <ol>
+            <li><p><m>3^{2x} - 10 \cdot 3^x + 9 = 0</m></p></li>
+            <li><p><m>\log_5 (2x + 3) = 2</m></p></li>
+            <li><p><m>2^x = 5</m> тэгшитгэлийн шийдийг аравтын логарифмаар
+            (<m>\lg</m>) илэрхийл.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="hw3-ex-4">
+      <title>Логарифмын чанарууд</title>
+      <statement>
+        <p>
+          <ol>
+            <li><p><m>\lg 2 = a</m> бол <m>\lg 5</m>-ыг <m>a</m>-аар
+            илэрхийл.</p></li>
+
+            <li><p><m>\log_2 3 = a</m> бол <m>\log_2 12</m>-ыг
+            <m>a</m>-аар илэрхийл.</p></li>
+
+            <li><p><m>\log_a b \cdot \log_b a = 1</m> болохыг батал
+            (<m>a, b \gt 0</m>; <m>a, b \ne 1</m>).</p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="hw3-ex-5">
+      <title>Илтгэгч ба логарифм функцийн шинж</title>
+      <statement>
+        <p>
+          <ol>
+            <li><p><m>f(x) = 2^x</m> ба <m>g(x) = \log_2 x</m> функцүүдийн
+            графикийг нэг координатын хавтгайд зураад харилцан байршлыг нь
+            тайлбарла.</p></li>
+
+            <li><p><m>f(x) = 3^{-x}</m> функц өсөх үү, буурах уу —
+            тодорхойлолтоор батал.</p></li>
+
+            <li><p><m>f(x) = \ln\left(x + \sqrt{x^2 + 1}\right)</m> функц
+            сондгой болохыг батал.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>
+</chapter>
