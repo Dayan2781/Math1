@@ -1,0 +1,1136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================
+     Бүлэг 5: Функцийн графикийн шинж чанар
+     §5.1 Экстремум утгууд
+     §5.2 Дундаж утгын теорем
+     §5.3 Өсөх ба буурах функц
+     §5.4 Гүдгэр, хотгор чанар ба хоёр дахь уламжлал
+     §5.5 Муруй зурах
+     ============================================================ -->
+
+<chapter xml:id="ch-graph-behavior" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Функцийн графикийн шинж чанар</title>
+
+  <introduction xml:id="intro-graph-behavior">
+    <p>Уламжлал нь функцийн графикийн хэлбэр дүрсийг тодорхойлоход
+    хамгийн чухал хэрэгсэл юм. Энэ бүлэгт бид уламжлалыг ашиглан
+    функцийн экстремум утга, өсөх/буурах чанар, гүдгэр/хотгор чанарыг
+    судалж, график зурах бүрэн аргыг эзэмшинэ.</p>
+
+    <p><alert>Бүлгийн зорилго:</alert>
+      <ul>
+        <li>Орон нутгийн ба абсолют экстремумыг ялгах, олох.</li>
+        <li>Эгзэгтэй цэгийг тодорхойлж ашиглах.</li>
+        <li>Дундаж утгын теоремыг ойлгох, хэрэглэх.</li>
+        <li>Эхний уламжлалаар өсөх/буурах завсрыг тогтоох.</li>
+        <li>Хоёр дахь уламжлалаар гүдгэр/хотгор чанарыг судлах.</li>
+        <li>Функцийн бүрэн графикийг зурах.</li>
+      </ul>
+    </p>
+  </introduction>
+
+  <!-- ============================================================
+       §5.1 Экстремум утгууд
+       ============================================================ -->
+  <section xml:id="sec-extreme-values">
+    <title>Экстремум утгууд</title>
+
+    <introduction>
+      <p>Функцийн <q>хамгийн их</q> ба <q>хамгийн бага</q> утгуудыг
+      олох нь математик анализын хамгийн чухал хэрэглээний нэг. Энэ хэсэгт
+      экстремум утгуудын нарийн тодорхойлолт, оршин байх нөхцөл, олох
+      аргыг судална.</p>
+    </introduction>
+
+    <subsection xml:id="subsec-abs-rel-extrema">
+      <title>Абсолют ба орон нутгийн экстремум</title>
+
+      <definition xml:id="def-absolute-extrema">
+        <title>Абсолют экстремум</title>
+        <statement>
+          <p><m>f</m> функц <m>D</m> олонлогт тодорхойлогдсон байг.</p>
+          <p><m>f(c) \ge f(x)</m> бүх <m>x\in D</m>-д байвал <m>f(c)</m>-ийг
+          <m>f</m>-ийн <term>абсолют их утга</term> гэнэ.</p>
+          <p><m>f(c) \le f(x)</m> бүх <m>x\in D</m>-д байвал <m>f(c)</m>-ийг
+          <m>f</m>-ийн <term>абсолют бага утга</term> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-local-extrema">
+        <title>Орон нутгийн экстремум</title>
+        <statement>
+          <p><m>c</m> цэгийг агуулсан нээлттэй завсар <m>I</m> олдож,</p>
+          <p><m>f(c) \ge f(x)</m> бүх <m>x\in I</m>-д байвал <m>f(c)</m>-ийг
+          <term>орон нутгийн их утга</term> гэнэ.</p>
+          <p><m>f(c) \le f(x)</m> бүх <m>x\in I</m>-д байвал <m>f(c)</m>-ийг
+          <term>орон нутгийн бага утга</term> гэнэ.</p>
+        </statement>
+      </definition>
+
+      <figure xml:id="fig-extrema-types">
+        <caption>Абсолют ба орон нутгийн экстремумын жишээ</caption>
+        <image xml:id="img-extrema-types">
+          <shortdescription>Хаалттай завсарт функцийн абсолют их, абсолют бага,
+          орон нутгийн их, орон нутгийн бага утгуудыг харуулсан зураг</shortdescription>
+          <latex-image>
+            \begin{tikzpicture}
+              \begin{axis}[
+                xmin=-0.5, xmax=5.5, ymin=-1, ymax=5,
+                xlabel={$x$}, ylabel={$y$},
+                axis lines=center,
+                xtick={0.5, 1.5, 3, 4.5, 5},
+                xticklabels={$a$, $c_1$, $c_2$, $c_3$, $b$},
+                ytick=\empty,
+                width=10cm, height=7cm,
+                clip=false,
+              ]
+                \addplot[smooth, thick, blue, domain=0.5:5, samples=80]
+                  {-0.3*(x-1.5)^3 + 0.8*(x-1.5)^2 - 0.2*(x-1.5) + 3};
+                \addplot[soliddot] coordinates {(0.5, 2.4)};
+                \node[left] at (axis cs:0.5,2.4) {\small $f(a)$};
+                \addplot[soliddot] coordinates {(1.5, 3)};
+                \node[above] at (axis cs:1.5,3.2) {\small орон нутгийн их};
+                \addplot[soliddot] coordinates {(3, 1.5)};
+                \node[below] at (axis cs:3,1.2) {\small орон нутгийн бага};
+                \addplot[soliddot] coordinates {(4.5, 4.5)};
+                \node[above] at (axis cs:4.5,4.7) {\small абсолют их};
+                \addplot[soliddot] coordinates {(5, 3.8)};
+                \node[right] at (axis cs:5,3.8) {\small $f(b)$};
+              \end{axis}
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+
+      <theorem xml:id="thm-extreme-value">
+        <title>Экстремум утгын теорем</title>
+        <statement>
+          <p><m>f</m> функц <m>[a,b]</m> хаалттай завсарт тасралтгүй
+          бол <m>f</m> нь <m>[a,b]</m>-д абсолют их ба абсолют бага
+          утгатай байна.</p>
+        </statement>
+      </theorem>
+
+      <remark xml:id="rem-evt-conditions">
+        <p>Теоремын хоёр нөхцөл чухал: завсар <em>хаалттай</em> ба
+        функц <em>тасралтгүй</em> байх ёстой. Аль нэг нь хангагдахгүй
+        бол экстремум оршихгүй байж болно.
+          <ul>
+            <li>Нээлттэй завсар <m>(0,1)</m>-д <m>f(x)=x</m> абсолют
+            их утгагүй.</li>
+            <li>Тасралтай функц <m>f(x)=\frac{1}{x}</m> хаалттай завсарт
+            зааглагдахгүй.</li>
+          </ul>
+        </p>
+      </remark>
+    </subsection>
+
+    <subsection xml:id="subsec-critical-points">
+      <title>Эгзэгтэй цэг</title>
+
+      <theorem xml:id="thm-fermat">
+        <title>Фермагийн теорем</title>
+        <statement>
+          <p>Хэрэв <m>f</m> нь <m>c</m> цэгт орон нутгийн экстремумтай
+          бөгөөд <m>f'(c)</m> оршин байвал <m>f'(c) = 0</m>.</p>
+        </statement>
+      </theorem>
+
+      <definition xml:id="def-critical-point">
+        <title>Эгзэгтэй цэг</title>
+        <statement>
+          <p><m>c</m> цэгийг <m>f</m> функцийн <term>эгзэгтэй цэг</term>
+          гэж нэрлэх нь <m>f'(c) = 0</m> эсвэл <m>f'(c)</m> оршихгүй
+          тохиолдолд юм.</p>
+        </statement>
+      </definition>
+
+      <figure xml:id="fig-critical-points">
+        <caption>Эгзэгтэй цэгийн төрлүүд</caption>
+        <sidebyside widths="47% 47%" margins="0%">
+          <figure xml:id="fig-crit-fprime-zero">
+            <caption><m>f'(c) = 0</m>: шүргэгч хэвтээ</caption>
+            <image xml:id="img-crit-fprime-zero">
+              <shortdescription>f'(c)=0 болох цэгт хэвтээ шүргэгч шулуун</shortdescription>
+              <latex-image>
+                \begin{tikzpicture}
+                  \begin{axis}[
+                    xmin=-1, xmax=3, ymin=-0.5, ymax=3,
+                    axis lines=center,
+                    xtick={1}, xticklabels={$c$},
+                    ytick=\empty,
+                    width=6cm, height=5cm,
+                  ]
+                    \addplot[smooth, thick, blue, domain=-0.5:2.5, samples=60]
+                      {-(x-1)^2 + 2};
+                    \addplot[dashed, red, domain=0:2] {2};
+                    \addplot[soliddot] coordinates {(1, 2)};
+                  \end{axis}
+                \end{tikzpicture}
+              </latex-image>
+            </image>
+          </figure>
+          <figure xml:id="fig-crit-fprime-dne">
+            <caption><m>f'(c)</m> оршихгүй: тэгш биш цэг</caption>
+            <image xml:id="img-crit-fprime-dne">
+              <shortdescription>f'(c) оршихгүй цэг, жишээ нь |x|-ийн x=0</shortdescription>
+              <latex-image>
+                \begin{tikzpicture}
+                  \begin{axis}[
+                    xmin=-2, xmax=2, ymin=-0.5, ymax=2.5,
+                    axis lines=center,
+                    xtick={0}, xticklabels={$c$},
+                    ytick=\empty,
+                    width=6cm, height=5cm,
+                  ]
+                    \addplot[thick, blue, domain=-1.8:0] {-x};
+                    \addplot[thick, blue, domain=0:1.8] {x};
+                    \addplot[soliddot] coordinates {(0, 0)};
+                    \node[below right] at (axis cs:1.5,1.5)
+                      {$f(x)=|x|$};
+                  \end{axis}
+                \end{tikzpicture}
+              </latex-image>
+            </image>
+          </figure>
+        </sidebyside>
+      </figure>
+
+      <remark xml:id="rem-crit-not-extrema">
+        <p>Эгзэгтэй цэг нь экстремум байх албагүй. Жишээ нь
+        <m>f(x) = x^3</m>-ийн <m>x=0</m> цэгт <m>f'(0) = 0</m>
+        боловч экстремум биш (нугаралтын цэг). Тиймээс эгзэгтэй
+        цэг нь <em>экстремум байж болох нэр дэвшигч</em> юм.</p>
+      </remark>
+
+      <example xml:id="ex-find-extrema-closed">
+        <title>Хаалттай завсарт абсолют экстремум олох</title>
+        <statement>
+          <p><m>f(x) = x^3 - 3x + 2</m> функцийн <m>[-2, 3]</m>
+          завсарт абсолют их ба абсолют бага утгыг ол.</p>
+        </statement>
+        <solution>
+          <p><alert>Алхам 1.</alert> Эгзэгтэй цэг олох:
+          <m>f'(x) = 3x^2 - 3 = 3(x-1)(x+1) = 0</m>, иймд
+          <m>x = -1</m> ба <m>x = 1</m>.</p>
+          <p><alert>Алхам 2.</alert> Эгзэгтэй цэг ба хязгаарын цэгүүдэд
+          функцийн утгыг тооцоол:</p>
+          <table xml:id="tbl-extrema-closed">
+            <title>Нэр дэвшигч цэгүүдийн утга</title>
+            <tabular halign="center">
+              <row header="yes" bottom="minor">
+                <cell><m>x</m></cell>
+                <cell><m>f(x)</m></cell>
+              </row>
+              <row><cell><m>-2</m></cell><cell><m>0</m></cell></row>
+              <row><cell><m>-1</m></cell><cell><m>4</m></cell></row>
+              <row><cell><m>1</m></cell><cell><m>0</m></cell></row>
+              <row><cell><m>3</m></cell><cell><m>20</m></cell></row>
+            </tabular>
+          </table>
+          <p><alert>Алхам 3.</alert> Хамгийн их нь абсолют их, хамгийн
+          бага нь абсолют бага:</p>
+          <p>Абсолют их: <m>f(3) = 20</m>.
+          Абсолют бага: <m>f(-2) = f(1) = 0</m>.</p>
+        </solution>
+      </example>
+
+      <figure xml:id="fig-extrema-closed-ex">
+        <caption><m>f(x)=x^3-3x+2</m>, <m>[-2,3]</m> завсарт</caption>
+        <image xml:id="img-extrema-closed-ex">
+          <shortdescription>x^3-3x+2 функцийн [-2,3] завсарт экстремумуудыг
+          тэмдэглэсэн график</shortdescription>
+          <latex-image>
+            \begin{tikzpicture}
+              \begin{axis}[
+                xmin=-2.5, xmax=3.5, ymin=-2, ymax=22,
+                xlabel={$x$}, ylabel={$y$},
+                axis lines=center,
+                width=9cm, height=7cm,
+                grid=both,
+              ]
+                \addplot[smooth, thick, blue, domain=-2:3, samples=60]
+                  {x^3 - 3*x + 2};
+                \addplot[soliddot] coordinates {(-2, 0)};
+                \node[below left] at (axis cs:-2,0) {\small $(-2,0)$};
+                \addplot[soliddot] coordinates {(-1, 4)};
+                \node[above left] at (axis cs:-1,4) {\small $(-1,4)$};
+                \addplot[soliddot] coordinates {(1, 0)};
+                \node[below right] at (axis cs:1,0) {\small $(1,0)$};
+                \addplot[soliddot] coordinates {(3, 20)};
+                \node[left] at (axis cs:3,20) {\small $(3,20)$};
+              \end{axis}
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+    </subsection>
+
+    <exercises xml:id="exercises-extreme-values">
+      <title>§5.1 Дасгалууд</title>
+
+      <exercise xml:id="ex-ev-1">
+        <statement>
+          <p>Эгзэгтэй цэгийг ол:
+            <ol>
+              <li><p><m>f(x) = 2x^3 - 9x^2 + 12x - 5</m></p></li>
+              <li><p><m>f(x) = x^{2/3}(x-4)</m></p></li>
+              <li><p><m>f(x) = \dfrac{x}{x^2+1}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer><p>а. <m>x=1, 2</m>; б. <m>x=0, \frac{8}{5}</m>;
+        в. <m>x=\pm 1</m>.</p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-ev-2">
+        <statement>
+          <p>Хаалттай завсарт абсолют экстремумыг ол:
+            <ol>
+              <li><p><m>f(x)=x^4-2x^2+1</m>, <m>[-2,2]</m></p></li>
+              <li><p><m>f(x)=\sin x + \cos x</m>, <m>[0, 2\pi]</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer><p>а. Абс их: <m>f(\pm 2)=9</m>, абс бага: <m>f(\pm 1)=0</m>;
+        б. Абс их: <m>f(\pi/4)=\sqrt{2}</m>, абс бага: <m>f(5\pi/4)=-\sqrt{2}</m>.</p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-ev-3">
+        <statement>
+          <p>Эгзэгтэй цэг экстремум байх албагүйг жишээгээр харуул.</p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       §5.2 Дундаж утгын теорем
+       ============================================================ -->
+  <section xml:id="sec-mvt">
+    <title>Дундаж утгын теорем</title>
+
+    <introduction>
+      <p>Дундаж утгын теорем (ДУТ) нь математик анализын хамгийн чухал
+      теоремүүдийн нэг бөгөөд функцийн утга ба уламжлалын хоорондын
+      гүн холбоог илэрхийлдэг.</p>
+    </introduction>
+
+    <theorem xml:id="thm-rolle">
+      <title>Роллийн теорем</title>
+      <statement>
+        <p><m>f</m> функц <m>[a,b]</m>-д тасралтгүй, <m>(a,b)</m>-д
+        ялгагдах бөгөөд <m>f(a) = f(b)</m> бол <m>f'(c)=0</m> байх
+        <m>c\in(a,b)</m> олдоно.</p>
+      </statement>
+    </theorem>
+
+    <figure xml:id="fig-rolle">
+      <caption>Роллийн теорем: <m>f(a)=f(b)</m> үед хэвтээ шүргэгч
+      байдаг</caption>
+      <image xml:id="img-rolle">
+        <shortdescription>f(a)=f(b) байх функцийн графикт (a,b) завсарт
+        хэвтээ шүргэгч шулуунтай цэг c олдохыг харуулсан</shortdescription>
+        <latex-image>
+          \begin{tikzpicture}
+            \begin{axis}[
+              xmin=-0.5, xmax=4.5, ymin=-0.5, ymax=4,
+              xlabel={$x$}, ylabel={$y$},
+              axis lines=center,
+              xtick={0.5, 2.2, 4}, xticklabels={$a$, $c$, $b$},
+              ytick=\empty,
+              width=9cm, height=6cm,
+            ]
+              \addplot[smooth, thick, blue, domain=0.5:4, samples=60]
+                {-0.5*(x-2.2)^2 + 3};
+              \addplot[dashed, red, domain=1:3.4] {3};
+              \addplot[soliddot] coordinates {(0.5, 1.555)};
+              \addplot[soliddot] coordinates {(4, 1.38)};
+              \addplot[soliddot] coordinates {(2.2, 3)};
+              \node[above] at (axis cs:2.2,3.1) {\small $f'(c)=0$};
+              \addplot[dashed, gray, domain=0.3:4.2] {1.47}
+                node[right] {\small $f(a)=f(b)$};
+            \end{axis}
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+
+    <theorem xml:id="thm-mvt">
+      <title>Дундаж утгын теорем (ДУТ)</title>
+      <statement>
+        <p><m>f</m> функц <m>[a,b]</m>-д тасралтгүй, <m>(a,b)</m>-д
+        ялгагдах бол</p>
+        <me>f'(c) = \frac{f(b)-f(a)}{b-a}</me>
+        <p>байх <m>c\in(a,b)</m> олдоно.</p>
+      </statement>
+    </theorem>
+
+    <figure xml:id="fig-mvt">
+      <caption>Дундаж утгын теорем: секант шулуунтай параллель
+      шүргэгч байдаг</caption>
+      <image xml:id="img-mvt">
+        <shortdescription>a ба b цэгийг холбох секант шулуунтай параллель
+        шүргэгч шулуун c цэгт байхыг харуулсан зураг</shortdescription>
+        <latex-image>
+          \begin{tikzpicture}
+            \begin{axis}[
+              xmin=-0.5, xmax=5, ymin=-0.5, ymax=5,
+              xlabel={$x$}, ylabel={$y$},
+              axis lines=center,
+              xtick={0.5, 2.5, 4.5},
+              xticklabels={$a$, $c$, $b$},
+              ytick=\empty,
+              width=9cm, height=6cm,
+            ]
+              \addplot[smooth, thick, blue, domain=0.5:4.5, samples=60]
+                {0.3*(x-2)^3 - 0.5*(x-2)^2 + 2*x - 0.5};
+              %% Secant line
+              \addplot[dashed, gray, domain=0:5]
+                {(3.925 - 0.55)/(4.5-0.5) * (x - 0.5) + 0.55};
+              %% Tangent at c (parallel)
+              \addplot[red, domain=1.2:3.8]
+                {(3.925 - 0.55)/(4.5-0.5) * (x - 2.5) + 2.425};
+              \addplot[soliddot] coordinates {(0.5, 0.55)};
+              \addplot[soliddot] coordinates {(4.5, 3.925)};
+              \addplot[soliddot] coordinates {(2.5, 2.425)};
+              \node[above left] at (axis cs:2.5,2.5) {\small $c$};
+              \node[above] at (axis cs:3.5,3.5) {\small секант};
+              \node[below] at (axis cs:3.2,2.6) {\small\color{red} шүргэгч};
+            \end{axis}
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+
+    <example xml:id="ex-mvt-1">
+      <title>ДУТ хэрэглэх</title>
+      <statement>
+        <p><m>f(x) = x^3 - x</m> функц <m>[-1, 2]</m> завсарт ДУТ-ийн
+        нөхцөлийг шалгаж, <m>c</m>-ийг ол.</p>
+      </statement>
+      <solution>
+        <p><m>f</m> олон гишүүнт тул <m>[-1,2]</m>-д тасралтгүй,
+        <m>(-1,2)</m>-д ялгагдана. ДУТ-ийн нөхцлүүд хангагдана.</p>
+        <me>\frac{f(2)-f(-1)}{2-(-1)} = \frac{6-0}{3} = 2.</me>
+        <p><m>f'(x) = 3x^2 - 1 = 2</m> тэгшитгэлээс:
+        <m>3x^2 = 3</m>, <m>x = \pm 1</m>.
+        <m>(-1,2)</m> завсарт <m>c = 1</m>.</p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-mvt-speed">
+      <title>ДУТ-ийн хэрэглээ: хурдны хязгаарлалт</title>
+      <statement>
+        <p>Машин зам дагуу 10:00-д 0 км, 11:00-д 130 км-т
+        байсан. Хурдны хязгаарлалт 110 км/цаг. Машин хурдны
+        хязгаарлалтыг зөрчсөн гэж батлах боломжтой юу?</p>
+      </statement>
+      <solution>
+        <p>ДУТ-ээр, тодорхой <m>c</m> мөчид</p>
+        <me>v(c) = \frac{130 - 0}{1} = 130 \text{ км/цаг}.</me>
+        <p>Энэ нь 110 км/цагаас их тул ДУТ-ийн хүчинд машин
+        хязгаарлалтыг заавал зөрчсөн мөч байна.</p>
+      </solution>
+    </example>
+
+    <exercises xml:id="exercises-mvt">
+      <title>§5.2 Дасгалууд</title>
+
+      <exercise xml:id="ex-mvt-ex1">
+        <statement>
+          <p>ДУТ-ийн <m>c</m> утгыг ол:
+            <ol>
+              <li><p><m>f(x) = x^2 + 2x - 1</m>, <m>[0, 2]</m></p></li>
+              <li><p><m>f(x) = \sqrt{x}</m>, <m>[0, 4]</m></p></li>
+              <li><p><m>f(x) = \cos x</m>, <m>[0, \pi]</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer><p>а. <m>c=1</m>; б. <m>c=1</m>;
+        в. <m>c=\arcsin(2/\pi)</m>.</p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-mvt-ex2">
+        <statement>
+          <p><m>f(x) = |x|</m> функц <m>[-1, 1]</m> завсарт ДУТ
+          хэрэглэж болох уу? Тайлбарла.</p>
+        </statement>
+        <answer><p>Болохгүй: <m>f</m> нь <m>x=0</m>-д ялгагдахгүй.</p></answer>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       §5.3 Өсөх ба буурах функц
+       ============================================================ -->
+  <section xml:id="sec-incr-decr">
+    <title>Өсөх ба буурах функц</title>
+
+    <introduction>
+      <p>Эхний уламжлалын тэмдгээр функц хаана өсч, хаана буурахыг
+      тогтоож болно.</p>
+    </introduction>
+
+    <theorem xml:id="thm-incr-decr-test">
+      <title>Өсөх/буурах шалгуур</title>
+      <statement>
+        <p><m>f</m> нь <m>(a,b)</m>-д ялгагдах бол:</p>
+        <p>
+          <ul>
+            <li><m>f'(x) &gt; 0</m> бүх <m>x\in(a,b)</m>-д
+            <m>\Rightarrow</m> <m>f</m> <m>(a,b)</m>-д <term>өсөх</term>.</li>
+            <li><m>f'(x) &lt; 0</m> бүх <m>x\in(a,b)</m>-д
+            <m>\Rightarrow</m> <m>f</m> <m>(a,b)</m>-д <term>буурах</term>.</li>
+            <li><m>f'(x) = 0</m> бүх <m>x\in(a,b)</m>-д
+            <m>\Rightarrow</m> <m>f</m> <m>(a,b)</m>-д <term>тогтмол</term>.</li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+
+    <theorem xml:id="thm-first-deriv-test">
+      <title>Эхний уламжлалын шалгуур (экстремум олох)</title>
+      <statement>
+        <p><m>c</m> нь <m>f</m>-ийн эгзэгтэй цэг байг.</p>
+        <p>
+          <ul>
+            <li><m>f'</m> нь <m>c</m>-д <m>+</m>-аас <m>-</m> руу
+            тэмдэг солигдвол <m>f(c)</m> нь <term>орон нутгийн их</term>.</li>
+            <li><m>f'</m> нь <m>c</m>-д <m>-</m>-аас <m>+</m> руу
+            тэмдэг солигдвол <m>f(c)</m> нь <term>орон нутгийн бага</term>.</li>
+            <li><m>f'</m> тэмдэг солигдохгүй бол экстремум биш.</li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+
+    <example xml:id="ex-first-deriv-test">
+      <title>Эхний уламжлалын шалгуур хэрэглэх</title>
+      <statement>
+        <p><m>f(x) = x^4 - 4x^3 + 4x^2</m> функцийн өсөх/буурах
+        завсрыг тогтоож, экстремумыг ол.</p>
+      </statement>
+      <solution>
+        <p><m>f'(x) = 4x^3 - 12x^2 + 8x = 4x(x^2-3x+2) = 4x(x-1)(x-2)</m>.</p>
+        <p>Эгзэгтэй цэг: <m>x = 0, 1, 2</m>.</p>
+
+        <table xml:id="tbl-sign-chart-1">
+          <title><m>f'</m>-ийн тэмдгийн хүснэгт</title>
+          <tabular halign="center">
+            <row header="yes" bottom="minor">
+              <cell>Завсар</cell>
+              <cell><m>f'</m>-ийн тэмдэг</cell>
+              <cell><m>f</m>-ийн шинж</cell>
+            </row>
+            <row><cell><m>(-\infty, 0)</m></cell><cell><m>-</m></cell><cell>буурах</cell></row>
+            <row><cell><m>(0, 1)</m></cell><cell><m>+</m></cell><cell>өсөх</cell></row>
+            <row><cell><m>(1, 2)</m></cell><cell><m>-</m></cell><cell>буурах</cell></row>
+            <row><cell><m>(2, +\infty)</m></cell><cell><m>+</m></cell><cell>өсөх</cell></row>
+          </tabular>
+        </table>
+
+        <p>Орон нутгийн бага: <m>f(0) = 0</m>, <m>f(2) = 0</m>.
+        Орон нутгийн их: <m>f(1) = 1</m>.</p>
+      </solution>
+    </example>
+
+    <figure xml:id="fig-first-deriv-test-ex">
+      <caption><m>f(x)=x^4-4x^3+4x^2</m>-ийн график</caption>
+      <image xml:id="img-first-deriv-test-ex">
+        <shortdescription>x^4-4x^3+4x^2 функцийн графикт x=0,1,2 цэгүүдийг тэмдэглэсэн</shortdescription>
+        <latex-image>
+          \begin{tikzpicture}
+            \begin{axis}[
+              xmin=-1, xmax=3, ymin=-0.5, ymax=2,
+              xlabel={$x$}, ylabel={$y$},
+              axis lines=center,
+              width=9cm, height=6cm,
+              grid=both,
+            ]
+              \addplot[smooth, thick, blue, domain=-0.5:2.7, samples=80]
+                {x^4 - 4*x^3 + 4*x^2};
+              \addplot[soliddot] coordinates {(0,0)};
+              \node[below left] at (axis cs:0,0) {\small бага};
+              \addplot[soliddot] coordinates {(1,1)};
+              \node[above] at (axis cs:1,1.1) {\small их};
+              \addplot[soliddot] coordinates {(2,0)};
+              \node[below right] at (axis cs:2,0) {\small бага};
+            \end{axis}
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+
+    <exercises xml:id="exercises-incr-decr">
+      <title>§5.3 Дасгалууд</title>
+
+      <exercise xml:id="ex-id-1">
+        <statement>
+          <p>Өсөх/буурах завсар, экстремумыг ол:
+            <ol>
+              <li><p><m>f(x) = x^3 - 12x + 10</m></p></li>
+              <li><p><m>f(x) = xe^{-x}</m></p></li>
+              <li><p><m>f(x) = \dfrac{x^2}{x-1}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer><p>а. Өсөх <m>(-\infty,-2)\cup(2,\infty)</m>,
+        буурах <m>(-2,2)</m>; орон нутгийн их <m>f(-2)=26</m>,
+        бага <m>f(2)=-6</m>;
+        б. Өсөх <m>(-\infty,1)</m>, буурах <m>(1,\infty)</m>;
+        орон нутгийн их <m>f(1)=e^{-1}</m>;
+        в. Өсөх <m>(-\infty,0)\cup(2,\infty)</m>,
+        буурах <m>(0,1)\cup(1,2)</m>.</p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-id-2">
+        <statement>
+          <p><m>f(x) = \sin x + \cos x</m>-ийн <m>[0, 2\pi]</m>
+          завсарт өсөх/буурах завсрыг ол.</p>
+        </statement>
+        <answer><p>Өсөх <m>(0, \pi/4) \cup (5\pi/4, 2\pi)</m>,
+        буурах <m>(\pi/4, 5\pi/4)</m>.</p></answer>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       §5.4 Гүдгэр, хотгор чанар ба хоёр дахь уламжлал
+       ============================================================ -->
+  <section xml:id="sec-concavity">
+    <title>Гүдгэр, хотгор чанар ба хоёр дахь уламжлал</title>
+
+    <introduction>
+      <p>Хоёр дахь уламжлал нь функцийн графикийн <q>нугарах чиглэл</q>-ийг
+      тодорхойлдог. Энэ мэдээлэл нь график зурах, экстремум олоход
+      ашигтай.</p>
+    </introduction>
+
+    <subsection xml:id="subsec-concavity-def">
+      <title>Гүдгэр ба хотгор</title>
+
+      <definition xml:id="def-concavity">
+        <title>Гүдгэр ба хотгор чанар</title>
+        <statement>
+          <p><m>f</m> функц <m>(a,b)</m>-д хоёр удаа ялгагдах бол:</p>
+          <p>
+            <ul>
+              <li><m>f''(x) &gt; 0</m> бол <m>f</m> нь <m>(a,b)</m>-д
+              <term>гүдгэр</term> (concave up) — аяга шиг.</li>
+              <li><m>f''(x) &lt; 0</m> бол <m>f</m> нь <m>(a,b)</m>-д
+              <term>хотгор</term> (concave down) — малгай шиг.</li>
+            </ul>
+          </p>
+        </statement>
+      </definition>
+
+      <figure xml:id="fig-concavity">
+        <caption>Гүдгэр ба хотгор чанар</caption>
+        <sidebyside widths="47% 47%" margins="0%">
+          <figure xml:id="fig-concave-up">
+            <caption>Гүдгэр (<m>f'' &gt; 0</m>)</caption>
+            <image xml:id="img-concave-up">
+              <shortdescription>Гүдгэр муруй — аяга хэлбэр</shortdescription>
+              <latex-image>
+                \begin{tikzpicture}
+                  \begin{axis}[
+                    xmin=-2, xmax=2, ymin=-0.5, ymax=4.5,
+                    axis lines=center,
+                    xtick=\empty, ytick=\empty,
+                    width=6cm, height=5cm,
+                    title={\small $f''>0$: гүдгэр},
+                  ]
+                    \addplot[smooth, thick, blue, domain=-1.8:1.8, samples=60]
+                      {x^2};
+                    \addplot[dashed, red, domain=-1:1.5] {-0.3 + x*0.6 + 0.6};
+                    \addplot[dashed, red, domain=-1.5:0.5] {0.5 - x*0.8 + 0.3};
+                  \end{axis}
+                \end{tikzpicture}
+              </latex-image>
+            </image>
+          </figure>
+          <figure xml:id="fig-concave-down">
+            <caption>Хотгор (<m>f'' &lt; 0</m>)</caption>
+            <image xml:id="img-concave-down">
+              <shortdescription>Хотгор муруй — малгай хэлбэр</shortdescription>
+              <latex-image>
+                \begin{tikzpicture}
+                  \begin{axis}[
+                    xmin=-2, xmax=2, ymin=-0.5, ymax=4.5,
+                    axis lines=center,
+                    xtick=\empty, ytick=\empty,
+                    width=6cm, height=5cm,
+                    title={\small $f''\lt 0$: хотгор},
+                  ]
+                    \addplot[smooth, thick, blue, domain=-1.8:1.8, samples=60]
+                      {-x^2+4};
+                    \addplot[dashed, red, domain=-1:1.5] {4 - 0.3*x};
+                    \addplot[dashed, red, domain=-1.5:0.5] {3.5 + 0.5*x};
+                  \end{axis}
+                \end{tikzpicture}
+              </latex-image>
+            </image>
+          </figure>
+        </sidebyside>
+      </figure>
+
+      <definition xml:id="def-inflection">
+        <title>Нугаралтын цэг</title>
+        <statement>
+          <p><m>f</m> функцийн гүдгэр/хотгор чанар <m>c</m> цэгт
+          солигдвол <m>(c, f(c))</m>-ийг <term>нугаралтын цэг</term>
+          гэнэ.</p>
+        </statement>
+      </definition>
+
+      <remark xml:id="rem-inflection-condition">
+        <p>Нугаралтын цэгт <m>f''(c) = 0</m> эсвэл <m>f''(c)</m>
+        оршихгүй. Гэхдээ <m>f''(c)=0</m> нь заавал нугаралтын цэг
+        гэсэн үг биш (жишээ нь <m>f(x)=x^4</m>, <m>f''(0)=0</m> боловч
+        нугаралтын цэг биш).</p>
+      </remark>
+    </subsection>
+
+    <subsection xml:id="subsec-second-deriv-test">
+      <title>Хоёр дахь уламжлалын шалгуур</title>
+
+      <theorem xml:id="thm-second-deriv-test">
+        <title>Хоёр дахь уламжлалын шалгуур</title>
+        <statement>
+          <p><m>c</m> нь <m>f</m>-ийн эгзэгтэй цэг (<m>f'(c) = 0</m>)
+          байг.</p>
+          <p>
+            <ul>
+              <li><m>f''(c) &gt; 0</m> бол <m>f(c)</m> нь
+              <term>орон нутгийн бага</term>.</li>
+              <li><m>f''(c) &lt; 0</m> бол <m>f(c)</m> нь
+              <term>орон нутгийн их</term>.</li>
+              <li><m>f''(c) = 0</m> бол шалгуур тодорхой биш — эхний
+              уламжлалын шалгуурыг хэрэглэ.</li>
+            </ul>
+          </p>
+        </statement>
+      </theorem>
+
+      <example xml:id="ex-second-deriv-test">
+        <title>Хоёр дахь уламжлалын шалгуур хэрэглэх</title>
+        <statement>
+          <p><m>f(x) = x^3 - 3x^2 - 9x + 5</m> функцийн экстремум
+          ба нугаралтын цэгийг ол.</p>
+        </statement>
+        <solution>
+          <p><m>f'(x) = 3x^2 - 6x - 9 = 3(x-3)(x+1)</m>.
+          Эгзэгтэй цэг: <m>x = -1, 3</m>.</p>
+          <p><m>f''(x) = 6x - 6</m>.</p>
+          <p><m>f''(-1) = -12 &lt; 0</m> → <m>f(-1) = 10</m>:
+          орон нутгийн их.</p>
+          <p><m>f''(3) = 12 &gt; 0</m> → <m>f(3) = -22</m>:
+          орон нутгийн бага.</p>
+          <p>Нугаралтын цэг: <m>f''(x) = 0</m> үед <m>x = 1</m>.
+          <m>f(1) = -6</m>. <m>x &lt; 1</m>-д <m>f'' &lt; 0</m> (хотгор),
+          <m>x &gt; 1</m>-д <m>f'' &gt; 0</m> (гүдгэр) тул
+          <m>(1, -6)</m> нь нугаралтын цэг.</p>
+        </solution>
+      </example>
+
+      <figure xml:id="fig-second-deriv-ex">
+        <caption><m>f(x)=x^3-3x^2-9x+5</m>-ийн график</caption>
+        <image xml:id="img-second-deriv-ex">
+          <shortdescription>x^3-3x^2-9x+5 графикт экстремум ба нугаралтын цэг</shortdescription>
+          <latex-image>
+            \begin{tikzpicture}
+              \begin{axis}[
+                xmin=-3, xmax=5, ymin=-25, ymax=15,
+                xlabel={$x$}, ylabel={$y$},
+                axis lines=center,
+                width=9cm, height=7cm,
+                grid=both,
+              ]
+                \addplot[smooth, thick, blue, domain=-2.5:4.5, samples=80]
+                  {x^3 - 3*x^2 - 9*x + 5};
+                \addplot[soliddot] coordinates {(-1, 10)};
+                \node[above right] at (axis cs:-1,10) {\small их $(-1,10)$};
+                \addplot[soliddot] coordinates {(3, -22)};
+                \node[below left] at (axis cs:3,-22) {\small бага $(3,-22)$};
+                \addplot[hollowdot] coordinates {(1, -6)};
+                \node[right] at (axis cs:1.2,-6) {\small нугаралт $(1,-6)$};
+              \end{axis}
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+    </subsection>
+
+    <exercises xml:id="exercises-concavity">
+      <title>§5.4 Дасгалууд</title>
+
+      <exercise xml:id="ex-conc-1">
+        <statement>
+          <p>Гүдгэр/хотгор завсар, нугаралтын цэгийг ол:
+            <ol>
+              <li><p><m>f(x) = x^4 - 6x^2</m></p></li>
+              <li><p><m>f(x) = xe^{-x}</m></p></li>
+              <li><p><m>f(x) = \arctan x</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer><p>а. <m>f''=12x^2-12=0</m> үед <m>x=\pm 1</m>;
+        гүдгэр <m>(-\infty,-1)\cup(1,\infty)</m>,
+        хотгор <m>(-1,1)</m>;
+        б. <m>f''=e^{-x}(x-2)</m>; нугаралт <m>x=2</m>;
+        в. <m>f''=\frac{-2x}{(1+x^2)^2}</m>; нугаралт <m>x=0</m>.</p></answer>
+      </exercise>
+
+      <exercise xml:id="ex-conc-2">
+        <statement>
+          <p>Хоёр дахь уламжлалын шалгуураар экстремумыг ол:
+          <m>f(x) = 2x^3 + 3x^2 - 12x + 1</m>.</p>
+        </statement>
+        <answer><p><m>f'=6x^2+6x-12=6(x+2)(x-1)</m>;
+        <m>f''(-2)=-18&lt;0</m> → их <m>f(-2)=21</m>;
+        <m>f''(1)=18&gt;0</m> → бага <m>f(1)=-6</m>.</p></answer>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       §5.5 Муруй зурах
+       ============================================================ -->
+  <section xml:id="sec-curve-sketching">
+    <title>Муруй зурах</title>
+
+    <introduction>
+      <p>Энэ хэсэгт өмнөх бүх мэдлэгийг нэгтгэн функцийн графикийг
+      бүрэн дүрслэх аргыг авч үзнэ.</p>
+    </introduction>
+
+    <subsection xml:id="subsec-sketch-method">
+      <title>Муруй зурах алхмууд</title>
+
+      <p>Функцийн <m>y = f(x)</m> графикийг зурахад дараах алхмуудыг
+      дараалан хийнэ:
+        <ol>
+          <li><p><term>Тодорхойлогдох муж:</term> <m>f(x)</m>-ийн
+          тодорхойлогдох мужийг ол.</p></li>
+          <li><p><term>Тэнхлэгтэй огтлолцох цэг:</term>
+          <m>y</m>-тэнхлэг (<m>x=0</m>) ба <m>x</m>-тэнхлэг
+          (<m>y=0</m>) дээрх цэгүүд.</p></li>
+          <li><p><term>Тэгш/сондгой чанар:</term> <m>f(-x) = f(x)</m>
+          эсвэл <m>f(-x) = -f(x)</m> эсэхийг шалга.</p></li>
+          <li><p><term>Асимптот:</term>
+          Босоо (<m>\lim_{x\to a} f(x) = \pm\infty</m>),
+          хэвтээ (<m>\lim_{x\to\pm\infty} f(x)$</m>),
+          налуу асимптот.</p></li>
+          <li><p><term>Эхний уламжлал:</term> <m>f'(x)</m>-ийг олж,
+          өсөх/буурах завсар, экстремум.</p></li>
+          <li><p><term>Хоёр дахь уламжлал:</term> <m>f''(x)</m>-ийг
+          олж, гүдгэр/хотгор завсар, нугаралтын цэг.</p></li>
+          <li><p><term>Зурах:</term> дээрх бүх мэдээллийг ашиглан
+          графикийг зур.</p></li>
+        </ol>
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-sketch-examples">
+      <title>Жишээнүүд</title>
+
+      <example xml:id="ex-sketch-rational">
+        <title>Рационал функц зурах</title>
+        <statement>
+          <p><m>f(x) = \dfrac{x^2}{x^2-1}</m> функцийн графикийг зур.</p>
+        </statement>
+        <solution>
+          <p><alert>1. Муж:</alert> <m>x\ne\pm 1</m>,
+          <m>D = (-\infty,-1)\cup(-1,1)\cup(1,\infty)</m>.</p>
+
+          <p><alert>2. Огтлолцох цэг:</alert> <m>f(0) = 0</m> (координатын
+          эх цэг).</p>
+
+          <p><alert>3. Тэгш чанар:</alert> <m>f(-x) = f(x)</m> — тэгш
+          функц, <m>y</m>-тэнхлэгт тэгш хэмтэй.</p>
+
+          <p><alert>4. Асимптот:</alert></p>
+          <p>Босоо: <m>x = -1</m> ба <m>x = 1</m>.</p>
+          <p>Хэвтээ: <m>\lim_{x\to\pm\infty}\frac{x^2}{x^2-1} = 1</m>,
+          иймд <m>y = 1</m>.</p>
+
+          <p><alert>5. Эхний уламжлал:</alert></p>
+          <me>f'(x) = \frac{2x(x^2-1)-x^2\cdot 2x}{(x^2-1)^2}
+          = \frac{-2x}{(x^2-1)^2}.</me>
+          <p>Эгзэгтэй цэг: <m>x = 0</m>.
+          <m>f'(x) &gt; 0</m> <m>x &lt; 0</m>-д (өсөх),
+          <m>f'(x) &lt; 0</m> <m>x &gt; 0</m>-д (буурах).
+          <m>f(0) = 0</m>: орон нутгийн их.</p>
+
+          <p><alert>6. Хоёр дахь уламжлал:</alert></p>
+          <me>f''(x) = \frac{6x^2 + 2}{(x^2-1)^3}.</me>
+          <p><m>6x^2 + 2 &gt; 0</m> үргэлж тул тэмдэг нь <m>(x^2-1)^3</m>-аар
+          тодорхойлогдоно. <m>|x| &gt; 1</m>-д гүдгэр, <m>|x| &lt; 1</m>-д
+          хотгор.</p>
+        </solution>
+      </example>
+
+      <figure xml:id="fig-sketch-rational">
+        <caption><m>f(x)=\dfrac{x^2}{x^2-1}</m></caption>
+        <image xml:id="img-sketch-rational">
+          <shortdescription>x^2/(x^2-1) функцийн бүрэн график, асимптот,
+          экстремум тэмдэглэсэн</shortdescription>
+          <latex-image>
+            \begin{tikzpicture}
+              \begin{axis}[
+                xmin=-4, xmax=4, ymin=-5, ymax=5,
+                xlabel={$x$}, ylabel={$y$},
+                axis lines=center,
+                width=10cm, height=8cm,
+                grid=both,
+                restrict y to domain=-5:5,
+              ]
+                \addplot[smooth, thick, blue, domain=-4:-1.15, samples=60]
+                  {x^2/(x^2-1)};
+                \addplot[smooth, thick, blue, domain=-0.85:0.85, samples=60]
+                  {x^2/(x^2-1)};
+                \addplot[smooth, thick, blue, domain=1.15:4, samples=60]
+                  {x^2/(x^2-1)};
+                %% Asymptotes
+                \addplot[dashed, red] coordinates {(-1,-5) (-1,5)};
+                \addplot[dashed, red] coordinates {(1,-5) (1,5)};
+                \addplot[dashed, red, domain=-4:4] {1};
+                \node[right, red] at (axis cs:2.5,1.2) {\small $y=1$};
+                \node[above, red] at (axis cs:-1,4.5) {\small $x=-1$};
+                \node[above, red] at (axis cs:1,4.5) {\small $x=1$};
+                \addplot[soliddot] coordinates {(0, 0)};
+                \node[below right] at (axis cs:0.1,0) {\small их $(0,0)$};
+              \end{axis}
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+
+      <example xml:id="ex-sketch-exp">
+        <title>Экспонент агуулсан функц зурах</title>
+        <statement>
+          <p><m>f(x) = x^2 e^{-x}</m> функцийн графикийг зур.</p>
+        </statement>
+        <solution>
+          <p><alert>1. Муж:</alert> <m>(-\infty, \infty)</m>.</p>
+          <p><alert>2.</alert> <m>f(0) = 0</m>. <m>f(x)=0</m> үед <m>x=0</m>.</p>
+          <p><alert>3.</alert> Тэгш ч, сондгой ч биш.</p>
+          <p><alert>4. Асимптот:</alert> <m>\lim_{x\to\infty}x^2 e^{-x}=0</m>
+          (хэвтээ <m>y=0</m> баруунд).
+          <m>\lim_{x\to -\infty} = +\infty</m>.</p>
+
+          <p><alert>5.</alert> <m>f'(x) = 2xe^{-x} - x^2 e^{-x}
+          = xe^{-x}(2-x)</m>. Эгзэгтэй: <m>x=0, 2</m>.
+          <m>f'&gt;0</m> on <m>(0,2)</m>, <m>f'&lt;0</m> on
+          <m>(-\infty,0)\cup(2,\infty)</m>.</p>
+          <p>Орон нутгийн бага: <m>f(0)=0</m>.
+          Орон нутгийн их: <m>f(2)=4e^{-2}\approx 0{,}54</m>.</p>
+
+          <p><alert>6.</alert> <m>f''(x) = e^{-x}(x^2-4x+2)</m>.
+          <m>x^2-4x+2=0</m> үед <m>x=2\pm\sqrt{2}</m>. Нугаралтын
+          цэгүүд: <m>x \approx 0{,}59</m> ба <m>x \approx 3{,}41</m>.</p>
+        </solution>
+      </example>
+
+      <figure xml:id="fig-sketch-exp">
+        <caption><m>f(x)=x^2 e^{-x}</m></caption>
+        <image xml:id="img-sketch-exp">
+          <shortdescription>x^2*exp(-x) функцийн график</shortdescription>
+          <latex-image>
+            \begin{tikzpicture}
+              \begin{axis}[
+                xmin=-2, xmax=8, ymin=-0.5, ymax=2,
+                xlabel={$x$}, ylabel={$y$},
+                axis lines=center,
+                width=10cm, height=6cm,
+                grid=both,
+              ]
+                \addplot[smooth, thick, blue, domain=-1.5:7.5, samples=80]
+                  {x^2 * exp(-x)};
+                \addplot[soliddot] coordinates {(0, 0)};
+                \node[below right] at (axis cs:0,0) {\small бага};
+                \addplot[soliddot] coordinates {(2, 0.541)};
+                \node[above] at (axis cs:2, 0.65) {\small их};
+                \addplot[dashed, red, domain=4:7.5] {0}
+                  node[above left] {\small $y=0$};
+              \end{axis}
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+    </subsection>
+
+    <exercises xml:id="exercises-sketch">
+      <title>§5.5 Дасгалууд</title>
+
+      <exercise xml:id="ex-sk-1">
+        <statement>
+          <p>Бүх алхмыг гүйцэтгэж графикийг зур:
+            <ol>
+              <li><p><m>f(x) = x^3 - 3x^2 + 4</m></p></li>
+              <li><p><m>f(x) = \dfrac{x}{x^2+4}</m></p></li>
+              <li><p><m>f(x) = x\ln x</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-sk-2">
+        <statement>
+          <p>Дараах нөхцлүүдийг хангах функцийн графикийг гараар зур
+          (томьёо байхгүй, зөвхөн чанаруудаар):
+          <m>f'(0)=0</m>, <m>f'(2)=0</m>, <m>f''(1)=0</m>,
+          <m>f'(x)&gt;0</m> for <m>x&lt;0</m> and <m>x&gt;2</m>,
+          <m>f'(x)&lt;0</m> for <m>0&lt;x&lt;2</m>,
+          <m>f''(x)&lt;0</m> for <m>x&lt;1</m>,
+          <m>f''(x)&gt;0</m> for <m>x&gt;1</m>.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-sk-3">
+        <statement>
+          <p><m>f(x) = \dfrac{x^2 - 4}{x - 3}</m> функцийн бүрэн
+          графикийг зур: асимптот, экстремум, нугаралтын цэг, огтлолцох
+          цэгүүдийг тогтоо.</p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       AI-тай дасгал хийх
+       ============================================================ -->
+  <section xml:id="sec-ai-practice-graph">
+    <title>AI-тай дасгал хийх (Графикийн шинж чанар)</title>
+    <introduction>
+      <p>Функцийн графикийн шинж чанарын сэдвүүдээр Claude AI-тай
+      дасгал хий.</p>
+    </introduction>
+    <interactive xml:id="ai-practice-graph"
+      iframe="ai-practice.html?topics=экстремум,эгзэгтэй цэг,дундаж утгын теорем,өсөх буурах,гүдгэр хотгор,нугаралтын цэг,муруй зурах&amp;label=Графикийн шинж чанарын сэдвүүд"
+      width="100%" aspect="4:3" />
+  </section>
+
+  <!-- ============================================================
+       Семинар
+       ============================================================ -->
+  <section xml:id="sec-seminar-graph">
+    <title>Семинар — Графикийн шинж чанар</title>
+    <exercises xml:id="exercises-seminar-graph">
+      <introduction>
+        <p>Хамрах сэдэв: экстремум, өсөх/буурах, гүдгэр/хотгор, муруй зурах.</p>
+      </introduction>
+
+      <exercise xml:id="sem-g-1">
+        <statement>
+          <p>Эгзэгтэй цэг, экстремум, өсөх/буурах завсрыг ол:
+            <ol>
+              <li><p><m>f(x) = x^4 - 8x^2 + 16</m></p></li>
+              <li><p><m>f(x) = \dfrac{x^2-1}{x^2+1}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>f'=4x^3-16x=4x(x-2)(x+2)</m>; эгзэгтэй <m>x=0,\pm 2</m>;
+          орон нутгийн их <m>f(0)=16</m>, бага <m>f(\pm 2)=0</m>;
+          б. <m>f'=\frac{4x}{(x^2+1)^2}</m>; эгзэгтэй <m>x=0</m>;
+          бага <m>f(0)=-1</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="sem-g-2">
+        <statement>
+          <p>Гүдгэр/хотгор завсар, нугаралтын цэг ол:
+            <ol>
+              <li><p><m>f(x) = x^4 - 6x^2 + 4</m></p></li>
+              <li><p><m>f(x) = x e^{-x^2}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>f''=12x^2-12=0 \Rightarrow x=\pm 1</m>;
+          б. <m>f''=e^{-x^2}(4x^3-6x)=0 \Rightarrow x=0, \pm\sqrt{3/2}</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="sem-g-3">
+        <statement>
+          <p>ДУТ-ийн <m>c</m>-ийг ол:
+          <m>f(x) = x^3 + 2x</m>, <m>[0, 2]</m>.</p>
+        </statement>
+        <answer><p><m>c = \frac{2}{\sqrt{3}}</m>.</p></answer>
+      </exercise>
+
+      <exercise xml:id="sem-g-4">
+        <statement>
+          <p>Бүрэн графикийг зур:
+          <m>f(x) = \dfrac{x^2 - 1}{x^2 - 4}</m>.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="sem-g-5">
+        <statement>
+          <p>Бүрэн графикийг зур: <m>f(x) = x + \dfrac{1}{x}</m>.</p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       Гэрийн даалгавар
+       ============================================================ -->
+  <section xml:id="sec-homework-graph">
+    <title>Гэрийн даалгавар — Графикийн шинж чанар</title>
+    <exercises xml:id="exercises-homework-graph">
+      <introduction>
+        <p>Бодолтыг бүрэн үндэслэлтэй бичиж ирнэ.</p>
+      </introduction>
+
+      <exercise xml:id="hw-g-1">
+        <statement>
+          <p>Хаалттай завсарт абсолют экстремумыг ол:
+            <ol>
+              <li><p><m>f(x) = 3x^4 - 4x^3 - 12x^2 + 5</m>, <m>[-2, 3]</m></p></li>
+              <li><p><m>f(x) = x\sqrt{4-x^2}</m>, <m>[-2, 2]</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="hw-g-2">
+        <statement>
+          <p>Эхний ба хоёр дахь уламжлалын шалгуурыг хэрэглэн экстремумыг ол:
+          <m>f(x) = x^3 - 6x^2 + 9x + 1</m>.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="hw-g-3">
+        <statement>
+          <p>Бүрэн графикийг зур (бүх алхмыг тодорхой бичнэ):
+            <ol>
+              <li><p><m>f(x) = x^3 - 3x + 2</m></p></li>
+              <li><p><m>f(x) = \dfrac{x}{(x-1)^2}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="hw-g-4">
+        <statement>
+          <p>ДУТ ашиглан <m>e^x \ge 1 + x</m> бүх <m>x</m>-д
+          биелэхийг батал.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="hw-g-5">
+        <statement>
+          <p><m>f(x) = ax^3 + bx^2 + cx + d</m> функц <m>x = 1</m>-д
+          орон нутгийн их <m>5</m>, <m>x = 3</m>-д орон нутгийн бага
+          <m>1</m> утгатай бол <m>a, b, c, d</m>-ийг ол.</p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+</chapter>

@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- APEX 6.4 Триг орлуулга, 6.6 Гиперболик, 6.7 Лопиталь, 6.8 Өргөтгөсөн тодорхой интеграл -->
+
+<section xml:id="sec-int-techniques-2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Интегралчлах аргууд II</title>
+
+  <introduction>
+    <p>Тригонометрийн орлуулга, гиперболик функц, Лопиталын дүрэм,
+    өргөтгөсөн тодорхой интегралыг судална.</p>
+  </introduction>
+
+  <!-- ============================================================
+       6.4 Тригонометрийн орлуулга
+       ============================================================ -->
+  <subsection xml:id="subsec-trig-sub">
+    <title>Тригонометрийн орлуулга</title>
+
+    <p><m>\sqrt{a^2-x^2}</m>, <m>\sqrt{a^2+x^2}</m>,
+    <m>\sqrt{x^2-a^2}</m> агуулсан интегралд тригонометрийн
+    орлуулга хэрэглэнэ:</p>
+
+    <table xml:id="tbl-trig-sub">
+      <title>Тригонометрийн орлуулгын хүснэгт</title>
+      <tabular halign="center">
+        <row header="yes" bottom="minor">
+          <cell>Илэрхийлэл</cell>
+          <cell>Орлуулга</cell>
+          <cell>Хялбарчлал</cell>
+        </row>
+        <row><cell><m>\sqrt{a^2-x^2}</m></cell>
+          <cell><m>x=a\sin\theta</m></cell>
+          <cell><m>a\cos\theta</m></cell></row>
+        <row><cell><m>\sqrt{a^2+x^2}</m></cell>
+          <cell><m>x=a\tan\theta</m></cell>
+          <cell><m>a\sec\theta</m></cell></row>
+        <row><cell><m>\sqrt{x^2-a^2}</m></cell>
+          <cell><m>x=a\sec\theta</m></cell>
+          <cell><m>a\tan\theta</m></cell></row>
+      </tabular>
+    </table>
+
+    <example xml:id="ex-tsub-1">
+      <title><m>\int\frac{dx}{\sqrt{4-x^2}}</m></title>
+      <solution>
+        <p><m>x=2\sin\theta</m>, <m>dx=2\cos\theta\,d\theta</m>,
+        <m>\sqrt{4-x^2}=2\cos\theta</m>.</p>
+        <me>\int\frac{2\cos\theta}{2\cos\theta}\,d\theta
+        = \theta+C = \arcsin\frac{x}{2}+C.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-tsub-2">
+      <title><m>\int\frac{dx}{(1+x^2)^{3/2}}</m></title>
+      <solution>
+        <p><m>x=\tan\theta</m>, <m>dx=\sec^2\theta\,d\theta</m>,
+        <m>(1+x^2)^{3/2}=\sec^3\theta</m>.</p>
+        <me>\int\frac{\sec^2\theta}{\sec^3\theta}\,d\theta
+        = \int\cos\theta\,d\theta = \sin\theta+C
+        = \frac{x}{\sqrt{1+x^2}}+C.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-tsub-3">
+      <title><m>\int\sqrt{x^2-9}\,dx</m></title>
+      <solution>
+        <p><m>x=3\sec\theta</m>, <m>dx=3\sec\theta\tan\theta\,d\theta</m>,
+        <m>\sqrt{x^2-9}=3\tan\theta</m>.</p>
+        <me>\int 9\sec\theta\tan^2\theta\,d\theta
+        = 9\int\sec\theta(\sec^2\theta-1)\,d\theta.</me>
+        <p>Стандарт интегралуудыг ашиглаад буцаан орлуулбал:</p>
+        <me>\frac{x}{2}\sqrt{x^2-9} - \frac{9}{2}\ln
+        \left|x+\sqrt{x^2-9}\right| + C.</me>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================
+       6.6 Гиперболик функц
+       ============================================================ -->
+  <subsection xml:id="subsec-hyperbolic">
+    <title>Гиперболик функц</title>
+
+    <definition xml:id="def-hyperbolic">
+      <title>Гиперболик функц</title>
+      <statement>
+        <me>\sinh x = \frac{e^x-e^{-x}}{2}, \qquad
+        \cosh x = \frac{e^x+e^{-x}}{2},</me>
+        <me>\tanh x = \frac{\sinh x}{\cosh x}
+        = \frac{e^x-e^{-x}}{e^x+e^{-x}}.</me>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-hyp-deriv-int">
+      <title>Гиперболик функцийн уламжлал ба интеграл</title>
+      <statement>
+        <p>
+          <ol>
+            <li><p><m>(\sinh x)' = \cosh x</m>,
+            <m>\int\cosh x\,dx = \sinh x+C</m></p></li>
+            <li><p><m>(\cosh x)' = \sinh x</m>,
+            <m>\int\sinh x\,dx = \cosh x+C</m></p></li>
+            <li><p><m>(\tanh x)' = \frac{1}{\cosh^2 x}</m></p></li>
+          </ol>
+        </p>
+        <p>Чухал адилтгал: <m>\cosh^2 x - \sinh^2 x = 1</m>.</p>
+      </statement>
+    </theorem>
+
+    <example xml:id="ex-hyp-1">
+      <title>Гиперболик функцийн интеграл</title>
+      <statement><p><m>\int\sinh^2 x\,dx</m></p></statement>
+      <solution>
+        <p><m>\sinh^2 x = \frac{\cosh 2x - 1}{2}</m> тул:</p>
+        <me>\int\frac{\cosh 2x-1}{2}\,dx = \frac{\sinh 2x}{4}
+        -\frac{x}{2}+C.</me>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================
+       6.7 Лопиталын дүрэм
+       ============================================================ -->
+  <subsection xml:id="subsec-lhopital">
+    <title>Лопиталын дүрэм</title>
+
+    <theorem xml:id="thm-lhopital">
+      <title>Лопиталын дүрэм</title>
+      <statement>
+        <p><m>f, g</m> нь <m>a</m> цэгийн орчинд дифференциалчлагддаг,
+        <m>g'(x)\ne 0</m>, мөн <m>x\to a</m> үед <m>f, g</m> нь <m>0</m>
+        (эсвэл <m>\pm\infty</m>) руу ойртдог байг. Хэрэв</p>
+        <me>\lim_{x\to a}\frac{f'(x)}{g'(x)} = L \text{ оршвол}
+        \quad\lim_{x\to a}\frac{f(x)}{g(x)} = L.</me>
+      </statement>
+    </theorem>
+
+    <example xml:id="ex-lhop-1">
+      <title>Лопиталын дүрэм хэрэглэх</title>
+      <statement>
+        <p>1. <m>\lim_{x\to 0}\frac{e^x-1}{x}</m>;
+        2. <m>\lim_{x\to\infty}\frac{\ln x}{x}</m>;
+        3. <m>\lim_{x\to 0}\frac{1-\cos x}{x^2}</m>;
+        4. <m>\lim_{x\to 0}x\ln x</m>.</p>
+      </statement>
+      <solution>
+        <p>1. <m>\frac{0}{0}</m> хэлбэр: <m>\lim\frac{e^x}{1}=1</m>.</p>
+        <p>2. <m>\frac{\infty}{\infty}</m>: <m>\lim\frac{1/x}{1}=0</m>.</p>
+        <p>3. <m>\frac{0}{0}</m>: <m>\lim\frac{\sin x}{2x}
+        = \lim\frac{\cos x}{2} = \frac{1}{2}</m>.</p>
+        <p>4. <m>0\cdot(-\infty)</m> хэлбэрийг <m>\frac{\ln x}{1/x}</m>
+        болгоод: <m>\lim\frac{1/x}{-1/x^2} = \lim(-x) = 0</m>.</p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-lhop-2">
+      <title><m>1^\infty</m>, <m>0^0</m>, <m>\infty^0</m> хэлбэр</title>
+      <statement><p><m>\lim_{x\to 0^+}x^{\sin x}</m></p></statement>
+      <solution>
+        <p><m>y = x^{\sin x}</m>, <m>\ln y = \sin x\cdot\ln x</m>.</p>
+        <p><m>\lim_{x\to 0^+}\sin x\cdot\ln x = \lim\frac{\ln x}{1/\sin x}
+        = \lim\frac{1/x}{-\cos x/\sin^2 x}
+        = \lim\frac{-\sin^2 x}{x\cos x} = 0</m>.</p>
+        <p><m>\ln y\to 0</m> тул <m>y\to e^0 = 1</m>.</p>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================
+       6.8 Өргөтгөсөн тодорхой интеграл
+       ============================================================ -->
+  <subsection xml:id="subsec-improper">
+    <title>Өргөтгөсөн тодорхой интеграл</title>
+
+    <definition xml:id="def-improper-inf">
+      <title>Хязгааргүй хүрээтэй өргөтгөсөн тодорхой интеграл</title>
+      <statement>
+        <me>\int_a^{\infty}f(x)\,dx = \lim_{t\to\infty}\int_a^t f(x)\,dx.</me>
+        <p>Хязгаар оршвол интеграл <term>нийлнэ</term> (converges),
+        үгүй бол <term>сарнина</term> (diverges).</p>
+      </statement>
+    </definition>
+
+    <example xml:id="ex-improper-1">
+      <title>Өргөтгөсөн тодорхой интеграл</title>
+      <statement>
+        <p>1. <m>\int_1^{\infty}\frac{1}{x^2}\,dx</m>;
+        2. <m>\int_1^{\infty}\frac{1}{x}\,dx</m>;
+        3. <m>\int_0^{\infty}e^{-x}\,dx</m>.</p>
+      </statement>
+      <solution>
+        <p>1. <m>\lim_{t\to\infty}\left(-\frac{1}{x}\right)\Big|_1^t
+        = \lim_{t\to\infty}\left(-\frac{1}{t}+1\right) = 1</m>.
+        Нийлнэ.</p>
+        <p>2. <m>\lim_{t\to\infty}\ln t = \infty</m>. Сарнина.</p>
+        <p>3. <m>\lim_{t\to\infty}(-e^{-t}+1) = 1</m>. Нийлнэ.</p>
+      </solution>
+    </example>
+
+    <theorem xml:id="thm-p-integral">
+      <title><m>p</m>-интеграл</title>
+      <statement>
+        <me>\int_1^{\infty}\frac{1}{x^p}\,dx \text{ нийлнэ}
+        \Leftrightarrow p &gt; 1.</me>
+      </statement>
+    </theorem>
+
+    <definition xml:id="def-improper-disc">
+      <title>Тасралттай цэгтэй өргөтгөсөн тодорхой интеграл</title>
+      <statement>
+        <p>Хэрэв <m>f</m> нь <m>x=a</m>-д тасралттай бол:</p>
+        <me>\int_a^b f(x)\,dx = \lim_{\varepsilon\to 0^+}
+        \int_{a+\varepsilon}^b f(x)\,dx.</me>
+      </statement>
+    </definition>
+
+    <example xml:id="ex-improper-disc">
+      <title>Тасралттай цэгтэй</title>
+      <statement><p><m>\int_0^1\frac{1}{\sqrt{x}}\,dx</m></p></statement>
+      <solution>
+        <p><m>x=0</m>-д тасралттай.</p>
+        <me>\lim_{\varepsilon\to 0^+}\int_{\varepsilon}^1 x^{-1/2}\,dx
+        = \lim_{\varepsilon\to 0^+}2\sqrt{x}\Big|_{\varepsilon}^1
+        = 2-0 = 2.</me>
+        <p>Нийлнэ.</p>
+      </solution>
+    </example>
+  </subsection>
+
+  <exercises xml:id="exercises-int-tech-2">
+    <title>Дасгалууд</title>
+
+    <exercisegroup xml:id="exg-tsub-ex">
+      <title>Тригонометрийн орлуулга</title>
+      <exercise><statement><p><m>\int\frac{dx}{\sqrt{9-x^2}}</m></p></statement>
+        <answer><p><m>\arcsin\frac{x}{3}+C</m></p></answer></exercise>
+      <exercise><statement><p><m>\int\frac{x^2}{\sqrt{4-x^2}}\,dx</m></p></statement></exercise>
+      <exercise><statement><p><m>\int\frac{dx}{x^2\sqrt{x^2+1}}</m></p></statement></exercise>
+    </exercisegroup>
+
+    <exercisegroup xml:id="exg-lhop-ex">
+      <title>Лопиталын дүрэм</title>
+      <exercise><statement><p><m>\lim_{x\to 0}\frac{e^{ax}-\cos(\alpha x)}{e^{\beta x}-\cos(\beta x)}</m></p></statement></exercise>
+      <exercise><statement><p><m>\lim_{x\to\infty}x^n e^{-x}</m> (<m>n</m> натурал)</p></statement>
+        <answer><p><m>0</m></p></answer></exercise>
+      <exercise><statement><p><m>\lim_{x\to 0}\left(\cot x - \frac{1}{x}\right)</m></p></statement>
+        <answer><p><m>0</m></p></answer></exercise>
+      <exercise><statement><p><m>\lim_{x\to\infty}\left(e^x+e^{-x}\right)^{1/x}</m></p></statement>
+        <answer><p><m>e</m></p></answer></exercise>
+    </exercisegroup>
+
+    <exercisegroup xml:id="exg-improper-ex">
+      <title>Өргөтгөсөн тодорхой интеграл</title>
+      <exercise><statement><p><m>\int_0^{\infty}xe^{-x}\,dx</m></p></statement>
+        <answer><p><m>1</m></p></answer></exercise>
+      <exercise><statement><p><m>\int_1^{\infty}\frac{1}{x^3}\,dx</m></p></statement>
+        <answer><p><m>\frac{1}{2}</m></p></answer></exercise>
+      <exercise><statement><p><m>\int_0^1\frac{1}{x^{2/3}}\,dx</m></p></statement>
+        <answer><p><m>3</m></p></answer></exercise>
+      <exercise><statement><p><m>\int_{-\infty}^{\infty}\frac{dx}{1+x^2}</m></p></statement>
+        <answer><p><m>\pi</m></p></answer></exercise>
+    </exercisegroup>
+  </exercises>
+
+  <exercises xml:id="exercises-seminar-tech2">
+    <title>Семинар</title>
+
+    <introduction><p>Иррационал функцийн интеграл бод.</p></introduction>
+    <exercise><statement><p><m>\int \frac{dx}{1+\sqrt{x}}</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{1-\sqrt{x+1}}{1+\sqrt[3]{x+1}}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{\sqrt{x}}{(1+\sqrt[3]{x})^2}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{x^2}{\sqrt{1+x+x^2}}\,dx</m></p></statement></exercise>
+
+    <introduction><p>Лопиталын дүрэм хэрэглэн хязгаар бод.</p></introduction>
+    <exercise><statement><p><m>\lim_{x\to a}\frac{\sqrt[3]{x}-\sqrt[3]{a}}{\sqrt{x}-\sqrt{a}}</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to 0}\frac{e^x-1}{\sin x}</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to 0}\frac{x-\arctan x}{x^3}</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to 0}\frac{x-\sin x}{x-\tan x}</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to 0}\frac{e^{x^2}-1}{\cos x-1}</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to 1}\left[\frac{x}{x-1}-\frac{1}{\ln x}\right]</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to\infty}\left[x\left(e^{1/x}-1\right)\right]</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to 0}x^{\sin x}</m></p></statement></exercise>
+
+    <introduction><p>Өргөтгөсөн тодорхой интеграл бод.</p></introduction>
+    <exercise><statement><p><m>\int_1^5 \frac{1}{x\sqrt{x-1}}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int_5^{\infty}\frac{1}{x\sqrt{x-1}}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int_{-\infty}^{1}\frac{1}{(1+x^2)^2}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int_0^{\infty}x^3 e^{-x^2}\,dx</m></p></statement></exercise>
+  </exercises>
+
+  <exercises xml:id="exercises-hw-tech2">
+    <title>Гэрийн даалгавар</title>
+
+    <introduction><p>Лопиталын дүрэм хэрэглэн хязгаар бод.</p></introduction>
+    <exercise><statement><p><m>\lim_{x\to 0}\frac{e^{ax}-\cos(\alpha x)}{e^{\beta x}-\cos(\beta x)}</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to\infty}\frac{\pi-2\arctan x}{\ln(1+1/x)}</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to 0}\frac{\ln(\cos x)}{x}</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to a}\frac{x^m-a^m}{x^n-a^n}</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to 0}\frac{a^x-b^x}{c^x-d^x}</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to +\infty}x^n e^{-x}</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to\infty}\left[x\sin\frac{a}{x}\right]</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to 1}\left(\frac{1}{\ln x}-\frac{x}{\ln x}\right)</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to 0}\left(\cot x - \frac{1}{x}\right)</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to\pi/2}(\tan x)^{2x-\pi}</m></p></statement></exercise>
+    <exercise><statement><p><m>\lim_{x\to\infty}(e^x+e^{-x})^{1/x}</m></p></statement></exercise>
+
+    <introduction><p>Тохиромжтой аргаар бод.</p></introduction>
+    <exercise><statement><p><m>\int \frac{dx}{x^6(1+x^2)}</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{(1+x)\,dx}{\sqrt{1+x^2}}</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{\ln(1+x+x^2)}{(1+x)^2}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int (2x+3)\arccos(2x-3)\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{\sin 2x}{\sqrt{1+\cos^4 x}}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \sqrt{1-x^2}\arcsin x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{1+\sin x}{1+\cos x}e^x\,dx</m></p></statement></exercise>
+  </exercises>
+</section>

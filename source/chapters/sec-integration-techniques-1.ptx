@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- APEX 6.1 Орлуулах, 6.2 Хэсэгчлэн, 6.3 Триг интеграл, 6.5 Хэсэг бутархай -->
+
+<section xml:id="sec-int-techniques-1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Интегралчлах аргууд I</title>
+
+  <introduction>
+    <p>Анти-уламжлалын үндсэн дүрмүүдээр бодогдохгүй интегралуудыг
+    бодох тусгай аргуудыг судална: орлуулах арга, хэсэгчлэн
+    интегралчлах, тригонометрийн интеграл, хэсэг бутархай.</p>
+  </introduction>
+
+  <!-- ============================================================
+       6.1 Орлуулах арга (Substitution)
+       ============================================================ -->
+  <subsection xml:id="subsec-substitution">
+    <title>Орлуулах арга</title>
+
+    <p>Орлуулах арга нь гинжин дүрмийн урвуу процесс юм. Хэрэв
+    <m>\int f(g(x))\cdot g'(x)\,dx</m> хэлбэрийн интеграл байвал
+    <m>u = g(x)</m>, <m>du = g'(x)\,dx</m> гэж орлуулна.</p>
+
+    <theorem xml:id="thm-substitution">
+      <title>Орлуулах арга (тодорхойгүй интеграл)</title>
+      <statement>
+        <p>Хэрэв <m>u = g(x)</m> дифференциалчлагдах функц,
+        <m>F</m> нь <m>f</m>-ийн эх функц бол</p>
+        <me>\int f(g(x))\cdot g'(x)\,dx = F(g(x)) + C.</me>
+      </statement>
+    </theorem>
+
+    <example xml:id="ex-sub-1">
+      <title>Орлуулах арга — үндсэн жишээ</title>
+      <statement><p><m>\int 2x\cos(x^2)\,dx</m></p></statement>
+      <solution>
+        <p><m>u = x^2</m>, <m>du = 2x\,dx</m>.</p>
+        <me>\int \cos u\,du = \sin u + C = \sin(x^2) + C.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-sub-2">
+      <title>Орлуулах арга — тохируулах</title>
+      <statement><p><m>\int x^2\sqrt{x^3+1}\,dx</m></p></statement>
+      <solution>
+        <p><m>u = x^3+1</m>, <m>du = 3x^2\,dx</m> тул
+        <m>x^2\,dx = \frac{du}{3}</m>.</p>
+        <me>\frac{1}{3}\int u^{1/2}\,du = \frac{1}{3}\cdot
+        \frac{2}{3}u^{3/2}+C = \frac{2}{9}(x^3+1)^{3/2}+C.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-sub-3">
+      <title>Орлуулах — нэмэлт жишээ</title>
+      <statement>
+        <p>1. <m>\int \frac{e^x}{1+e^x}\,dx</m>;
+        2. <m>\int \tan x\,dx</m>;
+        3. <m>\int \frac{dx}{\sqrt{1-4x^2}}</m>.</p>
+      </statement>
+      <solution>
+        <p>1. <m>u=1+e^x</m>: <m>\int\frac{du}{u}=\ln|1+e^x|+C</m>.</p>
+        <p>2. <m>\int\frac{\sin x}{\cos x}\,dx</m>, <m>u=\cos x</m>:
+        <m>-\int\frac{du}{u}=-\ln|\cos x|+C = \ln|\sec x|+C</m>.</p>
+        <p>3. <m>\int\frac{dx}{\sqrt{1-(2x)^2}}</m>, <m>u=2x</m>:
+        <m>\frac{1}{2}\arcsin(2x)+C</m>.</p>
+      </solution>
+    </example>
+
+    <theorem xml:id="thm-sub-definite">
+      <title>Орлуулах арга (тодорхой интеграл)</title>
+      <statement>
+        <me>\int_a^b f(g(x))\cdot g'(x)\,dx =
+        \int_{g(a)}^{g(b)} f(u)\,du.</me>
+        <p>Хязгаарыг <m>u</m>-ийн хязгаараар солино.</p>
+      </statement>
+    </theorem>
+
+    <example xml:id="ex-sub-def">
+      <title>Тодорхой интегралд орлуулах</title>
+      <statement><p><m>\int_0^1 x e^{x^2}\,dx</m></p></statement>
+      <solution>
+        <p><m>u=x^2</m>, <m>du=2x\,dx</m>. <m>x=0\Rightarrow u=0</m>,
+        <m>x=1\Rightarrow u=1</m>.</p>
+        <me>\frac{1}{2}\int_0^1 e^u\,du = \frac{1}{2}(e-1).</me>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================
+       6.2 Хэсэгчлэн интегралчлах (Integration by Parts)
+       ============================================================ -->
+  <subsection xml:id="subsec-ibp">
+    <title>Хэсэгчлэн интегралчлах</title>
+
+    <p>Хэсэгчлэн интегралчлах нь үржвэрийн дүрмийн урвуу:</p>
+
+    <theorem xml:id="thm-ibp">
+      <title>Хэсэгчлэн интегралчлах</title>
+      <statement>
+        <p><m>u, v</m> дифференциалчлагдах функцүүд бол:</p>
+        <me>\int u\,dv = uv - \int v\,du.</me>
+        <p>Тодорхой интегралд:</p>
+        <me>\int_a^b u\,dv = uv\Big|_a^b - \int_a^b v\,du.</me>
+      </statement>
+    </theorem>
+
+    <remark xml:id="rem-liate">
+      <p><m>u</m>-г сонгоход <term>LAPTE</term> дүрэм тусална
+      (аль нь <m>u</m> болох нь):
+      <em>L</em>огарифм → <em>I</em>нверс триг → <em>A</em>лгебр
+      → <em>T</em>риг → <em>E</em>кспонент.</p>
+    </remark>
+
+    <example xml:id="ex-ibp-1">
+      <title><m>\int x e^x\,dx</m></title>
+      <solution>
+        <p><m>u=x</m>, <m>dv=e^x\,dx</m>;
+        <m>du=dx</m>, <m>v=e^x</m>.</p>
+        <me>\int xe^x\,dx = xe^x - \int e^x\,dx = xe^x - e^x + C
+        = e^x(x-1)+C.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-ibp-2">
+      <title><m>\int x^2\sin x\,dx</m></title>
+      <solution>
+        <p>Хоёр удаа хэсэгчилнэ.</p>
+        <p>I: <m>u=x^2</m>, <m>dv=\sin x\,dx</m>:
+        <m>\int x^2\sin x\,dx = -x^2\cos x + 2\int x\cos x\,dx</m>.</p>
+        <p>II: <m>u=x</m>, <m>dv=\cos x\,dx</m>:
+        <m>\int x\cos x\,dx = x\sin x + \cos x + C</m>.</p>
+        <p>Хариу: <m>-x^2\cos x + 2x\sin x + 2\cos x + C</m>.</p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-ibp-3">
+      <title><m>\int \ln x\,dx</m></title>
+      <solution>
+        <p><m>u=\ln x</m>, <m>dv=dx</m>;
+        <m>du=\frac{dx}{x}</m>, <m>v=x</m>.</p>
+        <me>\int\ln x\,dx = x\ln x - \int x\cdot\frac{dx}{x}
+        = x\ln x - x + C.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-ibp-4">
+      <title><m>\int e^x\sin x\,dx</m></title>
+      <solution>
+        <p>Хоёр удаа хэсэгчлэхэд анхны интеграл дахин гарна.</p>
+        <p><m>I = \int e^x\sin x\,dx = e^x\sin x - \int e^x\cos x\,dx</m></p>
+        <p><m>= e^x\sin x - e^x\cos x - \int e^x\sin x\,dx
+        = e^x\sin x - e^x\cos x - I</m>.</p>
+        <p><m>2I = e^x(\sin x - \cos x)</m>. Иймд:</p>
+        <me>I = \frac{e^x(\sin x - \cos x)}{2} + C.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-ibp-5">
+      <title><m>\int \arctan x\,dx</m></title>
+      <solution>
+        <p><m>u=\arctan x</m>, <m>dv=dx</m>:
+        <m>du=\frac{dx}{1+x^2}</m>, <m>v=x</m>.</p>
+        <me>\int\arctan x\,dx = x\arctan x
+        - \int\frac{x}{1+x^2}\,dx = x\arctan x
+        - \frac{1}{2}\ln(1+x^2)+C.</me>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================
+       6.3 Тригонометрийн интеграл
+       ============================================================ -->
+  <subsection xml:id="subsec-trig-integrals">
+    <title>Тригонометрийн интеграл</title>
+
+    <p><m>\int\sin^m x\cos^n x\,dx</m> хэлбэрийн интегралыг бодох
+    стратеги:</p>
+
+    <p><alert>Тохиолдол 1.</alert> <m>m</m> эсвэл <m>n</m> сондгой бол:
+    нэг <m>\sin x</m> (эсвэл <m>\cos x</m>) салгаж,
+    <m>\sin^2 x = 1-\cos^2 x</m> ашиглан орлуулна.</p>
+
+    <p><alert>Тохиолдол 2.</alert> <m>m, n</m> хоёулаа тэгш бол:
+    хагас өнцгийн томьёо ашиглана:
+    <m>\sin^2 x = \frac{1-\cos 2x}{2}</m>,
+    <m>\cos^2 x = \frac{1+\cos 2x}{2}</m>.</p>
+
+    <example xml:id="ex-trig-int-1">
+      <title><m>\int\sin^3 x\cos^2 x\,dx</m></title>
+      <solution>
+        <p><m>m=3</m> сондгой. <m>\sin^3 x = \sin x(1-\cos^2 x)</m>.
+        <m>u=\cos x</m>, <m>du=-\sin x\,dx</m>:</p>
+        <me>-\int(1-u^2)u^2\,du = -\int(u^2-u^4)\,du
+        = -\frac{u^3}{3}+\frac{u^5}{5}+C
+        = -\frac{\cos^3 x}{3}+\frac{\cos^5 x}{5}+C.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-trig-int-2">
+      <title><m>\int\sin^2 x\,dx</m></title>
+      <solution>
+        <p>Хагас өнцгийн томьёо:</p>
+        <me>\int\frac{1-\cos 2x}{2}\,dx = \frac{x}{2}
+        - \frac{\sin 2x}{4}+C.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-trig-int-3">
+      <title><m>\int\cos^4 x\,dx</m></title>
+      <solution>
+        <p><m>\cos^4 x = \left(\frac{1+\cos 2x}{2}\right)^2
+        = \frac{1}{4}(1+2\cos 2x+\cos^2 2x)</m>.</p>
+        <p><m>\cos^2 2x = \frac{1+\cos 4x}{2}</m> тул:</p>
+        <me>\int\cos^4 x\,dx = \frac{3x}{8}+\frac{\sin 2x}{4}
+        +\frac{\sin 4x}{32}+C.</me>
+      </solution>
+    </example>
+
+    <p><m>\int\tan^m x\sec^n x\,dx</m> хэлбэрийн интеграл:</p>
+    <p><alert>Тохиолдол:</alert> <m>n</m> тэгш бол <m>\sec^2 x</m>
+    салгаж <m>u=\tan x</m>; <m>m</m> сондгой бол <m>\sec x\tan x</m>
+    салгаж <m>u=\sec x</m>.</p>
+
+    <example xml:id="ex-trig-int-4">
+      <title><m>\int\tan^3 x\sec^3 x\,dx</m></title>
+      <solution>
+        <p><m>m=3</m> сондгой. <m>\sec x\tan x</m> салгаж <m>u=\sec x</m>:</p>
+        <me>\int\tan^2 x\sec^2 x\cdot\sec x\tan x\,dx
+        = \int(u^2-1)u^2\,du = \frac{u^5}{5}-\frac{u^3}{3}+C
+        = \frac{\sec^5 x}{5}-\frac{\sec^3 x}{3}+C.</me>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================
+       6.5 Хэсэг бутархай задаргаа
+       ============================================================ -->
+  <subsection xml:id="subsec-partial-fractions">
+    <title>Хэсэг бутархай задаргаа</title>
+
+    <p>Рационал функцийн <m>\frac{P(x)}{Q(x)}</m> интегралыг
+    хэсэг бутархайд задлаж бодно.</p>
+
+    <p><alert>Алхам 1.</alert> Хэрэв <m>\deg P \ge \deg Q</m> бол
+    эхлээд хуваана.</p>
+    <p><alert>Алхам 2.</alert> <m>Q(x)</m>-ийг үржигдэхүүнд задлана.</p>
+    <p><alert>Алхам 3.</alert> Хэсэг бутархайд задлана:</p>
+    <p>
+      <ul>
+        <li>Шугаман үржигдэхүүн <m>(ax+b)</m> → <m>\frac{A}{ax+b}</m></li>
+        <li>Давтагдсан <m>(ax+b)^k</m> →
+        <m>\frac{A_1}{ax+b}+\cdots+\frac{A_k}{(ax+b)^k}</m></li>
+        <li>Квадрат <m>(ax^2+bx+c)</m> →
+        <m>\frac{Ax+B}{ax^2+bx+c}</m></li>
+      </ul>
+    </p>
+
+    <example xml:id="ex-pf-1">
+      <title><m>\int\frac{1}{x^2-1}\,dx</m></title>
+      <solution>
+        <p><m>\frac{1}{(x-1)(x+1)} = \frac{A}{x-1}+\frac{B}{x+1}</m>.
+        <m>A=\frac{1}{2}</m>, <m>B=-\frac{1}{2}</m>.</p>
+        <me>\int\frac{dx}{x^2-1} = \frac{1}{2}\ln|x-1|
+        - \frac{1}{2}\ln|x+1| + C = \frac{1}{2}\ln
+        \left|\frac{x-1}{x+1}\right|+C.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-pf-2">
+      <title><m>\int\frac{5x+1}{x^2+x-2}\,dx</m></title>
+      <solution>
+        <p><m>x^2+x-2 = (x+2)(x-1)</m>.
+        <m>\frac{5x+1}{(x+2)(x-1)} = \frac{A}{x+2}+\frac{B}{x-1}</m>.</p>
+        <p><m>x=1</m>: <m>6=3B \Rightarrow B=2</m>.
+        <m>x=-2</m>: <m>-9=-3A \Rightarrow A=3</m>.</p>
+        <me>\int\left(\frac{3}{x+2}+\frac{2}{x-1}\right)dx
+        = 3\ln|x+2|+2\ln|x-1|+C.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-pf-3">
+      <title>Давтагдсан үржигдэхүүнтэй</title>
+      <statement><p><m>\int\frac{x+3}{(x-1)^2}\,dx</m></p></statement>
+      <solution>
+        <p><m>\frac{x+3}{(x-1)^2} = \frac{A}{x-1}+\frac{B}{(x-1)^2}</m>.
+        <m>A=1</m>, <m>B=4</m>.</p>
+        <me>\int\left(\frac{1}{x-1}+\frac{4}{(x-1)^2}\right)dx
+        = \ln|x-1|-\frac{4}{x-1}+C.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-pf-4">
+      <title>Задаршгүй квадрат үржигдэхүүнтэй</title>
+      <statement><p><m>\int\frac{2x+1}{x(x^2+1)}\,dx</m></p></statement>
+      <solution>
+        <p><m>\frac{2x+1}{x(x^2+1)} = \frac{A}{x}+\frac{Bx+C}{x^2+1}</m>.
+        <m>A=1</m>, <m>B=-1</m>, <m>C=2</m>.</p>
+        <md>
+          <mrow>\amp\int\left(\frac{1}{x}+\frac{-x+2}{x^2+1}\right)dx</mrow>
+          <mrow>\amp= \ln|x| - \frac{1}{2}\ln(x^2+1) + 2\arctan x+C.</mrow>
+        </md>
+      </solution>
+    </example>
+  </subsection>
+
+  <exercises xml:id="exercises-int-tech-1">
+    <title>Дасгалууд</title>
+
+    <exercisegroup xml:id="exg-sub">
+      <title>Орлуулах арга</title>
+      <exercise><statement><p><m>\int\cos(3x)\,dx</m></p></statement>
+        <answer><p><m>\frac{1}{3}\sin(3x)+C</m></p></answer></exercise>
+      <exercise><statement><p><m>\int x(x^2+4)^5\,dx</m></p></statement>
+        <answer><p><m>\frac{(x^2+4)^6}{12}+C</m></p></answer></exercise>
+      <exercise><statement><p><m>\int\frac{\ln x}{x}\,dx</m></p></statement>
+        <answer><p><m>\frac{(\ln x)^2}{2}+C</m></p></answer></exercise>
+      <exercise><statement><p><m>\int\frac{e^x}{e^x+1}\,dx</m></p></statement>
+        <answer><p><m>\ln(e^x+1)+C</m></p></answer></exercise>
+      <exercise><statement><p><m>\int_0^{\pi/2}\sin x\cos^3 x\,dx</m></p></statement>
+        <answer><p><m>\frac{1}{4}</m></p></answer></exercise>
+    </exercisegroup>
+
+    <exercisegroup xml:id="exg-ibp">
+      <title>Хэсэгчлэн интегралчлах</title>
+      <exercise><statement><p><m>\int x\cos x\,dx</m></p></statement>
+        <answer><p><m>x\sin x+\cos x+C</m></p></answer></exercise>
+      <exercise><statement><p><m>\int x^2 e^x\,dx</m></p></statement>
+        <answer><p><m>e^x(x^2-2x+2)+C</m></p></answer></exercise>
+      <exercise><statement><p><m>\int\ln(x^2)\,dx</m></p></statement>
+        <answer><p><m>2(x\ln x-x)+C</m></p></answer></exercise>
+      <exercise><statement><p><m>\int x\arcsin x\,dx</m></p></statement>
+        <answer><p><m>\frac{x^2}{2}\arcsin x - \frac{x}{4}\sqrt{1-x^2}+\frac{1}{4}\arcsin x + C</m></p></answer></exercise>
+      <exercise><statement><p><m>\int e^x\cos x\,dx</m></p></statement>
+        <answer><p><m>\frac{e^x(\cos x+\sin x)}{2}+C</m></p></answer></exercise>
+    </exercisegroup>
+
+    <exercisegroup xml:id="exg-trig-pf">
+      <title>Триг интеграл ба хэсэг бутархай</title>
+      <exercise><statement><p><m>\int\sin^4 x\,dx</m></p></statement></exercise>
+      <exercise><statement><p><m>\int\cos^3 x\,dx</m></p></statement>
+        <answer><p><m>\sin x-\frac{\sin^3 x}{3}+C</m></p></answer></exercise>
+      <exercise><statement><p><m>\int\tan^2 x\,dx</m></p></statement>
+        <answer><p><m>\tan x - x + C</m></p></answer></exercise>
+      <exercise><statement><p><m>\int\frac{3x+5}{x^2-2x-3}\,dx</m></p></statement>
+        <answer><p><m>\ln|x-3|+2\ln|x+1|+C</m> (шалгах шаардлагатай)</p></answer></exercise>
+      <exercise><statement><p><m>\int\frac{x^2+1}{x(x-1)(x+1)}\,dx</m></p></statement></exercise>
+    </exercisegroup>
+  </exercises>
+
+  <exercises xml:id="exercises-seminar-tech1">
+    <title>Семинар</title>
+
+    <introduction><p>Орлуулах арга хэрэглэн интеграл бод.</p></introduction>
+    <exercise><statement><p><m>\int (x+1)^{15}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{dx}{(2x-3)^5}</m></p></statement></exercise>
+    <exercise><statement><p><m>\int 2x\sqrt{x^2+1}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int x\sqrt{1-x^2}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int x^2\sqrt[5]{x^3+2}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{x\,dx}{\sqrt{x^2+1}}</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \sin^3 x\cos x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{\sqrt{\ln x}}{x}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{(\arctan x)^2\,dx}{1+x^2}</m></p></statement></exercise>
+
+    <introduction><p>Хэсэгчлэх аргаар бод.</p></introduction>
+    <exercise><statement><p><m>\int xe^x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int x\cos x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int x^2 e^x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \ln x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int x\ln x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \arctan x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \arcsin x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int x^2\sin x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int e^x\sin x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int e^{2x}\cos 3x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \sin(\ln x)\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \ln(x^2+1)\,dx</m></p></statement></exercise>
+
+    <introduction><p>Рационал бутархайн интеграл бод.</p></introduction>
+    <exercise><statement><p><m>\int \frac{3x+1}{x^2+1}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{2x-3}{x^2-3x+2}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{x}{(x-1)^2(x+1)}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{2x+3}{(x-2)(x+5)}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{x}{(x+1)(x+2)(x+3)}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{x^3+1}{x^3-5x^2+6x}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{x^3+1}{(x^2+1)^2}\,dx</m></p></statement></exercise>
+
+    <introduction><p>Тригонометрийн интеграл бод.</p></introduction>
+    <exercise><statement><p><m>\int \cos^5 x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \sin^4 x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \cos^5 x\sin^5 x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{\sin^3 x}{\cos^4 x}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \sin 3x\cos x\,dx</m></p></statement></exercise>
+  </exercises>
+
+  <exercises xml:id="exercises-hw-tech1">
+    <title>Гэрийн даалгавар</title>
+    <exercise><statement><p><m>\int xe^{3x}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int x\cos 2x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int x\sin 3x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int x^2\ln x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \arccos x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int x^2 e^{-x}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int x^3\cos x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int (x^2+3x-1)e^{-x}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int x^2\arcsin x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \ln^2 x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int e^{3x}\sin 2x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \ln(x+\sqrt{x^2+1})\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{x^2}{(1-x^2)^3}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int x^2\sqrt{\frac{x}{1-x}}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \sqrt{\frac{x}{1-x}}\,dx</m></p></statement></exercise>
+  </exercises>
+</section>

@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- APEX 7.1-7.5: Интегралын хэрэглээ -->
+
+<section xml:id="sec-app-integration" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Интегралын хэрэглээ</title>
+
+  <introduction>
+    <p>Тодорхой интегралыг талбай, эзэлхүүн, нумын урт, гадаргуугийн
+    талбай, ажил тооцоолоход хэрэглэнэ.</p>
+  </introduction>
+
+  <!-- ============================================================
+       7.1 Муруйн хоорондох талбай
+       ============================================================ -->
+  <subsection xml:id="subsec-abc">
+    <title>Муруйн хоорондох талбай</title>
+
+    <theorem xml:id="thm-area-between">
+      <title>Хоёр муруйн хоорондох талбай</title>
+      <statement>
+        <p><m>f(x)\ge g(x)</m> <m>[a,b]</m>-д бол:</p>
+        <me>S = \int_a^b [f(x)-g(x)]\,dx.</me>
+        <p><m>x = h(y)</m>, <m>x = k(y)</m> муруйн хувьд
+        <m>h(y)\ge k(y)</m> <m>[c,d]</m>-д бол:</p>
+        <me>S = \int_c^d [h(y)-k(y)]\,dy.</me>
+      </statement>
+    </theorem>
+
+    <figure xml:id="fig-abc">
+      <caption>Хоёр муруйн хоорондох талбай</caption>
+      <image xml:id="img-abc">
+        <shortdescription>f(x) ба g(x) хоорондох будсан талбай</shortdescription>
+        <latex-image>
+          \begin{tikzpicture}
+            \begin{axis}[
+              xmin=-0.5, xmax=3, ymin=-0.5, ymax=4,
+              xlabel={$x$}, ylabel={$y$},
+              axis lines=center,
+              width=8cm, height=6cm,
+            ]
+              \addplot[smooth, thick, blue, domain=0:2.5, samples=60,
+                name path=f] {-x^2+4} node[above right] {$f(x)$};
+              \addplot[smooth, thick, red, domain=0:2.5, samples=60,
+                name path=g] {x} node[right] {$g(x)$};
+              \addplot[fill=green!20] fill between[of=f and g,
+                soft clip={domain=0:1.56}];
+            \end{axis}
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+
+    <example xml:id="ex-abc-1">
+      <title>Муруйн хоорондох талбай</title>
+      <statement><p><m>y=x^2+1</m> ба <m>y=3-x</m> хоорондох
+      талбайг ол.</p></statement>
+      <solution>
+        <p>Огтлолцох цэг: <m>x^2+1=3-x \Rightarrow x^2+x-2=0
+        \Rightarrow x=-2, 1</m>.</p>
+        <p><m>[-2,1]</m>-д <m>3-x \ge x^2+1</m>:</p>
+        <me>S = \int_{-2}^{1}(3-x-x^2-1)\,dx = \int_{-2}^{1}(2-x-x^2)\,dx
+        = \left(2x-\frac{x^2}{2}-\frac{x^3}{3}\right)\Big|_{-2}^{1}
+        = \frac{9}{2}.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-abc-2">
+      <title><m>y</m>-тэнхлэгийн хувьд интегралчлах</title>
+      <statement><p><m>x=y^2</m> ба <m>x=y+2</m> хоорондох
+      талбайг ол.</p></statement>
+      <solution>
+        <p>Огтлолцох: <m>y^2=y+2 \Rightarrow y=-1, 2</m>.
+        <m>[-1,2]</m>-д <m>y+2\ge y^2</m>:</p>
+        <me>S = \int_{-1}^{2}(y+2-y^2)\,dy
+        = \left(\frac{y^2}{2}+2y-\frac{y^3}{3}\right)\Big|_{-1}^{2}
+        = \frac{9}{2}.</me>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================
+       7.2 Эзэлхүүн: огтлолын талбай, диск, угаалгуурын арга
+       ============================================================ -->
+  <subsection xml:id="subsec-volume-disk">
+    <title>Эзэлхүүн: дискний ба угаалгуурын арга</title>
+
+    <p><m>y=f(x)</m> муруйг <m>x</m>-тэнхлэгийн эргэн тойронд эргүүлэхэд
+    үүсэх эргэлтийн биетийн эзэлхүүнийг олно.</p>
+
+    <theorem xml:id="thm-disk-method">
+      <title>Дискний арга</title>
+      <statement>
+        <p><m>f(x)\ge 0</m> <m>[a,b]</m>-д бол <m>x</m>-тэнхлэгийн
+        эргэн тойронд эргүүлэхэд:</p>
+        <me>V = \pi\int_a^b [f(x)]^2\,dx.</me>
+      </statement>
+    </theorem>
+
+    <figure xml:id="fig-disk">
+      <caption>Дискний арга: огтлолын тойрог</caption>
+      <image xml:id="img-disk">
+        <shortdescription>Эргэлтийн биетийн огтлол — тойрог диск</shortdescription>
+        <latex-image>
+          \begin{tikzpicture}
+            \begin{axis}[
+              xmin=-0.5, xmax=3, ymin=-2, ymax=2,
+              xlabel={$x$}, ylabel={$y$},
+              axis lines=center,
+              width=8cm, height=5cm,
+            ]
+              \addplot[smooth, thick, blue, domain=0:2.5, samples=60]
+                {sqrt(x)} node[above] {$f(x)=\sqrt{x}$};
+              \addplot[smooth, thick, blue, domain=0:2.5, samples=60]
+                {-sqrt(x)};
+              \addplot[fill=blue!10, draw=blue, opacity=0.3]
+                coordinates {(2, 1.414) (2, -1.414)};
+              \draw[thick, blue, fill=blue!10, opacity=0.3]
+                (axis cs:2,0) ellipse [x radius=0.15, y radius=1.414];
+            \end{axis}
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+
+    <example xml:id="ex-disk-1">
+      <title>Дискний арга</title>
+      <statement><p><m>y=\sqrt{x}</m>, <m>0\le x\le 4</m> муруйг
+      <m>x</m>-тэнхлэгийн тойронд эргүүлэхэд үүсэх эзэлхүүнийг ол.</p></statement>
+      <solution>
+        <me>V = \pi\int_0^4 (\sqrt{x})^2\,dx = \pi\int_0^4 x\,dx
+        = \pi\cdot\frac{x^2}{2}\Big|_0^4 = 8\pi.</me>
+      </solution>
+    </example>
+
+    <theorem xml:id="thm-washer">
+      <title>Угаалгуурын арга</title>
+      <statement>
+        <p><m>f(x)\ge g(x)\ge 0</m> <m>[a,b]</m>-д бол:</p>
+        <me>V = \pi\int_a^b \left([f(x)]^2-[g(x)]^2\right)dx.</me>
+      </statement>
+    </theorem>
+
+    <example xml:id="ex-washer-1">
+      <title>Угаалгуурын арга</title>
+      <statement><p><m>y=x</m> ба <m>y=x^2</m> хоорондох
+      мужийг <m>x</m>-тэнхлэгийн тойронд эргүүлэхэд үүсэх
+      эзэлхүүнийг ол.</p></statement>
+      <solution>
+        <me>V = \pi\int_0^1 (x^2-x^4)\,dx
+        = \pi\left(\frac{1}{3}-\frac{1}{5}\right) = \frac{2\pi}{15}.</me>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================
+       7.3 Бүрхүүлийн арга
+       ============================================================ -->
+  <subsection xml:id="subsec-shell">
+    <title>Бүрхүүлийн арга</title>
+
+    <theorem xml:id="thm-shell">
+      <title>Цилиндр бүрхүүлийн арга</title>
+      <statement>
+        <p><m>f(x)\ge 0</m> <m>[a,b]</m>-д (<m>0\le a</m>) бол
+        <m>y</m>-тэнхлэгийн тойронд эргүүлэхэд:</p>
+        <me>V = 2\pi\int_a^b x\cdot f(x)\,dx.</me>
+      </statement>
+    </theorem>
+
+    <example xml:id="ex-shell-1">
+      <title>Бүрхүүлийн арга</title>
+      <statement><p><m>y=x^2</m>, <m>0\le x\le 2</m> муруйг
+      <m>y</m>-тэнхлэгийн тойронд эргүүлэхэд үүсэх эзэлхүүнийг ол.</p></statement>
+      <solution>
+        <me>V = 2\pi\int_0^2 x\cdot x^2\,dx = 2\pi\int_0^2 x^3\,dx
+        = 2\pi\cdot\frac{x^4}{4}\Big|_0^2 = 8\pi.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-shell-2">
+      <title>Бүрхүүл — нэмэлт жишээ</title>
+      <statement><p><m>y=\sqrt{x}</m> ба <m>y=0</m> хоорондох
+      мужийг <m>x=4</m> шулуунаар эргүүлэхэд үүсэх эзэлхүүнийг ол.</p></statement>
+      <solution>
+        <p>Бүрхүүлийн радиус: <m>r=4-x</m>, өндөр: <m>h=\sqrt{x}</m>.</p>
+        <me>V = 2\pi\int_0^4 (4-x)\sqrt{x}\,dx
+        = 2\pi\int_0^4 (4x^{1/2}-x^{3/2})\,dx</me>
+        <me>= 2\pi\left(\frac{8x^{3/2}}{3}-\frac{2x^{5/2}}{5}\right)
+        \Big|_0^4 = 2\pi\left(\frac{64}{3}-\frac{64}{5}\right)
+        = \frac{256\pi}{15}.</me>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================
+       7.4 Нумын урт ба гадаргуугийн талбай
+       ============================================================ -->
+  <subsection xml:id="subsec-arc-length">
+    <title>Нумын урт ба гадаргуугийн талбай</title>
+
+    <theorem xml:id="thm-arc-length">
+      <title>Нумын урт</title>
+      <statement>
+        <p><m>f'</m> тасралтгүй <m>[a,b]</m>-д бол <m>y=f(x)</m>
+        муруйн урт:</p>
+        <me>L = \int_a^b \sqrt{1+[f'(x)]^2}\,dx.</me>
+      </statement>
+    </theorem>
+
+    <example xml:id="ex-arc-1">
+      <title>Нумын урт олох</title>
+      <statement><p><m>y=\frac{2}{3}x^{3/2}</m>, <m>[0,3]</m>
+      муруйн уртыг ол.</p></statement>
+      <solution>
+        <p><m>f'(x)=x^{1/2}</m>, <m>[f']^2=x</m>.</p>
+        <me>L = \int_0^3\sqrt{1+x}\,dx
+        = \frac{2}{3}(1+x)^{3/2}\Big|_0^3
+        = \frac{2}{3}(8-1) = \frac{14}{3}.</me>
+      </solution>
+    </example>
+
+    <theorem xml:id="thm-surface-area">
+      <title>Эргэлтийн гадаргуугийн талбай</title>
+      <statement>
+        <p><m>y=f(x)</m>-ийг <m>x</m>-тэнхлэгийн тойронд эргүүлэхэд:</p>
+        <me>A = 2\pi\int_a^b f(x)\sqrt{1+[f'(x)]^2}\,dx.</me>
+      </statement>
+    </theorem>
+
+    <example xml:id="ex-surface-1">
+      <title>Гадаргуугийн талбай</title>
+      <statement><p><m>y=\sqrt{x}</m>, <m>[0,1]</m> муруйг
+      <m>x</m>-тэнхлэгийн тойронд эргүүлэхэд үүсэх гадаргуугийн
+      талбайг ол.</p></statement>
+      <solution>
+        <p><m>f'=\frac{1}{2\sqrt{x}}</m>,
+        <m>1+[f']^2 = 1+\frac{1}{4x} = \frac{4x+1}{4x}</m>.</p>
+        <me>A = 2\pi\int_0^1\sqrt{x}\cdot\frac{\sqrt{4x+1}}{2\sqrt{x}}\,dx
+        = \pi\int_0^1\sqrt{4x+1}\,dx
+        = \pi\cdot\frac{(4x+1)^{3/2}}{6}\Big|_0^1
+        = \frac{\pi(5\sqrt{5}-1)}{6}.</me>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================
+       7.5 Ажил
+       ============================================================ -->
+  <subsection xml:id="subsec-work">
+    <title>Ажил</title>
+
+    <p>Хүч <m>F(x)</m> нь <m>x</m>-ийн функц бол биет <m>a</m>-аас
+    <m>b</m> хүртэл шилжихэд хийгдэх ажил:</p>
+    <me>W = \int_a^b F(x)\,dx.</me>
+
+    <example xml:id="ex-work-spring">
+      <title>Пүршний ажил (Гукийн хууль)</title>
+      <statement><p>Пүрш <m>F(x) = kx</m> хүчтэй (<m>k=10</m> Н/м).
+      Пүршийг байгалийн уртаас <m>0{,}5</m> м сунгахад хийгдэх ажлыг ол.</p></statement>
+      <solution>
+        <me>W = \int_0^{0{,}5}10x\,dx = 5x^2\Big|_0^{0{,}5}
+        = 5\cdot 0{,}25 = 1{,}25 \text{ Ж}.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-work-pump">
+      <title>Шингэн шахах ажил</title>
+      <statement><p>Радиус <m>r=2</m> м, өндөр <m>h=5</m> м цилиндр
+      савнаас усыг дээд ирмэгээр нь шахаж гаргах ажлыг ол.
+      (<m>\rho = 1000</m> кг/м<m>^3</m>, <m>g=9{,}8</m> м/сек<m>^2</m>.)</p></statement>
+      <solution>
+        <p><m>y</m> өндөрт байрлах нимгэн давхаргын эзэлхүүн:
+        <m>dV = \pi r^2\,dy = 4\pi\,dy</m>. Масс:
+        <m>dm = 1000\cdot 4\pi\,dy</m>. Шахах зай: <m>5-y</m>.</p>
+        <me>W = \int_0^5 9{,}8\cdot 4000\pi(5-y)\,dy
+        = 39200\pi\left(5y-\frac{y^2}{2}\right)\Big|_0^5
+        = 39200\pi\cdot\frac{25}{2} = 490000\pi \approx 1{,}54\times 10^6 \text{ Ж}.</me>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================
+       Дасгалууд
+       ============================================================ -->
+  <exercises xml:id="exercises-app-int">
+    <title>Дасгалууд</title>
+
+    <exercisegroup xml:id="exg-area-app">
+      <title>Талбай</title>
+      <exercise><statement><p><m>y=4-x^2</m> ба <m>y=0</m> хоорондох</p></statement>
+        <answer><p><m>\frac{32}{3}</m></p></answer></exercise>
+      <exercise><statement><p><m>y=e^x</m>, <m>y=e^{-x}</m>, <m>x=1</m> хоорондох</p></statement>
+        <answer><p><m>e+e^{-1}-2</m></p></answer></exercise>
+      <exercise><statement><p><m>x=y^2-1</m> ба <m>x=1-y^2</m> хоорондох</p></statement>
+        <answer><p><m>\frac{8}{3}</m></p></answer></exercise>
+    </exercisegroup>
+
+    <exercisegroup xml:id="exg-volume-app">
+      <title>Эзэлхүүн</title>
+      <exercise><statement><p><m>y=x^2</m>, <m>y=0</m>, <m>x=1</m>
+      мужийг <m>x</m>-тэнхлэгийн тойронд эргүүлэхэд (дискний арга)</p></statement>
+        <answer><p><m>\frac{\pi}{5}</m></p></answer></exercise>
+      <exercise><statement><p><m>y=\sin x</m>, <m>y=0</m>, <m>[0,\pi]</m>
+      мужийг <m>x</m>-тэнхлэгийн тойронд (дискний арга)</p></statement>
+        <answer><p><m>\frac{\pi^2}{2}</m></p></answer></exercise>
+      <exercise><statement><p><m>y=x</m>, <m>y=x^2</m> мужийг
+      <m>y</m>-тэнхлэгийн тойронд (бүрхүүлийн арга)</p></statement>
+        <answer><p><m>\frac{\pi}{6}</m></p></answer></exercise>
+      <exercise><statement><p><m>y=e^{-x}</m>, <m>x=0</m>, <m>x=1</m>,
+      <m>y=0</m> мужийг <m>y</m>-тэнхлэгийн тойронд (бүрхүүл)</p></statement>
+        <answer><p><m>2\pi(1-2e^{-1})</m></p></answer></exercise>
+    </exercisegroup>
+
+    <exercisegroup xml:id="exg-arc-work">
+      <title>Нумын урт ба ажил</title>
+      <exercise><statement><p><m>y=\frac{x^2}{2}</m>, <m>[0,1]</m>
+      муруйн уртыг ол.</p></statement></exercise>
+      <exercise><statement><p><m>y=\ln(\cos x)</m>, <m>[0,\pi/4]</m>
+      муруйн уртыг ол.</p></statement>
+        <answer><p><m>\ln(\sqrt{2}+1)</m></p></answer></exercise>
+      <exercise><statement><p>Пүрш 0.2 м-ээр сунгахад 40 Н хүч
+      шаардагдана. 0.5 м сунгахад хийгдэх ажлыг ол.</p></statement>
+        <answer><p><m>25</m> Ж</p></answer></exercise>
+    </exercisegroup>
+  </exercises>
+
+  <exercises xml:id="exercises-seminar-app">
+    <title>Семинар</title>
+
+    <exercise><statement><p><m>y=x^2</m> ба <m>y=x+3</m> функцийн графикуудаар
+    хүрээлэгдсэн хэсгийн талбайг ол.</p></statement></exercise>
+
+    <exercise><statement><p><m>y=\frac{1}{1+x^2}</m>, <m>(1,+\infty)</m>
+    хэсгийн доорх талбайг ол.</p></statement></exercise>
+
+    <exercise><statement><p><m>y=f(x)</m> функцийн графикийн <m>(a,b)</m>
+    хэсгийг <m>ox</m> тэнхлэгийг тойруулан эргүүлэхэд үүсэх биетийн
+    эзэлхүүн <m>\pi\int_a^b f^2(x)\,dx</m> байхыг батал.</p></statement></exercise>
+
+    <exercise><statement><p><m>y=\sqrt{x}</m> функцийн графикийн <m>(1,3)</m>
+    хэсгийг <m>ox</m> тэнхлэгийг тойруулан эргүүлэхэд үүсэх биетийн
+    эзэлхүүн ол.</p></statement></exercise>
+
+    <exercise><statement><p>Талбай ол:
+      <ol>
+        <li><p><m>y=\sin x</m>, <m>0\le x\le\pi</m></p></li>
+        <li><p><m>y=\ln x</m>, <m>1\le x\le e</m></p></li>
+        <li><p><m>y=e^x</m> ба <m>y=3x+1</m> хүрээлэгдсэн</p></li>
+        <li><p><m>y=x(x-1)(x-2)</m> ба <m>ox</m> тэнхлэгээр хүрээлэгдсэн</p></li>
+      </ol>
+    </p></statement></exercise>
+
+    <exercise><statement><p>Муруйн урт ол:
+      <ol>
+        <li><p><m>y=\ln x</m>, <m>\sqrt{3}\le x\le\sqrt{5}</m></p></li>
+        <li><p><m>y=\frac{x^2}{2}-\ln x</m>, <m>1\le x\le e</m></p></li>
+      </ol>
+    </p></statement></exercise>
+
+    <exercise><statement><p>Эзэлхүүн ол:
+      <ol>
+        <li><p><m>y=\cos x</m>, <m>0\le x\le\frac{\pi}{2}</m> хэсгийг
+        <m>ox</m> тэнхлэгийг тойруулан эргүүлэхэд үүсэх биет</p></li>
+        <li><p><m>h</m> өндөртэй, <m>r</m> ба <m>R</m> суурийн радиустай
+        огтлогдсон конусын эзэлхүүн олох томьёог эргэлтийн биетийн
+        эзэлхүүн олох томьёог ашиглан гарга.</p></li>
+      </ol>
+    </p></statement></exercise>
+  </exercises>
+</section>

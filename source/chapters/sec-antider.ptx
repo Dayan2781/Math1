@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================
+     §: Эх функц ба тодорхойгүй интеграл
+     (APEX 5.1: Эх функцs and Indefinite Integration)
+     ============================================================ -->
+
+<section xml:id="sec-antider" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Эх функц ба тодорхойгүй интеграл</title>
+
+  <introduction>
+    <p><m>y=f(x)</m> функц өгөгдсөн бол <m>y</m>, <m>x</m> болон
+    <m>y</m>-ийн уламжлалуудыг агуулсан тэгшитгэлийг
+    <term>дифференциал тэгшитгэл</term> гэнэ. Жишээ нь энгийн
+    дифференциал тэгшитгэл:</p>
+    <me>y' = 2x.</me>
+    <p>Дифференциал тэгшитгэл бодох гэдэг нь өгөгдсөн тэгшитгэлийг
+    хангах <m>y</m> функцийг олох юм. Дээрх тэгшитгэлийн хувьд
+    <m>y' = 2x</m> байх <m>y</m> функцийг олж чадах уу?</p>
+    <p><m>y = x^2</m> нь нэг шийд. Гэхдээ <m>y = x^2 + 1</m> ч мөн
+    шийд болно, учир нь түүний уламжлал ч бас <m>2x</m>. Цаашилбал
+    <m>y = x^2 + C</m> (дурын тогтмол <m>C</m>) бүр шийд юм.
+    Иймд <m>y' = 2x</m> дифференциал тэгшитгэл олон шийдтэй.</p>
+  </introduction>
+
+  <subsection xml:id="subsec-antider-def">
+    <title>Эх функцын тодорхойлолт</title>
+
+    <definition xml:id="def-antider">
+      <title>Эх функц ба тодорхойгүй интеграл</title>
+      <statement>
+        <p><m>f(x)</m> функц өгөгдсөн байг. Хэрэв <m>F'(x) = f(x)</m>
+        бол <m>F(x)</m>-ийг <m>f(x)</m>-ийн <term>эх функц</term>
+        гэнэ.</p>
+        <p><m>f(x)</m>-ийн бүх эх функцын олонлогийг <m>f</m>-ийн
+        <term>тодорхойгүй интеграл</term> гээд</p>
+        <me>\int f(x)\,dx</me>
+        <p>гэж тэмдэглэнэ.</p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-antider-many">
+      <p>Эх функц ганц биш, олон байдаг тул <q><m>f</m>-ийн
+      <em>нэг</em> эх функц</q> гэж ярьдаг. Нэг эх функц
+      мэдвэл бусдыг нь тогтмол тоо нэмэх замаар олж болно.</p>
+    </remark>
+
+    <theorem xml:id="thm-antider-form">
+      <title>Эх функцын ерөнхий хэлбэр</title>
+      <statement>
+        <p><m>F(x)</m> ба <m>G(x)</m> нь тасралтгүй <m>f(x)</m>
+        функцийн <m>I</m> завсар дээрх эх функцууд байг. Тэгвэл</p>
+        <me>G(x) = F(x) + C</me>
+        <p>байх тогтмол <m>C</m> олдоно.</p>
+      </statement>
+      <proof>
+        <p><m>H(x) = G(x) - F(x)</m> гэе. <m>H'(x) = G'(x) - F'(x)
+        = f(x) - f(x) = 0</m> бүх <m>x\in I</m>-д. Тодорхойлолт ёсоор
+        <m>H'(x) = 0</m> бол <m>H(x)</m> тогтмол функц. Иймд
+        <m>G(x) - F(x) = C</m>.</p>
+      </proof>
+    </theorem>
+
+    <p>Иймд <m>F(x)</m> нь <m>f(x)</m>-ийн нэг эх функц бол
+    тодорхойгүй интеграл нь:</p>
+    <me>\int f(x)\,dx = F(x) + C,</me>
+    <p>энд <m>C</m>-ийг <term>интегралын тогтмол</term> гэнэ.</p>
+
+    <example xml:id="ex-antider-basic">
+      <title>Эх функц олох</title>
+      <statement>
+        <p>Дараах функцүүдийн эх функцыг ол:</p>
+        <p>1. <m>f(x) = 5</m>; 2. <m>f(x) = x</m>;
+        3. <m>f(x) = x^2</m>; 4. <m>f(x) = \sin x</m>.</p>
+      </statement>
+      <solution>
+        <p>1. <m>\int 5\,dx = 5x + C</m>, учир нь <m>(5x)' = 5</m>.</p>
+        <p>2. <m>\int x\,dx = \frac{x^2}{2} + C</m>, учир нь
+        <m>\left(\frac{x^2}{2}\right)' = x</m>.</p>
+        <p>3. <m>\int x^2\,dx = \frac{x^3}{3} + C</m>, учир нь
+        <m>\left(\frac{x^3}{3}\right)' = x^2</m>.</p>
+        <p>4. <m>\int \sin x\,dx = -\cos x + C</m>, учир нь
+        <m>(-\cos x)' = \sin x</m>.</p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-antider-rules">
+    <title>Тодорхойгүй интегралын дүрмүүд</title>
+
+    <p>Уламжлалын дүрмүүдийг <q>урвуулан</q> уншвал интегралын дүрэм
+    гарна. Учир нь интеграл бол уламжлалын урвуу процесс юм.</p>
+
+    <theorem xml:id="thm-antider-rules">
+      <title>Тодорхойгүй интегралын үндсэн дүрмүүд</title>
+      <statement>
+        <p>
+          <ol>
+            <li><p><m>\displaystyle\int c\cdot f(x)\,dx = c\int f(x)\,dx</m>
+            (тогтмол үржигдэхүүн)</p></li>
+            <li><p><m>\displaystyle\int [f(x) \pm g(x)]\,dx =
+            \int f(x)\,dx \pm \int g(x)\,dx</m></p></li>
+            <li><p><m>\displaystyle\int 0\,dx = C</m></p></li>
+            <li><p><m>\displaystyle\int 1\,dx = x + C</m></p></li>
+            <li><p><m>\displaystyle\int x^n\,dx = \frac{x^{n+1}}{n+1} + C</m>
+            (<m>n \ne -1</m>) — зэрэгт функцийн дүрэм</p></li>
+            <li><p><m>\displaystyle\int \frac{1}{x}\,dx = \ln|x| + C</m></p></li>
+            <li><p><m>\displaystyle\int e^x\,dx = e^x + C</m></p></li>
+            <li><p><m>\displaystyle\int a^x\,dx = \frac{a^x}{\ln a} + C</m></p></li>
+            <li><p><m>\displaystyle\int \sin x\,dx = -\cos x + C</m></p></li>
+            <li><p><m>\displaystyle\int \cos x\,dx = \sin x + C</m></p></li>
+            <li><p><m>\displaystyle\int \frac{1}{\cos^2 x}\,dx =
+            \int \sec^2 x\,dx = \tan x + C</m></p></li>
+            <li><p><m>\displaystyle\int \frac{1}{\sin^2 x}\,dx =
+            \int \csc^2 x\,dx = -\cot x + C</m></p></li>
+            <li><p><m>\displaystyle\int \sec x\tan x\,dx = \sec x + C</m></p></li>
+            <li><p><m>\displaystyle\int \csc x\cot x\,dx = -\csc x + C</m></p></li>
+            <li><p><m>\displaystyle\int \frac{1}{\sqrt{1-x^2}}\,dx =
+            \arcsin x + C</m></p></li>
+            <li><p><m>\displaystyle\int \frac{1}{1+x^2}\,dx =
+            \arctan x + C</m></p></li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <remark xml:id="rem-power-rule-check">
+      <p>Эдгээр дүрмүүд зөв эсэхийг шалгахад хялбар: хариуг
+      дифференциалчлаад анхны функцийг олох ёстой. Жишээ нь
+      <m>\left(\frac{x^{n+1}}{n+1}\right)' = \frac{(n+1)x^n}{n+1}
+      = x^n</m>. Зөв!</p>
+    </remark>
+
+    <example xml:id="ex-antider-power">
+      <title>Зэрэгт функцийн интеграл</title>
+      <statement>
+        <p>Тодорхойгүй интегралыг бод:</p>
+        <p>1. <m>\int x^8\,dx</m>; 2. <m>\int \frac{1}{x^3}\,dx</m>;
+        3. <m>\int \sqrt{x}\,dx</m>; 4. <m>\int \frac{1}{\sqrt{x}}\,dx</m>.</p>
+      </statement>
+      <solution>
+        <p>1. <m>\int x^8\,dx = \frac{x^9}{9} + C</m>.</p>
+        <p>2. <m>\int x^{-3}\,dx = \frac{x^{-2}}{-2} + C
+        = -\frac{1}{2x^2} + C</m>.</p>
+        <p>3. <m>\int x^{1/2}\,dx = \frac{x^{3/2}}{3/2} + C
+        = \frac{2}{3}x^{3/2} + C</m>.</p>
+        <p>4. <m>\int x^{-1/2}\,dx = \frac{x^{1/2}}{1/2} + C
+        = 2\sqrt{x} + C</m>.</p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-antider-combination">
+      <title>Хэд хэдэн дүрэм хослуулан хэрэглэх</title>
+      <statement>
+        <p>Тодорхойгүй интегралыг бод:</p>
+        <p>1. <m>\int (3x^2 + 4x - 5)\,dx</m></p>
+        <p>2. <m>\int (x^3 - \cos x + e^x)\,dx</m></p>
+        <p>3. <m>\int \left(\frac{1}{x} + \frac{1}{1+x^2}\right)dx</m></p>
+      </statement>
+      <solution>
+        <p>1. <m>\int (3x^2+4x-5)\,dx = x^3 + 2x^2 - 5x + C</m>.</p>
+        <p>2. <m>\int (x^3-\cos x+e^x)\,dx = \frac{x^4}{4} - \sin x
+        + e^x + C</m>.</p>
+        <p>3. <m>\int \left(\frac{1}{x}+\frac{1}{1+x^2}\right)dx
+        = \ln|x| + \arctan x + C</m>.</p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-antider-simplify">
+      <title>Хялбарчлаад интегралдах</title>
+      <statement>
+        <p>Тодорхойгүй интегралыг бод:</p>
+        <p>1. <m>\int \frac{x^2+3x-5}{x}\,dx</m></p>
+        <p>2. <m>\int \frac{x^3-8}{x-2}\,dx</m></p>
+        <p>3. <m>\int \frac{\sin^2 x + \cos^2 x}{\cos^2 x}\,dx</m></p>
+      </statement>
+      <solution>
+        <p>1. <m>\int \left(x + 3 - \frac{5}{x}\right)dx
+        = \frac{x^2}{2} + 3x - 5\ln|x| + C</m>.</p>
+        <p>2. <m>x^3-8 = (x-2)(x^2+2x+4)</m> тул
+        <m>\int (x^2+2x+4)\,dx = \frac{x^3}{3} + x^2 + 4x + C</m>.</p>
+        <p>3. <m>\int \sec^2 x\,dx = \tan x + C</m>.</p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-initial-value">
+    <title>Анхны нөхцөлтэй бодлого</title>
+
+    <p>Зөвхөн <m>y' = f(x)</m> мэдэхэд олон шийд (<m>F(x)+C</m>) гарна.
+    Хэрэв нэмж <m>y(x_0) = y_0</m> нөхцөл өгвөл <m>C</m>-ийг олж
+    ганц шийд тодорхойлно. Ийм бодлогыг <term>анхны нөхцөлтэй
+    бодлого</term> (initial value problem) гэнэ.</p>
+
+    <example xml:id="ex-ivp-1">
+      <title>Анхны нөхцөлтэй бодлого</title>
+      <statement>
+        <p><m>y' = 3x^2 - 4</m>, <m>y(1) = 2</m> нөхцөлийг хангах
+        <m>y</m>-ийг ол.</p>
+      </statement>
+      <solution>
+        <p><m>y = \int (3x^2 - 4)\,dx = x^3 - 4x + C</m>.</p>
+        <p>Анхны нөхцөл: <m>y(1) = 1 - 4 + C = 2 \Rightarrow C = 5</m>.</p>
+        <p>Хариу: <m>y = x^3 - 4x + 5</m>.</p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-ivp-2">
+      <title>Хоёр дахь эрэмбийн анхны нөхцөлтэй бодлого</title>
+      <statement>
+        <p><m>y'' = 24x^2 - \cos x</m>, <m>y'(0) = 5</m>,
+        <m>y(0) = -3</m>.</p>
+      </statement>
+      <solution>
+        <p><m>y' = \int (24x^2 - \cos x)\,dx = 8x^3 - \sin x + C_1</m>.</p>
+        <p><m>y'(0) = 0 - 0 + C_1 = 5 \Rightarrow C_1 = 5</m>.</p>
+        <p>Иймд <m>y' = 8x^3 - \sin x + 5</m>.</p>
+        <p><m>y = \int (8x^3 - \sin x + 5)\,dx = 2x^4 + \cos x + 5x + C_2</m>.</p>
+        <p><m>y(0) = 0 + 1 + 0 + C_2 = -3 \Rightarrow C_2 = -4</m>.</p>
+        <p>Хариу: <m>y = 2x^4 + \cos x + 5x - 4</m>.</p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-ivp-motion">
+      <title>Хөдөлгөөний бодлого</title>
+      <statement>
+        <p>Биетийг <m>t=0</m> мөчид <m>s_0 = 10</m> м өндрөөс
+        <m>v_0 = 20</m> м/сек хурдтай дээш шидэв. Хурдатгал
+        <m>a(t) = -9{,}8</m> м/сек<m>^2</m>. Хурд ба байрлалын
+        функцийг ол.</p>
+      </statement>
+      <solution>
+        <p><m>v(t) = \int a(t)\,dt = \int (-9{,}8)\,dt
+        = -9{,}8t + C_1</m>.</p>
+        <p><m>v(0) = 20 \Rightarrow C_1 = 20</m>. Иймд
+        <m>v(t) = -9{,}8t + 20</m>.</p>
+        <p><m>s(t) = \int v(t)\,dt = \int (-9{,}8t+20)\,dt
+        = -4{,}9t^2 + 20t + C_2</m>.</p>
+        <p><m>s(0) = 10 \Rightarrow C_2 = 10</m>. Иймд
+        <m>s(t) = -4{,}9t^2 + 20t + 10</m>.</p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-antider-graph">
+    <title>Эх функцын геометрийн утга</title>
+
+    <p><m>f(x)</m>-ийн нэг эх функц <m>F(x)</m> мэдэгдсэн бол
+    бусад эх функцууд <m>F(x)+C</m> нь <m>F(x)</m>-ийн графикийг
+    босоо чиглэлд <m>C</m>-ээр шилжүүлсэн муруй юм.</p>
+
+    <figure xml:id="fig-antider-family">
+      <caption><m>\int 2x\,dx = x^2 + C</m> — эх функцын бүлэг</caption>
+      <image xml:id="img-antider-family">
+        <shortdescription>x^2+C функцийн олон C утгын хувьд графикууд</shortdescription>
+        <latex-image>
+          \begin{tikzpicture}
+            \begin{axis}[
+              xmin=-3, xmax=3, ymin=-2, ymax=8,
+              xlabel={$x$}, ylabel={$y$},
+              axis lines=center,
+              width=9cm, height=7cm,
+              grid=both,
+            ]
+              \addplot[smooth, thick, blue, domain=-2.5:2.5, samples=60]
+                {x^2 - 2} node[right] {\small $C=-2$};
+              \addplot[smooth, thick, red, domain=-2.5:2.5, samples=60]
+                {x^2} node[right] {\small $C=0$};
+              \addplot[smooth, thick, green!60!black, domain=-2.5:2.5, samples=60]
+                {x^2 + 2} node[right] {\small $C=2$};
+              \addplot[smooth, thick, orange, domain=-2.3:2.3, samples=60]
+                {x^2 + 4} node[right] {\small $C=4$};
+            \end{axis}
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+  </subsection>
+
+  <exercises xml:id="exercises-antider">
+    <title>Дасгалууд</title>
+
+    <exercisegroup xml:id="exg-antider-basic">
+      <title>Тодорхойгүй интеграл бод</title>
+      <exercise xml:id="ex-ai-1">
+        <statement><p><m>\displaystyle\int 3\,dx</m></p></statement>
+        <answer><p><m>3x + C</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-ai-2">
+        <statement><p><m>\displaystyle\int x^6\,dx</m></p></statement>
+        <answer><p><m>\frac{x^7}{7} + C</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-ai-3">
+        <statement><p><m>\displaystyle\int (10x^3 - 2x + 7)\,dx</m></p></statement>
+        <answer><p><m>\frac{5x^4}{2} - x^2 + 7x + C</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-ai-4">
+        <statement><p><m>\displaystyle\int \frac{1}{\sqrt[3]{x}}\,dx</m></p></statement>
+        <answer><p><m>\frac{3}{2}x^{2/3} + C</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-ai-5">
+        <statement><p><m>\displaystyle\int (\sin x - \cos x)\,dx</m></p></statement>
+        <answer><p><m>-\cos x - \sin x + C</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-ai-6">
+        <statement><p><m>\displaystyle\int \sec^2 x\,dx</m></p></statement>
+        <answer><p><m>\tan x + C</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-ai-7">
+        <statement><p><m>\displaystyle\int (e^x + x^e)\,dx</m></p></statement>
+        <answer><p><m>e^x + \frac{x^{e+1}}{e+1} + C</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-ai-8">
+        <statement><p><m>\displaystyle\int \frac{x^2+4}{x}\,dx</m></p></statement>
+        <answer><p><m>\frac{x^2}{2} + 4\ln|x| + C</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-ai-9">
+        <statement><p><m>\displaystyle\int (2^x + 3^x)\,dx</m></p></statement>
+        <answer><p><m>\frac{2^x}{\ln 2}+\frac{3^x}{\ln 3}+ C</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-ai-10">
+        <statement><p><m>\displaystyle\int \left(\sqrt{x}+\frac{1}{\sqrt{x}}\right)^2 dx</m></p></statement>
+        <answer><p>Задалбал <m>\int (x + 2 + x^{-1})\,dx = \frac{x^2}{2}+2x+\ln|x|+C</m>.</p></answer>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup xml:id="exg-ivp">
+      <title>Анхны нөхцөлтэй бодлого</title>
+      <exercise xml:id="ex-ivp-ex1">
+        <statement><p><m>f'(x) = 2x - 3</m>, <m>f(0) = 5</m>.
+        <m>f(x)</m>-ийг ол.</p></statement>
+        <answer><p><m>f(x) = x^2 - 3x + 5</m>.</p></answer>
+      </exercise>
+      <exercise xml:id="ex-ivp-ex2">
+        <statement><p><m>f'(x) = \sin x</m>, <m>f(\pi) = 2</m>.
+        <m>f(x)</m>-ийг ол.</p></statement>
+        <answer><p><m>f(x) = -\cos x + 1</m>.</p></answer>
+      </exercise>
+      <exercise xml:id="ex-ivp-ex3">
+        <statement><p><m>f''(x) = 0</m>, <m>f'(1) = 3</m>,
+        <m>f(1) = 1</m>. <m>f(x)</m>-ийг ол.</p></statement>
+        <answer><p><m>f(x) = 3x - 2</m>.</p></answer>
+      </exercise>
+      <exercise xml:id="ex-ivp-ex4">
+        <statement><p><m>f''(x) = 2</m>, <m>f'(0) = 1</m>,
+        <m>f(0) = 5</m>. <m>f(x)</m>-ийг ол.</p></statement>
+        <answer><p><m>f(x) = x^2 + x + 5</m>.</p></answer>
+      </exercise>
+      <exercise xml:id="ex-ivp-ex5">
+        <statement>
+          <p>Биетийн хурдатгал <m>a(t) = -32</m> фт/сек<m>^2</m>,
+          анхны хурд <m>v(0) = 64</m> фт/сек, анхны байрлал
+          <m>s(0) = 32</m> фт. <m>s(t)</m>-ийг олж, биет газарт хэзээ
+          хүрэхийг тодорхойл.</p>
+        </statement>
+        <answer><p><m>s(t) = -16t^2+64t+32</m>. Газарт: <m>t =
+        2+\sqrt{6}\approx 4{,}45</m> сек.</p></answer>
+      </exercise>
+    </exercisegroup>
+  </exercises>
+
+  <!-- Семинар (номноос) -->
+  <exercises xml:id="exercises-seminar-antider">
+    <title>Семинар</title>
+
+    <introduction><p>Жагсаалт ашиглан бод.</p></introduction>
+
+    <exercise><statement><p><m>\int \sqrt{x}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{dx}{x^2}</m></p></statement></exercise>
+    <exercise><statement><p><m>\int 10^x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int a^x e^x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int (\sqrt{x}+1)(x-\sqrt{x}+1)\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{(1-z)^2}{z}\,dz</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{(1+\sqrt{x})^3}{\sqrt[3]{x}}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{1+\cos^2 x}{1+\cos 2x}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{\cos 2x}{\cos^2 x\sin^2 x}\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \tan^2 x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{(1+2x^2)\,dx}{x^2(1+x^2)}</m></p></statement></exercise>
+    <exercise><statement><p><m>\int (\arcsin x+\arccos x)\,dx</m></p></statement></exercise>
+  </exercises>
+
+  <!-- Гэрийн даалгавар (номноос) -->
+  <exercises xml:id="exercises-hw-antider">
+    <title>Гэрийн даалгавар</title>
+
+    <exercise><statement><p><m>\int \frac{dx}{2x-1}</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{x\,dx}{x^2+1}</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{e^x\,dx}{e^x+1}</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \tan x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \cot x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{dx}{x\ln x}</m></p></statement></exercise>
+    <exercise><statement><p><m>\int e^{\sin x}\cos x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int e^{x^2}x\,dx</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{dx}{\sqrt{1-25x^2}}</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{dx}{1+9x^2}</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{dx}{\sqrt{4-x^2}}</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{x\,dx}{x^4+1}</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{e^x\,dx}{e^{2x}+4}</m></p></statement></exercise>
+    <exercise><statement><p><m>\int \frac{1+x}{\sqrt{1-x^2}}\,dx</m></p></statement></exercise>
+  </exercises>
+</section>

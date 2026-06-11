@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================
+     Тодорхой интеграл, Риманы нийлбэр, Дифференциал тоололын үндсэн теорем
+     (APEX 5.2–5.5 нэгтгэсэн)
+     ============================================================ -->
+
+<section xml:id="sec-definite-integral" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Тодорхой интеграл ба анализын үндсэн теорем</title>
+
+  <introduction>
+    <p>Өмнөх хэсэгт тодорхойгүй интегралыг — уламжлалын урвуу процесс
+    болохыг — судалсан. Энэ хэсэгт <term>тодорхой интеграл</term>-ын
+    ойлголтыг Риманы нийлбэрээр тодорхойлж, анализын үндсэн теоремоор
+    тодорхойгүй ба тодорхой интегралыг холбоно.</p>
+  </introduction>
+
+  <!-- ============================================================
+       5.2 Тодорхой интегралын тухай ойлголт
+       ============================================================ -->
+  <subsection xml:id="subsec-area-problem">
+    <title>Талбайн бодлого</title>
+
+    <p>Муруй шугамын дор талбай олох бодлого нь интегралын
+    тооллын үндэс юм. <m>f(x)\ge 0</m> функцийн <m>[a,b]</m>
+    завсар дахь графикийн доорх талбайг хэрхэн олох вэ?</p>
+
+    <p>Үндсэн санаа: завсрыг олон жижиг хэсэгт хуваан тэгш
+    өнцөгтүүдийн талбайгаар ойролцоолно.</p>
+
+    <figure xml:id="fig-riemann-idea">
+      <caption>Тэгш өнцөгтөөр талбай ойролцоолох</caption>
+      <image xml:id="img-riemann-idea">
+        <shortdescription>f(x) функцийн доорх талбайг тэгш өнцөгтүүдээр ойролцоолсон зураг</shortdescription>
+        <latex-image>
+          \begin{tikzpicture}
+            \begin{axis}[
+              xmin=0, xmax=4.5, ymin=0, ymax=5,
+              xlabel={$x$}, ylabel={$y$},
+              axis lines=center,
+              width=9cm, height=6cm,
+              xtick={0.5, 1.5, 2.5, 3.5},
+              xticklabels={$x_0$, $x_1$, $x_2$, $x_3$},
+            ]
+              \addplot[smooth, thick, blue, domain=0.3:4.2, samples=60]
+                {0.3*x^2 - 0.5*x + 3} node[right] {$y=f(x)$};
+              %% Right-hand rectangles
+              \addplot[fill=blue!15, draw=blue, thick, const plot mark right]
+                coordinates {(0.5,2.825) (1.5,3.175) (2.5,4.325) (3.5,6.275) (4.5,6.275)};
+            \end{axis}
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+  </subsection>
+
+  <!-- ============================================================
+       5.3 Риманы нийлбэр
+       ============================================================ -->
+  <subsection xml:id="subsec-riemann-sums">
+    <title>Риманы нийлбэр</title>
+
+    <p><m>f(x)</m> функц <m>[a,b]</m> завсарт тасралтгүй байг.
+    <m>[a,b]</m>-ийг <m>n</m> тэнцүү хэсэгт хуваая:</p>
+    <me>\Delta x = \frac{b-a}{n}, \qquad
+    x_i = a + i\cdot\Delta x, \quad i=0,1,\ldots,n.</me>
+
+    <p>Завсар бүрээс <m>c_i\in[x_{i-1}, x_i]</m> цэг сонгоод</p>
+
+    <definition xml:id="def-riemann-sum">
+      <title>Риманы нийлбэр</title>
+      <statement>
+        <me>S_n = \sum_{i=1}^{n} f(c_i)\cdot\Delta x</me>
+        <p>нийлбэрийг <m>f</m>-ийн <m>[a,b]</m> дээрх
+        <term>Риманы нийлбэр</term> гэнэ.</p>
+      </statement>
+    </definition>
+
+    <p><m>c_i</m> цэгийг сонгох хэд хэдэн арга бий:</p>
+    <p>
+      <ul>
+        <li><term>Зүүн төгсгөлийн дүрэм:</term> <m>c_i = x_{i-1}</m></li>
+        <li><term>Баруун төгсгөлийн дүрэм:</term> <m>c_i = x_i</m></li>
+        <li><term>Дундаж цэгийн дүрэм:</term>
+        <m>c_i = \frac{x_{i-1}+x_i}{2}</m></li>
+      </ul>
+    </p>
+
+    <figure xml:id="fig-riemann-left-right">
+      <caption>Зүүн ба баруун Риманы нийлбэр</caption>
+      <sidebyside widths="47% 47%" margins="0%">
+        <figure xml:id="fig-riemann-left">
+          <caption>Зүүн (<m>n=4</m>)</caption>
+          <image xml:id="img-riemann-left">
+            <shortdescription>Зүүн төгсгөлийн Риманы нийлбэрийн зураг</shortdescription>
+            <latex-image>
+              \begin{tikzpicture}
+                \begin{axis}[
+                  xmin=0, xmax=2.5, ymin=0, ymax=5,
+                  axis lines=center,
+                  width=6cm, height=5cm,
+                  xtick={0, 0.5, 1, 1.5, 2},
+                  title={\small Зүүн нийлбэр},
+                ]
+                  \addplot[smooth, thick, blue, domain=0:2.2, samples=60]
+                    {x^2 + 1};
+                  \addplot[fill=blue!15, draw=blue,
+                    const plot mark right]
+                    coordinates {(0,1) (0.5,1.25) (1,2) (1.5,3.25) (2,3.25)};
+                \end{axis}
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+        <figure xml:id="fig-riemann-right">
+          <caption>Баруун (<m>n=4</m>)</caption>
+          <image xml:id="img-riemann-right">
+            <shortdescription>Баруун төгсгөлийн Риманы нийлбэрийн зураг</shortdescription>
+            <latex-image>
+              \begin{tikzpicture}
+                \begin{axis}[
+                  xmin=0, xmax=2.5, ymin=0, ymax=5.5,
+                  axis lines=center,
+                  width=6cm, height=5cm,
+                  xtick={0, 0.5, 1, 1.5, 2},
+                  title={\small Баруун нийлбэр},
+                ]
+                  \addplot[smooth, thick, blue, domain=0:2.2, samples=60]
+                    {x^2 + 1};
+                  \addplot[fill=red!15, draw=red,
+                    const plot]
+                    coordinates {(0,1.25) (0.5,2) (1,3.25) (1.5,5) (2,5)};
+                \end{axis}
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+      </sidebyside>
+    </figure>
+
+    <example xml:id="ex-riemann-x2">
+      <title>Риманы нийлбэр тооцоолох</title>
+      <statement>
+        <p><m>f(x) = x^2</m> функцийн <m>[0,1]</m> дээрх баруун
+        Риманы нийлбэрийг <m>n</m> хуваалттай тооцоол.</p>
+      </statement>
+      <solution>
+        <p><m>\Delta x = \frac{1}{n}</m>, <m>x_i = \frac{i}{n}</m>,
+        <m>c_i = x_i = \frac{i}{n}</m>.</p>
+        <md>
+          <mrow>S_n \amp= \sum_{i=1}^{n}\left(\frac{i}{n}\right)^2
+            \cdot\frac{1}{n}
+            = \frac{1}{n^3}\sum_{i=1}^{n} i^2</mrow>
+          <mrow>\amp= \frac{1}{n^3}\cdot\frac{n(n+1)(2n+1)}{6}
+            = \frac{(n+1)(2n+1)}{6n^2}.</mrow>
+        </md>
+        <p><m>n\to\infty</m> үед:</p>
+        <me>\lim_{n\to\infty}S_n = \lim_{n\to\infty}
+        \frac{(n+1)(2n+1)}{6n^2} = \frac{2}{6} = \frac{1}{3}.</me>
+      </solution>
+    </example>
+
+    <definition xml:id="def-definite-integral">
+      <title>Тодорхой интеграл</title>
+      <statement>
+        <p><m>f</m> функц <m>[a,b]</m> дээр тасралтгүй бол</p>
+        <me>\int_a^b f(x)\,dx = \lim_{n\to\infty}
+        \sum_{i=1}^{n} f(c_i)\cdot\Delta x</me>
+        <p>хязгаарыг <m>f</m>-ийн <m>a</m>-аас <m>b</m> хүртэлх
+        <term>тодорхой интеграл</term> гэнэ. <m>a</m>-г доод хязгаар,
+        <m>b</m>-г дээд хязгаар гэнэ.</p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-def-int-properties">
+      <title>Тодорхой интегралын шинж чанар</title>
+      <statement>
+        <p><m>f, g</m> тасралтгүй, <m>c</m> тогтмол бол:</p>
+        <p>
+          <ol>
+            <li><p><m>\int_a^a f(x)\,dx = 0</m></p></li>
+            <li><p><m>\int_a^b f(x)\,dx = -\int_b^a f(x)\,dx</m></p></li>
+            <li><p><m>\int_a^b c\cdot f(x)\,dx = c\int_a^b f(x)\,dx</m></p></li>
+            <li><p><m>\int_a^b [f(x)\pm g(x)]\,dx =
+            \int_a^b f(x)\,dx \pm \int_a^b g(x)\,dx</m></p></li>
+            <li><p><m>\int_a^b f(x)\,dx = \int_a^c f(x)\,dx +
+            \int_c^b f(x)\,dx</m> (завсрын нэмэлт)</p></li>
+            <li><p>Хэрэв <m>f(x)\ge 0</m> <m>[a,b]</m>-д бол
+            <m>\int_a^b f(x)\,dx \ge 0</m></p></li>
+            <li><p>Хэрэв <m>f(x)\ge g(x)</m> <m>[a,b]</m>-д бол
+            <m>\int_a^b f(x)\,dx \ge \int_a^b g(x)\,dx</m></p></li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+  </subsection>
+
+  <!-- ============================================================
+       5.4 Дифференциал тоололын үндсэн теорем
+       ============================================================ -->
+  <subsection xml:id="subsec-ftc">
+    <title>Дифференциал тоололын үндсэн теорем</title>
+
+    <p>Дифференциал тоололын үндсэн теорем (ДТҮТ) нь дифференциал ба интеграл
+    тооллын хоорондын гүн холбоог илэрхийлнэ. Энэ теорем нь
+    тодорхой интегралыг Риманы нийлбэрийн хязгаараар биш,
+    эх функцаар тооцоолох боломж олгодог.</p>
+
+    <theorem xml:id="thm-ftc-1">
+      <title>Дифференциал тоололын үндсэн теорем, I хэсэг</title>
+      <statement>
+        <p><m>f</m> нь <m>[a,b]</m> дээр тасралтгүй байг.
+        <m>F(x) = \int_a^x f(t)\,dt</m> гэж тодорхойлбол <m>F</m>
+        нь <m>(a,b)</m> дээр дифференциалчлагдах ба</p>
+        <me>F'(x) = \frac{d}{dx}\int_a^x f(t)\,dt = f(x).</me>
+        <p>Өөрөөр хэлбэл, интеграл нь уламжлалын урвуу үйлдэл.</p>
+      </statement>
+    </theorem>
+
+    <example xml:id="ex-ftc1">
+      <title>ДТҮТ I хэрэглэх</title>
+      <statement>
+        <p>Дараах функцүүдийн уламжлалыг ол:</p>
+        <p>1. <m>F(x) = \int_2^x (t^3+1)\,dt</m></p>
+        <p>2. <m>G(x) = \int_0^{x^2} \sin t\,dt</m></p>
+      </statement>
+      <solution>
+        <p>1. ДТҮТ I-ийг шууд хэрэглэвэл: <m>F'(x) = x^3+1</m>.</p>
+        <p>2. Гинжин дүрмийг хэрэглэнэ. <m>u=x^2</m> гэж тавибал:</p>
+        <me>G'(x) = \sin(x^2)\cdot 2x = 2x\sin(x^2).</me>
+      </solution>
+    </example>
+
+    <theorem xml:id="thm-ftc-2">
+      <title>Дифференциал тоололын үндсэн теорем, II хэсэг (Ньютон–Лейбницийн томьёо)</title>
+      <statement>
+        <p><m>f</m> нь <m>[a,b]</m> дээр тасралтгүй, <m>F</m> нь
+        <m>f</m>-ийн дурын эх функц бол</p>
+        <me>\int_a^b f(x)\,dx = F(b) - F(a) = F(x)\Big|_a^b.</me>
+      </statement>
+      <proof>
+        <p>ДТҮТ I-ээр <m>G(x) = \int_a^x f(t)\,dt</m> нь <m>f</m>-ийн
+        нэг эх функц. <m>F</m> нь бас эх функц тул
+        <m>F(x) = G(x) + C</m>. <m>G(a) = 0</m> тул
+        <m>F(a) = C</m>, <m>F(b) = G(b) + C</m>. Иймд</p>
+        <me>F(b)-F(a) = G(b) = \int_a^b f(t)\,dt.</me>
+      </proof>
+    </theorem>
+
+    <remark xml:id="rem-ftc-significance">
+      <p>ДТҮТ II нь гайхамшигтай: Риманы нийлбэрийн хязгаар тооцоолох
+      (<m>n\to\infty</m>) хүндрэлтэй процессыг эх функц олоод
+      хоёр утга хасах энгийн үйлдлээр солив!</p>
+    </remark>
+
+    <example xml:id="ex-ftc2-basic">
+      <title>Тодорхой интеграл тооцоолох</title>
+      <statement>
+        <p>Тодорхой интегралыг бод:</p>
+        <p>1. <m>\int_0^2 x^3\,dx</m>;
+        2. <m>\int_0^{\pi} \sin x\,dx</m>;
+        3. <m>\int_1^e \frac{1}{x}\,dx</m>.</p>
+      </statement>
+      <solution>
+        <p>1. <m>\int_0^2 x^3\,dx = \frac{x^4}{4}\Big|_0^2
+        = \frac{16}{4} - 0 = 4</m>.</p>
+        <p>2. <m>\int_0^{\pi}\sin x\,dx = -\cos x\Big|_0^{\pi}
+        = -\cos\pi-(-\cos 0) = 1+1 = 2</m>.</p>
+        <p>3. <m>\int_1^e\frac{1}{x}\,dx = \ln|x|\Big|_1^e
+        = \ln e - \ln 1 = 1</m>.</p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-ftc2-combined">
+      <title>Нэмэлт жишээнүүд</title>
+      <statement>
+        <p>Тодорхой интегралыг бод:</p>
+        <p>1. <m>\int_{-1}^{2}(3x^2-4x+1)\,dx</m></p>
+        <p>2. <m>\int_0^{\pi/4}\sec^2 x\,dx</m></p>
+        <p>3. <m>\int_1^{4}\left(\sqrt{x}-\frac{1}{x^2}\right)dx</m></p>
+      </statement>
+      <solution>
+        <p>1. <m>(x^3-2x^2+x)\Big|_{-1}^{2}
+        = (8-8+2)-(-1-2-1) = 2+4 = 6</m>.</p>
+        <p>2. <m>\tan x\Big|_0^{\pi/4} = 1-0 = 1</m>.</p>
+        <p>3. <m>\left(\frac{2}{3}x^{3/2}+\frac{1}{x}\right)
+        \Big|_1^{4} = \left(\frac{16}{3}+\frac{1}{4}\right)
+        -\left(\frac{2}{3}+1\right) = \frac{14}{3}-\frac{3}{4}
+        = \frac{47}{12}</m>.</p>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================
+       Муруйн доорх ба хоорондох талбай
+       ============================================================ -->
+  <subsection xml:id="subsec-area-curves">
+    <title>Муруйн хоорондох талбай</title>
+
+    <p>Хэрэв <m>f(x)\ge 0</m> <m>[a,b]</m>-д бол
+    <m>\int_a^b f(x)\,dx</m> нь графикийн доорх талбайг өгнө.</p>
+
+    <p>Хэрэв <m>f(x)\ge g(x)</m> <m>[a,b]</m>-д бол хоёр муруйн
+    хоорондох талбай:</p>
+    <me>S = \int_a^b [f(x)-g(x)]\,dx.</me>
+
+    <figure xml:id="fig-area-between">
+      <caption>Хоёр муруйн хоорондох талбай</caption>
+      <image xml:id="img-area-between">
+        <shortdescription>f(x) ба g(x) хоёр муруйн хоорондох будагдсан талбай</shortdescription>
+        <latex-image>
+          \begin{tikzpicture}
+            \begin{axis}[
+              xmin=-0.5, xmax=3.5, ymin=-0.5, ymax=5,
+              xlabel={$x$}, ylabel={$y$},
+              axis lines=center,
+              width=9cm, height=6cm,
+              xtick={0.5, 2.5},
+              xticklabels={$a$, $b$},
+            ]
+              \addplot[smooth, thick, blue, domain=0.2:3.2, samples=60,
+                name path=f] {-0.5*x^2+3*x}
+                node[above right] {$y=f(x)$};
+              \addplot[smooth, thick, red, domain=0.2:3.2, samples=60,
+                name path=g] {0.5*x}
+                node[right] {$y=g(x)$};
+              \addplot[fill=green!20] fill between[of=f and g,
+                soft clip={domain=0.5:2.5}];
+              \node at (axis cs:1.5,1.8) {$S$};
+            \end{axis}
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+
+    <example xml:id="ex-area-between">
+      <title>Хоёр муруйн хоорондох талбай</title>
+      <statement>
+        <p><m>f(x) = x^2</m> ба <m>g(x) = x</m> муруйнуудын
+        хоорондох талбайг ол.</p>
+      </statement>
+      <solution>
+        <p>Огтлолцох цэг: <m>x^2 = x \Rightarrow x=0, 1</m>.
+        <m>[0,1]</m>-д <m>g(x)\ge f(x)</m> тул:</p>
+        <me>S = \int_0^1 (x-x^2)\,dx = \left(\frac{x^2}{2}
+        -\frac{x^3}{3}\right)\Big|_0^1 = \frac{1}{2}-\frac{1}{3}
+        = \frac{1}{6}.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-area-between-2">
+      <title>Талбай олох (нэмэлт жишээ)</title>
+      <statement>
+        <p><m>y = x^2 - 1</m> ба <m>y = 3-x^2</m> хоорондох
+        талбайг ол.</p>
+      </statement>
+      <solution>
+        <p>Огтлолцох цэг: <m>x^2-1 = 3-x^2 \Rightarrow 2x^2=4
+        \Rightarrow x=\pm\sqrt{2}</m>.
+        <m>[-\sqrt{2}, \sqrt{2}]</m>-д <m>3-x^2 \ge x^2-1</m> тул:</p>
+        <md>
+          <mrow>S \amp= \int_{-\sqrt{2}}^{\sqrt{2}}
+            [(3-x^2)-(x^2-1)]\,dx = \int_{-\sqrt{2}}^{\sqrt{2}}
+            (4-2x^2)\,dx</mrow>
+          <mrow>\amp= \left(4x-\frac{2x^3}{3}\right)
+            \Big|_{-\sqrt{2}}^{\sqrt{2}}
+            = 2\left(4\sqrt{2}-\frac{2\cdot 2\sqrt{2}}{3}\right)
+            = \frac{16\sqrt{2}}{3}.</mrow>
+        </md>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================
+       Дундаж утга
+       ============================================================ -->
+  <subsection xml:id="subsec-average-value">
+    <title>Функцийн дундаж утга</title>
+
+    <definition xml:id="def-avg-value">
+      <title>Функцийн дундаж утга</title>
+      <statement>
+        <p><m>f</m> нь <m>[a,b]</m> дээр тасралтгүй бол <m>f</m>-ийн
+        <m>[a,b]</m> дээрх <term>дундаж утга</term>:</p>
+        <me>f_{\text{дунд}} = \frac{1}{b-a}\int_a^b f(x)\,dx.</me>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-mvt-integrals">
+      <title>Интегралын дундаж утгын теорем</title>
+      <statement>
+        <p><m>f</m> нь <m>[a,b]</m> дээр тасралтгүй бол</p>
+        <me>f(c) = \frac{1}{b-a}\int_a^b f(x)\,dx</me>
+        <p>байх <m>c\in(a,b)</m> олдоно.</p>
+      </statement>
+    </theorem>
+
+    <example xml:id="ex-avg-value">
+      <title>Дундаж утга олох</title>
+      <statement>
+        <p><m>f(x) = x^2</m> функцийн <m>[0,3]</m> дээрх дундаж утгыг
+        ол.</p>
+      </statement>
+      <solution>
+        <p><m>f_{\text{дунд}} = \frac{1}{3-0}\int_0^3 x^2\,dx
+        = \frac{1}{3}\cdot\frac{x^3}{3}\Big|_0^3 = \frac{1}{3}\cdot 9
+        = 3</m>.</p>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================
+       5.5 Тоон интегралчлал (товч)
+       ============================================================ -->
+  <subsection xml:id="subsec-numerical-int">
+    <title>Тоон интегралчлал</title>
+
+    <p>Зарим функцийн эх функцыг томьёогоор олох боломжгүй
+    (жишээ нь <m>e^{-x^2}</m>). Ийм тохиолдолд тоон аргууд
+    ашигтай.</p>
+
+    <definition xml:id="def-trapezoidal">
+      <title>Трапецийн дүрэм</title>
+      <statement>
+        <me>\int_a^b f(x)\,dx \approx \frac{\Delta x}{2}
+        \left[f(x_0) + 2f(x_1) + 2f(x_2) + \cdots + 2f(x_{n-1})
+        + f(x_n)\right].</me>
+      </statement>
+    </definition>
+
+    <figure xml:id="fig-trapezoid">
+      <caption>Трапецийн дүрэм</caption>
+      <image xml:id="img-trapezoid">
+        <shortdescription>Трапецүүдээр талбай ойролцоолсон зураг</shortdescription>
+        <latex-image>
+          \begin{tikzpicture}
+            \begin{axis}[
+              xmin=0, xmax=4.5, ymin=0, ymax=5,
+              xlabel={$x$}, ylabel={$y$},
+              axis lines=center,
+              width=9cm, height=5cm,
+              xtick={0.5, 1.5, 2.5, 3.5},
+              xticklabels={$x_0$, $x_1$, $x_2$, $x_3$},
+            ]
+              \addplot[smooth, thick, blue, domain=0.3:4.2, samples=60]
+                {0.3*x^2 - 0.5*x + 3};
+              %% Trapezoids
+              \addplot[fill=green!15, draw=green!60!black]
+                coordinates {(0.5,0) (0.5,2.825) (1.5,3.175) (1.5,0)};
+              \addplot[fill=green!15, draw=green!60!black]
+                coordinates {(1.5,0) (1.5,3.175) (2.5,4.325) (2.5,0)};
+              \addplot[fill=green!15, draw=green!60!black]
+                coordinates {(2.5,0) (2.5,4.325) (3.5,6.275) (3.5,0)};
+            \end{axis>
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+
+    <definition xml:id="def-simpson">
+      <title>Симпсоны дүрэм</title>
+      <statement>
+        <p><m>n</m> тэгш бол:</p>
+        <me>\int_a^b f(x)\,dx \approx \frac{\Delta x}{3}
+        \left[f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3)
+        + \cdots + 4f(x_{n-1}) + f(x_n)\right].</me>
+      </statement>
+    </definition>
+
+    <example xml:id="ex-simpson">
+      <title>Симпсоны дүрмээр ойролцоолох</title>
+      <statement>
+        <p><m>\int_0^1 e^{-x^2}\,dx</m>-ийг <m>n=4</m> хуваалттай
+        Симпсоны дүрмээр ойролцоол.</p>
+      </statement>
+      <solution>
+        <p><m>\Delta x = 0{,}25</m>. Цэгүүд:
+        <m>x_0=0</m>, <m>x_1=0{,}25</m>, <m>x_2=0{,}5</m>,
+        <m>x_3=0{,}75</m>, <m>x_4=1</m>.</p>
+        <md>
+          <mrow>S_4 \amp= \frac{0{,}25}{3}[f(0) + 4f(0{,}25) + 2f(0{,}5)
+            + 4f(0{,}75) + f(1)]</mrow>
+          <mrow>\amp= \frac{0{,}25}{3}[1 + 4(0{,}9394) + 2(0{,}7788)
+            + 4(0{,}5698) + 0{,}3679]</mrow>
+          <mrow>\amp\approx 0{,}7468.</mrow>
+        </md>
+        <p>(Бодит утга: <m>\approx 0{,}7468</m> — маш сайн ойролцоолол.)</p>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ============================================================
+       Дасгалууд
+       ============================================================ -->
+  <exercises xml:id="exercises-def-integral">
+    <title>Дасгалууд</title>
+
+    <exercisegroup xml:id="exg-def-int">
+      <title>Тодорхой интеграл тооцоол</title>
+      <exercise xml:id="ex-di-1">
+        <statement><p><m>\int_0^3 (2x+1)\,dx</m></p></statement>
+        <answer><p><m>12</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-di-2">
+        <statement><p><m>\int_1^4 \sqrt{x}\,dx</m></p></statement>
+        <answer><p><m>\frac{14}{3}</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-di-3">
+        <statement><p><m>\int_0^{\pi/2}\cos x\,dx</m></p></statement>
+        <answer><p><m>1</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-di-4">
+        <statement><p><m>\int_1^2 \frac{1}{x^2}\,dx</m></p></statement>
+        <answer><p><m>\frac{1}{2}</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-di-5">
+        <statement><p><m>\int_0^1 (e^x - 1)\,dx</m></p></statement>
+        <answer><p><m>e-2</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-di-6">
+        <statement><p><m>\int_{-2}^{2}(x^3+x)\,dx</m></p></statement>
+        <answer><p><m>0</m> (сондгой функц)</p></answer>
+      </exercise>
+      <exercise xml:id="ex-di-7">
+        <statement><p><m>\int_0^{\pi}(1+\sin x)\,dx</m></p></statement>
+        <answer><p><m>\pi + 2</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-di-8">
+        <statement><p><m>\int_1^e \frac{1+\ln x}{x}\,dx</m></p></statement>
+        <answer><p><m>\frac{3}{2}</m></p></answer>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup xml:id="exg-area">
+      <title>Талбай ол</title>
+      <exercise xml:id="ex-area-1">
+        <statement><p><m>y=x^2</m> ба <m>y=x^3</m> хоорондох
+        талбайг ол.</p></statement>
+        <answer><p><m>\frac{1}{12}</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-area-2">
+        <statement><p><m>y=\sqrt{x}</m> ба <m>y=x^2</m> хоорондох
+        талбайг ол.</p></statement>
+        <answer><p><m>\frac{1}{3}</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-area-3">
+        <statement><p><m>y=\sin x</m> ба <m>x</m>-тэнхлэгийн
+        хоорондох <m>[0,\pi]</m> дээрх талбайг ол.</p></statement>
+        <answer><p><m>2</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-area-4">
+        <statement><p><m>y = 4-x^2</m> ба <m>y = x+2</m> хоорондох
+        талбайг ол.</p></statement>
+        <answer><p><m>\frac{9}{2}</m></p></answer>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup xml:id="exg-ftc1">
+      <title>ДТҮТ I хэрэглэ</title>
+      <exercise xml:id="ex-ftc1-1">
+        <statement><p><m>\frac{d}{dx}\int_1^x \sqrt{t^2+1}\,dt</m>
+        -ийг ол.</p></statement>
+        <answer><p><m>\sqrt{x^2+1}</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-ftc1-2">
+        <statement><p><m>\frac{d}{dx}\int_0^{x^3} e^{-t^2}\,dt</m>
+        -ийг ол.</p></statement>
+        <answer><p><m>3x^2 e^{-x^6}</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-ftc1-3">
+        <statement><p><m>\frac{d}{dx}\int_x^{x^2} \cos t\,dt</m>
+        -ийг ол.</p></statement>
+        <answer><p><m>2x\cos(x^2)-\cos x</m></p></answer>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup xml:id="exg-avg">
+      <title>Дундаж утга</title>
+      <exercise xml:id="ex-avg-1">
+        <statement><p><m>f(x) = \sin x</m>-ийн <m>[0,\pi]</m>
+        дээрх дундаж утгыг ол.</p></statement>
+        <answer><p><m>\frac{2}{\pi}</m></p></answer>
+      </exercise>
+      <exercise xml:id="ex-avg-2">
+        <statement><p><m>f(x) = e^x</m>-ийн <m>[0,1]</m>
+        дээрх дундаж утгыг ол.</p></statement>
+        <answer><p><m>e-1</m></p></answer>
+      </exercise>
+    </exercisegroup>
+  </exercises>
+
+  <!-- Семинар (номноос) -->
+  <exercises xml:id="exercises-seminar-defint">
+    <title>Семинар</title>
+
+    <exercise xml:id="sem-di-riemann">
+      <statement>
+        <p>Доорх функцүүдийн хувьд өгөгдсөн завсрыг <m>n=4</m> адил
+        урттай хуваагаад зүүн, дундаж, баруун нийлбэрийг тооцоол:
+          <ol>
+            <li><p><m>f(x)=3x+1</m>, <m>[2,6]</m></p></li>
+            <li><p><m>f(x)=\frac{1}{x}</m>, <m>[1,9]</m></p></li>
+            <li><p><m>f(x)=\cos x</m>, <m>[0,\pi]</m></p></li>
+            <li><p><m>f(x)=2x-x^2</m>, <m>[-1,3]</m></p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="sem-di-piecewise1">
+      <statement>
+        <p><m>f(x)=\begin{cases}|x-2|, \amp x\ge 0\\ x+2, \amp x\lt 0\end{cases}</m>
+        бол дараах интегралуудыг ол:
+          <ol>
+            <li><p><m>\int_{-2}^{0}f(x)\,dx</m></p></li>
+            <li><p><m>\int_{-2}^{2}f(x)\,dx</m></p></li>
+            <li><p><m>\int_{0}^{6}f(x)\,dx</m></p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="sem-di-area">
+      <statement>
+        <p>Графикийн доорх талбайг ол:
+          <ol>
+            <li><p><m>f(x)=x^3</m>, <m>[2,3]</m></p></li>
+            <li><p><m>f(x)=x^4</m>, <m>[-1,1]</m></p></li>
+            <li><p><m>f(x)=3\sqrt{x}</m>, <m>[1,4]</m></p></li>
+            <li><p><m>f(x)=e^{2x}</m>, <m>[0,\ln 2]</m></p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="sem-di-nl">
+      <statement>
+        <p>Ньютон–Лейбницийн томьёогоор бод:
+          <ol>
+            <li><p><m>\int_{-2}^{1}(x^2-6x+12)\,dx</m></p></li>
+            <li><p><m>\int_{-1}^{2}4x(1-x^2)\,dx</m></p></li>
+            <li><p><m>\int_{4}^{9}2x\sqrt{x}\,dx</m></p></li>
+            <li><p><m>\int_{0}^{\pi/4}\sec^2\theta\,d\theta</m></p></li>
+            <li><p><m>\int_{\ln 2}^{3}5e^x\,dx</m></p></li>
+            <li><p><m>\int_{-1}^{1}\frac{1}{1+x^2}\,dx</m></p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="sem-di-ftc1">
+      <statement>
+        <p>Уламжлалыг ол:
+          <ol>
+            <li><p><m>\frac{d}{dx}\int_1^x \sin(t^2)\,dt</m></p></li>
+            <li><p><m>\frac{d}{dx}\int_0^x e^{\sqrt{t}}\,dt</m></p></li>
+            <li><p><m>\frac{d}{dx}\int_x^0 t\sec t\,dt</m></p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="sem-di-sub">
+      <statement>
+        <p>Тодорхой интегралыг орлуулах аргаар бод:
+          <ol>
+            <li><p><m>\int_0^1 (2x+1)^3\,dx</m></p></li>
+            <li><p><m>\int_0^8 x\sqrt{1+x}\,dx</m></p></li>
+            <li><p><m>\int_0^{\pi/2}4\sin\frac{x}{2}\,dx</m></p></li>
+            <li><p><m>\int_{-\ln 3}^{\ln 3}\frac{e^x}{e^x+4}\,dx</m></p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="sem-di-ibp">
+      <statement>
+        <p>Тодорхой интегралыг хэсэгчлэх аргаар бод:
+          <ol>
+            <li><p><m>\int_0^{\ln 2}xe^{-x}\,dx</m></p></li>
+            <li><p><m>\int_0^{\pi}x\sin x\,dx</m></p></li>
+            <li><p><m>\int_0^{\sqrt{3}}x\arctan x\,dx</m></p></li>
+            <li><p><m>\int_0^{\pi}e^x\sin x\,dx</m></p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

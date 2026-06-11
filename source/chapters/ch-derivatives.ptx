@@ -1,0 +1,1704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================
+     Бүлэг 4: Уламжлал
+     Лекц 6: Уламжлалын тодорхойлолт, үндсэн дүрмүүд
+     Лекц 7: Параметр, далд, дээд эрэмбийн уламжлал, дифференциал
+     Лекц 8: Дифференциал тооллын теоремүүд, өсөлт/бууралт
+     Лекц 9: Экстремум, функц шинжлэх, график байгуулах
+     Зохиогч: Д. Даянцолмон, МУИС
+     ============================================================ -->
+
+<chapter xml:id="ch-derivatives" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Уламжлал</title>
+
+  <introduction xml:id="intro-derivatives">
+    <p>Бүлэг 3-д хязгаарын тухай ойлголтыг судалсан. Энэ бүлэгт хязгаарын
+    онцгой хэлбэр болох <term>уламжлал</term>-ыг авч үзнэ. Уламжлал нь
+    функцийн өөрчлөлтийн хурдыг хэмжиж, физик, инженерчлэл, эдийн засаг
+    зэрэг олон салбарт хэрэглэгддэг.</p>
+
+    <p><alert>Бүлгийн зорилго:</alert>
+      <ul>
+        <li>Уламжлалын тодорхойлолт, геометр ба физик утгыг ойлгох.</li>
+        <li>Үндсэн функцүүдийн уламжлал, арифметик дүрмүүдийг эзэмших.</li>
+        <li>Давхар буулгалт, урвуу функцийн уламжлалыг ашиглах.</li>
+        <li>Параметр ба далд функцийн уламжлалыг олох.</li>
+        <li>Дифференциал тооллын теоремүүдийг хэрэглэх.</li>
+        <li>Функцийн шинжилгээ, график байгуулах.</li>
+      </ul>
+    </p>
+  </introduction>
+
+  <!-- ════════════════════════════════════════════════════════════
+       ЛЕКЦ 6
+       §4.1 Уламжлалын тодорхойлолт
+       §4.2 Үндсэн функцүүдийн уламжлал
+       §4.3 Арифметик дүрмүүд
+       §4.4 Давхар буулгалтын уламжлал (гинжин дүрэм)
+       §4.5 Урвуу функцийн уламжлал
+       ════════════════════════════════════════════════════════════ -->
+
+  <!-- ============================================================
+       §4.1 Уламжлалын тодорхойлолт
+       ============================================================ -->
+  <section xml:id="sec-derivative-def">
+    <title>Уламжлалын тодорхойлолт</title>
+
+    <introduction>
+      <p>Уламжлалыг хоёр аргаар тайлбарлаж болно: геометрийн хувьд —
+      муруйн аль нэг цэгт татсан <term>шүргэгч шулууны налалт</term>;
+      физикийн хувьд — хөдлөгч биеийн <term>агшин зуурын хурд</term>.</p>
+    </introduction>
+
+    <definition xml:id="def-derivative">
+      <title>Уламжлал</title>
+      <statement>
+        <p><m>y = f(x)</m> функц <m>x = a</m> цэгт
+        <term>уламжлалтай</term> гэдэг нь дараах хязгаар оршин байхыг
+        хэлнэ:</p>
+        <me>f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}.</me>
+        <p>Энэ хязгаарыг <m>f</m> функцийн <m>x = a</m> цэг дээрх
+        <term>уламжлал</term> гэж нэрлэн <m>f'(a)</m>, <m>y'(a)</m>,
+        <m>\dfrac{dy}{dx}\Big|_{x=a}</m> гэж тэмдэглэнэ.</p>
+      </statement>
+    </definition>
+
+    <p>Тодорхойлолтод байгаа
+    <m>\dfrac{f(a+h)-f(a)}{h}</m> хэлбэрийн илэрхийллийг
+    <term>зөрөөний харьцаа</term> гэнэ. Геометрийн хувьд энэ нь
+    <m>(a, f(a))</m> ба <m>(a+h, f(a+h))</m> цэгүүдийг холбосон секантын
+    налалт юм. <m>h \to 0</m> үед секант шүргэгч рүү дөхдөг.</p>
+
+    <example xml:id="ex-deriv-def-poly">
+      <title>Тодорхойлолтоор уламжлал олох</title>
+      <statement>
+        <p><m>f(x) = x^2 - 3x</m> функцийн <m>x = 2</m> цэг дээрх
+        уламжлалыг тодорхойлолтоор ол.</p>
+      </statement>
+      <solution>
+        <md>
+          <mrow>f'(2) \amp= \lim_{h \to 0} \frac{f(2+h) - f(2)}{h}</mrow>
+          <mrow>\amp= \lim_{h \to 0}
+          \frac{(2+h)^2 - 3(2+h) - (4-6)}{h}</mrow>
+          <mrow>\amp= \lim_{h \to 0}
+          \frac{4 + 4h + h^2 - 6 - 3h + 2}{h}</mrow>
+          <mrow>\amp= \lim_{h \to 0} \frac{h^2 + h}{h}
+          = \lim_{h \to 0} (h + 1) = 1.</mrow>
+        </md>
+      </solution>
+    </example>
+
+    <example xml:id="ex-deriv-sqrt">
+      <title><m>f(x) = \sqrt{x}</m>-ийн уламжлал</title>
+      <statement>
+        <p><m>f(x) = \sqrt{x}</m> функцийн <m>x = a \gt 0</m> цэгт
+        уламжлалыг тодорхойлолтоор ол.</p>
+      </statement>
+      <solution>
+        <md>
+          <mrow>f'(a) \amp= \lim_{h \to 0}
+          \frac{\sqrt{a+h} - \sqrt{a}}{h}</mrow>
+          <mrow>\amp= \lim_{h \to 0}
+          \frac{(\sqrt{a+h} - \sqrt{a})(\sqrt{a+h} + \sqrt{a})}
+          {h(\sqrt{a+h} + \sqrt{a})}</mrow>
+          <mrow>\amp= \lim_{h \to 0} \frac{h}{h(\sqrt{a+h} + \sqrt{a})}
+          = \frac{1}{2\sqrt{a}}.</mrow>
+        </md>
+      </solution>
+    </example>
+
+    <subsection xml:id="subsec-deriv-notations">
+      <title>Тэмдэглэгээ ба уламжлалтай функц</title>
+
+      <p>Уламжлалыг янз бүрээр тэмдэглэдэг:
+      <me>f'(x) = y' = \frac{dy}{dx} = \frac{d}{dx}f(x) = Df(x).</me>
+      Лейбницийн <m>\dfrac{dy}{dx}</m> тэмдэглэгээ нь хязгаарыг
+      <m>\dfrac{\Delta y}{\Delta x} \to \dfrac{dy}{dx}</m> гэж
+      ойлгуулдаг тул физик, инженерчлэлд өргөн хэрэглэгддэг.</p>
+
+      <definition xml:id="def-differentiable">
+        <statement>
+          <p><m>f</m> функц <m>x = a</m> цэгт <term>дифференциалчлагдана</term>
+          гэдэг нь <m>f'(a)</m> оршин байхтай тэнцүү. <m>f</m> нь
+          <m>(a, b)</m> завсарт дифференциалчлагдана гэдэг нь тэр завсрын
+          аль ч цэгт дифференциалчлагдахыг хэлнэ.</p>
+        </statement>
+      </definition>
+
+      <theorem xml:id="thm-diff-implies-cont">
+        <title>Дифференциалчлагдах ба тасралтгүй чанарын хамаарал</title>
+        <statement>
+          <p>Хэрэв <m>f</m> нь <m>x = a</m> цэгт дифференциалчлагдах бол
+          <m>f</m> нь тэр цэгт тасралтгүй байна.</p>
+        </statement>
+        <proof>
+          <p><m>f'(a)</m> оршин байна гэж үзье. Тэгвэл
+          <md>
+            <mrow>f(a+h) - f(a) \amp= \frac{f(a+h)-f(a)}{h} \cdot h
+            \to f'(a) \cdot 0 = 0</mrow>
+          </md>
+          тул <m>\lim_{h \to 0} f(a+h) = f(a)</m>, өөрөөр хэлбэл
+          <m>f</m> нь <m>a</m>-д тасралтгүй.</p>
+        </proof>
+      </theorem>
+
+      <remark xml:id="rem-cont-not-diff">
+        <p>Эсрэгээр нь үнэн биш: тасралтгүй функц
+        дифференциалчлагдахгүй байж болно. Жишээ нь <m>f(x) = |x|</m>
+        нь <m>x = 0</m>-д тасралтгүй боловч дифференциалчлагдахгүй.</p>
+      </remark>
+    </subsection>
+
+    <exercises xml:id="exercises-deriv-def">
+      <title>§4.1 Дасгалууд</title>
+
+      <exercise xml:id="ex-dd-1">
+        <statement>
+          <p>Тодорхойлолтоор уламжлалыг ол:
+            <ol>
+              <li><p><m>f(x) = 3x^2 + 2x - 1</m>,
+              <m>x = 1</m>-д</p></li>
+              <li><p><m>f(x) = \dfrac{1}{x}</m>,
+              <m>x = 2</m>-д</p></li>
+              <li><p><m>f(x) = \sqrt{2x + 1}</m>,
+              <m>x = 4</m>-д</p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>8</m>; б. <m>-\dfrac{1}{4}</m>;
+          в. <m>\dfrac{1}{3}</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-dd-2">
+        <statement>
+          <p><m>f(x) = x^3</m>-ийн уламжлалыг тодорхойлолтоор олж
+          <m>f'(x) = 3x^2</m> болохыг батал.</p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       §4.2 Үндсэн функцүүдийн уламжлал
+       ============================================================ -->
+  <section xml:id="sec-basic-derivatives">
+    <title>Үндсэн функцүүдийн уламжлал</title>
+
+    <p>Дараах хүснэгтийн томьёонуудыг цаашид байнга ашиглана. Тэдгээрийг
+    тодорхойлолтоос гаргаж авна.</p>
+
+    <table xml:id="tbl-basic-derivatives">
+      <title>Үндсэн функцүүдийн уламжлалын хүснэгт</title>
+      <tabular halign="center">
+        <row header="yes" bottom="minor">
+          <cell>Функц</cell>
+          <cell>Уламжлал</cell>
+        </row>
+        <row><cell><m>c</m> (тогтмол)</cell>
+          <cell><m>0</m></cell></row>
+        <row><cell><m>x^n</m></cell>
+          <cell><m>n x^{n-1}</m></cell></row>
+        <row><cell><m>\sqrt{x}</m></cell>
+          <cell><m>\dfrac{1}{2\sqrt{x}}</m></cell></row>
+        <row><cell><m>e^x</m></cell>
+          <cell><m>e^x</m></cell></row>
+        <row><cell><m>a^x</m></cell>
+          <cell><m>a^x \ln a</m></cell></row>
+        <row><cell><m>\ln x</m></cell>
+          <cell><m>\dfrac{1}{x}</m></cell></row>
+        <row><cell><m>\log_a x</m></cell>
+          <cell><m>\dfrac{1}{x \ln a}</m></cell></row>
+        <row><cell><m>\sin x</m></cell>
+          <cell><m>\cos x</m></cell></row>
+        <row><cell><m>\cos x</m></cell>
+          <cell><m>-\sin x</m></cell></row>
+        <row><cell><m>\operatorname{tg} x</m></cell>
+          <cell><m>\dfrac{1}{\cos^2 x}</m></cell></row>
+        <row><cell><m>\operatorname{ctg} x</m></cell>
+          <cell><m>-\dfrac{1}{\sin^2 x}</m></cell></row>
+        <row><cell><m>\arcsin x</m></cell>
+          <cell><m>\dfrac{1}{\sqrt{1-x^2}}</m></cell></row>
+        <row><cell><m>\arccos x</m></cell>
+          <cell><m>-\dfrac{1}{\sqrt{1-x^2}}</m></cell></row>
+        <row><cell><m>\operatorname{arctg} x</m></cell>
+          <cell><m>\dfrac{1}{1+x^2}</m></cell></row>
+        <row><cell><m>\operatorname{arcctg} x</m></cell>
+          <cell><m>-\dfrac{1}{1+x^2}</m></cell></row>
+      </tabular>
+    </table>
+
+    <example xml:id="ex-power-rule">
+      <title>Зэрэгт функцийн дүрэм батлах</title>
+      <statement>
+        <p><m>(x^n)' = nx^{n-1}</m> (<m>n</m> натурал) болохыг
+        тодорхойлолтоор батал.</p>
+      </statement>
+      <proof>
+        <p>Бинометрийн теоремоор
+        <m>(x+h)^n = x^n + nx^{n-1}h + \binom{n}{2}x^{n-2}h^2 + \cdots + h^n</m>
+        тул</p>
+        <md>
+          <mrow>\frac{(x+h)^n - x^n}{h}
+          \amp= nx^{n-1} + \binom{n}{2}x^{n-2}h + \cdots + h^{n-1}.</mrow>
+        </md>
+        <p><m>h \to 0</m> үед зөвхөн эхний гишүүн үлдэж
+        <m>nx^{n-1}</m> болно.</p>
+      </proof>
+    </example>
+
+    <example xml:id="ex-sin-deriv">
+      <title><m>(\sin x)' = \cos x</m> батлах</title>
+      <statement>
+        <p><m>f(x) = \sin x</m>-ийн уламжлал <m>\cos x</m> болохыг
+        батал.</p>
+      </statement>
+      <proof>
+        <p>Нийлбэрийн томьёогоор
+        <m>\sin(x+h) - \sin x = 2\cos\!\left(x+\frac{h}{2}\right)
+        \sin\frac{h}{2}</m> тул</p>
+        <md>
+          <mrow>\frac{\sin(x+h)-\sin x}{h}
+          \amp= \cos\!\left(x+\frac{h}{2}\right)
+          \cdot \frac{\sin(h/2)}{h/2}.</mrow>
+        </md>
+        <p><m>h \to 0</m> үед <m>\dfrac{\sin(h/2)}{h/2} \to 1</m>
+        (I гайхамшигт хязгаар) ба
+        <m>\cos\!\left(x+\dfrac{h}{2}\right) \to \cos x</m> тул
+        уламжлал <m>\cos x</m> болно.</p>
+      </proof>
+    </example>
+  </section>
+
+  <!-- ============================================================
+       §4.3 Уламжлалын арифметик дүрмүүд
+       ============================================================ -->
+  <section xml:id="sec-derivative-rules">
+    <title>Уламжлалын арифметик дүрмүүд</title>
+
+    <theorem xml:id="thm-derivative-rules">
+      <title>Уламжлалын үндсэн дүрмүүд</title>
+      <statement>
+        <p><m>f, g</m> функцүүд <m>x</m> цэгт дифференциалчлагдана гэж
+        үзье. Тэгвэл:
+          <ol>
+            <li><p><term>Нийлбэр:</term>
+            <m>(f \pm g)' = f' \pm g'</m></p></li>
+            <li><p><term>Тогтмолоор үржигдсэн:</term>
+            <m>(cf)' = cf'</m></p></li>
+            <li><p><term>Үржвэр:</term>
+            <m>(fg)' = f'g + fg'</m></p></li>
+            <li><p><term>Харьцаа:</term>
+            <m>\left(\dfrac{f}{g}\right)' = \dfrac{f'g - fg'}{g^2}</m>,
+            <m>g \ne 0</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>Үржвэрийн дүрмийг баталъя. Тодорхойлолтоор
+        <md>
+          <mrow>(fg)'(x) \amp= \lim_{h \to 0}
+          \frac{f(x+h)g(x+h) - f(x)g(x)}{h}</mrow>
+          <mrow>\amp= \lim_{h \to 0}
+          \frac{f(x+h)g(x+h) - f(x)g(x+h)
+          + f(x)g(x+h) - f(x)g(x)}{h}</mrow>
+          <mrow>\amp= \lim_{h \to 0}
+          \frac{f(x+h)-f(x)}{h} \cdot g(x+h)
+          + f(x) \cdot \frac{g(x+h)-g(x)}{h}</mrow>
+          <mrow>\amp= f'(x) \cdot g(x) + f(x) \cdot g'(x).</mrow>
+        </md>
+        </p>
+      </proof>
+    </theorem>
+
+    <example xml:id="ex-product-rule">
+      <title>Үржвэрийн дүрэм хэрэглэх</title>
+      <statement>
+        <p><m>y = x^2 \sin x</m>-ийн уламжлалыг ол.</p>
+      </statement>
+      <solution>
+        <p><m>f = x^2</m>, <m>g = \sin x</m> гэвэл
+        <m>f' = 2x</m>, <m>g' = \cos x</m> тул</p>
+        <me>y' = 2x \sin x + x^2 \cos x.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-quotient-rule">
+      <title>Харьцааны дүрэм хэрэглэх</title>
+      <statement>
+        <p><m>y = \dfrac{x^2 + 1}{\ln x}</m>-ийн уламжлалыг ол.</p>
+      </statement>
+      <solution>
+        <p><m>f = x^2+1</m>, <m>g = \ln x</m> гэвэл
+        <m>f' = 2x</m>, <m>g' = \dfrac{1}{x}</m> тул</p>
+        <me>y' = \frac{2x \ln x - (x^2+1) \cdot \frac{1}{x}}{\ln^2 x}
+        = \frac{2x^2 \ln x - x^2 - 1}{x \ln^2 x}.</me>
+      </solution>
+    </example>
+  </section>
+
+  <!-- ============================================================
+       §4.4 Давхар буулгалтын уламжлал (гинжин дүрэм)
+       ============================================================ -->
+  <section xml:id="sec-chain-rule">
+    <title>Давхар буулгалтын уламжлал (гинжин дүрэм)</title>
+
+    <theorem xml:id="thm-chain-rule">
+      <title>Гинжин дүрэм</title>
+      <statement>
+        <p><m>g</m> функц <m>x</m>-д, <m>f</m> функц <m>g(x)</m>-д
+        дифференциалчлагдах бол <m>h(x) = f(g(x))</m> функц
+        <m>x</m>-д дифференциалчлагддаг бөгөөд</p>
+        <me>h'(x) = f'(g(x)) \cdot g'(x).</me>
+        <p>Лейбницийн тэмдэглэгээгээр:
+        <m>\dfrac{dy}{dx} = \dfrac{dy}{du} \cdot \dfrac{du}{dx}</m>,
+        энд <m>u = g(x)</m>, <m>y = f(u)</m>.</p>
+      </statement>
+    </theorem>
+
+    <example xml:id="ex-chain-rule-1">
+      <title>Гинжин дүрмийн хэрэглээ</title>
+      <statement>
+        <p>Дараах функцүүдийн уламжлалыг ол:
+          <ol>
+            <li><p><m>y = \sin(x^2)</m></p></li>
+            <li><p><m>y = e^{3x+1}</m></p></li>
+            <li><p><m>y = \ln(\cos x)</m></p></li>
+            <li><p><m>y = (x^3 - 2x)^5</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>а. <m>u = x^2</m> гэвэл <m>y = \sin u</m>,
+        <m>y' = \cos u \cdot 2x = 2x\cos(x^2)</m>.</p>
+        <p>б. <m>u = 3x+1</m> гэвэл <m>y = e^u</m>,
+        <m>y' = e^u \cdot 3 = 3e^{3x+1}</m>.</p>
+        <p>в. <m>u = \cos x</m> гэвэл <m>y = \ln u</m>,
+        <m>y' = \dfrac{1}{u} \cdot (-\sin x)
+        = -\dfrac{\sin x}{\cos x} = -\operatorname{tg} x</m>.</p>
+        <p>г. <m>u = x^3 - 2x</m> гэвэл <m>y = u^5</m>,
+        <m>y' = 5u^4 \cdot (3x^2 - 2)
+        = 5(x^3-2x)^4(3x^2-2)</m>.</p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-chain-rule-nested">
+      <title>Олон давхар гинжин дүрэм</title>
+      <statement>
+        <p><m>y = e^{\sin(x^2)}</m>-ийн уламжлалыг ол.</p>
+      </statement>
+      <solution>
+        <p>Гурван функц давхарласан:
+        <m>y = e^u</m>, <m>u = \sin v</m>, <m>v = x^2</m>. Тэгвэл</p>
+        <me>y' = e^u \cdot \cos v \cdot 2x
+        = e^{\sin(x^2)} \cdot \cos(x^2) \cdot 2x.</me>
+      </solution>
+    </example>
+
+    <exercises xml:id="exercises-chain-rule">
+      <title>§4.3–4.4 Дасгалууд</title>
+
+      <exercise xml:id="ex-cr-1">
+        <statement>
+          <p>Уламжлалыг ол:
+            <ol>
+              <li><p><m>y = (2x^3 - 5x)^4</m></p></li>
+              <li><p><m>y = \cos^3 x</m></p></li>
+              <li><p><m>y = \sqrt{\ln x}</m></p></li>
+              <li><p><m>y = \arcsin(2x)</m></p></li>
+              <li><p><m>y = e^{x^2} \cdot \sin x</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>4(2x^3-5x)^3(6x^2-5)</m>;
+          б. <m>-3\cos^2 x \sin x</m>;
+          в. <m>\dfrac{1}{2x\sqrt{\ln x}}</m>;
+          г. <m>\dfrac{2}{\sqrt{1-4x^2}}</m>;
+          д. <m>e^{x^2}(2x\sin x + \cos x)</m>.</p>
+        </answer>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       §4.5 Урвуу функцийн уламжлал
+       ============================================================ -->
+  <section xml:id="sec-inverse-derivative">
+    <title>Урвуу функцийн уламжлал</title>
+
+    <theorem xml:id="thm-inverse-derivative">
+      <title>Урвуу функцийн уламжлал</title>
+      <statement>
+        <p><m>f</m> функц <m>x = a</m>-д дифференциалчлагдаж,
+        <m>f'(a) \ne 0</m> бөгөөд <m>f</m> нь <m>a</m> орчимд
+        биектив байг. Тэгвэл урвуу <m>f^{-1}</m> функц
+        <m>b = f(a)</m> цэгт дифференциалчлагддаг бөгөөд</p>
+        <me>(f^{-1})'(b) = \frac{1}{f'(a)} = \frac{1}{f'(f^{-1}(b))}.</me>
+      </statement>
+    </theorem>
+
+    <example xml:id="ex-arcsin-deriv">
+      <title><m>(\arcsin x)' = \dfrac{1}{\sqrt{1-x^2}}</m> батлах</title>
+      <statement>
+        <p>Урвуу функцийн дүрмийг ашиглан <m>(\arcsin x)'</m>-ийг
+        ол.</p>
+      </statement>
+      <solution>
+        <p><m>f(t) = \sin t</m>, <m>f^{-1}(x) = \arcsin x</m>. Урвуу
+        функцийн дүрмээр</p>
+        <me>(\arcsin x)' = \frac{1}{(\sin t)'}\bigg|_{t = \arcsin x}
+        = \frac{1}{\cos(\arcsin x)}.</me>
+        <p><m>\cos(\arcsin x) = \sqrt{1 - \sin^2(\arcsin x)}
+        = \sqrt{1-x^2}</m> (учир нь <m>t \in [-\pi/2, \pi/2]</m>
+        завсарт <m>\cos t \ge 0</m>) тул</p>
+        <me>(\arcsin x)' = \frac{1}{\sqrt{1-x^2}}.</me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-log-deriv">
+      <title>Логарифмын уламжлал</title>
+      <statement>
+        <p><m>(\ln x)' = \dfrac{1}{x}</m> болохыг батал.</p>
+      </statement>
+      <solution>
+        <p><m>f(t) = e^t</m>-ийн урвуу нь <m>f^{-1}(x) = \ln x</m>.
+        Урвуу функцийн дүрмээр</p>
+        <me>(\ln x)' = \frac{1}{(e^t)'}\bigg|_{t = \ln x}
+        = \frac{1}{e^{\ln x}} = \frac{1}{x}.</me>
+      </solution>
+    </example>
+
+    <!-- AI Лекц 6 -->
+    <section xml:id="sec-ai-practice-l6">
+      <title>AI-тай дасгал хийх (Лекц 6)</title>
+      <introduction>
+        <p>Лекц 6-ийн сэдвүүдээр Claude AI-тай дасгал хий.</p>
+      </introduction>
+      <interactive xml:id="ai-practice-l6"
+        iframe="ai-practice.html?topics=уламжлалын тодорхойлолт,зэрэгт функц,тригонометрийн уламжлал,гинжин дүрэм,урвуу функцийн уламжлал&amp;label=Лекц 6-ийн сэдвүүд"
+        width="100%" aspect="4:3" />
+    </section>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       ЛЕКЦ 7
+       §4.6 Параметр функцийн уламжлал
+       §4.7 Далд функцийн уламжлал
+       §4.8 Дээд эрэмбийн уламжлал
+       §4.9 Дифференциал, шүргэгч ба нормал шулуун
+       ════════════════════════════════════════════════════════════ -->
+
+  <!-- ============================================================
+       §4.6 Параметр функцийн уламжлал
+       ============================================================ -->
+  <section xml:id="sec-parametric-derivative">
+    <title>Параметр функцийн уламжлал</title>
+
+    <definition xml:id="def-parametric-function">
+      <title>Параметр функц</title>
+      <statement>
+        <p><m>g(t)</m>, <m>h(t)</m> функцүүд өгөгдсөн ба
+        <m>t \in (\alpha; \beta)</m> үед <m>g(t)</m> функц иньектив
+        байг. Тэгвэл
+        <me>f: \begin{cases} x = g(t) \\ y = h(t) \end{cases}</me>
+        дүрмээр тодорхойлогдох функцийг <term>параметр функц</term>
+        гэнэ, <m>t</m>-г параметр гэнэ.</p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-parametric-derivative">
+      <title>Параметр функцийн уламжлал</title>
+      <statement>
+        <p><m>g'(t) \ne 0</m> үед параметр функцийн уламжлал</p>
+        <me>\frac{dy}{dx} = \frac{h'(t)}{g'(t)}.</me>
+      </statement>
+      <proof>
+        <p><m>y = h(g^{-1}(x))</m> гэж ил хэлбэрт бичиж гинжин дүрэм
+        болон урвуу функцийн уламжлалыг хэрэглэвэл
+        <m>\dfrac{dy}{dx} = h'(t) \cdot \dfrac{1}{g'(t)}</m>
+        болж батлагдана.</p>
+      </proof>
+    </theorem>
+
+    <example xml:id="ex-parametric-1">
+      <statement>
+        <p><m>x(t) = t^2 + 1</m>, <m>y(t) = t^3 - 3t</m>,
+        <m>t \ge 0</m>. <m>\dfrac{dy}{dx}</m>-ийг ол. <m>t = 1</m>
+        дээрх шүргэгчийн налалтыг тодорхойл.</p>
+      </statement>
+      <solution>
+        <p><m>x'(t) = 2t</m>, <m>y'(t) = 3t^2 - 3</m> тул
+        <m>\dfrac{dy}{dx} = \dfrac{3t^2-3}{2t}</m>.</p>
+        <p><m>t = 1</m> үед <m>x = 2</m>, <m>y = -2</m>,
+        <m>\dfrac{dy}{dx} = 0</m> — хэвтээ шүргэгч.</p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-parametric-circle">
+      <title>Нэгж тойрог</title>
+      <statement>
+        <p><m>x = \cos t</m>, <m>y = \sin t</m>. Шүргэгчийн налалтыг
+        ол.</p>
+      </statement>
+      <solution>
+        <p><m>x' = -\sin t</m>, <m>y' = \cos t</m> тул
+        <m>\dfrac{dy}{dx} = -\operatorname{ctg} t</m>.</p>
+        <p><m>t = \dfrac{\pi}{2}</m> дээр <m>x = 0</m>,
+        <m>y = 1</m>, <m>\dfrac{dy}{dx} = 0</m> — хэвтээ шүргэгч.
+        <m>t = 0</m> дээр <m>x = 1</m>, <m>y = 0</m>,
+        <m>\dfrac{dy}{dx}</m> тодорхойлогдохгүй — босоо шүргэгч.</p>
+      </solution>
+    </example>
+  </section>
+
+  <!-- ============================================================
+       §4.7 Далд функцийн уламжлал
+       ============================================================ -->
+  <section xml:id="sec-implicit-derivative">
+    <title>Далд функцийн уламжлал</title>
+
+    <definition xml:id="def-implicit-function">
+      <title>Далд функц</title>
+      <statement>
+        <p><m>F(x, y) = 0</m> тэгшитгэлийг хангах <m>y = f(x)</m>
+        функцийг <term>далд функц</term> гэнэ. Өөрөөр хэлбэл бүх
+        <m>x</m>-д <m>F(x, f(x)) = 0</m> байна.</p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-implicit-method">
+      <title>Далд функцийн уламжлал олох арга</title>
+      <p>
+        <ol>
+          <li><p>Тэгшитгэлийн хоёр талыг <m>x</m>-ийн хувьд
+          дифференциалчил. <m>y = y(x)</m> учир <m>y</m>-ийн аль ч
+          функцийн уламжлалд гинжин дүрэм хэрэглэнэ:
+          <m>\dfrac{d}{dx}[g(y)] = g'(y) \cdot y'</m>.</p></li>
+          <li><p><m>y'</m>-ийн гишүүдийг нэг талд цуглуулж
+          <m>y'</m>-ийг ил хэлбэрт гарга.</p></li>
+        </ol>
+      </p>
+    </remark>
+
+    <example xml:id="ex-implicit-circle">
+      <title>Тойргийн далд уламжлал</title>
+      <statement>
+        <p><m>x^2 + y^2 = 1</m>. <m>y'</m>-ийг ол.</p>
+      </statement>
+      <solution>
+        <p>Хоёр талыг <m>x</m>-ийн хувьд дифференциалчилвал
+        <m>2x + 2y \cdot y' = 0</m>, тэгэхээр
+        <m>y' = -\dfrac{x}{y}</m>.</p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-implicit-folium">
+      <title>Декартын навчис</title>
+      <statement>
+        <p><m>x^3 + y^3 = 6xy</m>. <m>y'</m>-ийг ол.
+        <m>(3, 3)</m> цэгт шүргэгчийн шулуунийг бич.</p>
+      </statement>
+      <solution>
+        <p>Дифференциалчилвал
+        <m>3x^2 + 3y^2 y' = 6y + 6x y'</m>, тэгэхээр</p>
+        <me>y' = \frac{6y - 3x^2}{3y^2 - 6x}
+        = \frac{2y - x^2}{y^2 - 2x}.</me>
+        <p><m>(3,3)</m> дээр <m>y' = \dfrac{6-9}{9-6} = -1</m>.
+        Шүргэгчийн шулуун:
+        <m>y - 3 = -1(x - 3)</m>, өөрөөр хэлбэл <m>y = -x + 6</m>.</p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-log-differentiation">
+      <title>Логарифмчлан дифференциалчлах</title>
+      <statement>
+        <p><m>y = x^x</m> (<m>x \gt 0</m>). <m>y'</m>-ийг ол.</p>
+      </statement>
+      <solution>
+        <p>Хоёр талын натурал логарифмыг авъя:
+        <m>\ln y = x \ln x</m>. Дифференциалчилвал
+        <m>\dfrac{y'}{y} = \ln x + 1</m>, тэгэхээр</p>
+        <me>y' = y(\ln x + 1) = x^x(\ln x + 1).</me>
+      </solution>
+    </example>
+  </section>
+
+  <!-- ============================================================
+       §4.8 Дээд эрэмбийн уламжлал
+       ============================================================ -->
+  <section xml:id="sec-higher-derivatives">
+    <title>Дээд эрэмбийн уламжлал</title>
+
+    <definition xml:id="def-higher-derivatives">
+      <statement>
+        <p><m>y = f(x)</m> функцийн уламжлалын уламжлалыг
+        <term>хоёр дахь уламжлал</term> гэж нэрлэн
+        <m>y'' = f''(x) = \dfrac{d^2y}{dx^2}</m> гэж тэмдэглэнэ.
+        Ерөнхийд нь <m>n</m>-р эрэмбийн уламжлал
+        <m>y^{(n)} = \dfrac{d^n y}{dx^n}</m>.</p>
+      </statement>
+    </definition>
+
+    <p>Үндсэн функцүүдийн <m>n</m>-р эрэмбийн уламжлал:
+      <ul>
+        <li><p><m>(e^x)^{(n)} = e^x</m></p></li>
+        <li><p><m>(a^x)^{(n)} = a^x (\ln a)^n</m></p></li>
+        <li><p><m>(\sin x)^{(n)} = \sin\!\left(x + n\dfrac{\pi}{2}\right)</m></p></li>
+        <li><p><m>(\cos x)^{(n)} = \cos\!\left(x + n\dfrac{\pi}{2}\right)</m></p></li>
+        <li><p><m>(\ln x)^{(n)} = (-1)^{n-1}\dfrac{(n-1)!}{x^n}</m></p></li>
+        <li><p><m>(x^n)^{(k)} = n(n-1)\cdots(n-k+1)x^{n-k}</m>;
+        <m>k \gt n</m> үед <m>0</m></p></li>
+      </ul>
+    </p>
+
+    <theorem xml:id="thm-leibniz-rule">
+      <title>Лейбницийн дүрэм</title>
+      <statement>
+        <p><m>f, g</m> функцүүд <m>n</m>-р эрэмбийн уламжлалтай бол
+        <me>(fg)^{(n)} = \sum_{k=0}^{n} \binom{n}{k} f^{(k)} g^{(n-k)}.</me>
+        </p>
+      </statement>
+    </theorem>
+
+    <example xml:id="ex-higher-deriv">
+      <statement>
+        <p><m>y = x^3 \ln x</m>-ийн <m>y^{(4)}</m>-ийг ол.</p>
+      </statement>
+      <solution>
+        <p>Лейбницийн дүрмийг <m>f = \ln x</m>,
+        <m>g = x^3</m>-д хэрэглэе. <m>k \ge 5</m> үед
+        <m>g^{(k)} = 0</m> тул</p>
+        <md>
+          <mrow>(x^3 \ln x)^{(4)}
+          \amp= \binom{4}{0}(\ln x)^{(4)} x^3
+          + \binom{4}{1}(\ln x)^{(3)} \cdot 3x^2</mrow>
+          <mrow>\amp\quad + \binom{4}{2}(\ln x)'' \cdot 6x
+          + \binom{4}{3}(\ln x)' \cdot 6.</mrow>
+        </md>
+        <p>Бодвол
+        <m>= \dfrac{-6}{x} \cdot x^3 + 4 \cdot \dfrac{2}{x^3} \cdot 3x^2
+        + 6 \cdot \left(-\dfrac{1}{x^2}\right) \cdot 6x
+        + 4 \cdot \dfrac{1}{x} \cdot 6</m>
+        <m>= -6x^2 + 24 x^{-1} - 36 x^{-1} + 24 x^{-1} = -6x^2 + \dfrac{12}{x}</m>.</p>
+      </solution>
+    </example>
+  </section>
+
+  <!-- ============================================================
+       §4.9 Дифференциал, шүргэгч ба нормал шулуун
+       ============================================================ -->
+  <section xml:id="sec-differential-tangent">
+    <title>Дифференциал, шүргэгч ба нормал шулуун</title>
+
+    <subsection xml:id="subsec-differential">
+      <title>Дифференциал</title>
+
+      <definition xml:id="def-differential">
+        <statement>
+          <p><m>y = f(x)</m> функц <m>x = a</m>-д дифференциалчлагдана
+          гэвэл <m>Lh = f'(a) \cdot h</m> илэрхийллийг <m>f</m>-ийн
+          <m>x = a</m> дахь <term>дифференциал</term> гэж нэрлэн
+          <m>dy = f'(a) \, dx</m> гэж тэмдэглэнэ, энд <m>dx = h</m>.</p>
+        </statement>
+      </definition>
+
+      <p>Дифференциалын утга: <m>x</m>-ийн жижиг өөрчлөлт <m>dx</m>-д
+      харгалзах функцийн утгын өөрчлөлтийг шугаман байдлаар дөхөлдөнө:
+      <me>f(a + h) \approx f(a) + f'(a) h = f(a) + dy.</me>
+      </p>
+
+      <example xml:id="ex-differential-approx">
+        <title>Дифференциал ашиглан ойролцоо утга тооцоолох</title>
+        <statement>
+          <p><m>\sqrt{9{,}1}</m>-ийг ойролцоогоор бод.</p>
+        </statement>
+        <solution>
+          <p><m>f(x) = \sqrt{x}</m>, <m>a = 9</m>,
+          <m>dx = 0{,}1</m> гэж авъя.
+          <m>f'(9) = \dfrac{1}{2\sqrt{9}} = \dfrac{1}{6}</m> тул</p>
+          <me>\sqrt{9{,}1} \approx \sqrt{9} + \frac{1}{6} \cdot 0{,}1
+          = 3 + 0{,}0\overline{16} \approx 3{,}0167.</me>
+          <p>Тооны машинаар <m>\sqrt{9{,}1} \approx 3{,}01662</m>.</p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection xml:id="subsec-tangent-normal">
+      <title>Шүргэгч ба нормал шулуун</title>
+
+      <definition xml:id="def-tangent-line">
+        <title>Шүргэгч шулуун</title>
+        <statement>
+          <p><m>y = f(x)</m> функц <m>x = a</m>-д дифференциалчлагдана
+          гэж үзье. <m>(a, f(a))</m> цэгийг дайрсан,
+          налалт нь <m>f'(a)</m> тэй тэнцүү шулууныг
+          <term>шүргэгч шулуун</term> гэнэ. Тэгшитгэл нь:
+          <me>y - f(a) = f'(a)(x - a).</me>
+          </p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-normal-line">
+        <title>Нормал шулуун</title>
+        <statement>
+          <p>Шүргэгч шулуунд перпендикуляр, тухайн цэгийг дайрсан
+          шулууныг <term>нормал шулуун</term> гэнэ.
+          <m>f'(a) \ne 0</m> бол нормалын тэгшитгэл:
+          <me>y - f(a) = -\frac{1}{f'(a)}(x - a).</me>
+          </p>
+        </statement>
+      </definition>
+
+      <example xml:id="ex-tangent-normal-1">
+        <statement>
+          <p><m>y = x^2 - 3x + 2</m> функцийн <m>x = 1</m> цэг
+          дээрх шүргэгч ба нормал шулуунийг бич.</p>
+        </statement>
+        <solution>
+          <p><m>f(1) = 0</m>, <m>f'(x) = 2x - 3</m>,
+          <m>f'(1) = -1</m>. Шүргэгч:
+          <m>y - 0 = -1(x - 1)</m>, өөрөөр хэлбэл <m>y = -x + 1</m>.
+          Нормал: <m>y - 0 = 1(x - 1)</m>, өөрөөр хэлбэл
+          <m>y = x - 1</m>.</p>
+        </solution>
+      </example>
+
+      <example xml:id="ex-tangent-parametric">
+        <title>Параметр функцийн шүргэгч</title>
+        <statement>
+          <p><m>x = \cos t</m>, <m>y = \sin t</m> тойргийн
+          <m>t = \dfrac{\pi}{4}</m> цэг дээрх шүргэгч ба нормалыг бич.</p>
+        </statement>
+        <solution>
+          <p><m>\dfrac{dy}{dx} = -\operatorname{ctg} t</m> тул
+          <m>t = \dfrac{\pi}{4}</m> дээр налалт <m>-1</m>. Цэг нь
+          <m>P\!\left(\dfrac{\sqrt{2}}{2}, \dfrac{\sqrt{2}}{2}\right)</m>.
+          Шүргэгч:
+          <m>y - \dfrac{\sqrt{2}}{2} = -\left(x - \dfrac{\sqrt{2}}{2}\right)</m>.
+          Нормал:
+          <m>y - \dfrac{\sqrt{2}}{2} = x - \dfrac{\sqrt{2}}{2}</m>.</p>
+        </solution>
+      </example>
+    </subsection>
+
+    <exercises xml:id="exercises-diff-tangent">
+      <title>§4.6–4.9 Дасгалууд</title>
+
+      <exercise xml:id="ex-dt-1">
+        <statement>
+          <p>Далд функцийн уламжлалыг ол:
+            <ol>
+              <li><p><m>\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1</m></p></li>
+              <li><p><m>y = \operatorname{tg}(x+y)</m></p></li>
+              <li><p><m>e^{x+y} - xy = 0</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>y' = -\dfrac{b^2 x}{a^2 y}</m>;
+          б. Дифференциалчилж <m>y'</m>-ийг ил гарга;
+          в. <m>y' = \dfrac{y - e^{x+y}}{e^{x+y} - x}</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-dt-2">
+        <statement>
+          <p>Параметр функцийн уламжлалыг ол:
+            <ol>
+              <li><p><m>x = at^2</m>, <m>y = bt^3</m>:
+              <m>\dfrac{d^2y}{dx^2}</m></p></li>
+              <li><p><m>x = t - \sin t</m>, <m>y = 1 - \cos t</m>:
+              <m>\dfrac{d^2y}{dx^2}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>\dfrac{3b}{2a}</m>;
+          б. <m>-\dfrac{1}{(1-\cos t)^2}</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-dt-3">
+        <statement>
+          <p>Дифференциал ашиглан ойролцоогоор бод:
+            <ol>
+              <li><p><m>\sin(0{,}12)</m></p></li>
+              <li><p><m>(1{,}02)^5</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>\approx 0{,}12</m>;
+          б. <m>\approx 1{,}10</m>.</p>
+        </answer>
+      </exercise>
+
+    </exercises>
+
+    <!-- AI Лекц 7 -->
+    <section xml:id="sec-ai-practice-l7">
+      <title>AI-тай дасгал хийх (Лекц 7)</title>
+      <introduction>
+        <p>Лекц 7-ийн сэдвүүдээр Claude AI-тай дасгал хий.</p>
+      </introduction>
+      <interactive xml:id="ai-practice-l7"
+        iframe="ai-practice.html?topics=параметр функцийн уламжлал,далд функцийн уламжлал,дээд эрэмбийн уламжлал,дифференциал,шүргэгч нормал шулуун&amp;label=Лекц 7-ийн сэдвүүд"
+        width="100%" aspect="4:3" />
+    </section>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       ЛЕКЦ 8
+       §4.10 Дифференциал тооллын үндсэн теоремүүд
+       §4.11 Өсөлт, бууралт, монотон шинжилгээ
+       ════════════════════════════════════════════════════════════ -->
+
+  <!-- ============================================================
+       §4.10 Дифференциал тооллын үндсэн теоремүүд
+       ============================================================ -->
+  <section xml:id="sec-mvt">
+    <title>Дифференциал тооллын үндсэн теоремүүд</title>
+
+    <theorem xml:id="thm-fermat">
+      <title>Фермагийн теорем</title>
+      <statement>
+        <p><m>f</m> функц <m>x = a</m> дээр локал экстремумтай бөгөөд
+        <m>f'(a)</m> оршин байвал <m>f'(a) = 0</m>.</p>
+      </statement>
+      <proof>
+        <p><m>a</m> локал максимум тохиолдолд баталъя. <m>x \gt a</m>
+        үед <m>\dfrac{f(x)-f(a)}{x-a} \le 0</m>,
+        <m>x \lt a</m> үед <m>\dfrac{f(x)-f(a)}{x-a} \ge 0</m>. Хязгаар
+        оршин байхын тулд баруун ба зүүн хязгаарууд тэнцүү байх ёстой.
+        Тэгвэл зөвхөн <m>f'(a) = 0</m> боломжтой.</p>
+      </proof>
+    </theorem>
+
+    <theorem xml:id="thm-rolle">
+      <title>Роллын теорем</title>
+      <statement>
+        <p><m>f</m> нь <m>[a,b]</m> дээр тасралтгүй, <m>(a,b)</m>
+        дээр дифференциалчлагдаж, <m>f(a) = f(b)</m> бол
+        <m>f'(c) = 0</m> байх <m>c \in (a,b)</m> олдоно.</p>
+      </statement>
+      <proof>
+        <p><m>f</m> тасралтгүй учир <m>[a,b]</m>-д хамгийн их ба
+        бага утгаа авна. Хэрэв <m>f</m> тогтмол биш бол экстремум нь
+        <m>(a,b)</m>-д дотор оршино. Фермагийн теоремоор тэр цэгт
+        <m>f'(c) = 0</m>.</p>
+      </proof>
+    </theorem>
+
+    <example xml:id="ex-rolle">
+      <statement>
+        <p><m>f(x) = x^2 - 4x + 3</m> дээр <m>[1, 3]</m> үед
+        Роллын теоремын <m>c</m>-ийг ол.</p>
+      </statement>
+      <solution>
+        <p><m>f(1) = f(3) = 0</m>. <m>f'(x) = 2x - 4 = 0</m>
+        тэгшитгэлээс <m>c = 2</m>.</p>
+      </solution>
+    </example>
+
+    <theorem xml:id="thm-lagrange-mvt">
+      <title>Лагранжийн дундаж утгын теорем (ДУТ)</title>
+      <statement>
+        <p><m>f</m> нь <m>[a,b]</m> дээр тасралтгүй, <m>(a,b)</m>
+        дээр дифференциалчлагдах бол</p>
+        <me>f'(c) = \frac{f(b) - f(a)}{b - a}</me>
+        <p>байх <m>c \in (a,b)</m> олдоно.</p>
+      </statement>
+      <proof>
+        <p><m>g(x) = f(x) - \dfrac{f(b)-f(a)}{b-a}(x-a)</m> гэж тодорхойловол
+        <m>g(a) = g(b)</m>. Роллын теоремоор <m>g'(c) = 0</m>,
+        өөрөөр хэлбэл
+        <m>f'(c) = \dfrac{f(b)-f(a)}{b-a}</m>.</p>
+      </proof>
+    </theorem>
+
+    <example xml:id="ex-lagrange-mvt">
+      <statement>
+        <p>Дараах функцүүдийн хувьд ДУТ-ийн <m>c</m>-ийг ол:
+          <ol>
+            <li><p><m>f(x) = x^2</m>, <m>[1, 3]</m></p></li>
+            <li><p><m>f(x) = \ln x</m>, <m>[1, e]</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>а. <m>\dfrac{9-1}{3-1} = 4</m>, <m>f'(x) = 2x</m> тул
+        <m>c = 2</m>.</p>
+        <p>б. <m>\dfrac{1-0}{e-1}</m>, <m>f'(x) = 1/x</m> тул
+        <m>c = e - 1</m>.</p>
+      </solution>
+    </example>
+
+    <theorem xml:id="thm-cauchy-mvt">
+      <title>Кошийн дундаж утгын теорем</title>
+      <statement>
+        <p><m>f, g</m> нь <m>[a,b]</m> дээр тасралтгүй, <m>(a,b)</m>
+        дээр дифференциалчлагдах бол</p>
+        <me>\frac{f'(c)}{g'(c)} = \frac{f(b) - f(a)}{g(b) - g(a)}</me>
+        <p>байх <m>c \in (a,b)</m> олдоно.</p>
+      </statement>
+    </theorem>
+
+    <subsection xml:id="subsec-lhopital">
+      <title>Лопиталын дүрэм</title>
+
+      <theorem xml:id="thm-lhopital">
+        <title>Лопиталын дүрэм</title>
+        <statement>
+          <p><m>f, g</m> нь <m>a</m> цэгийн орчинд дифференциалчлагдаж,
+          <m>g'(x) \ne 0</m>, мөн <m>x \to a</m> үед <m>f</m> ба
+          <m>g</m> нь <m>0</m> эсвэл <m>\pm\infty</m> руу ойртоно гэж
+          үзье. Хэрэв</p>
+          <me>\lim_{x \to a} \frac{f'(x)}{g'(x)} = L</me>
+          <p>оршвол <m>\lim_{x \to a} \dfrac{f(x)}{g(x)} = L</m>.</p>
+        </statement>
+      </theorem>
+
+      <example xml:id="ex-lhopital">
+        <statement>
+          <p>Лопиталын дүрэм хэрэглэн хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{\sin x}{x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to \infty} \frac{\ln x}{x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{e^x - 1 - x}{x^2}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{x - \arctan x}{x^3}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>а. <m>\lim\dfrac{\cos x}{1} = 1</m>.</p>
+          <p>б. <m>\lim\dfrac{1/x}{1} = 0</m>.</p>
+          <p>в. <m>\lim\dfrac{e^x - 1}{2x} = \lim\dfrac{e^x}{2} = \dfrac{1}{2}</m>.</p>
+          <p>г. <m>\lim\dfrac{1 - 1/(1+x^2)}{3x^2} = \lim\dfrac{x^2/(1+x^2)}{3x^2}
+          = \dfrac{1}{3}</m>.</p>
+        </solution>
+      </example>
+    </subsection>
+
+    <exercises xml:id="exercises-mvt">
+      <title>§4.10 Дасгалууд</title>
+
+      <exercise xml:id="ex-mvt-1">
+        <statement>
+          <p>Лагранжийн ДУТ-ийн <m>c</m>-ийг ол:
+            <ol>
+              <li><p><m>f(x) = \sin x</m>, <m>[0, \pi]</m></p></li>
+              <li><p><m>f(x) = x^3</m>, <m>[-1, 1]</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>c = \pi/2</m>;
+          б. <m>c = \pm 1/\sqrt{3}</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="ex-lhopital-1">
+        <statement>
+          <p>Лопиталын дүрэм хэрэглэн хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{e^{ax} - \cos(\alpha x)}{e^{\beta x} - \cos(\beta x)}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to \infty} x\sin\dfrac{a}{x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 0} x^{\sin x}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>\dfrac{a^2 + \alpha^2}{\beta^2 + \beta^2}</m>;
+          б. <m>a</m>;
+          в. <m>1</m>.</p>
+        </answer>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       §4.11 Өсөлт, бууралт, монотон шинжилгээ
+       ============================================================ -->
+  <section xml:id="sec-monotonicity">
+    <title>Өсөлт, бууралт, монотон шинжилгээ</title>
+
+    <theorem xml:id="thm-increasing-decreasing">
+      <title>Өсөлт–бууралтын шалгуур</title>
+      <statement>
+        <p><m>f</m> функц <m>(a,b)</m> дээр дифференциалчлагддаг байг.
+          <ul>
+            <li><p><m>f'(x) \gt 0</m> бүх <m>x \in (a,b)</m>-д
+            бол <m>f</m> нь <m>(a,b)</m>-д <term>өсөх функц</term>.</p></li>
+            <li><p><m>f'(x) \lt 0</m> бүх <m>x \in (a,b)</m>-д
+            бол <m>f</m> нь <m>(a,b)</m>-д <term>буурах функц</term>.</p></li>
+            <li><p><m>f'(x) = 0</m> бол <m>f</m> тогтмол.</p></li>
+          </ul>
+        </p>
+      </statement>
+      <proof>
+        <p>Лагранжийн ДУТ-ийг ашиглая. <m>x_1 \lt x_2 \in (a,b)</m>
+        авбал <m>c \in (x_1, x_2)</m> оршиж
+        <m>f(x_2) - f(x_1) = f'(c)(x_2 - x_1)</m>. <m>f'(c) \gt 0</m>
+        ба <m>x_2 - x_1 \gt 0</m> тул <m>f(x_2) \gt f(x_1)</m>,
+        өөрөөр хэлбэл <m>f</m> өсдөг.</p>
+      </proof>
+    </theorem>
+
+    <example xml:id="ex-monotone-1">
+      <statement>
+        <p><m>f(x) = x^3 - 3x</m> функцийн өсөлт, бууралтын завсруудыг
+        ол.</p>
+      </statement>
+      <solution>
+        <p><m>f'(x) = 3x^2 - 3 = 3(x-1)(x+1)</m>. Тэмдгийн хүснэгт:</p>
+        <tabular halign="center">
+          <row header="yes" bottom="minor">
+            <cell>Завсар</cell>
+            <cell><m>f'(x)</m></cell>
+            <cell>Монотон</cell>
+          </row>
+          <row><cell><m>(-\infty, -1)</m></cell>
+            <cell><m>+</m></cell><cell>өсөх</cell></row>
+          <row><cell><m>(-1, 1)</m></cell>
+            <cell><m>-</m></cell><cell>буурах</cell></row>
+          <row><cell><m>(1, +\infty)</m></cell>
+            <cell><m>+</m></cell><cell>өсөх</cell></row>
+        </tabular>
+      </solution>
+    </example>
+
+    <example xml:id="ex-monotone-2">
+      <statement>
+        <p><m>f(x) = x e^{-x}</m> функцийн монотон шинжилгээ хий.</p>
+      </statement>
+      <solution>
+        <p><m>f'(x) = e^{-x}(1 - x)</m>. <m>e^{-x} \gt 0</m> тул
+        <m>f'(x)</m>-ийн тэмдэг <m>1-x</m>-ийн тэмдгээр тодорхойлогдоно.
+        <m>x \lt 1</m>: өсөх; <m>x \gt 1</m>: буурах.
+        Тиймээс <m>x = 1</m> — локал максимум, <m>f(1) = e^{-1}</m>.</p>
+      </solution>
+    </example>
+
+    <!-- AI Лекц 8 -->
+    <section xml:id="sec-ai-practice-l8">
+      <title>AI-тай дасгал хийх (Лекц 8)</title>
+      <introduction>
+        <p>Лекц 8-ийн сэдвүүдээр Claude AI-тай дасгал хий.</p>
+      </introduction>
+      <interactive xml:id="ai-practice-l8"
+        iframe="ai-practice.html?topics=Ролл Лагранж Кошии теорем,Лопиталын дүрэм,өсөлт бууралт,монотон шинжилгээ&amp;label=Лекц 8-ийн сэдвүүд"
+        width="100%" aspect="4:3" />
+    </section>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       ЛЕКЦ 9
+       §4.12 Локал ба глобал экстремум
+       §4.13 Хотгор, гүдгэр, нугаралтын цэг
+       §4.14 Функц шинжлэх, график байгуулах
+       ════════════════════════════════════════════════════════════ -->
+
+  <!-- ============================================================
+       §4.12 Локал ба глобал экстремум
+       ============================================================ -->
+  <section xml:id="sec-extrema">
+    <title>Локал ба глобал экстремум</title>
+
+    <definition xml:id="def-local-extrema">
+      <title>Локал экстремум</title>
+      <statement>
+        <p><m>f</m> функц <m>x = a</m> цэгийн орчинд тодорхойлогдсон
+        байг. Хэрэв <m>\forall x \in (a-\delta, a+\delta)</m>-д
+        <m>f(x) \le f(a)</m> (<m>f(x) \ge f(a)</m>) байхаар
+        <m>\delta \gt 0</m> олддог бол <m>f(a)</m>-г
+        <term>локал максимум</term> (<term>локал минимум</term>)
+        гэнэ.</p>
+      </statement>
+    </definition>
+
+    <definition xml:id="def-global-extrema">
+      <title>Глобал экстремум</title>
+      <statement>
+        <p><m>f</m> нь <m>X</m> мужид тодорхойлогдсон байг.
+        <m>\forall x \in X</m>-д <m>f(x) \le f(a)</m>
+        (<m>f(x) \ge f(a)</m>) байвал <m>f(a)</m>-г
+        <term>глобал максимум</term> (<term>глобал минимум</term>)
+        гэнэ.</p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-first-derivative-test">
+      <title>I уламжлалын шалгуур (тэмдэгийн тест)</title>
+      <statement>
+        <p><m>x = c</m> — сэжигтэй цэг байг.
+          <ul>
+            <li><p><m>f'</m> нь <m>c</m> дайрах үед
+            <m>+ \to -</m> солигдвол — локал максимум.</p></li>
+            <li><p><m>f'</m> нь <m>c</m> дайрах үед
+            <m>- \to +</m> солигдвол — локал минимум.</p></li>
+            <li><p>Тэмдэг өөрчлөгдөхгүй бол — экстремум биш.</p></li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+
+    <theorem xml:id="thm-second-derivative-test">
+      <title>II уламжлалын шалгуур</title>
+      <statement>
+        <p><m>f'(c) = 0</m> ба <m>f''(c)</m> оршин байг.
+          <ul>
+            <li><p><m>f''(c) \gt 0</m> бол — локал минимум.</p></li>
+            <li><p><m>f''(c) \lt 0</m> бол — локал максимум.</p></li>
+            <li><p><m>f''(c) = 0</m> бол — дүгнэлт гарахгүй.</p></li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+
+    <example xml:id="ex-extrema-full">
+      <statement>
+        <p><m>f(x) = x^4 - 4x^2</m>-ийн бүх экстремумыг ол.</p>
+      </statement>
+      <solution>
+        <p><m>f'(x) = 4x^3 - 8x = 4x(x-\sqrt{2})(x+\sqrt{2})</m>.
+        Сэжигтэй цэгүүд: <m>x = 0, \pm\sqrt{2}</m>.</p>
+        <p><m>f''(x) = 12x^2 - 8</m>.</p>
+        <tabular halign="center">
+          <row header="yes" bottom="minor">
+            <cell>Цэг</cell>
+            <cell><m>f''</m></cell>
+            <cell>Төрөл</cell>
+            <cell>Утга</cell>
+          </row>
+          <row><cell><m>x = 0</m></cell>
+            <cell><m>-8 \lt 0</m></cell>
+            <cell>локал макс</cell>
+            <cell><m>f(0) = 0</m></cell></row>
+          <row><cell><m>x = \pm\sqrt{2}</m></cell>
+            <cell><m>16 \gt 0</m></cell>
+            <cell>локал мин</cell>
+            <cell><m>f(\pm\sqrt{2}) = -4</m></cell></row>
+        </tabular>
+      </solution>
+    </example>
+
+    <example xml:id="ex-global-extrema">
+      <title>Хаалттай завсарт глобал экстремум олох</title>
+      <statement>
+        <p><m>f(x) = x^3 - 3x</m>-ийн глобал экстремумыг
+        <m>[-2, 2]</m> дээр ол.</p>
+      </statement>
+      <solution>
+        <p>Сэжигтэй цэгүүд: <m>x = \pm 1</m>. Утгуудыг харьцуулъя:</p>
+        <tabular halign="center">
+          <row header="yes" bottom="minor">
+            <cell>Цэг</cell>
+            <cell>Утга</cell>
+          </row>
+          <row><cell><m>x = -2</m></cell>
+            <cell><m>f(-2) = -2</m></cell></row>
+          <row><cell><m>x = -1</m></cell>
+            <cell><m>f(-1) = 2</m></cell></row>
+          <row><cell><m>x = 1</m></cell>
+            <cell><m>f(1) = -2</m></cell></row>
+          <row><cell><m>x = 2</m></cell>
+            <cell><m>f(2) = 2</m></cell></row>
+        </tabular>
+        <p>Глобал максимум: <m>2</m> (<m>x = -1</m> ба <m>x = 2</m>-д).
+        Глобал минимум: <m>-2</m> (<m>x = -2</m> ба <m>x = 1</m>-д).</p>
+      </solution>
+    </example>
+  </section>
+
+  <!-- ============================================================
+       §4.13 Хотгор, гүдгэр, нугаралтын цэг
+       ============================================================ -->
+  <section xml:id="sec-concavity">
+    <title>Хотгор, гүдгэр, нугаралтын цэг</title>
+
+    <definition xml:id="def-concavity">
+      <statement>
+        <p><m>f</m> функц <m>I</m> завсарт
+        <term>хотгор</term> (<em>concave up</em>) байна гэдэг нь
+        бүх <m>x_1, x_2 \in I</m>, <m>\lambda \in [0,1]</m>-д
+        <m>f(\lambda x_1 + (1-\lambda)x_2) \le \lambda f(x_1) +
+        (1-\lambda)f(x_2)</m> байхыг хэлнэ.</p>
+        <p><term>Гүдгэр</term> (<em>concave down</em>) тохиолдолд
+        тэнцэтгэл биш эсрэгээрээ байна.</p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-concavity-test">
+      <statement>
+        <p><m>f''</m> оршин байг.
+          <ul>
+            <li><p><m>f''(x) \gt 0</m> бол — хотгор.</p></li>
+            <li><p><m>f''(x) \lt 0</m> бол — гүдгэр.</p></li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+
+    <definition xml:id="def-inflection-point">
+      <title>Нугаралтын цэг</title>
+      <statement>
+        <p><m>f</m> функц <m>x = c</m>-ийн хоёр талд хотгор/гүдгэр
+        чанараа солих цэгийг <term>нугаралтын цэг</term> гэнэ.</p>
+      </statement>
+    </definition>
+
+    <example xml:id="ex-concavity-1">
+      <statement>
+        <p><m>f(x) = x^3</m>-ийн хотгор/гүдгэр завсар, нугаралтын
+        цэгийг ол.</p>
+      </statement>
+      <solution>
+        <p><m>f''(x) = 6x</m>. <m>x \lt 0</m>: гүдгэр;
+        <m>x \gt 0</m>: хотгор. <m>x = 0</m> — нугаралтын цэг.</p>
+      </solution>
+    </example>
+  </section>
+
+  <!-- ============================================================
+       §4.14 Функц шинжлэх, график байгуулах
+       ============================================================ -->
+  <section xml:id="sec-curve-sketching">
+    <title>Функц шинжлэх, график байгуулах</title>
+
+    <p>Уламжлал ашиглан функцийн графикийг нарийвчлан зурах дараах
+    4 алхамтай арга байна.</p>
+
+    <p><alert>Алхам 1. Ерөнхий шинжилгээ</alert>
+      <ul>
+        <li>Тодорхойлогдох муж</li>
+        <li>Тэгш/сондгой, үет чанар</li>
+        <li>Тэнхлэгтэй огтлолцох цэгүүд</li>
+        <li>Асимптотууд: хэвтээ, босоо, ташуу</li>
+      </ul>
+    </p>
+
+    <p><alert>Алхам 2. I уламжлал — өсөлт/бууралт, экстремум</alert>
+      <ul>
+        <li>Сэжигтэй цэгүүдийг ол (<m>f' = 0</m> эсвэл <m>f'</m>
+        оршихгүй)</li>
+        <li>Тэмдгийн хүснэгт байгуул</li>
+        <li>Локал экстремумыг тодорхойл</li>
+      </ul>
+    </p>
+
+    <p><alert>Алхам 3. II уламжлал — хотгор/гүдгэр, нугаралтын цэг</alert>
+      <ul>
+        <li><m>f'' = 0</m> цэгүүдийг ол</li>
+        <li>Хотгор/гүдгэр завсрыг тогтоо</li>
+        <li>Нугаралтын цэгүүдийг тэмдэглэ</li>
+      </ul>
+    </p>
+
+    <p><alert>Алхам 4. Нэгтгэж график зур</alert>
+      <ul>
+        <li>Чухал цэгүүдийн координатыг тооцоол</li>
+        <li>Бүх мэдээллийг нэгтгэн хүснэгт бүрдүүл</li>
+        <li>График зур</li>
+      </ul>
+    </p>
+
+    <example xml:id="ex-sketch-full">
+      <title><m>f(x) = (x+1)e^x</m> функцийн бүрэн шинжилгээ</title>
+      <statement>
+        <p><m>f(x) = (x+1)e^x</m> функцийг шинжлэн графикийг байгуул.</p>
+      </statement>
+      <solution>
+        <p><alert>1. Ерөнхий шинжилгээ.</alert>
+        Тодорхойлогдох муж: <m>\mathbb{R}</m>.
+        <m>f(0) = 1</m> (y-тэнхлэгтэй огтлол).
+        <m>f(-1) = 0</m> (x-тэнхлэгтэй огтлол).
+        <m>\lim_{x \to -\infty} (x+1)e^x = 0</m> (хэвтээ асимптот
+        <m>y = 0</m>).</p>
+
+        <p><alert>2. I уламжлал.</alert>
+        <m>f'(x) = e^x + (x+1)e^x = e^x(x+2)</m>.
+        Сэжигтэй цэг: <m>x = -2</m>.
+        <m>x \lt -2</m>: буурах; <m>x \gt -2</m>: өсөх.
+        Локал минимум: <m>f(-2) = -e^{-2}</m>.</p>
+
+        <p><alert>3. II уламжлал.</alert>
+        <m>f''(x) = e^x(x+3)</m>.
+        Нугаралтын цэг: <m>x = -3</m>.
+        <m>x \lt -3</m>: гүдгэр; <m>x \gt -3</m>: хотгор.</p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-sketch-rational">
+      <title>Рационал функцийн график</title>
+      <statement>
+        <p><m>f(x) = \dfrac{x}{x^2 + 1}</m> функцийг шинжил.</p>
+      </statement>
+      <solution>
+        <p><alert>1.</alert> Тодорхойлогдох муж: <m>\mathbb{R}</m>.
+        Сондгой функц. Хэвтээ асимптот: <m>y = 0</m>.</p>
+
+        <p><alert>2.</alert>
+        <m>f'(x) = \dfrac{(x^2+1) - x \cdot 2x}{(x^2+1)^2}
+        = \dfrac{1-x^2}{(x^2+1)^2}</m>.
+        Сэжигтэй: <m>x = \pm 1</m>.
+        Локал максимум <m>f(1) = \frac{1}{2}</m>,
+        локал минимум <m>f(-1) = -\frac{1}{2}</m>.</p>
+
+        <p><alert>3.</alert>
+        <m>f''(x) = \dfrac{2x(x^2-3)}{(x^2+1)^3}</m>.
+        Нугаралтын цэгүүд: <m>x = 0, \pm\sqrt{3}</m>.</p>
+      </solution>
+    </example>
+
+    <!-- AI Лекц 9 -->
+    <section xml:id="sec-ai-practice-l9">
+      <title>AI-тай дасгал хийх (Лекц 9)</title>
+      <introduction>
+        <p>Лекц 9-ийн сэдвүүдээр Claude AI-тай дасгал хий.</p>
+      </introduction>
+      <interactive xml:id="ai-practice-l9"
+        iframe="ai-practice.html?topics=локал глобал экстремум,хотгор гүдгэр,нугаралтын цэг,функц шинжлэх,график байгуулах&amp;label=Лекц 9-ийн сэдвүүд"
+        width="100%" aspect="4:3" />
+    </section>
+  </section>
+
+  <!-- ============================================================
+       Семинар 6 — Уламжлал I (Лекц 6-7)
+       ============================================================ -->
+  <section xml:id="sec-seminar-6">
+    <title>Семинар 6</title>
+    <exercises xml:id="exercises-seminar-6">
+      <introduction>
+        <p>Хамрах сэдэв: уламжлалын дүрмүүд, гинжин дүрэм, параметр,
+        далд функц, дифференциал, шүргэгч.</p>
+      </introduction>
+
+      <exercise xml:id="sem6-1">
+        <statement>
+          <p>Дараах функцүүдийн заагдсан эрэмбийн уламжлалыг ол:
+            <ol>
+              <li><p><m>y = x^2 - 3x + 2</m>, <m>y'' = ?</m></p></li>
+              <li><p><m>y = 1 - x^2 - x^4</m>, <m>y''' = ?</m></p></li>
+              <li><p><m>y = (1+x)^6</m>, <m>y'''(2) = ?</m></p></li>
+              <li><p><m>y = \cos^2 x</m>, <m>y''' = ?</m></p></li>
+              <li><p><m>y = \dfrac{1}{1-x}</m>, <m>y^{(5)} = ?</m></p></li>
+              <li><p><m>y = xe^{x^2}</m>, <m>y'' = ?</m></p></li>
+              <li><p><m>y = \ln(x + \sqrt{1+x^2})</m>, <m>y'' = ?</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="sem6-2">
+        <statement>
+          <p>Дараах функцүүдийн <m>n</m>-р эрэмбийн уламжлалыг ол:
+            <ol>
+              <li><p><m>y = e^{ax}</m></p></li>
+              <li><p><m>y = \sin^2 x</m></p></li>
+              <li><p><m>y = xe^x</m></p></li>
+              <li><p><m>y = (x^2 + x - 1)\cos x</m></p></li>
+              <li><p><m>y = e^x \cos x</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="sem6-3">
+        <statement>
+          <p>Далд функцийн уламжлалыг ол:
+            <ol>
+              <li><p><m>\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} - 1 = 0</m>,
+              <m>\dfrac{d^2y}{dx^2}</m></p></li>
+              <li><p><m>y^3 + x^3 - 3axy = 0</m>, <m>y''</m></p></li>
+              <li><p><m>e^{x+y} - xy = 0</m>, <m>y''</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="sem6-4">
+        <statement>
+          <p>Параметр функцийн уламжлалыг ол:
+            <ol>
+              <li><p><m>x = at^2</m>, <m>y = bt^3</m>:
+              <m>\dfrac{d^2y}{dx^2}</m></p></li>
+              <li><p><m>x = a\cos t</m>, <m>y = b\sin t</m>:
+              <m>\dfrac{d^3y}{dx^3}</m></p></li>
+              <li><p><m>x = t - \sin t</m>, <m>y = 1 - \cos t</m>:
+              <m>\dfrac{d^2y}{dx^2}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="sem6-5">
+        <statement>
+          <p>Дифференциал ашиглан ойролцоогоор бод:
+            <ol>
+              <li><p><m>\sin(0{,}12)</m></p></li>
+              <li><p><m>(1{,}02)^5</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="sem6-6">
+        <statement>
+          <p>Шүргэгч ба нормал шулуунийг ол:
+            <ol>
+              <li><p><m>y = \sin x + \cos x</m>, <m>x = \dfrac{\pi}{3}</m> дээр</p></li>
+              <li><p><m>y = x^2 - 3x + 2</m>, <m>x = 1</m> дээр</p></li>
+              <li><p><m>x = \cos t</m>, <m>y = \sin t</m>,
+              <m>t = \dfrac{\pi}{4}</m> дээр</p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       Гэрийн даалгавар 6
+       ============================================================ -->
+  <section xml:id="sec-homework-6">
+    <title>Гэрийн даалгавар 6</title>
+    <exercises xml:id="exercises-homework-6">
+      <introduction>
+        <p>Бодолтыг бүрэн үндэслэлтэй бичиж ирнэ.</p>
+      </introduction>
+
+      <exercise xml:id="hw6-1">
+        <statement>
+          <p>Функцийн локал экстремумыг ол:
+            <ol>
+              <li><p><m>y = x^3 - 6x^2 + 9x - 4</m></p></li>
+              <li><p><m>y = 2x^3 - x^4</m></p></li>
+              <li><p><m>y = x + \dfrac{1}{x}</m></p></li>
+              <li><p><m>y = \dfrac{2x}{1+x^2}</m></p></li>
+              <li><p><m>y = xe^{-x}</m></p></li>
+              <li><p><m>y = \cos x + \dfrac{1}{2}\cos 2x</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="hw6-2">
+        <statement>
+          <p>Өгөгдсөн завсар дээрх хамгийн их ба хамгийн бага утгыг ол:
+            <ol>
+              <li><p><m>f(x) = x^2 - 4x + 6</m>, <m>[-3, 10]</m></p></li>
+              <li><p><m>f(x) = x + \dfrac{1}{x}</m>, <m>[0{,}01;\, 100]</m></p></li>
+              <li><p><m>f(x) = \sqrt{5 - 4x}</m>, <m>[-1, 1]</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="hw6-3">
+        <statement>
+          <p>Лопиталын дүрэм хэрэглэн хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{e^{ax} - \cos(\alpha x)}{e^{\beta x} - \cos(\beta x)}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to a} \frac{x^m - a^m}{x^n - a^n}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to \infty} x^n e^{-x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 0} x^{\sin x}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="hw6-4">
+        <statement>
+          <p><m>y = ax^2 + bx + c</m> параболын <m>x = p</m> ба
+          <m>x = q</m> цэгүүд дээрх шүргэгч шулуунууд
+          <m>x = \dfrac{p+q}{2}</m> цэгт огтолцохыг батал.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="hw6-5">
+        <statement>
+          <p>Дараах функцүүдийг судалж, графикийг байгуул:
+            <ol>
+              <li><p><m>y = \dfrac{x}{1+x^2}</m></p></li>
+              <li><p><m>y = \dfrac{1}{1-x^2}</m></p></li>
+              <li><p><m>y = -\dfrac{x}{x^2-1}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       Семинар 7 — Уламжлал II (Лекц 8-9)
+       ============================================================ -->
+  <section xml:id="sec-seminar-7-deriv">
+    <title>Семинар 7</title>
+    <exercises xml:id="exercises-seminar-7-deriv">
+      <introduction>
+        <p>Хамрах сэдэв: дундаж утгын теорем, Лопитал, өсөлт/бууралт,
+        хотгор/гүдгэр, экстремум, функц шинжлэх.</p>
+      </introduction>
+
+      <exercise xml:id="sem7-d-1">
+        <statement>
+          <p>Лопиталын дүрэм хэрэглэн хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{e^x - 1}{\sin x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{x - \arctan x}{x^3}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{x - \sin x}{x - \operatorname{tg} x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 1} \left[\frac{x}{x-1} - \frac{1}{\ln x}\right]</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 0} x^{\sin x}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>а. <m>1</m>; б. <m>\frac{1}{3}</m>;
+          в. <m>\frac{1}{2}</m>; г. <m>\frac{1}{2}</m>;
+          д. <m>1</m>.</p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="sem7-d-2">
+        <statement>
+          <p>Дараах функцүүдийн нугаралтын цэгүүдийг олж,
+          хотгор ба гүдгэр завсрыг тодорхойл:
+            <ol>
+              <li><p><m>y = x^3 - 5x^2 + 3x - 5</m></p></li>
+              <li><p><m>y = \ln(1+x^2)</m></p></li>
+              <li><p><m>y = x + 36x^2 - 2x^3 - x^4</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="sem7-d-3">
+        <statement>
+          <p>II уламжлал ашиглан экстремумыг тодорхойл:
+            <ol>
+              <li><p><m>y = x^3 - 2ax^2 + a^2 x</m> (<m>a \gt 0</m>)</p></li>
+              <li><p><m>y = x^2(a-x)^2</m></p></li>
+              <li><p><m>y = x + \sqrt{1-x}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="sem7-d-4">
+        <statement>
+          <p>Өсөх, буурах завсрыг ол:
+            <ol>
+              <li><p><m>y = (x-2)^5(2x+1)^4</m></p></li>
+              <li><p><m>y = x - e^x</m></p></li>
+              <li><p><m>y = \dfrac{1-x+x^2}{1+x+x^2}</m></p></li>
+              <li><p><m>y = x^2 - \ln x</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="sem7-d-5">
+        <statement>
+          <p>Дараах функцүүдийг судалж, графикийг байгуул:
+            <ol>
+              <li><p><m>y = \dfrac{x}{1+x^2}</m></p></li>
+              <li><p><m>y = \dfrac{1}{1-x^2}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="sem7-d-6">
+        <statement>
+          <p>Функц зохион хамгийн их/бага утга ол:
+            <ol>
+              <li><p>8 тоог хоёр хэсэгт задлахад кубуудын нийлбэр
+              хамгийн бага байхаар задла.</p></li>
+              <li><p>Эзэлхүүн нь <m>72\,\text{см}^3</m>, суурийн
+              талуудын харьцаа <m>1:2</m> байх тагтай хайрцагны
+              гадаргуугийн хамгийн бага талбайг ол.</p></li>
+              <li><p><m>18 \times 18</m> квадрат цаасны булангаас
+              тэнцүү квадрат хайчлан хамгийн их багтаамжтай хайрцаг
+              хийхэд хайчлах квадратын талыг ол.</p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- ============================================================
+       Гэрийн даалгавар 7
+       ============================================================ -->
+  <section xml:id="sec-homework-7-deriv">
+    <title>Гэрийн даалгавар 7</title>
+    <exercises xml:id="exercises-homework-7-deriv">
+      <introduction>
+        <p>Бодолтыг бүрэн үндэслэлтэй бичиж ирнэ.</p>
+      </introduction>
+
+      <exercise xml:id="hw7-d-1">
+        <statement>
+          <p>Лопиталын дүрэм хэрэглэн хязгаарыг ол:
+            <ol>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{a^x - b^x}{c^x - d^x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 0} \frac{e^x - e^{-x}}{\sin x \cos x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to +\infty} x^n e^{-x}</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to 0} \left(\cot x - \frac{1}{x}\right)</m></p></li>
+              <li><p><m>\displaystyle\lim_{x \to \infty}(e^x + e^{-x})^{1/x}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="hw7-d-2">
+        <statement>
+          <p>Дараах функцүүдийн локал экстремум, нугаралтын цэг,
+          хотгор/гүдгэр завсрыг тодорхойл:
+            <ol>
+              <li><p><m>y = 3x^5 - 5x^4 + 3x - 2</m></p></li>
+              <li><p><m>y = -\dfrac{x^3}{x^2+3a^2}</m> (<m>a \gt 0</m>)</p></li>
+              <li><p><m>y = e^{\sin x}</m>, <m>-\dfrac{\pi}{2} \le x \le \dfrac{\pi}{2}</m></p></li>
+              <li><p><m>y = x^2 e^{-x}</m></p></li>
+              <li><p><m>y = x^{1/x}</m></p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="hw7-d-3">
+        <statement>
+          <p>Функц зохион хамгийн их/бага утга ол:
+            <ol>
+              <li><p>Үүсгэгч урт <m>20\,\text{см}</m> байх конус
+              хэлбэрийн воронка хийх. Эзэлхүүн хамгийн их байх
+              өндрийг ол.</p></li>
+              <li><p>Периметр нь <m>2p</m> байх тэгш өнцөгт
+              гурвалжийг эргүүлэхэд үүсэх биетийн эзэлхүүн хамгийн
+              их байх гурвалжны хэмжээг ол.</p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="hw7-d-4">
+        <statement>
+          <p>ДУТ ашиглан <m>e^x \ge 1 + x</m> бүх <m>x</m>-д
+          биелэхийг батал.</p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="hw7-d-5">
+        <statement>
+          <p><m>y = x^2</m> параболын <m>x = p</m> ба <m>x = q</m>
+          цэгүүд дээрх шүргэгч шулуунууд перпендикуляр бол тэдгээрийн
+          огтолцолын цэг нь <m>y = -\dfrac{1}{4}</m> шулуун дээр
+          оршихыг батал.</p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+</chapter>

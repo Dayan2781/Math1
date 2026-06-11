@@ -107,7 +107,6 @@
            EOF
          ═══════════════════════════════════════════════════════════ -->
     <xi:include href="./chapters/ch-basic-functions.ptx" />
-
     <!-- ═══════════════════════════════════════════════════════════
          ЦААШИД НЭМЭГДЭХ БҮЛГҮҮД (одоогоор comment)
          ═══════════════════════════════════════════════════════════ -->
@@ -118,8 +117,13 @@
     <!-- <xi:include href="./chapters/ch-continuity.ptx" /> -->
 
     <!-- Бүлэг 5: Уламжлал (2 лекц + 2 семинар) -->
-    <!-- <xi:include href="./chapters/ch-derivative.ptx" /> -->
-
+    <xi:include href="./chapters/ch-derivatives-l6,7.ptx" />
+<xi:include href="./chapters/ch-graph-behavior-l8,9.ptx" />
+<xi:include href="./chapters/sec-antider.ptx" />
+<xi:include href="./chapters/sec-applications-integration.ptx" />
+<xi:include href="./chapters/sec-definite-integral.ptx" />
+<xi:include href="./chapters/sec-integration-techniques-1.ptx" />
+<xi:include href="./chapters/sec-integration-techniques-2.ptx" />
     <!-- Бүлэг 6: Уламжлалын теоремүүд ба хэрэглээ (2 лекц + 2 семинар) -->
     <!-- <xi:include href="./chapters/ch-derivative-apps.ptx" /> -->
 

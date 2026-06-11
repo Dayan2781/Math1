@@ -171,7 +171,7 @@
         <title>Хязгаар байх боловч функцийн утгаас ялгаатай</title>
         <statement>
           <p>
-          <me>g(x) = \b\begin{cases} x + 1 \amp x \ne 2 \\ 0 \amp x = 2 \end{cases}</me>
+          <me>g(x) = \begin{cases} x + 1 \amp x \ne 2 \\ 0 \amp x = 2 \end{cases}</me>
           функцийн <m>x \to 2</m> үеийн хязгаарыг ол.</p>
         </statement>
         <solution>
@@ -275,7 +275,7 @@
       <exercise xml:id="ex-lim-intro-3">
         <statement>
           <p>Дараах функцийн хязгаар оршин байна уу? Тайлбарла.
-          <me>h(x) = \b\begin{cases} x^2 - 3x - 4 \amp x \le 3 \\ 3x - 13 \amp x \gt 3 \end{cases}</me>
+          <me>h(x) = \begin{cases} x^2 - 3x - 4 \amp x \le 3 \\ 3x - 13 \amp x \gt 3 \end{cases}</me>
           <m>x \to 3</m> үед.</p>
         </statement>
         <answer><p>Хязгаар оршихгүй: зүүн хязгаар <m>-4</m>, баруун хязгаар
@@ -728,7 +728,7 @@
       <title>Хэсэгчлэн тодорхойлогдсон функц</title>
       <statement>
         <p>
-        <me>f(x) = \b\begin{cases} x^2 \amp x \lt 1 \\ 2x - 1 \amp x \ge 1
+        <me>f(x) = \begin{cases} x^2 \amp x \lt 1 \\ 2x - 1 \amp x \ge 1
         \end{cases}</me>
         функцийн <m>x \to 1</m> үеийн хязгаарыг ол.</p>
       </statement>
@@ -748,7 +748,7 @@
       <exercise xml:id="ex-onesided-1">
         <statement>
           <p>
-          <me>f(x) = \b\begin{cases} x + 2 \amp x \le 3 \\ 2x + 1 \amp x \gt 3
+          <me>f(x) = \begin{cases} x + 2 \amp x \le 3 \\ 2x + 1 \amp x \gt 3
           \end{cases}</me>
           функцийн <m>x \to 3</m> үеийн зүүн ба баруун өрөөсгөл хязгааруудыг
           ол. Ердийн хязгаар оршин байна уу?</p>
@@ -761,7 +761,7 @@
       <exercise xml:id="ex-onesided-2">
         <statement>
           <p>
-          <me>f(x) = \b\begin{cases} \cos x \amp x \le 0 \\ x^2 + 5x + 1
+          <me>f(x) = \begin{cases} \cos x \amp x \le 0 \\ x^2 + 5x + 1
           \amp x \gt 0 \end{cases}</me>
           функцийн <m>x \to 0</m> үеийн хязгаарыг ол.</p>
         </statement>
