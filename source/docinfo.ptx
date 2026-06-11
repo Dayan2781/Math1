@@ -24,6 +24,8 @@
   \pgfplotsset{infiniteopen/.style={shorten &gt;=-2.4pt,{Kite}-{Circle[open]}}}
   \pgfplotsset{openinfinite/.style={shorten &lt;=-2.4pt,{Circle[open]}-{Kite}}}
   \usetikzlibrary{arrows.meta}
+  \usetikzlibrary{intersections}
+   \usepgfplotslibrary{fillbetween}
   \usepackage{tikz}
 </latex-image-preamble>
   <!-- Brand logo / institutional identity (optional) -->
