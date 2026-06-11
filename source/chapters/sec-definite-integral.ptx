@@ -431,29 +431,34 @@
       <caption>Трапецийн дүрэм</caption>
       <image xml:id="img-trapezoid">
         <shortdescription>Трапецүүдээр талбай ойролцоолсон зураг</shortdescription>
-        <latex-image>
-          \begin{tikzpicture}
-            \begin{axis}[
-              xmin=0, xmax=4.5, ymin=0, ymax=5,
-              xlabel={$x$}, ylabel={$y$},
-              axis lines=center,
-              width=9cm, height=5cm,
-              xtick={0.5, 1.5, 2.5, 3.5},
-              xticklabels={$x_0$, $x_1$, $x_2$, $x_3$},
-            ]
-              \addplot[smooth, thick, blue, domain=0.3:4.2, samples=60]
-                {0.3*x^2 - 0.5*x + 3};
-              %% Trapezoids
-              \addplot[fill=green!15, draw=green!60!black]
-                coordinates {(0.5,0) (0.5,2.825) (1.5,3.175) (1.5,0)};
-              \addplot[fill=green!15, draw=green!60!black]
-                coordinates {(1.5,0) (1.5,3.175) (2.5,4.325) (2.5,0)};
-              \addplot[fill=green!15, draw=green!60!black]
-                coordinates {(2.5,0) (2.5,4.325) (3.5,6.275) (3.5,0)};
-            \end{axis>
-          \end{tikzpicture}
-        </latex-image>
-      </image>
+       <caption>Трапецийн дүрэм</caption>
+<image xml:id="img-trapezoid">
+  <shortdescription>Трапецүүдээр талбай ойролцоолсон зураг</shortdescription>
+  <latex-image>
+    \begin{tikzpicture}
+      \begin{axis}[
+        xmin=0, xmax=4.5, ymin=0, ymax=7,
+        xlabel={$x$}, ylabel={$y$},
+        axis lines=center,
+        width=9cm, height=5cm,
+        xtick={0.5, 1.5, 2.5, 3.5},
+        xticklabels={$x_0$, $x_1$, $x_2$, $x_3$},
+      ]
+        %% Трапецуудыг будах хэсэг
+        \addplot[fill=green!15, draw=green!60!black]
+          coordinates {(0.5,0) (0.5,2.825) (1.5,3.175) (1.5,0)} -- cycle;
+        \addplot[fill=green!15, draw=green!60!black]
+          coordinates {(1.5,0) (1.5,3.175) (2.5,4.325) (2.5,0)} -- cycle;
+        \addplot[fill=green!15, draw=green!60!black]
+          coordinates {(2.5,0) (2.5,4.325) (3.5,6.275) (3.5,0)} -- cycle;
+
+        %% Функцийн график (Трапецын дээр харагдуулахын тулд хамгийн сүүлд нь зурна)
+        \addplot[smooth, thick, blue, domain=0.3:4.2, samples=60]
+          {0.3*x^2 - 0.5*x + 3};
+      \end{axis}
+    \end{tikzpicture>
+  </latex-image>
+</image>
     </figure>
 
     <definition xml:id="def-simpson">
