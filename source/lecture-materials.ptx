@@ -14,7 +14,7 @@
       <row header="yes" bottom="minor">
         <cell>Лекц</cell><cell>Сэдэв</cell><cell>PDF</cell><cell>Номд</cell>
       </row>
-      <row><cell>1</cell><cell>Хэллэг ба логик, үнэний хүснэгт</cell><cell><dataurl visual="" source="lectures/lec01-logic.pdf">PDF</dataurl></cell><cell>—</cell></row>
+      <row><cell>1</cell><cell>Хэллэг ба логик, үнэний хүснэгт</cell><cell><dataurl visual="" source="lectures/lec01-logic.pdf">PDF</dataurl></cell><cell><xref ref="ch-logic"/></cell></row>
       <row><cell>2</cell><cell>Олонлог, буулгалт, функц</cell><cell><dataurl visual="" source="lectures/lec02-sets-functions.pdf">PDF</dataurl></cell><cell><xref ref="ch-sets-functions"/></cell></row>
       <row><cell>3</cell><cell>Тоон олонлогууд (Пеаногийн аксиом)</cell><cell><dataurl visual="" source="lectures/lec03-numbers.pdf">PDF</dataurl></cell><cell>—</cell></row>
       <row><cell>4</cell><cell>Функцийн ойлголт, олон гишүүнт ба рационал функц</cell><cell><dataurl visual="" source="lectures/lec04-basic-functions.pdf">PDF</dataurl></cell><cell><xref ref="ch-basic-functions"/></cell></row>
