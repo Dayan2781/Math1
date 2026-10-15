@@ -34,18 +34,19 @@
         <latex-image>
           \begin{tikzpicture}
             \begin{axis}[
-              xmin=0, xmax=4.5, ymin=0, ymax=5,
+              xmin=0, xmax=4.5, ymin=0, ymax=5.5,
               xlabel={$x$}, ylabel={$y$},
               axis lines=center,
               width=9cm, height=6cm,
               xtick={0.5, 1.5, 2.5, 3.5},
               xticklabels={$x_0$, $x_1$, $x_2$, $x_3$},
             ]
+              %% Баруун төгсгөлийн утгаар тэгш өнцөгтүүд
+              \draw[fill=blue!15, draw=blue] (axis cs:0.5,0) rectangle (axis cs:1.5,2.925);
+              \draw[fill=blue!15, draw=blue] (axis cs:1.5,0) rectangle (axis cs:2.5,3.625);
+              \draw[fill=blue!15, draw=blue] (axis cs:2.5,0) rectangle (axis cs:3.5,4.925);
               \addplot[smooth, thick, blue, domain=0.3:4.2, samples=60]
                 {0.3*x^2 - 0.5*x + 3} node[right] {$y=f(x)$};
-              %% Right-hand rectangles
-              \addplot[fill=blue!15, draw=blue, thick, const plot mark right]
-                coordinates {(0.5,2.825) (1.5,3.175) (2.5,4.325) (3.5,6.275) (4.5,6.275)};
             \end{axis}
           \end{tikzpicture}
         </latex-image>
@@ -101,11 +102,12 @@
                   xtick={0, 0.5, 1, 1.5, 2},
                   title={\small Зүүн нийлбэр},
                 ]
+                  \draw[fill=blue!15, draw=blue] (axis cs:0,0) rectangle (axis cs:0.5,1);
+                  \draw[fill=blue!15, draw=blue] (axis cs:0.5,0) rectangle (axis cs:1.0,1.25);
+                  \draw[fill=blue!15, draw=blue] (axis cs:1,0) rectangle (axis cs:1.5,2);
+                  \draw[fill=blue!15, draw=blue] (axis cs:1.5,0) rectangle (axis cs:2.0,3.25);
                   \addplot[smooth, thick, blue, domain=0:2.2, samples=60]
                     {x^2 + 1};
-                  \addplot[fill=blue!15, draw=blue,
-                    const plot mark right]
-                    coordinates {(0,1) (0.5,1.25) (1,2) (1.5,3.25) (2,3.25)};
                 \end{axis}
               \end{tikzpicture}
             </latex-image>
@@ -124,11 +126,12 @@
                   xtick={0, 0.5, 1, 1.5, 2},
                   title={\small Баруун нийлбэр},
                 ]
+                  \draw[fill=red!15, draw=red] (axis cs:0,0) rectangle (axis cs:0.5,1.25);
+                  \draw[fill=red!15, draw=red] (axis cs:0.5,0) rectangle (axis cs:1.0,2);
+                  \draw[fill=red!15, draw=red] (axis cs:1,0) rectangle (axis cs:1.5,3.25);
+                  \draw[fill=red!15, draw=red] (axis cs:1.5,0) rectangle (axis cs:2.0,5);
                   \addplot[smooth, thick, blue, domain=0:2.2, samples=60]
                     {x^2 + 1};
-                  \addplot[fill=red!15, draw=red,
-                    const plot]
-                    coordinates {(0,1.25) (0.5,2) (1,3.25) (1.5,5) (2,5)};
                 \end{axis}
               \end{tikzpicture}
             </latex-image>
@@ -442,11 +445,11 @@
           xticklabels={$x_0$, $x_1$, $x_2$, $x_3$},
         ]
           \addplot[fill=green!15, draw=green!60!black]
-            coordinates {(0.5,0) (0.5,2.825) (1.5,3.175) (1.5,0)} -- cycle;
+            coordinates {(0.5,0) (0.5,2.825) (1.5,2.925) (1.5,0)} -- cycle;
           \addplot[fill=green!15, draw=green!60!black]
-            coordinates {(1.5,0) (1.5,3.175) (2.5,4.325) (2.5,0)} -- cycle;
+            coordinates {(1.5,0) (1.5,2.925) (2.5,3.625) (2.5,0)} -- cycle;
           \addplot[fill=green!15, draw=green!60!black]
-            coordinates {(2.5,0) (2.5,4.325) (3.5,6.275) (3.5,0)} -- cycle;
+            coordinates {(2.5,0) (2.5,3.625) (3.5,4.925) (3.5,0)} -- cycle;
 
           \addplot[smooth, thick, blue, domain=0.3:4.2, samples=60]
             {0.3*x^2 - 0.5*x + 3};
