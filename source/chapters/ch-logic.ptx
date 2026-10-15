@@ -511,268 +511,250 @@
   </section>
 
   <!-- ============================================================
-       Семинар: 7 даалгавар × (а, б, в)
+       Семинар 1 ба Гэрийн даалгавар 1 (latex/lectures/lec01-logic.tex-тэй ижил)
        ============================================================ -->
-  <section xml:id="sec-seminar-1">
-    <title>Семинар. Дасгал</title>
+  <section xml:id="sec-logic-seminar">
+    <title>Семинар 1</title>
 
-    <introduction>
-      <p>Энэ хэсэгт 7 төрлийн даалгавар бий — даалгавар бүрт гурван бодлого
-      (а, б, в) орсон. Ангид багштай хамт болон бие даан хийнэ.</p>
-    </introduction>
-
-    <exercises xml:id="seminar-1">
-
-      <exercise xml:id="sem-1-1">
-        <title>Хэллэг таних ба үнэнийг тогтоох</title>
+    <exercises xml:id="exercises-logic-seminar">
+      <exercise xml:id="logic-sem-1">
         <statement>
-          <p>
-            <ol marker="(\alph*)">
-              <li>Дараах өгүүлбэрүүдийн аль нь хэллэг вэ? Хэллэг бол үнэнийг
-              тогтоо: <q>7 нь тэгш</q>; <m>5 \lt 9</m>; <q>Хаалгаа хаа!</q>;
-              <m>2 + 3 = 6</m>.</li>
-
-              <li><m>P:</m> <q><m>3 \lt 5</m></q>, <m>Q:</m> <q>7 нь тэгш</q>
-              хэллэгүүд бол <m>P \land Q</m>, <m>P \lor Q</m>, <m>\lnot P</m>,
-              <m>P \Rightarrow Q</m>, <m>Q \Rightarrow P</m> хэллэгүүдийн үнэн
-              худалыг тодорхойл.</li>
-
-              <li><m>x \gt 2 \Rightarrow x^2 \gt 4</m> хэллэгийг монгол хэлээр
-              бич ба үнэн эсэхийг тогтоо.</li>
-            </ol>
-          </p>
+          <p>Дараах өгүүлбэрүүдийн аль нь хэллэг вэ? Хэллэг бол үнэнийг тогтоо:
+          <q>7 нь тэгш</q>; <m>5 \lt 9</m>; <q>Хаалгаа хаа!</q>; <m>2+3=6</m>.</p>
         </statement>
       </exercise>
-
-      <exercise xml:id="sem-1-2">
-        <title>Үнэний хүснэгт байгуулах</title>
+      <exercise xml:id="logic-sem-2">
         <statement>
-          <p>
-            <ol marker="(\alph*)">
-              <li>Үнэний хүснэгтээр шалга:
-              <m>(P \Rightarrow Q) \Leftrightarrow (\lnot P \lor Q)</m>.</li>
-
-              <li><m>(P \Rightarrow Q) \lor (Q \Rightarrow P)</m> нь тавтологи
-              мөн эсэхийг тогтоо.</li>
-
-              <li>Үнэний хүснэгтээр дистрибутив хуулийг шалга:
-              <me>(P \land (Q \lor R)) \Leftrightarrow ((P \land Q) \lor (P \land R)).</me>
-              </li>
-            </ol>
-          </p>
+          <p><m>P:</m> <q><m>3\lt 5</m></q>, <m>Q:</m> <q>7 нь тэгш</q> хэллэгүүд бол
+          <m>P\land Q</m>, <m>P\lor Q</m>, <m>\lnot P</m>, <m>P\Rightarrow Q</m>,
+          <m>Q\Rightarrow P</m> хэллэгүүдийн үнэн худалыг тодорхойл.</p>
         </statement>
       </exercise>
-
-      <exercise xml:id="sem-1-3">
-        <title>Логикийн хуулиуд</title>
+      <exercise xml:id="logic-sem-3">
         <statement>
-          <p>
-            <ol marker="(\alph*)">
-              <li>Де Морганы хууль:
-              <m>\lnot (P \land Q) \Leftrightarrow (\lnot P \lor \lnot Q)</m>-ийг
-              хүснэгтээр батал.</li>
-
-              <li><m>F = P \land \lnot P</m> хэллэг зөрчил байхыг батал.</li>
-
-              <li>Батал: <m>P \land (P \lor Q) \Leftrightarrow P</m>
-              (absorption хууль).</li>
-            </ol>
-          </p>
+          <p>Үнэний хүснэгтээр шалга: <m>(P\Rightarrow Q)\Leftrightarrow(\lnot P\lor Q)</m>.</p>
         </statement>
       </exercise>
-
-      <exercise xml:id="sem-1-4">
-        <title>Контрапозиц ба урвуу хэллэг</title>
+      <exercise xml:id="logic-sem-4">
         <statement>
-          <p>
-            <ol marker="(\alph*)">
-              <li><q>Хэрэв тоо 6-д хуваагдвал 3-д хуваагдана</q> хэллэгийн
-              урвуу хэллэгийг бичээд үнэн эсэхийг дүгнэ.</li>
-
-              <li>Эквивалент болохыг батал:
-              <m>(P \Rightarrow Q) \Leftrightarrow (\lnot Q \Rightarrow \lnot P)</m>.</li>
-
-              <li><m>P:</m> <q><m>n</m> тэгш</q>, <m>Q:</m> <q><m>n^2</m> 4-т
-              хуваагдана</q>. <m>P \Rightarrow Q</m> хэллэгийг <m>n = 6</m>,
-              <m>n = 7</m> ба <m>n = 10</m> тохиолдолд шалга.
-              <m>P \Leftrightarrow Q</m> теоремийг батал.</li>
-            </ol>
-          </p>
+          <p>Де Морганы хууль: <m>\lnot(P\land Q)\Leftrightarrow(\lnot P\lor\lnot Q)</m>-ийг хүснэгтээр батал.</p>
         </statement>
       </exercise>
-
-      <exercise xml:id="sem-1-5">
-        <title>Шууд баталгаа</title>
+      <exercise xml:id="logic-sem-5">
         <statement>
-          <p>
-            <ol marker="(\alph*)">
-              <li>Шууд батал: хэрэв <m>n</m> сондгой бол <m>n^2</m> сондгой.</li>
-
-              <li>Шууд батал: хэрэв <m>a</m> бүхэл бол <m>a^2 + a</m> тэгш.</li>
-
-              <li>Шууд батал: <m>\forall n \in \mathbb{N}</m> хувьд
-              <m>n^3 - n</m> нь <m>3</m>-т хуваагдана. (Зөвлөмж:
-              <m>n^3 - n = n(n-1)(n+1)</m> — дараалсан гурван бүхэл тоо.)</li>
-            </ol>
-          </p>
+          <p><m>F= P\land\lnot P</m> хэллэг зөрчил байхыг батал.</p>
         </statement>
       </exercise>
-
-      <exercise xml:id="sem-1-6">
-        <title>Эсрэгээс нь батлах ба эсрэг жишээ</title>
+      <exercise xml:id="logic-sem-6">
         <statement>
-          <p>
-            <ol marker="(\alph*)">
-              <li>Эсрэгээс нь батал: хэрэв <m>ab</m> сондгой бол <m>a</m> ба
-              <m>b</m> сондгой.</li>
-
-              <li><m>\sqrt{6}</m> иррационал болохыг батал.</li>
-
-              <li><m>4k + 3</m> хэлбэрийн анхны тоо хязгааргүй олон байдгийг
-              батал. (Заавар: эсрэгээс нь <m>p_1, \ldots, p_m</m> гэж аваад
-              <m>N = 4(p_1 \cdots p_m) - 1</m>-ийг авч үз.)</li>
-            </ol>
-          </p>
+          <p>Батал: <m>P\land(P\lor Q)\Leftrightarrow P</m> (absorption).</p>
         </statement>
       </exercise>
-
-      <exercise xml:id="sem-1-7">
-        <title>Кванторын үгүйсгэл ба индукц</title>
+      <exercise xml:id="logic-sem-7">
         <statement>
-          <p>
-            <ol marker="(\alph*)">
-              <li>Дараах өгүүлбэрийн үгүйсгэлийг кванторыг зөв байршуулж
-              бүрэн бич:
-              <me>\forall y \in \mathbb{R}, \exists x \in \mathbb{R}, (f(x) = y).</me>
-              Мөн <m>a_1, a_2, \ldots</m> дараалалын хувьд
-              <m>\exists M \gt 0, \forall n \in \mathbb{N}, (|a_n| \lt M)</m>
-              чанарын үгүйсгэлийг бич ба ийм дараалалын жишээ гарга.</li>
-
-              <li>Индукцээр батал:
-              <me>1^2 + 2^2 + \cdots + n^2 = \frac{n(n+1)(2n+1)}{6}.</me>
-              </li>
-
-              <li>Биномын томьёог индукцээр батал: <m>a, b</m> нь дурын тоо,
-              <m>n \in \mathbb{N}</m> бол
-              <me>(a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k.</me>
-              </li>
-            </ol>
-          </p>
+          <p><m>(P\Rightarrow Q)\lor(Q\Rightarrow P)</m> нь тавтологи мөн эсэхийг тогтоо.</p>
         </statement>
       </exercise>
-
+      <exercise xml:id="logic-sem-8">
+        <statement>
+          <p><m>P:</m> <q><m>n</m> тэгш</q>, <m>Q:</m> <q><m>n^2</m> 4-т хуваагдана</q>.
+          <m>P\Rightarrow Q</m> хэллэгийг <m>n=6</m>, <m>n=7</m> ба <m>n=10</m> тохиолдолд шалга.
+          <m>P\Leftrightarrow Q</m> теоремийг батал.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-sem-9">
+        <statement>
+          <p><m>x\gt 2 \Rightarrow x^2\gt 4</m> хэллэгийг монгол хэлээр бич.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-sem-10">
+        <statement>
+          <p>Үнэн хүснэгтээр шалга:
+          <m>(P\land(Q\lor R))\Leftrightarrow((P\land Q)\lor(P\land R))</m> (distributive).</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-sem-11">
+        <statement>
+          <p><q>Хэрэв тоо 6-д хуваагдвал 3-д хуваагдана</q> хэллэгийн урвуу хэллэгийг бичээд
+          үнэн эсэхийг дүгнэ.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-sem-12">
+        <statement>
+          <p>Шууд батал: хэрэв <m>n</m> сондгой бол <m>n^2</m> сондгой.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-sem-13">
+        <statement>
+          <p>Эсрэгээс нь батал: хэрэв <m>ab</m> сондгой бол <m>a</m> ба <m>b</m> сондгой.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-sem-14">
+        <statement>
+          <p><m>a_1, a_2, \ldots a_n, \ldots</m> дараалалын хувьд
+          <m>\exists M \gt 0, \forall n \in \mathbb{N}, (|a_n| \lt M)</m> чанар биелдэг байг.
+          Ийм дараалалын жишээ гарга.
+          <m>\exists M \gt 0, \forall n \in \mathbb{N}, (|a_n| \lt M)</m> чанарын үгүйсгэл бич.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-sem-15">
+        <statement>
+          <p>Эквивалент: <m>(P\Rightarrow Q)\Leftrightarrow(\lnot Q\Rightarrow\lnot P)</m>.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-sem-16">
+        <statement>
+          <p>Шууд батал: хэрэв <m>a</m> бүхэл бол <m>a^2+a</m> тэгш.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-sem-17">
+        <statement>
+          <p>Дараах өгүүлбэрийн үгүйсгэлийг кванторыг зөв байршуулж бүрэн бич:
+          <m>\forall y \in \mathbb{R}, \exists x \in \mathbb{R}, (f(x) = y)</m>.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-sem-18">
+        <statement>
+          <p><m>\sqrt{6}</m> иррационал болохыг батал.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-sem-19">
+        <statement>
+          <p><m>4k+3</m> хэлбэрийн анхны тоо хязгааргүй олон байдаг.</p>
+        </statement>
+        <hint>
+          <p>Эсрэгээс нь <m>p_1,\dots,p_m</m> гэж аваад <m>N=4(p_1\cdots p_m)-1</m>-ийг авч үз.</p>
+        </hint>
+      </exercise>
+      <exercise xml:id="logic-sem-20">
+        <statement>
+          <p><m>1^2+2^2+\cdots+n^2=\dfrac{n(n+1)(2n+1)}{6}</m> батал.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-sem-21">
+        <statement>
+          <p><m>a,b</m> нь дурын тоо, <m>n\in\mathbb{N}</m> байг.
+          <me>(a+b)^n=\sum_{k=0}^{n}\binom{n}{k}\,a^{\,n-k}b^{\,k},
+          \qquad \binom{n}{k}=\frac{n!}{k!(n-k)!}\ (0\le k\le n)</me>
+          индукцээр батал.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-sem-22">
+        <statement>
+          <p><m>a,b</m> нь бодит тоо, <m>n\in\mathbb{N}</m> байг. Дараах тэнцэтгэлийг бичээд батал:
+          <me>a^n-b^n=(a-b)\left(\sum_{k=0}^{n-1} a^{\,n-1-k} b^{\,k}\right).</me>
+          Мөн <m>n</m> сондгой үед
+          <me>a^n+b^n=(a+b)\left(\sum_{k=0}^{n-1}(-1)^k a^{\,n-1-k} b^{\,k}\right)</me>
+          байдгийг батал.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-sem-23">
+        <statement>
+          <p><m>a\gt b\gt 0</m> ба <m>n\in\mathbb{N}</m> байг.
+          <me>a^n-b^n \ge n\,b^{\,n-1}(a-b)</me>
+          батал.</p>
+        </statement>
+      </exercise>
     </exercises>
   </section>
 
-  <!-- ============================================================
-       Гэрийн даалгавар: 5 даалгавар × (а, б, в)
-       ============================================================ -->
-  <section xml:id="sec-homework-1">
-    <title>Гэрийн даалгавар</title>
+  <section xml:id="sec-logic-homework">
+    <title>Гэрийн даалгавар 1</title>
 
-    <introduction>
-      <p>5 төрлийн даалгавар бий — даалгавар бүрт гурван бодлого (а, б, в)
-      орсон. Гэртээ бие даан хийнэ.</p>
-    </introduction>
-
-    <exercises xml:id="homework-1">
-
-      <exercise xml:id="hw-1-1">
-        <title>Үнэний хүснэгт ба тавтологи</title>
+    <exercises xml:id="exercises-logic-homework">
+      <exercise xml:id="logic-hw-1">
         <statement>
-          <p>
-            <ol marker="(\alph*)">
-              <li>Үнэний хүснэгтээр шалга:
-              <m>(P \land Q) \Rightarrow P</m>.</li>
-
-              <li>Үнэний хүснэгтээр шалга:
-              <m>(P \lor Q) \Leftrightarrow (\lnot P \Rightarrow Q)</m>.</li>
-
-              <li>Тавтологи болохыг батал:
-              <me>((P \Rightarrow Q) \land (Q \Rightarrow R)) \Rightarrow (P \Rightarrow R).</me>
-              </li>
-            </ol>
-          </p>
+          <p>Үнэний хүснэгтээр шалга: <m>(P\land Q)\Rightarrow P</m>.</p>
         </statement>
       </exercise>
-
-      <exercise xml:id="hw-1-2">
-        <title>Эсрэг жишээ</title>
+      <exercise xml:id="logic-hw-2">
         <statement>
-          <p>
-            <ol marker="(\alph*)">
-              <li>Эсрэг жишээ ол: <q>Бүх бүхэл тоо анхны эсвэл тэгш тоо</q>.</li>
-
-              <li>Эсрэг жишээ ол: <q>Бүх тэгш тоо анхны тоо</q> мөн
-              <q>Бүх анхны тоо сондгой</q>.</li>
-
-              <li>Эсрэг жишээ ол: <q>Хэрэв <m>ab</m> тэгш бол <m>a</m> ба
-              <m>b</m> хоёулаа тэгш</q>.</li>
-            </ol>
-          </p>
+          <p>Үнэний хүснэгтээр шалга: <m>(P\lor Q)\Leftrightarrow(\lnot P\Rightarrow Q)</m>.</p>
         </statement>
       </exercise>
-
-      <exercise xml:id="hw-1-3">
-        <title>Шууд ба эсрэгээс нь баталгаа</title>
+      <exercise xml:id="logic-hw-3">
         <statement>
-          <p>
-            <ol marker="(\alph*)">
-              <li>Шууд батал: хэрэв <m>a, b</m> тэгш бол <m>a + b</m> тэгш.</li>
-
-              <li>Шууд батал: хэрэв <m>a</m> нь <m>4</m>-т хуваагддаг бол
-              <m>a^2</m> нь <m>8</m>-д хуваагдана.</li>
-
-              <li>Эсрэгээс нь батал: хэрэв <m>n^2</m> сондгой бол <m>n</m>
-              сондгой.</li>
-            </ol>
-          </p>
+          <p>Эсрэг жишээ ол: <q>Бүх бүхэл тоо анхны эсвэл тэгш тоо</q>.</p>
         </statement>
       </exercise>
-
-      <exercise xml:id="hw-1-4">
-        <title>Контрапозиц ба гүн баталгаа</title>
+      <exercise xml:id="logic-hw-4">
         <statement>
-          <p>
-            <ol marker="(\alph*)">
-              <li>Эквивалент болохыг батал:
-              <m>(P \Rightarrow Q) \Leftrightarrow (\lnot Q \Rightarrow \lnot P)</m>.</li>
-
-              <li>Бүх анхны <m>p</m>-ийн хувьд, хэрэв <m>p \mid n^2</m> бол
-              <m>p \mid n</m> болохыг батал.</li>
-
-              <li><m>\sqrt{2} + \sqrt{3}</m> иррационал болохыг батал.
-              (Заавар: эсрэгээс нь <m>\sqrt{2} + \sqrt{3} = \dfrac{a}{b}</m>
-              гэж үз.)</li>
-            </ol>
-          </p>
+          <p>Эсрэгээс нь батал: хэрэв <m>n^2</m> сондгой бол <m>n</m> сондгой.</p>
         </statement>
       </exercise>
-
-      <exercise xml:id="hw-1-5">
-        <title>Хязгааргүй ба индукц</title>
+      <exercise xml:id="logic-hw-5">
         <statement>
-          <p>
-            <ol marker="(\alph*)">
-              <li>Анхны тоо хязгааргүй олон байдгийг батал.</li>
-
-              <li>Дараах өгүүлбэрийн үгүйсгэлийг кванторыг зөв байршуулж
-              бүрэн бич:
-              <me>\forall \epsilon \gt 0, \exists \delta \gt 0, \big(|x - 1| \lt \delta \Rightarrow |f(x) - f(1)| \lt \epsilon\big).</me>
-              Мөн <m>a_1, a_2, \ldots</m> дараалалын хувьд
-              <m>\forall M \gt 0, \exists n \in \mathbb{N}, (a_n \gt M)</m>
-              чанар биелдэг байг. Ийм дараалалын жишээ гарга.</li>
-
-              <li>Индукцээр батал: <m>a, b \in \mathbb{R}</m>,
-              <m>n \in \mathbb{N}</m> бол
-              <me>a^n - b^n = (a - b)\left(\sum_{k=0}^{n-1} a^{n-1-k} b^k\right).</me>
-              Мөн <m>a \gt b \gt 0</m>, <m>n \in \mathbb{N}</m> бол
-              <m>a^n - b^n \ge n b^{n-1} (a - b)</m> байхыг батал.</li>
-            </ol>
-          </p>
+          <p>Эквивалент: <m>(P\Rightarrow Q)\Leftrightarrow(\lnot Q\Rightarrow\lnot P)</m>.</p>
         </statement>
       </exercise>
-
+      <exercise xml:id="logic-hw-6">
+        <statement>
+          <p>Эсрэг жишээ: <q>Бүх тэгш тоо анхны тоо</q>.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-hw-7">
+        <statement>
+          <p>Шууд батал: хэрэв <m>a,b</m> тэгш бол <m>a+b</m> тэгш.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-hw-8">
+        <statement>
+          <p>Эсрэг жишээ: <q>Хэрэв <m>ab</m> тэгш бол <m>a</m> ба <m>b</m> хоёулаа тэгш</q>.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-hw-9">
+        <statement>
+          <p>Батал: хэрэв <m>a</m> 4-т хуваагддаг бол <m>a^2</m> 8-д хуваагдана.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-hw-10">
+        <statement>
+          <p>Эсрэг жишээ гарга: <q>Бүх анхны тоо сондгой</q>.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-hw-11">
+        <statement>
+          <p>Тавтологи болохыг батал:
+          <m>((P\Rightarrow Q)\land(Q\Rightarrow R))\Rightarrow(P\Rightarrow R)</m>.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-hw-12">
+        <statement>
+          <p>Тавтологи болохыг батал (resolution):
+          <m>\big((P\lor Q)\land(\lnot P\lor R)\land(\lnot Q\lor R)\big)\Rightarrow R</m>.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-hw-13">
+        <statement>
+          <p>Бүх анхны <m>p</m>-ийн хувьд, хэрэв <m>p\mid n^2</m> бол <m>p\mid n</m> болохыг батал.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-hw-14">
+        <statement>
+          <p><m>\sqrt{2}+\sqrt{3}</m> иррационал болохыг батал.</p>
+        </statement>
+        <hint>
+          <p>Эсрэгээс нь <m>\sqrt{2}+\sqrt{3}=\tfrac{a}{b}</m> гэж үз.</p>
+        </hint>
+      </exercise>
+      <exercise xml:id="logic-hw-15">
+        <statement>
+          <p>Анхны тоо <em>хязгааргүй олон</em> байдгийг батал.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-hw-16">
+        <statement>
+          <p><m>a_1, a_2, \ldots a_n, \ldots</m> дараалалын хувьд
+          <m>\forall M \gt 0, \exists n \in \mathbb{N}, (a_n \gt M)</m> чанар биелдэг байг.
+          Ийм дараалалын жишээ гарга.</p>
+        </statement>
+      </exercise>
+      <exercise xml:id="logic-hw-17">
+        <statement>
+          <p>Дараах өгүүлбэрийн үгүйсгэлийг кванторыг зөв байршуулж бүрэн бич:
+          <me>\forall\,\epsilon\gt 0, \exists\,\delta\gt 0, \big(|x-1|\lt \delta \Rightarrow |f(x)-f(1)|\lt \epsilon\big).</me></p>
+        </statement>
+      </exercise>
     </exercises>
   </section>
 </chapter>

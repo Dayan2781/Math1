@@ -83,6 +83,9 @@
          БҮЛЭГ 1: Олонлог, буулгалт, функц  (1 лекц + 1 семинар)
          Файл: chapters/ch-sets-functions.ptx
          ═══════════════════════════════════════════════════════════ -->
+    <!-- Бүлэг 1: Хэллэг ба логик, баталгааны аргууд (Лекц 1) -->
+    <xi:include href="./chapters/ch-logic.ptx" />
+
     <xi:include href="./chapters/ch-sets-functions.ptx" />
 
     <!-- ═══════════════════════════════════════════════════════════
@@ -140,8 +143,6 @@
     <!-- Бүлэг 7: Интеграл (3 лекц + 3 семинар) -->
     <!-- <xi:include href="./chapters/lecture-15.ptx" /> -->
 
-    <!-- Хавсралт: Хэллэг, логик, баталгаа -->
-    <!-- <xi:include href="./chapters/ch-logic.ptx" /> -->
 
     <!-- Хязгаарын нэмэлт хэсэг (APEX §1.6 орчуулга) -->
     <!-- <xi:include href="./chapters/sec_limits_infty_mn.ptx" /> -->
