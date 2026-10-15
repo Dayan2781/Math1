@@ -23,6 +23,17 @@ jobs:
       - name: Install LaTeX dependencies
         run: sudo apt-get update && sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-latex-extra
 
+      - name: Install Libertinus fonts (лекцийн PDF-д)
+        run: |
+          curl -sSL -o /tmp/libertinus.zip https://github.com/alerque/libertinus/releases/download/v7.051/Libertinus-7.051.zip
+          mkdir -p ~/.fonts
+          unzip -oj -q /tmp/libertinus.zip 'Libertinus-7.051/static/OTF/*.otf' -d ~/.fonts
+          fc-cache -f
+
+      - name: Build lecture PDFs
+        # Нэг лекц алдаатай байсан ч сайт шинэчлэгдэнэ; алдааг лог дээр харуулна
+        run: ./latex/build.sh || echo "::warning::Зарим лекцийн PDF үүссэнгүй, дээрх логийг харна уу"
+
       - name: Install PreTeXt
         run: pip install pretext
 

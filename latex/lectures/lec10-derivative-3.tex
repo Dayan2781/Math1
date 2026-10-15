@@ -1,0 +1,295 @@
+\chapter{Параметр ба далд функцийн уламжлал, дээд эрэмбийн уламжлал}
+\section{Параметр ба далд функцийн уламжлал}
+\begin{definition}[Параметр функц]
+ $g(t),\ h(t)$ функцүүд өгөгдсөн ба $t\in(\alpha;\beta)$ үед $g(t)$ функц иньектив  байг.
+ 
+ $D=\{g(t)|t\in(\alpha;\beta)\}$-г  $E=\{h(t)|t\in(\alpha;\beta)\}$ олонлогт буулгасан функцийг 
+ $$f: g(t)\to h(t)$$ дүрмээр тодорхойлож болно. Энэ функцийг параметр функц гээд 
+ $$ f:
+ \begin{cases}
+     x=g(t)\\
+     y=h(t)
+ \end{cases}$$ гэж тэмдэглэнэ. 
+\end{definition}
+Цаашид $y=f(x)$ хэлбэртэй өгөгдсөн функцийг ил хэлбэртэй гэж нэрлэе. Ил функцийг $$ f:
+ \begin{cases}
+     x=t\\
+     y=f(t)
+ \end{cases}$$ гэж параметр хэлбэрээр бичиж болно. Тодорхойлолт ёсоор $g(t)$ функц иньектив учир $$g: (\alpha;\beta)\to D$$ буулгалт биектив байна. Тиймээс $g^{-1}: D\to (\alpha;\beta)$ буулгалт оршин байна. Иймд 
+ $$y=h(t)=h(g^{-1}(x))\qquad x\in D$$ байдлаар далд функцийг ил байдлаар илэрхийлж болно.
+ \begin{example}
+$x(t)=t+1,\quad y(t)=t^3-3t$ байг. Энэ функцийн хувьд $t=1$ үед $f:2\to -2$, $t=-2$ үед $f:-1\to 2$ байна. $t=x-1$ тул 
+\[y=t^3-3t=(x-1)^3-3(x-1)=x^3-3x^2+2
+\] гэж ил хэлбэрээр бичиж болно.
+\end{example}
+\begin{theorem}[Параметр функцийн уламжлал] 
+$$ f:
+ \begin{cases}
+     x=g(t)\\
+     y=h(t)
+ \end{cases}$$ функцийн хувьд 
+$g(z)=a, g'(z), h'(z)$ оршин байдаг $g'(z)\neq 0$ бол 
+\[
+f'(a)=\frac{dy}{dx}(a)=\frac{dh/dt}{dg/dt}=\frac{h'(z)}{g'(z)}
+\] байна.
+Өөрөөр хэлбэл 
+$$ f':
+ \begin{cases}
+     x=g(t)\\
+     y'=\frac{h'(t)}{g'(t)}
+ \end{cases}$$ гэсэн параметр функц байна.
+\end{theorem}
+
+\begin{prof} $$y=h(t)=h(g^{-1}(x))\qquad x\in D$$ байдлаар далд функцийг ил байдлаар илэрхийлж болох тул гинжин дүрэм ба урвуу функцийн уламжлалын тухай теорем хэрэглэвэл 
+$$\dfrac{dy}{dx}(a)=\dfrac{dh}{dt}(z)\cdot \dfrac{dg^{-1}}{dt}(a)=\dfrac{h'(z)}{g'(z)}$$ болж батлагав.
+\end{prof}
+\begin{example}
+$x(t)=t^2+1,\quad y(t)=t^3-3t ,\quad t\geq 0$ байг. 
+\[
+x'(t)=2t,\qquad y'(t)=3t^2-3,\qquad
+\frac{dy}{dx}=\frac{3t^2-3}{2t}.
+\] Өөрөөр хэлбэл $t=1$ үед $x=2, y=-2$ ба энэ цэг дээрх уламжлал $y'(2)=0$ байна.  
+\end{example}
+\begin{example}
+Нэгж тойрог: $x(t)=\cos t,\ y(t)=\sin t \quad t\in [0;\pi]$ байг.
+\[
+x'=-\sin t,\quad y'=\cos t,\quad
+\frac{dy}{dx}=\frac{\cos t}{-\sin t}=-\cot t.
+\]
+$t=\frac{\pi}{2}$ дээр $x=0, y=1$ тул $\frac{dy}{dx}=0$ хэвтээ шүргэгчтэй ба $t=0$ дээр $x=1,y=0$ тул $\dfrac{dy}{dx}=-\infty$ тул босоо шүргэгч шулуунтай.
+\end{example}
+\begin{definition}[Далд функц]  $(a,b)$ хос нь 
+$F(z,u)=0$ тэгшитгэлийг хангадаг ба $\forall x\in (a-\delta;a+\delta)$ хувьд $F(x,u)=0$ тэгшитгэл $u=y\in E\subset\mathbf{R}$ байх ганц шийдтэй байг. Энд $\delta>0$ тоо. Тэгвэл  $\forall x\in (a-\delta;a+\delta)$ бол $(a-\delta;a+\delta)$-г $E$ олонлогт буулгах функцийг $$f: x\to y$$ дүрмээр үүсгэж болох ба энэ функцийг $F(x,y)=0$ далд тэгшитгэлээр өгсөн функц гэнэ. Иймд $$F(x,y)=F(x,f(x))=0$$ байна. 
+\end{definition}
+\begin{example}
+$F(x,y)=x^2+y^2-1=0$ , $E=[0;1]$ байг. $x\in (-1;1)$ бол $y=\sqrt{1-x^2}$ байх $(x,y)$ хос нь $x^2+y^2-1=0$  тэгшитгэлийг хангана. Иймд далд функц тодорхойлож байна. Энэ нь $y(x)=\sqrt{1-x^2}$ ил функцтэй тэнцүү. Хэрэв $E=[-1;0]$ байсан бол $F(x,y)=x^2+y^2-1=0$ далд функц $y(x)=-\sqrt{1-x^2}$ ил функцийг тодорхойлно.
+\end{example}
+\begin{theorem}[Далд функцийн уламжлал]
+$F(x,y)=F(x,f(x))=0$ далд функцийн хувьд $f(a)=b$ бол $F_y(a,b)\neq 0$ үед $f'(a)$ оршин байх ба 
+$$f'(a)=-\dfrac{F_x(a,b)}{F_y(a,b)}$$ байна. Энд $F_x$ нь $F(x,y)$ -с $y$ тогтмол гэж үзээд  $x$-р авсан уламжлал, $F_y$ нь $F(x,y)$ -с $x$ тогтмол гэж үзээд  $y$-р авсан уламжлал.
+\end{theorem}
+\begin{example}
+Тойргийн тэнцэтгэл:
+\[
+F(x,y)=x^2+y^2-1=0.
+\]
+$F_x = 2x, \; F_y = 2y$.  
+Иймд:
+\[
+\frac{dy}{dx}=-\frac{F_x}{F_y}=-\frac{x}{y}.
+\]
+$(0,1)$ дээр $y'=0$ (хэвтээ шүргэгч), $(1,0)$ дээр $y'\to\infty$ (босоо шүргэгч).
+\end{example}
+\begin{remark}
+Далд функцийн уламжлал олох:
+\begin{enumerate}
+  \item Тэнцэтгэлийн хоёр талыг $x$-ийн хувьд дифференциалчил ( $y=y(x)$ учир $y$-ийн бүх уламжлалд гинжин дүрэм хэрэглэнэ ).
+  \item $y'$-ийн гишүүдийг нэг талд цуглуулж, $y'$-ийг илэрхийлж бич.
+\end{enumerate}
+\end{remark}
+\begin{example}
+Дахин $x^2+y^2-1=0$ авч үзье.
+Дифференциалчилбал: $2x+2y\cdot y'-0=0\Rightarrow y'=-\dfrac{x}{y}$.
+\end{example}
+\begin{example}
+$\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$.
+\[
+\frac{2x}{a^2}+\frac{2y}{b^2}y'=0
+\;\Rightarrow\;
+y'=-\frac{b^2}{a^2}\cdot \frac{x}{y}.
+\]
+\end{example}
+
+\begin{example}[Декартын навчис (folium)]
+$x^3+y^3=6xy$.
+\[
+3x^2+3y^2 y'=6y+6x y'
+\ \Rightarrow\
+(3y^2-6x)\,y'=6y-3x^2
+\ \Rightarrow\
+y'=\frac{6y-3x^2}{3y^2-6x}.
+\]
+Тодорхой цэг дээр утгыг оруулж шүргэгчийн налууг олж болно.
+\end{example}
+
+\begin{example}[Логарифмчлан дифференциалчлах]
+$y=x^x$ ($x>0$). $\ln y=x\ln x$.
+Дифференциалчилбал: $\dfrac{y'}{y}=\ln x+1 \Rightarrow y'=x^x(\ln x+1)$.
+\end{example}
+
+\begin{example}
+$\arcsin y = x \ \Rightarrow\ y=\sin x$. 
+Дифференциалчилбал: $\dfrac{1}{\sqrt{1-y^2}}\cdot y'=1 \Rightarrow y'=\sqrt{1-y^2}$.
+(Энд $y=\sin x$ тул $y'=\cos x$-той таарч байна.)
+\end{example}
+\section{Дээд эрэмбийн уламжлал}
+\begin{definition}
+    $y=f(x)$ функцийн уламжлалын функц $f'(x)$ уламжлалтай бол түүний уламжлалыг $y=f(x)$ функцийн хоёрдугаар уламжлал гэх ба $y''=(f'(x))'=f''(x)$ гэж тэмдэглэнэ. Үүнтэй ижлээр 3, 4 гэх мэт уламжлалууд тодорхойлогдох ба $y''=y^{(2)}, y'''=y^{(3)}, y''''=y^{(4)}, y^{(n)}$ гэж тэмдэглэнэ. 
+    $$y^{(n)}=\dfrac{d y^{(n-1)}}{dx}$$
+\end{definition}
+Үндсэн функцүүдийн дээд эрэмбийн уламжлалууд:
+
+\begin{enumerate}
+  \item \textbf{Тогтмол функц:} 
+  \[
+  y = c \quad \Rightarrow \quad y' = 0, \; y'' = 0, \; \ldots, \; y^{(n)} = 0.
+  \]
+
+  \item \textbf{Шугаман функц:} 
+  \[
+  y = ax + b \quad \Rightarrow \quad y' = a, \; y'' = 0, \; \ldots, \; y^{(n)} = 0.
+  \]
+
+  \item \textbf{Зэрэгт функц:} 
+ \[
+  y = x^n \quad \Rightarrow \quad 
+  y' = n x^{n-1}, \;
+  y'' = n(n-1) x^{n-2}, \;
+  \ldots,\;
+  y^{(k)} = n(n-1)\cdots (n-k+1)\, x^{n-k}.
+  \] $n, k$ натурал үед 
+  $k>n$ үед $y^{(k)}=0$.
+  \item \textbf{Илтгэгч функц:} 
+  \[
+  y = e^{x} \Rightarrow y^{(n)} = e^{x}, 
+  \qquad
+  y = a^{x} \Rightarrow y^{(n)} = a^{x}(\ln a)^{n}.
+  \]
+
+  \item \textbf{Логарифм функц:} 
+  \[
+  y = \ln x \quad \Rightarrow \quad 
+  y' = \frac{1}{x}, \;
+  y'' = -\frac{1}{x^{2}}, \;
+  y^{(3)} = \frac{2}{x^{3}}, \;
+  y^{(4)} = -\frac{6}{x^{4}}, \;
+  \ldots,\;
+  y^{(n)} = (-1)^{n-1}(n-1)!\, x^{-n}.
+  \]
+
+  \item \textbf{Тригонометр функцүүд:}
+  \[
+  \begin{aligned}
+  &y = \sin x 
+    &&\Rightarrow&
+    y^{(n)} = \sin\!\left(x + n\frac{\pi}{2}\right);\\[3pt]
+  &y = \cos x 
+    &&\Rightarrow&
+    y^{(n)} = \cos\!\left(x + n\frac{\pi}{2}\right);\\[3pt]
+  &y = \tan x 
+    &&\Rightarrow&
+    y' = \frac{1}{\cos^{2}x}, \quad
+    y'' = \frac{2\sin x}{\cos^{3}x}, \quad \text{цааш үргэлжилнэ.}
+  \end{aligned}
+  \]
+
+  \item \textbf{Тригонометрийн урвуу функцүүд:}
+  \[
+  \begin{aligned}
+  &y = \arcsin x 
+    &&\Rightarrow&
+    y' = \frac{1}{\sqrt{1-x^{2}}}, \quad 
+    y'' = \frac{x}{(1-x^{2})^{3/2}},\\[3pt]
+  &y = \arccos x 
+    &&\Rightarrow&
+    y' = -\frac{1}{\sqrt{1-x^{2}}}, \quad 
+    y'' = \frac{x}{(1-x^{2})^{3/2}},\\[3pt]
+  &y = \arctan x 
+    &&\Rightarrow&
+    y' = \frac{1}{1+x^{2}}, \quad 
+    y'' = -\frac{2x}{(1+x^{2})^{2}}.
+  \end{aligned}
+  \]
+
+\end{enumerate}
+\begin{theorem}
+$f,g$ функцүүд $n$ эрэмбийн уламжлалтай бол 
+    \begin{enumerate}
+        \item $(c\cdot f)^{(n)}=c\cdot f^{(n)}$
+        \item $(f\pm g)^{(n)}=f^{(n)}\pm g^{(n)}$
+        \item $(f\cdot g)^{(n)}=\sum\limits_{k=0}^{n}C_n^kf^{(k)}\cdot g^{(n-k)}$
+        \item $(f(ax+b))^{(n)}=a^n\cdot f^{(n)}|_{x=ax+b}$
+    \end{enumerate} байна.
+\end{theorem}
+\subsection{Дадлага бодлогууд}
+\begin{enumerate}
+    \item 
+Параметр муруй: $x(t)=t^2-4t+3,\ y(t)=t^3-3t$. 
+\begin{enumerate}
+  \item $\dfrac{dy}{dx}$-ийг ол.
+  \item $t=1,2$ дээр шүргэгчийн шулууг бич.
+  \item $t=0$ дээр босоо/хэвтээ эсэхийг шалга.
+\end{enumerate}
+\item Далд муруй: $x^2-xy+y^2=3$.
+\begin{enumerate}
+  \item $y'=-\dfrac{F_x}{F_y}$ томъёогоор $y'$-ийг ол.
+  \item $(1,2)$ цэг дээр шүргэгчийн шулууг бич.
+  \item $y''$-ийн томъёог (дөрвөлжин хаалтанд) гарга.
+\end{enumerate}
+\item Логарифмын аргаар дифференциалчил: $y=\dfrac{(1+x)^{\alpha}}{(1-x)^{\beta}}$ \;($|x|<1$,\; $\alpha,\beta$ тогтмол). $y'/y$-г олж $y'$-ийг илэрхийл.
+\item Фолиум: $x^3+y^3=6xy$. $(3,3)$ цэг дээр $y'$ ба шүргэгчийн шулууг ол.
+\end{enumerate}
+\newpage
+\section{Семинар}
+\begin{enumerate}
+    \item Дараах функцүүдийн заагдсан эрэмбийн уламжлалыг ол.
+\begin{enumerate}
+  \item $y = x^2 - 3x + 2,\quad y'' = ?$
+  \item $y=1-x^2-x^4, \quad y'''=?$
+  \item $y=(1+x)^6, \quad y'''(2)=?$
+  \item $y=(x^3+1)^8, \quad y'''=?$
+  \item $y=\cos ^2 x, \quad y'''=?$
+  \item $y=\dfrac{1}{1-x}, \quad y^{(5)}=?$
+  \item $y = xe^{x^2},\quad y'' = ?$
+  \item $y = x^3\ln(x),\quad y^{(4)} = ?$
+  \item $y = \ln(x+\sqrt{1+x^2}),\quad y'' = ?$
+  \item $y = \sqrt{1-x^2}\arcsin x,\quad y'' = ?$
+\end{enumerate}
+\item Дараах функцүүдийн $n$ эрэмбийн уламжлалыг ол.
+\begin{enumerate}
+   
+  \item $y = e^{ax}$
+  \item $y = e^{-x}$
+  \item $y = \sin^2x$
+  \item $y = xe^x$
+  \item $y = x\ln x$
+  \item $y = (x^2+x-1)\cos x$
+  \item $y = e^{x}\cos x$
+  \item $y = x^{n-1}e^{\frac{1}{x}}$
+\end{enumerate}
+\item Далд функцийн уламжлал ол.
+\begin{enumerate}
+    \item $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}-1=0$ , $\dfrac{d^2y}{dx^2}$
+    \item $y=\tan(x+y)$ , $\dfrac{d^3y}{dx^3}$
+    \item $y^3+x^3-3axy=0$ , $y''$
+    \item $e^{x+y}-xy=0$ , $y''$
+\end{enumerate}
+\item Параметр функцийн уламжлал ол.
+\begin{enumerate}
+    \item
+    $\begin{cases}
+        x=at^2\\
+        y=bt^3
+    \end{cases}$ , $\dfrac{d^2y}{dx^2}$
+      \item 
+     $ \begin{cases}
+        x=a\cos t\\
+        y=b\sin t
+    \end{cases} , \dfrac{d^3y}{dx^3}$
+      \item 
+      $\begin{cases}
+        x=t-\sin t\\
+        y=1-\cos t
+    \end{cases} , \dfrac{d^2y}{dx^2}$
+      \item 
+      $\begin{cases}
+        x=\ln t\\
+        y=t^2-1
+    \end{cases} , \dfrac{d^3y}{dx^3}$  
+    \item 
+    $\begin{cases}
+        x=e^t\sin t\\
+        y=e^t\cos t
+    \end{cases}$ бол $y''(x+y)^2-2(xy'-y)=0$ биелэхийг батал.
+\end{enumerate}
+\end{enumerate}

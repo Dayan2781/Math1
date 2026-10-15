@@ -4,3 +4,8 @@ logs/
 __pycache__/
 .DS_Store
 ai-proxy.py
+
+# latex/build.sh-ийн гаралт (CI дээр дахин үүсгэнэ)
+latex/_build/
+source/external/lectures/
+.error_schema.log

@@ -28,8 +28,8 @@
    \usepgfplotslibrary{fillbetween}
   \usepackage{tikz}
 </latex-image-preamble>
-  <!-- Brand logo / institutional identity (optional) -->
-  <brandlogo url="https://num.edu.mn" source="logo.png" />
+  <!-- Brand logo: logo.png файлыг source/images/ дотор хийгээд доорх мөрийг идэвхжүүлнэ -->
+  <!-- <brandlogo url="https://num.edu.mn" source="logo.png" /> -->
 
   <!-- Theme color (Active Calculus uses a friendly green/gold palette) -->
   <document-id edition="first">math-anal-1</document-id>
@@ -46,4 +46,19 @@
   <rename element="example">Жишээ</rename>
   <rename element="solution">Бодолт</rename>
   <rename element="corollary">Мөрдөлгөө</rename>
+  <rename element="section">Хэсэг</rename>
+  <rename element="subsection">Дэд хэсэг</rename>
+  <rename element="exercises">Дасгалууд</rename>
+  <rename element="exercise">Дасгал</rename>
+  <rename element="hint">Заавар</rename>
+  <rename element="answer">Хариу</rename>
+  <rename element="proof">Баталгаа</rename>
+  <rename element="remark">Тэмдэглэл</rename>
+  <rename element="note">Санамж</rename>
+  <rename element="lemma">Лемма</rename>
+  <rename element="proposition">Өгүүлбэр</rename>
+  <rename element="figure">Зураг</rename>
+  <rename element="table">Хүснэгт</rename>
+  <rename element="frontmatter">Өмнөх хэсэг</rename>
+  <rename element="backmatter">Хавсралт</rename>
 </docinfo>

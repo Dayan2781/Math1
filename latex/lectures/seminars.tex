@@ -1,0 +1,1111 @@
+\chapter{Семинарууд}
+\section{Семинар 1}
+\begin{enumerate}
+  \item Дараах өгүүлбэрүүдийн аль нь хэллэг вэ? Хэллэг бол үнэнийг тогтоо: "7 нь тэгш"; $5<9$; "Хаалгаа хаа!"; $2+3=6$.
+  \item $P:$ $"3<5"$, $Q:$ "7 нь тэгш". $P\land Q$, $P\lor Q$, $\lnot P$, $P\Rightarrow Q$, $Q\Rightarrow P$-ийн үнэн худалыг тодорхойл.
+  \item Үнэний хүснэгтээр шалга: $(P\Rightarrow Q)\Leftrightarrow(\lnot P\lor Q)$.
+  \item Де Морганы хууль: $\lnot(P\land Q)\Leftrightarrow(\lnot P\lor\lnot Q)$-ийг хүснэгтээр батал.
+  \item $F= P\land\lnot P$ хэллэг зөрчил байхыг батал.
+
+  \item Батал: $P\land(P\lor Q)\Leftrightarrow P$ (absorption).
+  \item $(P\Rightarrow Q)\lor(Q\Rightarrow P)$ нь тавтологи мөн эсэхийг тогтоо.
+  \item $P:$ ``$n$ тэгш", $Q:$ ``$n^2$ 4-т хуваагдана". $P\Rightarrow Q$ хэллэгийг $n=6$ , $n=7$ ба $n=10$ тохиолдолд шалга. $P\Leftrightarrow Q$ теоремийг батал.
+  \item $x>2 \Rightarrow x^2>4$ хэллэгийг монгол хэлээр бич.
+  \item Үнэн хүснэгтээр шалга: $(P\land(Q\lor R))\Leftrightarrow((P\land Q)\lor(P\land R))$ (distributive).
+  \item " Хэрэв тоо 6-д хуваагдвал 3-д хуваагдана" хэллэгийн урвуу хэллэгийг бичээд үнэн эсэхийг дүгнэ.
+  
+\end{enumerate}
+\newpage
+\section{Семинар 2}
+\begin{enumerate}
+  \item Дараахыг логик хэлбэрээр бичиж үнэл: $x\in A\cup B$, $x\in A\cap B$, $x\in A\setminus B$.
+  \item Батал: $A\subseteq B\;\Leftrightarrow\;A\cap B=A$.
+  \item Батал: $A\subseteq B\;\Leftrightarrow\;A\cup B=B$.
+  \item $A=\{x\in\R\mid x^3+2x^2-x-2>0\}$ , $B=\{x\in\R\mid x^2+ax+b\leq 0\}$ байг. $A\cup B=\{x\in\R\mid x+2>0\}$,  $A\cap B=\{x\in\R\mid 1<x\leq 3\}$ байх $a,b$ бүх утгийг ол.
+  \item $U=\mathbb{Z}$, $A=\{\text{тэгш}\}$, $B=\{\text{3-т хуваагддаг}\}$. $A^c$, $B^c$, $A\triangle B$-г тодорхойл. Энд $A\triangle B:= (A\setminus B)\cup (B\setminus A)$.
+  \item $|A|=m$, $|B|=n$, $A\cap B=\emptyset$. $|A\cup B|$ хэд вэ?
+  \item $A\subseteq B\subseteq C$. Батал: $C\setminus B\subseteq C\setminus A$.
+  \item $A\times(B\cup C)=(A\times B)\cup(A\times C)$-г батал.
+  \item $A\times B=B\times A$ байх нөхцөлийг ол.
+  \item $X=\{a,b\}$, $Y=\{1,2,3\}$. $X\to Y$ бүх буулгалтын тоог ол.
+  \item $f:X\to Y$ иньектив, $g:Y\to Z$ иньектив бол $g\circ f$ иньектив гэдгийг батал.
+  \item $f:X\to Y$ сурьектив, $g:Y\to Z$ сурьектив бол $g\circ f$ сурьектив гэдгийг батал.
+  \item $f:\mathbb{R}\to\mathbb{R}$, $f(x)=x^3-3x$. Иньектив, сурьектив эсэхийг тогтоо.
+  \item $f:\mathbb{R}\to\mathbb{R}$, $f(x)=x^2+1$. Иньектив, сурьектив эсэхийг тогтоо. Дүрийг ол.
+  \item $f:[0,\pi]\to[-1,1]$, $f(x)=\cos x$. Урвууг ол.
+  \item $g:[-\tfrac{\pi}{2},\tfrac{\pi}{2}]\to[-1,1]$, $g(x)=\sin x$. Урвууг ол.
+  \item $h(x)=\dfrac{x}{1+x^2}$. Тэгш/сондгой эсэхийг тогтоо.
+  \item $g(x)=\dfrac{f(x)+f(-x)}{2}$ бол $g(x)$ тэгш функц байхыг батал.
+  \item $c_n=\dfrac{(-1)^n}{n}$. Монотон эсэх? Дээр/доороос зааглагдсан эсэх?
+  \item Дараалал $a_1=1$, $a_{n+1}=a_n+2$. $a_n$-ийг ол.
+  \item Дараалал $b_1=2$, $b_{n+1}=3b_n$. $b_n$-ийг ол; монотон эсэхийг дүгнэ.
+\end{enumerate}
+\newpage
+\section{Семинар 3}
+Сануулах тодорхойлолтууд
+\begin{enumerate}
+  \item $n+S(m)=S(n+m)$ .
+  \item $n+1=S(n)$
+  \item $n\cdot 1=n$, $1\cdot n=n$.
+  \item $n\cdot S(m)=n\cdot m+n$.
+  \item $(a+b)+c=a+(b+c)$.
+  \item $a\cdot(b+c)=a\cdot b+a\cdot c$.
+  \item $a\le b\Rightarrow a+c\le b+c; \Rightarrow a<b\Rightarrow a\cdot c<b\cdot c$.
+  \item $a\leq b$ ба $b\leq a$ бол $a=b$.
+  \item $a^1=a$, $a^{S(m)}=a^m\cdot a$.
+  \item $\forall n\,\, n\ne 1\Rightarrow\exists m\,\,(n=S(m))$ (залгамжлагдсан байдал).
+  \end{enumerate}
+  
+  Дараах бодлогуудыг А1-А5, N1, N2, U1, U2 ба эрэмбийн тодорхойлолт, батласан теоремүүд ашиглан батал.
+  \begin{enumerate}
+  \item $2+3\neq 6$
+  \item $2\cdot 4=8$
+  \item $n\cdot 3=n+n+n$
+  \item $a<b \Rightarrow$ $S(a)\leq b$
+  \item $a<b \Rightarrow$ $a+c\leq b+c$
+  \item $a<b\Leftrightarrow a\cdot c< b\cdot c$
+  \item $a^n\geq 1$ 
+  \item $a^{m+n}=a^m\cdot a^n$-г $n$ дээр индукцлэн батал.
+  \item $a^{mn}=(a^m)^n$-г $n$ дээр индукцлэн батал.
+  \item $1+2+\cdots+n=\dfrac{n(n+1)}{2}$ батал. 
+  \item $1^2+2^2+\cdots+n^2=\dfrac{n(n+1)(2n+1)}{6}$ батал. 
+  \item $a,b$ нь дурын тоо, $n\in\mathbb{N}$ байг. 
+\[
+(a+b)^n=\sum_{k=0}^{n}\binom{n}{k}\,a^{\,n-k}b^{\,k},
+\qquad
+\binom{n}{k}=\frac{n!}{k!(n-k)!}\ (0\le k\le n).
+\] индукцээр батал. 
+  \item $a,b$ нь бодит тоо , $n\in\mathbb{N}$ байг. Дараах тэнцэтгэлийг бичээд батал:
+\[
+a^n-b^n=(a-b)(\sum_{k=0}^{n-1} a^{\,n-1-k} b^{\,k}).
+\]
+Мөн $n$ сондгой үед
+\[
+a^n+b^n=(a+b)(\sum_{k=0}^{n-1}(-1)^k a^{\,n-1-k} b^{\,k})
+\]
+байдгийг батал.
+\item $a>b>0$ ба $n\in\mathbb{N}$ байг. 
+\[
+a^n-b^n \;>\; n\,b^{\,n-1}(a-b).
+\]  батал.
+\end{enumerate}
+\newpage
+\section{Семинар 4}
+\begin{enumerate}
+  \item $f(n)=n^2+1$ гэж өгөгдсөн дарааллын эхний 5 гишүүнийг ол.
+  
+  \item Дараах дараалал өгөгдөв:
+  \[
+    a_1=2,\quad a_{n+1}=a_n+5.
+  \]
+  \begin{enumerate}
+    \item $a_5$–г ол.
+    \item $a_n$–ийн ерөнхий томъёог ол.
+  \end{enumerate}
+  
+  \item Дараах дараалал өгөгдөв:
+  \[
+    a_n = \frac{3n+1}{2n+5}.
+  \]
+  \begin{enumerate}
+    \item $a_1$, $a_2$, $a_3$–ыг ол.
+    \item $a_n$ өсдөг эсэхийг шалга.
+  \end{enumerate}  
+  \item $\displaystyle a_n = \frac{1}{n}$ дараалал буурахыг батал. Доороосоо болон дээрээсээ зааглагдсан эсэхийг тогтоо.
+\\
+Өмнөх семинар дээр биномын томьёо баталсан. 
+\begin{theorem}[Биномын томъёо]
+Хэрвээ $n$ нь натурал тоо бол $(a + b)^n$ илэрхийллийг дараах байдлаар задлаж болно:
+\[
+(a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k
+\]
+энд $\binom{n}{k}$ нь биномиаль коэффициент бөгөөд:
+\[
+\binom{n}{k} = \frac{n!}{k!(n-k)!}
+\]
+гэж тодорхойлогдоно.
+\end{theorem}
+
+\begin{example}
+Жишээ болгон $(a + b)^3$-ийг задлая:
+\[
+(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3
+\]
+\end{example}
+\item $(1 + x)^5$–ийг задалж, $x^3$–ийн өмнөх коэффициентийг ол.
+
+\item $(x^2 + 3x)^3$–ийг задлаад $x^4$–ийн өмнөх гишүүнийг ол.
+
+\item $x^4 + x^3 - x^2 + x - 2$–ийг үржвэр хэлбэрт бич.\\
+Бид дараах томьёонуудыг мэддэг билээ.
+\[\sin^2\alpha+\cos^2\alpha=1 \]
+\[
+\sin(\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta\]
+\[\cos(\alpha \pm \beta) = \cos \alpha \cos \beta \mp \sin \alpha \sin \beta
+\]
+\item 
+\begin{enumerate}
+\item $\sin 2x = 2 \sin x \cos x$ томьёог батал.
+\item $\cos 2x = 1 - 2 \sin^2 x$ томьёог батал.
+\item $\cos(\alpha - \beta)$–г илэрхийлж, $\alpha = 60^\circ$, $\beta = 30^\circ$ үед бодож шалга.
+\item $\tan(2x)$–ийг $\tan x$–ээр илэрхийл.
+\end{enumerate}
+\end{enumerate}
+\newpage
+\section{Семинар 5}
+\begin{multicols}{2}
+\begin{enumerate}
+\item Тригонометрийн урвуу функцтэй холбоотой бодлого
+\begin{enumerate}
+\item $\arcsin(\frac{1}{2})$–ийн утгыг ол.
+\item $\arccos(\frac{1}{2})$–ийн утгыг ол.
+\item $\arctan(1)$–ийн утгыг ол.
+\item $\arcsin x + \arccos x = \frac{\pi}{2}$–г батал.
+\end{enumerate}
+\item  Илтгэгч ба логарифм функцтэй холбоотой бодлого
+\begin{enumerate}
+\item $\ln(e^x) = x$–г батал.
+\item $e^{\ln x} = x$–г батал.
+\item $\ln(\sqrt{x}) = \frac{1}{2}\ln x$–г батал.
+\end{enumerate}
+\item Давхар функцтэй холбоотой бодлого
+Дараах функцүүдийг $f = g \circ h$ хэлбэрээр бич.
+\begin{enumerate}
+\item $f(x) = |x^2 - 1|$ 
+\item $f(x) = \sqrt{1 - x^2}$ 
+\item $f(x) = e^{-x^2}$
+\item $f(x) = \cos(2x)$ 
+\item $f(x) = (3x - 1)^4$
+\item $f(x) = \ln(x^2 + 1)$ 
+\item $f(x) = \tan^{-1}(2x)$ 
+\item $f(x) = \sqrt{\sin x}$
+\end{enumerate}
+\item Дараах функцүүдийг $f = g \circ h\circ s$ хэлбэрээр бич.
+\begin{enumerate}
+\item $f(x) = \frac{1}{\sqrt{1 - x^2}}$
+\item $f(x) = \frac{1}{1 + e^{-x}}$ 
+\end{enumerate}
+\item $f(x) = \dfrac{x^2 - 1}{x + 1}$ функцийн графикийг зур
+\item $g(x) = \log_2(x - 3)$ функцийн тодорхойлогдох мужийг ол
+\item $h(x) = \arccos(x)$ функцийн утгийн мужийг бич
+\item $s(x) = \sin x - \cos x$ функцийг $a\sin (x+\varphi)$ хэлбэрт бичиж утгийн муж ол.
+\item Дараах функцийн тодорхойлогдох мужийг ол.
+\begin{enumerate}
+  \item $y = \log_{x+1}(x^2 - 3x + 2)$ 
+  \item $y = \log_6\log_{0.5}(4-x)$ 
+  \item $y = \sqrt{5x^2-3x+23}+\lg(x^2 - 10x +16)+\frac{1}{x}$
+  \item $y = \sqrt{\log_{0.5}\log_{3}\frac{x+1}{x-1}}$ 
+  \item $ y=\sqrt{(x^2-3x-10)\,\lg|x-3|} $
+  \item $y = \sqrt{\log_{5-x}(x^2 -9)}$ 
+  \item $y = \arccos\!\left(\dfrac{\mid x-1\mid }{x-1} + \dfrac{\mid x-2\mid }{x-2} + \dfrac{\mid x-3\mid }{x-3}\right)$
+  \item $y = \arcsin\!\left(\dfrac{\tfrac{x}{3} - \tfrac{3}{x}}{2}\right)$
+  \item $y = \lg(\arcsin(\lg x))$
+  \item $f(x) = \sqrt{\arcsin x - \arccos x}$
+  \item $f(x) = \sqrt{\arccos\!\left(\dfrac{3x+1}{5}\right) - \arcsin\!\left(\dfrac{x+2}{5}\right)}$
+  \item $f(x) = \sqrt{\dfrac{5\pi}{6} - \arcsin(2x) - \arccos(6x-2)}$
+  \item $f(x) = \sqrt{\dfrac{3\pi}{4} - \arccos x - \arccos(x\sqrt{2}) - \arccos(x\sqrt{3})}$
+  \item $f(x) = \sqrt{\sin(\cos x)}$
+  \item $f(x) = \sqrt{\sin(\sqrt{x})}$
+  \item $f(x) = \sqrt{\tan^2 x - (\sqrt{3}+1)\tan x + \sqrt{3}}$
+\end{enumerate}
+\item Дараах функцүүдийн утгийн муж ол.
+\begin{enumerate}
+    \item $f(x) = \sqrt{\dfrac{\sin 3x \cos\!\left(2x - \tfrac{\pi}{6}\right)}{\sin 2x}}$
+  \item $f(x) = \sqrt{\cos 3x + \sin x \sin 2x}$
+  \item $f(x) = \sqrt{\sin 5x - \cos 3x}$
+  \item $f(x) = \sqrt{\dfrac{\cos 3x}{\sin 3x - 2\sin x}} - \tan x$
+  \item $f(x) = \cos^2 x + \cos x + 3$
+  \item $f(x) = \sin^2 x - 4\sin x + 3$
+  \item $f(x) = \sqrt{8 - 2x - x^2}$
+  \item $f(x) = \sqrt{2x - 1 - x^2}$
+  \item $f(x) = 2^{x^2+4x+5}$
+  \item $f(x) = \log_{3}(5 + 4x - x^2)$
+  \item $f(x) = \sqrt{2 \log x - (\log x)^2}$
+  \item $f(x) = \sin x - 5\cos x$
+  \item $f(x) = \dfrac{\sin x - \cos x}{\sin x + \cos x}$
+  \item $f(x) = \log_{2}(\cos x + \sin^2 x)$
+  \item $f(x) = 1 - \sqrt{9 - \sqrt{2x^2 + 6\sqrt{2x} + 9}}$
+  \item $f(x) =
+    \begin{cases}
+      2x^2 + 8x + 6, & x < -1, \\
+      3\sqrt{x+1}, & x \geq -1
+    \end{cases}$
+  \item $f(x) =
+    \begin{cases}
+      \dfrac{8}{x}, & x \leq -2, \\
+      x^3 + 4, & -2 < x \leq 0, \\
+      \dfrac{4}{x^2 + 1}, & x > 0
+    \end{cases}$
+  \item $f(x) = \dfrac{x^4 + 6x^3 - 27x - 162}{x^2 + 3x - 18}$
+\end{enumerate}
+\item Урвуу функц ол.
+\begin{enumerate}
+    \item $y = x|x| + 2x, \quad x \in \mathbb{R}.$
+  \item $y = \dfrac{x^2 + 1}{2x}, \quad x \in [1; +\infty).$
+  \item $y = \dfrac{x^2 + 1}{2x}, \quad x \in [0; 1].$
+  \item $y = x - \sqrt{x^2 - 1}, \quad x \in (-\infty; -1].$
+  \item $y = 2^{x^2 - 2x}, \quad x \in (-\infty; 1].$
+  \item $y = 1 - e^{\tfrac{1-x}{1+x}}, \quad x \in \mathbb{R} \setminus \{-1\}.$
+  \item $y = \dfrac{3^x - 2^x}{3^x + 2^x}, \quad x \in \mathbb{R}.$
+  \item $y = \log_{2}\!\left(x + \sqrt{x^2+1}\right), \quad x \in \mathbb{R}.$
+  \item $y = \sin x, \quad x \in \left[-\tfrac{3\pi}{2}, -\tfrac{\pi}{2}\right].$
+  \item $y = \sin x, \quad x \in \left[\tfrac{\pi}{2}, \tfrac{3\pi}{2}\right].$
+  \item $y = \cos x, \quad x \in [-\pi, 0].$
+  \item $y = \cos x, \quad x \in [2\pi, 3\pi].$
+\end{enumerate}
+\item Дараах функцүүдийн график дүрсэл.
+\begin{enumerate}
+    \item $f(x) =
+    \begin{cases}
+      1, & x > 0, \\
+     0, & x =0, \\
+      -1, & x < 0
+    \end{cases}$
+     \item $f(x) =
+    \begin{cases}
+      x+1, & x > 0, \\
+     x-1, & -1\leq x < 0, \\
+      x^2-1, & x < -1
+    \end{cases}$
+    \item $f(x)=\sqrt{x^2+2x+1}+\sqrt{x^2-4x+4}$
+    \item $f(x)=(x-1)(1-x^4)(x+2)^2$
+    \item $f(x)=\dfrac{(x-4)(x^2-9)}{x^2-5x+6}$
+    \item $f(x)=\sin^4x-\cos^4 x$
+\end{enumerate}
+\end{enumerate}
+\end{multicols}
+\newpage
+\section{Семинар 6}
+\begin{description}
+\item[A] 
+\begin{enumerate}
+    \item $f(x)=x^2+x$ бол $|f(x)-6|<a$ тэнцэтгэл бишийг $a=1, 0.1, \varepsilon$ үед бод. Аль ч тохиолдолд $x=2$ тоо шийдийн олонлогт харяалагдахыг батал.\\
+   $\lim\limits_{x\to 2}f(x)=6$ батал.
+    \item $f(x)=\sin x$ бол $\lim\limits_{x\to +\infty}f(x)$ ол.
+    \item $\lim\limits_{x\to 3-}\{x\}=1$ , $\lim\limits_{x\to 3+}\{x\}=0$ харуул. $\lim\limits_{x\to 3}\{x\}$ хязгаар оршин байх уу?
+    \item $\lim\limits_{x\to -\infty}x^2$ бод.
+\end{enumerate}
+\item[B]
+\begin{enumerate}
+\begin{multicols}{2}
+\item $\lim\limits _{x\to 1-}\dfrac{x^2+x-2}{x^2-1}$ хязгаар бод.
+\item $\lim\limits _{x\to 1+}\dfrac{x^2+x-2}{x^2-1}$ хязгаар бод.
+\item $\lim\limits _{x\to 1}\dfrac{x^2+x-2}{x^2-1}$ хязгаар бод.
+\item $\lim\limits _{x\to -1}\dfrac{x^2+x-2}{x^2-1}$ хязгаар бод.
+\item $\lim\limits _{x\to 0} \dfrac{x^2-1}{2x^2-x-1}$ хязгаар бод.
+\item $\lim\limits _{x\to 1} \dfrac{x^2-1}{2x^2-x-1}$ хязгаар бод.
+\item $\lim\limits _{x\to +\infty} \dfrac{x^2-1}{2x^2-x-1}$ хязгаар бод.
+\item $\lim\limits _{x\to 0} \dfrac{(1+x)^5-(1+5x)}{x^2+x}$ хязгаар бод.
+\item $(m,n\in\mathbb{N})$ бол $\lim\limits _{x\to 0} \dfrac{(1+mx)^n-(1+nx)^m}{x^2}$ хязгаар бод.
+\item $\lim\limits _{x\to 3} \dfrac{x^2-5x+6}{x^2-8x+15}$  хязгаар бод.
+\item $\lim\limits _{x\to 1} \dfrac{x^4-3x+2}{x^5-4x+3}$  хязгаар бод.
+\item $\lim\limits _{x\to 1} \dfrac{x^{100}-2x+1}{x^{50}-2x+1}$  хязгаар бод.
+\item $\lim\limits _{x\to a} \dfrac{\sqrt{x}-\sqrt{a}+\sqrt{x-a}}{\sqrt{x^2-a^2}}$ хязгаар бод.
+\item $\lim\limits _{x\to-2} \dfrac{\sqrt[3]{x-2}+2}{x^3+8}$ хязгаар бод.
+\item $\lim\limits _{x\to 7} \dfrac{\sqrt{x+2}-\sqrt[3]{x+20}}{\sqrt[4]{x+9}-2}$ хязгаар бод.
+\item $\lim\limits _{x\to +\infty} \sqrt{x+\sqrt{x+\sqrt{x}}}-\sqrt{x}$ хязгаар бод.
+\item $\lim\limits _{x\to +\infty} \sqrt[3]{x^3+3x^2}-\sqrt{x^2-2x}$ хязгаар бод.  
+\end{multicols}
+\end{enumerate}
+\item[C] $0<x<\dfrac{\pi}{2}$ бол $\sin x<x<\tan x$ батал.
+\item[D] Зааглагдсан, монотон дараалал хязгаартай байхыг батал.
+\end{description}
+\newpage
+\section{Семинар 7}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\displaystyle \lim_{x\to -1} \frac{x^{2}-1}{x^{2}+3x+2}.$
+\item $\displaystyle \lim_{x\to 5} \frac{x^{2}-25}{x-5}.$
+\item $\displaystyle \lim_{x\to 2} \frac{x^{2}-5x+6}{x^{2}-12x+20}.$
+\item $\displaystyle \lim_{x\to 1} \frac{2x^{3}-2x^{2}+x-1}{x^{3}-x^{2}+3x-3}.$
+\item $\displaystyle \lim_{x\to -1} \frac{2x^{3}+2x^{2}+3x+3}{x^{3}+x^{2}+x+1}.$
+\item $\displaystyle \lim_{x\to -3} \frac{x^{3}+5x^{2}+3x-9}{x^{3}+8x^{2}+21x+18}.$
+\item $\displaystyle \lim_{x\to 0} \frac{x^{4}+x^{3}}{x^{4}-2x^{3}}.$
+\item $\displaystyle \lim_{x\to a} \frac{x^{2}-(a+1)x+a}{x^{3}-a^{3}}.$
+\item $\displaystyle \lim_{x\to 1} \Big(\frac{1}{1-x}-\frac{2}{1-x^{2}}\Big).$
+\item $\displaystyle \lim_{x\to 0} \frac{\sqrt{x^{2}+1}-1}{\sqrt{x^{2}+16}-4}.$
+\item $\displaystyle \lim_{x\to 0} \frac{\sqrt{1+x}-\sqrt{1-x}}{x}.$
+\item $\displaystyle \lim_{h\to 0} \frac{\sqrt{x+h}-\sqrt{x}}{h}.$
+\item $\displaystyle \lim_{x\to \infty} \big(\sqrt{x^{2}+1}-\sqrt{x^{2}-1}\big).$
+\item $\displaystyle \lim_{x\to \pm\infty} (\sqrt{x^{2}+1}-x).$
+\item $\displaystyle \lim_{x\to +\infty} x\, (\sqrt{x^{2}+1}-x).$
+\item $\displaystyle \lim_{x\to 0} \frac{\sqrt[3]{1+x}-\sqrt[3]{1-x}}{x}.$
+\item $\displaystyle \lim_{h\to 0} \frac{\sqrt[3]{x+h}-\sqrt[3]{x}}{h}.$
+\item $\displaystyle \lim_{x\to -8} \frac{\sqrt{1-x}-3}{2+\sqrt[3]{x}}.$
+\item $\displaystyle \lim_{x\to +\infty} \big(\sqrt[3]{x^{3}+x^{2}+1}-\sqrt[3]{x^{3}-x^{2}+1}\big).$
+\item $\displaystyle \lim_{x\to \infty} \frac{1-3x}{2x+3}.$
+\item $\displaystyle \lim_{x\to \infty} \frac{10x+5}{0.01\,x^{2}-6x}.$
+\item $\displaystyle \lim_{x\to \infty} \frac{x^{3}-5x+2}{x+10^{10}}.$
+\item $\displaystyle \lim_{x\to \infty} \frac{2x^{2}-3x-4}{\sqrt{x^{4}+1}}.$
+\item $\displaystyle \lim_{x\to \infty} \frac{\sqrt{x}}{\sqrt{x+\sqrt{x}+\sqrt[4]{x}}}.$
+\item $\displaystyle \lim_{x\to \infty} \big[\sqrt[3]{(x+1)^{2}}-\sqrt[3]{(x-1)^{2}}\big].$
+\item $\displaystyle \lim_{x\to \infty} \frac{(x-1)^{3}}{2x^{3}+3x+1}.$
+\item $\displaystyle \lim_{x\to \infty} \frac{x^{2}-5x+1}{3x+7}.$
+\item $\displaystyle \lim_{x\to \infty} \frac{x}{\sqrt[3]{x^{3}+9}}.$
+\item $\displaystyle \lim_{x\to \infty} \frac{\sqrt[3]{x^{2}+1}}{x+1}.$
+\item $\displaystyle \lim_{x\to 0}\frac{\sin 3x}{x}$
+\item $\displaystyle \lim_{x\to 0}\frac{\tan 5x}{\sin 2x}$
+\item $\displaystyle \lim_{x\to 0}\frac{\tan 2x}{\tan 3x}$
+\item $\displaystyle \lim_{x\to 0}\frac{\sin 4x}{\tan 3x}$
+\item $\displaystyle \lim_{x\to 0}\frac{\tan 5x}{x}$
+\item $\displaystyle \lim_{x\to 0}\frac{1-\cos x}{x^{2}}$
+\item $\displaystyle \lim_{x\to 0}\frac{\tan x-\sin x}{x^{3}}$
+\item $\displaystyle \lim_{x\to 0}\frac{1-\cos 2x}{x^{2}}$
+\item $\displaystyle \lim_{x\to 0}\frac{\ln(1+x)}{x}$
+\item $\displaystyle \lim_{x\to 0}\frac{\ln(1+2x)}{x}$
+\item $\displaystyle \lim_{x\to 0}\frac{\ln(1+x)-x}{x^{3}}$
+\item $\displaystyle \lim_{x\to 0}\frac{e^{x}-1-x}{x^{2}}$
+\item $\displaystyle \lim_{x\to 0}\frac{(1+x)^{a}-(1+x)^{b}}{x}$
+\item $\displaystyle \lim_{x\to 0}\frac{(1+x)^{n}-1}{x}$
+\item $\displaystyle \lim_{x\to 0}\frac{(1+7x)^{9}-1-63x}{x^{2}}$
+\item $\displaystyle \lim_{x\to 0}\frac{e^{3x}-1}{x+x^{2}}$
+\end{enumerate}
+\end{multicols}
+\newpage
+\section{Семинар 8}
+\begin{enumerate}
+    \item Функц $f(x)$ дараах байдлаар өгөгдөв:
+\[
+f(x)=
+\begin{cases}
+\dfrac{\sin x}{x}, & x\ne 0,\\[1ex]
+c, & x=0.
+\end{cases}
+\]
+\begin{enumerate}[label=\alph*)]
+    \item $f(x)$ функц $x=\pi$ цэг дээр тасралттай  байхаар $c$ олдох уу.
+    \item $c=2$ үед $f(x)$ тасралтгүй байх уу?
+    \item $f(x)$ тасралтгүй функц байхын тулд $c$-ийн утгыг ол.
+\end{enumerate}
+\item Доорх $y=f(x)$ графикийг ашиглан (a)–(f) цэгүүдэд тасралттай эсэхийг тогтоож, тасралтын төрлийг ангил.
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+  % Axes
+  \draw[->] (-3.8,0)--(3.6,0) node[right] {$x$};
+  \draw[->] (0,-2.5)--(0,3.2) node[above] {$y$};
+
+  % Ticks
+  \foreach \x/\lab in {-2/{$-2$}, -1/{$-1$}, 0/{$0$}, 1/{$1$}, 2/{$2$}, 3/{$3$}}
+    \draw (\x,0.08)--(\x,-0.08) node[below=3pt] {\lab};
+
+  % Asymptotes
+  \draw[dashed] (-2,-2.5)--(-2,3.2);
+  \draw[dashed] (2,-2.5)--(2,3.2);
+
+  % Left branch: tends to +infty as x->-2
+  \draw[thick,smooth] plot coordinates {
+    (-3.6,0.1) (-3.0,0.25) (-2.6,0.8) (-2.3,1.5) (-2.1,2.5)
+  };
+
+  % Middle part: hole at (0,2), defined f(0)=-1
+  \draw[thick,smooth] plot coordinates {
+    (-1.9,3.8) (-1.4,1.0) (-1.0,0.2) (-0.4,1.7) (0,2.0) (0.2,1.9) (0.4,1.5) (0.8,1.0) (1,0)
+  };
+
+  % f(0) defined value
+  \fill (0,-1) circle (2pt);
+  \draw[thick,fill=white] (0,2) circle (2pt);
+
+  % Right of x=1: jump up to 2 (right-hand limit)
+  \draw[thick,fill=black] (1,0) circle (2pt); % f(1)=0
+  \draw[thick,fill=white] (1,2) circle (2pt); % limit from right is 2
+
+
+  % Branch between x=1+ and 2-
+  \draw[thick,smooth] plot coordinates {
+    (1.05,2) (1.4,1.5) (1.8,0.2) (1.95,-1.6)
+  };
+
+  % Right of x=2: tends to -∞ from left
+  \draw[dashed,gray] (1.98,-2.3)--(2,-2.5);
+
+  % Right branch (x>2)
+  \draw[thick,smooth] plot coordinates {
+    (2.05,2.5) (2.4,1.3) (3.2,0.4)
+  };
+
+\end{tikzpicture}
+\end{center}
+
+(a) $x=-2$, \quad (b) $x=-1$, \quad (c) $x=0$, \quad (d) $x=1$, \quad (e) $x=2$, \quad (f) $x=3$.
+\item Тасралтгүй болохыг Th.\,8.1,\,8.2 ашиглан батал.
+\begin{enumerate}[label=\alph*)]
+  \item $f(x)=\dfrac{x^{2}+3\cos x - x}{e^{x}}$.
+  \item $f(x)=\sin\!\big(\cos(e^{x})\big)$.
+\end{enumerate}
+\item Функц тасралтгүй байхаар параметрүүдийг ол.
+\begin{enumerate}[label=\alph*)]
+  \item $f(x)=
+  \begin{cases}
+    x+1, & x\le 2,\\
+    a x^{2}+3x-4, & x>2.
+  \end{cases}$
+  \item $f(x)=
+  \begin{cases}
+    x\sin x, & x<\pi,\\
+    e^{x}+c, & x\ge \pi.
+  \end{cases}$
+\end{enumerate}
+\item $y=f(x)$ функц $[a,b]$ завсар дээр тасралтгүй байг.  
+$f(a)=m,\quad f(b)=M$ гэж өгөгдөв.  
+Хэрэв $m \le c \le M$ бол $f(x)=c$ тэгшитгэл дор хаяж нэг шийдтэй болохыг батал.
+\item $y=f(x)$ функц $[a,b]$ завсар дээр тасралтгүй байг.  
+ХБУ$=m$,  ХИУ$=M$ гэж өгөгдөв.  
+Хэрэв $m \le c \le M$ бол $f(x)=c$ тэгшитгэл дор хаяж нэг шийдтэй болохыг батал.
+\item $h=30$ өндөртэй байшин дээрээс хэвтээ чиглэлтэй $\alpha$ өнцөг үүсгэн шидсэн чулууны $t$ хугацааны дараах өндөр $h(t)=30+t-2t^2$ байв.
+\begin{enumerate}[label=(\alph*)]
+  \item $2\leq t\leq 3$ үеийн унах дундаж хурдыг ол. 
+    \item $2\leq t\leq 4$ үеийн унах дундаж хурдыг ол.
+    \item $2\leq t\leq 2.1$ үеийн унах дундаж хурдыг ол.
+    \item $t=2$ үеийн унах эгшин зуурын хурдыг ол.
+    \item $\alpha$ өнцөгийг ол.
+\end{enumerate}
+\item Уламжлалын тодорхойлолтын дагуу хязгаар ашиглан $x=c$ дээрх уламжлалыг бод.
+\begin{enumerate}[label=(\alph*)]
+  \item $y = x^{2} - 2x$ , $c=2$
+  \item $y = \dfrac{1}{x}$  , $c=0$
+  \item $y = x^{3} - 17x$ , $c=1$
+  \item $y = \dfrac{2}{1 + x^{2}}$  , $c=-1$
+  \item $y = \sqrt{x}$  , $c=9$
+  \item $y = \dfrac{1}{\sqrt{x}}$  , $c=4$
+\end{enumerate}
+\item 
+Дараах функц $x=0$ цэг дээр дифференциалчлагдах уу.
+\begin{enumerate}[label=(\alph*)]
+  \item $f(x) = x|x|.$
+  \item $g(x) = x\sqrt{|x|}.$
+  \item $h(x) = x + |x|.$
+  \item $s(x) = x^{2}\sin\dfrac{\pi}{x}, \quad s(0)=0.$
+\end{enumerate}
+\end{enumerate}
+\newpage
+\section{Семинар 9}
+Дараах функцүүдийн уламжлалыг ол.
+\begin{multicols}{2}
+\begin{enumerate}
+  \item $y = 3x^2 - 5x + 1$
+  \item $y = x^4 - \tfrac{1}{3}x^3 + 2.5x - 0.1$
+  \item $y = \sqrt[3]{x} + 3\sqrt{2}$
+  \item $y = \cos \tfrac{\pi}{3}$
+  \item $y = \dfrac{x^2}{\sqrt{x}} - \sqrt{x}$
+  \item $y = \dfrac{x^2 + 3x - 1}{x - 3}$
+  \item $y = \dfrac{t^2 - 5t - 1}{t^3}$
+  \item $y = (\sqrt{x} + 1)\left(\dfrac{1}{\sqrt{x}} - 1\right)$
+  \item $y = (x^2 - 1)(x^2 - 4)(x^2 - 9)$
+  \item $y = \dfrac{x + 1}{x - 1}$
+  \item $y = \dfrac{x}{x^2 + 1}$
+  \item $y = \dfrac{1 - x^3}{1 + x^3}$
+  \item $y = \dfrac{1}{x + 2} - \dfrac{3}{x^2 + 1}$
+  \item $y = \sin x + \cos x$
+  \item $y = x \sin x + \cos x$
+  \item $y = \tan x + \cot x$
+  \item $y = \dfrac{x \sin x}{1 + \cos x}$
+  \item $y = 2^x$
+  \item $y = -\dfrac{1}{3^x}$
+  \item $y = \dfrac{x}{4^x}$
+  \item $y = e^x + x e$
+  \item $y = -x^2 \log_2 x$
+  \item $y = x \ln x$
+  \item $y = \dfrac{1}{\ln x}$
+  \item $y = -x \arctan x$
+  \item $y = (\arctan x)^2$
+  \item $y = \dfrac{\arccos x}{x}$
+  \item $y = (1 + 2x)^{30}$
+  \item $y = (1 - x^2)^{20}$
+  \item $y = (5x^3 + x^2 - 4)^5$
+  \item $y = \dfrac{1 + \sqrt{x}}{1 + \sqrt{2x}}$
+  \item $y = 3 \sin(3x + 5)$
+  \item $y = (x - a)(x - b)(x - c)(x - d)$
+  \item $y = (x^2 + 1)^4$
+  \item $y = (1 - x)^{20}$
+  \item $y = (1 + 2x)^{30}$
+  \item $y = (1 - x^2)^{10}$
+  \item $y = (5x^3 + x^2 - 4)^5$
+  \item $y = (x^3 - x)^6$
+  \item $y = \left(7x^2 - \dfrac{4}{x} + 6\right)^6$
+  \item $s = \left(t^3 - \dfrac{1}{t^3} + 3\right)^4$
+  \item $y = \left(\dfrac{x+1}{x-1}\right)^2$
+  \item $y = \left(\dfrac{1 + x^2}{1 + x}\right)^5$
+  \item $y = (2x^3 + 3x^2 + 6x + 1)^4$
+  \item $v = \dfrac{(s + 4)^2}{s + 8}$
+  \item $s = -\dfrac{t^3}{(1 - t)^2}$
+  \item $y = \dfrac{1 + \sqrt{x}}{1 + \sqrt{2x}}$
+  \item $y = \dfrac{1 - \sqrt[3]{2x}}{1 + \sqrt[3]{2x}}$
+  \item $y = \sqrt{1 - x^2}$
+  \item $y = \left(1 - 2x^{1/2}\right)^4$
+\end{enumerate}
+\end{multicols}
+\newpage
+\section{Семинар 10}
+\begin{enumerate}
+    \item Дараах функцүүдийн заагдсан эрэмбийн уламжлалыг ол.
+\begin{enumerate}
+\begin{multicols}{2}
+  \item $y = x^2 - 3x + 2,\quad y'' = ?$
+  \item $y=1-x^2-x^4, \quad y'''=?$
+  \item $y=(1+x)^6, \quad y'''(2)=?$
+  \item $y=(x^3+1)^8, \quad y'''=?$
+  \item $y=\cos ^2 x, \quad y'''=?$
+  \item $y=\dfrac{1}{1-x}, \quad y^{(5)}=?$
+  \item $y = xe^{x^2},\quad y'' = ?$
+  \item $y = x^3\ln(x),\quad y^{(4)} = ?$
+  \item $y = \ln(x+\sqrt{1+x^2}),\quad y'' = ?$
+  \item $y = \sqrt{1-x^2}\arcsin x,\quad y'' = ?$
+\end{multicols}
+\end{enumerate}
+\item Дараах функцүүдийн $n$ эрэмбийн уламжлалыг ол.
+\begin{enumerate}
+\begin{multicols}{2} 
+  \item $y = e^{ax}$
+  \item $y = e^{-x}$
+  \item $y = \sin^2x$
+  \item $y = xe^x$
+  \item $y = x\ln x$
+  \item $y = (x^2+x-1)\cos x$
+  \item $y = e^{x}\cos x$
+  \item $y = x^{n-1}e^{\frac{1}{x}}$
+\end{multicols}  
+\end{enumerate}
+\item Далд функцийн уламжлал ол.
+\begin{enumerate}
+    \item $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}-1=0$ , $\dfrac{d^2y}{dx^2}$
+    \item $y=\tan(x+y)$ , $\dfrac{d^3y}{dx^3}$
+    \item $y^3+x^3-3axy=0$ , $y''$
+    \item $e^{x+y}-xy=0$ , $y''$
+\end{enumerate}
+\item Параметр функцийн уламжлал ол.
+\begin{enumerate}
+    \item
+    $\begin{cases}
+        x=at^2\\
+        y=bt^3
+    \end{cases}$ , $\dfrac{d^2y}{dx^2}$
+      \item 
+     $ \begin{cases}
+        x=a\cos t\\
+        y=b\sin t
+    \end{cases} , \dfrac{d^3y}{dx^3}$
+      \item 
+      $\begin{cases}
+        x=t-\sin t\\
+        y=1-\cos t
+    \end{cases} , \dfrac{d^2y}{dx^2}$
+      \item 
+      $\begin{cases}
+        x=\ln t\\
+        y=t^2-1
+    \end{cases} , \dfrac{d^3y}{dx^3}$  
+    \item 
+    $\begin{cases}
+        x=e^t\sin t\\
+        y=e^t\cos t
+    \end{cases}$ бол $y''(x+y)^2-2(xy^{\prime}-y)=0$ биелэхийг батал.
+\end{enumerate}
+\end{enumerate}
+\newpage
+\section{Семинар 11}
+\begin{multicols}{2}
+\begin{enumerate}
+  \item Дифференциал ашиглан ойролцоогоор бод
+  \begin{enumerate}
+  \item  \(\sin(0.12)\). (Радианаар авч үзнэ.)
+  \item \((1.02)^5\)
+\end{enumerate}
+  \item Шүргэгч ба нормаль шулууны тэгшитгэлийг ол.    
+  \begin{enumerate}
+      \item \(y=\sin x+\cos x\)-ийн \(x=\tfrac{\pi}{3}\) цэг дээрх 
+  \item \(y=x^2-3x+2\)-ийн \(x=1\) цэг дээрх 
+  \item  \(x=\cos t,\; y=\sin t\) \(t=\tfrac{\pi}{4}\) дээрх
+  \end{enumerate}
+    \item $y=\sqrt{2x-x^2}$ функц $(0;1)$  дээр өсдөг, $(1;2)$ дээр буурдаг болохыг харуул.
+    \item $y=x^3+x$ өсдөг болохыг батал.
+    \item Өсөх, буурах завсарыг ол.
+    \begin{enumerate}
+        \item $y=(x-2)^5(2x+1)^4$
+        \item $y=x-e^x$
+        \item $y=\dfrac{1-x+x^2}{1+x+x^2}$
+        \item $y=xe^{-x}$
+        \item $y=\dfrac{1}{\ln x}$
+        \item $y=x^2-\ln x$
+        \item $y=x-\sin 2x,\quad (0<x<\pi)$
+        \item $y=x+\cos x$
+    \end{enumerate}
+    \item Локал экстермум ол.
+    \begin{enumerate}
+        \item $y=2x^3-3x^2$
+        \item $y=2x^3-6x^2+18x-1$
+        \item $y=x^2\cdot \sqrt{x^2+2}$
+        \item $y=x-\ln (x+1)$
+        \item $y=\sin x$
+        \item $y=x\sin x+\cos x-\dfrac{x^2}{4}, \quad -\dfrac{\pi}{2}\leq x\leq \dfrac{\pi}{2}$
+        \item $y=\dfrac{1+3x}{\sqrt{4+5x^2}}$
+        \item $y=x-\ln(1+x^2)$
+        \item $y=\sqrt[3]{(x^2-4)^2}$
+        \item $y=2e^{3x}+3e^{-3x}$
+    \end{enumerate}
+    \item Глобал экстермум ол.
+    \begin{enumerate}
+        \item $y=x^4-2x^2+5, \quad [-2;2]$
+        \item $y=x+2\sqrt{x} \quad [0;4]$
+        \item $y=x^5-5x^4+5x^3+2,\quad [-1;1]$
+        \item $y=\sqrt{100-x^2}, \quad [-6;8]$
+        \item $y=\dfrac{1-x+x^2}{1+x+x^2}, \quad [0;1]$
+        \item $y=x\sin x+\cos x-\dfrac{x^2}{4}, \quad -\dfrac{\pi}{2}\leq x\leq \dfrac{\pi}{2}$
+        \item $y=\dfrac{1+3x}{\sqrt{4+5x^2}}, \quad [0;1]$
+        \item $y=x-\ln(1+x^2)$
+        \item $y=\sqrt[3]{(x^2-4)^2}, \quad [0;3]$
+        \item $y=2e^{3x}+3e^{-3x}$
+    \end{enumerate}
+\end{enumerate}
+\end{multicols}
+\newpage
+\section{Семинар 12}
+\begin{enumerate}
+  \item Лопиталын дүрэм хэрэглэн хязгаар бод.
+  \begin{multicols}{2}
+\begin{enumerate}
+  \item $\displaystyle\lim_{x\to a} \frac{\sqrt[3]{x}-\sqrt[3]{a}}{\sqrt{x}-\sqrt{a}}.$
+ \item $ \displaystyle\lim_{x\to 0} \frac{e^{x}-1}{\sin x}.$
+ \item $\displaystyle\lim_{x\to 0} \frac{x-\arctan x}{x^{3}}.$
+ \item $\displaystyle \lim_{x\to 0} \frac{x-\sin x}{x-\tan x}.$ 
+ \item $\displaystyle\lim_{x\to 0}  \frac{e^{x^{2}}-1}{\cos x - 1}.$
+ \item $\displaystyle\lim_{x\to 1} 
+     \left[\frac{x}{x-1}-\frac{1}{\ln x}\right].$
+ \item $\displaystyle  \lim_{x\to \infty} 
+     \left[x\left(e^{\frac{1}{x}}-1\right)\right].$
+  \item $\displaystyle  \lim_{x\to 0} x^{\sin x}.$
+ \end{enumerate} 
+ \end{multicols}
+ \item Дараах функцүүдийн нугаралтын
+цэгүүдийг олж, хотгор ба гүдгэр
+интервалыг тодорхойл.
+\begin{multicols}{2}
+ \begin{enumerate}
+   \item $y = x^{3} - 5x^{2} + 3x - 5$;
+  \item $y = x^{4} - 12x^{3} + 48x^{2} - 50$;
+  \item $y = \ln(1+x^{2})$;
+  \item $y = x + 36x^{2} - 2x^{3} - x^{4}$;
+ \end{enumerate}
+ \end{multicols}
+\item II уламжлал ашиглан функцийн
+экстремум тодорхойл.
+\begin{multicols}{2}
+\begin{enumerate}
+   \item $y = x^3 - 2ax^2 + a^2x\quad (a>0)$.
+
+\item $y = x^2(a - x)^2$
+
+\item $y = x + \frac{a^2}{x}\quad (a>0)$
+
+\item $y = x + \sqrt{1 - x}$
+\end{enumerate}
+\end{multicols}
+\item Тэйлорын теорем
+\begin{multicols}{2}
+\begin{enumerate}
+\item $y = \frac{1}{x}$ функцийг $x_0=-1$ цэг орчимд Тэйлорын $n$-р эрэмбийн томьёогоор бич.
+
+\item $y = xe^x$ функцийг $x_0=0$ цэг орчимд Маклорены $n$-р эрэмбийн томьёо бич.
+
+\item $y = \sqrt{x}$ функцийг $x_0=4$ орчимд Тэйлорын $n$-р эрэмбийн томьёо бич.
+\item $x_0=1$ орчимд Тэйлорын эхний 3 гишүүнийг олж, $f(1.03)$-ыг ойролцоол.
+\end{enumerate}
+\end{multicols}
+\item Дараах функцүүдийг судалж, графикийг байгуулаарай.
+\begin{multicols}{2}
+\begin{enumerate}
+  \item $y = \dfrac{x}{1+x^{2}}$;
+  \item $y = \dfrac{1}{1-x^{2}}$;
+  \item $y = -\dfrac{x}{x^{2}-1}$;
+  \item $y(x-1)(x-2)(x-3)=1$.
+\end{enumerate}
+\end{multicols}
+\item Функц зохион хамгийн их бага ута ол.
+\begin{enumerate}
+
+% ===========================
+% 1–12: Хамгийн их/бага утга олох бодлогууд
+% ===========================
+
+\item 8 тоог хоёр хэсэгт задлахад, тэдгээрийн кубуудын нийлбэр хамгийн бага байхаар задална уу.
+
+\item Эерэг тоо $x$ ба түүний урвуу тоо $\frac{1}{x}$–ийн нийлбэр хамгийн бага байх $x$-ийг ол.
+
+\item 36 тоог хоёр үржвэрт задлахад, квадратуудын нийлбэр хамгийн бага байхаар задла.
+
+\item Эзэлхүүн нь $72\text{ см}^3$ байх, тагтай тэгш өнцөгт хайрцаг хийх бөгөөд суурийн талуудын харьцаа $1:2$. Гадаргуугийн талбай хамгийн бага байх нөхцөлийг ол.
+
+\item $18\times 18$ квадрат цаасны дөрвөн булангаас тэнцүү квадратыг хайчилж аван үлдсэн цаасаар хайрцаг хийв. Хайрцаг хамгийн их багтаамжтай байхаар хайчлах квадратын талын уртыг ол.
+
+\item Дээрх бодлогыг  $8\times 5$ тэгш өнцөгт цаасны хувьд шийд.
+
+\item Эзэлхүүн нь $v$ байх зөв гурвалжин суурьтай  нийт гадаргуугийн талбай хамгийн бага байхаар призмийн суурийн талыг ол.
+
+\item Эзэлхүүн нь $v$ байх цилиндр савны өндөр $h$ ба радиус $R$ ямар үед материал хамгийн бага орох вэ?
+\end{enumerate}
+\end{enumerate}
+\newpage
+\section{Семинар 13}
+\begin{enumerate}
+    \item Дараах интегралуудыг жагсаалт ашиглан бод.
+\begin{enumerate}
+\begin{multicols}{2}
+  \item $\displaystyle \int \sqrt{x}\,dx.$
+  \item $\displaystyle \int \sqrt[n]{x}\,dx.$
+  \item $\displaystyle \int \frac{dx}{x^2}.$
+  \item $\displaystyle \int 10^x\,dx.$
+  \item $\displaystyle \int a^x e^x\,dx.$
+  \item $\displaystyle \int \frac{dx}{2\sqrt{x}}.$
+  \item $\displaystyle \int \frac{dh}{\sqrt{2gh}}.$
+  \item $\displaystyle \int 3.4x^{-0.17}\, dx.$
+  \item $\displaystyle \int (1-2u)\,du.$
+  \item $\displaystyle \int (\sqrt{x}+1)(x-\sqrt{x}+1)\,dx.$
+  \item $\displaystyle \int \frac{\sqrt{x}-x^3 e^x + x^2}{x^3}\,dx.$
+  \item $\displaystyle \int (2x^{-1.2} + 3x^{-0.8} - 5x^{0.38})\,dx.$
+  \item $\displaystyle \int \frac{(1-z)^2}{z}\,dz.$
+  \item $\displaystyle \int \frac{(1-x)^2}{x\sqrt{x}}\,dx.$
+  \item $\displaystyle \int \frac{(1+\sqrt{x})^3}{\sqrt[3]{x}}\,dx.$
+  \item $\displaystyle \int \frac{\sqrt[3]{x^2}-\sqrt[4]{x}}{\sqrt{x}}\,dx.$
+  \item $\displaystyle \int \frac{dx}{\sqrt{3}-3x^2}.$
+  \item $\displaystyle \int \frac{3\cdot 2^x - 2\cdot 3^x}{2^x}\,dx.$
+  \item $\displaystyle \int \frac{1+\cos^2 x}{1+\cos 2x}\,dx.$
+  \item $\displaystyle \int \frac{\cos 2x}{\cos^2 x \sin^2 x}\,dx.$
+  \item $\displaystyle \int \tan^2 x\,dx.$
+  \item $\displaystyle \int 2\sin^2 \frac{x}{2}\,dx.$
+  \item $\displaystyle \int \frac{(1+2x^2)\,dx}{x^2(1+x^2)}.$
+  \item $\displaystyle \int \frac{(1+x)^2 dx}{x(1+x^2)}.$
+  \item $\displaystyle \int \frac{dx}{\cos 2x + \sin^2 x}.$
+  \item $\displaystyle \int (\arcsin x + \arccos x)\,dx.$
+  \end{multicols}
+\end{enumerate}
+\item  Орлуулах арга хэрэглэн интеграл бод.
+\begin{enumerate}
+\begin{multicols}{2}
+   \item $\displaystyle \int \sin x\, d(\sin x).$
+    \item $\displaystyle \int \tan^{3}x \, d(\tan x).$
+    \item $\displaystyle \int \frac{d(1+x^{2})}{\sqrt{1+x^{2}}}.$
+    \item $\displaystyle \int (x+1)^{15} dx.$
+    \item $\displaystyle \int \frac{dx}{(2x-3)^{5}}.$
+    \item $\displaystyle \int \frac{dx}{(a+bx)^{c}} \qquad (c\ne 1).$
+    \item $\displaystyle \int \sqrt[5]{(8-3x)^{6}}\, dx.$
+    \item $\displaystyle \int \sqrt{8-2x}\, dx.$
+    \item $\displaystyle \int \frac{m}{\sqrt[3]{(a+bx)^{2}}} dx.$
+    \item $\displaystyle \int 2x\sqrt{x^{2}+1}\, dx.$
+    \item $\displaystyle \int x\sqrt{1-x^{2}}\, dx.$
+    \item $\displaystyle \int x^{2}\sqrt[5]{x^{3}+2}\, dx.$
+    \item $\displaystyle \int \frac{x\, dx}{\sqrt{x^{2}+1}}.$
+    \item $\displaystyle \int \frac{x^{4} dx}{\sqrt{4+x^{5}}}.$
+    \item $\displaystyle \int \frac{x^{3}dx}{\sqrt[3]{x^{4}+1}}.$
+    \item $\displaystyle \int \frac{(6x-5)\, dx}{2\sqrt{3x^{2}-5x+6}}.$
+    \item $\displaystyle \int \sin^{3} x \cos x\, dx.$
+    \item $\displaystyle \int \frac{\sin x\, dx}{\cos^{2}x}.$
+    \item $\displaystyle \int \frac{\cos x\, dx}{\sqrt[3]{\sin^{2}x}}.$
+    \item $\displaystyle \int \cos^{3} x \sin 2x\, dx.$
+    \item $\displaystyle \int \frac{\sqrt{\ln x}}{x}\, dx.$
+    \item $\displaystyle \int \frac{(\arctan x)^{2} dx}{1+x^{2}}.$
+    \item $\displaystyle \int \frac{dx}{(\arcsin x)^{3}\sqrt{1-x^{2}}}.$
+    \item $\displaystyle \int \frac{dx}{\cos^{3} x\sqrt{1+\tan x}}.$
+    \item $\displaystyle \int \cos 3x\, d(3x).$
+    \item $\displaystyle \int \cos 3x\, dx.$
+       
+\end{multicols}
+\end{enumerate}
+\end{enumerate}
+\newpage
+\section{Семинар 14}
+\begin{enumerate}
+\item Рационал бутархайн интеграл бод.
+\begin{enumerate}
+    
+\begin{multicols}{2}
+\item $\displaystyle \int \frac{3x+1}{x^2+1}\,dx$
+\item $\displaystyle \int \frac{2x-3}{x^2-3x+2}\,dx$
+\item $\displaystyle \int \frac{x}{(x-1)^2(x+1)}\,dx$
+\item $\displaystyle \int \frac{x}{(x-1)^2(x^2+2x+2)}\,dx$
+\item $\displaystyle \int \frac{2x+3}{(x-2)(x+5)}\,dx$
+\item $\displaystyle \int \frac{x}{(x+1)(x+2)(x+3)}\,dx$
+\item $\displaystyle \int \frac{x^{10}}{x^2+x-2}\,dx$
+\item $\displaystyle \int \frac{x^3+1}{x^3-5x^2+6x}\,dx$
+\item $\displaystyle \int \frac{x^2+3x-2}{(x-1)(x^2+x+1)^2}\,dx$
+\item $\displaystyle \int \frac{x^3+1}{(x^2+1)^2}\,dx$
+\end{multicols}
+\end{enumerate}
+\item Иррационал функцийн интеграл бод.
+\begin{enumerate}
+\begin{multicols}{2}
+\item $\displaystyle \int \frac{dx}{1+\sqrt{x}} $
+\item $\displaystyle \int \frac{1-\sqrt{x+1}}{1+\sqrt[3]{x+1}}\,dx$ 
+\item $\displaystyle \int \sqrt{x^3+x^2}\, dx$
+\item $\displaystyle \int \frac{\sqrt{x}}{(1+\sqrt[3]{x})^2}\,dx$  
+\item $\displaystyle \int \sqrt[3]{3x-x^3}\, dx$
+\item $\displaystyle \int \frac{x^2}{\sqrt{1+x+x^2}} \,dx$
+\item $\displaystyle \int \frac{dx}{(1-x^2)\sqrt{1-x^2}} \,dx$
+\end{multicols}
+\end{enumerate}
+\item Тригонометрийн интеграл бод. 
+\begin{enumerate}
+\begin{multicols}{2}
+\item $\displaystyle \int \cos^5 x\, dx$
+\item $\displaystyle \int \sin ^4 x\, dx$
+\item $\displaystyle \int \cos^5 x\sin^5 x\, dx$
+\item $\displaystyle \int \frac{\sin^3 x}{\cos ^4x}\,dx$ 
+\item $\displaystyle \int \frac{dx}{\sin^3x}\,dx$
+\item $\displaystyle \int \sin 3x\cos x\,dx$
+\item $\displaystyle \int \cos x\cos 2x\cos 3x\,dx$
+\item $\displaystyle \int \frac{dx}{2\sin x-\cos x+5}\,dx$ 
+\end{multicols}
+\end{enumerate}
+\end{enumerate}
+ \newpage
+ \section{Семинар 15}
+\begin{enumerate}
+    \item Доорх функцуудын хувьд өгөгдсөн завсрыг 
+$n=4$ адил урттай хуваагаад 
+\[
+\sum_{k=1}^4 f(x_k^*)\,\Delta x
+\]
+ нийлбэрийг тооцоол.
+Энд $x_k^*$ нь дараах гурван тохиолдлоор авна:
+\begin{enumerate}
+\item[a)]  завсрын \textbf{зүүн} төгсгөл
+\item[b)]  завсрын \textbf{дундаж} цэг
+\item[c)]  завсрын \textbf{баруун} төгсгөл
+\end{enumerate}
+Бүх тохиолдолд график зурж, тухайн нийлбэрийг илэрхийлж буй тэгш өнцөгтүүдийн талбайг харуул.
+\begin{enumerate}
+\item $f(x)=3x+1$, \quad завсар: $[2,\,6]$
+
+\item $f(x)=\frac{1}{x}$, \quad завсар: $[1,\,9]$
+
+\item $f(x)=\cos x$, \quad завсар: $[0,\,\pi]$
+
+\item $f(x)=2x-x^2$, \quad завсар: $[-1,\,3]$
+\end{enumerate}
+\item \[
+f(x)=
+\begin{cases}
+|x-2|, & x\ge0,\\[4pt]
+x+2, & x<0.
+\end{cases}
+\] бол дараах интегралуудыг ол.
+\begin{enumerate}
+\begin{multicols}{2}
+\item $\displaystyle\int_{-2}^{0} f(x)\,dx$
+\item $\displaystyle\int_{-2}^{2} f(x)\,dx$
+\item $\displaystyle\int_{0}^{6} f(x)\,dx$
+\item $\displaystyle\int_{-4}^{6} f(x)\,dx$  
+\end{multicols}
+\end{enumerate}
+\item 
+\[
+f(x)=
+\begin{cases}
+2x, & x\le1,\\[4pt]
+2, & x>1.
+\end{cases}
+\]
+бол дараах интегралуудыг ол.
+\begin{enumerate}
+\begin{multicols}{2}
+\item $\displaystyle\int_{0}^{1} f(x)\,dx$
+\item $\displaystyle\int_{-1}^{1} f(x)\,dx$
+\item $\displaystyle\int_{1}^{10} f(x)\,dx$
+\item $\displaystyle\int_{1/2}^{5} f(x)\,dx$
+\end{multicols}
+\end{enumerate}
+\item Доорх зураг нь $y=f(x)$ муруй ба $ox$ тэнхлэгийн хоорондох талбайн утгуудыг өгөв. Тэдгээрийг ашиглан 
+$$
+\int_a^b f(x)\,dx,\quad
+\int_b^c f(x)\,dx,\quad
+\int_a^c f(x)\,dx,\quad
+\int_a^d f(x)\,dx
+$$ интегралуудыг ол.
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1.5]
+  % axes
+  \draw[->] (-0.2,0) -- (5.2,0) node[right]{$x$};
+  \draw[->] (0,-1) -- (0,2) node[above]{$y$};
+
+  % points a<b<c<d on x-axis
+  \coordinate (A) at (0.5,0);
+  \coordinate (B) at (1.5,0);
+  \coordinate (C) at (2.8,0);
+  \coordinate (D) at (4.5,0);
+
+  \node[below] at (A) {$a$};
+  \node[below] at (B) {$b$};
+  \node[below] at (C) {$c$};
+  \node[below] at (D) {$d$};
+
+  % curve (just a smooth spline)
+  \draw[thick,domain=0.3:4.7,smooth]
+     plot(\x,{0.8*sin(120*\x)+0.3*\x-0.5});
+
+  % shaded areas: [a,b] positive 0.8
+  \fill[blue!20] (A) --
+    plot[domain=0.5:1.5,smooth] (\x,{0.8*sin(120*\x)+0.3*\x-0.5}) --
+    (B) -- cycle;
+  \node at (1,0.6) {\small  талбай$=0.8$};
+
+  % [b,c] negative 2.6
+  \fill[cyan!25] (B) --
+    plot[domain=1.5:3,smooth] (\x,{0.8*sin(120*\x)+0.3*\x-0.5}) --
+    (C) -- cycle;
+  \node at (2.2,-1) {\small талбай $=1$};
+
+  % [c,d] positive 1.5
+  \fill[red!20] (C) --
+    plot[domain=3:4.5,smooth] (\x,{0.8*sin(120*\x)+0.3*\x-0.5}) --
+    (D) -- cycle;
+  \node at (3.8,1.2) {\small талбай $=1.6$};
+
+  \node[right] at (4.7,1.8) {$y=f(x)$};
+\end{tikzpicture}
+\end{figure}
+
+\item Дараах функцүүдийн график ба $ox$ тэнхлэгийн өгөгдсөн интервалаар хүрээлэгдсэн хэсгийн талбайг ол.
+\begin{enumerate}
+\begin{multicols}{2}
+\item $f(x)=x^3,\quad [2,3]$
+\item $f(x)=x^4,\quad [-1,1]$
+\item $f(x)=3\sqrt{x},\quad [1,4]$
+\item $f(x)=x^{-2/3},\quad [1,27]$
+\item $f(x)=e^{2x},\quad [0,\ln2]$
+\item $f(x)=\dfrac1x,\quad [1,5]$
+\end{multicols}
+\end{enumerate}
+
+\item Дараах интегралуудыг Ньютон-Лейбницийн теоремийг ашиглан бод.
+
+\begin{enumerate}
+\begin{multicols}{2}
+\item $\displaystyle\int_{-2}^{1}(x^2-6x+12)\,dx$
+\item $\displaystyle\int_{-1}^{2}4x(1-x^2)\,dx$
+\item $\displaystyle\int_{1}^{4}\frac{4}{x^2}\,dx$
+\item $\displaystyle\int_{1}^{2}\frac1{x^6}\,dx$
+\item $\displaystyle\int_{4}^{9}2x\sqrt{x}\,dx$
+\item $\displaystyle\int_{1}^{4}\frac1{x\sqrt{x}}\,dx$
+\item $\displaystyle\int_{-\pi/2}^{\pi/2}\sin\theta\,d\theta$
+\item $\displaystyle\int_{0}^{\pi/4}\sec^2\theta\,d\theta$
+\item $\displaystyle\int_{-\pi/4}^{\pi/4}\cos x\,dx$
+\item $\displaystyle\int_{0}^{\pi/3}(2x-\sec x\tan x)\,dx$
+\item $\displaystyle\int_{\ln2}^{3}5e^x\,dx$
+\item $\displaystyle\int_{1/2}^{1}\frac1{2x}\,dx$
+\item $\displaystyle\int_{-1}^{1}\frac1{1+x^2}\,dx$
+\item $\displaystyle\int_{0}^{1/\sqrt2}\frac{dx}{\sqrt{1-x^2}}$
+\item $\displaystyle\int_{\sqrt2}^{2}\frac{dx}{x\sqrt{x^2-1}}$
+\item $\displaystyle\int_{-\sqrt3}^{-2/\sqrt3}\frac{dx}{x\sqrt{x^2-1}}$
+\item $\displaystyle\int_{1}^{4}\left(\frac1{\sqrt t}-3\sqrt t\right)\,dt$
+\item $\displaystyle\int_{\pi/6}^{\pi/2}\left(x+\frac2{\sin^2 x}\right)\,dx$
+\end{multicols}
+\end{enumerate}
+\item Дараах интегралуудын уламжлалыг ол.
+\begin{enumerate}
+\begin{multicols}{2}
+\item $\displaystyle \frac{d}{dx}\int_{1}^{x}\sin(t^2)\,dt$
+\item $\displaystyle \frac{d}{dx}\int_{0}^{x} e^{\sqrt{t}}\,dt$
+\item $\displaystyle \frac{d}{dx}\int_{0}^{x}\frac{dt}{1+\sqrt{t}}$
+\item $\displaystyle \frac{d}{dx}\int_{1}^{x}\ln t\,dt$
+\item $\displaystyle \frac{d}{dx}\int_{x}^{0} t\sec t\,dt$
+\item $\displaystyle \frac{d}{du}\int_{0}^{u}|x|\,dx$
+\end{multicols}
+\end{enumerate}
+\item $\displaystyle F(x)=\int_{4}^{x}\sqrt{t^2+9}\,dt$ бол\qquad 
+ $
+\text{(a) }F(4),\qquad \text{(b) } F^{\prime}(4),\qquad \text{(c) }F''(4)$ ол.
+\item Тодорхой интегралыг орлуулах аргаар бод.
+\begin{enumerate}
+ \begin{multicols}{2}
+\item $\displaystyle \int_{0}^{1}(2x+1)^3\,dx$
+\item $\displaystyle \int_{1}^{2}(4x-2)^3\,dx$
+\item $\displaystyle \int_{0}^{1}(2x-1)^3\,dx$
+\item $\displaystyle \int_{1}^{2}(4-3x)^8\,dx$
+\item $\displaystyle \int_{0}^{8}x\sqrt{1+x}\,dx$
+\item $\displaystyle \int_{-3}^{0}x\sqrt{1-x}\,dx$
+\item $\displaystyle \int_{0}^{\pi/2}4\sin\frac{x}{2}\,dx$
+\item $\displaystyle \int_{0}^{\pi/6}2\cos3x\,dx$
+\item $\displaystyle \int_{-2}^{-1}\frac{x}{(x^2+2)^3}\,dx$
+\item $\displaystyle \int_{1-\pi}^{1+\pi}\sec^2\!\Bigl(\frac14 x-\frac14\Bigr)\,dx$
+\item $\displaystyle \int_{-\ln3}^{\ln3}\frac{e^{x}}{e^x+4}\,dx$
+\item $\displaystyle \int_{0}^{\ln5}e^{x}(3-4e^x)\,dx$
+\item $\displaystyle \int_{1}^{3}\frac{dx}{\sqrt{x}(x+1)}$
+\item $\displaystyle \int_{\ln2}^{\ln(2/\sqrt3)}
+       \frac{e^{-x}\,dx}{\sqrt{\,1-e^{-2x}\,}}$
+\end{multicols}
+\end{enumerate}
+\item Тодорхой интегралыг хэсэгчлэх аргаар бод.
+\begin{enumerate}
+\begin{multicols}{2}
+\item $\displaystyle \int_{0}^{\ln2} x e^{-x}\,dx$
+\item $\displaystyle \int_{0}^{\pi} x\sin x\,dx$
+\item $\displaystyle \int_{0}^{2\pi} x^3\cos x\,dx$
+\item $\displaystyle \int_{1/e}^{e} |\ln x|\,dx$
+\item $\displaystyle \int_{0}^{\sqrt3} x\arctan x\,dx$
+\item $\displaystyle \int_{0}^{\pi} e^x\sin x\,dx$
+\end{multicols}
+\end{enumerate}
+\item  Интегралыг бод.
+\begin{multicols}{2}
+\begin{enumerate}
+  \item $\displaystyle \int_{0}^{1} x\,(2-x^{2})^{18}\,dx$.
+
+  \item $\displaystyle \int_{-1}^{1} \frac{x\,dx}{x^{2}+x+1}$.
+
+  \item $\displaystyle \int (x\ln x)^{2}\,dx$.
+
+  \item $\displaystyle \int_{0}^{9} x^{3}\sqrt[3]{1-x}\,dx$.
+
+  \item $\displaystyle \int_{-2}^{-1} \frac{dx}{x\sqrt{x^{2}-1}}$.
+
+  \item $\displaystyle \int_{1/2}^{1} x^{16}\sqrt{1+3x^{8}}\,dx$.
+
+  \item $\displaystyle \int_{0}^{3} \arcsin\sqrt{\frac{x}{1+x}}\,dx$.
+
+  \item $\displaystyle \int_{0}^{2\pi} \frac{dx}{(2+\cos x)(3+\cos x)}$.
+
+  \item $\displaystyle \int_{0}^{2\pi} \frac{dx}{\sin^{4}x+\cos^{4}x}$.
+
+  \item $\displaystyle \int_{0}^{\pi/2} \sin x\,\sin 2x\,\sin 3x\,dx$.
+
+  \item $\displaystyle \int_{0}^{\pi} (x\sin x)^{2}\,dx$.
+
+  \item $\displaystyle \int_{0}^{\pi} e^{x}\cos^{3}x\,dx$.
+
+  \item $\displaystyle \int_{0}^{\ln 2} \sinh^{4}x\,dx$.
+\end{enumerate}
+    
+\end{multicols}
+\end{enumerate}
+\newpage
+\section{Семинар 16}
+\begin{enumerate}
+    \item $y=x^2$ ба $y=x+3$ функцийн графикуудаар хүрээлэгдсэн хэсгийн талбайг ол.
+    \item $y=\dfrac{1}{1+x^2}$ , $(1;+\infty)$  хэсгийн доорх талбайг ол.
+    \item $y=f(x)$ функцийн гарфикийн $(a;b)$ хэсгийг $ox$ тэнхлэгийг тойруулан эргүүлэхэд үүсэх биетийн эзэлхүүн $\displaystyle\pi\int\limits_a^b f^2(x) dx$ байхыг батал.
+    \item $y=\sqrt{x}$  функцийн гарфикийн $(1;3)$ хэсгийг $ox$ тэнхлэгийг тойруулан эргүүлэхэд үүсэх биетийн эзэлхүүн ол.
+    \item Интеграл бод. 
+    \begin{enumerate}
+        \item $\displaystyle\int\limits_1^5\dfrac{1}{x\sqrt{x-1}} dx$
+        \item $\displaystyle\int\limits_5^{\infty}\dfrac{1}{x\sqrt{x-1}}$
+        \item $\displaystyle\int\limits_{-\infty}^1\dfrac{1}{(1+x^2)^2}$
+        \item $\displaystyle\int\limits_0^{\infty}x^3e^{-x^2}dx$
+    \end{enumerate}
+    \item Талбай ол.
+    \begin{enumerate}
+        \item $y=\sin x\quad , 0\leq x\leq \pi$
+        \item $y=\ln x \quad , 1\leq x\leq e$
+        \item $y=e^x$ ба $y=3x+1$ хүрээлэгдсэн
+        \item $y=x(x-1)(x-2)$ ба $ox$ тэнхлэгээр хүрээлэгдсэн
+    \end{enumerate}
+    \item  Муруйн урт ол.
+    \begin{enumerate}
+        \item $y=\ln x\quad , \sqrt{3}\leq x\leq \sqrt{5}$
+        \item $y=\dfrac{x^2}{2}-\ln x \quad , 1\leq x\leq e$
+    \end{enumerate}
+     \item  Эзэлхүүн ол.
+    \begin{enumerate}
+        \item $y=\cos x$ функцийн $ 0\leq x\leq \dfrac{\pi}{2}$ хэсгийг $ox$ тэнхлэгийг тойруулан эргүүлэхэд үүсэх биетийн эзэлхүүн ол.
+        \item $h$ өндөртэй, $r$ ба $R$ суурийн радиустай огтлогдсон конусын эзэлхүүн бодох томьёог эргэлтийн биеийн эзэлхүүн олох томьёог ашиглан гарга. $r=R=2$ үед бодож шалга.
+    \end{enumerate}
+\end{enumerate}

@@ -1,0 +1,598 @@
+\chapter{ Хотгор, гүдгэр функц ба Тайлорын теорем}
+\section{Хотгор ба гүдгэр функц}
+\begin{definition}
+Функц $y=f(x)$ нь $I=(a;b)$ завсар дээр 
+$ \forall\,x_1,x_2\in I,\; \lambda\in[0,1]$ хувьд 
+\[
+  f(\lambda x_1 + (1-\lambda)x_2)
+  \geq \lambda f(x_1) + (1-\lambda)f(x_2) \] тэнцэтгэл бишийг хангаж байвал $y=f(x)$ функцийг $I$ завсар дээр 
+  \textbf{гүдгэр} (\emph{convex}) функц гэнэ. Хэрэв 
+  \[
+  f(\lambda x_1 + (1-\lambda)x_2)
+  \leq \lambda f(x_1) + (1-\lambda)f(x_2), 
+  \] тэнцэтгэл бишийг хангаж байвал $y=f(x)$ функцийг $I$ завсар дээр 
+  \textbf{хотгор} (\emph{concave}) функц гэнэ.
+\end{definition}
+\begin{example}
+$f(x)=x^2$ функц дурын $I$ завсар дээр хотгор байхыг харуулая. Тодорхойлолтоор 
+\[
+f(\lambda x_1+(1-\lambda)x_2)
+\leq
+\lambda f(x_1)+(1-\lambda)f(x_2),
+\qquad
+x_1,x_2\in I,\ \lambda\in[0,1].
+\]
+байх ёстой.  $f(x)=x^2$ тул
+\[
+(\lambda x_1+(1-\lambda)x_2)^2
+\le
+\lambda x_1^2+(1-\lambda)x_2^2.
+\]
+Илэрхийлэлийг задлабал
+\[
+\lambda^2x_1^2+2\lambda(1-\lambda)x_1x_2+(1-\lambda)^2x_2^2
+\le
+\lambda x_1^2+(1-\lambda)x_2^2.
+\]
+
+Баруун талыг зүүн талаас хасвал:
+\[
+0
+\le
+\lambda(1-\lambda)(x_1-x_2)^2.
+\]
+
+Энэ нь бүх $x_1,x_2$ ба $\lambda\in[0,1]$ үед илт эерэг буюу $0$-оос их тэнцүү байна.  
+Иймд тодорхойлолтоор
+\[
+\boxed{f(x)=x^2 \text{ нь бүх } \mathbb{R}\text{-д хотгор функц юм.}}
+\]
+\end{example}
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+  % Coordinate axes
+  \draw[->] (-2.5,0) -- (2.5,0) node[right] {$x$};
+  \draw[->] (0,-0.5) -- (0,3) node[above] {$y$};
+
+  % Function y = x^2
+  \draw[domain=-2:2.2, smooth, variable=\x, thick, blue]
+    plot ({\x},{\x*\x}) node[right] {$y = x^2$};
+
+  % Points x1 and x2
+  \coordinate (A) at (-0.5,0.25);
+  \coordinate (B) at (2,4);
+  \fill (A) circle (1.5pt) node[left] {$A(x_1, f(x_1))$};
+  \fill (B) circle (1.5pt) node[above right] {$B(x_2, f(x_2))$};
+
+  % Chord between A and B
+  \draw[very thick, red] (A) -- (B) node[midway, above, sloped] {хөвч};
+
+  % Convex point
+  \coordinate (C) at (1,1);
+  \fill (C) circle (1.5pt) node[below right] {$C(\lambda x_1+(1-\lambda)x_2, f(\lambda x_1+(1-\lambda)x_2))$};
+  \coordinate (D) at (1,2.5);
+  % Dashed line showing function below chord
+  \fill (D) circle (1.5pt) node[right] {$D(\lambda x_1+(1-\lambda)x_2,\lambda f(x_1)+(1-\lambda)f(x_2))$};
+  \draw[dashed,red] (1,0) -- (D) node[midway, right] {};
+\end{tikzpicture}
+\end{center}
+\begin{theorem}[Хотгор, гүдгэр ба өсөлт бууралт]
+    Хэрэв дифферинциалчлагдах $y=f(x)$ функц $(a;b)$  завсар дээр хотгор (гүдгэр ) бол түүний  уламжлал $(a;b)$ завсар дээр өснө (буурна).
+\end{theorem}
+
+\begin{theorem}[Хотгор, гүдгэрийг тодорхойлоход уламжлал хэрэглэх]
+Хэрэв $(a;b)$  завсар дээр $f''(x)$ хоёр дахь уламжлал оршин байдаг ба $\forall x\in (a;b)$ хувьд
+\[
+\begin{cases}
+f''(x)>0 &\Rightarrow f \text{ хотгор},\\[4pt]
+f''(x)<0 &\Rightarrow f \text{ гүдгэр}.
+\end{cases}
+\]
+\end{theorem}
+
+\begin{prof}
+Лагранжийн дундаж утгын теорем ашиглая.
+$x_1<x_2<x_3$ гурван цэг авбал,
+\[
+f'(x_2)-f'(x_1)=f''(c_1)(x_2-x_1),\qquad
+f'(x_3)-f'(x_2)=f''(c_2)(x_3-x_2).
+\]
+Хэрэв $f''>0$ бол $f'$ өснө, иймээс графикийн шүргэгчүүдийн налалт өсдөг буюу график гүдгэр байна. $f''<0$ үед эсрэгээр.
+\end{prof}
+\begin{definition}
+    $y=f(x)$ функц $(a;c)$ завсар дээр хотгор (гүдгэр ) , $(c;b)$ завсар дээр  гүдгэр  (хотгор)  бол $x=c$ цэгийг түүний нугаралтын цэг гэнэ.
+\end{definition}
+\begin{example}
+$f(x)=x^3$ функцийн $f''(x)=6x$ тул $(-\infty,0)$ д гүдгэр, $(0,+\infty)$ д хотгор байна. Иймд $x=0$ нугаралтын цэг байна.
+\end{example}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \draw[->] (-2,0)--(2,0) node[right]{$x$};
+  \draw[->] (0,-3)--(0,3) node[above]{$y$};
+  \draw[domain=-1.3:1.3,smooth,variable=\x,blue,thick]
+    plot({\x},{\x*\x*\x});
+  \node at (1.1,1.2){хотгор};
+  \node at (-1.1,-1.2){гүдгэр};
+  \coordinate (C) at (0,0);
+  \fill (C) circle (1.5pt) node[below right]{нугаралт};
+\end{tikzpicture}
+\end{center}
+\section{локал экстремум ба хотгор/гүдгэр}
+Локал максимумын цэгийн орчимд функц гүдгэр байх нь илэрхий. Иймд сэжигтэй цэгийн орчимд гүдгэр хотгор байгаагаар нь түүний ямар төрлийн цэг болохыг тодорхойлож болно.  
+$x_0$ цэг нь $y=f(x)$ функцийн сэжигтэй цэг байг:
+\begin{itemize}
+  \item Хэрэв $f''(x_0)>0$ бол $x_0$ — локал \textbf{минимум}.
+  \item Хэрэв $f''(x_0)<0$ бол $x_0$ — локал \textbf{максимум}.
+  \item Хэрэв $f''(x_0)=0$, $f'''(x_0)\ne0$ бол $x_0$ — \textbf{нугаралтын цэг}.
+\end{itemize}
+
+\begin{example}
+$f(x)=x^4-4x^2$.
+\[
+f'(x)=4x^3-8x,\qquad f''(x)=12x^2-8.
+\]
+$f'(x)=0\Rightarrow x=0,\pm\sqrt2$.  
+$f''(0)=-8<0$ → максимум,  
+$f''(\pm\sqrt2)=16>0$ → минимум.
+\end{example}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+  \draw[->] (-3,0)--(3,0) node[right]{$x$};
+  \draw[->] (0,-5)--(0,5) node[above]{$y$};
+  \draw[domain=-2.2:2.2,smooth,variable=\x,blue,thick]
+    plot({\x},{\x*\x*\x*\x - 4*\x*\x});
+  \node at (-2,-4.2){мин};
+  \node at (0,0.5){макс};
+  \node at (2,-4.2){мин};
+\end{tikzpicture}
+\end{center}
+
+\subsection*{3. Тэйлорын теорем}
+
+\begin{theorem}[Тэйлор]
+Хэрэв $f(x)$ нь $a$ цэгийн орчинд $(n+1)$ удаа тасралтгүй уламжлалтай бол $a$ цэгийн орчний $x$ цэгийн хувьд
+\begin{equation}\label{Taylor ex}
+    f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x),
+\end{equation}
+энд 
+\[
+R_n(x)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1},\quad c\in(a,x)
+\] байна. 
+
+Хэрэв $x-a=h$ гэж тэмдэглэвэл \[
+f(a+h)=f(a)+f'(a)h+\frac{f''(a)}{2!}h^2+\cdots+\frac{f^{(n)}(a)}{n!}h^n+R_n(x),
+\] болно. $R_n(x)$-г үлдэгдэл гишүүний Лагранжийн хэлбэр гэнэ.
+
+Энэхүү \ref{Taylor ex} задаргааг $a$ төвтэй Тэйлорын задаргаа гэдэг. 
+\end{theorem}
+
+\begin{prof}
+$f(x)-P_n(x)$ ба $(x-a)^{n+1}$ хоёр функц $x=a$ дээр 0 утгатай.  
+Лагранжийн дундаж утгын теоремийг $(n+1)$ удаа хэрэглэснээр
+$a<c<x$ тийм $c$ оршин:
+\[
+\frac{f(x)-P_n(x)}{(x-a)^{n+1}}=\frac{f^{(n+1)}(c)}{(n+1)!}.
+\]
+\end{prof}
+
+\begin{example}
+$f(x)=\sqrt{1+x}$, $a=0$ гэж авъя.  
+$f'(x)=\dfrac1{2\sqrt{1+x}},\;
+f''(x)=-\dfrac1{4(1+x)^{3/2}}.$  
+Тэгвэл
+\[
+f(x)\approx1+\frac{x}{2}-\frac{x^2}{8}.
+\]
+$\sqrt{1.1}\approx1+\frac{0.1}{2}-\frac{0.01}{8}=1.04875.$  
+Бодит утга $1.0488$ — сайн дөхөлт.
+\end{example}
+\begin{remark}[Маклорены задаргаа]
+\ref{Taylor ex} томьёонд $a=0$ үед гарах задаргааг Маклорены задаргаа гэдэг. 
+\[
+f(x)=\sum_{k=0}^{n}\frac{f^{(k)}(0)}{k!}\,x^k+ \frac{f^{(n+1)}(c)}{(n+1)!}\,x^{n+1}.
+\]
+Хэрэв $n\to\infty$ үед үлдэгдэл $R_{n}(x)\to 0$ бол Маклорены \emph{цуваа} гэдэг.
+\end{remark}
+
+\begin{example}[Алдааны үнэлгээ (Лагранж үлдэгдэл)]
+$f(x)=e^x$, $a=0$, $n=3$ гэж авъя. Тэгвэл
+\[
+e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\underbrace{\frac{e^c}{4!}x^4}_{R_4(x)},\qquad c\in(0,x).
+\]
+Жишээ нь $x=0.1$ үед $|R_4(0.1)|=\dfrac{e^{c}}{24}\,0.1^4\le \dfrac{e^{0.1}}{24}\,0.1^4<2.1\times 10^{-6}=0.0000021$.
+\end{example}
+
+\section{Үндсэн функцүүдийн Маклорены задаргаа}
+Дараах задаргааг \ref{Taylor ex} ашиглан хялбар шалгаж болно.
+\[
+e^x \;=\; 1 + x + \frac{x^2}{2!} + \cdots + \frac{x^n}{n!} \;+\; R_{n+1}(x), 
+\qquad x\in\mathbb{R}\]
+\[R_{n+1}(x)=\frac{e^{c}}{(n+1)!}\,x^{\,n+1},\ \ c\in(0,x).
+\]
+\[
+\sin x \;=\; x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots + 
+(-1)^{m}\frac{x^{2m+1}}{(2m+1)!} \;+\; R_{2m+1}(x), \qquad x\in\mathbb{R}
+\]
+\[
+R_{2m+1}(x)=\frac{\sin^{(2m+2)}(c)}{(2m+2)!}\,x^{\,2m+2},\ \ c\in(0,x).
+\]
+\[
+\cos x \;=\; 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots + 
+(-1)^{m}\frac{x^{2m}}{(2m)!} \;+\; R_{2m}(x), \qquad x\in\mathbb{R}
+\]
+\[
+R_{2m}(x)=\frac{\cos^{(2m+1)}(c)}{(2m+1)!}\,x^{\,2m+1},\ \ c\in(0,x).
+\]
+\[
+\ln(1+x) \;=\; x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots + 
+(-1)^{n-1}\frac{x^{n}}{n} \;+\; R_{n}(x), \qquad x\in(-1;1)
+\]
+\[
+R_{n+1}(x)=\frac{\ln^{(n+1)}(1+c)}{(n+1)!}\,x^{\,n+1}
+=\frac{(-1)^{n}\,n!}{(n+1)!}\,\frac{x^{\,n+1}}{(1+c)^{n+1}}
+= (-1)^{n}\,\frac{x^{\,n+1}}{(n+1)\,(1+c)^{n+1}},\ \ c\in(0,x).
+\]
+\[
+\arctan x \;=\; x - \frac{x^3}{3} + \frac{x^5}{5} - \cdots + 
+(-1)^{m}\frac{x^{2m+1}}{2m+1} \;+\; R_{2m+1}(x), \qquad x\in(-1;1)
+\]
+\[
+R_{2m+1}(x)=\frac{(\arctan)^{(2m+2)}(c)}{(2m+1)!}\,x^{\,2m+1},\ \ c\in(0,x).
+\]
+\[
+(1+x)^{\alpha} \;=\; 1 + \alpha x + \frac{\alpha(\alpha-1)}{2!}x^2 + \cdots +
+\frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}\,x^n \;+\; R_{n}(x), \qquad x\in(-1;1)
+\]
+\[
+R_{n}(x)=\frac{(1+x)^{\alpha\,(n+1)}(c)}{(n+1)!}\,x^{\,n+1}
+=\frac{\alpha(\alpha-1)\cdots(\alpha-n)}{(n+1)!}\,(1+c)^{\alpha-n-1}\,x^{\,n+1},\ \ c\in(0,x).
+\]
+Дээрх задаргаанд $\alpha=-1, x=-t, n=\infty$ гэвэл 
+\[
+\frac{1}{1-t} \;=\; 1 + t + t^2 + \cdots + t^n +\cdots 
+\]
+болж бидний мэдэх төгсгөлгүй буурах геометрийн прогрессийн нийлбэр гарна. Бусад задаргаанд ч мөн адил $n=\infty$ авч үзвэл цуваа үүснэ.
+\begin{example}[Тэйлор $a=\pi/4$ төвтэй]
+$f(x)=\sin x$ функцийн $a=\pi/4$ төвтэй $n=2$ задаргааг бич.
+
+$f(\tfrac{\pi}{4})=\tfrac{\sqrt2}{2}$,\ $f'(\tfrac{\pi}{4})=\tfrac{\sqrt2}{2}$,\ $f''(\tfrac{\pi}{4})=-\tfrac{\sqrt2}{2}$ тул
+\[
+\sin x=\frac{\sqrt2}{2}+\frac{\sqrt2}{2}(x-\tfrac{\pi}{4})-\frac{\sqrt2}{4}(x-\tfrac{\pi}{4})^2+\frac{-\sin(c)}{3!}(x-\tfrac{\pi}{4})^3.
+\] Хэрэв энэ задаргааг ашиглах болбол ихэвчлэн үлдэгдэл гишүүнийг орхин ойролцоо тооцоолол хийдэг. Учир нь $c$ тоо олдох л болохоос хэрхэн олохыг мэдэхгүй.
+\end{example}
+
+\begin{example}[Маклорен 3-р зэргийн ойролцоо] $y=\ln(1+x)$ функцийг 3 зэргийн олон гишүүнтээр ойролцоогоор соль.\\
+$\ln(1+x)=x-\dfrac{x^2}{2}+\dfrac{x^3}{3}+R_4(x)$,\quad 
+$|R_4(x)|=|- \dfrac{x^4}{4(1+c)^4}|\leq \dfrac{x^4}{4}$ тул  $|\ln(1+x) - (x-\tfrac{x^2}{2}+\tfrac{x^3}{3})|\lesssim \dfrac{|x|^4}{4}$.
+\end{example}
+
+\begin{example}[Тэйлороор ойролцоо бодох]
+$\sqrt{1+x}=(1+x)^{1/2}=1+\frac{x}{2}-\frac{x^2}{8}+\frac{x^3}{16}+\cdots$ ($|x|<1$). 
+Жишээ нь $\sqrt{9.1}=\sqrt{9}\sqrt{1+0.1/9}\approx 3\!\left(1+\frac{0.1}{18}-\frac{(0.1)^2}{8\cdot 9^2}\right)$.
+\end{example}
+% ---------- График байгуулах 4 алхмын алгоритм ----------
+\section{Функц шинжлэн график байгуулах 4 алхам}
+Уламжлал ашиглан функцийн графикийг байгуулахад нийлээд нарийн зурах боломжтой. Дараах алхамуудын дагуу гарфик байгуулдаг.
+\subsection*{Алхам 1. $f(x)$-ийн ерөнхий шинжилгээ (графикийн үндсэн мэдээлэл)}
+\begin{itemize}
+  \item \textbf{Тодорхойлогдох муж} $D_f$: томъёоны хязгаарлалт (хориглогдох тоон утга, тэнцэтгэл биш).
+  \item \textbf{Тэгш/Сондгой \& Үе}: 
+  \[
+    f(-x)\stackrel{?}{=}f(x)\;\;(\text{тэгш}), \qquad
+    f(-x)\stackrel{?}{=}-f(x)\;\;(\text{сондгой}), \qquad
+    f(x+T)\stackrel{?}{=}f(x).
+  \]
+  \item \textbf{Тэнхлэгтэй огтлол \& тэмдэг}: $f(x)=0$ тэгүүд, $\;f(x)\gtrless 0$ тэмдэгийн муж (тэнхлэгийн дээгүүр/доогуур).
+  \item \textbf{Хязгаарууд (шаардлагатай бол)}: $x\to a,\;\pm\infty$ үед $\lim f(x)$, хэвтээ/босоо/ ташуу асимптот боломж.
+\end{itemize}
+
+\subsection*{Алхам 2. Нэгдүгээр уламжлал: өсөлт/бууралт, локал экстеомум}
+\begin{itemize}
+  \item \textbf{Сэжигтэй цэгүүд}: $f'(x)=0$ болон $f'$ оршихгүй цэгүүд.
+  \item \textbf{Өсөлт/Бууралт}: $f'(x)\geq 0$ тэмдэгийн хүснэгт байгуулж завсар бүрт монотон чанарыг тогтооно.
+  \item \textbf{Локал экстремум}: $f'$-ийн тэмдэг солигдох байдлаар local \(\max/\min\) цэгүүдийг олно.
+\end{itemize}
+
+\subsection*{Алхам 3. Хоёрдугаар уламжлал: хотгор/гүдгэр, нугаралтын цэг}
+\begin{itemize}
+  \item \textbf{Хотгор/Гүдгэр}: $f''(x)\gtrless 0$ тэмдэгийн хүснэгт байгуулж завсар бүрийн хэлбэрийг тогтооно.
+  \item \textbf{Нугаралтын цэг}: $f''(x)=0$ буюу $f''$ оршихгүй ба  хотгор гүдгэр солигдох цэгүүд.
+\end{itemize}
+
+\subsection*{Алхам 4. Нэгтгэх хүснэгт \& График}
+\begin{itemize}
+  \item Алхам 1–3 дахь бүх мэдээллээ нэг хүснэгтэд нэгтгээд,
+  \item Тэгш/сондгой байдал, асимптот, $x$-тэнхлэгийг огтлох цэгүүд, өсөлт/бууралт, хотгор/гүдгэр,
+        экстремум, нугаралтын цэгүүдийг тэмдэглэн \textbf{график} зурах.
+\end{itemize}
+
+% ---------- Нэгтгэх хүснэгтийн загвар ----------
+\subsection*{Нэгтгэх хүснэгтийн жишиг загвар}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Завсар & $f(x)$-ийн тэмдэг & $f'(x)$ тэмдэг & Монотон & $f''(x)$ тэмдэг & Хотгор/Гүдгэр \\
+\hline
+$(\;\;,\;\;)$ & $+$/$-$ & $+$/$-$ & Өснө/Буурна & $+$/$-$ & Гүдгэр/Хотгор \\
+\hline
+$\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ \\
+\hline
+\end{tabular}
+\end{center}
+
+%\section*{Жишээ: $y=(x+1)e^x$ функцийг шинжлэн график байгуулах}
+
+\subsection*{Алхам 1. Ерөнхий шинжилгээ}
+\begin{itemize}
+  \item \textbf{Тодорхойлогдох муж:} $D_f=\mathbb{R}$.
+  \item \textbf{Тэнхлэгтэй огтлол:} $f(0)=(0+1)e^0=1$ → $y$-тэнхлэгийг $(0,1)$ цэгт огтлоно.
+  \item $f(x)=0 \ \Rightarrow\ (x+1)e^x=0 \ \Rightarrow\ x=-1$ → $x=-1$ дээр $x$-тэнхлэгийг огтлоно.
+  \item \textbf{Тэмдэг:} $f(x)<0$ ⇔ $x<-1$, $f(x)>0$ ⇔ $x>-1$.
+  \item \textbf{Хязгаарууд:} 
+  \[
+  \lim_{x\to -\infty} (x+1)e^x = 0^{-}, \qquad 
+  \lim_{x\to +\infty} (x+1)e^x = +\infty.
+  \]
+\end{itemize}
+
+\subsection*{Алхам 2. Нэгдүгээр уламжлал (өсөлт, бууралт, экстремум)}
+\[
+f'(x) = (x+1)'e^x + (x+1)(e^x)' = e^x + (x+1)e^x = e^x(x+2).
+\]
+\begin{itemize}
+  \item $f'(x)=0$ ⇔ $x=-2$.
+  \item $e^x>0$ бүх $x$-д, тэгэхээр $f'(x)$-ийн тэмдэг нь $(x+2)$-оор тодорхойлогдоно.
+  \[
+  f'(x)<0 \text{  үед } x<-2, \qquad f'(x)>0 \text{  үед } x>-2.
+  \]
+  \item $\Rightarrow$ $x=-2$ нь \textbf{local минимум}.
+  \item $f(-2)=(-1)e^{-2}=-\dfrac{1}{e^2}\approx -0.135$.
+\end{itemize}
+
+\subsection*{Алхам 3. Хоёрдугаар уламжлал (хотгор, гүдгэр, нугаралт)}
+\[
+f''(x) = \frac{d}{dx}[e^x(x+2)] = e^x(x+2)+e^x=e^x(x+3).
+\]
+\begin{itemize}
+  \item $f''(x)=0$ ⇔ $x=-3$ → нугаралтын цэг.
+  \item $f''(x)<0$ ($x<-3$) → хотгор, $f''(x)>0$ ($x>-3$) → гүдгэр.
+  \item $\Rightarrow$ $x=-3$ нь нугаралтын цэг.
+\end{itemize}
+
+\subsection*{Алхам 4. Мэдээллийг нэгтгэн хүснэгтэд оруулж график байгуулах}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Завсар & $f(x)$ тэмдэг & $f'(x)$ тэмдэг & Өсөлт/Бууралт & $f''(x)$ тэмдэг & Хотгор/Гүдгэр \\
+\hline
+$(-\infty,-3)$ & $-$ & $-$ & Буурна & $-$ & Хотгор \\
+\hline
+$(-3,-2)$ & $-$ & $-$ & Буурна & $+$ & Гүдгэр \\
+\hline
+$(-2,\infty)$ & $+$ & $+$ & Өснө & $+$ & Гүдгэр \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{График}
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+  % Тэнхлэгүүд
+  \draw[->] (-5,0)--(3,0) node[below right] {$x$};
+  \draw[->] (0,-2)--(0,5) node[above left] {$y$};
+
+  % Функцийн муруй
+  \draw[smooth,domain=-5:1,samples=200,thick,blue] plot(\x,{(\x+1)*exp(\x)});
+
+  % Тэмдэглэсэн цэгүүд
+  \fill (-2,{-1/exp(2)}) circle (2pt) node[below left] {$(-2,-\frac{1}{e^2})$};
+  \fill (0,1) circle (2pt) node[above right] {$(0,1)$};
+  \fill (-1,0) circle (2pt) node[below left] {$( -1,0)$};
+  \draw[dashed] (-2,0)--(-2,{-1/exp(2)})--(0,{-1/exp(2)});
+
+  % Тайлбарууд
+  \node at (-4,3.5) {\small $f(x)=(x+1)e^x$};
+  \node[blue] at (-2.5,-1.4) {\small Мин цэг};
+  \node[blue] at (-3.2,0.8) {\small Хотгор};
+  \node[blue] at (-1,3) {\small Гүдгэр};
+\end{tikzpicture}
+\end{center}\newpage
+\section{Семинар}
+\begin{enumerate}
+  \item Лопиталын дүрэм хэрэглэн хязгаар бод.
+  \begin{multicols}{2}
+\begin{enumerate}
+  \item $\displaystyle\lim_{x\to a} \frac{\sqrt[3]{x}-\sqrt[3]{a}}{\sqrt{x}-\sqrt{a}}.$
+ \item $ \displaystyle\lim_{x\to 0} \frac{e^{x}-1}{\sin x}.$
+ \item $\displaystyle\lim_{x\to 0} \frac{x-\arctan x}{x^{3}}.$
+ \item $\displaystyle \lim_{x\to 0} \frac{x-\sin x}{x-\tan x}.$ 
+ \item $\displaystyle\lim_{x\to 0}  \frac{e^{x^{2}}-1}{\cos x - 1}.$
+ \item $\displaystyle\lim_{x\to 1} 
+     \left[\frac{x}{x-1}-\frac{1}{\ln x}\right].$
+ \item $\displaystyle  \lim_{x\to \infty} 
+     \left[x\left(e^{\frac{1}{x}}-1\right)\right].$
+  \item $\displaystyle  \lim_{x\to 0} x^{\sin x}.$
+ \end{enumerate} 
+ \end{multicols}
+ \item Дараах функцүүдийн нугаралтын
+цэгүүдийг олж, хотгор ба гүдгэр
+интервалыг тодорхойл.
+\begin{multicols}{2}
+ \begin{enumerate}
+   \item $y = x^{3} - 5x^{2} + 3x - 5$;
+  \item $y = x^{4} - 12x^{3} + 48x^{2} - 50$;
+  \item $y = \ln(1+x^{2})$;
+  \item $y = x + 36x^{2} - 2x^{3} - x^{4}$;
+ \end{enumerate}
+ \end{multicols}
+\item II уламжлал ашиглан функцийн
+экстремум тодорхойл.
+\begin{multicols}{2}
+\begin{enumerate}
+   \item $y = x^3 - 2ax^2 + a^2x\quad (a>0)$.
+
+\item $y = x^2(a - x)^2$
+
+\item $y = x + \frac{a^2}{x}\quad (a>0)$
+
+\item $y = x + \sqrt{1 - x}$
+\end{enumerate}
+\end{multicols}
+\item Тэйлорын теорем
+\begin{multicols}{2}
+\begin{enumerate}
+\item $y = \frac{1}{x}$ функцийг $x_0=-1$ цэг орчимд Тэйлорын $n$-р эрэмбийн томьёогоор бич.
+
+\item $y = xe^x$ функцийг $x_0=0$ цэг орчимд Маклорены $n$-р эрэмбийн томьёо бич.
+
+\item $y = \sqrt{x}$ функцийг $x_0=4$ орчимд Тэйлорын $n$-р эрэмбийн томьёо бич.
+\item $x_0=1$ орчимд Тэйлорын эхний 3 гишүүнийг олж, $f(1.03)$-ыг ойролцоол.
+\end{enumerate}
+\end{multicols}
+\item Дараах функцүүдийг судалж, графикийг байгуулаарай.
+\begin{multicols}{2}
+\begin{enumerate}
+  \item $y = \dfrac{x}{1+x^{2}}$;
+  \item $y = \dfrac{1}{1-x^{2}}$;
+  \item $y = -\dfrac{x}{x^{2}-1}$;
+  \item $y(x-1)(x-2)(x-3)=1$.
+\end{enumerate}
+\end{multicols}
+\item Функц зохион хамгийн их бага ута ол.
+\begin{enumerate}
+
+% ===========================
+% 1–12: Хамгийн их/бага утга олох бодлогууд
+% ===========================
+
+\item 8 тоог хоёр хэсэгт задлахад, тэдгээрийн кубуудын нийлбэр хамгийн бага байхаар задална уу.
+
+\item Эерэг тоо $x$ ба түүний урвуу тоо $\frac{1}{x}$–ийн нийлбэр хамгийн бага байх $x$-ийг ол.
+
+\item 36 тоог хоёр үржвэрт задлахад, квадратуудын нийлбэр хамгийн бага байхаар задла.
+
+\item Эзэлхүүн нь $72\text{ см}^3$ байх, тагтай тэгш өнцөгт хайрцаг хийх бөгөөд суурийн талуудын харьцаа $1:2$. Гадаргуугийн талбай хамгийн бага байх нөхцөлийг ол.
+
+\item $18\times 18$ квадрат цаасны дөрвөн булангаас тэнцүү квадратыг хайчилж аван үлдсэн цаасаар хайрцаг хийв. Хайрцаг хамгийн их багтаамжтай байхаар хайчлах квадратын талын уртыг ол.
+
+\item Дээрх бодлогыг  $8\times 5$ тэгш өнцөгт цаасны хувьд шийд.
+
+\item Эзэлхүүн нь $v$ байх зөв гурвалжин суурьтай  нийт гадаргуугийн талбай хамгийн бага байхаар призмийн суурийн талыг ол.
+
+\item Эзэлхүүн нь $v$ байх цилиндр савны өндөр $h$ ба радиус $R$ ямар үед материал хамгийн бага орох вэ?
+\end{enumerate}
+\end{enumerate}
+\newpage
+\section{Гэрийн даалгавар}
+\begin{enumerate}
+\begin{multicols}{2}
+  \item Лопиталын дүрэм хэрэглэн хязгаар бод.
+\begin{enumerate}
+ \item $\displaystyle \lim_{x\to 0}  \frac{e^{ax}-\cos(\alpha x)}{e^{\beta x}-\cos(\beta x)}.$
+ \item $\displaystyle \lim_{x\to 0} \frac{e^{a\sqrt{x}}-1}{\sqrt{\sin(bx)}}.$
+\item $\displaystyle\lim_{x\to \infty} 
+     \frac{\pi-2\arctan x}{\ln(1+\tfrac{1}{x})}.$
+  \item $\displaystyle \lim_{x\to 0} \frac{\ln(\cos x)}{x}.$
+  \item $\displaystyle \lim_{x\to a} \frac{x^{m}-a^{m}}{x^{n}-a^{n}}.$
+
+  \item $\displaystyle\lim_{x\to 0} 
+     \frac{a^{x}-b^{x}}{c^{x}-d^{x}}.$
+
+  \item $\displaystyle \lim_{x\to 0} 
+     \frac{e^{x}-e^{-x}}{\sin x \cos x}.$
+  \item $\displaystyle \lim_{x\to 1} 
+     \frac{\ln(1-x)+\tan\frac{\pi x}{2}}{\cot(\pi x)}.$
+
+  \item $\displaystyle \lim_{x\to +\infty} x^{n} e^{-x}.$
+
+  \item $\displaystyle \lim_{x\to \infty} 
+     \bigl[(\pi - 2\arctan x)\ln x\bigr].$
+
+  \item $\displaystyle \lim_{x\to \infty} 
+     \left[x\sin\frac{a}{x}\right].$
+
+  \item $\displaystyle  \lim_{\varphi \to a} 
+     \left[(a^{2}-\varphi^{2}) \tan\frac{\pi\varphi}{2a}\right].$
+
+  \item $\displaystyle \lim_{x\to 1} 
+     \left(\frac{1}{\ln x} - \frac{x}{\ln x}\right).$
+
+  \item $\displaystyle  \lim_{x\to 0} 
+     \left(\cot x - \frac{1}{x}\right).$
+
+  \item $\displaystyle \lim_{x\to \infty} 
+     \frac{1}{\cos\frac{\pi x}{2}\,\ln(1-x)}.$
+
+  \item $\displaystyle \lim_{x\to \infty} 
+     \left[\sqrt[n]{(a+x)(b+x)(c+x)} - x\right].$
+
+  \item $\displaystyle  \lim_{x\to 0} 
+     \left[x^{2} e^{\frac{1}{x^{2}}}\right].$
+
+  \item $\displaystyle \lim_{x\to \frac{\pi}{2}}
+     \left(\tan x\right)^{2x-\pi}.$
+
+  \item $\displaystyle \lim_{x\to 0} 
+     x^{\frac{1}{\ln(e^{x}-1)}}.$
+
+  \item $\displaystyle  \lim_{x\to 0} 
+     \left(\frac{1}{x}\right)^{\tan x}.$
+
+  \item $\displaystyle  \lim_{x\to \infty} 
+     \left(e^{x}+e^{-x}\right)^{1/x}.$
+
+  \item $\displaystyle  \lim_{x\to a} 
+     \left(2 - \frac{x}{a}\right)^{\frac{\tan(\pi x / 2a)}{}}.$ 
+\end{enumerate}
+\item Дараах функцүүдийн локал экстермум, нугаралтын
+цэгүүдийг олж, хотгор ба гүдгэр
+интервалыг тодорхойл.
+\begin{enumerate}
+ \item $y = 3x^{5} - 5x^{4} + 3x - 2$;
+  \item $y = (x+2)^{6} + 2x + 2$;
+  \item $y = -\dfrac{x^{3}}{x^{2} + 3a^{2}},\quad a>0$;
+  \item $y = a - \sqrt[3]{x-b}$;
+  \item $y = e^{\sin x},\quad -\dfrac{\pi}{2} \le x \le \dfrac{\pi}{2}$;
+  \item $y = \dfrac{a}{x}\ln\!\frac{x}{a},\quad a>0$;
+  \item $y = a - \sqrt[5]{(x-b)^{2}}$;
+  \item $y = e^{\arctan x}$;
+  \item $y = x^{4}\bigl(12\ln x - 7\bigr)$;
+\item $y = x\sqrt{2-x^2}$
+
+\item $y = \operatorname{ch}(ax)$
+
+\item $y = x^2 e^{-x}$
+
+\item $y = \frac{x}{\ln x}$
+
+\item $y = x^{1/x}$
+\end{enumerate}
+\item Тэйлорын теорем
+\begin{enumerate}
+\item $y = \frac{e^x + e^{-x}}{2}$ функцийг $x_0=0$ орчимд Тэйлорын $2n$-р эрэмбийн томьёо бич.
+
+\item $y = x^3 \ln x$ функцийг $x_0 = 1$ орчимд Тэйлорын $n$-р эрэмбийн томьёо бич.
+
+\item $f(x)=x^8-2x^7+5x^6-x+3$.  
+$x_0=2$ орчимд Тэйлорын эхний 3 гишүүн олж, $f(2.02)$ ба $f(1.97)$-ыг ойролцоол.
+
+\item $f(x)=x^{80}-x^{40}+x^{20}$.  
+$x_0=1$ орчимд $(x-1)$ зэргийн хувьд Тэйлорын эхний 3 гишүүн олж, $f(1.005)$-ыг ойролцоол.
+\end{enumerate}
+\item Функц зохион хамгийн их бага ута ол.
+\begin{enumerate}
+
+\item Үүсгэгч урт $20$ см байх конус хэлбэрийн воронка хийх. Эзэлхүүн хамгийн их байх өндөрийг ол.
+
+\item Төв өнцөг нь $\alpha$ байх дугуйны секторыг эвхэж конус үүсгэвэл, эзэлхүүн хамгийн их байх $\alpha$ өнцгийг ол.
+
+\item Периметр нь $2p$ бодит тэгш өнцөгт гурвалжинг эргүүлэхэд үүсэх биетийн эзэлхүүн хамгийн их байх гурвалжны хэмжээг ол.
+\end{enumerate}
+\end{multicols}
+\end{enumerate}
+% Хотгор, гүдгэр ба нугаралтын цэгүүд

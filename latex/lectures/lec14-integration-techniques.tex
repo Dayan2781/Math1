@@ -1,0 +1,643 @@
+ \chapter{Тодорхойгүй интеграл бодох}
+\section{Рационал бутархайн интеграл}
+$\dfrac{P(x)}{Q(x)}$ хэлбэрийн функцийг рационал функц гэдэг. Энд $P(x)$, $Q(x)$ нь олон гишүүнт. Хэрэв  $\deg P<\deg Q$ бол зөв рационал бутархай бусад үед засагдах рационал бутархай гэдэг. Хэрэв $\dfrac{P(x)}{Q(x)}$ засагдах рационал бутархай бол түүнийг 
+$$\dfrac{P(x)}{Q(x)}=M(x)+\dfrac{R(x)}{Q(x)}$$ хэлбэрт нэг утгатай тавьж болно. Энд $M(x),\, R(x)$  олон гишүүнтүүд ба $\deg R<\deg Q$. Тиймээс зөв бутархайн интегралыг бодчихвол ямар ч рационал бутархай функцийн интегралыг бодож болно. 
+\begin{theorem}[Хялбар бутархайд задлах]
+$\dfrac{P(x)}{Q(x)}$ зөв рационал бутархай бол түүнийг дараах 4 хэлбэрийн бутархайнуудын нийлбэрт нэг утгатай задлаж болно. Үүнд $p^2-4q<0$ ба 
+ \begin{eqnarray}
+\dfrac{A}{(x-a)}&&\text{-1-р төрлийн хялбар бутархай}\nonumber\\
+\dfrac{A}{(x-a)^k}&&\text{-2-р төрлийн хялбар бутархай}\nonumber\\
+\dfrac{A}{(x^2+px+q)}&&\text{-3-р төрлийн хялбар бутархай}\nonumber\\
+\dfrac{A}{(x^2+px+q)^k}&&\text{-4-р төрлийн хялбар бутархай}\nonumber
+\end{eqnarray}
+\end{theorem}
+Дээрх теоремээс харахад 4 төрлийн хялбар бутархайн интегралыг бодчихвол ямар ч рационал бутархайн интеграл бодогдоно. Эхлээд эдгээр интегралуудыг хэрхэн бодох талаар үзье. 
+Хялбар бутархайн интегралууд дараах байдалтай:
+
+\[
+\int \frac{dx}{x-a}=\ln|x-a|+C,
+\]
+
+\[
+\int \frac{dx}{(x-a)^n}=\frac{-1}{(n-1)(x-a)^{\,n-1}}+C,
+\qquad n\ge 2,
+\]
+
+\[
+\int\frac{dx}{x^2+a^2}=\frac{1}{a}\arctan\frac{x}{a}+C,
+\]
+
+\[
+\int\frac{dx}{(x^2+px+q)}=\frac{2}{\sqrt{4q-p^2}}
+\arctan\frac{2x+p}{\sqrt{4q-p^2}}+C.
+\]
+
+Хэрэв $x^2+px+q$ квадрат нь бодит язгуургүй бол түүнийг
+\[
+x^2+px+q=(x+a)^2+b^2
+\]
+хэлбэрт оруулж арктангенс ашиглан бодно.  Иймд 4-р төрлийн хялбар бутархайн интегралийн хувьд түүнийг $t=\dfrac{2x+p}{\sqrt{4q-p^2}}$ орлуулгаар $\dfrac{A}{(t^2+1)^n}$ хэлбэрт хувиргаж болно. Иймд
+$$\displaystyle I_n = \int \frac{dx}{(1+x^2)^n}$$ хэрхэн бодохыг тайлбарлая.\\
+
+Эхлээд $n=1$ үед
+\[
+I_1 = \int \frac{dx}{1+x^2} = \arctan x+C
+\]
+байхыг харах амархан. 
+
+Хэсэгчлэн интегралчлах замаар
+\[
+I_n = \frac{x}{2(n-1)(1+x^2)^{n-1}} + \frac{2n-3}{2(n-1)} I_{n-1}
+\]
+томьёог гаргаж болно. Иймд 4-р төрлийн бутархайн интеграл бодогдоно. Жишээ болгон эхний хэдэн интегралыг бичвэл:
+\[
+I_2=\frac{x}{2(1+x^2)}+\frac12 I_1
+   =\frac{x}{2(1+x^2)}+\frac12\arctan x+C
+\]
+$I_3$–г олохын тулд рекурент томьёонд $n=3$ гэж орлуулбал
+\[
+I_3=\frac{x}{2(1+x^2)^2}+\frac34 I_2
+\] болно.
+$I_2$–ийн оронд өмнө олсоноо орлуулбал:
+\[
+I_3=\frac{x}{2(1+x^2)^2}
+    +\frac{3}{4}\left(\frac{x}{2(1+x^2)}+\frac12\arctan x\right)+C
+\]
+буюу
+\[
+I_3=
+\frac{x}{2(1+x^2)^2}
++\frac{3x}{8(1+x^2)}
++\frac{3}{8}\arctan x+C
+\]
+болно.
+$I_4$–г ижлээр олбол
+\[
+I_4=
+\frac{x}{2(1+x^2)^3}
++\frac{5x}{12(1+x^2)^2}
++\frac{15x}{48(1+x^2)}
++\frac{15}{48}\arctan x+C.
+\]
+Бүх үзсэн зүйлсээ нэгтгэн үзвэл рационал бутархайн интегралыг бодохдоо дараах алхамуудыг хийнэ. 
+\begin{enumerate}
+    \item Эхний алхам рационал бутархайг засаж зөв бутархай ба олон гишүүнтийн нийлбэр болгоно.
+    \item Зөв бутархайг хялбар рационал бутархайнуудын нийлбэр байдлаар илэрхийлэн.
+    \item Интегралаа бодно.
+\end{enumerate}
+$\dfrac{R(x)}{Q(X)}$ зөв бутархайн хувьд
+\begin{eqnarray}
+Q(x)&=&A(x-a_1)\ldots (x-a_m)(x-b_1)^{n_1}\ldots (x-b_k)^{n_k}\nonumber\\
+   &=& (x^2+p_1x+q_1)\ldots (x^2+p_lx+q_l)(x^2+r_1x+s_1)^{g_1}\ldots (x^2+p_dx+q_d)^{g_d}\nonumber
+\end{eqnarray} бол түүнийг хялбар бутархайд задлахад $Q(x)$ олон гишүүнтийн зэрэгтэй тэнцүү тооний үл мэдэгдэх бүхий шугман тэгшитгэлийн систем бодно.
+\begin{example}
+$$
+\int\frac{3x^3+2x^2+x-7}{x^2+1} dx$$ хувьд
+
+ \[
+\frac{3x^3+2x^2+x-7}{x^2+1}
+=
+3x+2+\frac{-2x-9}{x^2+1}.
+\]
+болно. 
+Энэ үед интеграл нь:
+\[
+\int (3x+2)\,dx - \int\frac{2x}{x^2+1}dx - 9\int\frac{dx}{x^2+1}=\dfrac{3}{2}x^2+2x-\ln(x^2+1)-9\arctan x+c.
+\]   
+\end{example} 
+\begin{example}
+\[
+\int \frac{dx}{x^2-1}
+\]
+бодъёо. Зөв бутархай учир хуваарийг үржигдэхүүн болговол ${x^2-1}=(x-1)(x+1)$ тул
+\[
+\frac{1}{(x-1)(x+1)}=\frac{A}{x-1}+\frac{B}{x+1}
+\]
+ байхаар $A, B$ олдоно. Ижил хуваарь өгвөл 
+ \[
+\frac{A}{x-1}+\frac{B}{x+1}=\frac{A(x+1)+B(x-1)}{(x-1)(x+1)}=\frac{(A+B)x+(A-B)}{(x-1)(x+1)}=\frac{1}{(x-1)(x+1)}
+\] болно. Иймд 
+$$
+\begin{cases}
+    A+B&=0\\
+    A-B&=1
+\end{cases}$$ болно. Үүнийг бодвол $A=0.5, B=-0.5$ болно. 
+Тэгвэл интеграл
+\[
+\int \frac{dx}{x^2-1}=\frac12\Bigl[\int \Bigl(\dfrac{1}{x+1}-\dfrac{1}{x-1}\Bigr)dx\Bigr]==\frac12\ln|x-1|-\frac12\ln|x+1|+C
+=\frac12\ln\left|\frac{x-1}{x+1}\right|+C.
+\]
+ болно.
+\end{example}
+\begin{example}
+ \[
+\int \frac{dx}{x^2+4x+5}
+=
+\int \frac{dx}{(x+2)^2+1}
+=
+\arctan(x+2)+C.
+\]   
+\end{example}
+\begin{example}
+Дараах интегралыг бод.
+\[
+I=\int\dfrac{2x^4 - x^3 - x^2 - 4x - 2}{x^3-x^2-x+1}\, dx.
+\]
+
+\textbf{1. Зөв бутархай болгох.}
+
+Эхлээд олон гишүүнтийг үлдэгдэлтэй  хувааж зөв бутархайд шилжүүлнэ:
+\[
+\frac{2x^4 - x^3 - x^2 - 4x - 2}{x^3 - x^2 - x + 1}
+= 2x+1 + \frac{2x^2 - 5x - 3}{x^3 - x^2 - x + 1}.
+\]
+
+Хуваарийг үржигдэхүүн болговол
+\[
+x^3 - x^2 - x + 1 
+= x^2(x-1) -1(x-1)
+= (x^2-1)(x-1)
+= (x-1)^2(x+1).
+\]
+
+Тиймээс
+\[
+\frac{2x^4 - x^3 - x^2 - 4x - 2}{x^3 - x^2 - x + 1}
+= 2x+1 + \frac{2x^2 - 5x - 3}{(x-1)^2(x+1)}.
+\]
+
+
+\textbf{2. Зөв бутархайг хялбар бутархайд задлах.}
+
+Бутархайг
+\[
+\frac{2x^2 - 5x - 3}{(x-1)^2(x+1)}
+= \frac{A}{x-1} + \frac{B}{(x-1)^2} + \frac{C}{x+1}
+\]
+гэж задлана.
+
+Ижил хуваарь оруулбал:
+\[
+2x^2 - 5x - 3 
+= A(x-1)(x+1) + B(x+1) + C(x-1)^2
+= (A+C)x^2 + (B-2C)x + (-A+B+C).
+\]
+болно.
+Коэффициентүүдийг харьцуулбал:
+\[
+2x^2 - 5x - 3 = (A+C)x^2 + (B-2C)x + (-A+B+C),
+\]
+ингээд систем:
+\[
+\begin{cases}
+A + C = 2,\\
+B - 2C = -5,\\
+-\,A + B + C = -3.
+\end{cases}
+\]
+
+Энэ системээс:
+\[
+A = 1,\qquad B = -3,\qquad C = 1.
+\]
+
+Иймээс
+\[
+\frac{2x^2 - 5x - 3}{(x-1)^2(x+1)}
+= \frac{1}{x-1} - \frac{3}{(x-1)^2} + \frac{1}{x+1}.
+\]
+
+Тэгвэл бүхэлд нь
+\[
+\dfrac{2x^4 - x^3 - x^2 - 4x - 2}{x^3 - x^2 - x + 1}
+= 2x+1 + \frac{1}{x-1} - \frac{3}{(x-1)^2} + \frac{1}{x+1}.
+\]
+
+\textbf{3. Хялбар бутархай тус бүрээр интегралчлах.}
+
+Одоо
+\[
+\begin{aligned}
+I
+&= \int (2x+1)\,dx 
++ \int \frac{1}{x-1}\,dx 
+- \int \frac{3}{(x-1)^2}\,dx 
++ \int\frac{1}{x+1}\,dx.
+\end{aligned}
+\]
+
+\[
+\int (2x+1)\,dx = x^2 + x + C_1,
+\]
+
+\[
+\int\frac{1}{x-1}\,dx = \ln|x-1| + C_2,
+\]
+
+\[
+\int \frac{3}{(x-1)^2}\,dx 
+= 3\int (x-1)^{-2}\,dx 
+= 3\cdot\frac{(x-1)^{-1}}{-1} 
+= -\frac{3}{x-1},
+\]
+тэгэхээр
+\[
+-\int \frac{3}{(x-1)^2}\,dx = +\frac{3}{x-1},
+\]
+
+\[
+\int\frac{1}{x+1}\,dx = \ln|x+1| + C_3.
+\]
+
+Иймээс
+\[
+I
+= x^2 + x + \ln|x-1| + \frac{3}{x-1} + \ln|x+1| + C.
+\]
+
+Логарифмуудыг нэгтгээд
+\[
+I
+= x^2 + x + \frac{3}{x-1} + \ln|x^2-1| + C,
+\]
+учир нь $x^2-1=(x-1)(x+1)$.
+
+\end{example}
+\section{Иррационал функцийн интеграл}
+
+Иррационал интеграл гэдэг нь интегралын тэмдэгтийн дор квадрат язгуур, ерөнхийдөө $x$-ийн бутархай зэрэг (\,$\sqrt{\phantom{x}}$, $\sqrt[n]{\phantom{x}}$\,) орсон интегралуудыг хэлнэ. Жишээлбэл:
+\[
+\int \sqrt{x+1}\,dx,\qquad 
+\int \frac{dx}{\sqrt{x^2+4}},\qquad
+\int \frac{x\,dx}{\sqrt{1-x^2}},\ \text{г.м.}
+\]
+
+Ийм интегралуудыг бодоход орлуулах арга түгээмэл ашиглана.
+
+\subsubsection*{1. $\sqrt{ax+b}$ хэлбэрийн иррационал интеграл}
+
+Ихэвчлэн $x$–ийг язгууртай тэнцүүлэх буюу
+\[
+ ax+b=t^2
+\]
+гэсэн орлуулга хэрэглэнэ.
+
+\begin{example}
+\[
+\int \sqrt{x+1}\,dx.
+\]
+
+Орлуулая:
+\[
+x+1 = t^2 \quad\Rightarrow\quad x = t^2-1,\quad dx = 2t\,dt.
+\]
+Тэгвэл
+\[
+\sqrt{x+1} = \sqrt{t^2} = t \quad (t>0\ \text{мужийг авч болно}).
+\]
+
+Интеграл:
+\[
+\int \sqrt{x+1}\,dx
+= \int t \cdot 2t\,dt
+= 2\int t^2\,dt
+= 2\cdot \frac{t^3}{3} + C
+= \frac{2}{3}t^3 + C.
+\]
+
+Энд $t^2 = x+1$ тул $t=\sqrt{x+1}$:
+\[
+\int \sqrt{x+1}\,dx 
+= \frac{2}{3}(x+1)^{3/2} + C.
+\]
+\end{example}
+
+\subsubsection*{2. $\sqrt{x^2+a^2}$ ба $\sqrt{x^2-a^2}$: тригонометр орлуулга}
+
+Квадрат язгуур дотор тэгш өнцөгт гурвалжин үүсгэж болохоор хэлбэр байвал тригонометр орлуулга ашиглана.
+
+\begin{itemize}
+  \item $\sqrt{x^2+a^2}$ үед $x = a\tan t$ гэж орлуулна.
+  \item $\sqrt{x^2-a^2}$ үед $x = a\sec t$ (эсвэл $x=a\cosh t$ гэх мэт) гэж орлуулна.
+  \item $\sqrt{a^2-x^2}$ үед $x = a\sin t$ гэж орлуулна.
+\end{itemize}
+
+\begin{example}
+\[
+\int \frac{dx}{\sqrt{x^2+4}}.
+\]
+
+Энд $x^2+4 = x^2+2^2$ тул $x=2\tan t$ гэж орлуулвал:
+\[
+x = 2\tan t \quad\Rightarrow\quad dx = 2\sec^2 t\,dt.
+\]
+Мөн
+\[
+\sqrt{x^2+4}
+= \sqrt{4\tan^2 t + 4}
+= 2\sqrt{\tan^2 t+1}
+= 2\sec t.
+\]
+
+Интеграл:
+\[
+\int \frac{dx}{\sqrt{x^2+4}}
+= \int \frac{2\sec^2 t\,dt}{2\sec t}
+= \int \sec t\,dt.
+\]
+
+$\displaystyle \int \sec t\,dt = \ln|\sec t + \tan t| + C$ тул:
+\[
+\int \frac{dx}{\sqrt{x^2+4}}
+= \ln|\sec t + \tan t| + C.
+\]
+
+Одоо $x$-руу буцаая. $x=2\tan t \Rightarrow \tan t = \dfrac{x}{2}$. 
+Тэгвэл
+\[
+\sec t = \sqrt{1+\tan^2 t}
+= \sqrt{1+\frac{x^2}{4}}
+= \frac{\sqrt{x^2+4}}{2}.
+\]
+
+Ингээд
+\[
+\sec t + \tan t = \frac{\sqrt{x^2+4}}{2} + \frac{x}{2}
+= \frac{\sqrt{x^2+4}+x}{2}.
+\]
+
+Тогтмол $\ln 2$-г $C$-д шингээж болдог тул:
+\[
+\int \frac{dx}{\sqrt{x^2+4}}
+= \ln\bigl|\sqrt{x^2+4}+x\bigr| + C.
+\]
+\end{example}
+
+\subsubsection*{3. Дифференциал биномын интеграл (Чебышёвын теорем)}
+
+Рациналь $m,n,p$ тоонуудын хувьд дараах интеграл
+\[
+\int x^{m}(a+b x^{n})^{p}\,dx
+\]
+ерөнхий тохиолдолд энгийн функцээр илэрхийлэгдэхгүй. Гэхдээ зөвхөн дараах
+\textbf{гурван тусгай нөхцөл} биелэх үед рациональ функцийн интегралд шилжүүлж болдог. Үүнийг Чебышёвын теорем гэнэ.
+
+\subsection*{Тохиолдол 1. $p$ — бүхэл тоо}
+Хэрэв
+\[
+p\in \mathbb{Z},
+\]
+бол 
+\[
+x = z^{N},
+\]
+орлуулга хэрэглэнэ. Энд $N$ нь $m$ болон $n$–ийн  \emph{ерөнхий хуваарь}.
+
+\subsection*{Тохиолдол 2. $\dfrac{m+1}{n}$ — бүхэл тоо}
+Хэрэв
+\[
+\frac{m+1}{n}\in\mathbb{Z},
+\]
+бол дараах орлуулгыг хэрэглэнэ:
+\[
+a + b x^{n} = z^{N},
+\]
+энд $N$ нь $p$ бутархайн \emph{хуваарь}.
+
+\subsection*{Тохиолдол 3. $\dfrac{m+1}{n}+p$ — бүхэл тоо}
+Хэрэв
+\[
+\frac{m+1}{n} + p \in \mathbb{Z},
+\]
+бол дараах орлуулга хэрэглэнэ:
+\[
+a x^{-n} + b = z^{N},
+\]
+энд мөн $N$ нь $p$ бутархайн хуваарь.
+
+\subsection*{Тайлбар}
+Хэрэв $n=1$ бол дээрх гурван нөхцөл нь дараахтай тэнцэнэ:
+\begin{enumerate}
+\item $p$ — бүхэл;
+\item $m$ — бүхэл;
+\item $m+p$ — бүхэл.
+\end{enumerate}
+
+\subsection*{Жишээ}
+Дараах интегралыг бодъё:
+\[
+\int x^3(2+x^4)^{1/2}\,dx.
+\]
+
+Энд $m=3$, $n=4$, $p=\frac12$. Шалгах:
+\[
+\frac{m+1}{n} = \frac{4}{4} = 1 \in \mathbb{Z},
+\]
+тиймээс \emph{Тохиолдол 2} биелж байна.
+
+Орлуулга хийвэл:
+\[
+2 + x^4 = t^2, \qquad t = \sqrt{2+x^4}.
+\]
+Мөн
+\[
+4x^3\,dx = 2t\,dt \quad\Rightarrow\quad x^3dx = \frac{t}{2}\,dt.
+\]
+
+Интегралыг орлуулж бодъё:
+\[
+\int x^3(2+x^4)^{1/2}\,dx
+= \int \left( \frac{t}{2}\right)t\,dt
+= \frac12\int t^2 \, dt
+= \frac{t^3}{6} + C.
+\]
+
+Буцааж орлуулбал:
+\[
+\boxed{
+\int x^3(2+x^4)^{1/2}\,dx
+= \frac{(2+x^4)^{3/2}}{6} + C.
+}
+\]
+\newpage
+\section{Семинар}
+\begin{enumerate}
+\item Рационал бутархайн интеграл бод.
+\begin{enumerate}
+    
+\begin{multicols}{2}
+\item $\displaystyle \int \frac{3x+1}{x^2+1}\,dx$
+\item $\displaystyle \int \frac{2x-3}{x^2-3x+2}\,dx$
+\item $\displaystyle \int \frac{x}{(x-1)^2(x+1)}\,dx$
+\item $\displaystyle \int \frac{x}{(x-1)^2(x^2+2x+2)}\,dx$
+\item $\displaystyle \int \frac{2x+3}{(x-2)(x+5)}\,dx$
+\item $\displaystyle \int \frac{x}{(x+1)(x+2)(x+3)}\,dx$
+\item $\displaystyle \int \frac{x^{10}}{x^2+x-2}\,dx$
+\item $\displaystyle \int \frac{x^3+1}{x^3-5x^2+6x}\,dx$
+\item $\displaystyle \int \frac{x^2+3x-2}{(x-1)(x^2+x+1)^2}\,dx$
+\item $\displaystyle \int \frac{x^3+1}{(x^2+1)^2}\,dx$
+\end{multicols}
+\end{enumerate}
+\item Иррационал функцийн интеграл бод.
+\begin{enumerate}
+\begin{multicols}{2}
+\item $\displaystyle \int \frac{dx}{1+\sqrt{x}} $
+\item $\displaystyle \int \frac{1-\sqrt{x+1}}{1+\sqrt[3]{x+1}}\,dx$ 
+\item $\displaystyle \int \sqrt{x^3+x^2}\, dx$
+\item $\displaystyle \int \frac{\sqrt{x}}{(1+\sqrt[3]{x})^2}\,dx$  
+\item $\displaystyle \int \sqrt[3]{3x-x^3}\, dx$
+\item $\displaystyle \int \frac{x^2}{\sqrt{1+x+x^2}} \,dx$
+\item $\displaystyle \int \frac{dx}{(1-x^2)\sqrt{1-x^2}} \,dx$
+\end{multicols}
+\end{enumerate}
+\item Тригонометрийн интеграл бод. 
+\begin{enumerate}
+\begin{multicols}{2}
+\item $\displaystyle \int \cos^5 x\, dx$
+\item $\displaystyle \int \sin ^4 x\, dx$
+\item $\displaystyle \int \cos^5 x\sin^5 x\, dx$
+\item $\displaystyle \int \frac{\sin^3 x}{\cos ^4x}\,dx$ 
+\item $\displaystyle \int \frac{dx}{\sin^3x}\,dx$
+\item $\displaystyle \int \sin 3x\cos x\,dx$
+\item $\displaystyle \int \cos x\cos 2x\cos 3x\,dx$
+\item $\displaystyle \int \frac{dx}{2\sin x-\cos x+5}\,dx$ 
+\end{multicols}
+\end{enumerate}
+\end{enumerate}
+ \newpage
+ \section{Гэрийн даалгавар} Тохиромжтой аргаар бод.
+\begin{enumerate}
+\begin{multicols}{2}
+\item $\displaystyle \int \frac{dx}{x^6(1+x^2)}.$
+
+\item $\displaystyle \int \frac{x^2}{(1-x^2)^3}\,dx.$
+
+\item $\displaystyle \int \frac{dx}{1+x^4+x^8}.$
+
+\item $\displaystyle \int \frac{dx}{\sqrt{x+\sqrt[3]{x}}}.$
+
+% ----------- 51–55 -----------
+\item $\displaystyle \int x^2\sqrt{\frac{x}{1-x}}\,dx.$
+
+\item $\displaystyle \int \frac{x+2}{x^2\sqrt{1-x^2}}\,dx.$
+
+\item $\displaystyle \int \sqrt{\frac{x}{1-x}}\,dx.$
+\item $\displaystyle \int \frac{dx}{\sqrt[3]{x^2(1-x)}}.$
+
+\item $\displaystyle \int \frac{dx}{x\sqrt{1+x^3+x^6}}.$
+
+% ----------- 11–15 -----------
+\item $\displaystyle \int x\sqrt{x^4-2x^2-1}\,dx.$
+
+\item $\displaystyle \int \frac{1+\sqrt{\frac{1-x}{1+x}}}{1-\sqrt{\frac{1-x}{1+x}}}\,dx.$
+
+\item $\displaystyle \int \frac{(1+x)\,dx}{\sqrt{1+x^2}}.$
+
+\item $\displaystyle \int \frac{\ln(1+x+x^2)}{(1+x)^2}\,dx.$
+
+\item $\displaystyle \int (2x+3)\arccos(2x-3)\,dx.$
+
+% ----------- 16–20 -----------
+\item $\displaystyle \int x\ln(4+x^4)\,dx.$
+
+\item $\displaystyle \int \frac{\arcsin x}{x^2}\cdot\frac{1+x^2}{\sqrt{1-x^2}}\,dx.$
+
+\item $\displaystyle \int \frac{x\ln\!\left(1+\sqrt{1+x^2}\,\right)}{\sqrt{1+x^2}}\,dx.$
+
+\item $\displaystyle \int x\sqrt{x^2+1}\,\ln\!\sqrt{x^2-1}\,dx.$
+
+\item $\displaystyle \int \frac{x}{\sqrt{1-x^2}}\ln\frac{x}{\sqrt{1-x}}\,dx.$
+
+% ----------- 21–25 -----------
+\item $\displaystyle \int \frac{dx}{(2+\sin x)^2}.$
+
+\item $\displaystyle \int \frac{\sin 4x}{\sin^8 x+\cos^8 x}\,dx.$
+
+\item $\displaystyle \int \frac{\sin x}{\sqrt{1+\cos x}}\,dx.$
+
+\item $\displaystyle \int \frac{ax^2+b}{x^2+1}\arctan x\,dx.$
+
+\item $\displaystyle \int \frac{ax^2+b}{x^2-1}\ln\!\left|\frac{x-1}{x+1}\right|dx.$
+
+% ----------- 26–30 -----------
+\item $\displaystyle \int \frac{x\ln x}{(1+x^2)^2}\,dx.$
+
+\item $\displaystyle \int \frac{x\arctan x}{\sqrt{1+x^2}}\,dx.$
+
+\item $\displaystyle \int \frac{\sin 2x}{\sqrt{1+\cos^4 x}}\,dx.$
+
+\item $\displaystyle \int \frac{x^3\arccos x}{\sqrt{1-x^2}}\,dx.$
+
+\item $\displaystyle \int \frac{x^4\arctan x}{1+x^2}\,dx.$
+
+% ----------- 31–35 -----------
+\item $\displaystyle \int \frac{x\arctan x}{(1+x^2)^3}\,dx.$
+
+\item $\displaystyle \int \frac{x\ln\!\left(x+\sqrt{1+x^2}\right)}{(1-x^2)^2}\,dx.$
+
+\item $\displaystyle \int \sqrt{1-x^2}\,\arcsin x\,dx.$
+
+\item $\displaystyle \int x(1+x^2)\arctan x\,dx.$
+
+\item $\displaystyle \int x^x(1+\ln x)\,dx.$
+
+% ----------- 36–40 -----------
+\item $\displaystyle \int \frac{\arcsin(e^x)}{e^x}\,dx.$
+
+\item $\displaystyle \int \frac{\arctan \frac{x}{2}}{e^x(1+e^x)}\,dx.$
+
+\item $\displaystyle \int \frac{dx}{(e^{x+1}+1)^2-(e^{x-1}+1)^2}.$
+
+\item $\displaystyle \int \sqrt{\tanh^2 x+1}\,dx.$
+
+\item $\displaystyle \int \frac{1+\sin x}{1+\cos x}e^x\,dx.$
+
+% ----------- 41–45 -----------
+\item $\displaystyle \int |x|\,dx.$
+
+\item $\displaystyle \int x\,|x|\,dx.$
+
+\item $\displaystyle \int (x+|x|)^2\,dx.$
+
+\item $\displaystyle \int (1+|x|-|1-x|)\,dx.$
+
+\item $\displaystyle \int (e^{-1/x})\,dx.$
+
+% ----------- 46–50 -----------
+\item $\displaystyle \int \max(1, x^3)\,dx.$
+
+\item $\displaystyle \int \frac{x^5}{\sqrt{1+x^2}}\,dx.$
+\item $\displaystyle \int \varphi(x)\,dx$, \quad энд $\varphi(x)$ нь $x$ тооноос ойрхон бүхэл тоо хүртэлх зай.
+
+\item $\displaystyle \int \lfloor x \rfloor\, |\sin \pi x|\, dx \qquad (x>0).$
+
+\item $\displaystyle \int f(x)\,dx$, \quad энд
+\[
+f(x)=
+\begin{cases}
+1 - x^2, & |x|\le 1,\\
+1 - |x|, & |x|>1.
+\end{cases}
+\]
+
+\item $\displaystyle \int f(x)\,dx$, \quad энд
+\[
+f(x)=
+\begin{cases}
+1, & x<0,\\[4pt]
+x+1, & 0\le x \le 1,\\[4pt]
+2x, & x>1.
+\end{cases}
+\]
+
+\item $\displaystyle \int x\, f''(x)\,dx.$
+
+% ----------- 6–10 -----------
+\item $\displaystyle \int f'(2x)\,dx.$
+
+\item $f(x)$–ийг ол, хэрэв $\; f'(x^2)=\dfrac1{x}\quad (x>0).$
+
+\item $f(x)$–ийг ол, хэрэв $\; f'(\sin^2 x)=\cos^2 x.$
+
+\end{multicols}
+\end{enumerate}
