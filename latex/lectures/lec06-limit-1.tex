@@ -1,0 +1,348 @@
+%==============================================================
+%  МАТЕМАТИК 1в — ЛЕКЦ 6: ХЯЗГААР
+%  Зөвхөн биеийн хэсэг (таны преамбулд \input хийнэ).
+%==============================================================
+\providecommand{\R}{\mathbb{R}}
+\providecommand{\N}{\mathbb{N}}
+\providecommand{\tg}{\operatorname{tg}}
+
+\chapter{Хязгаар}
+\section{Функцийн хязгаарын тодорхойлолт}
+\begin{definition}[$a$ руу дөхөх ойлголт]
+$x \in X \subset \mathbb{R}$ хэмжигдэхүүн ба $a \in \mathbb{R}$ өгөгдсөн тогтмол тоо байг.
+\begin{enumerate}
+\item Дурын $\varepsilon>0$ тооны хувьд $0<|x-a|<\varepsilon$ байх $x$ утга олддог бол $x$ хэмжигдэхүүнийг $a$ руу дөхдөг гээд $x \to a$ гэж тэмдэглэнэ.
+
+Энэ нь $x$ ба $a$ тооны хоорондох зай дурын $\varepsilon$ тооноос бага болж чаддаг гэсэн үг.
+Өөрөөр хэлбэл $x$ хувьсагчийн утга $a$ тоотой хангалттай ойрхон (гэхдээ $a$-тай тэнцэхгүй) байж чаддаг бол $x$ нь $a$ руу дөхөж байна.
+\item Хэрэв $x$ нь $a$ руу дөхдөг ба үргэлж $a$-аас бага (эсвэл их) байдаг бол $x$-г $a$ руу зүүн талаас дөхдөг гээд $x \to a-$ (баруун талаас дөхдөг гээд $x \to a+$) гэж тэмдэглэнэ.
+\end{enumerate}
+\end{definition}
+\begin{example}
+$x$ хэмжигдэхүүн $0.9,\ 1.1,\ 0.99,\ 1.01,\ \ldots$ утгуудыг авч байвал $x$ нь $1$-д ойртсоор байна. Иймд $x \to 1$.
+
+Хэрэв $x=0.9,\ 0.99,\ 0.999,\ \ldots$ утгуудыг авч байвал $x \to 1-$, харин $x=1.1,\ 1.01,\ 1.001,\ \ldots$ бол $x \to 1+$.
+\end{example}
+\begin{definition}[Төгсгөлгүй рүү дөхөх]
+$x \in X \subset \mathbb{R}$ хэмжигдэхүүн байг.
+\begin{enumerate}
+\item Хэрэв $x$ ямар ч бодит тооноос их утга авч чаддаг бол $x$-г нэмэх төгсгөлгүйд дөхдөг гээд $x \to +\infty$ гэж тэмдэглэнэ.
+Өөрөөр хэлбэл дурын $M$ тооны хувьд $x > M$ байх $x$ утга олдоно.
+\item Хэрэв $x$ ямар ч бодит тооноос бага утга авч чаддаг бол $x$-г хасах төгсгөлгүйд дөхдөг гээд $x \to -\infty$ гэж тэмдэглэнэ.
+\end{enumerate}
+\end{definition}
+
+\begin{example}[Тэмүүлэх тухай]
+$x$ нь машины хурд байг. Тэгвэл $x \to 60$ байж чадна. Харин $x \to -30$ байж чадахгүй.
+
+Вакуум орчинд гэрлийн хурд $c=299792458$ м/сек бөгөөд түүнээс хурдан бөөм үгүй. $x$ нь ямар нэг бөөмийн хурд байг.
+Иймд $x \to c-$ байж болох боловч $x \to c+$ болон $x \to +\infty$ байж чадахгүй.
+\end{example}
+\begin{definition}[Хязгаарын энгийн тодорхойлолт]
+$X,Y \subset \mathbb{R}$, $f:X \to Y$, $a,E \in \mathbb{R}$ байг.
+Хэрэв $x \to a$ үед $f(x) \to E$ байвал $E$ тоог $f(x)$ функцийн $x\to a$ үеийн хязгаар гээд
+\[
+\lim_{x \to a} f(x) = E
+\]
+гэж тэмдэглэнэ.
+\end{definition}
+
+\begin{definition}[$\varepsilon-\delta$ тодорхойлолт]
+$f:X \to Y$ функц өгөгдөж, $a,E \in \mathbb{R}$ байг.
+Хэрэв дурын $\varepsilon>0$ тоонд $\delta>0$ олдож, $0<|x-a|<\delta$ байх бүх $x\in X$-ийн хувьд $|f(x)-E|<\varepsilon$ байвал $E$ тоог $f(x)$ функцийн $x\to a$ үеийн хязгаар гээд
+\[
+\lim_{x \to a} f(x) = E
+\]
+гэж тэмдэглэнэ. Кванторын тусламжтай:
+\[
+\lim_{x \to a} f(x) = E \iff \forall\varepsilon>0\ \exists\delta>0\ \forall x\in X:\ \bigl(0<|x-a|<\delta\Rightarrow|f(x)-E|<\varepsilon\bigr).
+\]
+\end{definition}
+
+\begin{remark}
+$0<|x-a|$ нөхцөл нь $x\neq a$ гэсэн үг. Иймд хязгаар нь $f(a)$-ийн утгаас хамаардаггүй;
+$f$ нь $a$ цэг дээр тодорхойлогдоогүй байж ч болно. Жишээ нь $\dfrac{x^2-1}{x-1}$ функц $x=1$ үед
+тодорхойлогдохгүй боловч $\lim\limits_{x\to1}\dfrac{x^2-1}{x-1}=2$.
+\end{remark}
+
+\begin{example}
+$f(x)=2x+1$ гэж бодъё. $\lim\limits_{x\to 3}(2x+1)=7$ болохыг баталж, мөн энэ хязгаар нь 8 биш болохыг шалгая.
+
+\begin{proof}[Хязгаар нь 7 болохыг шалгая.]
+$\varepsilon>0$ авъя. Хэрэв $0<|x-3|<\delta$ байвал
+\[
+|f(x)-7| = |(2x+1)-7| = |2x-6| = 2|x-3|.
+\]
+Хэрэв $\delta=\tfrac{\varepsilon}{2}$ гэж авбал $0<|x-3|<\delta$ үед
+\[
+|f(x)-7| = 2|x-3| < 2\delta = \varepsilon.
+\]
+Иймд тодорхойлолтоор $\lim\limits_{x\to 3}(2x+1)=7$.
+\end{proof}
+
+\begin{proof}[$\lim\limits_{x\to 3}(2x+1)\neq 8$ болохыг шалгая.]
+Тодорхойлолтын үгүйсгэл нь
+\[
+\exists\varepsilon>0\ \forall\delta>0\ \exists x:\ 0<|x-3|<\delta\ \text{ба}\ |f(x)-8|\ge\varepsilon.
+\]
+$\varepsilon=\tfrac12$ авъя. Дурын $\delta>0$ өгөгдөхөд $t=\tfrac12\min\left(\delta,\tfrac14\right)$,
+$x=3+t$ гэж авъя. Тэгвэл $0<|x-3|=t<\delta$ ба $0<t\le\tfrac18$ тул
+\[
+f(x)=7+2t\le7.25,\qquad |f(x)-8|=1-2t\ge0.75>\tfrac12.
+\]
+Иймд $\lim\limits_{x\to 3}(2x+1)\neq 8$.
+
+\textit{Анхаар:} ``$f(3)=7$ тул $|f(3)-8|=1$'' гэсэн үндэслэл хангалтгүй, учир нь тодорхойлолтод $x\ne3$.
+\end{proof}
+\end{example}
+
+\begin{example}[Хязгаар оршихгүй жишээ]
+$f(x) = [x]$ буюу $x$-ийн бүхэл хэсгийн функцийг авч үзье. $x \to 1$ үед хязгаар оршин байхгүйг харуулъя.
+
+$\lim\limits_{x\to 1}[x]=L$ гэж үзье. $\varepsilon=\tfrac12$ гэж авбал $\delta>0$ олдож, $0<|x-1|<\delta$ үед
+$|[x]-L|<\tfrac12$ байх ёстой. $\delta\le1$ гэж үзэж болно. Тэгвэл
+\begin{itemize}
+\item $x=1-\tfrac\delta2\in(0;1)$ үед $[x]=0$ тул $|0-L|<\tfrac12$;
+\item $x=1+\tfrac\delta2\in(1;2)$ үед $[x]=1$ тул $|1-L|<\tfrac12$.
+\end{itemize}
+Эндээс $1=|1-0|\le|1-L|+|L-0|<\tfrac12+\tfrac12=1$ болж зөрчилд хүрнэ.
+Иймд $\lim\limits_{x\to 1}[x]$ хязгаар оршин байхгүй.
+\end{example}
+\begin{remark}
+\begin{enumerate}
+\item Тодорхойлолт зөвхөн тухайн $E$ тоо хязгаар мөн эсэхийг шалгана.
+\item Тодорхойлолт хязгаарыг хэрхэн олох аргыг зааж өгөхгүй.
+\item $\delta$ нь $\varepsilon$-оос хамаарна: $\varepsilon$ багасахад ерөнхийдөө $\delta$-г мөн багасгах шаардлагатай.
+      Харин ``$|x-a|$ багасах тусам $|f(x)-E|$ үргэлж багасна'' гэсэн дүгнэлт \itcol{хийж болохгүй}
+      (жишээ нь $x\sin\frac1x$, $x\to0$).
+\item $\lim\limits_{x\to a}f(x)=E \iff \lim\limits_{x\to a}(f(x)-E)=0$.
+\item Хязгаар оршин байхгүй ч байж болно.
+\end{enumerate}
+\end{remark}
+
+\begin{definition}[Төгсгөлгүй рүү тэмүүлэх үеийн хязгаар]
+$f:X\to Y$ функц байг. Хэрэв дурын $\varepsilon>0$ тоонд $M\in\R$ олдож, $x>M$ байх бүх $x\in X$-ийн хувьд $|f(x)-E|<\varepsilon$ байвал
+\[
+\lim_{x \to +\infty} f(x) = E
+\]
+гэнэ. Үүнтэй адилаар $x<M$ байх бүх $x$-ийн хувьд $|f(x)-E|<\varepsilon$ байвал
+\[
+\lim_{x \to -\infty} f(x) = E
+\]
+гэнэ.
+\end{definition}
+
+\begin{example}
+$\lim\limits_{x\to +\infty}\dfrac{1}{x}=0$: $\varepsilon>0$-д $M=\dfrac1\varepsilon$ гэвэл $x>M$ үед
+$\left|\dfrac1x\right|=\dfrac1x<\dfrac1M=\varepsilon$. Үүнтэй адилаар $\lim\limits_{x\to -\infty}\dfrac{1}{x}=0$ ($M=-\frac1\varepsilon$).
+\end{example}
+\begin{definition}[Төгсгөлгүй хязгаар]
+$f:X\to Y$ функц байг. Хэрэв дурын $M>0$ тоонд $\delta>0$ олдож, $0<|x-a|<\delta$ байх бүх $x$-ийн хувьд $f(x)>M$ байвал
+\[
+\lim_{x \to a} f(x) = +\infty
+\]
+гэнэ. Үүнтэй адилаар $f(x)<-M$ байвал $\lim\limits_{x \to a} f(x) = -\infty$ гэнэ. Хэрэв
+\[
+\lim_{x \to a} |f(x)| = +\infty
+\]
+бол
+\[
+\lim_{x \to a} f(x) = \infty
+\]
+гэнэ.
+\end{definition}
+\begin{example}[Хязгаар $+\infty$ болох тохиолдол]
+$f(x)=\dfrac{1}{(x-2)^2}$ функцийг авч үзье. $x\to 2$ үед $f(x)\to+\infty$ болохыг шалгая.
+$0<|x-2|<\delta$ үед
+\[
+f(x)=\frac{1}{(x-2)^2}>\frac{1}{\delta^2}.
+\]
+Дурын $M>0$ тоонд $\delta=\dfrac{1}{\sqrt{M}}$ гэж авъя. Тэгвэл $0<|x-2|<\delta$ үед
+\[
+f(x)>\frac{1}{\delta^2}=M.
+\]
+Иймд тодорхойлолтын дагуу
+\[
+\lim_{x\to 2}\frac{1}{(x-2)^2}=+\infty.
+\]
+\end{example}
+\begin{definition}[Өрөөсгөл хязгаар] $X, Y\subset\R$, $a, E\in\R$, $f:X\to Y$ байг.
+Хэрэв дурын $\varepsilon>0$ тоонд $\delta>0$ олдож,
+$$0<a-x<\delta \text{ байх бүх } x \text{-ийн хувьд } |f(x)-E|<\varepsilon$$
+($0<x-a<\delta$ байх бүх $x$-ийн хувьд $|f(x)-E|<\varepsilon$)
+байвал $E$ тоог $f(x)$ функцийн $x$ нь $a$ руу тэмүүлэх үеийн зүүн (баруун) өрөөсгөл хязгаар гээд
+$$\lim\limits_{x\to a-}f(x)=E \qquad \Bigl(\lim\limits_{x\to a+}f(x)=E\Bigr)$$
+гэж бичнэ.
+\end{definition}
+\begin{example}[Өрөөсгөл хязгаар]\label{Onesidedlimit}
+$f(x)=[x]$ нь $x$-ээс хэтрэхгүй хамгийн их бүхэл тоо байг. Энэ функцийг $x$-ийн \itcol{бүхэл хэсэг} гэдэг.
+
+$\lim\limits_{x\to 1+}[x]=1$ болохыг шалгая. $\varepsilon>0$ дурын байг. $\delta=1$ гэж авбал $0<x-1<1$, өөрөөр хэлбэл
+$x\in(1;2)$ үед $[x]=1$ тул
+$$|f(x)-1|=|1-1|=0<\varepsilon.$$
+Иймд $\lim\limits_{x\to 1+}[x]=1$.
+
+Үүнтэй адилаар $0<1-x<1$, өөрөөр хэлбэл $x\in(0;1)$ үед $[x]=0$ тул
+$$\lim\limits_{x\to 1-}[x]=0.$$
+\end{example}
+\begin{example}[Хязгаар оршин байдаггүй тохиолдол]
+Жишээ \ref{Onesidedlimit}-д $\lim\limits_{x\to 1-}[x]=0$, $\lim\limits_{x\to 1+}[x]=1$ болохыг баталсан.
+$\lim\limits_{x\to 1}[x]=A$ гэвэл $x$ нь 1 рүү ойртох тусам $[x]$ нь $A$ руу ойртох ёстой.
+
+\begin{minipage}{0.4\textwidth}
+\includegraphics[scale=1]{math1v3-3.pdf}
+\end{minipage}
+\begin{minipage}{0.55\textwidth}
+$y=[x]$ функцийн графикийг харвал $x$ нь 1 рүү зүүн талаас ойртоход $[x]$ нь $0$ рүү,
+баруун талаас ойртоход $1$ рүү ойртох тул ямар ч нэг тоо руу ойртохгүй.
+Өөрөөр хэлбэл хязгаар оршин байхгүй (Теорем \ref{no limit condition}).
+\end{minipage}
+\end{example}
+
+\begin{example}[Хязгаар шалгах]
+$\lim\limits_{x\to 1}(3x+1)\neq 7$: $\varepsilon=1$ авъя. Дурын $\delta>0$-д $x=1+\tfrac12\min(\delta,1)$ гэвэл
+$0<|x-1|<\delta$ ба $3x+1\le5.5$ тул $|3x+1-7|\ge1.5>\varepsilon$.
+\end{example}
+
+\begin{example}[Хязгаар батлах]
+$\lim\limits_{x\to 1}(3x+1)=4$: $|3x+1-4|=3|x-1|$ тул $\delta=\dfrac\varepsilon3$ гэж авбал
+$0<|x-1|<\delta$ үед $|3x+1-4|<\varepsilon$.
+\end{example}
+
+\begin{example}[Төгсгөлгүйд тэмүүлэх үеийн хязгаар]
+$\lim\limits_{x\to -\infty} \dfrac{x}{x+1} = 1$: $\left|\dfrac{x}{x+1}-1\right|=\dfrac{1}{|x+1|}$.
+$x<-1$ үед $|x+1|=-x-1$ тул $M=-1-\dfrac1\varepsilon$ гэж авбал $x<M$ үед
+$-x-1>\dfrac1\varepsilon$, иймд $\dfrac{1}{|x+1|}<\varepsilon$.
+\end{example}
+
+\subsection{Хязгаар оршин байх тухай}
+
+\begin{theorem}[Баруун, зүүн хязгаар ба ердийн хязгаарын хамаарал]\label{casual and onesided limit}
+\begin{enumerate}
+\item Хэрэв $\lim\limits_{x\to a}f(x)=E$ бол $$\lim\limits_{x\to a+}f(x)=\lim\limits_{x\to a-}f(x)=E$$ байна.
+\item Хэрэв $\lim\limits_{x\to a+}f(x)=\lim\limits_{x\to a-}f(x)=E$ бол $\lim\limits_{x\to a}f(x)=E$ байна.
+\end{enumerate}
+\end{theorem}
+\begin{theorem}\label{no limit condition}
+Хэрэв $\lim\limits_{x\to a+}f(x)\neq \lim\limits_{x\to a-}f(x)$ бол $\lim\limits_{x\to a}f(x)$ хязгаар оршин байхгүй.
+\end{theorem}
+\begin{theorem}[Хязгаар ганц байх тухай]\label{uniqlim}
+Хэрэв $\lim\limits_{x\to a}f(x)$ хязгаар оршин байвал цор ганц байна.
+\end{theorem}
+
+\begin{theorem}[Хязгаарын энгийн чанарууд]\label{conslim}
+\begin{enumerate}
+\item $\lim\limits_{x\to a}c=c$.
+\item $\lim\limits_{x\to a}x=a$.
+\item Хэрэв $\lim\limits_{x\to a}f(x)=\infty$ бол $\lim\limits_{x\to a}\dfrac{1}{f(x)}=0$ байна.
+\end{enumerate}
+\end{theorem}
+
+\section*{Семинарын бодлогууд}
+\begin{description}
+\item[A] \begin{enumerate}
+    \item $f(x)=x^2+x$ бол $|f(x)-6|<a$ тэнцэтгэл бишийг $a=1,\ 0.1,\ \varepsilon$ үед бод. Аль ч тохиолдолд $x=2$ тоо шийдийн олонлогт харьяалагдахыг харуул.
+    $\lim\limits_{x\to 2}f(x)=6$ гэж батал.
+    \item $f(x)=\sin x$ бол $\lim\limits_{x\to +\infty}f(x)$ оршин байх эсэхийг тогтоо.
+    \item $\lim\limits_{x\to 3-}\{x\}=1$, $\lim\limits_{x\to 3+}\{x\}=0$ гэж харуул. $\lim\limits_{x\to 3}\{x\}$ хязгаар оршин байх уу?
+    \item $\lim\limits_{x\to -\infty}x^2$-ийг бод.
+\end{enumerate}
+\item[B]
+\begin{enumerate}
+\item $\lim\limits _{x\to 1-}\dfrac{x^2+x-2}{x^2-1}$ хязгаарыг бод.
+\item $\lim\limits _{x\to 1+}\dfrac{x^2+x-2}{x^2-1}$ хязгаарыг бод.
+\item $\lim\limits _{x\to 1}\dfrac{x^2+x-2}{x^2-1}$ хязгаарыг бод.
+\item $\lim\limits _{x\to -1}\dfrac{x^2+x-2}{x^2-1}$ хязгаарыг бод.
+\item $\lim\limits _{x\to 0} \dfrac{x^2-1}{2x^2-x-1}$ хязгаарыг бод.
+\item $\lim\limits _{x\to 1} \dfrac{x^2-1}{2x^2-x-1}$ хязгаарыг бод.
+\item $\lim\limits _{x\to +\infty} \dfrac{x^2-1}{2x^2-x-1}$ хязгаарыг бод.
+\item $\lim\limits _{x\to 0} \dfrac{(1+x)^5-(1+5x)}{x^2+x}$ хязгаарыг бод.
+\item $m,n\in\mathbb{N}$ бол $\lim\limits _{x\to 0} \dfrac{(1+mx)^n-(1+nx)^m}{x^2}$ хязгаарыг бод.
+\item $\lim\limits _{x\to 3} \dfrac{x^2-5x+6}{x^2-8x+15}$ хязгаарыг бод.
+\item $\lim\limits _{x\to 1} \dfrac{x^4-3x+2}{x^5-4x+3}$ хязгаарыг бод.
+\item $\lim\limits _{x\to 1} \dfrac{x^{100}-2x+1}{x^{50}-2x+1}$ хязгаарыг бод.
+\item $\lim\limits _{x\to a+} \dfrac{\sqrt{x}-\sqrt{a}+\sqrt{x-a}}{\sqrt{x^2-a^2}}$ ($a>0$) хязгаарыг бод.
+\item $\lim\limits _{x\to-2} \dfrac{\sqrt[3]{x-6}+2}{x^3+8}$ хязгаарыг бод.
+\item $\lim\limits _{x\to 7} \dfrac{\sqrt{x+2}-\sqrt[3]{x+20}}{\sqrt[4]{x+9}-2}$ хязгаарыг бод.
+\item $\lim\limits _{x\to +\infty} \left(\sqrt{x+\sqrt{x+\sqrt{x}}}-\sqrt{x}\right)$ хязгаарыг бод.
+\item $\lim\limits _{x\to +\infty} \left(\sqrt[3]{x^3+3x^2}-\sqrt{x^2-2x}\right)$ хязгаарыг бод.
+\end{enumerate}
+\item[C] Теорем \ref{no limit condition}-ийг батал.
+\item[D] Теорем \ref{uniqlim}-ийг батал.
+\item[E] Теорем \ref{conslim}-ийг батал.
+\item[F] $0<x<\dfrac{\pi}{2}$ бол $\sin x<x<\tg x$ гэж батал.
+\item[G] Зааглагдсан, монотон дараалал хязгаартай гэж батал.
+\end{description}
+
+\subsection*{Гэрийн даалгавар}
+\begin{enumerate}
+\item Тодорхойлолтоор батал. ii)-д $\varepsilon=0.01$ үед тохирох $\delta$-г тоогоор бич.
+  \begin{enumerate}[label=\roman*)]
+  \item $\lim\limits_{x\to2}(3x-1)=5$
+  \item $\lim\limits_{x\to1}x^2=1$ \quad \textit{(Зөвлөмж: эхлээд $|x-1|<1$ гэж хязгаарла.)}
+  \item $\lim\limits_{x\to1}x^3=1$
+  \end{enumerate}
+
+\item Хязгаарын тодорхойлолтын үгүйсгэлийг ашиглан батал (энд $f(a)$-г ашиглахгүй).
+  \begin{enumerate}[label=\roman*)]
+  \item $\lim\limits_{x\to1}x^2\ne2$
+  \item $\lim\limits_{x\to0}(2x+5)\ne4$
+  \end{enumerate}
+
+\item Өрөөсгөл хязгааруудыг олж, $x\to a$ үеийн хязгаар оршин байх эсэхийг тогтоо.
+Оршин байвал $f(a)$-тай харьцуул.
+  \begin{enumerate}[label=\roman*)]
+  \item $f(x)=[2x]$, \; $a=\frac12$
+  \item $f(x)=[x]+[-x]$, \; $a=1$
+  \item $f(x)=x\left[\frac1x\right]$, \; $a=1$
+  \item $f(x)=\dfrac{x^2-4}{|x-2|}$, \; $a=2$
+  \end{enumerate}
+
+\item Тодорхойлолтоор батал ($M$-ийг $\varepsilon$-оор илэрхийл).
+  \begin{enumerate}[label=\roman*)]
+  \item $\lim\limits_{x\to+\infty}\dfrac{2x+1}{x+3}=2$
+  \item $\lim\limits_{x\to-\infty}\dfrac{1-4x}{2x+5}=-2$
+  \end{enumerate}
+
+\item Тодорхойлолтоор батал ($\delta$-г $M$-ээр илэрхийл).
+  \begin{enumerate}[label=\roman*)]
+  \item $\lim\limits_{x\to1}\dfrac{3}{(x-1)^2}=+\infty$
+  \item $\lim\limits_{x\to3+}\dfrac1{x-3}=+\infty$, \; $\lim\limits_{x\to3-}\dfrac1{x-3}=-\infty$, \; $\lim\limits_{x\to3}\dfrac1{x-3}=\infty$
+  \end{enumerate}
+
+\item Хязгаарыг бод.
+  \begin{enumerate}[label=\roman*)]
+  \item $\lim\limits_{x\to3}\dfrac{x^3-27}{x^2-9}$
+  \item $\lim\limits_{x\to1}\dfrac{x^4-1}{x^3-1}$
+  \item $\lim\limits_{x\to-\infty}\dfrac{4x^2-3x}{2x^2+7}$
+  \item $n\in\N$, $k\in\R$ бол $\lim\limits_{x\to0}\dfrac{(1+kx)^n-1-nkx}{x^2}$ \quad \textit{(биномын томьёо ашигла)}
+  \end{enumerate}
+
+\item Хязгаарыг бод.
+  \begin{enumerate}[label=\roman*)]
+  \item $\lim\limits_{x\to4}\dfrac{\sqrt x-2}{x-4}$
+  \item $\lim\limits_{x\to0}\dfrac{\sqrt[3]{1+x}-1}{x}$
+  \item $\lim\limits_{x\to+\infty}\left(\sqrt{x^2+x+1}-\sqrt{x^2-x}\right)$
+  \item $\lim\limits_{x\to-\infty}\left(\sqrt{x^2+2x}+x\right)$ \quad \textit{($\sqrt{x^2}=|x|$-г анхаар.)}
+  \end{enumerate}
+
+\item $a$ параметрийн ямар утганд $\lim\limits_{x\to x_0}f(x)$ оршин байх вэ? Тэр үед хязгаарыг ол.
+  \begin{enumerate}[label=\roman*)]
+  \item $f(x)=\begin{cases}ax+2, & x<2\\ x^2-a, & x\ge2\end{cases}$, \quad $x_0=2$
+  \item $f(x)=\begin{cases}a-x, & x<0\\ \dfrac{\sqrt{x+1}-1}{x}, & x>0\end{cases}$, \quad $x_0=0$
+  \end{enumerate}
+
+\item $\lim\limits_{x\to a}f(x)=E$, $\lim\limits_{x\to a}g(x)=F$ байг. Зөвхөн тодорхойлолт ашиглан батал.
+  \begin{enumerate}[label=\roman*)]
+  \item $\lim\limits_{x\to a}\bigl(f(x)+g(x)\bigr)=E+F$
+  \item $\lim\limits_{x\to a}|f(x)|=|E|$ \quad \textit{(Зөвлөмж: $\bigl||u|-|v|\bigr|\le|u-v|$.)}
+  \item Хэрэв $E>0$ бол $0<|x-a|<\delta$ үед $f(x)>\frac E2$ байх $\delta>0$ олдоно.
+  \end{enumerate}
+
+\item Тодорхойлолтоор батал. ($|\sin t|\le1$, $|\cos t|\le1$ ба $0<x<\frac\pi2$ үед $\sin x<x$ гэдгийг ашиглаж болно.)
+  \begin{enumerate}[label=\roman*)]
+  \item $\lim\limits_{x\to0}x\sin\dfrac1x=0$
+  \item $\lim\limits_{x\to0}x\left[\dfrac1x\right]=1$ \quad \textit{(Зөвлөмж: $\frac1x-1<\left[\frac1x\right]\le\frac1x$.)}
+  \item $\lim\limits_{x\to0}\sin x=0$ ба $\lim\limits_{x\to0}\cos x=1$ \quad \textit{(Зөвлөмж: $1-\cos x=2\sin^2\frac x2$.)}
+  \end{enumerate}
+\end{enumerate}

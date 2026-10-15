@@ -1,0 +1,411 @@
+\chapter{Олонлог, буулгалт, функц}
+\section*{Лекцийн зорилго}
+\begin{enumerate}
+    \item Олонлог тэдгээрийн үйлдлүүдийг мэдэж гүйцэтгэж сурах
+    \item Функц, буулгалт, композици, график 
+\end{enumerate}
+\section{Олонлог}
+Бид математикт ямар нэг ерөнхий шинжтэй юмсын цуглуулгыг {\it Олонлог} гэж ойлгодог.
+Олонлогийг бүрдүүлж байгаа юмыг олонлогийн элемент гэдэг. 
+
+
+Цаашид олонлогийг том үсгээр, түүний элементийг жижиг үсгээр тэмдэглэнэ. $a$ элемент $A$ олонлогт харьяалагдах бол $a\in A$ гэж, $a$ элемент $A$ олонлогт харьяалагдахгүй бол $a\notin A$ гэж тэмдэглэнэ. 
+\begin{example}\label{ol:A} $A$ олонлог $2, 0, 1, 6$ гэсэн 4 элементээс тогтох бол $$A=\{2, 0, 1, 6\}$$ гэж бичнэ. Мөн $$A=\{0, 1, 2, 6\}$$ гэж бичиж болно.
+\end{example}
+Олонлог цөөхөн /төгсгөлөг/ элементтэй бол бүх элементийг цувуулан бичиж болно. Хэрэв төгсгөлгүй олон элементтэй бол цувуулан бүгдийг бичих боломжгүй. Энэ тохиолдолд олонлогийн элементүүдийн ерөнхий шинжийг ашиглан $A=\{{\text {төрөл}}| {\text{ерөнхий шинж}}\}$ гэсэн байдлаар бичиж болно. 
+\begin{example}\label{ol:B}
+Хэрэв $B$ бүх тэгш тооны олонлог бол түүнийг $$B=\{ {\text { тоо}}| {\text{2-т бүхлээр хуваагддаг }}\}$$ эсвэл $$B=\{2k| k{\text{ бүхэл тоо }}\}$$ эсвэл $$B=\{ x | x=2k, k{\text{ бүхэл тоо }}\}$$ гэх мэтээр бичиж болно. 
+\end{example}
+\begin{definition}[Дэд олонлог]
+Хэрэв $X$ олонлогийн бүх элемент $Y$ олонлогийн элемент болдог бол $X$-г $Y$ олонлогийн дэд олонлог гээд $$X\subset Y$$ гэж тэмдэглэнэ. 
+\end{definition}
+Жишээ \ref{ol:A} ба \ref{ol:B}-д тодорхойлсон  $A$ олонлог  $B$ олонлогийн дэд олонлог биш. Учир нь $1\in A$ ба $1$ тэгш тоо биш юм. Иймд 1 гэсэн элемент $B$ олонлогт байхгүй.
+\begin{definition}[Тэнцүү олонлог]
+Хэрэв $X$ ба $Y$ олонлогууд яг адилхан элементүүдээс тогтох бол тэдгээрийг тэнцүү олонлогууд гэнэ. 
+\end{definition}
+\begin{theorem}[Олонлог тэнцэх нөхцөл]\label{Олонлог тэнцэх нөхцөл}
+$X=Y\Leftrightarrow X\subset Y$ ба $X\supset Y.$ 
+\end{theorem}
+\begin{prof} 
+($\Rightarrow$) $X=Y$ бол $x\in X\Rightarrow x\in Y$, тэгэхээр $X\subseteq Y$ ба адилаар  $Y\subseteq X$.\\
+($\Leftarrow$) Хэрэв $X\subseteq Y$ ба $Y\subseteq X$ бол $x\in X\Rightarrow x\in Y$ мөн $x\in Y\Rightarrow x\in X$, иймд $X$ ба $Y$ ижил элементтэй тул $X=Y$.
+\end{prof}
+\begin{definition}
+ Өгөгдсөн $A$ ба $B$ олонлогуудаас дараах олонлогуудыг үүсгэж болно.
+\begin{enumerate}
+\item $\emptyset:=\{x|x\neq x\}$- хоосон олонлог
+\item $A\cup B:=\{x| x\in A \lor x\in B\}$- нэгдэл
+\item $A\cap B:=\{x| x\in A \land x\in B\}$- огтлолцол
+\item $A\setminus B:=\{x| x\in A \land x\notin B\}$- ялгавар 
+\item $U\supset A$ бол $A^c:=U\setminus A$- гүйцээлт
+\item $A\times B=\{(a,b)|a\in A \land b\in B\}$- декарт үржвэр
+\item $\mathcal{P}(A)=\{X\mid X\subset A\}$- бүх дэд олонлогийн бүл ( power set)
+\end{enumerate}
+\end{definition}
+\begin{remark} Бид дараах олонлогуудыг цаашид байнга ашиглах болно.
+\begin{enumerate}
+\item $\mathbb{N}=\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, \cdots \}$-натурал тоон олонлог
+\item $\mathbb{Z}=\{0, 1, -1,  2, -2, 3, -3, \cdots \}$-бүхэл тоон олонлог
+\item $\mathbb{Q}=\left\{\dfrac{m}{n}|m\in\mathbb{Z} , n\in\mathbb{N} \right\}$-рационал тоон олонлог
+\item $\mathbb{R}$ бодит тоон олонлог
+\item $E=\R\setminus \Q$ иррационал тоон олонлог
+\end{enumerate}    
+\end{remark}
+\begin{example}
+   $U=\mathbb{Z}$, $A=\{ \text{тэгш бүхэл тоо}\}$, $B=\{ \text{3-д хуваагддаг бүхэл тоо}\}$ байг. Тэгвэл
+$$A\cap B=\{ \text{6-д хуваагддаг бүхэл тоо}\}$$
+$$A\cup B=\{ \text{тэгш эсвэл 3-д хуваагддаг бүхэл тоо}\}$$
+$$A\setminus B=\{ \text{тэгш боловч 3-д хуваагддаггүй бүхэл тоо}\}$$
+ $$A^c=\{ \text{сондгой бүхэл тоо}\}$$ байна.
+\end{example}
+%\begin{note} Олонлогийг зөвхөн нэг \itcol{ерөнхий шинж} $\varphi(x)$ дээр тулгуурлан \[A=\{\,x\mid %\varphi(x)\,\}\] хэмээн $x$ элемент дээр тодорхой \itcol{хязгааргүйгээр} ($x\in A$ маягийн зааг байхгүй) тодорхойлох нь зарим тохиолдолд зөрчил рүү хүрч болдог.
+%\begin{example}[Үсчний парадокс]
+%Нэг тосгонд “өөрийнхөө сахлыг хусдаггүй бүх эрчүүдийн сахлыг \itcol{зөвхөн} үсчин л хусдаг” байв. %Тэгвэл сахалтай эрэгтэй үсчин өөрийнхөө сахлыг хусах уу?
+%\end{example} Иймд олонлог тодорхойлоход болгоомжтой хандах хэрэгтэй. \end{note}
+\begin{note}
+$$x\in A\cup B \;\Leftrightarrow\; (x\in A)\lor(x\in B)$$,
+$$x\in A\cap B \;\Leftrightarrow\; (x\in A)\land(x\in B)$$ 
+гэх мэт олонлогийн тэнцэлийг батлах нь \itcol{логикийн холбоосуудаар} бичигдсэн хэллэгийг батлахтай ижил байна.   
+\end{note}
+\begin{theorem}[Олонлогийн үйлдлийн чанарууд]\label{Олонлогийн тэнцэтгэлцлийн хууль}
+    $A, B, C$ дурын олонлогууд, $A\subset U$ бол дараах чанарууд биелнэ.
+\begin{enumerate}
+  \item Коммутатив: $A\cup B=B\cup A$, $A\cap B=B\cap A$.
+  \item Ассоциатив: $(A\cup B)\cup C=A\cup(B\cup C)$, $(A\cap B)\cap C=A\cap(B\cap C)$.
+  \item Дистрибутив: $A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$, $A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$.
+  \item Де Морганы дүрэм: $(A\cup B)^c=A^c\cap B^c$, $(A\cap B)^c=A^c\cup B^c$.
+\end{enumerate}
+\end{theorem}
+\begin{prof}
+    Жишээ болгон Де Морганы дүрэм: $(A\cup B)^c=A^c\cap B^c$ баталъя. 
+    Бид 2 олонлог тэнцүүг батлахын тулд Теорем \ref{Олонлог тэнцэх нөхцөл} ёсоор $$(A\cup B)^c\subset A^c\cap B^c$$ ба $$(A\cup B)^c\supset A^c\cap B^c$$ батлана. $(A\cup B)^c\subset A^c\cap B^c$ батлахын тулд 
+ $\forall x\in (A\cup B)^c\Rightarrow x\in A^c\cap B^c$ байхыг харуулна. 
+ $$\forall x\in (A\cup B)^c\Rightarrow x\notin A\cup B \Rightarrow \{(x\notin A) \land (x\notin B)\}\Rightarrow \{(x\in A^c) \land (x\in B^c)\}\Rightarrow x\in A^c\cap B^c.$$ Ижлээр 
+ $$ A^c\cap B^c\subset (A\cup B)^c$$ хялбар батлагдана.
+\end{prof}
+\section{Функц}
+\begin{definition}[Функц]
+$X , Y$ олонлогууд байг. $\forall x\in X$ бүрт $Y$ олонлогийн элемент $y$-г харгалзуулах $f$ дүрмийг $X$-г $Y$-т буулгасан буулгалт гээд  $$f:X\to Y$$ гэж тэмдэглэнэ. $f$ дүрмээр $x$-т харгалзах элемент $y$-г $f$ буулгалтын $x$ дээрх утга гээд $y=f(x)$ гэж бичнэ. 
+
+
+$X$-г тодорхойлогдох муж, $Y$-г утгийн муж, 
+$$f(X)=\{y\in Y|\exists x\in X, y=f(x)\}\subset Y$$ олонлогийг $X$ олонлогийн $f$ буулгалтаарх дүр гэнэ.  
+\end{definition}
+Хэрэв $X$ ба $Y$ тоон олонлог бол   $f$-г функц гэнэ.
+
+\begin{definition}[График]
+ $f:X\to Y$ буулгалт бол 
+ $$\Gamma(f):=\{(x,f(x))|x\in X\}\subset X\times Y$$ ологлогийг $f$-ийн график гэнэ.  
+\end{definition}
+\begin{theorem}\label{fun:grap}
+ $f:X\to Y$ буулгалт бол 
+\begin{description}
+\item[a)] $\forall x\in X$ хувьд $\exists y\in Y , (x,y)\in \Gamma(f)$
+\item[b)] $(x,y)\in \Gamma(f) , (x,z)\in \Gamma(f)$ бол $y=z$
+\end{description}
+\end{theorem}
+ $f$ буулгалтын график $ \Gamma(f)$ олонлог нь  $f:X\to Y$ буулгалтыг бүрэн тодорхойлно. Энд тодорхойлогдсон $\Gamma(f)$ нь бидний сайн мэдэх "функцийн график" юм. 
+\begin{definition}
+$f:X\to Y , g:X\to Y$ буулгалтууд байг. Хэрэв $$\forall x\in X \text{ хувьд } f(x)=g(x)$$
+ бол эдгээр буулгалтуудыг тэнцүү буулгалтууд гэнэ. 
+\end{definition}
+
+\begin{definition}[Сурьектив]
+$f:X\to Y$ буулгалтын хувьд $\forall y\in Y$ бүрт $y=f(x)$ байх $x\in X$ элемент олддог бол $f$-г сурьектив буулгалт гэнэ. 
+\end{definition}
+
+\begin{definition}[Иньектив]
+$f:X\to Y$ буулгалтын хувьд ялгаатай $x , z \in Х$ бүрт ялгаатай утга $f(x) , f(z)$ харгалздаг бол $f$-г иньектив буулгалт гэнэ. 
+\end{definition}
+\begin{definition}[Биектив]
+$f:X\to Y$ буулгалт иньектив ба сурьектив бол түүнийг биектив гэнэ. 
+\end{definition}
+\begin{example}[Хонь–хурганы жишээ] $A$ хашаанд байгаа \itcol{хургануудын} олонлогийг $X$, $B$  хашаанд байгаа \itcol{хонинуудын} олонлогийг $Y$ гэе. Хурга бүрийн ээж $B$ хашаанд байдаг гэе. Тэгвэл
+\[
+f:X\to Y,\qquad f(x)=\text{``$x$ хурганы ээж''}
+\]
+гэдэг дүрэм нь буулгалт болно. Учир нь $\forall x\in X$ яг \itcol{нэг} л ээж $f(x)\in Y$ байх ба  нэг хурганд хоёр өөр ээж байхгүй тул $f$  буулгалт тодорхой, цорын ганц утгатай байна.
+
+\begin{itemize}
+  \item Хэрэв ихэр хургатай хонь байвал $f$ \itcol{иньектив} биш: ихэр хурга $x\neq z$ бол тэдгээрийн ээж ижил тул $f(x)=f(z)$ болно. Хэрэв ихэр хургатай хонь байхгүй бол $f$ буулгалт иньектив байна.
+  \item $f$ \itcol{сурьектив} эсэх нь $Y$-гийн бүх хонь дор хаяж нэг хургатай байгаа эсэхээс хамаарна. Хэрэв $B$ хашааны хонь бүр хургатай бол $f$ буулгалт сурьектив байна.
+  \item Хэрэв ихэр хургатай хонь байхгүй ба бүх хонь хургатай бол $f$ буулгалт биектив байна.
+\end{itemize}
+
+Харин
+\[
+g:Y\to X,\qquad g(y)=\text{``$y$ хонины хурга''}
+\]
+гэж тодорхойлоё. 
+\begin{itemize}
+  \item Хэрэв зарим хонь хургагүй бол $g$ \itcol{буулгалт биш} байна. Учир нь $y$ хонины хувьд $g(y)$ \itcol{оршихгүй} (``\,$\forall y\in Y$ хувьд $g(y)$ утга олдох'' нөхцөл зөрчинө).
+  \item Хэрэв ихэр хургатай $y$ хонь байвал түүний хувьд $g(y)$-ийн \itcol{хоёр ба түүнээс олон} боломжит утга байна. Иймд \itcol{цорын ганц} байх нөхцөл зөрчинө.
+\end{itemize}
+Иймд $f$ буулгалт биектив байвал 
+\[
+g:Y\to X,\qquad g(y)=\text{``$y$ хонины хурга''}
+\]  нь буулгалт болно.
+\end{example}
+
+\begin{theorem}\label{fun:surj}
+$f:X\to Y$ буулгалт сурьектив байх $\Longleftrightarrow$ нь $f(X)=Y$.
+\end{theorem}
+\begin{theorem}\label{fun:inj}
+$f:X\to Y$ буулгалт иньектив байх $\Longleftrightarrow$ нь $ x , z\in X$ хувьд хэрэв $f(x)=f(z)$ бол $x=z$ байх юм.
+\end{theorem}
+\begin{theorem}\label{fun:bij}
+$f:X\to Y$ буулгалт биектив байх $\Longleftrightarrow$ нь $$\forall y\in Y \text{ хувьд }   y=f(x) \text{ байх цор ганц } x\in X \text{ олдох юм.}$$ 
+\end{theorem}
+ Энд олдох $x$-г $y$-н эх дүр гээд $x=f^{-1}(y)$ гэж тэмдэглэнэ. 
+
+\begin{definition}[Урвуу]\label{fun:inv}
+Хэрэв $f:X\to Y$ буулгалт биектив бол $\forall y\in Y$ хувьд $x=f^{-1}(y)$ дүрмээр 
+\begin{equation}
+\label{inverse} f^{-1}:Y\to X
+\end{equation} шинэ буулгалт тодорхойлож болно. Энэ  $f^{-1}$ буулгалтыг $f$-н \itcol{урвуу буулгалт} гэнэ.
+\end{definition}
+
+\begin{example}
+\item $X=[0;\pi] , Y=[-1;1]$ ба $f , g:X\to Y$ функцуудыг $$f(x)=\cos x  ,  g(x)=\sin x$$  гэж тодорхойлоё. Эдгээр функцүүдийн график нь $$X\times Y=\{(x,y)\mid x\in [0;\pi]=X, y\in [-1;1]=Y\}$$ тул $XOY$ хавтгайд дүрслэгдэнэ. График дүрслэбэл
+$$\includegraphics[scale=1]{surjection.png}$$ байна. 
+
+
+Графикаас харахад 
+$$f(X)=[-1;1]=Y\text{ тул теорем \ref{fun:surj} ёсоор } f(x)=\cos x \text{ иньектив}$$
+$$g(X)=[0;1]\neq Y\Rightarrow g(x)=\sin x \text{ иньектив биш байна.}$$ 
+$x_1 \neq  x_2\in[0;\pi]$ үед $\cos x_1-\cos x_2=-2\sin(\dfrac{x_1-x_2}{2})\sin(\dfrac{x_1+x_2}{2})\neq 0$ тул $f(x)=\cos x$ сурьектив байна. 
+
+
+ $x=\dfrac{\pi}{3} , x=\dfrac{2\pi}{3}$ байхад $g(\dfrac{\pi}{3})=g(\dfrac{2\pi}{3})$ учир $g(x)=\sin x$ сурьектив биш байна. 
+ 
+Иймд $f(x)=\cos x$ функц $[0:\pi]$ олонлог дээр биектив ба түүний урвууг $f^{-1}=\arccos x$ гэдэг. Энд $f^{-1}$ функцийн тодорхойлогдох муж $f(X)=Y$ утгийн муж $X$ байна.  
+
+$y=\arccos x$ функцын графикийг дүрслэв. 
+$$\includegraphics[scale=1.4]{arccos} $$ 
+Хэрэв $f:X \to Y$ биектив функц бол $(x,y)\in\Gamma(f)\Longleftrightarrow (y,x)\in\Gamma(f^{-1})$ байх тул $\Gamma(f)$ ба $\Gamma(f^{-1})$ графикууд  $y=x$ шулууны хувьд тэгш хэмтэй байна. Жишээ болгон $f(x)=\cos x$ ба $y=\arccos x$ функцүүдийн гарфикийг харуулав.
+$$
+\includegraphics[scale=1.4]{inverse}$$
+\end{example}
+\begin{definition}
+$f:X\to Y$ , $g:Y\to Z$ байг. $$x\to g(f(x))$$ дүрмээр тодорхойлогдох $$g\circ f:X\to Z$$ буулгалтыг $f$ ба $g$ буулгалтуудын үржвэр (композици) гэнэ. 
+\end{definition}
+\begin{example}
+$f:\mathbb{R}\to\mathbb{R}$ ба $g:\mathbb{R}\to[0,+\infty)$ функцуудыг
+\[
+f(x)=2x+1,\qquad g(x)=x^2
+\]
+гэж тодорхойлъё. Тэгвэл
+\begin{itemize}
+    \item $(g\circ f)(x)=g(f(x))=g(2x+1)=(2x+1)^2=4x^2+4x+1$
+    \item $(f\circ g)(x)=f(g(x))=f(x^2)=2x^2+1$
+\end{itemize} байна. 
+
+Дээрх жишээнээс харахад $(g\circ f)(x)\neq (f\circ g)(x)$ байна. Тухайлбал $x=1$ үед 
+\[
+(g\circ f)(1)=(2\cdot 1+1)^2=9,\qquad (f\circ g)(1)=2\cdot 1^2+1=3.
+\]
+Иймд ерөнхийдөө $g\circ f\neq f\circ g$, өөрөөр хэлбэл \itcol{композици нь коммутатив биш} байна.
+\end{example}
+\begin{theorem}\label{fun:inv_comp}
+$f:X\to Y$ буулгалт биектив бол
+ $\forall x\in X$ хувьд $$(f^{-1}\circ f)(x)=x$$ ба $\forall y\in Y$ хувьд $$(f\circ f^{-1})(y)=y$$ 
+ байна.
+\end{theorem}
+
+\begin{prof}
+$f$ биектив тул тодорхойлолт~\ref{fun:inv}-с $\forall y\in Y$ хувьд
+$x=f^{-1}(y)$ байх $\exists x\in X$ ба
+\[
+f\!\left(f^{-1}(y)\right)=f(x)=y
+\]
+байна. 
+
+Нөгөө талаас $\forall x\in X$ хувьд $f(x)=y\in Y$ гэвэл $f^{-1}(y)=x$ учраас
+\[
+(f^{-1}\circ f)(x)=f^{-1}(f(x))=f^{-1}(y)=x
+\]
+\end{prof}
+
+\begin{example}
+$f:\mathbb{R}\to(0,+\infty)$ ба $g:(0,+\infty)\to\mathbb{R}$ функцуудыг
+\[
+f(x)=e^x,\qquad g(x)=\ln x
+\]
+гэж тодорхойлъё. Тэгвэл
+\begin{itemize}
+    \item $(g\circ f)(x)=g(f(x))=g(e^x)=\ln(e^x)=x$,
+    \item $(f\circ g)(x)=f(g(x))=f(\ln x)=e^{\ln x}=x$
+    \end{itemize} байна. 
+Тодорхойлолт~\ref{fun:inv}-с харахад $g=f^{-1}$ ба $f=g^{-1}$,өөрөөр хэлбэл $\ln x$ ба $e^x$ функцууд бие биенийхээ урвуу функц болно.
+\end{example}
+\section{Олонлогийн чадал}
+\begin{definition}[Олонлогийн чадал (кардиналь)]
+$A,B$ олонлогуудийн хувьд $f:A\to B$ \itcol{биектив} буулгалт оршивол тэдгээрийг тэнцүү чадалтай олонлогууд гэнэ. Энэ үед $|A|=|B|$ гэж бичнэ. 
+
+
+Хэрэв 
+\begin{enumerate}
+    \item $A$ олонлог $\{1, 2, 3, \ldots n\}$ олонлогтой ижил чадалтай бол түүнийг төгсгөлөг олонлог гээд $|A|=n$
+    \item $A$ олонлог $\N$ олонлогтой ижил чадалтай бол түүнийг тоологдом олонлог гээд $|A|=\aleph_0$
+    \item $A$ олонлог $\R$ олонлогтой ижил чадалтай бол түүнийг контиунум олонлог гээд $|A|=\mathfrak{c}$
+\end{enumerate} гэнэ. $|A|$ нь $A$- дахь элементүүдийн тоог илэрхийлнэ.
+\end{definition}
+
+\begin{definition}[Олонлогийн чадалын харьцуулалт]
+Хэрэв $f:A\to B$ байх \itcol{иньектив} буулгалт $f$ оршин байвал $B$ олонлогийг $A$ олонлогоос цөөнгүй элемэнттэй гээд $|A|\le |B|$ гэж бичнэ.
+
+Хэрэв $|A|\le |B|$ ба $|A|\ne |B|$ бол  $|A|<|B|$ гэнэ.
+\end{definition}
+
+\begin{example}
+ $|\emptyset|=0$, \quad $|\{a,b,c\}|=3$.
+\end{example}
+\begin{example}
+$|\mathbb{N}|=|\mathbb{Z}|$ байна. Өөрөөр хэлбэл $$|\{1, 2, 3, \ldots \}|=|\{0, 1, -1, 2, -2, \ldots\}|$$ байна.
+ 
+Үүнийг батлахын тулд $f:\mathbb{N}\to\mathbb{Z}$
+биектив буулгалт олоход хангалттай. 
+\[
+f:\mathbb{N}\to\mathbb{Z},\qquad
+f(n)=
+\begin{cases}
+\dfrac{n}{2}, & n \text{ тэгш,}\\[8pt]
+-\dfrac{n-1}{2}, & n \text{ сондгой.}
+\end{cases}
+\] гэе. 
+
+
+Функцийн утгуудыг хүснэгтээр харуулбал 
+\[
+\begin{array}{c|ccccccccc}
+n    & 1 & 2 & 3  & 4 & 5  & 6 & 7  & 8 & \cdots \\\hline
+f(n) & 0 & 1 & -1 & 2 & -2 & 3 & -3 & 4 & \cdots
+\end{array}
+\]
+болно. 
+
+$f(m)=f(n)$ гэж үзье. Хэрэв 
+\begin{itemize}
+  \item $m,n$ хоёул тэгш бол
+  $\dfrac{m}{2}=\dfrac{n}{2}$, тиймээс $m=n$.
+
+  \item $m,n$ хоёул сондгой бол
+  $-\dfrac{m-1}{2}=-\dfrac{n-1}{2}$, тиймээс $m=n$.
+
+  \item $m$ тэгш, $n$ сондгой (эсвэл эсрэгээр) бол
+  $f(m)=\dfrac{m}{2}\geq 1>0$ ба $f(n)=-\dfrac{n-1}{2}\leq 0$
+  тул $f(m)=f(n)$ байх боломжгүй.
+\end{itemize}
+Бүх тохиолдолд $f(m)=f(n)\Rightarrow m=n$ тул $f$ иньектив байна.
+
+
+Дурын $k\in\mathbb{Z}$-г авъя.
+\begin{itemize}
+  \item $k>0$ бол $n=2k$ тэгш тооны хувьд $f(n)=f(2k)=k$,
+  \item $k=0$ бол $n=1$ үед $f(1)=0=k$,
+  \item $k<0$ бол $n=1-2k$ сондгой тооны хувьд   
+  \[
+  f(1-2k)=-\frac{(1-2k)-1}{2}=\frac{2k}{2}=k
+  \]
+\end{itemize} байна.
+Бүх $k\in\mathbb{Z}$-д $f(n)=k$ байх $n\in\mathbb{N}$ олдох тул $f$ сурьектив байна.
+
+
+$f$ иньектив ба сурьектив тул биектив байна. Тиймээс $$|\mathbb{N}|=|\mathbb{Z}|$$ байна.
+\end{example}
+\begin{example}
+    \begin{enumerate}
+        \item $|(0,1)|=|\mathbb{R}|=\mathfrak{c}$ \,(континуум, тоологдошгүй).
+  \item Дурын $A$ олонлогийн хувьд $|\mathcal{P}(A)|=2^{|A|}>|A|$ байна.
+\end{enumerate}
+\end{example}
+\section*{Семинар 2 - Олонлог, функц}
+\begin{enumerate}
+  \item Дараахыг логик хэлбэрээр бич: $x\in A\cup B$, $x\in A\cap B$, $x\in A\setminus B$.
+  \item Батал: 
+  
+  а) $A\subseteq B\;\Leftrightarrow\;A\cap B=A$.
+
+  
+  б) $A\subseteq B\;\Leftrightarrow\;A\cup B=B$.
+  \item $A=\{x\in\R\mid x^3+2x^2-x-2>0\}$ , $B=\{x\in\R\mid x^2+ax+b\leq 0\}$ байг. $A\cup B=\{x\in\R\mid x+2>0\}$,  $A\cap B=\{x\in\R\mid 1<x\leq 3\}$ байх $a,b$ бүх утгийг ол.
+  \item $U=\mathbb{Z}$, $A=\{\text{тэгш}\}$, $B=\{\text{3-т хуваагддаг}\}$. $A^c$, $B^c$, $A\triangle B$-г тодорхойл. Энд $A\triangle B:= (A\setminus B)\cup (B\setminus A)$.
+  \item $|A|=5$, $|B|=7$, $A\cap B=\emptyset$. $|A\cup B|$ хэд вэ?
+  \item $|A|+|B|-|A\cap B|=|A\cup B|$ батал.
+  \item $A\subseteq B\subseteq C$ бол  $C\setminus B\subseteq C\setminus A$ батал.
+  \item $A\times(B\cup C)=(A\times B)\cup(A\times C)$-г батал.
+  \item $A\times B=B\times A$ байх нөхцөлийг ол.
+  \item $X=\{a,b\}$, $Y=\{1,2,3\}$. $X\to Y$ бүх буулгалтын тоог ол. 
+  \item $f:[-1;1]\to [0:2]$ байх 
+  
+  а) иньектив ба сурьектив биш 
+  
+  б) иньектив биш ба сурьектив 
+  
+  в) биектив  буулгалтын жишээ болох график зур.
+  \item $f:X\to Y$ иньектив, $g:Y\to Z$ иньектив бол $g\circ f$ иньектив гэдгийг батал.
+  \item $f:X\to Y$ сурьектив, $g:Y\to Z$ сурьектив бол $g\circ f$ сурьектив гэдгийг батал.
+  \item $f:\mathbb{R}\to\mathbb{R}$, $f(x)=x^3-3x$. Иньектив, Сурьектив, Биектив эсэхийг тодорхойл. Урвуутай бол урвууг ол.
+  \item $f:\mathbb{R}\to\mathbb{R}$, $f(x)=x^2+1$.Иньектив, Сурьектив, Биектив эсэхийг тодорхойл. Урвуутай бол урвууг ол. Дүрийг ол.
+  \item $f:[0,\pi]\to[-1,1]$, $f(x)=\cos x$. Урвууг нь бич.
+  \item $g:[-\tfrac{\pi}{2},\tfrac{\pi}{2}]\to[-1,1]$, $g(x)=\sin x$. Урвууг нь бич.
+  \item Хэрэв $\forall x\in X$ хувьд $-x\in X$ ба $f(x)=f(-x) \quad (f(x)=-f(-x) )$ бол $y=f(x)$-г тэгш (сондгой) функц гэдэг. \\
+  $h(x)=\dfrac{x}{1+x^2}$. Тэгш/сондгой эсэхийг тодорхойл.
+  \item $g(x)=\dfrac{f(x)+f(-x)}{2}$ бол $g(x)$ тэгш функц байхыг батал.
+  \item Дараах функцүүдийн график зур.
+  \begin{enumerate}
+    \item $y=2x-3$
+    \item $y=-x^2-2x+3$
+    \item $y=x^3-3x$         
+    \item $y=\dfrac{\sin x}{x}$
+    \item $y=\ln(x)$
+  \end{enumerate}
+  \item Дараах функцүүдийг ол.
+
+  $f(x)=x^2+1,\quad g(x)=3x-1, \quad h(x)=\dfrac{x+1}{3}$ бол 
+  \begin{enumerate}
+      \item $f\circ g$
+      \item $g\circ g$
+      \item $g\circ f$
+      \item $g\circ h$
+      \item $(f\circ g)\circ h$
+      \item $f\circ (g\circ h)$
+  \end{enumerate}
+  \item Дараах функцүүдийн тодорхойлогдох муж ол.
+  \begin{enumerate}
+      \item $y=\sqrt{x^3-3x+2}$
+      \item $y=\arcsin(2x-1)$
+      \item $y=\dfrac{x^3-3x}{x^2-1}$
+      \item $y=\ln(3-x-2x^2)$
+  \end{enumerate}
+\end{enumerate}
+
+\newpage
+\section*{Гэрийн даалгавар 2 }
+\begin{enumerate}
+  \item Батал: $(A\cup B)\setminus C=(A\setminus C)\cup(B\setminus C)$.
+  \item Батал: $(A\cap B)^c=A^c\cup B^c$.
+  \item $A\subset \N$ ба дараах нөхцлүүдийг хангах бол $2, 17, 2025, 1000000\in A$ байх уу?
+  \begin{enumerate}
+      \item $1\in A$
+      \item $n\in A\Leftarrow 2n+1\in A$
+      \item $3n+1\in A\Leftarrow n\in A$
+  \end{enumerate}
+  \item $|A|=5$, $|B|=4$, $|A\cap B|=2$. $|A\cup B|$ хэд вэ?
+  \item $A\subseteq U$. Батал: $A\cup A^c=U$, $A\cap A^c=\emptyset$.
+  \item $A\triangle B=(A\setminus B)\cup(B\setminus A)$. Батал: $A\triangle B=(A\cup B)\setminus(A\cap B)$.
+  \item $X=\{0,1\}^3$. $|X|$-ийг ол; элементүүдийг жагсаа.
+  \item $f:\mathbb{R}\to\mathbb{R}$, $f(x)=ax+b$. Иньектив/сурьектив байх $a,b$-ийн нөхцөлийг ол.
+  \item $f:\mathbb{R}\to\mathbb{R}$, $f(x)=x^2$. Яагаад урвуу үгүй вэ? Ямар домэйнд хязгаарлавал урвуу үүсэх вэ?
+  \item $f,g:\mathbb{R}\to\mathbb{R}$ тэгш байвал $f\cdot g$ тэгш болохыг батал.
+  \item $f$ сондгой, $g$ сондгой бол $f\cdot g$ тэгш болохыг батал.
+  \item $f$ тэгш, $g$ сондгой бол $f\circ g$ сондгой болох эсэхийг шалга.
+  \item $h(x)=x^4-3x^2+2$. Тэгш/сондгой эсэхийг дүгнэ.
+  \item $p(x)=x^5-2x^3+x$. Тэгш/сондгой эсэхийг дүгнэ.
+  \item $a_1=2$, $a_{n+1}=2a_n+1$. Ерөнхий гишүүнийг ол.
+  \item $b_1=1$, $b_{n+1}=3b_n-2$. $b_n$-ийг ол.
+  \item $g(x)=\dfrac{f(x)-f(-x)}{2}$ бол $g(x)$ сондгой функц байхыг батал.
+  \item $d_n=n^2$. Өсөх, үл буурах, буурах аль нь вэ?
+  \item $e_n=(-1)^n$. Монотон эсэх? Зааглагдсан эсэх?
+  \item $a_n=\dfrac{n}{n+1}$. Монотон эсэх? Дээд/доод хязгаар?
+\end{enumerate}

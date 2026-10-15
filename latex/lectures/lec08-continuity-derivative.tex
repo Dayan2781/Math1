@@ -1,0 +1,256 @@
+\chapter{Тасралтгүй чанар, Уламжлал}
+\section{Тасралтгүй функц}
+\begin{definition}[Цэг дээр тасралтгүй чанар]
+$y=f(x)$ функцын хувьд  
+$$\displaystyle \lim_{x\to a} f(x)=f(a)$$ бол $y=f(x)$ функцыг $x=a$ цэгт тасралтгүй гэнэ.
+\end{definition}
+\begin{definition}[Тасралтгүй функц]
+$y=f(x)$ функц тодорхойлогдох мужийнхаа бүх цэг дээр тасралтгүй бол тасралтгүй функц гэнэ. Хэрэв $(a,b)$ завсрын бүх цэг дээр тасралтгүй бол $(a,b)$ дээр тасралтгүй гэнэ.
+\end{definition}
+\begin{definition}[Цэг дээрх тасралт] $y=f(x)$ функцын хувьд $x=a$ цэгт тасралтгүй чанар биелэхгүй бол ( өөрөөр хэлбэл 
+$\displaystyle \lim_{x\to a} f(x)\neq f(a)$ ) $x=a$ цэгт тасралттай гэнэ.
+\end{definition}
+\begin{note}
+$f$ функц $x=a$ цэгт тасралтгүй байх 3 нөхцөл:
+\begin{enumerate}[label=\arabic*)]
+\item $f(a)$ оршин (төгсгөлөг) байх.
+\item $\displaystyle \lim_{x\to a} f(x)$ оршин (төгсгөлөг) байх.
+\item $\displaystyle \lim_{x\to a} f(x)=f(a)$ байх.
+\end{enumerate}
+\end{note}
+\begin{example}
+$y=f(x)=x+1$ функц $x=1$ цэг дээр тасралтгүй, учир нь
+\[
+\lim_{x\to 1} f(x)=\lim_{x\to 1} (x+1)=2 \quad \text{ба} \quad f(1)=2.
+\]
+Иймээс $\displaystyle \lim_{x\to 1} f(x)=f(1)$ биелнэ.
+
+
+Доорх зурагт $f(x)=x+1$ шулуун ба $x=1$ цэг дээрх $f(1)=2$ утгыг онцолж үзүүлэв.
+\begin{center}
+  \includegraphics[width=.7\linewidth]{continuous_at_point.png}
+\end{center}
+\end{example}
+\begin{example}
+\begin{remark}
+Хэрэв 
+$\displaystyle g(x)=\begin{cases}
+\dfrac{x^2-1}{x-1}, & x\ne 1,\\
+2, & x=1
+\end{cases}$
+тодорхойлбол $g(x)$ нь мөн $x=1$ дээр тасралтгүй болно, учир нь $g(x)=x+1$ байна.
+\end{remark}
+\end{example}
+\begin{example}[Тасралтын жишээ]
+\begin{enumerate}[label=\arabic*)]
+\item $f(x)=\dfrac{1}{x^2}$ нь $(1,5)$ дээр тасралтгүй, харин $(-1,1)$ дээр $x=0$-д тодорхойлогдоогүй тул тасралттай.
+\item $\displaystyle f(x)=\begin{cases}
+\dfrac{x^2-3-\sqrt{x-1}}{x-2}, & x\ne 2,\\
+3, & x=2
+\end{cases}$ — $x=2$-д:
+\begin{enumerate}[label=\alph*)]
+\item $f(2)=3$.
+\item $\displaystyle \lim_{x\to 2}\frac{x^2-3-\sqrt{x-1}}{x-2}
+=\lim_{t\to 1}\frac{(t^2+1)^2-3-t}{t^2+1-2} = 3.5$ (орлуулалт $t=\sqrt{x-1}$).
+\item $f(2)\ne \lim\limits_{x\to 2} f(x)$ тул тасралттай. (Хэрэв $f(2)=3.5$ бол тасралтгүй байна.)
+\includegraphics[scale=0.7]{continuity_x2_case_white_dot.png}
+\end{enumerate}
+\end{enumerate}
+\end{example}
+\begin{theorem}[Арифметик үйлдлүүд] Хэрэв $f, g$ нь $x=a$-д тасралтгүй бол $f\pm g$, $f\cdot g$, мөн $g(a)\ne 0$ үед $\dfrac{f}{g}$ нь $x=a$-д тасралтгүй.
+\end{theorem}
+\begin{theorem}[Композици] Хэрэв $g$ нь $x=a$-д, $f$ нь $x=g(a)$-д тасралтгүй бол $f\circ g$ нь $x=a$-д тасралтгүй.
+\end{theorem}
+\begin{theorem}[Урвуу функц] Хэрэв $f$ урвуутай бөгөөд $x=a$-д тасралтгүй бол $f^{-1}$ нь $x=f(a)$-д тасралтгүй.
+\end{theorem}
+
+\section{Өөрчлөлтийн харьцаа ба шүргэгч шулуун}
+
+\begin{definition}[Өөрчлөлтийн харьцаа]
+$a,b$ нь $a\ne b$ тогтмол тоонууд байг. $y=f(x)$ функцийг $x=a$-аас $x=b$ хүртэл өөрчлөхөд
+\[
+\Delta x=b-a,\qquad \Delta y=f(b)-f(a),
+\]
+\[
+\frac{\Delta y}{\Delta x}=\frac{f(b)-f(a)}{b-a}
+\]
+-ийг $f(x)$ функцийн $[a,b]$ дээрх өөрчлөлтийн харьцаа гэнэ. Энэ нь $A(a,f(a))$ ба $B(b,f(b))$ цэгүүдийг дайрсан \emph{хөвч} шулууны налалт юм.
+\end{definition}
+
+\begin{example}
+$f(x)=x^2$ функцийн хувьд
+\begin{enumerate}
+  \item $x=-1$-ээс $x=2$ хүртэл: $\dfrac{\Delta y}{\Delta x}=\dfrac{2^2-(-1)^2}{2-(-1)}=\dfrac{3}{3}=1$.
+  \item $x=a$-аас $x=a+h$ хүртэл: $\dfrac{(a+h)^2-a^2}{h}=2a+h$.
+\end{enumerate}
+\end{example}
+\section{Уламжлалын тодорхойлолт ба тэмдэглэгээ}
+
+\begin{definition}[Цэг дээрх уламжлал]
+$f$ функц $x=a$ цэгийн орчимд тодорхойлогдсон байг. Хэрэв
+\[
+\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}
+\]
+хязгаар оршин байвал $f$ нь $x=a$ \textbf{цэг дээр дифференциалчлагдана} гэнэ; уг хязгаарыг $f'(a)$ буюу цэг дээрх уламжлал гэнэ.
+\end{definition}
+
+\begin{note}
+Цэг дээрх уламжлал $f'(a)$ нь $A(a,f(a))$ цэг дээр татсан шүргэгч шулууны налалт бөгөөд шүргэгчийн тэгшитгэл:
+\[
+y - f(a) = f'(a)\,(x-a).
+\]
+\end{note}
+
+\begin{example}
+$f(x)=x^2-2x-1$ үед
+\[
+f'(3)=\lim_{h\to 0}\frac{f(3+h)-f(3)}{h}
+=\lim_{h\to 0}\frac{(3+h)^2-2(3+h)-1 - (9-6-1)}{h}=4.
+\]
+\end{example}
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  % Axes
+  \draw[->] (-1,0) -- (5,0) node[right] {$x$};
+  \draw[->] (0,-4) -- (0,6) node[above] {$y$};
+
+  % f(x)=x^2-2x-1
+  \draw[thick] plot[samples=200,domain=-0.2:4.5] (\x,{(\x*\x - 2*\x - 1)}) node[right] {$y=f(x)=x^2-2x-1$};
+
+  % a=3 point
+  \coordinate (P) at (3,{(3*3 - 2*3 - 1)});
+  \fill (P) circle (2pt) node[above right] {$A(3,f(3))$};
+
+  % tangent at x=3: f'(x)=2x-2 => f'(3)=4 ; y - f(3)=4(x-3)
+  \draw[very thick,red] (1,{2+4*(1-3)}) -- (4.5,{2+4*(4.5-3)}) node[above right] {шүргэгч};
+
+  % A few secants approaching tangent: pick b=3+h
+  \foreach \h/\col in {1/blue,0.5/blue,0.25/blue}{
+    \coordinate (B) at ({3+\h},{(3+\h)*(3+\h)-2*(3+\h)-1});
+    \draw[\col] (P) -- (B);
+    \fill (B) circle (1.5pt);
+  }
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Тэмдэглэгээ}
+$y=f(x)$ бол $f'(x)$, $\dfrac{dy}{dx}$, $Df(x)$, $y'$ зэрэг тэмдэглэгээг хэрэглэнэ.
+\section{Хялбар функцүүдийн цэг дээрх уламжлал}
+
+\section{Семинар}
+\begin{enumerate}
+    \item Функц $f(x)$ дараах байдлаар өгөгдөв:
+\[
+f(x)=
+\begin{cases}
+\dfrac{\sin x}{x}, & x\ne 0,\\[1ex]
+c, & x=0.
+\end{cases}
+\]
+\begin{enumerate}[label=\alph*)]
+    \item $f(x)$ функц $x=\pi$ цэг дээр тасралттай  байхаар $c$ олдох уу.
+    \item $c=2$ үед $f(x)$ тасралтгүй байх уу?
+    \item $f(x)$ тасралтгүй функц байхын тулд $c$-ийн утгыг ол.
+\end{enumerate}
+\item Доорх $y=f(x)$ графикийг ашиглан (a)–(f) цэгүүдэд тасралттай эсэхийг тогтоож, тасралтын төрлийг ангил.
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+  % Axes
+  \draw[->] (-3.8,0)--(3.6,0) node[right] {$x$};
+  \draw[->] (0,-2.5)--(0,3.2) node[above] {$y$};
+
+  % Ticks
+  \foreach \x/\lab in {-2/{$-2$}, -1/{$-1$}, 0/{$0$}, 1/{$1$}, 2/{$2$}, 3/{$3$}}
+    \draw (\x,0.08)--(\x,-0.08) node[below=3pt] {\lab};
+
+  % Asymptotes
+  \draw[dashed] (-2,-2.5)--(-2,3.2);
+  \draw[dashed] (2,-2.5)--(2,3.2);
+
+  % Left branch: tends to +infty as x->-2
+  \draw[thick,smooth] plot coordinates {
+    (-3.6,0.1) (-3.0,0.25) (-2.6,0.8) (-2.3,1.5) (-2.1,2.5)
+  };
+
+  % Middle part: hole at (0,2), defined f(0)=-1
+  \draw[thick,smooth] plot coordinates {
+    (-1.9,3.8) (-1.4,1.0) (-1.0,0.2) (-0.4,1.7) (0,2.0) (0.2,1.9) (0.4,1.5) (0.8,1.0) (1,0)
+  };
+
+  % f(0) defined value
+  \fill (0,-1) circle (2pt);
+  \draw[thick,fill=white] (0,2) circle (2pt);
+
+  % Right of x=1: jump up to 2 (right-hand limit)
+  \draw[thick,fill=black] (1,0) circle (2pt); % f(1)=0
+  \draw[thick,fill=white] (1,2) circle (2pt); % limit from right is 2
+
+
+  % Branch between x=1+ and 2-
+  \draw[thick,smooth] plot coordinates {
+    (1.05,2) (1.4,1.5) (1.8,0.2) (1.95,-1.6)
+  };
+
+  % Right of x=2: tends to -∞ from left
+  \draw[dashed,gray] (1.98,-2.3)--(2,-2.5);
+
+  % Right branch (x>2)
+  \draw[thick,smooth] plot coordinates {
+    (2.05,2.5) (2.4,1.3) (3.2,0.4)
+  };
+
+\end{tikzpicture}
+\end{center}
+
+(a) $x=-2$, \quad (b) $x=-1$, \quad (c) $x=0$, \quad (d) $x=1$, \quad (e) $x=2$, \quad (f) $x=3$.
+\item Тасралтгүй болохыг Th.\,8.1,\,8.2 ашиглан батал.
+\begin{enumerate}[label=\alph*)]
+  \item $f(x)=\dfrac{x^{2}+3\cos x - x}{e^{x}}$.
+  \item $f(x)=\sin\!\big(\cos(e^{x})\big)$.
+\end{enumerate}
+\item Функц тасралтгүй байхаар параметрүүдийг ол.
+\begin{enumerate}[label=\alph*)]
+  \item $f(x)=
+  \begin{cases}
+    x+1, & x\le 2,\\
+    a x^{2}+3x-4, & x>2.
+  \end{cases}$
+  \item $f(x)=
+  \begin{cases}
+    x\sin x, & x<\pi,\\
+    e^{x}+c, & x\ge \pi.
+  \end{cases}$
+\end{enumerate}
+\item $y=f(x)$ функц $[a,b]$ завсар дээр тасралтгүй байг.  
+$f(a)=m,\; f(b)=M$ гэж өгөгдөв.  
+Хэрэв $m \le c \le M$ бол $f(x)=c$ тэгшитгэл дор хаяж нэг шийдтэй болохыг батал.
+\item $y=f(x)$ функц $[a,b]$ завсар дээр тасралтгүй байг.  
+$ХБУ=m,\; ХИУ=M$ гэж өгөгдөв.  
+Хэрэв $m \le c \le M$ бол $f(x)=c$ тэгшитгэл дор хаяж нэг шийдтэй болохыг батал.
+\item $h=30$ өндөртэй байшин дээрээс хэвтээ чиглэлтэй $\alpha$ өнцөг үүсгэн шидсэн чулууны $t$ хугацааны дараах өндөр $h(t)=30+t-2t^2$ байв.
+\begin{enumerate}[label=(\alph*)]
+  \item $2\leq t\leq 3$ үеийн унах дундаж хурдыг ол. 
+    \item $2\leq t\leq 4$ үеийн унах дундаж хурдыг ол.
+    \item $2\leq t\leq 2.1$ үеийн унах дундаж хурдыг ол.
+    \item $t=2$ үеийн унах эгшин зуурын хурдыг ол.
+    \item $\alpha$ өнцөгийг ол.
+\end{enumerate}
+\item Уламжлалын тодорхойлолтын дагуу хязгаар ашиглан $x=c$ дээр бод.
+\begin{enumerate}[label=(\alph*)]
+  \item $y = x^{2} - 2x$ , $c=2$
+  \item $y = \dfrac{1}{x}$  , $c=0$
+  \item $y = x^{3} - 17x$ , $c=1$
+  \item $y = \dfrac{2}{1 + x^{2}}$  , $c=-1$
+  \item $y = \sqrt{x}$  , $c=9$
+  \item $y = \dfrac{1}{\sqrt{x}}$  , $c=4$
+\end{enumerate}
+\item 
+Дараах функцүүдээс $x=0$ цэг дээр дифференциалчлагдах функцийг ол.
+\begin{enumerate}[label=(\alph*)]
+  \item $f(x) = x|x|.$
+  \item $g(x) = x\sqrt{|x|}.$
+  \item $h(x) = x + |x|.$
+  \item $s(x) = x^{2}\sin\dfrac{\pi}{x}, \quad s(0)=0.$
+\end{enumerate}
+\end{enumerate}

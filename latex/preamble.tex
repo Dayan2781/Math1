@@ -1,0 +1,88 @@
+% !TEX program = xelatex
+% Бүх лекцийн PDF-д хуваалцах преамбл. latex/build.sh үүнийг ашиглана.
+\documentclass[12pt,a4paper,oneside]{book}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{amsmath,mathtools}
+\usepackage{amsthm,amsfonts,amssymb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{tikz}
+\usepackage{comment}
+\usepackage{environ}
+\usepackage{multicol}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{mathrsfs}
+\usepackage{caption}
+\usetikzlibrary{arrows}
+
+% Unicode & fonts (XeLaTeX)
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\defaultfontfeatures{Ligatures=TeX}
+% Libertinus байвал (Mac дээр), үгүй бол CMU + Latin Modern (GitHub Actions дээр)
+\IfFontExistsTF{Libertinus Serif}{%
+  \setmainfont{Libertinus Serif}
+  \setsansfont{Libertinus Sans}
+  \setmonofont{Libertinus Mono}
+  \setmathfont{Libertinus Math}
+}{%
+  \setmainfont{CMU Serif}
+  \setsansfont{CMU Sans Serif}
+  \setmonofont{CMU Typewriter Text}
+  \setmathfont{Latin Modern Math}
+}
+\usepackage{graphicx} %зураг дуудах
+\renewcommand{\chaptername}{Хичээл}
+\renewcommand{\thechapter}{\arabic{chapter}}
+% --- Theorem-like environments ---
+\newtheorem{theorem}{Теорем}[chapter]
+\newtheorem{proposition}{Өгүүлбэр}[chapter]
+\newtheorem{lemma}{Лемма}[section]
+\newtheorem{definition}{Тодорхойлолт}[chapter]
+\newtheorem{example}{Жишээ}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Тэмдэглэл}
+\newtheorem*{prof}{Баталгаа}
+\newtheorem*{note}{Санамж}
+\newtheorem*{cor}{Мөрдөлгөө}
+
+% --- Problem & Solution helpers ---
+\newcounter{problem}
+\newenvironment{problem}[1][]% optional title
+{\refstepcounter{problem}\par\noindent\textbf{Бодлого~\theproblem.}~#1}{\par}
+
+% --- Show/hide solutions toggle ---change the %sign
+\newif\ifshowsolutions
+%\showsolutionsfalse 
+\showsolutionstrue 
+
+% Robust solution environment (no nesting issues)
+\NewEnviron{solution}{%
+  \ifshowsolutions
+    \par\smallskip\noindent\textit{Бодолт. }% 
+    \BODY\par\smallskip
+  \fi
+}
+
+% --- List styles ---
+\setlist[itemize]{topsep=3pt, itemsep=3pt, leftmargin=1.3em}
+\setlist[enumerate]{topsep=4pt, itemsep=4pt, leftmargin=1.6em}
+
+% --- Metadata ---
+\newcommand{\coursename}{Нэг хувьсагчийн функцийн онол 1В (MATH102)}
+\newcommand{\lectureno}{}
+\newcommand{\topic}{}
+\newcommand{\semester}{2026 оны намар}
+\newcommand{\smallbigcup}{\mathop{\textstyle\bigcup}}
+\newcommand{\smallbigcap}{\mathop{\textstyle\bigcap}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Sx}{\mathrm{S}} % Successor
+\newcommand{\itcol}[1]{{\it{\textcolor{red}{#1}}}}
+\newcommand{\arccot}{\mathbf{arccot}}
+\graphicspath{{../pictures/}{../}}

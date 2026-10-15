@@ -1,0 +1,330 @@
+\chapter{Тодорхойгүй интеграл ба эх функц}
+
+\section{Уламжлалын урвуу үйлдэл. Эх функц}
+\begin{definition}
+ $f(x)$ функц өгөгдсөн байг. Хэрэв $\Phi'(x)=f(x)$ бол $\Phi(x)$-ийг $f(x)$ функцийн
+\emph{эх функц} гэнэ.   
+\end{definition}
+\begin{example}
+    $(x^2+x-1)'=2x+1$ тул $x^2+x-1$ нь $2x+1$ функцийн эх функц юм.
+\end{example}
+  $f'(x)=g'(x)$ ) бол $f(x)=g(x)+C$
+\begin{theorem}\label{togtmol}
+   Хэрэв $\forall x\in I$ дээр $f'(x)=g'(x)$ бол $\forall x\in I$ хувьд $f(x)-g(x)=C$ (тогтмол) байна.
+ \end{theorem} 
+\begin{prof} $h(x)=f(x)-g(x)$ гэе. 
+$f'(x)=g'(x) \Rightarrow h'(x)=(f(x)-g(x))'=0$ болно. Лагранжийн теоремийн мөрдөлгөөгөөр   
+ $$h'(x)=0 \Rightarrow h(x)=C.$$ Тэгэхээр
+\[
+f(x)=g(x)+C.
+\]
+\end{prof}
+\begin{definition}
+ $f(x)$ функц өгөгдсөн байг. Түүний бүх эх функцүүдийн олонлогийг  $f(x)$ функцийн тодорхой биш интеграл гээд 
+ $\displaystyle\int f(x)\,dx$ гэж тэмдэглэнэ. Th \ref{togtmol}-с 
+ $$\int f(x)\,dx=\Phi(x)+C$$ байна. Энд $\Phi(x)$  ямар нэг эх функц.
+ \end{definition}
+\section{Тодорхойгүй интегралын үндсэн жагсаалт}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\displaystyle\int x^n\,dx = \frac{x^{n+1}}{n+1}+C,\quad (n\neq -1)$
+\item $\displaystyle\int \frac{dx}{x}= \ln |x|+C$
+\item $\displaystyle\int e^x dx = e^x +C $
+\item $\displaystyle\int a^x dx = \frac{a^x}{\ln a}+C$
+\item $\displaystyle\int \sin x dx = -\cos x + C $
+\item $\displaystyle\int \cos x dx = \sin x + C$
+\item $\displaystyle\int \sec^2 x\, dx = \tan x +C$ 
+\item $\displaystyle\int \frac{dx}{1+x^2}= \arctan x + C$
+\item $\displaystyle\int \frac{dx}{\sqrt{1-x^2}} = \arcsin x +C$
+\end{enumerate}
+\end{multicols}
+\begin{theorem}[ Арифметик үйлдлүүд ба эх функц] $f, \, g$ нь эх функцтэй бол, $C$ тогтмол тоо бол
+  \begin{enumerate}
+  \item $\displaystyle \int Cf\,dx=C\displaystyle \int f\,dx$ 
+\item $\displaystyle \int (f\pm g)\,dx = \int f\,dx \pm \int g\,dx$
+\item $\displaystyle \int f'(x)g(x)\,dx = f(x)g(x) - \int f(x)g'(x)\,dx$ (Хэсэгчлэн интегралчлах)
+\item $\displaystyle \int f(g(x))g'(x)\,dx = \int f(u)\,du$ Энд $u=g(x)$,\quad (Орлуулах)
+  \end{enumerate}
+\end{theorem}
+\begin{example}
+\begin{enumerate}
+\item $\displaystyle \int 3x^2\,dx=3\displaystyle \int x^2\,dx=3\dfrac{x^{2+1}}{2+1}+c=x^3+c$
+\item $\displaystyle \int (3x^2 - 5\sqrt{x^3} + \dfrac{2}{x})\,dx=\displaystyle \int 3x^2 \,dx-\displaystyle \int  5\sqrt{x^3}\,dx+\displaystyle \int\dfrac{2}{x}\,dx=x^3-2x^{2.5}+2\ln x+C$
+\item $
+\displaystyle\int \sin^2\!\left(\frac{x}{2}\right)\,dx
+= \int \frac{1-\cos x}{2}\,dx
+= \frac12\int (1-\cos x)\,dx
+= \frac{x}{2} - \frac{\sin x}{2} + C.
+$
+\end{enumerate}  
+\end{example}
+\section{Хэсэгчлэн интегралчлах арга}
+$\displaystyle \int g'(x)f(x)\,dx = f(x)g(x) - \int g(x)f'(x)\,dx$ томьёог
+\[
+\int fdg = fg - \int g\,df
+\] гэж бичиж болно. 
+
+\textbf{Жишээ:}
+$\int x e^x dx $ интегралд $f(x)=x, g'(x)dx=dg(x)=e^xdx=de^x$ гэвэл
+\[
+\int x e^x dx = xe^x - \int e^x dx = e^x(x -1)+C
+\] болно. Хэрэв энд $f(x)=e^x, g'(x)dx=dg(x)=xdx=d\frac{x^2}{2}$ гэвэл
+\[
+\int x e^x dx = \frac{x^2}{2}e^x - \int \frac{x^2}{2}e^x dx
+\] болно. Энэ гарсан интеграл нь өмнөхөөс хүнд харагдаж байна. Иймд хэсэгчлэх арга хэрэглэхэд $f, g'$ хэрхэн сонгох нь чухал юм.
+
+\textbf{$f(x)$ сонгох дараалал (LAPTE):} Хэсэгчлэх арга хэрэглэхэд ихэвчлэн $f(x)$ функцийг дараах дараалалаар сонгоно.
+\[
+\text{Log} \rightarrow \text{Arc} \rightarrow \text{Polynomm} \rightarrow \text{Trig} \rightarrow \text{Exponential}
+\]
+\begin{example}
+    $\displaystyle\int x\ln x \,dx$ бодоход LAPTE сонголтоор $\ln x$ байгаа тул түүнийг $f(x)=\ln x, g'(x)=x$ гэж авна. Иймд $g(x)=\dfrac{x^2}{2}$ болно. Иймд 
+    $$\int x\ln x \,dx=\dfrac{x^2}{2}\ln x-\int \dfrac{x^2}{2}(\ln x)'dx=\dfrac{x^2}{2}\ln x-\int \dfrac{x^2}{2}\dfrac{1}{x}dx=\dfrac{x^2}{2}\ln x-\dfrac{x^2}{4}+c$$ болно.
+\end{example}
+\begin{example} $\int x^{2}e^{x}\,dx$ бодоход LAPTE сонголтоор $f(x)=x^2, g'(x)=e^x$ гэж авна. Иймд $g(x)=e^x$ болно.
+ \[
+\int x^{2}e^{x}\,dx
+= x^{2}e^{x}-\int 2xe^{x}\,dx.
+\] болно.
+Сүүлийн $\displaystyle\int 2xe^{x}\,dx$ интегралыг мөн хэсэгчлэн интегралчилбал 
+$$\int 2xe^{x}\,dx= 2xe^{x}-\int 2e^{x}\,dx$$ болно. Иймд 
+\[
+\int x^{2}e^{x}\,dx= x^{2}e^{x}-2xe^{x}+2e^{x}+C
+= e^{x}(x^{2}-2x+2)+C.
+\]
+болно.
+\end{example} 
+\begin{example} $\displaystyle\int e^{x}\sin x\,dx $ интегралын хувьд  $f(x)=\sin x, g'(x)=e^x$ гэж авбал
+    \[
+\int e^{x}\sin x\,dx =e^x\sin x-\int e^x (-\cos x) dx
+\]
+болно. $\int e^x (-\cos x) dx$ интегралын хувьд  $f(x)=-\cos x, g'(x)=e^x$ гэж авбал
+
+$$\int e^x (-\cos x) dx=e^x (-\cos x)-\int e^x(-\sin x) dx$$ болно. Хэрэв $I=\displaystyle\int e^{x}\sin x\,dx$ гэвэл 
+$I=e^x\sin x-\frac{e^{x}}{2}(\sin x - \cos x) + C.$
+\end{example}
+\newpage
+\section{Семинар}
+\begin{enumerate}
+    \item Дараах интегралуудыг жагсаалт ашиглан бод.
+\begin{enumerate}
+\begin{multicols}{2}
+  \item $\displaystyle \int \sqrt{x}\,dx.$
+  \item $\displaystyle \int \sqrt[n]{x}\,dx.$
+  \item $\displaystyle \int \frac{dx}{x^2}.$
+  \item $\displaystyle \int 10^x\,dx.$
+  \item $\displaystyle \int a^x e^x\,dx.$
+  \item $\displaystyle \int \frac{dx}{2\sqrt{x}}.$
+  \item $\displaystyle \int \frac{dh}{\sqrt{2gh}}.$
+  \item $\displaystyle \int 3.4x^{-0.17}\, dx.$
+  \item $\displaystyle \int (1-2u)\,du.$
+  \item $\displaystyle \int (\sqrt{x}+1)(x-\sqrt{x}+1)\,dx.$
+  \item $\displaystyle \int \frac{\sqrt{x}-x^3 e^x + x^2}{x^3}\,dx.$
+  \item $\displaystyle \int (2x^{-1.2} + 3x^{-0.8} - 5x^{0.38})\,dx.$
+  \item $\displaystyle \int \frac{(1-z)^2}{z}\,dz.$
+  \item $\displaystyle \int \frac{(1-x)^2}{x\sqrt{x}}\,dx.$
+  \item $\displaystyle \int \frac{(1+\sqrt{x})^3}{\sqrt[3]{x}}\,dx.$
+  \item $\displaystyle \int \frac{\sqrt[3]{x^2}-\sqrt[4]{x}}{\sqrt{x}}\,dx.$
+  \item $\displaystyle \int \frac{dx}{\sqrt{3}-3x^2}.$
+  \item $\displaystyle \int \frac{3\cdot 2^x - 2\cdot 3^x}{2^x}\,dx.$
+  \item $\displaystyle \int \frac{1+\cos^2 x}{1+\cos 2x}\,dx.$
+  \item $\displaystyle \int \frac{\cos 2x}{\cos^2 x \sin^2 x}\,dx.$
+  \item $\displaystyle \int \tan^2 x\,dx.$
+  \item $\displaystyle \int 2\sin^2 \frac{x}{2}\,dx.$
+  \item $\displaystyle \int \frac{(1+2x^2)\,dx}{x^2(1+x^2)}.$
+  \item $\displaystyle \int \frac{(1+x)^2 dx}{x(1+x^2)}.$
+  \item $\displaystyle \int \frac{dx}{\cos 2x + \sin^2 x}.$
+  \item $\displaystyle \int (\arcsin x + \arccos x)\,dx.$
+  \end{multicols}
+\end{enumerate}
+\item  Орлуулах арга хэрэглэн интеграл бод.
+\begin{enumerate}
+\begin{multicols}{2}
+   \item $\displaystyle \int \sin x\, d(\sin x).$
+    \item $\displaystyle \int \tan^{3}x \, d(\tan x).$
+    \item $\displaystyle \int \frac{d(1+x^{2})}{\sqrt{1+x^{2}}}.$
+    \item $\displaystyle \int (x+1)^{15} dx.$
+    \item $\displaystyle \int \frac{dx}{(2x-3)^{5}}.$
+    \item $\displaystyle \int \frac{dx}{(a+bx)^{c}} \qquad (c\ne 1).$
+    \item $\displaystyle \int \sqrt[5]{(8-3x)^{6}}\, dx.$
+    \item $\displaystyle \int \sqrt{8-2x}\, dx.$
+    \item $\displaystyle \int \frac{m}{\sqrt[3]{(a+bx)^{2}}} dx.$
+    \item $\displaystyle \int 2x\sqrt{x^{2}+1}\, dx.$
+    \item $\displaystyle \int x\sqrt{1-x^{2}}\, dx.$
+    \item $\displaystyle \int x^{2}\sqrt[5]{x^{3}+2}\, dx.$
+    \item $\displaystyle \int \frac{x\, dx}{\sqrt{x^{2}+1}}.$
+    \item $\displaystyle \int \frac{x^{4} dx}{\sqrt{4+x^{5}}}.$
+    \item $\displaystyle \int \frac{x^{3}dx}{\sqrt[3]{x^{4}+1}}.$
+    \item $\displaystyle \int \frac{(6x-5)\, dx}{2\sqrt{3x^{2}-5x+6}}.$
+    \item $\displaystyle \int \sin^{3} x \cos x\, dx.$
+    \item $\displaystyle \int \frac{\sin x\, dx}{\cos^{2}x}.$
+    \item $\displaystyle \int \frac{\cos x\, dx}{\sqrt[3]{\sin^{2}x}}.$
+    \item $\displaystyle \int \cos^{3} x \sin 2x\, dx.$
+    \item $\displaystyle \int \frac{\sqrt{\ln x}}{x}\, dx.$
+    \item $\displaystyle \int \frac{(\arctan x)^{2} dx}{1+x^{2}}.$
+    \item $\displaystyle \int \frac{dx}{(\arcsin x)^{3}\sqrt{1-x^{2}}}.$
+    \item $\displaystyle \int \frac{dx}{\cos^{3} x\sqrt{1+\tan x}}.$
+    \item $\displaystyle \int \cos 3x\, d(3x).$
+    \item $\displaystyle \int \cos 3x\, dx.$
+       
+\end{multicols}
+\end{enumerate}
+\item Хэсэгчлэх аргаар бод  
+\begin{multicols}{2}
+\begin{enumerate}
+ 
+\item $\displaystyle\int x\,e^x\,dx$
+ 
+\item $\displaystyle\int x\,\cos x\,dx$
+ 
+\item $\displaystyle\int x\,\sin x\,dx$
+ 
+\item $\displaystyle\int x^2 e^x\,dx$
+ 
+\item $\displaystyle\int \ln x\,dx$
+ 
+\item $\displaystyle\int x\ln x\,dx$
+ 
+\item $\displaystyle\int \arctan x\,dx$
+ 
+\item $\displaystyle\int \arcsin x\,dx$
+ 
+\item $\displaystyle\int x\arctan x\,dx$
+ 
+\item $\displaystyle\int x^2\sin x\,dx$
+ 
+\item $\displaystyle\int x^3 e^{2x}\,dx$
+ 
+\item $\displaystyle\int x^2\cos 2x\,dx$
+ 
+\item $\displaystyle\int x^3\ln x\,dx$
+ 
+\item $\displaystyle\int x^2\arctan x\,dx$
+ 
+\item $\displaystyle\int x^2\ln^2 x\,dx$
+ 
+\item $\displaystyle\int x\arcsin x\,dx$
+ 
+\item $\displaystyle\int (x^2+x+1)e^x\,dx$
+ 
+\item $\displaystyle\int (x^2-2x+3)\cos x\,dx$
+ 
+\item $\displaystyle\int e^x\sin x\,dx$
+ 
+\item $\displaystyle\int e^{2x}\cos 3x\,dx$
+ 
+\item $\displaystyle\int e^{-x}\cos x\,dx$
+ 
+\item $\displaystyle\int \sin(\ln x)\,dx$
+ 
+\item $\displaystyle\int \cos(\ln x)\,dx$
+ 
+\item $\displaystyle\int \sqrt{x}\,\ln x\,dx$
+ 
+\item $\displaystyle\int \arctan\sqrt{x}\,dx$
+ 
+\item $\displaystyle\int \ln(x^2+1)\,dx$
+\end{enumerate}
+\end{multicols}
+\end{enumerate}
+\section{Гэрийн даалгавар}
+\begin{enumerate}
+\begin{multicols}{2}
+  \item $\displaystyle \int \frac{dx}{2x-1}.$
+  \item $\displaystyle \int \frac{dx}{cx+m}.$
+  \item $\displaystyle \int \frac{x\,dx}{x^{2}+1}.$
+
+  \item $\displaystyle \int \frac{x^{2}\,dx}{x^{3}+1}.$
+  \item $\displaystyle \int \frac{e^{x} dx}{e^{x}+1}.$
+  \item $\displaystyle \int \frac{e^{2x} dx}{e^{2x}+a^{2}}.$
+
+  \item $\displaystyle \int \tan x\, dx.$
+  \item $\displaystyle \int \cot x\, dx.$
+  \item $\displaystyle \int \tan 3x\, dx.$
+
+  \item $\displaystyle \int \cot(2x+1)\, dx.$
+  \item $\displaystyle \int \frac{\sin 2x}{1+\cos^{2}x}\, dx.$
+  \item $\displaystyle \int \frac{dx}{x \ln x}.$
+
+  \item $\displaystyle \int \frac{(\ln x)^{m}}{x}\, dx.$
+  \item $\displaystyle \int e^{\sin x}\, d(\sin x).$
+  \item $\displaystyle \int e^{\sin x}\cos x\, dx.$
+
+  \item $\displaystyle \int a^{3x}\, dx.$
+  \item $\displaystyle \int a^{-x}\, dx.$
+
+  \item $\displaystyle \int e^{-3x+1}\, dx.$
+  \item $\displaystyle \int e^{x^{2}} x\, dx.$
+  \item $\displaystyle \int e^{-x^{3}} x^{2}\, dx.$
+
+  \item $\displaystyle \int \frac{d\left(\frac{x}{3}\right)}{\sqrt{1-\left(\frac{x}{3}\right)^{2}}}.$
+  \item $\displaystyle \int \frac{dx}{\sqrt{1-25x^{2}}}.$
+  \item $\displaystyle \int \frac{dx}{1+9x^{2}}.$
+
+  \item $\displaystyle \int \frac{dx}{\sqrt{4-x^{2}}}.$
+  \item $\displaystyle \int \frac{dx}{2x^{2}+9}.$
+  \item $\displaystyle \int \frac{dx}{\sqrt{4-9x^{2}}}.$
+
+  \item $\displaystyle \int \frac{x\, dx}{x^{4}+1}.$
+  \item $\displaystyle \int \frac{x\, dx}{a^{2}-x^{4}}.$
+  \item $\displaystyle \int \frac{x^{2} dx}{x^{6}+4}.$
+
+  \item $\displaystyle \int \frac{x^{3} dx}{\sqrt{1-x^{8}}}.$
+  \item $\displaystyle \int \frac{e^{x} dx}{e^{2x}+4}.$
+  \item $\displaystyle \int \frac{2^{x} dx}{\sqrt{1-4^{x}}}.$
+
+  \item $\displaystyle \int \frac{\cos\alpha\, d\alpha}{a^{2}+\sin^{2}\alpha}.$
+  \item $\displaystyle \int \frac{e^{2x}-1}{e^{x}}\, dx.$
+  \item $\displaystyle \int (e^{x}+1)^{3} dx.$
+
+  \item $\displaystyle \int \frac{1+x}{\sqrt{1-x^{2}}}\, dx.$
+  \item $\displaystyle \int \frac{8x-1}{x^{2}+9} dx.$
+  \item $\displaystyle \int \frac{\sqrt{1-x}}{1+x}\, dx.$
+
+  \item $\displaystyle \int \frac{x(1-x^{2})}{1+x^{4}}\, dx.$
+  \item $\displaystyle \int \frac{1+x-x^{2}}{\sqrt{(1-x^{2})^{3}}}\, dx.$
+  \item$\displaystyle \int \frac{dx}{(x+\sqrt{x^{2}-1})^{2}}.$ 
+ 
+\item $\displaystyle\int x\,e^{3x}\,dx$
+ 
+\item $\displaystyle\int x\cos 2x\,dx$
+ 
+\item $\displaystyle\int x\sin 3x\,dx$
+ 
+\item $\displaystyle\int x\,e^{-2x}\,dx$
+ 
+\item $\displaystyle\int \ln(2x)\,dx$
+ 
+\item $\displaystyle\int x^2\ln x\,dx$
+ 
+\item $\displaystyle\int \arccos x\,dx$
+ 
+\item $\displaystyle\int x\arcsin x\,dx$ % давхцал байна - семинарт 16р бодлого өөр
+ 
+\item $\displaystyle\int x^2 e^{-x}\,dx$
+ 
+\item $\displaystyle\int x^2\sin 2x\,dx$
+ 
+\item $\displaystyle\int x^3\cos x\,dx$
+ 
+\item $\displaystyle\int x^3\ln 2x\,dx$
+ 
+\item $\displaystyle\int (x^2+3x-1)e^{-x}\,dx$
+ 
+\item $\displaystyle\int x^2\arcsin x\,dx$
+ 
+\item $\displaystyle\int \ln^2 x\,dx$
+ 
+\item $\displaystyle\int x\ln^2 x\,dx$
+ 
+\item $\displaystyle\int e^{3x}\sin 2x\,dx$
+ 
+\item $\displaystyle\int e^{-x}\sin 3x\,dx$
+ 
+\item $\displaystyle\int x\,e^x\sin x\,dx$
+ 
+\item $\displaystyle\int \ln(x+\sqrt{x^2+1})\,dx$
+ 
+\end{multicols}
+\end{enumerate}
+

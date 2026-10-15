@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Лекцийн PDF-үүдийн жагсаалт. PDF-үүдийг latex/build.sh үүсгэдэг.
+     Шинэ лекц нэмэхдээ latex/build.sh дахь жагсаалт болон энд мөр нэмнэ. -->
+<preface xml:id="lecture-materials">
+  <title>Лекцийн материал</title>
+
+  <p>Лекц бүрийн бүрэн тэмдэглэлийг PDF хэлбэрээр татаж авч болно.
+  <q>Номд</q> баганын холбоос нь тухайн сэдвийг идэвхтэй сурах хэлбэрээр
+  тайлбарласан энэ номын бүлэг рүү хөтөлнө.</p>
+
+  <table xml:id="table-lecture-pdfs">
+    <title>Лекцийн тэмдэглэлүүд</title>
+    <tabular halign="left" top="major" bottom="major">
+      <row header="yes" bottom="minor">
+        <cell>Лекц</cell><cell>Сэдэв</cell><cell>PDF</cell><cell>Номд</cell>
+      </row>
+      <row><cell>1</cell><cell>Хэллэг ба логик, үнэний хүснэгт</cell><cell><dataurl visual="" source="lectures/lec01-logic.pdf">PDF</dataurl></cell><cell>—</cell></row>
+      <row><cell>2</cell><cell>Олонлог, буулгалт, функц</cell><cell><dataurl visual="" source="lectures/lec02-sets-functions.pdf">PDF</dataurl></cell><cell><xref ref="ch-sets-functions"/></cell></row>
+      <row><cell>3</cell><cell>Тоон олонлогууд (Пеаногийн аксиом)</cell><cell><dataurl visual="" source="lectures/lec03-numbers.pdf">PDF</dataurl></cell><cell>—</cell></row>
+      <row><cell>4</cell><cell>Функцийн ойлголт, олон гишүүнт ба рационал функц</cell><cell><dataurl visual="" source="lectures/lec04-basic-functions.pdf">PDF</dataurl></cell><cell><xref ref="ch-basic-functions"/></cell></row>
+      <row><cell>5</cell><cell>Тригонометр, илтгэгч ба логарифм функц</cell><cell><dataurl visual="" source="lectures/lec05-trig-exp-log.pdf">PDF</dataurl></cell><cell><xref ref="sec-trigonometric"/></cell></row>
+      <row><cell>6</cell><cell>Функцийн хязгаарын тодорхойлолт</cell><cell><dataurl visual="" source="lectures/lec06-limit-1.pdf">PDF</dataurl></cell><cell><xref ref="ch-limits"/></cell></row>
+      <row><cell>7</cell><cell>Дарааллын хязгаар, хязгаарын тухай теоремүүд</cell><cell><dataurl visual="" source="lectures/lec07-limit-2.pdf">PDF</dataurl></cell><cell><xref ref="ch-limits"/></cell></row>
+      <row><cell>8</cell><cell>Тасралтгүй чанар, уламжлал</cell><cell><dataurl visual="" source="lectures/lec08-continuity-derivative.pdf">PDF</dataurl></cell><cell><xref ref="sec-continuity"/></cell></row>
+      <row><cell>9</cell><cell>Уламжлалын тодорхойлолт ба дүрмүүд</cell><cell><dataurl visual="" source="lectures/lec09-derivative-2.pdf">PDF</dataurl></cell><cell><xref ref="ch-derivatives"/></cell></row>
+      <row><cell>10</cell><cell>Параметр ба далд функцийн уламжлал, дээд эрэмбийн уламжлал</cell><cell><dataurl visual="" source="lectures/lec10-derivative-3.pdf">PDF</dataurl></cell><cell><xref ref="sec-parametric-derivative"/></cell></row>
+      <row><cell>11</cell><cell>Дифференциал тоололын үндсэн теоремүүд</cell><cell><dataurl visual="" source="lectures/lec11-mean-value-theorems.pdf">PDF</dataurl></cell><cell><xref ref="ch-graph-behavior"/></cell></row>
+      <row><cell>12</cell><cell>Хотгор, гүдгэр функц ба Тайлорын теорем</cell><cell><dataurl visual="" source="lectures/lec12-concavity-taylor.pdf">PDF</dataurl></cell><cell><xref ref="sec-concavity"/></cell></row>
+      <row><cell>13</cell><cell>Тодорхойгүй интеграл ба эх функц</cell><cell><dataurl visual="" source="lectures/lec13-antiderivative.pdf">PDF</dataurl></cell><cell><xref ref="sec-antider"/></cell></row>
+      <row><cell>14</cell><cell>Тодорхойгүй интеграл бодох аргууд</cell><cell><dataurl visual="" source="lectures/lec14-integration-techniques.pdf">PDF</dataurl></cell><cell><xref ref="sec-int-techniques-1"/></cell></row>
+      <row><cell>15</cell><cell>Тодорхой интеграл</cell><cell><dataurl visual="" source="lectures/lec15-definite-integral.pdf">PDF</dataurl></cell><cell><xref ref="sec-definite-integral"/></cell></row>
+      <row><cell>16</cell><cell>Өргөтгөсөн интеграл ба интегралын хэрэглээ</cell><cell><dataurl visual="" source="lectures/lec16-improper-integral.pdf">PDF</dataurl></cell><cell><xref ref="sec-app-integration"/></cell></row>
+    </tabular>
+  </table>
+
+  <p>Бүх семинарын бодлого болон гэрийн даалгаврыг нэг файлд:
+    <ul>
+      <li><dataurl visual="" source="lectures/seminars.pdf">Семинарын бодлогууд (PDF)</dataurl></li>
+      <li><dataurl visual="" source="lectures/homework.pdf">Гэрийн даалгаврууд (PDF)</dataurl></li>
+    </ul>
+  </p>
+</preface>

@@ -1,0 +1,252 @@
+\section{Натурал тоо}
+Энд бид натурал тооны онолыг Пеаногийн (Dedekind–Peano) аксиомоор байгуулна. 
+\section*{Жузеппе Пеано (1858–1932)}
+\noindent
+\begin{minipage}[t]{0.2\textwidth}
+  \vspace{0pt}
+  \centering
+  \includegraphics[width=\linewidth]{Peano.jpg}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.78\textwidth}
+  \vspace{0pt}
+  \textbf{Жузеппе Пеано} нь Италийн математикч, логикийн суурь судлаач.
+  1889 онд натурал тоог аксиомчилсон (\emph{Dedekind–Peano} аксиомууд) бүтээлээ
+  хэвлүүлж, 1890 онд дифференциал тэгшитгэлийн судалгааны үр дүнд \emph{Пеаногийн муруй}-г танилцуулсан.
+  Орчин үеийн тэмдэглэгээнд ихээхэн нөлөөлсөн (жиш., $\in$ тэмдгийн эх сурвалж
+  нь Пеаногийн $\varepsilon$). Ихэвчлэн Турины их сургуульд ажиллаж,
+  \emph{Formulario Mathematico} цувралыг эмхэтгэсэн. \vspace{1cm}
+  
+\end{minipage}
+
+\begin{definition}[Натурал тоон олонлог]\label{натурал тоо}
+    Хэрэв $\N$ олонлог ба түүний  $\mathbb{a}$ элемент, $$S:\N\to\N$$ буулгалт өгөгдсөн ба $(\N, \mathbb{a}, S)$ гуравт дараах 5 аксиомыг хангадаг бол $\N$ олонлогийг натурал тоон олонлог гэнэ. 
+\begin{enumerate}[label=\textbf{A\arabic*})]
+  \item $\mathbb{a}\in\N$.
+  \item $n\in \N$ бол $S(n)\in \N$ байна. \hfill ($S(n)$-г $n$-н залгамжлагч гэе)
+  \item $\forall n\in\N$ бол $S(n)\ne \mathbb{a}$ байна. \hfill ($\mathbb{a}$ нь залгамжлагч биш)
+  \item $ m\neq n\in\N$ бол $S(m)\neq S(n)$ байна. \hfill (\emph{иньектив})
+  \item Хэрэв $P(n)$ нь $n$ гэсэн натурал тооноос хамаарсан хэллэг бөгөөд
+\begin{itemize}
+    \item $n=1$ үед $P(1)$ үнэн
+    \item ямар нэг $n\in \mathbb{N}$ хувьд $P(n)$ үнэн байвал заавал $P(S(n))$ үнэн
+\end{itemize} нөхцлүүдийг хангадаг бол $P(n)$ хэллэг $\forall n\in\mathbb{N}$ хувьд үнэн байна.
+\end{enumerate}
+\end{definition}
+\begin{example}[Математик индукц]
+  Цаашид $\mathbb{a}$-г 1, $S(\mathbb{a})$-г 2, $S(S(\mathbb{a}))$-г 3 гэх мэт тэмдэглэвэл $$\{\mathbb{a}, S(\mathbb{a}), S(S(\mathbb{a})), \ldots \}=\{1, 2, 3, \ldots \}\subset \N$$ болно.  Одоо $\{1, 2, 3, \ldots \}=\N$ болохыг батлая. 
+
+  $b\in\N$ бол $P(b):\{b=1\land b=S(n)\text{\, байх\, } n\in\N \text{\, олдоно.}\}$ гэсэн хэллэг авч үзье. Энэ хэллэг бүх $b$ натуралын хувьд үнэн байхыг батлая. $\textbf{A5)}$ аксиомыг хэрэглэе.
+  \begin{enumerate}
+      \item Хэрэв $b=1$ бол $P(1)$ үнэн
+    \item ямар нэг $1\neq b\in \mathbb{N}$ хувьд $P(b)$ үнэн байвал $b=S(n)$ гэсэн үг. Иймд заавал $S(b)=S(S(n))$ болох тул $S(b)$ хувьд $S(S(n))$ олдож байна. Иймд $P(S(b))$ үнэн байна. 
+  \end{enumerate}
+   Иймд $\textbf{A5)}$ аксиомоор $P(b):\{b=1\land b=S(n)\text{\, байх\, } n\in\N \text{\, олдоно.}\}$ гэсэн хэллэг $\forall b\in\mathbb{N}$ хувьд үнэн байна. 
+\end{example}
+\begin{theorem}
+   $n\in\N , n\neq 1$ бол $n=S(m)$ байх $m$ ганц олдоно. $m=\underbrace{S(S\ldots S(}_{n-1}1)\ldots)$ байна.
+\end{theorem}
+\begin{prof}
+     Семинарын бодлого хар.
+\end{prof}
+\begin{theorem}[(Математик индукц)]\label{mathind}
+$n\in\N$ ба $P(n)$ шинж өгөгдөхөд 
+\begin{enumerate}
+    \item $P(1)$ үнэн
+    \item $\forall n\,(P(n)$ хувьд $P(1), P(2), \ldots P(n)$ үнэн бол $P(S(n)))$ үнэн байдаг
+\end{enumerate} чанартай байвал $\forall n\in\N$ хувьд $P(n)$ шинж үнэн байна.
+\end{theorem}
+\begin{prof}
+    $\mathbb{A5}$ аас мөрдөнө.
+\end{prof}
+\section{Натурал тооны нэмэх, үржих үйлдэл ба зэрэгт дэвшүүлэх}
+\subsection{Нэмэх}
+\begin{definition}[Hэмэх үйлдэл] $+: \N\times \N\to\N$ буулгалт (үйлдэл)-г дараах дүрмээр байгуулая. $\forall n , m\in\N$ хувьд $+(n,m)=n+m$ гэж тэмдэглэе.
+\begin{enumerate}[label=\textbf{N\arabic*})]
+    \item $ n+1= S(n)$
+    \item $n+S(m)=S(n+m)$
+\end{enumerate} 
+\end{definition}
+\begin{example}
+    \begin{enumerate}
+        \item $1+1=S(1)=2$
+        \item $2+1=S(2)=3$
+        \item $5+2=5+S(1)=S(5+1)=S(6)=7$
+        \item $5+3=5+S(2)=S(5+2)=S(7)=8$
+    \end{enumerate}
+\end{example}
+\begin{theorem}\label{nemeh 1}
+$\forall n$ хувьд $1+n=n+1$ байна.
+\end{theorem}
+\begin{proof}
+Теорем \ref{mathind} ашиглан индукц хийе. 
+\begin{enumerate}
+    \item $n=1$: $1+1=1+1$ 
+    \item Xэрэв $n\neq 1 $ гэж үзвэл $1+1=1+1 \, , 1+2=2+1 \, , 1+3=3+1 \, , \ldots ,  1+n=n+1 $ гэе. 
+    
+    Одоо $S(n)+1=1+S(n)$ батлая. $1+S(n)=S(1+n)$ (нэмэхийн 2-р аксиом). 
+    
+    Нөгөө талаас $S(n)+1=S(S(n))=S(n+1)$ (нэмэхийн 1-р аксиом) болох ба бид $ 1+n=n+1 $ гэж үзсэн тул  $$1+S(n)=S(1+n)=S(n+1)=S(S(n))=S(n)+1$$ тул 
+    $S(n)+1=1+S(n)$ батлагдав.
+    \qedhere
+\end{enumerate}  
+\end{proof}
+
+\begin{theorem}[Нэмэхийн коммутатив чанар]
+$\forall m,n\in\N$ бол $ m+n=n+m$ байна.
+\end{theorem}
+\begin{prof}
+$\varphi_n(m):\, m+n=n+m$ хэллэгийг $n$-ээр индукцлэн батлая. 
+
+$n=1$: $1+m=m+1$ байхыг Теорем \ref{nemeh 1} баталсан. 
+
+Индукцийн алхам: $\varphi_n\Rightarrow\varphi_{S(n)}$.
+\begin{align*}
+ m+S(n)&=S(m+n)\quad(\textbf{N2})\\
+           &=S(n+m)\quad(\text{индукцийн таамаглал})\\
+           &=n+S(m)\quad(\textbf{N2 }\text{ урвуугаар ашиглав}).
+\end{align*}
+\end{prof}
+
+\begin{theorem}[Нэмэхийн ассоциатив чанар]
+$\forall \ell,m,n:\ (\ell+m)+n=\ell+(m+n)$.
+\end{theorem}
+\begin{prof}
+$n$-ээр индукцлэе. 
+
+Суурь: $(\ell+m)+1=S(\ell+m)=\ell+S(m)=\ell+(m+1).$ 
+
+Индукцийн алхам:
+\[(\ell+m)+S(n)=S\big((\ell+m)+n\big)=S\big(\ell+(m+n)\big)=\ell+S(m+n)=\ell+(m+S(n)).\]
+\end{prof}
+
+\subsection{Үржих}
+ \begin{definition}[Үржих үйлдэл] $ \times : \N\times \N\to\N$ буулгалт (үйлдэл)-г дараах дүрмээр байгуулая. $\forall n , m\in\N$ хувьд $\times(n,m)=n\cdot m$ гэж тэмдэглэе.
+\begin{enumerate}[label=\textbf{U\arabic*})]
+    \item $ n\cdot 1= n$
+    \item $n\cdot S(m)=n\cdot m+n$
+\end{enumerate} 
+\end{definition}
+\begin{example}
+    \begin{enumerate}
+    \item $1\cdot 1=1$
+    \item $2\cdot 1=2$
+    \item $5\cdot 2=5\cdot S(1)=5\cdot 1+5=5+5=10$
+    \item $5\cdot 3=5\cdot S(2)=5\cdot 2+5=10+5=15$
+    \end{enumerate}
+\end{example}
+ 
+\begin{theorem}[Дистрибутив]\label{distributive}
+$\forall a,b,c\in\N$ бол $a\cdot(b+c)=a\cdot b+a\cdot c$ байна.
+\end{theorem}
+\begin{prof}
+$c$-ээр индукцлэе. 
+
+Суурь: $a\cdot(b+1)=a\cdot S(b)=a\cdot b+a=a\cdot b+a\cdot 1$. 
+
+Индукцийн алхам:
+\begin{align*}
+a\cdot S(c)&=a\cdot c+a,\\
+a\cdot(b+S(c))&=a\cdot S(b+c)=a\cdot(b+c)+a=\big(a\cdot b+a\cdot c\big)+a= a\cdot b+a\cdot S(c).
+\end{align*}
+\end{prof}
+\begin{theorem}\label{urjih 1}
+$\forall n\in\N$ бол $1\cdot n=n\cdot 1$ байна.
+\end{theorem}
+\begin{prof}
+     Семинарын бодлого хар.
+\end{prof}
+\begin{theorem}[Үржихийн коммутатив]
+$\forall m,n\in\N$ бол $ m\cdot n=n\cdot m$ байна.
+\end{theorem}
+\begin{prof}
+$n$-ээр индукцлэе. 
+
+Суурь: $n=1$: $m\cdot 1=m=1\cdot m$ байхыг Теорем \ref{urjih 1} батласан. 
+Алхам:
+\[m\cdot S(n)=m\cdot n+m= n\cdot m+m=S(n)\cdot m.\]
+\end{prof}
+
+\begin{theorem}[Үржихийн ассоциатив]
+$\forall a,b,c:\ (a\cdot b)\cdot c=a\cdot(b\cdot c)$.
+\end{theorem}
+\begin{prof}
+     Семинарын бодлого хар.
+\end{prof}
+
+\subsection{Зэрэг}
+ \begin{definition}[Зэрэг] $ A: \N\times \N\to\N$ буулгалт (үйлдэл)-г дараах дүрмээр байгуулая. $\forall n , m\in\N$ хувьд $A(n,m)=n^ m$ гэж тэмдэглэе.
+\begin{enumerate}[label=\textbf{Z\arabic*})]
+    \item $ n^1= n$
+    \item $n^{S(m)}=n^ m\cdot n$
+\end{enumerate} 
+\end{definition}
+\[n^{1}=n,\qquad n^{S(m)}=n^{m}\cdot n.\]
+Индукцээр $n^{a+b}=n^a\cdot n^b$, $n^{a\cdot b}=(n^a)^b$ зэрэг үндсэн томьёонууд батлагдана.
+
+\subsection{Эрэмбэ тодорхойлох}
+\begin{definition}
+$\forall m,n\in\N$ үед $n=m+k$ байх $\exists k\in\N$ олддог $n>m$ гэнэ. Цаашид $n=m$ эсвэл $n>m$ бол $n\ge m$ гэж тэмдэглэе.
+\end{definition}
+\begin{theorem}[Эрэмбийн үндсэн чанарууд]
+Дараах нь биелнэ.
+\begin{enumerate}\label{erembe}
+  \item (Рефлексив) $n\le n$.
+  \item (Транзитив) $\big(m\le n\ \,\wedge\,\ n\le p\big)\Rightarrow m\le p$.
+  \item (Анти-симметр) $m\le n$ ба $n\le m$ бол $m=n$.
+\end{enumerate}
+\end{theorem}
+\begin{prof}
+(i) $n=n$ тул $n\le n$. 
+
+(ii) $m+k=n$, $n+\ell=p$ бол $m+(k+\ell)=p$ тул $m\le p$. 
+
+(iii) Хэрэв $n\neq m$ бол $m+k=n$, $n+\ell=m$-ээс $m+(k+\ell)=m$ тул $S(m-1)+(k+\ell)=S(m-1)$ болно. Иймд $(m-1)+(k+\ell)=(m-1)$ болно. Үүнтэй ижлээр давтвал $1+(k+\ell)=1$ болох ба эндээс $S(k+\ell)=1$ болж зөрчил гарна. Иймд $n=m$.
+\end{prof}
+
+\begin{theorem}[Трихотом]
+Ямар ч $m,n$-ын хувьд яг нэг нь үнэн: $m<n$, $m=n$ эсвэл $m>n$.
+\end{theorem}
+\section{ Семинар ба Гэрийн даалгавар}
+\subsection{Семинар 3}
+сануулах тодорхойлолтууд
+\begin{enumerate}
+  \item $n+S(m)=S(n+m)$ .
+  \item $n+1=S(n)$
+  \item $n\cdot 1=n$, $1\cdot n=n$.
+  \item $n\cdot S(m)=n\cdot m+n$.
+  \item $(a+b)+c=a+(b+c)$.
+  \item $a\cdot(b+c)=a\cdot b+a\cdot c$.
+  \item $a\le b\Rightarrow a+c\le b+c; \Rightarrow a<b\Rightarrow a\cdot c<b\cdot c$.
+  \item $a\leq b$ ба $b\leq a$ бол $a=b$.
+  \item $a^1=a$, $a^{S(m)}=a^m\cdot a$.
+  \item $\forall n\,\, n\ne 1\Rightarrow\exists m\,\,(n=S(m))$ (залгамжлагдсан байдал).
+  \end{enumerate}
+  Дараах бодлогуудыг А1-А5, N1, N2, U1, U2 ба эрэмбийн тодорхойлолт, батласан теоремүүд ашиглан батал.
+  \begin{enumerate}
+  \item $2+3\neq 6$
+  \item $2\cdot 4=8$
+  \item $n\cdot 3=n+n+n$
+  \item $a<b \Rightarrow$ $S(a)\leq b$
+  \item $a<b \Rightarrow$ $a+c\leq b+c$
+  \item $a<b\Leftrightarrow a\cdot c< b\cdot c$
+  \item $a^n\geq 1$ 
+  \item $a^{m+n}=a^m\cdot a^n$-г $n$ дээр индукцлэн батал.
+  \item $a^{mn}=(a^m)^n$-г $n$ дээр индукцлэн батал.
+  \item $1+2+\cdots+n=\dfrac{n(n+1)}{2}$ батал. 
+  
+\end{enumerate}
+
+\subsection*{Гэрийн даалгавар 3}
+\begin{enumerate}
+  \item $a+S(b)=S(a+b)$-г $b$ дээр индукцлана.
+  \item $S(a)+b=S(a+b)$-г $b$ дээр индукцлана.
+  \item $(a+b)^2=a^2+2ab+b^2$ томьёог зөвхөн Пеаногийн сууриас (дистрибутив, коммутатив, ассоциатив) гарга.
+  \item $a\le b\Rightarrow a\cdot c\le b\cdot c$ ($c$-ийн хувьд тусгайлан $0$, $S(k)$ тохиолдлуудыг салгаж бод).
+  \item $a\le b\Rightarrow a\le b+ c$.
+  \item $a\le b$ ба $b<c$ бол $a<c$ (транзитив чанарыг \#6-тай холбож хэрэглэх).
+  \item $a\ne 0\Rightarrow \exists!\,m\,(a=S(m))$ (цор ганц байдлыг батал).
+  \item $a^0=1$, $a^{S(n)}=a^n\cdot a$ тодорхойлолтоос $a^{n}\ge 1$ ($a\ge 1$ үед) батал.
+  \item $a\cdot b=0\Rightarrow a=0$ эсвэл $b=0$ (индукц ашиглан).
+  \item $a\le b\iff \exists k\,\,(b=a+k)$ тодорхойлолтыг ашиглан трихотомийг бүрэн батал.
+\end{enumerate}
+
