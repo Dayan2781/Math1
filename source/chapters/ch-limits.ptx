@@ -955,18 +955,18 @@
   </section>
 
   <section xml:id="sec-ai-practice-l4">
-    <title>AI-тай дасгал хийх (Лекц 4)</title>
+    <title>AI-тай дасгал хийх (Лекц 5)</title>
     <introduction>
       <p>Хязгаарын сэдвүүдээр Claude AI-тай дасгал хий. Сэдэв сонгоод
       бодлого үүсгүүлж, өөрөө бодсоны дараа хариултаа шалгуул.</p>
     </introduction>
     <interactive xml:id="ai-practice-l4"
-      iframe="ai-practice.html?topics=хязгаарын тодорхойлолт,хязгаар аналитикаар,өрөөсгөл хязгаар,тасралтгүй чанар,төгсгөлгүй хязгаар&amp;label=Лекц 4-ийн сэдвүүд"
+      iframe="ai-practice.html?topics=хязгаарын тодорхойлолт,хязгаар аналитикаар,өрөөсгөл хязгаар,тасралтгүй чанар,төгсгөлгүй хязгаар&amp;label=Лекц 5-д сэдвүүд"
       width="100%" aspect="4:3" />
   </section>
 
   <section xml:id="sec-seminar-4">
-    <title>Семинар 4</title>
+    <title>Семинар 5</title>
 
     <exercises xml:id="exercises-seminar-4">
       <introduction>
@@ -1070,7 +1070,7 @@
   </section>
 
   <section xml:id="sec-homework-4">
-    <title>Гэрийн даалгавар 4</title>
+    <title>Гэрийн даалгавар 5</title>
 
     <exercises xml:id="exercises-homework-4">
       <introduction>
@@ -1441,17 +1441,17 @@
   </section>
 
   <section xml:id="sec-ai-practice-l5">
-    <title>AI-тай дасгал хийх (Лекц 5)</title>
+    <title>AI-тай дасгал хийх (Лекц 6)</title>
     <introduction>
-      <p>Лекц 5-д үзсэн сэдвүүдээр Claude AI-тай дасгал хий.</p>
+      <p>Лекц 6-д үзсэн сэдвүүдээр Claude AI-тай дасгал хий.</p>
     </introduction>
     <interactive xml:id="ai-practice-l5"
-      iframe="ai-practice.html?topics=I гайхамшигт хязгаар,II гайхамшигт хязгаар,тасралтгүй чанар,тасаралтын төрөл,завсарын утгын теорем&amp;label=Лекц 5-ийн сэдвүүд"
+      iframe="ai-practice.html?topics=I гайхамшигт хязгаар,II гайхамшигт хязгаар,тасралтгүй чанар,тасаралтын төрөл,завсарын утгын теорем&amp;label=Лекц 6-д сэдвүүд"
       width="100%" aspect="4:3" />
   </section>
 
   <section xml:id="sec-seminar-5">
-    <title>Семинар 5</title>
+    <title>Семинар 6</title>
     <exercises xml:id="exercises-seminar-5">
       <introduction>
         <p>Хамрах сэдэв: I ба II гайхамшигт хязгаар, тасралтгүй чанар,
@@ -1548,7 +1548,7 @@
   </section>
 
   <section xml:id="sec-homework-5">
-    <title>Гэрийн даалгавар 5</title>
+    <title>Гэрийн даалгавар 6</title>
     <exercises xml:id="exercises-homework-5">
       <introduction>
         <p>Бодолтыг бүрэн үндэслэлтэй бичиж ирнэ.</p>
@@ -1606,15 +1606,15 @@ x^2 + b \amp x \ge 1 \end{cases}.</me>
   </section>
 
   <!-- ============================================================
-       Семинар 7 — Хязгаар
+       Семинар 8 — Хязгаар
        ============================================================ -->
 
   <!-- ============================================================
-       Гэрийн даалгавар 7 — Хязгаар
+       Гэрийн даалгавар 8 — Хязгаар
        ============================================================ -->
 
   <!-- ============================================================
-       AI-тай дасгал хийх (Лекц 4)
+       AI-тай дасгал хийх (Лекц 5)
        ============================================================ -->
 
 </chapter>

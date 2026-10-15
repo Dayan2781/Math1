@@ -514,7 +514,7 @@
        Семинар 1 ба Гэрийн даалгавар 1 (latex/lectures/lec01-logic.tex-тэй ижил)
        ============================================================ -->
   <section xml:id="sec-logic-seminar">
-    <title>Семинар</title>
+    <title>Семинар 1</title>
 
     <exercises xml:id="exercises-logic-seminar">
       <exercise xml:id="logic-sem-1">
@@ -659,7 +659,7 @@
   </section>
 
   <section xml:id="sec-logic-homework">
-    <title>Гэрийн даалгавар</title>
+    <title>Гэрийн даалгавар 1</title>
 
     <exercises xml:id="exercises-logic-homework">
       <exercise xml:id="logic-hw-1">
