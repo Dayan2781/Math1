@@ -593,7 +593,7 @@
 
   <!-- Семинар (номноос) -->
   <exercises xml:id="exercises-seminar-defint">
-    <title>Семинар</title>
+    <title>Семинарын нэмэлт бодлогууд</title>
 
     <exercise xml:id="sem-di-riemann">
       <statement>

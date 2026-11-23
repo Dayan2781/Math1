@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Семинар 14. Эх сурвалж: latex/lectures/seminars.tex -->
+<section xml:id="sec-seminar-14" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Семинар 14</title>
+  <exercises xml:id="exercises-seminar-14">
+    <introduction>
+      <p>Хамрах сэдэв: рационал бутархайн интеграл, иррационал функцийн интеграл (Лекц 14).</p>
+    </introduction>
+    <exercise xml:id="sem14-1">
+      <statement>
+        <p>Рационал бутархайн интеграл бод.</p>
+        <p><ol>
+        <li><m>\displaystyle \int \frac{3x+1}{x^2+1}\,dx</m></li>
+        <li><m>\displaystyle \int \frac{2x-3}{x^2-3x+2}\,dx</m></li>
+        <li><m>\displaystyle \int \frac{x}{(x-1)^2(x+1)}\,dx</m></li>
+        <li><m>\displaystyle \int \frac{x}{(x-1)^2(x^2+2x+2)}\,dx</m></li>
+        <li><m>\displaystyle \int \frac{2x+3}{(x-2)(x+5)}\,dx</m></li>
+        <li><m>\displaystyle \int \frac{x}{(x+1)(x+2)(x+3)}\,dx</m></li>
+        <li><m>\displaystyle \int \frac{x^{10}}{x^2+x-2}\,dx</m></li>
+        <li><m>\displaystyle \int \frac{x^3+1}{x^3-5x^2+6x}\,dx</m></li>
+        <li><m>\displaystyle \int \frac{x^2+3x-2}{(x-1)(x^2+x+1)^2}\,dx</m></li>
+        <li><m>\displaystyle \int \frac{x^3+1}{(x^2+1)^2}\,dx</m></li>
+      </ol></p>
+      </statement>
+    </exercise>
+    <exercise xml:id="sem14-2">
+      <statement>
+        <p>Иррационал функцийн интеграл бод.</p>
+        <p><ol>
+        <li><m>\displaystyle \int \frac{dx}{1+\sqrt{x}}</m></li>
+        <li><m>\displaystyle \int \frac{1-\sqrt{x+1}}{1+\sqrt[3]{x+1}}\,dx</m></li>
+        <li><m>\displaystyle \int \sqrt{x^3+x^2}\, dx</m></li>
+        <li><m>\displaystyle \int \frac{\sqrt{x}}{(1+\sqrt[3]{x})^2}\,dx</m></li>
+        <li><m>\displaystyle \int \sqrt[3]{3x-x^3}\, dx</m></li>
+        <li><m>\displaystyle \int \frac{x^2}{\sqrt{1+x+x^2}} \,dx</m></li>
+        <li><m>\displaystyle \int \frac{dx}{(1-x^2)\sqrt{1-x^2}} \,dx</m></li>
+      </ol></p>
+      </statement>
+    </exercise>
+    <exercise xml:id="sem14-3">
+      <statement>
+        <p>Тригонометрийн интеграл бод.</p>
+        <p><ol>
+        <li><m>\displaystyle \int \cos^5 x\, dx</m></li>
+        <li><m>\displaystyle \int \sin ^4 x\, dx</m></li>
+        <li><m>\displaystyle \int \cos^5 x\sin^5 x\, dx</m></li>
+        <li><m>\displaystyle \int \frac{\sin^3 x}{\cos ^4x}\,dx</m></li>
+        <li><m>\displaystyle \int \frac{dx}{\sin^3x}\,dx</m></li>
+        <li><m>\displaystyle \int \sin 3x\cos x\,dx</m></li>
+        <li><m>\displaystyle \int \cos x\cos 2x\cos 3x\,dx</m></li>
+        <li><m>\displaystyle \int \frac{dx}{2\sin x-\cos x+5}\,dx</m></li>
+      </ol></p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

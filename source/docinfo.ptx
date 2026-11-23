@@ -9,6 +9,11 @@
     \newcommand{\Z}{\mathbb{Z}}
     \newcommand{\Q}{\mathbb{Q}}
     \newcommand{\C}{\mathbb{C}}
+    \newcommand{\tg}{\operatorname{tg}}
+    \newcommand{\ctg}{\operatorname{ctg}}
+    \newcommand{\arctg}{\operatorname{arctg}}
+    \newcommand{\arcctg}{\operatorname{arcctg}}
+    \newcommand{\arccot}{\operatorname{arccot}}
   </macros>
 
  <latex-image-preamble>
