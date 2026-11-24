@@ -53,8 +53,17 @@
  	    <li><term>Семинарын бодлогууд</term> — Семинарын хичээл дээр бодож, ойлголтоо
             бэхжүүлэх бодлогууд.</li>
             
+            <li><term>AI-тай дасгал хийх</term> — лекц бүрийн дараа, семинарын
+            өмнө байрлах интерактив хэсэг. Тухайн лекцийн сэдвээр Claude AI-аар
+            бодлого үүсгүүлж, өөрөө бодоод хариугаа шалгуулна.</li>
+
+            <li><term>Семинарын бодлогууд</term>-ын ихэнх нь <term>Заавар</term>
+            (hint)-тай. Эхлээд зааваргүйгээр бодож үзээд, гацвал заавраа нээгээрэй.</li>
             <li><term>Гэрийн даалгавар</term> — гэртээ бодож, ойлголтоо
             бэхжүүлэх дасгалууд.</li>
+
+            <li>Гэрийн даалгаврын <term>бодолт</term> нь даалгавар өгснөөс хойш
+            14 хоногийн дараа энэ сайт дээр автоматаар нээгдэнэ.</li>
           </ul>
         </p>
 
@@ -137,20 +146,24 @@
       <title>Интеграл</title>
       <!-- Лекц 13 -->
       <xi:include href="./chapters/sec-antider.ptx" />
+      <xi:include href="./chapters/ai-13.ptx" />
       <xi:include href="./chapters/sem-13.ptx" />
       <xi:include href="./chapters/hw-13.ptx" />
       <!-- Лекц 14 -->
       <xi:include href="./chapters/sec-integration-techniques-1.ptx" />
       <xi:include href="./chapters/sec-irrational-integrals.ptx" />
+      <xi:include href="./chapters/ai-14.ptx" />
       <xi:include href="./chapters/sem-14.ptx" />
       <xi:include href="./chapters/hw-14.ptx" />
       <!-- Лекц 15 -->
       <xi:include href="./chapters/sec-definite-integral.ptx" />
       <xi:include href="./chapters/sec-definite-integral-methods.ptx" />
+      <xi:include href="./chapters/ai-15.ptx" />
       <xi:include href="./chapters/semhw-15.ptx" />
       <!-- Лекц 16 -->
       <xi:include href="./chapters/sec-integration-techniques-2.ptx" />
       <xi:include href="./chapters/sec-applications-integration.ptx" />
+      <xi:include href="./chapters/ai-16.ptx" />
       <xi:include href="./chapters/semhw-16.ptx" />
     </chapter>
     <!-- Бүлэг 6: Уламжлалын теоремүүд ба хэрэглээ (2 лекц + 2 семинар) -->

@@ -1,0 +1,28 @@
+{
+  "_тайлбар": [
+    "Гэрийн даалгавар бүрийн ӨГСӨН өдрийг (YYYY-MM-DD) энд бичнэ.",
+    "Бодолт нь өгсөн өдрөөс delay_days хоногийн дараа сайт дээр гарна.",
+    "Сайт өдөр бүр Улаанбаатарын цагаар 00:10-д дахин бүтээгдэнэ (.github/workflows/deploy.yml).",
+    "Огноо хоосон (\"\") бол бодолт хэзээ ч гарахгүй, нуугдмал хэвээр байна.",
+    "ОДООГИЙН ОГНООНУУД ТҮР ЗУУРЫН: 2026-09-01-ээс долоо хоног бүр нэг лекц гэж тооцсон. Жинхэнэ огноогоор солино уу."
+  ],
+  "delay_days": 14,
+  "timezone_offset_hours": 8,
+  "homework": [
+    {"lecture": 1,  "section": "sec-logic-homework",   "released": "2026-09-01"},
+    {"lecture": 2,  "section": "sec-homework-1",       "released": "2026-09-08"},
+    {"lecture": 3,  "section": "sec-homework-nat",     "released": "2026-09-15"},
+    {"lecture": 4,  "section": "sec-homework-2",       "released": "2026-09-22"},
+    {"lecture": 5,  "section": "sec-homework-3",       "released": "2026-09-29"},
+    {"lecture": 6,  "section": "sec-homework-4",       "released": "2026-10-06"},
+    {"lecture": 7,  "section": "sec-homework-5",       "released": "2026-10-13"},
+    {"lecture": 8,  "section": "sec-homework-6-deriv", "released": "2026-10-20"},
+    {"lecture": 9,  "section": "sec-homework-7-deriv", "released": "2026-10-27"},
+    {"lecture": 11, "section": "sec-homework-8",       "released": "2026-11-10"},
+    {"lecture": 12, "section": "sec-homework-9",       "released": "2026-11-17"},
+    {"lecture": 13, "section": "sec-homework-13",      "released": "2026-11-24"},
+    {"lecture": 14, "section": "sec-homework-14",      "released": "2026-12-01"},
+    {"lecture": 15, "section": "sec-semhw-15",         "released": "2026-12-08"},
+    {"lecture": 16, "section": "sec-semhw-16",         "released": "2026-12-15"}
+  ]
+}

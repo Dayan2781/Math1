@@ -23,6 +23,11 @@
         <li><m>\displaystyle \int \frac{x^3+1}{(x^2+1)^2}\,dx</m></li>
       </ol></p>
       </statement>
+      <hint>
+      <p>Алхмууд: (i) хүртвэрийн зэрэг <m>\ge</m> хуваарийнхаас бол эхлээд хувааж бүхэл хэсгийг ялга (7, 8); (ii) хуваарийг үржигдэхүүнд задал; (iii) хялбар бутархайд задал:</p>
+      <p><me>\frac{P(x)}{(x-a)^2(x^2+px+q)}=\frac{A}{x-a}+\frac{B}{(x-a)^2}+\frac{Cx+D}{x^2+px+q}.</me></p>
+      <p>Коэффициентийг олохдоо <m>x=a</m> зэрэг язгуурыг орлуулах нь хурдан. (1), (10)-д хүртвэрийг <m>(x^2+1)'</m>-тай холбож хуваа: <m>\dfrac{3x+1}{x^2+1}=\dfrac32\cdot\dfrac{2x}{x^2+1}+\dfrac{1}{x^2+1}</m>. (2)-д хүртвэр нь хуваарийн уламжлал. (7)-д <m>x^{10}</m>-ийг <m>x^2+x-2=(x-1)(x+2)</m>-т хуваахын оронд <m>A=\tfrac{1}{3}</m>, <m>B=-\tfrac{2^{10}}{3}</m> үлдэгдлийн бутархайг шууд ол.</p>
+      </hint>
     </exercise>
     <exercise xml:id="sem14-2">
       <statement>
@@ -34,9 +39,19 @@
         <li><m>\displaystyle \int \frac{\sqrt{x}}{(1+\sqrt[3]{x})^2}\,dx</m></li>
         <li><m>\displaystyle \int \sqrt[3]{3x-x^3}\, dx</m></li>
         <li><m>\displaystyle \int \frac{x^2}{\sqrt{1+x+x^2}} \,dx</m></li>
-        <li><m>\displaystyle \int \frac{dx}{(1-x^2)\sqrt{1-x^2}} \,dx</m></li>
+        <li><m>\displaystyle \int \frac{dx}{(1-x^2)\sqrt{1-x^2}}</m></li>
       </ol></p>
       </statement>
+      <hint>
+      <p>Язгуурыг шинэ хувьсагчаар соль, ингэснээр рационал функц гарна:</p>
+      <p><ul>
+      <li>(1) <m>t=\sqrt x</m>; (2) <m>x+1=t^6</m> (2 ба 3-ын ХБЕХ); (4) <m>x=t^6</m>.</li>
+      <li>(3) <m>\sqrt{x^3+x^2}=|x|\sqrt{x+1}</m>, дараа нь <m>t=\sqrt{x+1}</m>.</li>
+      <li>(5) <m>\sqrt[3]{3x-x^3}=x\sqrt[3]{3x^{-2}-1}</m>: дифференциал бином <m>x^m(a+bx^n)^p</m>, <m>m=1,n=-2,p=\tfrac13</m>; <m>\tfrac{m+1}{n}+p</m> бүхэл эсэхийг шалга.</li>
+      <li>(6) <m>1+x+x^2=\left(x+\tfrac12\right)^2+\tfrac34</m>; <m>\int\frac{x^2dx}{\sqrt{Q}}=(Ax+B)\sqrt Q+\lambda\int\frac{dx}{\sqrt Q}</m> хэлбэрээр хайж, хоёр талыг ялгаж коэффициентийг ол.</li>
+      <li>(7) <m>x=\sin t</m> орлуулбал <m>\int\frac{dt}{\cos^2t}</m>.</li>
+      </ul></p>
+      </hint>
     </exercise>
     <exercise xml:id="sem14-3">
       <statement>
@@ -46,12 +61,21 @@
         <li><m>\displaystyle \int \sin ^4 x\, dx</m></li>
         <li><m>\displaystyle \int \cos^5 x\sin^5 x\, dx</m></li>
         <li><m>\displaystyle \int \frac{\sin^3 x}{\cos ^4x}\,dx</m></li>
-        <li><m>\displaystyle \int \frac{dx}{\sin^3x}\,dx</m></li>
+        <li><m>\displaystyle \int \frac{dx}{\sin^3x}</m></li>
         <li><m>\displaystyle \int \sin 3x\cos x\,dx</m></li>
         <li><m>\displaystyle \int \cos x\cos 2x\cos 3x\,dx</m></li>
-        <li><m>\displaystyle \int \frac{dx}{2\sin x-\cos x+5}\,dx</m></li>
+        <li><m>\displaystyle \int \frac{dx}{2\sin x-\cos x+5}</m></li>
       </ol></p>
       </statement>
+      <hint>
+      <p><ul>
+      <li>Сондгой зэрэг (1, 3, 4): нэг үржигдэхүүнийг <m>d(\sin x)</m> эсвэл <m>d(\cos x)</m> болгож, үлдсэнийг <m>\sin^2x+\cos^2x=1</m>-ээр илэрхийл. (1)-д <m>\cos^5x\,dx=(1-\sin^2x)^2d(\sin x)</m>.</li>
+      <li>Тэгш зэрэг (2): <m>\sin^2x=\tfrac{1-\cos2x}{2}</m>-ийг хоёр удаа хэрэглэ.</li>
+      <li>(5) <m>\dfrac{1}{\sin^3x}=\dfrac{\sin x}{(1-\cos^2x)^2}</m>, <m>u=\cos x</m>; эсвэл <m>t=\tan\frac x2</m>.</li>
+      <li>(6), (7): үржвэрийг нийлбэрт шилжүүл: <m>\sin\alpha\cos\beta=\tfrac12[\sin(\alpha+\beta)+\sin(\alpha-\beta)]</m>, <m>\cos\alpha\cos\beta=\tfrac12[\cos(\alpha+\beta)+\cos(\alpha-\beta)]</m>.</li>
+      <li>(8) Түгээмэл орлуулга <m>t=\tan\frac x2</m>: <m>\sin x=\tfrac{2t}{1+t^2}</m>, <m>\cos x=\tfrac{1-t^2}{1+t^2}</m>, <m>dx=\tfrac{2dt}{1+t^2}</m>.</li>
+      </ul></p>
+      </hint>
     </exercise>
   </exercises>
 </section>

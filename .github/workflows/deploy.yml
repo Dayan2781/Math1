@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Гэрийн даалгаврын бодолт хугацаандаа нээгдэхийн тулд өдөр бүр дахин бүтээнэ
+  # (16:10 UTC = Улаанбаатарын 00:10). Огноонууд: homework-schedule.json
+  schedule:
+    - cron: "10 16 * * *"
 
 permissions:
   contents: read
@@ -36,6 +40,9 @@ jobs:
 
       - name: Install PreTeXt
         run: pip install pretext
+
+      - name: Hide homework solutions until 14 days after release
+        run: python3 scripts/gate_homework_solutions.py
 
       - name: Build HTML
         run: pretext build html

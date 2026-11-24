@@ -844,6 +844,7 @@
             </ol>
           </p>
         </statement>
+        <hint><p><m>\dfrac{f(x+h)-f(x)}{h}</m>-ийг бич. (а)-д <m>(x+h)^3</m>-ийг задал, (б)-д бутархайнуудыг нийтлэг хуваарьт оруулаад <m>h</m>-ийг хураа.</p></hint>
         <answer><p>а. <m>3x^2</m>; б. <m>-\dfrac{1}{(x+1)^2}</m>.</p></answer>
       </exercise>
 
@@ -858,6 +859,7 @@
             </ol>
           </p>
         </statement>
+        <hint><p>(б)-д язгуурыг зэрэгт хэлбэрт шилжүүл: <m>\sqrt[3]{x^4}=x^{4/3}</m>, <m>\tfrac{2}{\sqrt x}=2x^{-1/2}</m>. (в) үржвэрийн, (г) харьцааны дүрэм.</p></hint>
         <answer>
           <p>а. <m>5x^4-9x^2+2</m>;
           б. <m>\frac{4}{3}x^{1/3}+x^{-3/2}</m>;
@@ -872,6 +874,7 @@
           тэнцүү болох цэгүүдийг ол, тэр цэгүүдэд шүргэгч шулуун
           байгуул.</p>
         </statement>
+        <hint><p>Налуу нь <m>f'(x)</m>. <m>f'(x)=2</m> тэгшитгэлийг бодоод, шүргэгчийг <m>y=f(x_0)+f'(x_0)(x-x_0)</m> гэж бич.</p></hint>
         <answer>
           <p><m>f'(x)=3x^2-1=2 \Rightarrow x=\pm 1</m>.
           Цэгүүд: <m>(1, 0)</m> ба <m>(-1, 0)</m>.
@@ -896,6 +899,9 @@
           <p>Тодорхойлолтоор олно уу:
           <m>f(x) = \sqrt{2x+3}</m>-ийн уламжлал.</p>
         </statement>
+        <solution>
+        <p><m>\dfrac{\sqrt{2x+2h+3}-\sqrt{2x+3}}{h}=\dfrac{2h}{h\big(\sqrt{2x+2h+3}+\sqrt{2x+3}\big)}\to\dfrac{2}{2\sqrt{2x+3}}</m>. Иймд <m>f'(x)=\dfrac{1}{\sqrt{2x+3}}</m>, <m>x\gt-\tfrac32</m>.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="hw-d-2">
@@ -908,6 +914,11 @@
             </ol>
           </p>
         </statement>
+        <solution>
+        <p>а. <m>f(x)=x^{5/2}+2x^{1/2}</m> тул <m>f'(x)=\tfrac52x^{3/2}+x^{-1/2}=\dfrac{5x^2+2}{2\sqrt x}</m>.</p>
+        <p>б. <m>g'(x)=2xe^x\sin x+x^2e^x\sin x+x^2e^x\cos x=xe^x\big((x+2)\sin x+x\cos x\big)</m>.</p>
+        <p>в. <m>h'(x)=\dfrac{1}{1+e^{2x}}\cdot e^x=\dfrac{e^x}{1+e^{2x}}</m>.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="hw-d-3">
@@ -920,6 +931,11 @@
             </ol>
           </p>
         </statement>
+        <solution>
+        <p>а. <m>v(t)=s'(t)=4t^3-16t</m> (м/с), <m>a(t)=v'(t)=12t^2-16</m> (м/с²).</p>
+        <p>б. <m>v(t)=4t(t-2)(t+2)=0</m>, <m>t\ge0</m> тул <m>t=0</m> ба <m>t=2</m> с.</p>
+        <p>в. <m>a(3)=108-16=92</m> м/с².</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="hw-d-4">
@@ -927,6 +943,10 @@
           <p><m>f(x)=x^n</m> (<m>n</m> бүхэл) функцийн уламжлалын
           томьёог индукцийн аргаар батал.</p>
         </statement>
+        <solution>
+        <p><m>n\in\N</m> үед <m>n</m>-ээр индукцлэе. <m>n=1</m>: <m>(x)'=1=1\cdot x^0</m>. <m>(x^n)'=nx^{n-1}</m> гэж үзвэл үржвэрийн дүрмээр <m>(x^{n+1})'=(x\cdot x^n)'=x^n+x\cdot nx^{n-1}=(n+1)x^n</m>.</p>
+        <p><m>n=0</m> үед <m>(1)'=0</m>. Сөрөг <m>n=-m</m> үед харьцааны дүрмээр <m>\left(\dfrac{1}{x^m}\right)'=-\dfrac{mx^{m-1}}{x^{2m}}=-mx^{-m-1}=nx^{n-1}</m> (<m>x\ne0</m>).</p>
+        </solution>
       </exercise>
     </exercises>
   </section>
@@ -1357,15 +1377,16 @@
   </section>
 
   <!-- ============================================================
-       AI-тай дасгал хийх (Лекц 8)
+       AI-тай дасгал хийх (Лекц 9)
        ============================================================ -->
   <section xml:id="sec-ai-practice-l7">
-    <title>AI-тай дасгал хийх (Лекц 9–10)</title>
+    <title>AI-тай дасгал хийх (Лекц 9)</title>
     <introduction>
-      <p>Лекц 9, 10-ын сэдвүүдээр Claude AI-тай дасгал хий.</p>
+      <p>Лекц 9-ийн сэдвүүдээр Claude AI-тай дасгал хий. Сэдэв сонгоод
+      бодлого үүсгүүлж, өөрөө бодсоны дараа хариулаа шалгуул.</p>
     </introduction>
     <interactive xml:id="ai-practice-l7"
-      iframe="ai-practice.html?topics=гинжин дүрэм,параметр функц,далд ялгах,дээд эрэмбийн уламжлал,дифференциал&amp;label=Лекц 9, 10-ын сэдвүүд"
+      iframe="ai-practice.html?topics=уламжлалын тодорхойлолт,дифференциалчлах дүрмүүд,илтгэгч ба логарифм функцийн уламжлал,урвуу функцийн уламжлал,гинжин дүрэм,логарифмчилж ялгах&amp;label=Лекц 9-ийн сэдвүүд"
       width="100%" aspect="4:3" />
   </section>
 
@@ -1391,6 +1412,7 @@
             </ol>
           </p>
         </statement>
+        <hint><p>Гадна талын функцийн уламжлалыг дотор талын функцийн уламжлалаар үржүүл. (г) зэрэгт-илтгэгч функц тул эхлээд логарифмчил: <m>\ln k=\sin x\cdot\ln(x^2+1)</m>, дараа нь хоёр талыг ялга.</p></hint>
         <answer>
           <p>а. <m>e^{x^2}(2x\sin x + \cos x)</m>;
           б. <m>\dfrac{1}{\sin x\cos x}</m>;
@@ -1409,6 +1431,7 @@
             </ol>
           </p>
         </statement>
+        <hint><p><m>y</m>-г <m>x</m>-ээс хамаарсан функц гэж үзээд хоёр талыг <m>x</m>-ээр ялга: <m>(y^2)'=2yy'</m>, <m>(xy)'=y+xy'</m>. Дараа нь <m>y'</m>-тэй гишүүдийг нэг тал руу цуглуул.</p></hint>
         <answer>
           <p>а. <m>y' = \dfrac{2x-y}{x-2y}</m>;
           б. <m>y' = \dfrac{\cos(x+y)+y^2\sin x}{2y\cos x - \cos(x+y)}</m>.</p>
@@ -1420,6 +1443,7 @@
           <p><m>x(t) = t^2</m>, <m>y(t) = t^3 - t</m> параметр
           функцийн <m>t=1</m> дээрх шүргэгч шулуунийг ол.</p>
         </statement>
+        <hint><p><m>\dfrac{dy}{dx}=\dfrac{y'(t)}{x'(t)}</m>. <m>t=1</m> үеийн цэг ба налууг олоод шулууны тэгшитгэл бич.</p></hint>
         <answer>
           <p><m>\dfrac{dy}{dx} = \dfrac{3t^2-1}{2t}</m>.
           <m>t=1</m> үед: налуу <m>=1</m>, цэг <m>(1, 0)</m>.
@@ -1446,6 +1470,7 @@
             </ol>
           </p>
         </statement>
+        <hint><p><m>f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x</m>. (а)-д <m>x_0=30^\circ</m>, <m>\Delta x=1^\circ=\tfrac{\pi}{180}</m> радиан. (б)-д <m>f(x)=\sqrt[3]x</m>, <m>x_0=8</m>.</p></hint>
         <answer>
           <p>а. <m>\sin(31°) \approx \sin(30°) + \cos(30°)\cdot\frac{\pi}{180}
           \approx 0{,}5 + \frac{\sqrt{3}}{2}\cdot 0{,}01745 \approx 0{,}515</m>;
@@ -1476,6 +1501,12 @@
             </ol>
           </p>
         </statement>
+        <solution>
+        <p>а. <m>y'=5(2-7x)^4\cdot(-7)=-35(2-7x)^4</m>.<nbsp/>
+        б. <m>y'=\dfrac{-4}{2\sqrt{5-4x}}=-\dfrac{2}{\sqrt{5-4x}}</m>.<nbsp/>
+        в. <m>y'=e^{\sin x^2}\cos(x^2)\cdot2x</m>.</p>
+        <p>г. <m>y'=\dfrac{1}{\operatorname{tg}\frac x2}\cdot\dfrac{1}{\cos^2\frac x2}\cdot\dfrac12=\dfrac{1}{2\sin\frac x2\cos\frac x2}=\dfrac{1}{\sin x}</m>.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="hw7-d-2">
@@ -1484,6 +1515,9 @@
           шүргэгч шулуун байгуул:
           <m>x^2y+y^3=5</m>, цэг <m>(2,1)</m>.</p>
         </statement>
+        <solution>
+        <p>Ялгавал <m>2xy+x^2y'+3y^2y'=0</m>, тэгэхээр <m>y'=-\dfrac{2xy}{x^2+3y^2}</m>. <m>(2,1)</m> цэг муруй дээр байна (<m>4+1=5</m>), <m>y'(2)=-\dfrac{4}{7}</m>. Шүргэгч: <m>y=1-\dfrac47(x-2)</m>, өөрөөр хэлбэл <m>4x+7y=15</m>.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="hw7-d-3">
@@ -1494,6 +1528,9 @@
         <answer>
           <p><m>\dfrac{d^2y}{dx^2} = -\dfrac{1}{\sin^3 t}</m>.</p>
         </answer>
+        <solution>
+        <p><m>\dfrac{dy}{dx}=\dfrac{\cos t}{-\sin t}=-\ctg t</m>. <m>\dfrac{d^2y}{dx^2}=\dfrac{(-\ctg t)'}{x'(t)}=\dfrac{1/\sin^2t}{-\sin t}=-\dfrac{1}{\sin^3t}</m>.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="hw7-d-4">
@@ -1501,6 +1538,10 @@
           <p>Лейбницийн дүрэм хэрэглэн
           <m>(x^2 e^x)^{(5)}</m>-ийг ол.</p>
         </statement>
+        <solution>
+        <p><m>(uv)^{(5)}=\sum_{k=0}^5\binom5k u^{(k)}v^{(5-k)}</m>, <m>u=x^2</m>, <m>v=e^x</m>. <m>u'''=0</m> тул зөвхөн эхний гурван гишүүн үлдэнэ:
+        <m>(x^2e^x)^{(5)}=e^x\big(x^2+5\cdot2x+10\cdot2\big)=e^x(x^2+10x+20)</m>.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="hw7-d-5">
@@ -1510,8 +1551,26 @@
           огтолцолын цэг нь <m>y = -\dfrac{1}{4}</m> шулуун дээр
           оршихыг батал.</p>
         </statement>
+        <solution>
+        <p><m>x=p</m> цэг дээрх шүргэгч: <m>y=2px-p^2</m>; <m>x=q</m> дээрх: <m>y=2qx-q^2</m>. Огтлолцол: <m>2px-p^2=2qx-q^2\Rightarrow x=\dfrac{p+q}{2}</m> (<m>p\ne q</m>), <m>y=p(p+q)-p^2=pq</m>.</p>
+        <p>Перпендикуляр <m>\iff 2p\cdot2q=-1\iff pq=-\tfrac14</m>. Иймд огтлолцлын цэгийн ординат <m>y=-\tfrac14</m>.</p>
+        </solution>
       </exercise>
     </exercises>
+  </section>
+
+  <!-- ============================================================
+       AI-тай дасгал хийх (Лекц 10)
+       ============================================================ -->
+  <section xml:id="sec-ai-practice-l10">
+    <title>AI-тай дасгал хийх (Лекц 10)</title>
+    <introduction>
+      <p>Лекц 10-т үзсэн сэдвүүдээр Claude AI-тай дасгал хий. Сэдэв сонгоод
+      бодлого үүсгүүлж, өөрөө бодсоны дараа хариулаа шалгуул.</p>
+    </introduction>
+    <interactive xml:id="ai-practice-l10"
+      iframe="ai-practice.html?topics=параметр функцийн уламжлал,далд функцийн уламжлал,дээд эрэмбийн уламжлал,n эрэмбийн уламжлал,Лейбницийн томьёо&amp;label=Лекц 10-ын сэдвүүд"
+      width="100%" aspect="4:3" />
   </section>
 
   <!-- Семинар 10 (latex/lectures/seminars.tex) -->
@@ -1537,6 +1596,7 @@
           <li><m>y = \sqrt{1-x^2}\arcsin x,\quad y'' = ?</m></li>
         </ol></p>
         </statement>
+        <hint><p>Дараалан ялга. Хялбаршуулах санаа: (5) <m>\cos^2x=\tfrac{1+\cos2x}{2}</m>; (6) <m>\left(\tfrac{1}{1-x}\right)^{(n)}=\dfrac{n!}{(1-x)^{n+1}}</m>; (8) <m>(x^3\ln x)'=3x^2\ln x+x^2</m>-ээс эхэлж үргэлжлүүл; (9) <m>y'=\dfrac{1}{\sqrt{1+x^2}}</m>; (10) <m>y'=1-\dfrac{x\arcsin x}{\sqrt{1-x^2}}</m>.</p></hint>
       </exercise>
       <exercise xml:id="sem10-2">
         <statement>
@@ -1552,6 +1612,7 @@
           <li><m>y = x^{n-1}e^{\frac{1}{x}}</m></li>
         </ol></p>
         </statement>
+        <hint><p>Эхний хэдэн уламжлалыг бичээд зүй тогтлыг таагаад индукцээр батал. Хэрэгтэй томьёо: <m>(\cos x)^{(n)}=\cos\!\left(x+\tfrac{n\pi}{2}\right)</m>; (3)-д <m>\sin^2x=\tfrac{1-\cos2x}{2}</m>; (4), (5), (6)-д Лейбницийн томьёо (олон гишүүнт хэсэг хэдэн удаа ялгахад тэг болох вэ?); (7)-д <m>(e^x\cos x)'=\sqrt2\,e^x\cos\!\left(x+\tfrac\pi4\right)</m>.</p></hint>
       </exercise>
       <exercise xml:id="sem10-3">
         <statement>
@@ -1563,6 +1624,7 @@
           <li><m>e^{x+y}-xy=0</m> , <m>y''</m></li>
         </ol></p>
         </statement>
+        <hint><p>Эхлээд <m>y'</m>-ийг ол. Дараа нь <m>y'</m>-ийн илэрхийллийг дахин <m>x</m>-ээр ялгаж (<m>y</m> нь <m>x</m>-ийн функц гэдгийг санаж), гарсан <m>y'</m>-ийн оронд олсон илэрхийллээ орлуул. Муруйн тэгшитгэлээр хялбарчилж болно, жишээ нь (1)-д <m>b^2x^2+a^2y^2=a^2b^2</m>.</p></hint>
       </exercise>
       <exercise xml:id="sem10-4">
         <statement>
@@ -1590,6 +1652,7 @@
           \end{cases}</m> бол <m>y''(x+y)^2-2(xy^{\prime}-y)=0</m> биелэхийг батал.</li>
         </ol></p>
         </statement>
+        <hint><p><m>y'_x=\dfrac{y'_t}{x'_t}</m>, <m>y''_{xx}=\dfrac{(y'_x)'_t}{x'_t}</m>, <m>y'''_{xxx}=\dfrac{(y''_{xx})'_t}{x'_t}</m>. (5)-д <m>y'</m>, <m>y''</m>-ийг <m>t</m>-ээр олоод <m>x+y</m> ба <m>xy'-y</m>-г <m>e^t</m>, <m>\sin t</m>, <m>\cos t</m>-ээр илэрхийлж орлуул.</p></hint>
       </exercise>
     </exercises>
   </section>

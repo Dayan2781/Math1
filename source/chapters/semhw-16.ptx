@@ -11,21 +11,29 @@
       <statement>
         <p><m>y=x^2</m> ба <m>y=x+3</m> функцийн графикуудаар хүрээлэгдсэн хэсгийн талбайг ол.</p>
       </statement>
+      <hint><p>Огтлолцлын цэг: <m>x^2=x+3</m>. Энэ хоёр язгуурын хооронд аль график дээр байна вэ? Талбай <m>=\int_{x_1}^{x_2}(\text{дээд}-\text{доод})\,dx</m>.</p></hint>
+      <solution><p><m>x_{1,2}=\tfrac{1\mp\sqrt{13}}{2}</m>, хооронд нь <m>x+3\ge x^2</m>. <m>S=\int_{x_1}^{x_2}(x+3-x^2)dx=\dfrac{(x_2-x_1)^3}{6}=\dfrac{13\sqrt{13}}{6}\approx7{,}81</m>.</p></solution>
     </exercise>
     <exercise xml:id="semhw16-2">
       <statement>
         <p><m>y=\dfrac{1}{1+x^2}</m> , <m>(1;+\infty)</m> хэсгийн доорх талбайг ол.</p>
       </statement>
+      <hint><p>Өргөтгөсөн интеграл: <m>\displaystyle\int_1^\infty f=\lim_{b\to\infty}\int_1^b f</m>.</p></hint>
+      <solution><p><m>\lim_{b\to\infty}(\arctan b-\arctan1)=\tfrac\pi2-\tfrac\pi4=\tfrac\pi4</m>.</p></solution>
     </exercise>
     <exercise xml:id="semhw16-3">
       <statement>
         <p><m>y=f(x)</m> функцийн гарфикийн <m>(a;b)</m> хэсгийг <m>ox</m> тэнхлэгийг тойруулан эргүүлэхэд үүсэх биетийн эзэлхүүн <m>\displaystyle\pi\int\limits_a^b f^2(x) dx</m> байхыг батал.</p>
       </statement>
+      <hint><p><m>[a,b]</m>-г <m>n</m> хэсэгт хуваа. Нимгэн давхарга бүрийг радиус нь <m>f(x_k^*)</m>, зузаан нь <m>\Delta x</m> диск гэж ойролцоол. Дискүүдийн эзэлхүүний нийлбэр нь интеграл нийлбэр болно.</p></hint>
+      <solution><p><m>[x_{k-1},x_k]</m> давхаргын хөндлөн огтлол нь радиус <m>f(x)</m>-тэй дугуй, талбай <m>\pi f^2(x)</m>. <m>f</m> тасралтгүй бол давхаргын эзэлхүүн <m>\pi m_k^2\Delta x</m> ба <m>\pi M_k^2\Delta x</m>-ийн хооронд (<m>m_k,M_k</m> нь <m>|f|</m>-ийн тухайн завсар дахь хамгийн бага, их утга). Нийлбэрлэвэл <m>V</m> нь <m>\pi f^2</m> функцийн доод ба дээд Дарбугийн нийлбэрийн хооронд оршино. <m>\pi f^2</m> интегралчлагдах тул <m>\max\Delta x_k\to0</m> үед хоёр нийлбэр ижил хязгаарт тэмүүлж, <m>V=\pi\int_a^bf^2(x)\,dx</m>.</p></solution>
     </exercise>
     <exercise xml:id="semhw16-4">
       <statement>
         <p><m>y=\sqrt{x}</m> функцийн гарфикийн <m>(1;3)</m> хэсгийг <m>ox</m> тэнхлэгийг тойруулан эргүүлэхэд үүсэх биетийн эзэлхүүн ол.</p>
       </statement>
+      <hint><p>3-р бодлогын томьёонд <m>f^2(x)=x</m>.</p></hint>
+      <solution><p><m>V=\pi\int_1^3x\,dx=\pi\cdot\tfrac{9-1}{2}=4\pi</m>.</p></solution>
     </exercise>
     <exercise xml:id="semhw16-5">
       <statement>
@@ -37,6 +45,11 @@
         <li><m>\displaystyle\int\limits_0^{\infty}x^3e^{-x^2}dx</m></li>
       </ol></p>
       </statement>
+      <hint><p>(1), (2): <m>u=\sqrt{x-1}</m>, <m>x=1+u^2</m>, <m>dx=2u\,du</m>. (3): <m>\left(\tfrac{x}{2(1+x^2)}+\tfrac12\arctan x\right)'=\tfrac{1}{(1+x^2)^2}</m>. (4): <m>u=x^2</m>, дараа нь хэсэгчлэх.</p></hint>
+      <solution><p>(1) <m>2\int_0^2\frac{du}{1+u^2}=2\arctan2\approx2{,}21</m> (<m>x=1</m>-д өргөтгөсөн боловч нийлнэ).</p>
+      <p>(2) <m>2\int_2^\infty\frac{du}{1+u^2}=\pi-2\arctan2\approx0{,}93</m>.</p>
+      <p>(3) <m>\left(\tfrac14+\tfrac\pi8\right)-\left(0-\tfrac\pi4\right)=\tfrac14+\tfrac{3\pi}{8}</m>.</p>
+      <p>(4) <m>\tfrac12\int_0^\infty ue^{-u}du=\tfrac12</m>.</p></solution>
     </exercise>
     <exercise xml:id="semhw16-6">
       <statement>
@@ -48,6 +61,10 @@
         <li><m>y=x(x-1)(x-2)</m> ба <m>ox</m> тэнхлэгээр хүрээлэгдсэн</li>
       </ol></p>
       </statement>
+      <hint><p>Функц сөрөг утга авдаг хэсэгт талбай нь <m>\int|f|</m>. (3)-д <m>e^x=3x+1</m> тэгшитгэлийн <m>x=0</m>-ээс өөр язгуурыг тоон аргаар ол. (4)-д тэгүүд <m>0,1,2</m>.</p></hint>
+      <solution><p>(1) <m>-\cos x\big|_0^\pi=2</m>. (2) <m>(x\ln x-x)\big|_1^e=1</m>.</p>
+      <p>(3) Огтлолцол <m>x=0</m> ба <m>x_1\approx1{,}9038</m>; хооронд нь <m>3x+1\ge e^x</m>. <m>e^{x_1}=3x_1+1</m>-ийг ашиглавал <m>S=\int_0^{x_1}(3x+1-e^x)dx=\tfrac32x_1^2-2x_1\approx1{,}629</m>.</p>
+      <p>(4) <m>\int_0^1 x(x-1)(x-2)dx=\tfrac14</m>, <m>\int_1^2=-\tfrac14</m>, тэгэхээр <m>S=\tfrac12</m>.</p></solution>
     </exercise>
     <exercise xml:id="semhw16-7">
       <statement>
@@ -57,6 +74,9 @@
         <li><m>y=\dfrac{x^2}{2}-\ln x \quad , 1\leq x\leq e</m></li>
       </ol></p>
       </statement>
+      <hint><p><m>L=\int_a^b\sqrt{1+y'^2}\,dx</m>. (2)-д <m>1+y'^2</m> нь бүтэн квадрат болно. (1)-д <m>\int\frac{\sqrt{1+x^2}}{x}dx</m>-д <m>t=\sqrt{1+x^2}</m> орлуул.</p></hint>
+      <solution><p>(1) <m>L=\int_{\sqrt3}^{\sqrt5}\frac{\sqrt{1+x^2}}{x}dx=\left[\sqrt{1+x^2}-\ln\frac{1+\sqrt{1+x^2}}{x}\right]_{\sqrt3}^{\sqrt5}=\sqrt6-2+\ln\frac{\sqrt{15}}{1+\sqrt6}\approx0{,}565</m>.</p>
+      <p>(2) <m>y'=x-\tfrac1x</m>, <m>1+y'^2=\left(x+\tfrac1x\right)^2</m>. <m>L=\int_1^e\left(x+\tfrac1x\right)dx=\dfrac{e^2+1}{2}</m>.</p></solution>
     </exercise>
     <exercise xml:id="semhw16-8">
       <statement>
@@ -68,6 +88,10 @@
         <li><m>h</m> өндөртэй, <m>r</m> ба <m>R</m> суурийн радиустай огтлогдсон конусын эзэлхүүн бодох томьёог эргэлтийн биеийн эзэлхүүн олох томьёог ашиглан гарга. <m>r=R=2</m> үед бодож шалга.</li>
       </ol></p>
       </statement>
+      <hint><p>(1) <m>\pi\int\cos^2x\,dx</m>. (2) Хавтгай нь суурийн диаметрээр ба дээд суурийн нэг цэгээр дайрна. Диаметрт перпендикуляр хөндлөн огтлол бүр нь катетууд нь <m>\sqrt{R^2-x^2}</m> ба <m>\tfrac HR\sqrt{R^2-x^2}</m> тэгш өнцөгт гурвалжин. (3) <m>(0,r)</m> ба <m>(h,R)</m> цэгийг холбосон хэрчмийг <m>ox</m>-ийг тойруулж эргүүл.</p></hint>
+      <solution><p>(1) <m>\pi\int_0^{\pi/2}\cos^2x\,dx=\dfrac{\pi^2}{4}</m>.</p>
+      <p>(2) <m>S(x)=\dfrac{H}{2R}(R^2-x^2)</m>, <m>V=\int_{-R}^RS(x)dx=\dfrac23R^2H</m>. <m>R=1</m>, <m>H=2</m> үед <m>V=\tfrac43</m>.</p>
+      <p>(3) <m>y=r+\tfrac{R-r}{h}x</m>, <m>V=\pi\int_0^hy^2dx=\dfrac{\pi h}{3}(R^2+Rr+r^2)</m>. <m>r=R=2</m> үед <m>4\pi h</m>, цилиндрийн эзэлхүүнтэй таарна.</p></solution>
     </exercise>
   </exercises>
 </section>

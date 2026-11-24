@@ -11,241 +11,271 @@
       <statement>
         <p><m>\displaystyle \int \frac{dx}{x^6(1+x^2)}.</m></p>
       </statement>
+      <solution><p><m>\dfrac{1}{x^6(1+x^2)}=\dfrac1{x^6}-\dfrac1{x^4}+\dfrac1{x^2}-\dfrac1{1+x^2}</m> (<m>\tfrac{1}{x^{2k}(1+x^2)}=\tfrac{1}{x^{2k}}-\tfrac{1}{x^{2k-2}(1+x^2)}</m> адилтгалыг дахин дахин хэрэглэнэ). Иймд <m>-\dfrac{1}{5x^5}+\dfrac{1}{3x^3}-\dfrac1x-\arctan x+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-2">
       <statement>
         <p><m>\displaystyle \int \frac{x^2}{(1-x^2)^3}\,dx.</m></p>
       </statement>
+      <solution><p>Хялбар бутархайд задлах эсвэл <m>\int\frac{x\cdot x\,dx}{(1-x^2)^3}</m>-д хэсэгчлэх (<m>v=\frac{1}{4(1-x^2)^2}</m>) аргаар: <m>\dfrac{x^3+x}{8(1-x^2)^2}+\dfrac1{16}\ln\left|\dfrac{1-x}{1+x}\right|+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-3">
       <statement>
         <p><m>\displaystyle \int \frac{dx}{1+x^4+x^8}.</m></p>
       </statement>
-    </exercise>
-    <exercise xml:id="hw14-4">
-      <statement>
-        <p><m>\displaystyle \int \frac{dx}{\sqrt{x+\sqrt[3]{x}}}.</m></p>
-      </statement>
+      <solution><p><m>1+x^4+x^8=(x^4+x^2+1)(x^4-x^2+1)</m>, мөн <m>x^4+x^2+1=(x^2+x+1)(x^2-x+1)</m>, <m>x^4-x^2+1=(x^2+\sqrt3x+1)(x^2-\sqrt3x+1)</m>. Хялбар бутархайд задлаад интегралчилбал</p><p><me>\frac{\sqrt3}{6}\left[\arctan\frac{x}{\sqrt3}+\arctan\frac{x^3+2x}{\sqrt3}\right]+\frac{\sqrt3}{12}\ln\frac{x^2+\sqrt3x+1}{x^2-\sqrt3x+1}+C.</me></p></solution>
     </exercise>
     <exercise xml:id="hw14-5">
       <statement>
         <p><m>\displaystyle \int x^2\sqrt{\frac{x}{1-x}}\,dx.</m></p>
       </statement>
+      <solution><p><m>x=\sin^2\theta</m> (<m>0\lt x\lt1</m>): <m>\sqrt{\tfrac{x}{1-x}}=\tan\theta</m>, <m>dx=2\sin\theta\cos\theta\,d\theta</m>, интеграл <m>2\int\sin^6\theta\,d\theta</m> болно. Буцааж <m>x</m>-ээр илэрхийлбэл <m>-\dfrac{8x^2+10x+15}{24}\sqrt{x-x^2}+\dfrac58\arcsin\sqrt x+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-6">
       <statement>
         <p><m>\displaystyle \int \frac{x+2}{x^2\sqrt{1-x^2}}\,dx.</m></p>
       </statement>
+      <solution><p><m>\dfrac{x+2}{x^2\sqrt{1-x^2}}=\dfrac{1}{x\sqrt{1-x^2}}+\dfrac{2}{x^2\sqrt{1-x^2}}</m>. <m>\left(\tfrac{\sqrt{1-x^2}}{x}\right)'=-\tfrac{1}{x^2\sqrt{1-x^2}}</m>, мөн <m>x=\tfrac1t</m> орлуулгаар <m>\int\frac{dx}{x\sqrt{1-x^2}}=-\ln\frac{1+\sqrt{1-x^2}}{|x|}</m>. Хариу: <m>-\ln\dfrac{1+\sqrt{1-x^2}}{|x|}-\dfrac{2\sqrt{1-x^2}}{x}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-7">
       <statement>
         <p><m>\displaystyle \int \sqrt{\frac{x}{1-x}}\,dx.</m></p>
       </statement>
+      <solution><p><m>x=\sin^2\theta</m>: <m>\int\tan\theta\cdot2\sin\theta\cos\theta\,d\theta=2\int\sin^2\theta\,d\theta=\theta-\sin\theta\cos\theta</m>. Хариу: <m>\arcsin\sqrt x-\sqrt{x(1-x)}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-8">
       <statement>
         <p><m>\displaystyle \int \frac{dx}{\sqrt[3]{x^2(1-x)}}.</m></p>
       </statement>
+      <solution><p><m>t=\sqrt[3]{\tfrac{1-x}{x}}</m>: <m>x=\tfrac{1}{1+t^3}</m>, <m>\sqrt[3]{x^2(1-x)}=xt</m>, интеграл <m>-3\int\frac{t\,dt}{1+t^3}</m> болно. Хялбар бутархайгаар:</p><p><me>\ln|1+t|-\tfrac12\ln(t^2-t+1)-\sqrt3\arctan\frac{2t-1}{\sqrt3}+C,\qquad t=\sqrt[3]{\tfrac{1-x}{x}}.</me></p></solution>
     </exercise>
     <exercise xml:id="hw14-9">
       <statement>
         <p><m>\displaystyle \int \frac{dx}{x\sqrt{1+x^3+x^6}}.</m></p>
       </statement>
+      <solution><p><m>t=x^{-3}</m>, <m>\tfrac{dx}{x}=-\tfrac{dt}{3t}</m>, <m>\sqrt{1+x^3+x^6}=x^3\sqrt{t^2+t+1}</m> (<m>x\gt0</m>): <m>-\tfrac13\int\frac{dt}{\sqrt{t^2+t+1}}=-\tfrac13\ln\left(t+\tfrac12+\sqrt{t^2+t+1}\right)+C</m>, <m>t=\tfrac{1}{x^3}</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-10">
       <statement>
         <p><m>\displaystyle \int x\sqrt{x^4-2x^2-1}\,dx.</m></p>
       </statement>
+      <solution><p><m>u=x^2-1</m>, <m>du=2x\,dx</m>: <m>\tfrac12\int\sqrt{u^2-2}\,du=\tfrac12\left[\tfrac u2\sqrt{u^2-2}-\ln\left|u+\sqrt{u^2-2}\right|\right]+C</m>, <m>u=x^2-1</m> (<m>x^4-2x^2-1\ge0</m> мужид).</p></solution>
     </exercise>
     <exercise xml:id="hw14-11">
       <statement>
         <p><m>\displaystyle \int \frac{1+\sqrt{\frac{1-x}{1+x}}}{1-\sqrt{\frac{1-x}{1+x}}}\,dx.</m></p>
       </statement>
+      <solution><p><m>t=\sqrt{\tfrac{1-x}{1+x}}</m> гэвэл хүртвэр, хуваарийг <m>1+t</m>-ээр үржүүлж <m>\dfrac{(1+t)^2}{1-t^2}</m>. <m>1-t^2=\tfrac{2x}{1+x}</m>, <m>(1+t)^2=\tfrac{2}{1+x}+2t</m> тул интеграл доорх нь <m>\dfrac1x+\dfrac{\sqrt{1-x^2}}{x}</m>. Иймд <m>\ln|x|+\sqrt{1-x^2}-\ln\dfrac{1+\sqrt{1-x^2}}{|x|}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-12">
       <statement>
         <p><m>\displaystyle \int \frac{(1+x)\,dx}{\sqrt{1+x^2}}.</m></p>
       </statement>
+      <solution><p><m>\int\frac{dx}{\sqrt{1+x^2}}+\int\frac{x\,dx}{\sqrt{1+x^2}}=\ln\left(x+\sqrt{1+x^2}\right)+\sqrt{1+x^2}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-13">
       <statement>
         <p><m>\displaystyle \int \frac{\ln(1+x+x^2)}{(1+x)^2}\,dx.</m></p>
       </statement>
+      <solution><p>Хэсэгчлэн: <m>u=\ln(1+x+x^2)</m>, <m>v=-\tfrac1{1+x}</m>. <m>\displaystyle-\frac{\ln(1+x+x^2)}{1+x}+\int\frac{2x+1}{(1+x)(x^2+x+1)}dx</m>, <m>\dfrac{2x+1}{(1+x)(x^2+x+1)}=-\dfrac1{1+x}+\dfrac{x+2}{x^2+x+1}</m>. Хариу: <m>-\dfrac{\ln(1+x+x^2)}{1+x}-\ln|1+x|+\tfrac12\ln(x^2+x+1)+\sqrt3\arctan\dfrac{2x+1}{\sqrt3}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-14">
       <statement>
         <p><m>\displaystyle \int (2x+3)\arccos(2x-3)\,dx.</m></p>
       </statement>
+      <solution><p>Хэсэгчлэн: <m>u=\arccos(2x-3)</m>, <m>v=\tfrac{(2x+3)^2}{4}</m>, <m>du=-\tfrac{2\,dx}{\sqrt{1-(2x-3)^2}}</m>. Үлдсэн интегралд <m>s=2x-3</m> орлуулж бодвол</p><p><me>\frac{(2x+3)^2}{4}\arccos(2x-3)-\frac{2x+21}{8}\sqrt{1-(2x-3)^2}+\frac{73}{8}\arcsin(2x-3)+C.</me></p></solution>
     </exercise>
     <exercise xml:id="hw14-15">
       <statement>
         <p><m>\displaystyle \int x\ln(4+x^4)\,dx.</m></p>
       </statement>
+      <solution><p>Хэсэгчлэн: <m>u=\ln(4+x^4)</m>, <m>v=\tfrac{x^2}{2}</m>: <m>\dfrac{x^2}2\ln(4+x^4)-\displaystyle\int\frac{2x^5}{4+x^4}dx</m>, <m>\dfrac{2x^5}{4+x^4}=2x-\dfrac{8x}{4+x^4}</m>. Хариу: <m>\dfrac{x^2}{2}\ln(4+x^4)-x^2+2\arctan\dfrac{x^2}{2}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-16">
       <statement>
         <p><m>\displaystyle \int \frac{\arcsin x}{x^2}\cdot\frac{1+x^2}{\sqrt{1-x^2}}\,dx.</m></p>
       </statement>
+      <solution><p><m>\dfrac{1+x^2}{x^2\sqrt{1-x^2}}=\dfrac{1}{\sqrt{1-x^2}}+\dfrac{1}{x^2\sqrt{1-x^2}}</m>. Эхнийх нь <m>\int\arcsin x\,d(\arcsin x)=\tfrac12\arcsin^2x</m>. Хоёр дахьд <m>v=-\tfrac{\sqrt{1-x^2}}{x}</m> гэж хэсэгчилбэл <m>-\tfrac{\sqrt{1-x^2}}{x}\arcsin x+\int\frac{dx}{x}</m>. Хариу: <m>\tfrac12\arcsin^2x-\dfrac{\sqrt{1-x^2}}{x}\arcsin x+\ln|x|+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-17">
       <statement>
         <p><m>\displaystyle \int \frac{x\ln\!\left(1+\sqrt{1+x^2}\,\right)}{\sqrt{1+x^2}}\,dx.</m></p>
       </statement>
+      <solution><p><m>t=1+\sqrt{1+x^2}</m>, <m>dt=\tfrac{x\,dx}{\sqrt{1+x^2}}</m>: <m>\int\ln t\,dt=t\ln t-t</m>. Хариу: <m>\left(1+\sqrt{1+x^2}\right)\ln\left(1+\sqrt{1+x^2}\right)-\sqrt{1+x^2}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-18">
       <statement>
         <p><m>\displaystyle \int x\sqrt{x^2+1}\,\ln\!\sqrt{x^2-1}\,dx.</m></p>
       </statement>
+      <solution><p><m>w=\sqrt{x^2+1}</m> (<m>x\,dx=w\,dw</m>), <m>\ln\sqrt{x^2-1}=\tfrac12\ln(w^2-2)</m>: <m>\tfrac12\int w^2\ln(w^2-2)\,dw</m>. Хэсэгчилж, <m>\frac{w^4}{w^2-2}=w^2+2+\frac{4}{w^2-2}</m>-ийг ашиглавал</p><p><me>\frac{w^3}{6}\ln(x^2-1)-\frac{w^3}{9}-\frac{2w}{3}-\frac{\sqrt2}{3}\ln\left|\frac{w-\sqrt2}{w+\sqrt2}\right|+C,\quad w=\sqrt{x^2+1}.</me></p></solution>
     </exercise>
     <exercise xml:id="hw14-19">
       <statement>
         <p><m>\displaystyle \int \frac{x}{\sqrt{1-x^2}}\ln\frac{x}{\sqrt{1-x}}\,dx.</m></p>
       </statement>
+      <solution><p>Хэсэгчлэн: <m>u=\ln\tfrac{x}{\sqrt{1-x}}=\ln x-\tfrac12\ln(1-x)</m>, <m>v=-\sqrt{1-x^2}</m>. <m>du=\left(\tfrac1x+\tfrac{1}{2(1-x)}\right)dx</m>, ба <m>\tfrac{\sqrt{1-x^2}}{1-x}=\tfrac{1+x}{\sqrt{1-x^2}}</m>. Хариу:</p><p><me>-\sqrt{1-x^2}\,\ln\frac{x}{\sqrt{1-x}}+\frac{\sqrt{1-x^2}}{2}+\frac{\arcsin x}{2}-\ln\frac{1+\sqrt{1-x^2}}{x}+C.</me></p></solution>
     </exercise>
     <exercise xml:id="hw14-20">
       <statement>
         <p><m>\displaystyle \int \frac{dx}{(2+\sin x)^2}.</m></p>
       </statement>
+      <solution><p><m>\left(\dfrac{\cos x}{2+\sin x}\right)'=-\dfrac{1+2\sin x}{(2+\sin x)^2}</m> тул <m>\dfrac{1}{(2+\sin x)^2}=\dfrac13\left(\dfrac{\cos x}{2+\sin x}\right)'+\dfrac{2}{3}\cdot\dfrac{1}{2+\sin x}</m>. <m>t=\tan\tfrac x2</m>-аар <m>\int\frac{dx}{2+\sin x}=\frac{2}{\sqrt3}\arctan\frac{2t+1}{\sqrt3}</m>. Хариу: <m>\dfrac{\cos x}{3(2+\sin x)}+\dfrac{4}{3\sqrt3}\arctan\dfrac{2\tan\frac x2+1}{\sqrt3}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-21">
       <statement>
         <p><m>\displaystyle \int \frac{\sin 4x}{\sin^8 x+\cos^8 x}\,dx.</m></p>
       </statement>
+      <solution><p><m>w=\cos4x</m>: <m>\sin^2 2x=\tfrac{1-w}{2}</m>, <m>\sin^8x+\cos^8x=(1-\tfrac12\sin^22x)^2-\tfrac18\sin^42x=\dfrac{w^2+14w+17}{32}</m>, <m>\sin4x\,dx=-\tfrac{dw}{4}</m>. <m>-8\int\frac{dw}{(w+7)^2-32}</m>. Хариу: <m>\dfrac{1}{\sqrt2}\ln\left|\dfrac{\cos4x+7+4\sqrt2}{\cos4x+7-4\sqrt2}\right|+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-22">
       <statement>
         <p><m>\displaystyle \int \frac{\sin x}{\sqrt{1+\cos x}}\,dx.</m></p>
       </statement>
+      <solution><p><m>u=1+\cos x</m>: <m>-\int u^{-1/2}du=-2\sqrt{1+\cos x}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-23">
       <statement>
         <p><m>\displaystyle \int \frac{ax^2+b}{x^2+1}\arctan x\,dx.</m></p>
       </statement>
+      <solution><p><m>\dfrac{ax^2+b}{x^2+1}=a+\dfrac{b-a}{x^2+1}</m>. <m>\int\arctan x\,dx=x\arctan x-\tfrac12\ln(1+x^2)</m>, <m>\int\frac{\arctan x}{1+x^2}dx=\tfrac12\arctan^2x</m>. Хариу: <m>a\left(x\arctan x-\tfrac12\ln(1+x^2)\right)+\dfrac{b-a}{2}\arctan^2x+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-24">
       <statement>
         <p><m>\displaystyle \int \frac{ax^2+b}{x^2-1}\ln\!\left|\frac{x-1}{x+1}\right|dx.</m></p>
       </statement>
+      <solution><p><m>\dfrac{ax^2+b}{x^2-1}=a+\dfrac{a+b}{x^2-1}</m>, ба <m>\left(\ln\left|\tfrac{x-1}{x+1}\right|\right)'=\dfrac{2}{x^2-1}</m>. Иймд <m>\int\ln\left|\tfrac{x-1}{x+1}\right|dx=x\ln\left|\tfrac{x-1}{x+1}\right|-\ln|x^2-1|</m>, <m>\int\frac{1}{x^2-1}\ln\left|\tfrac{x-1}{x+1}\right|dx=\tfrac14\ln^2\left|\tfrac{x-1}{x+1}\right|</m>. Хариу: <m>ax\ln\left|\tfrac{x-1}{x+1}\right|-a\ln|x^2-1|+\dfrac{a+b}{4}\ln^2\left|\tfrac{x-1}{x+1}\right|+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-25">
       <statement>
         <p><m>\displaystyle \int \frac{x\ln x}{(1+x^2)^2}\,dx.</m></p>
       </statement>
+      <solution><p>Хэсэгчлэн: <m>u=\ln x</m>, <m>v=-\tfrac{1}{2(1+x^2)}</m>: <m>-\dfrac{\ln x}{2(1+x^2)}+\tfrac12\int\frac{dx}{x(1+x^2)}</m>, <m>\tfrac{1}{x(1+x^2)}=\tfrac1x-\tfrac{x}{1+x^2}</m>. Хариу: <m>-\dfrac{\ln x}{2(1+x^2)}+\tfrac12\ln x-\tfrac14\ln(1+x^2)+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-26">
       <statement>
         <p><m>\displaystyle \int \frac{x\arctan x}{\sqrt{1+x^2}}\,dx.</m></p>
       </statement>
+      <solution><p>Хэсэгчлэн: <m>u=\arctan x</m>, <m>v=\sqrt{1+x^2}</m>: <m>\sqrt{1+x^2}\arctan x-\int\frac{dx}{\sqrt{1+x^2}}=\sqrt{1+x^2}\arctan x-\ln\left(x+\sqrt{1+x^2}\right)+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-27">
       <statement>
         <p><m>\displaystyle \int \frac{\sin 2x}{\sqrt{1+\cos^4 x}}\,dx.</m></p>
       </statement>
+      <solution><p><m>u=\cos^2x</m>, <m>du=-\sin2x\,dx</m>: <m>-\int\frac{du}{\sqrt{1+u^2}}=-\ln\left(\cos^2x+\sqrt{1+\cos^4x}\right)+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-28">
       <statement>
         <p><m>\displaystyle \int \frac{x^3\arccos x}{\sqrt{1-x^2}}\,dx.</m></p>
       </statement>
+      <solution><p><m>x=\cos t</m> (<m>t=\arccos x</m>): <m>-\int t\cos^3t\,dt</m>. <m>\cos^3t=\tfrac{3\cos t+\cos3t}{4}</m> гэж хэсэгчилбэл, буцааж <m>x</m>-ээр: <m>-\dfrac{x^2+2}{3}\sqrt{1-x^2}\,\arccos x-\dfrac{x^3}{9}-\dfrac{2x}{3}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-29">
       <statement>
         <p><m>\displaystyle \int \frac{x^4\arctan x}{1+x^2}\,dx.</m></p>
       </statement>
+      <solution><p><m>\dfrac{x^4}{1+x^2}=x^2-1+\dfrac{1}{1+x^2}</m>. Хэсэгчлэн <m>\int(x^2-1)\arctan x\,dx=\left(\tfrac{x^3}3-x\right)\arctan x-\tfrac{x^2}{6}+\tfrac23\ln(1+x^2)</m>, <m>\int\frac{\arctan x}{1+x^2}dx=\tfrac12\arctan^2x</m>. Хариу: <m>\left(\tfrac{x^3}{3}-x\right)\arctan x-\tfrac{x^2}{6}+\tfrac23\ln(1+x^2)+\tfrac12\arctan^2x+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-30">
       <statement>
         <p><m>\displaystyle \int \frac{x\arctan x}{(1+x^2)^3}\,dx.</m></p>
       </statement>
+      <solution><p>Хэсэгчлэн: <m>v=-\tfrac{1}{4(1+x^2)^2}</m>: <m>-\dfrac{\arctan x}{4(1+x^2)^2}+\dfrac14\int\frac{dx}{(1+x^2)^3}</m>. Бууруулах томьёогоор <m>\int\frac{dx}{(1+x^2)^3}=\frac{x}{4(1+x^2)^2}+\frac{3x}{8(1+x^2)}+\frac38\arctan x</m>. Хариу:</p><p><me>-\frac{\arctan x}{4(1+x^2)^2}+\frac{x}{16(1+x^2)^2}+\frac{3x}{32(1+x^2)}+\frac{3}{32}\arctan x+C.</me></p></solution>
     </exercise>
     <exercise xml:id="hw14-31">
       <statement>
         <p><m>\displaystyle \int \frac{x\ln\!\left(x+\sqrt{1+x^2}\right)}{(1-x^2)^2}\,dx.</m></p>
       </statement>
+      <solution><p>Хэсэгчлэн: <m>u=\ln(x+\sqrt{1+x^2})</m>, <m>v=\tfrac{1}{2(1-x^2)}</m>: <m>\dfrac{\ln(x+\sqrt{1+x^2})}{2(1-x^2)}-\dfrac12\int\frac{dx}{(1-x^2)\sqrt{1+x^2}}</m>. Сүүлийнхэд <m>t=\tfrac{x}{\sqrt{1+x^2}}</m> гэвэл <m>\int\frac{dt}{1-2t^2}</m>. Хариу:</p><p><me>\frac{\ln\left(x+\sqrt{1+x^2}\right)}{2(1-x^2)}-\frac{1}{4\sqrt2}\ln\left|\frac{\sqrt{1+x^2}+\sqrt2\,x}{\sqrt{1+x^2}-\sqrt2\,x}\right|+C.</me></p></solution>
     </exercise>
     <exercise xml:id="hw14-32">
       <statement>
         <p><m>\displaystyle \int \sqrt{1-x^2}\,\arcsin x\,dx.</m></p>
       </statement>
+      <solution><p><m>x=\sin t</m>: <m>\int t\cos^2t\,dt=\int t\,\frac{1+\cos2t}{2}dt=\frac{t^2}{4}+\frac{t\sin2t}{4}+\frac{\cos2t}{8}</m>. Буцааж: <m>\tfrac14\arcsin^2x+\tfrac{x\sqrt{1-x^2}}{2}\arcsin x-\tfrac{x^2}{4}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-33">
       <statement>
         <p><m>\displaystyle \int x(1+x^2)\arctan x\,dx.</m></p>
       </statement>
+      <solution><p>Хэсэгчлэн: <m>u=\arctan x</m>, <m>v=\tfrac{(1+x^2)^2}{4}</m>: <m>\dfrac{(1+x^2)^2}{4}\arctan x-\dfrac14\int(1+x^2)dx=\dfrac{(1+x^2)^2}{4}\arctan x-\dfrac{x^3}{12}-\dfrac x4+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-34">
       <statement>
         <p><m>\displaystyle \int x^x(1+\ln x)\,dx.</m></p>
       </statement>
+      <solution><p><m>(x^x)'=(e^{x\ln x})'=x^x(1+\ln x)</m> тул <m>x^x+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-35">
       <statement>
         <p><m>\displaystyle \int \frac{\arcsin(e^x)}{e^x}\,dx.</m></p>
       </statement>
-    </exercise>
-    <exercise xml:id="hw14-36">
-      <statement>
-        <p><m>\displaystyle \int \frac{\arctan \frac{x}{2}}{e^x(1+e^x)}\,dx.</m></p>
-      </statement>
+      <solution><p>Хэсэгчлэн: <m>u=\arcsin e^x</m>, <m>v=-e^{-x}</m>: <m>-e^{-x}\arcsin e^x+\int\frac{dx}{\sqrt{1-e^{2x}}}</m>. Сүүлийнхэд <m>s=\sqrt{1-e^{2x}}</m> орлуулбал <m>x-\ln\left(1+\sqrt{1-e^{2x}}\right)</m>. Хариу: <m>-e^{-x}\arcsin e^x+x-\ln\left(1+\sqrt{1-e^{2x}}\right)+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-37">
       <statement>
         <p><m>\displaystyle \int \frac{dx}{(e^{x+1}+1)^2-(e^{x-1}+1)^2}.</m></p>
       </statement>
+      <solution><p>Хуваарь: <m>(e^{x+1}-e^{x-1})(e^{x+1}+e^{x-1}+2)=k\,e^x(m e^x+2)</m>, энд <m>k=e-e^{-1}</m>, <m>m=e+e^{-1}</m>. <m>t=e^x</m>: <m>\frac1k\int\frac{dt}{t^2(mt+2)}</m>, <m>\frac{1}{t^2(mt+2)}=\frac{1}{2t^2}-\frac{m}{4t}+\frac{m^2}{4(mt+2)}</m>. Хариу: <m>\dfrac{1}{e-e^{-1}}\left[\dfrac{e+e^{-1}}{4}\ln\left(e+e^{-1}+2e^{-x}\right)-\dfrac{e^{-x}}{2}\right]+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-38">
       <statement>
         <p><m>\displaystyle \int \sqrt{\tanh^2 x+1}\,dx.</m></p>
       </statement>
+      <solution><p><m>t=\tanh x</m>, <m>dx=\tfrac{dt}{1-t^2}</m>: <m>\int\frac{\sqrt{1+t^2}}{1-t^2}dt=\int\frac{-1+\frac{2}{1-t^2}}{\sqrt{1+t^2}}dt</m>. 31-р бодлогын интегралыг ашиглавал: <m>-\operatorname{arsinh}(\tanh x)+\dfrac1{\sqrt2}\ln\left|\dfrac{\sqrt{1+\tanh^2x}+\sqrt2\tanh x}{\sqrt{1+\tanh^2x}-\sqrt2\tanh x}\right|+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-39">
       <statement>
         <p><m>\displaystyle \int \frac{1+\sin x}{1+\cos x}e^x\,dx.</m></p>
       </statement>
+      <solution><p><m>\dfrac{1+\sin x}{1+\cos x}=\dfrac{1}{2\cos^2\frac x2}+\tan\dfrac x2</m>, тэгэхээр интеграл доорх нь <m>\left(e^x\tan\frac x2\right)'</m>. Хариу: <m>e^x\tan\dfrac x2+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-40">
       <statement>
         <p><m>\displaystyle \int |x|\,dx.</m></p>
       </statement>
+      <solution><p><m>\dfrac{x|x|}{2}+C</m> (<m>x\ge0</m> үед <m>\tfrac{x^2}{2}</m>, <m>x\lt0</m> үед <m>-\tfrac{x^2}{2}</m>; <m>0</m>-д тасралтгүй).</p></solution>
     </exercise>
     <exercise xml:id="hw14-41">
       <statement>
         <p><m>\displaystyle \int x\,|x|\,dx.</m></p>
       </statement>
+      <solution><p><m>\dfrac{x^2|x|}{3}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-42">
       <statement>
         <p><m>\displaystyle \int (x+|x|)^2\,dx.</m></p>
       </statement>
+      <solution><p><m>x\lt0</m> үед интеграл доорх <m>0</m>, <m>x\ge0</m> үед <m>4x^2</m>. Тасралтгүй эх функц: <m>\dfrac23x^2(x+|x|)+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-43">
       <statement>
         <p><m>\displaystyle \int (1+|x|-|1-x|)\,dx.</m></p>
       </statement>
-    </exercise>
-    <exercise xml:id="hw14-44">
-      <statement>
-        <p><m>\displaystyle \int (e^{-1/x})\,dx.</m></p>
-      </statement>
+      <solution><p><m>x\lt0</m>: <m>0</m>; <m>0\le x\le1</m>: <m>2x</m>; <m>x\gt1</m>: <m>2</m>. Тасралтгүй эх функц: <m>F(x)=C</m> (<m>x\lt0</m>), <m>x^2+C</m> (<m>0\le x\le1</m>), <m>2x-1+C</m> (<m>x\gt1</m>).</p></solution>
     </exercise>
     <exercise xml:id="hw14-45">
       <statement>
         <p><m>\displaystyle \int \max(1, x^3)\,dx.</m></p>
       </statement>
+      <solution><p><m>x\le1</m> үед <m>\max=1</m>, <m>x\gt1</m> үед <m>x^3</m>. Тасралтгүй эх функц: <m>F(x)=x+C</m> (<m>x\le1</m>), <m>\dfrac{x^4}{4}+\dfrac34+C</m> (<m>x\gt1</m>).</p></solution>
     </exercise>
     <exercise xml:id="hw14-46">
       <statement>
         <p><m>\displaystyle \int \frac{x^5}{\sqrt{1+x^2}}\,dx.</m></p>
       </statement>
+      <solution><p><m>u=1+x^2</m>: <m>\tfrac12\int\frac{(u-1)^2}{\sqrt u}du</m>. Хариу: <m>\dfrac{3x^4-4x^2+8}{15}\sqrt{1+x^2}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-47">
       <statement>
         <p><m>\displaystyle \int \varphi(x)\,dx</m>, энд <m>\varphi(x)</m> нь <m>x</m> тооноос ойрхон бүхэл тоо хүртэлх зай.</p>
       </statement>
+      <solution><p><m>\varphi</m> нь үе <m>1</m>-тэй, <m>[0,1]</m> дээр <m>\varphi(s)=\min(s,1-s)</m>, нэг үе дээрх интеграл <m>\tfrac14</m>. <m>s=x-\lfloor x\rfloor</m> гэвэл тасралтгүй эх функц</p><p><me>F(x)=\frac{\lfloor x\rfloor}{4}+\begin{cases}\dfrac{s^2}{2}, &amp; 0\le s\le\frac12,\\[4pt] \dfrac14-\dfrac{(1-s)^2}{2}, &amp; \frac12\lt s\lt1\end{cases}\;+\;C.</me></p></solution>
     </exercise>
     <exercise xml:id="hw14-48">
       <statement>
         <p><m>\displaystyle \int \lfloor x \rfloor\, |\sin \pi x|\, dx \qquad (x\gt 0).</m></p>
       </statement>
+      <solution><p><m>n=\lfloor x\rfloor</m>. <m>|\sin\pi x|</m>-ийн нэг үе дээрх интеграл <m>\tfrac2\pi</m>. <m>0</m>-ээс эхэлж нийлүүлбэл <m>\sum_{k=0}^{n-1}\tfrac{2k}{\pi}=\tfrac{n(n-1)}{\pi}</m>, ба <m>[n,x]</m> дээр <m>n\int_n^x|\sin\pi t|dt=\tfrac n\pi\big(1-(-1)^n\cos\pi x\big)</m>. Тасралтгүй эх функц: <m>F(x)=\dfrac{n(n-1)}{\pi}+\dfrac{n}{\pi}\big(1-(-1)^n\cos\pi x\big)+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-49">
       <statement>
@@ -256,6 +286,7 @@
         1 - |x|, &amp; |x|\gt 1.
         \end{cases}</me></p>
       </statement>
+      <solution><p><m>|x|\le1</m>: <m>x-\tfrac{x^3}{3}+C</m>; <m>x\gt1</m>: <m>x-\tfrac{x^2}{2}+\tfrac16+C</m>; <m>x\lt-1</m>: <m>x+\tfrac{x^2}{2}-\tfrac16+C</m> (тогтмолуудыг <m>x=\pm1</m> дээр тасралтгүй байхаар сонгосон).</p></solution>
     </exercise>
     <exercise xml:id="hw14-50">
       <statement>
@@ -267,26 +298,31 @@
         2x, &amp; x\gt 1.
         \end{cases}</me></p>
       </statement>
+      <solution><p><m>x\lt0</m>: <m>x+C</m>; <m>0\le x\le1</m>: <m>\tfrac{x^2}{2}+x+C</m>; <m>x\gt1</m>: <m>x^2+\tfrac12+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-51">
       <statement>
         <p><m>\displaystyle \int x\, f''(x)\,dx.</m></p>
       </statement>
+      <solution><p>Хэсэгчлэн: <m>u=x</m>, <m>dv=f''(x)dx</m>: <m>xf'(x)-f(x)+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-52">
       <statement>
         <p><m>\displaystyle \int f'(2x)\,dx.</m></p>
       </statement>
+      <solution><p><m>t=2x</m>: <m>\tfrac12\int f'(t)dt=\tfrac12f(2x)+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw14-53">
       <statement>
         <p><m>f(x)</m>–ийг ол, хэрэв <m>\; f'(x^2)=\dfrac1{x}\quad (x\gt 0).</m></p>
       </statement>
+      <solution><p><m>t=x^2</m> бол <m>f'(t)=\tfrac{1}{\sqrt t}</m>, тэгэхээр <m>f(x)=2\sqrt x+C</m> (<m>x\gt0</m>).</p></solution>
     </exercise>
     <exercise xml:id="hw14-54">
       <statement>
         <p><m>f(x)</m>–ийг ол, хэрэв <m>\; f'(\sin^2 x)=\cos^2 x.</m></p>
       </statement>
+      <solution><p><m>t=\sin^2x\in[0,1]</m> бол <m>f'(t)=1-t</m>, тэгэхээр <m>f(x)=x-\dfrac{x^2}{2}+C</m> (<m>0\le x\le1</m>).</p></solution>
     </exercise>
   </exercises>
 </section>
