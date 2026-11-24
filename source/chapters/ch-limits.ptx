@@ -985,8 +985,9 @@
             </ol>
           </p>
         </statement>
+        <hint><p>Бүгд <m>\tfrac00</m> хэлбэр. Хүртвэр, хуваарийг <m>(x-a)</m> үржигдэхүүнтэй болгож задлаад хураа. (г)-д бүлэглэ: <m>2x^2(x-1)+(x-1)</m>.</p></hint>
         <answer>
-          <p>а. <m>-2</m>; б. <m>10</m>; в. <m>\frac{1}{8}</m>; г. <m>\frac{1}{3}</m>.</p>
+          <p>а. <m>-2</m>; б. <m>10</m>; в. <m>\frac{1}{8}</m>; г. <m>\frac{3}{4}</m>.</p>
         </answer>
       </exercise>
 
@@ -1001,6 +1002,7 @@
             </ol>
           </p>
         </statement>
+        <hint><p>Язгууртай хэсгийг хосмог илэрхийллээр үржүүл: <m>(\sqrt A-\sqrt B)(\sqrt A+\sqrt B)=A-B</m>. (а)-д хүртвэр, хуваарь хоёуланг нь.</p></hint>
         <answer>
           <p>а. <m>\frac{4}{1} = 4</m> (хоёр нөхцөлдөн үржүүлэх); б. <m>1</m>; в. <m>\frac{1}{2\sqrt{x}}</m>; г. <m>0</m>.</p>
         </answer>
@@ -1016,8 +1018,9 @@
             </ol>
           </p>
         </statement>
+        <hint><p>(а), (б): <m>x=1</m> язгуур тул хүртвэр, хуваарийг <m>x-1</m>-д хуваа; <m>\dfrac{x^m-1}{x-1}=x^{m-1}+\dots+1\to m</m> гэдгийг ашигла. (в): бутархайг <m>\dfrac{\sqrt x-\sqrt a}{\sqrt{x^2-a^2}}+\dfrac{1}{\sqrt{x+a}}</m> гэж хоёр хуваа.</p></hint>
         <answer>
-          <p>а. <m>\frac{1}{2}</m>; б. <m>2</m>; в. <m>\frac{1}{\sqrt{2}}</m>.</p>
+          <p>а. <m>1</m>; б. <m>\frac{49}{24}</m>; в. <m>\frac{1}{\sqrt{2a}}</m> (<m>x\to a^+</m>).</p>
         </answer>
       </exercise>
 
@@ -1031,6 +1034,7 @@
             </ol>
           </p>
         </statement>
+        <hint><p>Хүртвэр, хуваарийг <m>x</m>-ийн хамгийн их зэрэгт (б-д <m>x^2</m>-д, <m>\sqrt{x^4}=x^2</m>) хуваа.</p></hint>
         <answer>
           <p>а. <m>-\frac{3}{2}</m>; б. <m>2</m>; в. <m>+\infty</m>.</p>
         </answer>
@@ -1045,6 +1049,7 @@
             </ol>
           </p>
         </statement>
+        <hint><p>Хуваарийн тэгүүдийг ол. Цэг бүр дээр хүртвэр мөн тэг болох уу? Болбол хураагаад хязгаар нь төгсгөлөг эсэхийг шалга.</p></hint>
         <answer>
           <p>а. <m>x = 1</m>: засагдах (<m>\lim = \frac{3}{2}</m>),
           <m>x = -1</m>: төгсгөлгүй;<nbsp/>
@@ -1062,6 +1067,7 @@
             </ol>
           </p>
         </statement>
+        <hint><p>(б) <m>\left(\tfrac23\right)^n</m>, <m>|q|\lt1</m>. (в) <m>\left(1+\tfrac2n\right)^n=\Big[\left(1+\tfrac{1}{n/2}\right)^{n/2}\Big]^2</m>.</p></hint>
         <answer>
           <p>а. <m>1</m>; б. <m>0</m>; в. <m>e^2</m>.</p>
         </answer>
@@ -1087,6 +1093,11 @@
             </ol>
           </p>
         </statement>
+        <solution>
+        <p>а. <m>|\sqrt x-\sqrt2|=\dfrac{|x-2|}{\sqrt x+\sqrt2}\le\dfrac{|x-2|}{\sqrt2}</m>. <m>\varepsilon\gt0</m> өгөгдөхөд <m>\delta=\min\{2,\sqrt2\,\varepsilon\}</m> авбал (<m>\delta\le2</m> нь <m>x\ge0</m> байлгана) <m>0\lt|x-2|\lt\delta\Rightarrow|\sqrt x-\sqrt2|\lt\varepsilon</m>.</p>
+        <p>б. <m>|(3x+5)-11|=3|x-2|</m>. <m>\delta=\varepsilon/3</m>.</p>
+        <p>в. <m>\left|\dfrac{n^2+2n+1}{n^2+n+1}-1\right|=\dfrac{n}{n^2+n+1}\lt\dfrac1n</m>. <m>N\gt\dfrac1\varepsilon</m> натурал тоо авбал <m>n\ge N</m> үед ялгавар <m>\lt\varepsilon</m>.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="hw7-ex-2">
@@ -1100,6 +1111,12 @@
             </ol>
           </p>
         </statement>
+        <solution>
+        <p>а. <m>x+1\to2</m>.<nbsp/>
+        б. <m>\dfrac{\sqrt x-2}{(\sqrt x-2)(\sqrt x+2)}\to\dfrac14</m>.<nbsp/>
+        в. <m>x^2</m>-д хуваахад <m>\dfrac35</m>.</p>
+        <p>г. Хоёр язгуурыг хосмогоор үржүүлбэл <m>\dfrac{\sqrt{1+2x}-3}{\sqrt x-2}=\dfrac{2(x-4)}{\sqrt{1+2x}+3}\cdot\dfrac{\sqrt x+2}{x-4}=\dfrac{2(\sqrt x+2)}{\sqrt{1+2x}+3}\to\dfrac{2\cdot4}{6}=\dfrac43</m>.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="hw7-ex-3">
@@ -1113,6 +1130,12 @@
             </ol>
           </p>
         </statement>
+        <solution>
+        <p>а. <m>1-\cos x=2\sin^2\tfrac x2</m> тул <m>\dfrac{1-\cos x}{x^2}=\dfrac12\left(\dfrac{\sin(x/2)}{x/2}\right)^2\to\dfrac12</m>.</p>
+        <p>б. <m>\dfrac{\tan x}{x}=\dfrac{\sin x}{x}\cdot\dfrac{1}{\cos x}\to1</m>.</p>
+        <p>в. <m>t=\arctan x</m> (<m>t\to0</m>): <m>\dfrac{t}{\tan t}\to1</m>.</p>
+        <p>г. <m>1-2\cos2x=1-2(1-2\sin^2x)=(2\sin x-1)(2\sin x+1)</m> тул илэрхийлэл <m>\dfrac{1}{2\sin x+1}\to\dfrac{1}{2}</m>.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="hw7-ex-4">
@@ -1125,6 +1148,11 @@
             </ol>
           </p>
         </statement>
+        <solution>
+        <p>а. <m>a_n=\dfrac{n^k}{e^n}</m> бол <m>\dfrac{a_{n+1}}{a_n}=\dfrac{(1+1/n)^k}{e}\to\dfrac1e\lt1</m>. Тэгэхээр хангалттай их <m>n</m>-ээс эхлэн <m>a_{n+1}\le q\,a_n</m> (<m>q\lt1</m>) биелж, <m>a_n\to0</m>.</p>
+        <p>б. <m>\sqrt[n]{n}=1+h_n</m>, <m>h_n\ge0</m> гэвэл Ньютоны биномоор <m>n=(1+h_n)^n\ge\dfrac{n(n-1)}{2}h_n^2</m>, тэгэхээр <m>0\le h_n\le\sqrt{\tfrac{2}{n-1}}\to0</m>. Хариу: <m>1</m>.</p>
+        <p>в. <m>\dfrac{n(n+1)/2}{n^2}\to\dfrac12</m>.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="hw7-ex-5">
@@ -1137,6 +1165,11 @@
             </ol>
           </p>
         </statement>
+        <solution>
+        <p>а. <m>\dfrac{e^{2x}-1}{x}=2\cdot\dfrac{e^{2x}-1}{2x}\to2</m>.<nbsp/>
+        б. <m>\left[\left(1+\tfrac2x\right)^{x/2}\right]^6\to e^6</m>.<nbsp/>
+        в. <m>2\cdot\dfrac{\ln(1+2x)}{2x}\to2</m>.</p>
+        </solution>
       </exercise>
     </exercises>
   </section>
@@ -1635,6 +1668,7 @@
             </ol>
           </p>
         </statement>
+        <hint><p><m>\dfrac{\sin kx}{x}=k\cdot\dfrac{\sin kx}{kx}</m>. (б)-д хүртвэр, хуваарийг <m>x</m>-д хуваа. (в)-д <m>1-\cos x=2\sin^2\tfrac x2</m>.</p></hint>
         <answer><p>а. <m>3</m>; б. <m>\frac{5}{2}</m>; в. <m>\frac{1}{2}</m>; г. <m>0</m>.</p></answer>
       </exercise>
       <exercise xml:id="sem5-ex-2">
@@ -1650,6 +1684,7 @@
             </ol>
           </p>
         </statement>
+        <hint><p><m>\displaystyle\lim_{t\to0}\frac{e^t-1}{t}=\lim_{t\to0}\frac{\ln(1+t)}{t}=1</m>, <m>\left(1+\tfrac{a}{x}\right)^x=\Big[\left(1+\tfrac{a}{x}\right)^{x/a}\Big]^a</m>.</p></hint>
         <answer><p>а. <m>1</m>; б. <m>2</m>; в. <m>e^3</m>; г. <m>e^2</m>.</p></answer>
       </exercise>
       <exercise xml:id="sem5-ex-3">
@@ -1662,6 +1697,7 @@
             </ol>
           </p>
         </statement>
+        <hint><p>Функц тодорхойлогдоогүй цэгүүдийг ол. Тэр цэг дээр хязгаар төгсгөлөг оршвол засагдах, нэг тал нь <m>\pm\infty</m> бол төгсгөлгүй (II төрөл) тасралт.</p></hint>
         <answer>
           <p>а. <m>x=2</m>: засагдах; б. <m>x=0</m>: засагдах (<m>\lim=1</m>); в. <m>x=\pm1</m>: төгсгөлгүй.</p>
         </answer>
@@ -1675,6 +1711,7 @@
             </ol>
           </p>
         </statement>
+        <hint><p><m>g(x)=x^3+x-1</m> ба <m>g(x)=e^x-2+x</m> функцүүдийн <m>0</m> ба <m>1</m> цэг дээрх утгын тэмдгийг харьцуул. Тасралтгүй эсэхийг дурдахаа мартуузай.</p></hint>
       </exercise>
       <exercise xml:id="sem5-ex-5">
         <statement>
@@ -1683,6 +1720,7 @@
  a \amp x = 0 \end{cases}.</me>
           </p>
         </statement>
+        <hint><p>Тасралтгүй байх нөхцөл: <m>\displaystyle\lim_{x\to0}f(x)=f(0)=a</m>.</p></hint>
         <answer><p><m>a = 3</m>.</p></answer>
       </exercise>
       <exercise xml:id="sem5-ex-6">
@@ -1695,7 +1733,8 @@
             </ol>
           </p>
         </statement>
-        <answer><p>а. <m>-\frac{1}{2}</m>; б. <m>\frac{1}{2}</m>; в. <m>\frac{1}{2\sqrt{3}}</m>.</p></answer>
+        <hint><p>(а), (б) нь Лопиталын дүрэм эсвэл Тейлорын задаргаа <m>\ln(1+x)=x-\tfrac{x^2}{2}+o(x^2)</m>, <m>e^x=1+x+\tfrac{x^2}{2}+o(x^2)</m>-аар бодогдоно. (в)-д <m>\cos2x=1-2\sin^2x</m> гэж бичээд хуваарийг үржигдэхүүнд задал.</p></hint>
+        <answer><p>а. <m>-\frac{1}{2}</m>; б. <m>\frac{1}{2}</m>; в. <m>\frac{1}{2}</m>.</p></answer>
       </exercise>
       <exercise xml:id="sem5-ex-7">
         <statement>
@@ -1709,6 +1748,7 @@
             </ol>
           </p>
         </statement>
+        <hint><p>(а) <m>\ln\dfrac{n}{\sqrt[n]{n!}}=-\dfrac1n\sum_{k=1}^n\ln\dfrac kn</m> эсвэл <m>\dfrac{a_{n+1}}{a_n}\to L\Rightarrow\sqrt[n]{a_n}\to L</m> чанарыг <m>a_n=\tfrac{n^n}{n!}</m>-д хэрэглэ. (в) <m>\dfrac{n+1}{n-1}=1+\dfrac{2}{n-1}</m>.</p></hint>
         <answer><p>а. <m>e</m>; б. <m>1</m>; в. <m>e^2</m>.</p></answer>
       </exercise>
     </exercises>
@@ -1730,6 +1770,11 @@
             </ol>
           </p>
         </statement>
+        <solution>
+        <p>а. <m>\dfrac{\sin ax}{bx}=\dfrac ab\cdot\dfrac{\sin ax}{ax}\to\dfrac ab</m> (<m>a=0</m> үед мөн <m>0</m>).</p>
+        <p>б. <m>\dfrac{1-\cos3x}{x^2}=\dfrac{2\sin^2(3x/2)}{x^2}=\dfrac92\left(\dfrac{\sin(3x/2)}{3x/2}\right)^2\to\dfrac92</m>.</p>
+        <p>в. <m>\tan x-\sin x=\tan x\,(1-\cos x)</m> тул <m>\dfrac{\tan x-\sin x}{x^3}=\dfrac{\tan x}{x}\cdot\dfrac{1-\cos x}{x^2}\to1\cdot\dfrac12=\dfrac12</m>.</p>
+        </solution>
       </exercise>
       <exercise xml:id="hw5-ex-2">
         <statement>
@@ -1742,6 +1787,11 @@
             </ol>
           </p>
         </statement>
+        <solution>
+        <p>а. <m>3\cdot\dfrac{e^{3x}-1}{3x}\to3</m>.<nbsp/>
+        б. <m>\Big[\left(1+\tfrac2x\right)^{x/2}\Big]^6\to e^6</m>.</p>
+        <p>в. <m>x=e^{2t}</m> (<m>t\to\infty</m>) гэвэл <m>\dfrac{\ln x}{\sqrt x}=\dfrac{2t}{e^t}</m>. <m>e^t\ge1+t+\tfrac{t^2}{2}\gt\tfrac{t^2}{2}</m> (<m>t\gt0</m>) тул <m>0\lt\dfrac{2t}{e^t}\lt\dfrac4t\to0</m>. Хариу: <m>0</m>.</p>
+        </solution>
       </exercise>
       <exercise xml:id="hw5-ex-3">
         <statement>
@@ -1751,11 +1801,17 @@ x^2 + b \amp x \ge 1 \end{cases}.</me>
           (<em>Зөвлөмж:</em> зүүн ба баруун хязгаар тэнцүү байх нөхцөлийг ашигла.)
           </p>
         </statement>
+        <solution>
+        <p>Хэсэг бүр дээр олон гишүүнт тул зөвхөн <m>x=1</m>-д шалгана: <m>\lim_{x\to1^-}f=a+2</m>, <m>\lim_{x\to1^+}f=f(1)=1+b</m>. Тасралтгүй <m>\iff a+2=1+b\iff b=a+1</m>. Ганц хос биш, <m>b=a+1</m> нөхцөлийг хангах бүх <m>(a,b)</m> тохирно (жишээ нь <m>a=0,b=1</m>).</p>
+        </solution>
       </exercise>
       <exercise xml:id="hw5-ex-4">
         <statement>
           <p>ЗУТ ашиглан <m>f(x) = x^4 - 2x^2 - 1</m> функц бодит язгууртай болохыг харуул.</p>
         </statement>
+        <solution>
+        <p><m>f</m> олон гишүүнт тул тасралтгүй. <m>f(0)=-1\lt0</m>, <m>f(2)=16-8-1=7\gt0</m> тул ЗУТ-өөр <m>(0,2)</m>-д язгуур бий. <m>f</m> тэгш тул <m>(-2,0)</m>-д ч мөн язгууртай. (Үнэндээ <m>x^2=1+\sqrt2</m>, <m>x=\pm\sqrt{1+\sqrt2}</m>.)</p>
+        </solution>
       </exercise>
       <exercise xml:id="hw5-ex-5">
         <statement>
@@ -1768,6 +1824,11 @@ x^2 + b \amp x \ge 1 \end{cases}.</me>
             </ol>
           </p>
         </statement>
+        <solution>
+        <p>а. <m>3^n\le2^n+3^n\le2\cdot3^n</m> тул <m>3\le\sqrt[n]{2^n+3^n}\le3\sqrt[n]2\to3</m>. Хашилтаар <m>3</m>.<nbsp/>
+        б. <m>t=1/n\to0</m>: <m>\dfrac{\sin t}{t}\to1</m>.<nbsp/>
+        в. <m>\Big[\left(1+\tfrac1n\right)^n\Big]^2\to e^2</m>.</p>
+        </solution>
       </exercise>
     </exercises>
   </section>

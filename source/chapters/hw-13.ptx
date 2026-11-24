@@ -11,206 +11,247 @@
       <statement>
         <p><m>\displaystyle \int \frac{dx}{2x-1}.</m></p>
       </statement>
+      <solution><p><m>u=2x-1</m>, <m>du=2dx</m>: <m>\tfrac12\ln|2x-1|+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-2">
       <statement>
         <p><m>\displaystyle \int \frac{dx}{cx+m}.</m></p>
       </statement>
+      <solution><p><m>u=cx+m</m> (<m>c\ne0</m>): <m>\tfrac1c\ln|cx+m|+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-3">
       <statement>
         <p><m>\displaystyle \int \frac{x\,dx}{x^{2}+1}.</m></p>
       </statement>
+      <solution><p><m>d(x^2+1)=2x\,dx</m>: <m>\tfrac12\ln(x^2+1)+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-4">
       <statement>
         <p><m>\displaystyle \int \frac{x^{2}\,dx}{x^{3}+1}.</m></p>
       </statement>
+      <solution><p><m>d(x^3+1)=3x^2dx</m>: <m>\tfrac13\ln|x^3+1|+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-5">
       <statement>
         <p><m>\displaystyle \int \frac{e^{x} dx}{e^{x}+1}.</m></p>
       </statement>
+      <solution><p><m>u=e^x+1</m>: <m>\ln(e^x+1)+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-6">
       <statement>
         <p><m>\displaystyle \int \frac{e^{2x} dx}{e^{2x}+a^{2}}.</m></p>
       </statement>
+      <solution><p><m>u=e^{2x}+a^2</m>, <m>du=2e^{2x}dx</m>: <m>\tfrac12\ln(e^{2x}+a^2)+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-7">
       <statement>
         <p><m>\displaystyle \int \tan x\, dx.</m></p>
       </statement>
+      <solution><p><m>\tan x=\tfrac{\sin x}{\cos x}</m>, <m>u=\cos x</m>: <m>-\ln|\cos x|+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-8">
       <statement>
         <p><m>\displaystyle \int \cot x\, dx.</m></p>
       </statement>
+      <solution><p><m>u=\sin x</m>: <m>\ln|\sin x|+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-9">
       <statement>
         <p><m>\displaystyle \int \tan 3x\, dx.</m></p>
       </statement>
+      <solution><p><m>-\tfrac13\ln|\cos3x|+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-10">
       <statement>
         <p><m>\displaystyle \int \cot(2x+1)\, dx.</m></p>
       </statement>
+      <solution><p><m>\tfrac12\ln|\sin(2x+1)|+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-11">
       <statement>
         <p><m>\displaystyle \int \frac{\sin 2x}{1+\cos^{2}x}\, dx.</m></p>
       </statement>
+      <solution><p><m>u=1+\cos^2x</m>, <m>du=-2\sin x\cos x\,dx=-\sin2x\,dx</m>: <m>-\ln(1+\cos^2x)+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-12">
       <statement>
         <p><m>\displaystyle \int \frac{dx}{x \ln x}.</m></p>
       </statement>
+      <solution><p><m>u=\ln x</m>, <m>du=\tfrac{dx}{x}</m>: <m>\ln|\ln x|+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-13">
       <statement>
         <p><m>\displaystyle \int \frac{(\ln x)^{m}}{x}\, dx.</m></p>
       </statement>
+      <solution><p><m>u=\ln x</m>: <m>\dfrac{(\ln x)^{m+1}}{m+1}+C</m> (<m>m\ne-1</m>); <m>m=-1</m> үед <m>\ln|\ln x|+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-14">
       <statement>
         <p><m>\displaystyle \int e^{\sin x}\, d(\sin x).</m></p>
       </statement>
+      <solution><p><m>\int e^u\,du</m>, <m>u=\sin x</m>: <m>e^{\sin x}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-15">
       <statement>
         <p><m>\displaystyle \int e^{\sin x}\cos x\, dx.</m></p>
       </statement>
+      <solution><p><m>\cos x\,dx=d(\sin x)</m> тул өмнөх бодлоготой ижил: <m>e^{\sin x}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-16">
       <statement>
         <p><m>\displaystyle \int a^{3x}\, dx.</m></p>
       </statement>
+      <solution><p><m>\dfrac{a^{3x}}{3\ln a}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-17">
       <statement>
         <p><m>\displaystyle \int a^{-x}\, dx.</m></p>
       </statement>
+      <solution><p><m>-\dfrac{a^{-x}}{\ln a}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-18">
       <statement>
         <p><m>\displaystyle \int e^{-3x+1}\, dx.</m></p>
       </statement>
+      <solution><p><m>-\tfrac13e^{-3x+1}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-19">
       <statement>
         <p><m>\displaystyle \int e^{x^{2}} x\, dx.</m></p>
       </statement>
+      <solution><p><m>u=x^2</m>: <m>\tfrac12e^{x^2}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-20">
       <statement>
         <p><m>\displaystyle \int e^{-x^{3}} x^{2}\, dx.</m></p>
       </statement>
+      <solution><p><m>u=-x^3</m>, <m>du=-3x^2dx</m>: <m>-\tfrac13e^{-x^3}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-21">
       <statement>
         <p><m>\displaystyle \int \frac{d\left(\frac{x}{3}\right)}{\sqrt{1-\left(\frac{x}{3}\right)^{2}}}.</m></p>
       </statement>
+      <solution><p><m>\int\frac{du}{\sqrt{1-u^2}}</m>, <m>u=\tfrac x3</m>: <m>\arcsin\tfrac x3+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-22">
       <statement>
         <p><m>\displaystyle \int \frac{dx}{\sqrt{1-25x^{2}}}.</m></p>
       </statement>
+      <solution><p><m>u=5x</m>: <m>\tfrac15\arcsin5x+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-23">
       <statement>
         <p><m>\displaystyle \int \frac{dx}{1+9x^{2}}.</m></p>
       </statement>
+      <solution><p><m>u=3x</m>: <m>\tfrac13\arctan3x+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-24">
       <statement>
         <p><m>\displaystyle \int \frac{dx}{\sqrt{4-x^{2}}}.</m></p>
       </statement>
+      <solution><p><m>\arcsin\tfrac x2+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-25">
       <statement>
         <p><m>\displaystyle \int \frac{dx}{2x^{2}+9}.</m></p>
       </statement>
+      <solution><p><m>\dfrac12\int\dfrac{dx}{x^2+\frac92}=\dfrac{1}{3\sqrt2}\arctan\dfrac{\sqrt2\,x}{3}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-26">
       <statement>
         <p><m>\displaystyle \int \frac{dx}{\sqrt{4-9x^{2}}}.</m></p>
       </statement>
+      <solution><p><m>u=3x</m>: <m>\tfrac13\arcsin\tfrac{3x}{2}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-27">
       <statement>
         <p><m>\displaystyle \int \frac{x\, dx}{x^{4}+1}.</m></p>
       </statement>
+      <solution><p><m>u=x^2</m>: <m>\tfrac12\int\frac{du}{u^2+1}=\tfrac12\arctan x^2+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-28">
       <statement>
         <p><m>\displaystyle \int \frac{x\, dx}{a^{2}-x^{4}}.</m></p>
       </statement>
+      <solution><p><m>u=x^2</m>: <m>\tfrac12\int\frac{du}{a^2-u^2}=\dfrac{1}{4a}\ln\left|\dfrac{a+x^2}{a-x^2}\right|+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-29">
       <statement>
         <p><m>\displaystyle \int \frac{x^{2} dx}{x^{6}+4}.</m></p>
       </statement>
+      <solution><p><m>u=x^3</m>: <m>\tfrac13\int\frac{du}{u^2+4}=\tfrac16\arctan\tfrac{x^3}{2}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-30">
       <statement>
         <p><m>\displaystyle \int \frac{x^{3} dx}{\sqrt{1-x^{8}}}.</m></p>
       </statement>
+      <solution><p><m>u=x^4</m>: <m>\tfrac14\int\frac{du}{\sqrt{1-u^2}}=\tfrac14\arcsin x^4+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-31">
       <statement>
         <p><m>\displaystyle \int \frac{e^{x} dx}{e^{2x}+4}.</m></p>
       </statement>
+      <solution><p><m>u=e^x</m>: <m>\int\frac{du}{u^2+4}=\tfrac12\arctan\tfrac{e^x}{2}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-32">
       <statement>
         <p><m>\displaystyle \int \frac{2^{x} dx}{\sqrt{1-4^{x}}}.</m></p>
       </statement>
+      <solution><p><m>u=2^x</m>, <m>du=2^x\ln2\,dx</m>, <m>4^x=u^2</m>: <m>\dfrac{\arcsin2^x}{\ln2}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-33">
       <statement>
         <p><m>\displaystyle \int \frac{\cos\alpha\, d\alpha}{a^{2}+\sin^{2}\alpha}.</m></p>
       </statement>
+      <solution><p><m>u=\sin\alpha</m>: <m>\dfrac1a\arctan\dfrac{\sin\alpha}{a}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-34">
       <statement>
         <p><m>\displaystyle \int \frac{e^{2x}-1}{e^{x}}\, dx.</m></p>
       </statement>
+      <solution><p><m>e^x-e^{-x}</m>-ийг интегралчилна: <m>e^x+e^{-x}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-35">
       <statement>
         <p><m>\displaystyle \int (e^{x}+1)^{3} dx.</m></p>
       </statement>
+      <solution><p><m>(e^x+1)^3=e^{3x}+3e^{2x}+3e^x+1</m>: <m>\tfrac13e^{3x}+\tfrac32e^{2x}+3e^x+x+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-36">
       <statement>
         <p><m>\displaystyle \int \frac{1+x}{\sqrt{1-x^{2}}}\, dx.</m></p>
       </statement>
+      <solution><p><m>\int\frac{dx}{\sqrt{1-x^2}}+\int\frac{x\,dx}{\sqrt{1-x^2}}=\arcsin x-\sqrt{1-x^2}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-37">
       <statement>
         <p><m>\displaystyle \int \frac{8x-1}{x^{2}+9} dx.</m></p>
       </statement>
+      <solution><p><m>4\int\frac{2x\,dx}{x^2+9}-\int\frac{dx}{x^2+9}=4\ln(x^2+9)-\tfrac13\arctan\tfrac x3+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-38">
       <statement>
         <p><m>\displaystyle \int \frac{\sqrt{1-x}}{1+x}\, dx.</m></p>
       </statement>
+      <solution><p><m>t=\sqrt{1-x}</m>, <m>x=1-t^2</m>, <m>dx=-2t\,dt</m>, <m>1+x=2-t^2</m>: <m>\displaystyle-2\int\frac{t^2dt}{2-t^2}=\int\Big(2-\frac{4}{2-t^2}\Big)dt=2t-\sqrt2\ln\left|\frac{\sqrt2+t}{\sqrt2-t}\right|+C</m>, энд <m>t=\sqrt{1-x}</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-39">
       <statement>
         <p><m>\displaystyle \int \frac{x(1-x^{2})}{1+x^{4}}\, dx.</m></p>
       </statement>
+      <solution><p><m>u=x^2</m>: <m>\displaystyle\frac12\int\frac{1-u}{1+u^2}du=\frac12\arctan x^2-\frac14\ln(1+x^4)+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-40">
       <statement>
         <p><m>\displaystyle \int \frac{1+x-x^{2}}{\sqrt{(1-x^{2})^{3}}}\, dx.</m></p>
       </statement>
+      <solution><p><m>\dfrac{1+x-x^2}{(1-x^2)^{3/2}}=\dfrac{1}{\sqrt{1-x^2}}+\dfrac{x}{(1-x^2)^{3/2}}</m> тул <m>\arcsin x+\dfrac{1}{\sqrt{1-x^2}}+C</m>.</p></solution>
     </exercise>
     <exercise xml:id="hw13-41">
       <statement>
         <p><m>\displaystyle \int \frac{dx}{(x+\sqrt{x^{2}-1})^{2}}.</m></p>
       </statement>
+      <solution><p><m>(x+\sqrt{x^2-1})(x-\sqrt{x^2-1})=1</m> тул интеграл доорх нь <m>(x-\sqrt{x^2-1})^2=2x^2-1-2x\sqrt{x^2-1}</m>. Иймд <m>\tfrac23x^3-x-\tfrac23(x^2-1)^{3/2}+C</m>.</p></solution>
     </exercise>
   </exercises>
 </section>

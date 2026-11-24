@@ -39,6 +39,16 @@
         <li><m>\displaystyle \int (\arcsin x + \arccos x)\,dx.</m></li>
       </ol></p>
       </statement>
+      <hint>
+      <p>Интеграл доорх илэрхийллийг жагсаалтад байгаа функцүүдийн шугаман эвлүүлэг болгож хувирга:</p>
+      <p><ul>
+      <li>Язгуурыг зэрэгт шилжүүлж, хаалтыг задлаад гишүүнчлэн хуваа (1, 2, 10, 11, 13–16). Жишээ нь (10)-д <m>(\sqrt x+1)(x-\sqrt x+1)=x^{3/2}+1</m>.</li>
+      <li>(5) <m>a^xe^x=(ae)^x</m>; (18) <m>3-2\left(\tfrac32\right)^x</m>.</li>
+      <li>Тригонометрт: <m>1+\cos2x=2\cos^2x</m> (19), <m>\cos2x=\cos^2x-\sin^2x</m> (20, 25), <m>\tan^2x=\tfrac{1}{\cos^2x}-1</m> (21), <m>2\sin^2\tfrac x2=1-\cos x</m> (22).</li>
+      <li>(23), (24): хүртвэрийг хуваарийн хэсгүүдээр илэрхийл: <m>1+2x^2=(1+x^2)+x^2</m>, <m>(1+x)^2=(1+x^2)+2x</m>.</li>
+      <li>(17) <m>\displaystyle\int\frac{dx}{a^2-x^2}=\frac{1}{2a}\ln\left|\frac{a+x}{a-x}\right|+C</m>. (26) <m>\arcsin x+\arccos x</m> тогтмол.</li>
+      </ul></p>
+      </hint>
     </exercise>
     <exercise xml:id="sem13-2">
       <statement>
@@ -72,6 +82,16 @@
         <li><m>\displaystyle \int \cos 3x\, dx.</m></li>
       </ol></p>
       </statement>
+      <hint>
+      <p>Гол санаа: <m>\int f(\varphi(x))\varphi'(x)\,dx=\int f(u)\,du</m>, <m>u=\varphi(x)</m>. Интеграл дотроос <q>дотор функц</q>-ийн уламжлалыг хайж ол:</p>
+      <p><ul>
+      <li>(4)–(9): <m>u=a+bx</m>, <m>dx=\tfrac{du}{b}</m>.</li>
+      <li>(10)–(16): <m>u</m> нь язгуур доорх олон гишүүнт; <m>du</m> нь <m>x\,dx</m>, <m>x^2dx</m>, <m>x^3dx</m>, <m>x^4dx</m>, <m>(6x-5)dx</m>-ээс тогтмолоор ялгагдана.</li>
+      <li>(17)–(20): <m>u=\sin x</m> эсвэл <m>u=\cos x</m>; (20)-д <m>\sin2x=2\sin x\cos x</m>.</li>
+      <li>(21) <m>u=\ln x</m>; (22) <m>u=\arctan x</m>; (23) <m>u=\arcsin x</m>; (24) <m>d(\tan x)=\tfrac{dx}{\cos^2x}</m>, <m>u=1+\tan x</m>.</li>
+      <li>(25) ба (26)-г харьцуул: <m>dx=\tfrac13\,d(3x)</m>.</li>
+      </ul></p>
+      </hint>
     </exercise>
   </exercises>
 </section>

@@ -884,68 +884,109 @@
         <statement>
           <p>Үнэний хүснэгтээр шалга: <m>(P\land Q)\Rightarrow P</m>.</p>
         </statement>
+        <solution>
+        <p><m>P\land Q</m> үнэн байх цорын ганц мөрөнд <m>P</m> үнэн тул илтгэл худал болох (<m>1\Rightarrow 0</m>) мөр байхгүй:</p>
+        <p><m>(1,1)\colon 1\Rightarrow1=1</m>, <m>(1,0)\colon 0\Rightarrow1=1</m>, <m>(0,1)\colon 0\Rightarrow0=1</m>, <m>(0,0)\colon 0\Rightarrow0=1</m>. Бүх мөрөнд 1 тул тавтологи.</p>
+        </solution>
       </exercise>
       <exercise xml:id="logic-hw-2">
         <statement>
           <p>Үнэний хүснэгтээр шалга: <m>(P\lor Q)\Leftrightarrow(\lnot P\Rightarrow Q)</m>.</p>
         </statement>
+        <solution>
+        <p><m>\lnot P\Rightarrow Q</m> нь зөвхөн <m>\lnot P=1,\ Q=0</m>, өөрөөр хэлбэл <m>P=Q=0</m> үед худал. <m>P\lor Q</m> мөн яг энэ үед л худал. Иймд дөрвөн мөрөнд хоёр тал ижил утгатай: <m>(1,1)\colon 1,1</m>; <m>(1,0)\colon 1,1</m>; <m>(0,1)\colon 1,1</m>; <m>(0,0)\colon 0,0</m>. Эквиваленц үргэлж үнэн.</p>
+        </solution>
       </exercise>
       <exercise xml:id="logic-hw-3">
         <statement>
           <p>Эсрэг жишээ ол: <q>Бүх бүхэл тоо анхны эсвэл тэгш тоо</q>.</p>
         </statement>
+        <solution>
+        <p><m>9</m> нь бүхэл тоо, тэгш биш, анхны ч биш (<m>9=3\cdot 3</m>). Мөн <m>1</m>, <m>-3</m>, <m>15</m> гэх мэт.</p>
+        </solution>
       </exercise>
       <exercise xml:id="logic-hw-4">
         <statement>
           <p>Эсрэгээс нь батал: хэрэв <m>n^2</m> сондгой бол <m>n</m> сондгой.</p>
         </statement>
+        <solution>
+        <p>Эсрэгээс нь: <m>n^2</m> сондгой боловч <m>n</m> тэгш, <m>n=2k</m> гэж үзье. Тэгвэл <m>n^2=4k^2=2(2k^2)</m> тэгш болж, нөхцөлтэй зөрчилдөнө. Иймд <m>n</m> сондгой.</p>
+        </solution>
       </exercise>
       <exercise xml:id="logic-hw-5">
         <statement>
           <p>Эквивалент: <m>(P\Rightarrow Q)\Leftrightarrow(\lnot Q\Rightarrow\lnot P)</m>.</p>
         </statement>
+        <solution>
+        <p><m>P\Rightarrow Q\equiv \lnot P\lor Q</m> ба <m>\lnot Q\Rightarrow\lnot P\equiv \lnot\lnot Q\lor\lnot P\equiv Q\lor\lnot P</m>. Логик нэмэх солигдох чанартай тул хоёр тал тэнцүү. (Үнэний хүснэгтээр: хоёулаа зөвхөн <m>P=1,Q=0</m> үед худал.)</p>
+        </solution>
       </exercise>
       <exercise xml:id="logic-hw-6">
         <statement>
           <p>Эсрэг жишээ: <q>Бүх тэгш тоо анхны тоо</q>.</p>
         </statement>
+        <solution>
+        <p><m>4=2\cdot2</m> тэгш боловч анхны биш.</p>
+        </solution>
       </exercise>
       <exercise xml:id="logic-hw-7">
         <statement>
           <p>Шууд батал: хэрэв <m>a,b</m> тэгш бол <m>a+b</m> тэгш.</p>
         </statement>
+        <solution>
+        <p><m>a=2k</m>, <m>b=2l</m> (<m>k,l\in\Z</m>) гэвэл <m>a+b=2(k+l)</m>, <m>k+l\in\Z</m> тул <m>a+b</m> тэгш.</p>
+        </solution>
       </exercise>
       <exercise xml:id="logic-hw-8">
         <statement>
           <p>Эсрэг жишээ: <q>Хэрэв <m>ab</m> тэгш бол <m>a</m> ба <m>b</m> хоёулаа тэгш</q>.</p>
         </statement>
+        <solution>
+        <p><m>a=2</m>, <m>b=3</m>: <m>ab=6</m> тэгш боловч <m>b</m> сондгой. (Зөв дүгнэлт нь: ядаж нэг нь тэгш.)</p>
+        </solution>
       </exercise>
       <exercise xml:id="logic-hw-9">
         <statement>
           <p>Батал: хэрэв <m>a</m> 4-т хуваагддаг бол <m>a^2</m> 8-д хуваагдана.</p>
         </statement>
+        <solution>
+        <p><m>a=4k</m> гэвэл <m>a^2=16k^2=8\cdot(2k^2)</m> тул <m>8\mid a^2</m>. (Үнэндээ <m>16\mid a^2</m>.)</p>
+        </solution>
       </exercise>
       <exercise xml:id="logic-hw-10">
         <statement>
           <p>Эсрэг жишээ гарга: <q>Бүх анхны тоо сондгой</q>.</p>
         </statement>
+        <solution>
+        <p><m>2</m> анхны тоо боловч тэгш.</p>
+        </solution>
       </exercise>
       <exercise xml:id="logic-hw-11">
         <statement>
           <p>Тавтологи болохыг батал:
           <m>((P\Rightarrow Q)\land(Q\Rightarrow R))\Rightarrow(P\Rightarrow R)</m>.</p>
         </statement>
+        <solution>
+        <p>Илтгэл худал байх цорын ганц боломж нь өмнөх хэсэг үнэн, дараах хэсэг <m>P\Rightarrow R</m> худал, өөрөөр хэлбэл <m>P=1</m>, <m>R=0</m>. Тэгвэл <m>P\Rightarrow Q</m> үнэн байхын тулд <m>Q=1</m>, харин <m>Q\Rightarrow R</m> нь <m>1\Rightarrow0=0</m> болж өмнөх хэсэг худал болно. Зөрчил. Иймд илтгэл үргэлж үнэн (тавтологи).</p>
+        </solution>
       </exercise>
       <exercise xml:id="logic-hw-12">
         <statement>
           <p>Тавтологи болохыг батал (resolution):
           <m>\big((P\lor Q)\land(\lnot P\lor R)\land(\lnot Q\lor R)\big)\Rightarrow R</m>.</p>
         </statement>
+        <solution>
+        <p>Илтгэл худал гэж үзье: <m>R=0</m> ба гурван нөхцөл бүгд үнэн. <m>R=0</m> тул <m>\lnot P\lor R</m> үнэн байхын тулд <m>P=0</m>, <m>\lnot Q\lor R</m> үнэн байхын тулд <m>Q=0</m>. Тэгвэл <m>P\lor Q=0</m>, зөрчил. Иймд тавтологи.</p>
+        </solution>
       </exercise>
       <exercise xml:id="logic-hw-13">
         <statement>
           <p>Бүх анхны <m>p</m>-ийн хувьд, хэрэв <m>p\mid n^2</m> бол <m>p\mid n</m> болохыг батал.</p>
         </statement>
+        <solution>
+        <p><m>n=p_1^{a_1}\cdots p_k^{a_k}</m> анхны үржигдэхүүнд задрал гэвэл <m>n^2=p_1^{2a_1}\cdots p_k^{2a_k}</m> нь ижил анхны тоонуудаас тогтоно. Задралын ганц байх чанараар <m>p\mid n^2</m> бол <m>p</m> нь эдгээрийн нэг, тэгэхээр <m>p\mid n</m>.</p>
+        <p>Өөр арга (Евклидийн лемм): <m>p</m> анхны ба <m>p\mid ab</m> бол <m>p\mid a</m> эсвэл <m>p\mid b</m>. <m>a=b=n</m> гэж авахад шууд гарна.</p>
+        </solution>
       </exercise>
       <exercise xml:id="logic-hw-14">
         <statement>
@@ -954,11 +995,18 @@
         <hint>
           <p>Эсрэгээс нь <m>\sqrt{2}+\sqrt{3}=\tfrac{a}{b}</m> гэж үз.</p>
         </hint>
+        <solution>
+        <p><m>\sqrt2+\sqrt3=r\in\Q</m> гэж үзье. Квадрат зэрэгт дэвшүүлбэл <m>5+2\sqrt6=r^2</m>, эндээс <m>\sqrt6=\dfrac{r^2-5}{2}\in\Q</m>.</p>
+        <p>Гэтэл <m>\sqrt6=\tfrac{a}{b}</m> (үл хураагдах) бол <m>a^2=6b^2</m>, тэгэхээр <m>a</m> тэгш, <m>a=2c</m>, <m>2c^2=3b^2</m>, тэгэхээр <m>b</m> тэгш. Хоёулаа тэгш болж зөрчил. Иймд <m>\sqrt2+\sqrt3</m> иррационал.</p>
+        </solution>
       </exercise>
       <exercise xml:id="logic-hw-15">
         <statement>
           <p>Анхны тоо <em>хязгааргүй олон</em> байдгийг батал.</p>
         </statement>
+        <solution>
+        <p>(Евклид.) Анхны тоо төгсгөлөг олон, <m>p_1,\dots,p_k</m> гэж үзье. <m>N=p_1p_2\cdots p_k+1</m> тоог авъя. <m>N\gt1</m> тул ямар нэг анхны хуваагчтай; тэр нь <m>p_i</m>-ийн аль нэг байх ёстой. Гэтэл <m>N</m>-ийг <m>p_i</m>-д хуваахад үлдэгдэл <m>1</m> гарна. Зөрчил.</p>
+        </solution>
       </exercise>
       <exercise xml:id="logic-hw-16">
         <statement>
@@ -966,12 +1014,20 @@
           <m>\forall M \gt 0, \exists n \in \mathbb{N}, (a_n \gt M)</m> чанар биелдэг байг.
           Ийм дараалалын жишээ гарга.</p>
         </statement>
+        <solution>
+        <p>Энэ чанар нь дараалал дээрээсээ зааглагдаагүй гэсэн үг. Жишээ: <m>a_n=n</m> (<m>M</m> өгөгдвөл <m>n\gt M</m> авна). Сонирхолтой жишээ: <m>a_n=n\,(1+(-1)^n)</m>, өөрөөр хэлбэл <m>0,4,0,8,0,12,\dots</m>: зааглагдаагүй боловч хязгааргүй рүү тэмүүлэхгүй.</p>
+        </solution>
       </exercise>
       <exercise xml:id="logic-hw-17">
         <statement>
           <p>Дараах өгүүлбэрийн үгүйсгэлийг кванторыг зөв байршуулж бүрэн бич:
           <me>\forall\,\epsilon\gt 0, \exists\,\delta\gt 0, \big(|x-1|\lt \delta \Rightarrow |f(x)-f(1)|\lt \epsilon\big).</me></p>
         </statement>
+        <solution>
+        <p><m>\lnot\forall=\exists\lnot</m>, <m>\lnot\exists=\forall\lnot</m>, <m>\lnot(A\Rightarrow B)\equiv A\land\lnot B</m> гэдгийг ашиглавал:</p>
+        <me>\exists\,\epsilon\gt0,\ \forall\,\delta\gt0,\ \exists\,x:\ \big(|x-1|\lt\delta\ \land\ |f(x)-f(1)|\ge\epsilon\big).</me>
+        <p>(Анхны өгүүлбэрт <m>x</m> нь далд байдлаар <m>\forall x</m> байсан тул үгүйсгэлд <m>\exists x</m> гарна.)</p>
+        </solution>
       </exercise>
     </exercises>
   </section>

@@ -230,56 +230,67 @@ width="100%" aspect="4:3" />
 <statement>
 <p><m>2+3\neq 6</m></p>
 </statement>
+  <hint><p>Эхлээд N1, N2-оор <m>2+3=2+S(2)=S(2+2)=\dots=5</m> гэж бод. Дараа нь <m>5=6</m> гэж үзвэл <m>S(4)=S(5)</m> болж, A4-ийг дахин дахин хэрэглэн <m>1=S(1)</m> гэсэн A3-тай зөрчилдөх тэнцэтгэлд хүрнэ.</p></hint>
 </exercise>
 <exercise xml:id="nat-sem-2">
 <statement>
 <p><m>2\cdot 4=8</m></p>
 </statement>
+  <hint><p>U2-ийг хэрэглэж <m>2\cdot4=2\cdot S(3)=2\cdot3+2</m>, үргэлжлүүлээд <m>2\cdot1=2</m> (U1) хүртэл бууруул. Дараа нь нэмэхийг N1, N2-оор бод.</p></hint>
 </exercise>
 <exercise xml:id="nat-sem-3">
 <statement>
 <p><m>n\cdot 3=n+n+n</m></p>
 </statement>
+  <hint><p><m>3=S(2)</m>, <m>2=S(1)</m> гэж бичээд U2-ийг хоёр удаа, U1-ийг нэг удаа хэрэглэ.</p></hint>
 </exercise>
 <exercise xml:id="nat-sem-4">
 <statement>
 <p><m>a\lt b \Rightarrow</m> <m>S(a)\leq b</m></p>
 </statement>
+  <hint><p><m>b=a+k</m> гэж бич. <m>k=1</m> бол <m>b=S(a)</m>. <m>k\ne1</m> бол <m>k=S(j)=1+j</m> гэж бичээд ассоциатив чанараар <m>b=S(a)+j</m> гэж харуул.</p></hint>
 </exercise>
 <exercise xml:id="nat-sem-5">
 <statement>
 <p><m>a\lt b \Rightarrow</m> <m>a+c\leq b+c</m></p>
 </statement>
+  <hint><p><m>b=a+k</m> бол <m>b+c=(a+k)+c</m>. Коммутатив, ассоциатив чанараар <m>(a+c)+k</m> болгож хувирга.</p></hint>
 </exercise>
 <exercise xml:id="nat-sem-6">
 <statement>
 <p><m>a\lt b\Leftrightarrow a\cdot c\lt b\cdot c</m></p>
 </statement>
+  <hint><p><m>\Rightarrow</m>: <m>b=a+k</m> бол дистрибутив чанараар <m>bc=ac+kc</m>. <m>\Leftarrow</m>: трихотомийг ашигла. <m>a=b</m> эсвэл <m>a\gt b</m> бол <m>ac\lt bc</m> биелэхгүйг харуул.</p></hint>
 </exercise>
 <exercise xml:id="nat-sem-7">
 <statement>
 <p><m>a^n\geq 1</m></p>
 </statement>
+  <hint><p><m>n</m>-ээр индукцлэ. Бүх натурал тоо <m>\ge1</m> (<m>a=1</m> эсвэл <m>a=1+k</m>) гэдэг болон <m>a^{S(n)}=a^n\cdot a</m>, өмнөх бодлогыг ашигла.</p></hint>
 </exercise>
 <exercise xml:id="nat-sem-8">
 <statement>
 <p><m>a^{m+n}=a^m\cdot a^n</m>-г <m>n</m> дээр индукцлэн батал.</p>
 </statement>
+  <hint><p>Суурь <m>n=1</m>: <m>a^{m+1}=a^{S(m)}=a^m\cdot a=a^m\cdot a^1</m>. Алхамд <m>a^{m+S(n)}=a^{S(m+n)}=a^{m+n}\cdot a</m> гэж бичээд үржихийн ассоциатив чанарыг ашигла.</p></hint>
 </exercise>
 <exercise xml:id="nat-sem-9">
 <statement>
 <p><m>a^{mn}=(a^m)^n</m>-г <m>n</m> дээр индукцлэн батал.</p>
 </statement>
+  <hint><p>Алхам: <m>(a^m)^{S(n)}=(a^m)^n\cdot a^m=a^{mn}\cdot a^m</m>. Өмнөх бодлого (8) болон <m>m\cdot S(n)=mn+m</m> (U2)-г ашигла.</p></hint>
 </exercise>
 <exercise xml:id="nat-sem-10">
 <statement>
 <p><m>1+2+\cdots+n=\dfrac{n(n+1)}{2}</m> батал.</p>
 </statement>
+  <hint><p>Алхамд <m>\dfrac{n(n+1)}{2}+(n+1)</m>-ийг <m>(n+1)</m>-ээр хаалтын гадна гарга.</p></hint>
 </exercise>
 <exercise xml:id="nat-sem-11">
 <statement>
 <p><m>1^2+2^2+\cdots+n^2=\dfrac{n(n+1)(2n+1)}{6}</m> батал.</p>
 </statement>
+  <hint><p>Алхамд <m>\dfrac{n(n+1)(2n+1)}{6}+(n+1)^2=\dfrac{(n+1)\big(n(2n+1)+6(n+1)\big)}{6}</m>, дараа нь <m>2n^2+7n+6=(n+2)(2n+3)</m>.</p></hint>
 </exercise>
 <exercise xml:id="nat-sem-12">
 <statement>
@@ -288,6 +299,7 @@ width="100%" aspect="4:3" />
 \qquad
 \binom{n}{k}=\frac{n!}{k!(n-k)!}\ (0\le k\le n).</me> индукцээр батал.</p>
 </statement>
+  <hint><p><m>(a+b)^{n+1}=(a+b)(a+b)^n</m> гэж задлаад ижил <m>a^{n+1-k}b^k</m> гишүүдийг цуглуул. Паскалийн адилтгал <m>\binom{n}{k}+\binom{n}{k-1}=\binom{n+1}{k}</m> хэрэгтэй (үүнийг факториалаар шалга).</p></hint>
 </exercise>
 <exercise xml:id="nat-sem-13">
 <statement>
@@ -297,12 +309,14 @@ width="100%" aspect="4:3" />
 <me>a^n+b^n=(a+b)(\sum_{k=0}^{n-1}(-1)^k a^{\,n-1-k} b^{\,k})</me>
 байдгийг батал.</p>
 </statement>
+  <hint><p>Баруун талыг задалбал <m>a\cdot\sum</m> ба <m>b\cdot\sum</m> хоёрын гишүүд эхний ба сүүлчийнхээс бусад нь хоорондоо устана (телескоп нийлбэр). Сондгой <m>n</m>-ийн хувьд эхний томьёонд <m>b</m>-г <m>-b</m>-ээр соль: <m>(-b)^n=-b^n</m>.</p></hint>
 </exercise>
 <exercise xml:id="nat-sem-14">
 <statement>
 <p><m>a\gt b\gt 0</m> ба <m>n\in\mathbb{N}</m> байг.
 <me>a^n-b^n \;\gt \; n\,b^{\,n-1}(a-b).</me> батал.</p>
 </statement>
+  <hint><p>13-р бодлогын томьёогоор <m>a^n-b^n=(a-b)\sum_{k=0}^{n-1}a^{n-1-k}b^k</m>. <m>a\gt b</m> тул нийлбэрийн гишүүн бүр <m>\ge b^{n-1}</m>, ба <m>k\lt n-1</m> үед хатуу их. Анхаар: <m>n=1</m> үед тэнцэтгэл гарна, тиймээс <m>n\ge2</m> байх ёстой.</p></hint>
 </exercise>
 </exercises>
 </section>
@@ -314,46 +328,87 @@ width="100%" aspect="4:3" />
 <statement>
 <p><m>a+S(b)=S(a+b)</m>-г <m>b</m>-ээр индукцлэн батла.</p>
 </statement>
+  <solution>
+  <p>Энэ бол яг N2 аксиом (нэмэх үйлдлийн тодорхойлолт) тул нэмэлт баталгаа шаардахгүй. Индукцээр шалгавал: <m>b=1</m> үед <m>a+S(1)=a+2=S(a+1)</m> нь N2-ийн тухайн тохиолдол; дурын <m>b</m>-д мөн N2-оор шууд биелнэ.</p>
+  </solution>
 </exercise>
 <exercise xml:id="nat-hw-2">
 <statement>
 <p><m>S(a)+b=S(a+b)</m>-г <m>b</m>-ээр индукцлэн батла.</p>
 </statement>
+  <solution>
+  <p><m>b</m>-ээр индукцлэе. Суурь: <m>S(a)+1=S(S(a))=S(a+1)</m> (N1-ийг хоёр удаа).</p>
+  <p>Алхам: <m>S(a)+b=S(a+b)</m> гэж үзье. Тэгвэл
+  <m>S(a)+S(b)=S\big(S(a)+b\big)=S\big(S(a+b)\big)=S\big(a+S(b)\big)</m> (N2, таамаглал, N2).</p>
+  </solution>
 </exercise>
 <exercise xml:id="nat-hw-3">
 <statement>
 <p><m>(a+b)^2=a^2+2ab+b^2</m> томьёог зөвхөн дистрибутив, коммутатив, ассоциатив чанар ашиглан гарга.</p>
 </statement>
+  <solution>
+  <p><m>x^2=x^{S(1)}=x^1\cdot x=x\cdot x</m> (Z1, Z2). Дистрибутив чанараар
+  <m>(a+b)^2=(a+b)\cdot a+(a+b)\cdot b=a\cdot a+b\cdot a+a\cdot b+b\cdot b</m>.
+  Коммутатив чанараар <m>b\cdot a=a\cdot b</m>, ба <m>ab+ab=ab\cdot1+ab=ab\cdot S(1)=ab\cdot2=2ab</m> (U1, U2). Иймд <m>(a+b)^2=a^2+2ab+b^2</m>.</p>
+  </solution>
 </exercise>
 <exercise xml:id="nat-hw-4">
 <statement>
 <p><m>a\le b\Rightarrow a\cdot c\le b\cdot c</m> батал.</p>
 </statement>
+  <solution>
+  <p><m>a=b</m> бол <m>ac=bc</m>. <m>a\lt b</m> бол <m>b=a+k</m>, дистрибутив чанараар <m>bc=ac+kc</m>, тэгэхээр <m>ac\lt bc</m>. Аль ч тохиолдолд <m>ac\le bc</m>.</p>
+  </solution>
 </exercise>
 <exercise xml:id="nat-hw-5">
 <statement>
 <p><m>a\le b\Rightarrow a\le b+ c</m> батал.</p>
 </statement>
+  <solution>
+  <p><m>a=b</m> бол <m>b+c=a+c</m> тул <m>a\lt b+c</m>. <m>a\lt b</m> бол <m>b=a+k</m>, <m>b+c=a+(k+c)</m> тул <m>a\lt b+c</m>. Иймд <m>a\le b+c</m> (үнэндээ хатуу).</p>
+  </solution>
 </exercise>
 <exercise xml:id="nat-hw-6">
 <statement>
 <p><m>a\le b</m> ба <m>b\lt c</m> бол <m>a\lt c</m> батал..</p>
 </statement>
+  <solution>
+  <p><m>c=b+\ell</m>. <m>a=b</m> бол <m>c=a+\ell</m>. <m>b=a+k</m> бол <m>c=(a+k)+\ell=a+(k+\ell)</m>. Аль алинд <m>a\lt c</m>.</p>
+  </solution>
 </exercise>
 <exercise xml:id="nat-hw-7">
 <statement>
 <p><m>a\ne 1\Rightarrow \exists!\,m\, a=S(m)</m> батал.</p>
 </statement>
+  <solution>
+  <p><em>Оршин байх.</em> Бүлгийн эхэнд A5-аар <q><m>b=1</m> эсвэл <m>b=S(n)</m> байх <m>n</m> олдоно</q> гэдгийг бүх <m>b</m>-д баталсан. <m>a\ne1</m> тул <m>a=S(m)</m> байх <m>m</m> олдоно.</p>
+  <p><em>Ганц байх.</em> <m>a=S(m)=S(m')</m> ба <m>m\ne m'</m> бол A4-өөр <m>S(m)\ne S(m')</m>, зөрчил. Иймд <m>m=m'</m>.</p>
+  </solution>
 </exercise>
 <exercise xml:id="nat-hw-8">
 <statement>
 <p><m>a\cdot b=1\Rightarrow a=1</m> ба <m>b=1</m> батал.</p>
 </statement>
+  <solution>
+  <p>Туслах дүгнэлт: <m>\forall x,y</m>, <m>x+y\ne1</m>. Учир нь <m>y=1</m> бол <m>x+1=S(x)\ne1</m> (A3), <m>y=S(z)</m> бол <m>x+y=S(x+z)\ne1</m>.</p>
+  <p>Одоо <m>a\ne1</m> гэж үзье. Тэгвэл <m>a=S(m)=m+1</m> тул <m>ab=b\cdot a=b\cdot S(m)=bm+b\ne1</m>. Зөрчил, тэгэхээр <m>a=1</m>. Тэгвэл <m>1=ab=1\cdot b=b</m>.</p>
+  </solution>
 </exercise>
 <exercise xml:id="nat-hw-9">
 <statement>
 <p><m>a\le b\iff \exists k,\, b=a+k</m> трихотомийг тодорхойлолт ашиглан бүрэн батал.</p>
 </statement>
+  <solution>
+  <p><em>Тайлбар.</em> <m>\N=\{1,2,\dots\}</m> үед <m>a=b</m> бол <m>b=a+k</m> байх <m>k\in\N</m> олдохгүй тул тодорхойлолт ёсоор <m>a\lt b\iff\exists k\ (b=a+k)</m>, харин <m>a\le b\iff(a\lt b\lor a=b)</m>. Бодлогын гол утга нь трихотомийг батлах явдал.</p>
+  <p><em>Лемм.</em> <m>\forall x,k</m>: <m>x+k\ne x</m>. <m>x</m>-ээр индукц: <m>1+k=S(k)\ne1</m> (A3). Хэрэв <m>x+k\ne x</m> бол <m>S(x)+k=S(x+k)\ne S(x)</m> (2-р бодлого, A4).</p>
+  <p><em>Ядаж нэг нь биелнэ.</em> <m>m</m>-ийг бэхлээд <m>n</m>-ээр индукцлэе. <m>n=1</m>: <m>m=1</m> эсвэл <m>m=S(j)=1+j\gt1</m>. <m>n</m>-д үнэн гэж үзээд <m>S(n)</m>-д шалгая:</p>
+  <p><ul>
+  <li><m>m\lt n</m>, <m>n=m+k</m> бол <m>S(n)=m+S(k)</m> тул <m>m\lt S(n)</m>;</li>
+  <li><m>m=n</m> бол <m>S(n)=m+1</m>, <m>m\lt S(n)</m>;</li>
+  <li><m>m=n+k</m> бол <m>k=1</m> үед <m>m=S(n)</m>, <m>k=S(j)</m> үед <m>m=n+(1+j)=S(n)+j\gt S(n)</m>.</li>
+  </ul></p>
+  <p><em>Нэгээс илүү биелэхгүй.</em> <m>m=n</m> ба <m>n=m+k</m> бол <m>m=m+k</m>, леммтэй зөрчилдөнө. <m>n=m+k</m> ба <m>m=n+\ell</m> бол <m>m=m+(k+\ell)</m>, мөн зөрчил.</p>
+  </solution>
 </exercise>
 </exercises>
 </section>

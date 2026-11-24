@@ -1220,6 +1220,7 @@
           </ol>
         </p>
       </statement>
+      <hint><p>Эхлээд тодорхойлогдох муж тэгш хэмтэй эсэхийг шалга. Дараа нь <m>f(-x)</m>-ийг бодоод <m>f(x)</m> ба <m>-f(x)</m>-тэй харьцуул. <q>Аль нь ч биш</q> гэж батлахад нэг тоон жишээ хангалттай.</p></hint>
       <answer>
         <p>а. тэгш;<nbsp/> б. сондгой (<m>x \ne 0</m>);<nbsp/>
         в. аль нь ч биш (<m>f(1) = 2</m>, <m>f(-1) = 0</m>).</p>
@@ -1239,6 +1240,7 @@
           </ol>
         </p>
       </statement>
+      <hint><p>Олон гишүүнтэд тэгш зэргийн гишүүд тэгш хэсэг, сондгой зэргийнх сондгой хэсэг болно. (в)-д <m>f(-x)=-\dfrac{1}{x+1}</m> гэж бичээд нийтлэг хуваарьт оруул.</p></hint>
       <answer>
         <p>а. <m>(x^2 - 1) + 3x</m>;<nbsp/>
         б. <m>-2x^2 + (x^3 + x)</m>;<nbsp/>
@@ -1261,6 +1263,7 @@
           </ol>
         </p>
       </statement>
+      <hint><p><m>x_1\lt x_2</m> авч <m>f(x_2)-f(x_1)</m>-ийг үржигдэхүүн болгоод тэмдгийг тогтоо. (в)-д <m>\dfrac{1}{x_2}-\dfrac{1}{x_1}=\dfrac{x_1-x_2}{x_1x_2}</m>.</p></hint>
       <answer>
         <p><m>x_1 \lt x_2</m> авч <m>f(x_2) - f(x_1)</m> ялгаврын тэмдгийг
         тогтооно. Жишээ нь б-д
@@ -1280,6 +1283,7 @@
           </ol>
         </p>
       </statement>
+      <hint><p>(а)-д <m>(|x|-1)^2\ge0</m>-ээс <m>1+x^2\ge2|x|</m>. (в)-д бүтэн квадрат ялга.</p></hint>
       <answer>
         <p>а. зааглагдсан: <m>1 + x^2 \geq 2|x|</m> тул
         <m>|f(x)| \leq \dfrac{1}{2}</m>;<nbsp/>
@@ -1300,6 +1304,7 @@
           </ol>
         </p>
       </statement>
+      <hint><p>Бүхэл коэффициенттэй олон гишүүнтийн рационал язгуур <m>p/q</m> бол <m>p</m> нь сул гишүүний, <m>q</m> нь ахлах коэффициентийн хуваагч. Эдгээрийг Хорнерийн схемээр шалгаад, нэг язгуур олсны дараа зэргийг бууруул. (в) нь <m>t=x^2</m> орлуулгаар квадрат тэгшитгэл болно.</p></hint>
       <answer>
         <p>а. <m>x \in \{1,\ 3,\ -2\}</m>;<nbsp/>
         б. <m>x \in \left\{1,\ \dfrac{1}{2},\ -3\right\}</m>;<nbsp/>
@@ -1325,6 +1330,7 @@
           </ol>
         </p>
       </statement>
+      <hint><p>Безугийн теорем: <m>P(x)</m>-ийг <m>x-c</m>-д хуваахад үлдэгдэл нь <m>P(c)</m>. Үлдэгдэлгүй хуваагдах нь <m>P(c)=0</m> гэсэн үг.</p></hint>
       <answer>
         <p>а. <m>P(2) = 9</m>;<nbsp/> б. <m>a = 1</m>;<nbsp/>
         в. <m>k = 4</m>.</p>
@@ -1349,6 +1355,7 @@
           </ol>
         </p>
       </statement>
+      <hint><p>(а) Хоёр функц тэнцүү байхад томьёо төдийгүй тодорхойлогдох муж ижил байх ёстой. (б) <m>y=\dfrac{2x+1}{x-3}</m>-ээс <m>x</m>-ийг <m>y</m>-ээр илэрхийл; ямар <m>y</m>-д энэ боломжгүй вэ?</p></hint>
       <answer>
         <p>а. <m>D(f) = \mathbb{R} \setminus \{1\}</m>; тодорхойлогдох
         муж өөр тул <m>f \ne g</m>;<nbsp/>
@@ -1381,6 +1388,11 @@
           </ol>
         </p>
       </statement>
+      <solution>
+      <p>а. <m>f(-x)=-x^5+x=-f(x)</m>: сондгой.<nbsp/>
+      б. <m>f(-x)=x^2|{-x}|=x^2|x|=f(x)</m>: тэгш.<nbsp/>
+      в. <m>f(1)=4</m>, <m>f(-1)=0</m>, тэгэхээр <m>f(-1)\ne\pm f(1)</m>: аль нь ч биш.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="hw2-ex-2">
@@ -1399,6 +1411,12 @@
           </ol>
         </p>
       </statement>
+      <solution>
+      <p>Бүгдэд <m>x_1\lt x_2</m> авна.</p>
+      <p>а. <m>\sqrt{x_2}-\sqrt{x_1}=\dfrac{x_2-x_1}{\sqrt{x_2}+\sqrt{x_1}}\gt0</m> (<m>x_2\gt0</m> тул хуваарь эерэг).</p>
+      <p>б. <m>f(x_2)-f(x_1)=-3(x_2-x_1)\lt0</m>.</p>
+      <p>в. <m>x_2^3-x_1^3=(x_2-x_1)\Big(\big(x_1+\tfrac{x_2}{2}\big)^2+\tfrac34x_2^2\Big)</m>. Хоёр дахь хаалт <m>\ge0</m> ба зөвхөн <m>x_1=x_2=0</m> үед тэг, гэтэл <m>x_1\ne x_2</m>. Иймд ялгавар эерэг.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="hw2-ex-3">
@@ -1412,6 +1430,11 @@
           </ol>
         </p>
       </statement>
+      <solution>
+      <p>а. <m>0\le\dfrac{x^2}{1+x^2}=1-\dfrac{1}{1+x^2}\lt1</m>: зааглагдсан.<nbsp/>
+      б. <m>2-x^2\le2</m> тул дээрээс зааглагдсан, харин <m>x\to\infty</m> үед <m>-\infty</m> рүү явна, доороос зааглагдаагүй. Иймд зааглагдаагүй.<nbsp/>
+      в. <m>0\le\dfrac{|x|}{1+|x|}\lt1</m>: зааглагдсан.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="hw2-ex-4">
@@ -1431,6 +1454,11 @@
           </ol>
         </p>
       </statement>
+      <solution>
+      <p>а. <m>P(1)=0</m>. Хорнер: коэффициентүүд <m>1,0,-7,6</m> → <m>1,1,-6,\,|\,0</m>, тэгэхээр <m>P(x)=(x-1)(x^2+x-6)=(x-1)(x-2)(x+3)</m>. Язгуур: <m>1,2,-3</m>.</p>
+      <p>б. Үлдэгдэл <m>P(-2)=-16-4+3=-17</m>.</p>
+      <p>в. <m>P(1)=1+p+q=0</m>, <m>P(-2)=-8-2p+q=0</m>. Хасвал <m>9+3p=0</m>, <m>p=-3</m>, <m>q=2</m>. <m>x^3-3x+2=(x-1)^2(x+2)</m>, тэгэхээр гурав дахь язгуур нь мөн <m>x=1</m> (давхар язгуур). (Виетээр: язгууруудын нийлбэр <m>0</m> тул <m>1-2+r=0</m>.)</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="hw2-ex-5">
@@ -1449,6 +1477,11 @@
           </ol>
         </p>
       </statement>
+      <solution>
+      <p>а. <m>x^2-x-6=(x-3)(x+2)\ne0</m> тул <m>D(f)=\R\setminus\{-2,3\}</m>. (Хураахад <m>\tfrac{1}{x-3}</m> болох ч <m>x=-2</m> мужид орохгүй хэвээр.)</p>
+      <p>б. <m>D(f)=\R\setminus\{0\}</m> тэгш хэмтэй, <m>f(-x)=\dfrac{x^2+1}{-x}=-f(x)</m>.</p>
+      <p>в. <m>y=\dfrac{3x-2}{x+1}\Rightarrow y(x+1)=3x-2\Rightarrow x(3-y)=y+2\Rightarrow x=\dfrac{y+2}{3-y}</m>. Иймд <m>f^{-1}(x)=\dfrac{x+2}{3-x}</m>, <m>x\ne3</m> (<m>f</m>-ийн утгын муж <m>\R\setminus\{3\}</m>).</p>
+      </solution>
     </exercise>
   </exercises>
 </section>
@@ -2070,6 +2103,7 @@
           </ol>
         </p>
       </statement>
+      <hint><p>(а) <m>\sin^2x+\cos^2x=1</m>; хоёрдугаар мөчид <m>\cos x\lt0</m>. (б) <m>\sin x\cos x=\dfrac{\sin x\cos x}{\sin^2x+\cos^2x}</m> гэж бичээд хүртвэр, хуваарийг <m>\cos^2x</m>-д хуваа.</p></hint>
       <answer>
         <p>а. <m>\cos x = -\dfrac{4}{5}</m>,
         <m>\tg x = -\dfrac{3}{4}</m>;<nbsp/>
@@ -2091,6 +2125,7 @@
           </ol>
         </p>
       </statement>
+      <hint><p><m>\sin(kx)</m> ба <m>\cos(kx)</m>-ийн үе <m>\tfrac{2\pi}{|k|}</m>, <m>\tg(kx)</m>-ийнх <m>\tfrac{\pi}{|k|}</m>. (б)-д зэргийг бууруулах томьёо хэрэглэ.</p></hint>
       <answer>
         <p>а. үе <m>\dfrac{2\pi}{3}</m>, сондгой;<nbsp/>
         б. <m>\cos^2 x = \dfrac{1 + \cos 2x}{2}</m> тул үе <m>\pi</m>,
@@ -2118,6 +2153,7 @@
           </ol>
         </p>
       </statement>
+      <hint><p>Утгын мужийг сана: <m>\arcsin,\operatorname{arctg}\in[-\tfrac\pi2,\tfrac\pi2]</m>, <m>\arccos,\operatorname{arcctg}\in[0,\pi]</m>. (в)-д <m>\arcsin(\sin a)=a</m> нь зөвхөн <m>a</m> мужид орвол биелнэ; эс бөгөөс ижил синустай өөр өнцгийг ол.</p></hint>
       <answer>
         <p>а. <m>\dfrac{\pi}{3}</m>, <m>\dfrac{2\pi}{3}</m>,
         <m>\dfrac{\pi}{3}</m>;<nbsp/>
@@ -2139,6 +2175,7 @@
           </ol>
         </p>
       </statement>
+      <hint><p><m>\theta=\arccos x</m> гэвэл <m>\cos\theta=x</m>, <m>\theta\in[0,\pi]</m>, тэгэхээр <m>\sin\theta\ge0</m>. <m>\sin\theta=\sqrt{1-\cos^2\theta}</m>. (в)-д <m>\sin2\theta=2\sin\theta\cos\theta</m>.</p></hint>
       <answer>
         <p>а. <m>\sqrt{1 - x^2}</m>;<nbsp/>
         б. <m>\dfrac{\sqrt{1 - x^2}}{x}</m>;<nbsp/>
@@ -2157,6 +2194,7 @@
           </ol>
         </p>
       </statement>
+      <hint><p>Ижил суурьт шилжүүл. (б), (в)-д <m>t=3^x</m> эсвэл <m>t=2^x</m> (<m>t\gt0</m>) орлуулж квадрат тэгшитгэл гарга.</p></hint>
       <answer>
         <p>а. <m>x = 3</m>;<nbsp/>
         б. <m>x \in \{0, 1\}</m>;<nbsp/>
@@ -2176,6 +2214,7 @@
           </ol>
         </p>
       </statement>
+      <hint><p>Эхлээд тодорхойлогдох мужийг бич. (б)-д <m>\lg a+\lg b=\lg(ab)</m>. (в)-д <m>\log_9x=\dfrac{\log_3x}{\log_39}</m>.</p></hint>
       <answer>
         <p>а. <m>x = 19</m>;<nbsp/>
         б. <m>x = 4</m> (<m>x = -3</m> мужид багтахгүй);<nbsp/>
@@ -2195,6 +2234,7 @@
           </ol>
         </p>
       </statement>
+      <hint><p><m>\log_ab+\log_ac=\log_a(bc)</m>, <m>\log_ab-\log_ac=\log_a\tfrac bc</m>, <m>a^{\log_ab}=b</m>.</p></hint>
       <answer>
         <p>а. <m>\lg 1000 = 3</m>;<nbsp/>
         б. <m>\log_5 25 = 2</m>;<nbsp/>
@@ -2229,6 +2269,11 @@
           </ol>
         </p>
       </statement>
+      <solution>
+      <p>а. Гуравдугаар мөчид <m>\sin x\lt0</m>: <m>\sin x=-\sqrt{1-\tfrac{25}{169}}=-\dfrac{12}{13}</m>, <m>\ctg x=\dfrac{\cos x}{\sin x}=\dfrac{5}{12}</m>.</p>
+      <p>б. <m>\dfrac{1-\cos2x}{\sin2x}=\dfrac{2\sin^2x}{2\sin x\cos x}=\dfrac{\sin x}{\cos x}=\tg x</m> (<m>\sin2x\ne0</m> үед).</p>
+      <p>в. Квадрат зэрэгт дэвшүүлбэл <m>1+2\sin x\cos x=\tfrac14</m>, тэгэхээр <m>\sin x\cos x=-\dfrac38</m>.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="hw3-ex-2">
@@ -2249,6 +2294,11 @@
           </ol>
         </p>
       </statement>
+      <solution>
+      <p>а. <m>\dfrac\pi4-\dfrac\pi6=\dfrac{\pi}{12}</m>.</p>
+      <p>б. <m>\theta=\arcsin\tfrac35\in(0,\tfrac\pi2)</m>, <m>\cos\theta=\tfrac45</m>, <m>\tg\theta=\dfrac34</m>.</p>
+      <p>в. <m>\alpha=\operatorname{arctg}2</m>, <m>\beta=\operatorname{arctg}3</m> гэвэл <m>\tg(\alpha+\beta)=\dfrac{2+3}{1-6}=-1</m>. <m>2,3\gt1</m> тул <m>\alpha,\beta\in(\tfrac\pi4,\tfrac\pi2)</m>, тэгэхээр <m>\alpha+\beta\in(\tfrac\pi2,\pi)</m>. Энэ завсарт тангенс нь <m>-1</m> байх цорын ганц өнцөг <m>\tfrac{3\pi}{4}</m>.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="hw3-ex-3">
@@ -2263,6 +2313,11 @@
           </ol>
         </p>
       </statement>
+      <solution>
+      <p>а. <m>t=3^x\gt0</m>: <m>t^2-10t+9=0\Rightarrow t\in\{1,9\}\Rightarrow x\in\{0,2\}</m>.</p>
+      <p>б. <m>2x+3=25\Rightarrow x=11</m> (<m>2x+3\gt0</m> биелнэ).</p>
+      <p>в. <m>x=\log_25=\dfrac{\lg5}{\lg2}\approx2{,}32</m>.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="hw3-ex-4">
@@ -2281,6 +2336,11 @@
           </ol>
         </p>
       </statement>
+      <solution>
+      <p>а. <m>\lg5=\lg\tfrac{10}{2}=1-a</m>.<nbsp/>
+      б. <m>\log_212=\log_2(4\cdot3)=2+a</m>.<nbsp/>
+      в. Суурь солих томьёогоор <m>\log_ab\cdot\log_ba=\dfrac{\ln b}{\ln a}\cdot\dfrac{\ln a}{\ln b}=1</m>.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="hw3-ex-5">
@@ -2300,6 +2360,11 @@
           </ol>
         </p>
       </statement>
+      <solution>
+      <p>а. Хоёр функц харилцан урвуу тул графикууд нь <m>y=x</m> шулууны хувьд тэгш хэмтэй. <m>2^x</m> нь <m>(0,1)</m>-ээр, <m>\log_2x</m> нь <m>(1,0)</m>-ээр гарна. Бүх <m>x\gt0</m>-д <m>2^x\gt x\gt\log_2x</m> тул графикууд огтлолцохгүй.</p>
+      <p>б. <m>x_1\lt x_2</m> бол <m>3^{-x_2}-3^{-x_1}=3^{-x_2}\big(1-3^{\,x_2-x_1}\big)\lt0</m>, учир нь <m>x_2-x_1\gt0</m> тул <m>3^{x_2-x_1}\gt1</m>. Иймд буурах.</p>
+      <p>в. <m>\sqrt{x^2+1}\gt|x|</m> тул муж <m>\R</m> (тэгш хэмтэй). <m>f(-x)=\ln\big(\sqrt{x^2+1}-x\big)=\ln\dfrac{1}{\sqrt{x^2+1}+x}=-f(x)</m>, учир нь <m>(\sqrt{x^2+1}-x)(\sqrt{x^2+1}+x)=1</m>.</p>
+      </solution>
     </exercise>
   </exercises>
 </section>
