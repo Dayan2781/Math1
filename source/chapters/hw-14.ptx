@@ -25,12 +25,6 @@
       </statement>
       <solution><p><m>1+x^4+x^8=(x^4+x^2+1)(x^4-x^2+1)</m>, мөн <m>x^4+x^2+1=(x^2+x+1)(x^2-x+1)</m>, <m>x^4-x^2+1=(x^2+\sqrt3x+1)(x^2-\sqrt3x+1)</m>. Хялбар бутархайд задлаад интегралчилбал</p><p><me>\frac{\sqrt3}{6}\left[\arctan\frac{x}{\sqrt3}+\arctan\frac{x^3+2x}{\sqrt3}\right]+\frac{\sqrt3}{12}\ln\frac{x^2+\sqrt3x+1}{x^2-\sqrt3x+1}+C.</me></p></solution>
     </exercise>
-    <exercise xml:id="hw14-4">
-      <statement>
-        <p><m>\displaystyle \int \frac{dx}{\sqrt{x+\sqrt[3]{x}}}.</m></p>
-      </statement>
-      <solution><p><m>x=t^3</m> гэвэл <m>\displaystyle 3\int t^{3/2}(1+t^2)^{-1/2}dt</m> дифференциал бином гарна: <m>m=\tfrac32</m>, <m>n=2</m>, <m>p=-\tfrac12</m>. <m>p</m>, <m>\tfrac{m+1}{n}=\tfrac54</m>, <m>\tfrac{m+1}{n}+p=\tfrac34</m> гурвын аль нь ч бүхэл биш тул Чебышевийн теоремоор энэ интеграл <alert>элементар функцээр илэрхийлэгдэхгүй</alert>.</p><p>Бодлогын нөхцөл <m>\int\frac{dx}{\sqrt x+\sqrt[3]x}</m> байсан байж магадгүй: <m>x=t^6</m> орлуулбал <m>6\int\frac{t^3dt}{t+1}=2\sqrt x-3\sqrt[3]x+6\sqrt[6]x-6\ln(1+\sqrt[6]x)+C</m>.</p></solution>
-    </exercise>
     <exercise xml:id="hw14-5">
       <statement>
         <p><m>\displaystyle \int x^2\sqrt{\frac{x}{1-x}}\,dx.</m></p>
@@ -217,12 +211,6 @@
       </statement>
       <solution><p>Хэсэгчлэн: <m>u=\arcsin e^x</m>, <m>v=-e^{-x}</m>: <m>-e^{-x}\arcsin e^x+\int\frac{dx}{\sqrt{1-e^{2x}}}</m>. Сүүлийнхэд <m>s=\sqrt{1-e^{2x}}</m> орлуулбал <m>x-\ln\left(1+\sqrt{1-e^{2x}}\right)</m>. Хариу: <m>-e^{-x}\arcsin e^x+x-\ln\left(1+\sqrt{1-e^{2x}}\right)+C</m>.</p></solution>
     </exercise>
-    <exercise xml:id="hw14-36">
-      <statement>
-        <p><m>\displaystyle \int \frac{\arctan \frac{x}{2}}{e^x(1+e^x)}\,dx.</m></p>
-      </statement>
-      <solution><p>Бичигдсэн хэлбэрээр (<m>\arctan\frac{x}{2}</m>) энэ интеграл элементар функцээр илэрхийлэгдэхгүй. Сурах бичгийн эх бодлого нь <m>\displaystyle\int\frac{\arctan e^{x/2}}{e^{x/2}(1+e^x)}dx</m> байх магадлалтай: <m>t=e^{x/2}</m> гэвэл <m>2\int\arctan t\left(\tfrac1{t^2}-\tfrac1{1+t^2}\right)dt</m>, хариу <m>-2e^{-x/2}\arctan e^{x/2}+x-\ln(1+e^x)-\arctan^2e^{x/2}+C</m>.</p></solution>
-    </exercise>
     <exercise xml:id="hw14-37">
       <statement>
         <p><m>\displaystyle \int \frac{dx}{(e^{x+1}+1)^2-(e^{x-1}+1)^2}.</m></p>
@@ -264,12 +252,6 @@
         <p><m>\displaystyle \int (1+|x|-|1-x|)\,dx.</m></p>
       </statement>
       <solution><p><m>x\lt0</m>: <m>0</m>; <m>0\le x\le1</m>: <m>2x</m>; <m>x\gt1</m>: <m>2</m>. Тасралтгүй эх функц: <m>F(x)=C</m> (<m>x\lt0</m>), <m>x^2+C</m> (<m>0\le x\le1</m>), <m>2x-1+C</m> (<m>x\gt1</m>).</p></solution>
-    </exercise>
-    <exercise xml:id="hw14-44">
-      <statement>
-        <p><m>\displaystyle \int (e^{-1/x})\,dx.</m></p>
-      </statement>
-      <solution><p>Хэсэгчилбэл <m>xe^{-1/x}-\int\frac{e^{-1/x}}{x}dx</m>, сүүлийнх нь <m>t=\tfrac1x</m> орлуулгаар <m>\int\frac{e^{-t}}{t}dt</m> болно. Энэ нь интеграл илтгэгч функц бөгөөд элементар функцээр илэрхийлэгдэхгүй. Иймд <m>\int e^{-1/x}dx</m> элементар биш.</p></solution>
     </exercise>
     <exercise xml:id="hw14-45">
       <statement>
