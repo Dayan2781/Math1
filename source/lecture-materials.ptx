@@ -16,11 +16,11 @@
       </row>
       <row><cell>1</cell><cell>Хэллэг ба логик, үнэний хүснэгт</cell><cell><dataurl visual="" source="lectures/lec01-logic.pdf">PDF</dataurl></cell><cell><xref ref="ch-logic"/></cell></row>
       <row><cell>2</cell><cell>Олонлог, буулгалт, функц</cell><cell><dataurl visual="" source="lectures/lec02-sets-functions.pdf">PDF</dataurl></cell><cell><xref ref="ch-sets-functions"/></cell></row>
-      <row><cell>3</cell><cell>Тоон олонлогууд (Пеаногийн аксиом)</cell><cell><dataurl visual="" source="lectures/lec03-numbers.pdf">PDF</dataurl></cell><cell>—</cell></row>
+      <row><cell>3</cell><cell>Тоон олонлогууд (Пеаногийн аксиом)</cell><cell><dataurl visual="" source="lectures/lec03-numbers.pdf">PDF</dataurl></cell><cell><xref ref="ch-natural-numbers"/></cell></row>
       <row><cell>4</cell><cell>Функцийн ойлголт, олон гишүүнт ба рационал функц</cell><cell><dataurl visual="" source="lectures/lec04-basic-functions.pdf">PDF</dataurl></cell><cell><xref ref="ch-basic-functions"/></cell></row>
       <row><cell>5</cell><cell>Тригонометр, илтгэгч ба логарифм функц</cell><cell><dataurl visual="" source="lectures/lec05-trig-exp-log.pdf">PDF</dataurl></cell><cell><xref ref="sec-trigonometric"/></cell></row>
       <row><cell>6</cell><cell>Функцийн хязгаарын тодорхойлолт</cell><cell><dataurl visual="" source="lectures/lec06-limit-1.pdf">PDF</dataurl></cell><cell><xref ref="ch-limits"/></cell></row>
-      <row><cell>7</cell><cell>Дарааллын хязгаар, хязгаарын тухай теоремүүд</cell><cell><dataurl visual="" source="lectures/lec07-limit-2.pdf">PDF</dataurl></cell><cell><xref ref="ch-limits"/></cell></row>
+      <row><cell>7</cell><cell>Дарааллын хязгаар, хязгаарын тухай теоремүүд</cell><cell><dataurl visual="" source="lectures/lec07-limit-2.pdf">PDF</dataurl></cell><cell><xref ref="sec-sequence-limit"/></cell></row>
       <row><cell>8</cell><cell>Тасралтгүй чанар, уламжлал</cell><cell><dataurl visual="" source="lectures/lec08-continuity-derivative.pdf">PDF</dataurl></cell><cell><xref ref="sec-continuity"/></cell></row>
       <row><cell>9</cell><cell>Уламжлалын тодорхойлолт ба дүрмүүд</cell><cell><dataurl visual="" source="lectures/lec09-derivative-2.pdf">PDF</dataurl></cell><cell><xref ref="ch-derivatives"/></cell></row>
       <row><cell>10</cell><cell>Параметр ба далд функцийн уламжлал, дээд эрэмбийн уламжлал</cell><cell><dataurl visual="" source="lectures/lec10-derivative-3.pdf">PDF</dataurl></cell><cell><xref ref="sec-parametric-derivative"/></cell></row>

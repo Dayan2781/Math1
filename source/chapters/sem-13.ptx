@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Семинар 13. Эх сурвалж: latex/lectures/seminars.tex -->
+<section xml:id="sec-seminar-13" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Семинар 13</title>
+  <exercises xml:id="exercises-seminar-13">
+    <introduction>
+      <p>Хамрах сэдэв: эх функц, тодорхойгүй интегралын жагсаалт, хэсэгчлэн интегралчлах арга (Лекц 13).</p>
+    </introduction>
+    <exercise xml:id="sem13-1">
+      <statement>
+        <p>Дараах интегралуудыг жагсаалт ашиглан бод.</p>
+        <p><ol>
+        <li><m>\displaystyle \int \sqrt{x}\,dx.</m></li>
+        <li><m>\displaystyle \int \sqrt[n]{x}\,dx.</m></li>
+        <li><m>\displaystyle \int \frac{dx}{x^2}.</m></li>
+        <li><m>\displaystyle \int 10^x\,dx.</m></li>
+        <li><m>\displaystyle \int a^x e^x\,dx.</m></li>
+        <li><m>\displaystyle \int \frac{dx}{2\sqrt{x}}.</m></li>
+        <li><m>\displaystyle \int \frac{dh}{\sqrt{2gh}}.</m></li>
+        <li><m>\displaystyle \int 3.4x^{-0.17}\, dx.</m></li>
+        <li><m>\displaystyle \int (1-2u)\,du.</m></li>
+        <li><m>\displaystyle \int (\sqrt{x}+1)(x-\sqrt{x}+1)\,dx.</m></li>
+        <li><m>\displaystyle \int \frac{\sqrt{x}-x^3 e^x + x^2}{x^3}\,dx.</m></li>
+        <li><m>\displaystyle \int (2x^{-1.2} + 3x^{-0.8} - 5x^{0.38})\,dx.</m></li>
+        <li><m>\displaystyle \int \frac{(1-z)^2}{z}\,dz.</m></li>
+        <li><m>\displaystyle \int \frac{(1-x)^2}{x\sqrt{x}}\,dx.</m></li>
+        <li><m>\displaystyle \int \frac{(1+\sqrt{x})^3}{\sqrt[3]{x}}\,dx.</m></li>
+        <li><m>\displaystyle \int \frac{\sqrt[3]{x^2}-\sqrt[4]{x}}{\sqrt{x}}\,dx.</m></li>
+        <li><m>\displaystyle \int \frac{dx}{\sqrt{3}-3x^2}.</m></li>
+        <li><m>\displaystyle \int \frac{3\cdot 2^x - 2\cdot 3^x}{2^x}\,dx.</m></li>
+        <li><m>\displaystyle \int \frac{1+\cos^2 x}{1+\cos 2x}\,dx.</m></li>
+        <li><m>\displaystyle \int \frac{\cos 2x}{\cos^2 x \sin^2 x}\,dx.</m></li>
+        <li><m>\displaystyle \int \tan^2 x\,dx.</m></li>
+        <li><m>\displaystyle \int 2\sin^2 \frac{x}{2}\,dx.</m></li>
+        <li><m>\displaystyle \int \frac{(1+2x^2)\,dx}{x^2(1+x^2)}.</m></li>
+        <li><m>\displaystyle \int \frac{(1+x)^2 dx}{x(1+x^2)}.</m></li>
+        <li><m>\displaystyle \int \frac{dx}{\cos 2x + \sin^2 x}.</m></li>
+        <li><m>\displaystyle \int (\arcsin x + \arccos x)\,dx.</m></li>
+      </ol></p>
+      </statement>
+    </exercise>
+    <exercise xml:id="sem13-2">
+      <statement>
+        <p>Орлуулах арга хэрэглэн интеграл бод.</p>
+        <p><ol>
+        <li><m>\displaystyle \int \sin x\, d(\sin x).</m></li>
+        <li><m>\displaystyle \int \tan^{3}x \, d(\tan x).</m></li>
+        <li><m>\displaystyle \int \frac{d(1+x^{2})}{\sqrt{1+x^{2}}}.</m></li>
+        <li><m>\displaystyle \int (x+1)^{15} dx.</m></li>
+        <li><m>\displaystyle \int \frac{dx}{(2x-3)^{5}}.</m></li>
+        <li><m>\displaystyle \int \frac{dx}{(a+bx)^{c}} \qquad (c\ne 1).</m></li>
+        <li><m>\displaystyle \int \sqrt[5]{(8-3x)^{6}}\, dx.</m></li>
+        <li><m>\displaystyle \int \sqrt{8-2x}\, dx.</m></li>
+        <li><m>\displaystyle \int \frac{m}{\sqrt[3]{(a+bx)^{2}}} dx.</m></li>
+        <li><m>\displaystyle \int 2x\sqrt{x^{2}+1}\, dx.</m></li>
+        <li><m>\displaystyle \int x\sqrt{1-x^{2}}\, dx.</m></li>
+        <li><m>\displaystyle \int x^{2}\sqrt[5]{x^{3}+2}\, dx.</m></li>
+        <li><m>\displaystyle \int \frac{x\, dx}{\sqrt{x^{2}+1}}.</m></li>
+        <li><m>\displaystyle \int \frac{x^{4} dx}{\sqrt{4+x^{5}}}.</m></li>
+        <li><m>\displaystyle \int \frac{x^{3}dx}{\sqrt[3]{x^{4}+1}}.</m></li>
+        <li><m>\displaystyle \int \frac{(6x-5)\, dx}{2\sqrt{3x^{2}-5x+6}}.</m></li>
+        <li><m>\displaystyle \int \sin^{3} x \cos x\, dx.</m></li>
+        <li><m>\displaystyle \int \frac{\sin x\, dx}{\cos^{2}x}.</m></li>
+        <li><m>\displaystyle \int \frac{\cos x\, dx}{\sqrt[3]{\sin^{2}x}}.</m></li>
+        <li><m>\displaystyle \int \cos^{3} x \sin 2x\, dx.</m></li>
+        <li><m>\displaystyle \int \frac{\sqrt{\ln x}}{x}\, dx.</m></li>
+        <li><m>\displaystyle \int \frac{(\arctan x)^{2} dx}{1+x^{2}}.</m></li>
+        <li><m>\displaystyle \int \frac{dx}{(\arcsin x)^{3}\sqrt{1-x^{2}}}.</m></li>
+        <li><m>\displaystyle \int \frac{dx}{\cos^{3} x\sqrt{1+\tan x}}.</m></li>
+        <li><m>\displaystyle \int \cos 3x\, d(3x).</m></li>
+        <li><m>\displaystyle \int \cos 3x\, dx.</m></li>
+      </ol></p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

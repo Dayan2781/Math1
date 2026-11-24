@@ -226,6 +226,53 @@
     </example>
   </subsection>
 
+  <!-- Лекц 16: нийлэлт, сарнилтын шинжүүр (latex/lectures/lec16-improper-integral.tex) -->
+  <subsection xml:id="subsec-improper-tests">
+    <title>Нийлэлт, сарнилтыг тодорхойлох шинжүүр</title>
+    <theorem xml:id="thm-comparison-test"><title>Жиших шинжүүр</title><statement>
+        <p><m>x\ge a</m> үед <m>0\le f(x)\le g(x)</m> байг.</p>
+        <p><ol>
+        <li>Хэрэв <m>\displaystyle\int_{a}^{\infty} g(x)\,dx</m> нийлбэл
+        <m>\displaystyle\int_{a}^{\infty} f(x)\,dx</m> мөн нийлнэ.</li>
+        <li>Хэрэв <m>\displaystyle\int_{a}^{\infty} f(x)\,dx</m> сарнивал
+        <m>\displaystyle\int_{a}^{\infty} g(x)\,dx</m> мөн сарнина.</li>
+      </ol></p>
+    </statement></theorem>
+    <p>Харьцуулах шинжүүр хэрэглэхийн тулд өгсөн интегралтай төстэй нийлэх сарнихыг нь мэддэг интеграл авч үзэх хэрэгтэй. Ийм зорилгоор ихэвчлэн <m>f(x)=x^{-p}</m> функцийн интегралыг авч үздэг.</p>
+    <example><title><m>x^{-p}</m> функцийн интеграл</title>
+      <p><xref ref="ex-improper-1"/>-ээс харахад <m>\displaystyle\int\limits_1^{\infty}x^{-p}dx</m> интеграл <m>p=2</m> үед нийлж байна. Ерөнхий тохиолдолд дараах нөхцөл биелнэ.
+      <me>\int_{1}^{\infty} \frac{dx}{x^{p}}
+      \quad\text{нийлэх } \Longleftrightarrow\; p\gt 1.</me>
+      Тодруулбал,
+      <me>\int_{1}^{\infty} x^{-p}\,dx =
+      \begin{cases}
+      \displaystyle \frac{1}{p-1}, &amp; p\gt 1,\\[4pt]
+      +\infty, &amp; p\le1.
+      \end{cases}</me> байна.
+      Мөн <xref ref="ex-improper-disc"/> ба <xref ref="ex-improper-1"/>-ээс харахад <m>\displaystyle\int\limits_1^{\infty}x^{-p} dx</m> интеграл <m>p= 1/2</m> үед нийлж, <m>p=1</m> үед сарниж байна. Ерөнхий тохиолдолд дараах нөхцөл биелнэ.
+      <me>\int_{0}^{1} x^{-p}\,dx
+      \quad\text{нийлэх } \Longleftrightarrow\; p\lt 1.</me></p>
+      <p>Тодруулбал,
+      <me>\int_{0}^{1} x^{-p}\,dx =
+      \begin{cases}
+      \displaystyle \frac{1}{1-p}, &amp; p\lt 1,\\[4pt]
+      +\infty, &amp; p\ge1.
+      \end{cases}</me></p>
+    </example>
+    <example><title>Жиших шинжүүр хэрэглэх</title>
+      <p>Дараах интеграл нийлэх эсэхийг тодорхойлоё.
+      <me>\int_{1}^{\infty} \frac{dx}{1+x^{3}}.</me></p>
+      <p>Их <m>x</m> үед <m>1+x^3\sim x^{3}</m>.
+      <me>0 \lt \frac{1}{1+x^{3}} \le \frac{1}{x^{3}}, \qquad x\ge1.</me>
+      жиших шинжүүрээр <m>p=3\gt 1</m> тул
+      <me>\int_{1}^{\infty}\frac{dx}{x^{3}}
+      \text{ нийлэх тул}
+      \quad\Rightarrow\quad
+      \int_{1}^{\infty}\frac{dx}{1+x^{3}}
+      \text{ мөн нийлнэ.}</me></p>
+    </example>
+  </subsection>
+
   <exercises xml:id="exercises-int-tech-2">
     <title>Дасгалууд</title>
 
@@ -262,7 +309,7 @@
   </exercises>
 
   <exercises xml:id="exercises-seminar-tech2">
-    <title>Семинар</title>
+    <title>Семинарын нэмэлт бодлогууд</title>
 
     <introduction><p>Иррационал функцийн интеграл бод.</p></introduction>
     <exercise><statement><p><m>\int \frac{dx}{1+\sqrt{x}}</m></p></statement></exercise>
@@ -288,7 +335,7 @@
   </exercises>
 
   <exercises xml:id="exercises-hw-tech2">
-    <title>Гэрийн даалгавар</title>
+    <title>Нэмэлт гэрийн даалгавар</title>
 
     <introduction><p>Лопиталын дүрэм хэрэглэн хязгаар бод.</p></introduction>
     <exercise><statement><p><m>\lim_{x\to 0}\frac{e^{ax}-\cos(\alpha x)}{e^{\beta x}-\cos(\beta x)}</m></p></statement></exercise>

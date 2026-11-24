@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Лекц 15: Тодорхой интегралд хэсэгчлэн интегралчлах ба орлуулах арга. Эх сурвалж: latex/lectures/lec15-definite-integral.tex -->
+<section xml:id="sec-definite-integral-methods" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Тодорхой интеграл бодох аргууд</title>
+  <subsection xml:id="subsec-defint-methods-1-1">
+    <title>Тодорхой интегралд хэсэгчилж интегралчлах</title>
+    <p>Тасралтгүй <m>f(x)</m> ба <m>g(x)</m> функцууд байг. Тэгвэл тодорхой интегралд
+    хэсэгчилж интегралчлах томьёо нь
+    <me>\int_a^b f(x)g'(x)\,dx
+    =
+    \Bigl[f(x)g(x)\Bigr]_{x=a}^{x=b}-\int_a^b f'(x)g(x)\,dx .</me></p>
+    <example>
+      <p><me>\int_0^1 x e^x\,dx</me></p>
+      <p><me>f(x)=x,\qquad f'(x)=1,\qquad g'(x)=e^x,\qquad g(x)=e^x</me> гэж сонговол
+      <me>\int_0^1 x e^x\,dx
+      =
+      \Bigl[x e^x\Bigr]_0^1-\int_0^1 e^x\,dx.</me></p>
+      <p><me>=
+      (e^1-0)-\bigl[e^x\bigr]_0^1
+      =
+      e-(e-1)=1.</me></p>
+      <p><me>\boxed{\displaystyle\int_0^1 x e^x\,dx=1.}</me></p>
+    </example>
+    <example>
+      <p><me>\int_0^\pi x\sin x\,dx</me>
+      <me>f(x)=x,\qquad f'(x)=1,\qquad g'(x)=\sin x,\qquad g(x)=-\cos x.</me>
+      гэж сонговол
+      <me>\int_0^\pi x\sin x\,dx
+      =
+      \Bigl[-x\cos x\Bigr]_0^\pi
+      -
+      \int_0^\pi (-\cos x)\,dx.</me></p>
+      <p><me>=-\pi\cos\pi+0-\int_0^\pi (-\cos x)\,dx
+      =\pi+\int_0^\pi \cos x\,dx.</me></p>
+      <p><me>=\pi+\bigl[\sin x\bigr]_0^\pi
+      =\pi+(0-0)=\pi.</me></p>
+      <p><me>\boxed{\displaystyle\int_0^\pi x\sin x\,dx=\pi.}</me></p>
+    </example>
+  </subsection>
+  <subsection xml:id="subsec-defint-methods-1-2">
+    <title>Тодорхой интегралд орлуулалтын арга</title>
+    <p>Хэрэв <m>\varphi</m> нь <m>[a,b]</m> дээр дифференциалчлагддаг,
+    <m>f</m> нь <m>\varphi(a)</m> ба <m>\varphi(b)</m>–ийн хооронд тасралтгүй бол</p>
+    <p><me>\int_a^b f(\varphi(x))\varphi'(x)\,dx
+    =
+    \int_{\varphi(a)}^{\varphi(b)} f(u)\,du.</me></p>
+    <example>
+      <p><me>\int_0^1 2x\cos(x^2)\,dx.</me></p>
+      <p><m>\varphi(x)=x^2</m> орлуулга хийе. <m>u=\varphi(x)=x^2</m> <m>\Rightarrow\; du=2x\,dx</m>.
+      Шинэ хил
+      <me>x=0\Rightarrow u=\varphi(0)=0^2=0,\qquad x=1\Rightarrow u=\varphi(1)=1^2=1.</me></p>
+      <p><me>\int_0^1 2x\cos(x^2)\,dx
+      =
+      \int_0^1 \cos u\,du
+      =
+      \sin u\Big|_0^1
+      =\sin1-0=\sin1.</me></p>
+      <p><me>\boxed{\int_0^1 2x\cos(x^2)\,dx=\sin1.}</me></p>
+    </example>
+    <example>
+      <p><me>\int_0^{\frac{\pi}{2}}\sin x\cos x\,dx.</me></p>
+      <p><m>u=\sin x</m> орлуулга хийвэл <m>\Rightarrow\; du=\cos x\,dx</m>.</p>
+      <p>Хил:
+      <me>x=0\Rightarrow u=0,\qquad x=\frac{\pi}{2}\Rightarrow u=1.</me></p>
+      <p><me>\int_0^{\frac{\pi}{2}}\sin x\cos x\,dx
+      =
+      \int_0^{1} u\,du
+      =
+      \frac{u^2}{2}\Big|_0^1
+      =\frac12.</me></p>
+      <p><me>\boxed{\displaystyle \int_0^{\frac{\pi}{2}}\sin x\cos x\,dx=\frac12.}</me></p>
+    </example>
+  </subsection>
+</section>

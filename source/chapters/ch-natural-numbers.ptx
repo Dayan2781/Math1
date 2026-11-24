@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Бүлэг 3: Натурал тоо (Лекц 3). Эх сурвалж: latex/lectures/lec03-numbers.tex,
+     Семинар 3 нь latex/lectures/seminars.tex, ГД 3 нь latex/lectures/homework.tex -->
+<chapter xml:id="ch-natural-numbers" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Натурал тоо</title>
+
+<introduction xml:id="intro-natural-numbers">
+<p>Энд бид натурал тооны онолыг Пеаногийн (Dedekind–Peano) аксиомоор байгуулна.</p>
+<figure xml:id="fig-peano">
+<caption>Жузеппе Пеано (1858–1932)</caption>
+<image source="Peano.jpg" width="25%"/>
+</figure>
+<p><alert>Жузеппе Пеано</alert> нь Италийн математикч, логикийн суурь судлаач.
+1889 онд натурал тоог аксиомчилсон (<em>Dedekind–Peano</em> аксиомууд) бүтээлээ
+хэвлүүлж, 1890 онд дифференциал тэгшитгэлийн судалгааны үр дүнд <em>Пеаногийн муруй</em>-г танилцуулсан.
+Орчин үеийн тэмдэглэгээнд ихээхэн нөлөөлсөн (жиш., <m>\in</m> тэмдгийн эх сурвалж
+нь Пеаногийн <m>\varepsilon</m>). Ихэвчлэн Турины их сургуульд ажиллаж,
+<em>Formulario Mathematico</em> цувралыг эмхэтгэсэн.</p>
+</introduction>
+
+<section xml:id="sec-peano">
+<title>Пеаногийн аксиомууд</title>
+<definition><title>Натурал тоон олонлог</title><statement>
+<p>Хэрэв <m>\N</m> олонлог ба түүний <m>\mathbb{a}</m> элемент, <me>S:\N\to\N</me> буулгалт өгөгдсөн ба <m>(\N, \mathbb{a}, S)</m> гуравт дараах 5 аксиомыг хангадаг бол <m>\N</m> олонлогийг натурал тоон олонлог гэнэ.</p>
+<p><ul marker="">
+<li><alert>A1)</alert> <m>\mathbb{a}\in\N</m>.</li>
+<li><alert>A2)</alert> <m>n\in \N</m> бол <m>S(n)\in \N</m> байна. (<m>S(n)</m>-г <m>n</m>-н залгамжлагч гэе)</li>
+<li><alert>A3)</alert> <m>\forall n\in\N</m> бол <m>S(n)\ne \mathbb{a}</m> байна. (<m>\mathbb{a}</m> нь залгамжлагч биш)</li>
+<li><alert>A4)</alert> <m>m\neq n\in\N</m> бол <m>S(m)\neq S(n)</m> байна. (<em>иньектив</em>)</li>
+<li><p><alert>A5)</alert> Хэрэв <m>P(n)</m> нь <m>n</m> гэсэн натурал тооноос хамаарсан хэллэг бөгөөд</p>
+<p><ul>
+<li><m>n=1</m> үед <m>P(1)</m> үнэн</li>
+<li>ямар нэг <m>n\in \mathbb{N}</m> хувьд <m>P(n)</m> үнэн байвал заавал <m>P(S(n))</m> үнэн</li>
+</ul></p>
+<p>нөхцлүүдийг хангадаг бол <m>P(n)</m> хэллэг <m>\forall n\in\mathbb{N}</m> хувьд үнэн байна.</p></li>
+</ul></p>
+</statement></definition>
+<example><title>Математик индукц</title>
+<p>Цаашид <m>\mathbb{a}</m>-г 1, <m>S(\mathbb{a})</m>-г 2, <m>S(S(\mathbb{a}))</m>-г 3 гэх мэт тэмдэглэвэл <me>\{\mathbb{a}, S(\mathbb{a}), S(S(\mathbb{a})), \ldots \}=\{1, 2, 3, \ldots \}\subset \N</me> болно. Одоо <m>\{1, 2, 3, \ldots \}=\N</m> болохыг батлая.</p>
+<p><m>b\in\N</m> бол <m>P(b):\{b=1\land b=S(n)\text{\, байх\, } n\in\N \text{\, олдоно.}\}</m> гэсэн хэллэг авч үзье. Энэ хэллэг бүх <m>b</m> натуралын хувьд үнэн байхыг батлая. <m>\textbf{A5)}</m> аксиомыг хэрэглэе.</p>
+<p><ol>
+<li>Хэрэв <m>b=1</m> бол <m>P(1)</m> үнэн</li>
+<li>ямар нэг <m>1\neq b\in \mathbb{N}</m> хувьд <m>P(b)</m> үнэн байвал <m>b=S(n)</m> гэсэн үг. Иймд заавал <m>S(b)=S(S(n))</m> болох тул <m>S(b)</m> хувьд <m>S(S(n))</m> олдож байна. Иймд <m>P(S(b))</m> үнэн байна.</li>
+</ol></p>
+<p>Иймд <m>\textbf{A5)}</m> аксиомоор <m>P(b):\{b=1\land b=S(n)\text{\, байх\, } n\in\N \text{\, олдоно.}\}</m> гэсэн хэллэг <m>\forall b\in\mathbb{N}</m> хувьд үнэн байна.</p>
+</example>
+<theorem><statement>
+<p><m>n\in\N , n\neq 1</m> бол <m>n=S(m)</m> байх <m>m</m> ганц олдоно. <m>m=\underbrace{S(S\ldots S(}_{n-1}1)\ldots)</m> байна.</p>
+</statement><proof>
+<p>Семинарын бодлого хар.</p>
+</proof></theorem>
+<theorem xml:id="thm-nat-induction"><title>Математик индукц</title><statement>
+<p><m>n\in\N</m> ба <m>P(n)</m> шинж өгөгдөхөд</p>
+<p><ol>
+<li><m>P(1)</m> үнэн</li>
+<li><m>\forall n\,(P(n)</m> хувьд <m>P(1), P(2), \ldots P(n)</m> үнэн бол <m>P(S(n)))</m> үнэн байдаг</li>
+</ol></p>
+<p>чанартай байвал <m>\forall n\in\N</m> хувьд <m>P(n)</m> шинж үнэн байна.</p>
+</statement><proof>
+<p><m>\textbf{A5)}</m> аксиомоос мөрдөнө.</p>
+</proof></theorem>
+</section>
+<section xml:id="sec-nat-operations">
+<title>Натурал тооны нэмэх, үржих үйлдэл ба зэрэгт дэвшүүлэх</title>
+<subsection xml:id="sec-nat-2-1">
+<title>Нэмэх</title>
+<definition><title>Нэмэх үйлдэл</title><statement>
+<p><m>+: \N\times \N\to\N</m> буулгалт (үйлдэл)-г дараах дүрмээр байгуулая. <m>\forall n , m\in\N</m> хувьд <m>+(n,m)=n+m</m> гэж тэмдэглэе.</p>
+<p><ul marker="">
+<li><alert>N1)</alert> <m>n+1= S(n)</m></li>
+<li><alert>N2)</alert> <m>n+S(m)=S(n+m)</m></li>
+</ul></p>
+</statement></definition>
+<example>
+<p><ol>
+<li><m>1+1=S(1)=2</m></li>
+<li><m>2+1=S(2)=3</m></li>
+<li><m>5+2=5+S(1)=S(5+1)=S(6)=7</m></li>
+<li><m>5+3=5+S(2)=S(5+2)=S(7)=8</m></li>
+</ol></p>
+</example>
+<theorem xml:id="thm-nat-add-one"><statement>
+<p><m>\forall n</m> хувьд <m>1+n=n+1</m> байна.</p>
+</statement><proof>
+<p><xref ref="thm-nat-induction"/> ашиглан индукц хийе.</p>
+<p><ol>
+<li><m>n=1</m>: <m>1+1=1+1</m></li>
+<li><p>Xэрэв <m>n\neq 1</m> гэж үзвэл <m>1+1=1+1 \, , 1+2=2+1 \, , 1+3=3+1 \, , \ldots , 1+n=n+1</m> гэе.</p>
+<p>Одоо <m>S(n)+1=1+S(n)</m> батлая. <m>1+S(n)=S(1+n)</m> (нэмэхийн 2-р аксиом).</p>
+<p>Нөгөө талаас <m>S(n)+1=S(S(n))=S(n+1)</m> (нэмэхийн 1-р аксиом) болох ба бид <m>1+n=n+1</m> гэж үзсэн тул <me>1+S(n)=S(1+n)=S(n+1)=S(S(n))=S(n)+1</me> тул
+<m>S(n)+1=1+S(n)</m> батлагдав.</p></li>
+</ol></p>
+</proof></theorem>
+<theorem><title>Нэмэхийн коммутатив чанар</title><statement>
+<p><m>\forall m,n\in\N</m> бол <m>m+n=n+m</m> байна.</p>
+</statement><proof>
+<p><m>\varphi_n(m):\, m+n=n+m</m> хэллэгийг <m>n</m>-ээр индукцлэн батлая.</p>
+<p><m>n=1</m>: <m>1+m=m+1</m> байхыг <xref ref="thm-nat-add-one"/> баталсан.</p>
+<p>Индукцийн алхам: <m>\varphi_n\Rightarrow\varphi_{S(n)}</m>.
+<me>\begin{aligned}
+m+S(n)&amp;=S(m+n)\quad(\textbf{N2})\\
+&amp;=S(n+m)\quad(\text{индукцийн таамаглал})\\
+&amp;=n+S(m)\quad(\textbf{N2 }\text{ урвуугаар ашиглав}).
+\end{aligned}</me></p>
+</proof></theorem>
+<theorem><title>Нэмэхийн ассоциатив чанар</title><statement>
+<p><m>\forall \ell,m,n:\ (\ell+m)+n=\ell+(m+n)</m>.</p>
+</statement><proof>
+<p><m>n</m>-ээр индукцлэе.</p>
+<p>Суурь: <m>(\ell+m)+1=S(\ell+m)=\ell+S(m)=\ell+(m+1).</m></p>
+<p>Индукцийн алхам:
+<me>(\ell+m)+S(n)=S\big((\ell+m)+n\big)=S\big(\ell+(m+n)\big)=\ell+S(m+n)=\ell+(m+S(n)).</me></p>
+</proof></theorem>
+</subsection>
+<subsection xml:id="sec-nat-2-2">
+<title>Үржих</title>
+<definition><title>Үржих үйлдэл</title><statement>
+<p><m>\times : \N\times \N\to\N</m> буулгалт (үйлдэл)-г дараах дүрмээр байгуулая. <m>\forall n , m\in\N</m> хувьд <m>\times(n,m)=n\cdot m</m> гэж тэмдэглэе.</p>
+<p><ul marker="">
+<li><alert>U1)</alert> <m>n\cdot 1= n</m></li>
+<li><alert>U2)</alert> <m>n\cdot S(m)=n\cdot m+n</m></li>
+</ul></p>
+</statement></definition>
+<example>
+<p><ol>
+<li><m>1\cdot 1=1</m></li>
+<li><m>2\cdot 1=2</m></li>
+<li><m>5\cdot 2=5\cdot S(1)=5\cdot 1+5=5+5=10</m></li>
+<li><m>5\cdot 3=5\cdot S(2)=5\cdot 2+5=10+5=15</m></li>
+</ol></p>
+</example>
+<theorem><title>Дистрибутив</title><statement>
+<p><m>\forall a,b,c\in\N</m> бол <m>a\cdot(b+c)=a\cdot b+a\cdot c</m> байна.</p>
+</statement><proof>
+<p><m>c</m>-ээр индукцлэе.</p>
+<p>Суурь: <m>a\cdot(b+1)=a\cdot S(b)=a\cdot b+a=a\cdot b+a\cdot 1</m>.</p>
+<p>Индукцийн алхам:
+<me>\begin{aligned}
+a\cdot S(c)&amp;=a\cdot c+a,\\
+a\cdot(b+S(c))&amp;=a\cdot S(b+c)=a\cdot(b+c)+a=\big(a\cdot b+a\cdot c\big)+a= a\cdot b+a\cdot S(c).
+\end{aligned}</me></p>
+</proof></theorem>
+<theorem xml:id="thm-nat-mult-one"><statement>
+<p><m>\forall n\in\N</m> бол <m>1\cdot n=n\cdot 1</m> байна.</p>
+</statement><proof>
+<p>Семинарын бодлого хар.</p>
+</proof></theorem>
+<theorem><title>Үржихийн коммутатив</title><statement>
+<p><m>\forall m,n\in\N</m> бол <m>m\cdot n=n\cdot m</m> байна.</p>
+</statement><proof>
+<p><m>n</m>-ээр индукцлэе.</p>
+<p>Суурь: <m>n=1</m>: <m>m\cdot 1=m=1\cdot m</m> байхыг <xref ref="thm-nat-mult-one"/> батласан.
+Алхам:
+<me>m\cdot S(n)=m\cdot n+m= n\cdot m+m=S(n)\cdot m.</me></p>
+</proof></theorem>
+<theorem><title>Үржихийн ассоциатив</title><statement>
+<p><m>\forall a,b,c:\ (a\cdot b)\cdot c=a\cdot(b\cdot c)</m>.</p>
+</statement><proof>
+<p>Семинарын бодлого хар.</p>
+</proof></theorem>
+</subsection>
+<subsection xml:id="sec-nat-2-3">
+<title>Зэрэг</title>
+<definition><title>Зэрэг</title><statement>
+<p><m>A: \N\times \N\to\N</m> буулгалт (үйлдэл)-г дараах дүрмээр байгуулая. <m>\forall n , m\in\N</m> хувьд <m>A(n,m)=n^ m</m> гэж тэмдэглэе.</p>
+<p><ul marker="">
+<li><alert>Z1)</alert> <m>n^1= n</m></li>
+<li><alert>Z2)</alert> <m>n^{S(m)}=n^ m\cdot n</m></li>
+</ul></p>
+</statement></definition>
+<p><me>n^{1}=n,\qquad n^{S(m)}=n^{m}\cdot n.</me>
+Индукцээр <m>n^{a+b}=n^a\cdot n^b</m>, <m>n^{a\cdot b}=(n^a)^b</m> зэрэг үндсэн томьёонууд батлагдана.</p>
+</subsection>
+<subsection xml:id="sec-nat-2-4">
+<title>Эрэмбэ тодорхойлох</title>
+<definition><statement>
+<p><m>\forall m,n\in\N</m> үед <m>n=m+k</m> байх <m>\exists k\in\N</m> олддог <m>n\gt m</m> гэнэ. Цаашид <m>n=m</m> эсвэл <m>n\gt m</m> бол <m>n\ge m</m> гэж тэмдэглэе.</p>
+</statement></definition>
+<theorem><title>Эрэмбийн үндсэн чанарууд</title><statement>
+<p>Дараах нь биелнэ.</p>
+<p><ol>
+<li>(Рефлексив) <m>n\le n</m>.</li>
+<li>(Транзитив) <m>\big(m\le n\ \,\wedge\,\ n\le p\big)\Rightarrow m\le p</m>.</li>
+<li>(Анти-симметр) <m>m\le n</m> ба <m>n\le m</m> бол <m>m=n</m>.</li>
+</ol></p>
+</statement><proof>
+<p>(i) <m>n=n</m> тул <m>n\le n</m>.</p>
+<p>(ii) <m>m+k=n</m>, <m>n+\ell=p</m> бол <m>m+(k+\ell)=p</m> тул <m>m\le p</m>.</p>
+<p>(iii) Хэрэв <m>n\neq m</m> бол <m>m+k=n</m>, <m>n+\ell=m</m>-ээс <m>m+(k+\ell)=m</m> тул <m>S(m-1)+(k+\ell)=S(m-1)</m> болно. Иймд <m>(m-1)+(k+\ell)=(m-1)</m> болно. Үүнтэй ижлээр давтвал <m>1+(k+\ell)=1</m> болох ба эндээс <m>S(k+\ell)=1</m> болж зөрчил гарна. Иймд <m>n=m</m>.</p>
+</proof></theorem>
+<theorem><title>Трихотом</title><statement>
+<p>Ямар ч <m>m,n</m>-ын хувьд яг нэг нь үнэн: <m>m\lt n</m>, <m>m=n</m> эсвэл <m>m\gt n</m>.</p>
+</statement></theorem>
+
+</subsection>
+</section>
+
+<section xml:id="sec-ai-practice-nat">
+<title>AI-тай дасгал хийх (Лекц 3)</title>
+<introduction>
+<p>Лекц 3-т үзсэн сэдвүүдээр Claude AI-тай дасгал хий. Сэдэв сонгоод
+бодлого үүсгүүлж, өөрөө бодсоны дараа хариулаа шалгуул.</p>
+</introduction>
+<interactive xml:id="ai-practice-nat"
+iframe="ai-practice.html?topics=Пеаногийн аксиом,математик индукц,натурал тооны нэмэх ба үржих,эрэмбэ&amp;label=Лекц 3-ын сэдвүүд"
+width="100%" aspect="4:3" />
+</section>
+
+<section xml:id="sec-seminar-nat">
+<title>Семинар 3</title>
+<exercises xml:id="exercises-seminar-nat">
+<introduction>
+<p>Сануулах тодорхойлолтууд</p>
+<p><ol>
+<li><m>n+S(m)=S(n+m)</m> .</li>
+<li><m>n+1=S(n)</m></li>
+<li><m>n\cdot 1=n</m>, <m>1\cdot n=n</m>.</li>
+<li><m>n\cdot S(m)=n\cdot m+n</m>.</li>
+<li><m>(a+b)+c=a+(b+c)</m>.</li>
+<li><m>a\cdot(b+c)=a\cdot b+a\cdot c</m>.</li>
+<li><m>a\le b\Rightarrow a+c\le b+c; \Rightarrow a\lt b\Rightarrow a\cdot c\lt b\cdot c</m>.</li>
+<li><m>a\leq b</m> ба <m>b\leq a</m> бол <m>a=b</m>.</li>
+<li><m>a^1=a</m>, <m>a^{S(m)}=a^m\cdot a</m>.</li>
+<li><m>\forall n\,\, n\ne 1\Rightarrow\exists m\,\,(n=S(m))</m> (залгамжлагдсан байдал).</li>
+</ol></p>
+</introduction>
+<p>Дараах бодлогуудыг А1-А5, N1, N2, U1, U2 ба эрэмбийн тодорхойлолт, батласан теоремүүд ашиглан батал.</p>
+<exercise xml:id="nat-sem-1">
+<statement>
+<p><m>2+3\neq 6</m></p>
+</statement>
+</exercise>
+<exercise xml:id="nat-sem-2">
+<statement>
+<p><m>2\cdot 4=8</m></p>
+</statement>
+</exercise>
+<exercise xml:id="nat-sem-3">
+<statement>
+<p><m>n\cdot 3=n+n+n</m></p>
+</statement>
+</exercise>
+<exercise xml:id="nat-sem-4">
+<statement>
+<p><m>a\lt b \Rightarrow</m> <m>S(a)\leq b</m></p>
+</statement>
+</exercise>
+<exercise xml:id="nat-sem-5">
+<statement>
+<p><m>a\lt b \Rightarrow</m> <m>a+c\leq b+c</m></p>
+</statement>
+</exercise>
+<exercise xml:id="nat-sem-6">
+<statement>
+<p><m>a\lt b\Leftrightarrow a\cdot c\lt b\cdot c</m></p>
+</statement>
+</exercise>
+<exercise xml:id="nat-sem-7">
+<statement>
+<p><m>a^n\geq 1</m></p>
+</statement>
+</exercise>
+<exercise xml:id="nat-sem-8">
+<statement>
+<p><m>a^{m+n}=a^m\cdot a^n</m>-г <m>n</m> дээр индукцлэн батал.</p>
+</statement>
+</exercise>
+<exercise xml:id="nat-sem-9">
+<statement>
+<p><m>a^{mn}=(a^m)^n</m>-г <m>n</m> дээр индукцлэн батал.</p>
+</statement>
+</exercise>
+<exercise xml:id="nat-sem-10">
+<statement>
+<p><m>1+2+\cdots+n=\dfrac{n(n+1)}{2}</m> батал.</p>
+</statement>
+</exercise>
+<exercise xml:id="nat-sem-11">
+<statement>
+<p><m>1^2+2^2+\cdots+n^2=\dfrac{n(n+1)(2n+1)}{6}</m> батал.</p>
+</statement>
+</exercise>
+<exercise xml:id="nat-sem-12">
+<statement>
+<p><m>a,b</m> нь дурын тоо, <m>n\in\mathbb{N}</m> байг.
+<me>(a+b)^n=\sum_{k=0}^{n}\binom{n}{k}\,a^{\,n-k}b^{\,k},
+\qquad
+\binom{n}{k}=\frac{n!}{k!(n-k)!}\ (0\le k\le n).</me> индукцээр батал.</p>
+</statement>
+</exercise>
+<exercise xml:id="nat-sem-13">
+<statement>
+<p><m>a,b</m> нь бодит тоо , <m>n\in\mathbb{N}</m> байг. Дараах тэнцэтгэлийг бичээд батал:
+<me>a^n-b^n=(a-b)(\sum_{k=0}^{n-1} a^{\,n-1-k} b^{\,k}).</me>
+Мөн <m>n</m> сондгой үед
+<me>a^n+b^n=(a+b)(\sum_{k=0}^{n-1}(-1)^k a^{\,n-1-k} b^{\,k})</me>
+байдгийг батал.</p>
+</statement>
+</exercise>
+<exercise xml:id="nat-sem-14">
+<statement>
+<p><m>a\gt b\gt 0</m> ба <m>n\in\mathbb{N}</m> байг.
+<me>a^n-b^n \;\gt \; n\,b^{\,n-1}(a-b).</me> батал.</p>
+</statement>
+</exercise>
+</exercises>
+</section>
+
+<section xml:id="sec-homework-nat">
+<title>Гэрийн даалгавар 3</title>
+<exercises xml:id="exercises-homework-nat">
+<exercise xml:id="nat-hw-1">
+<statement>
+<p><m>a+S(b)=S(a+b)</m>-г <m>b</m>-ээр индукцлэн батла.</p>
+</statement>
+</exercise>
+<exercise xml:id="nat-hw-2">
+<statement>
+<p><m>S(a)+b=S(a+b)</m>-г <m>b</m>-ээр индукцлэн батла.</p>
+</statement>
+</exercise>
+<exercise xml:id="nat-hw-3">
+<statement>
+<p><m>(a+b)^2=a^2+2ab+b^2</m> томьёог зөвхөн дистрибутив, коммутатив, ассоциатив чанар ашиглан гарга.</p>
+</statement>
+</exercise>
+<exercise xml:id="nat-hw-4">
+<statement>
+<p><m>a\le b\Rightarrow a\cdot c\le b\cdot c</m> батал.</p>
+</statement>
+</exercise>
+<exercise xml:id="nat-hw-5">
+<statement>
+<p><m>a\le b\Rightarrow a\le b+ c</m> батал.</p>
+</statement>
+</exercise>
+<exercise xml:id="nat-hw-6">
+<statement>
+<p><m>a\le b</m> ба <m>b\lt c</m> бол <m>a\lt c</m> батал..</p>
+</statement>
+</exercise>
+<exercise xml:id="nat-hw-7">
+<statement>
+<p><m>a\ne 1\Rightarrow \exists!\,m\, a=S(m)</m> батал.</p>
+</statement>
+</exercise>
+<exercise xml:id="nat-hw-8">
+<statement>
+<p><m>a\cdot b=1\Rightarrow a=1</m> ба <m>b=1</m> батал.</p>
+</statement>
+</exercise>
+<exercise xml:id="nat-hw-9">
+<statement>
+<p><m>a\le b\iff \exists k,\, b=a+k</m> трихотомийг тодорхойлолт ашиглан бүрэн батал.</p>
+</statement>
+</exercise>
+</exercises>
+</section>
+
+</chapter>

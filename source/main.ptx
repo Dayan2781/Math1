@@ -88,6 +88,9 @@
 
     <xi:include href="./chapters/ch-sets-functions.ptx" />
 
+    <!-- Бүлэг 3: Натурал тоо, Пеаногийн аксиом (Лекц 3) -->
+    <xi:include href="./chapters/ch-natural-numbers.ptx" />
+
     <!-- ═══════════════════════════════════════════════════════════
          БҮЛЭГ 2: Үндсэн функцүүд  (2 лекц + 3 семинар)
 
@@ -117,25 +120,38 @@
     <!-- ═══════════════════════════════════════════════════════════
          ЦААШИД НЭМЭГДЭХ БҮЛГҮҮД (одоогоор comment)
          ═══════════════════════════════════════════════════════════ -->
-    <!-- Бүлэг 3: Хязгаар (3 лекц + 3 семинар) -->
+    <!-- Бүлэг 5: Хязгаар (Лекц 6–7) -->
     <xi:include href="./chapters/ch-limits.ptx" />
 
     <!-- Бүлэг 4: Тасралтгүй чанар (1 лекц + 1 семинар) -->
     <!-- <xi:include href="./chapters/ch-continuity.ptx" /> -->
 
-    <!-- Бүлэг 5: Уламжлал (2 лекц + 2 семинар) -->
+    <!-- Бүлэг 6: Уламжлал (Лекц 8–10); Бүлэг 7: Функцийн графикийн шинж чанар (Лекц 11–12) -->
     <xi:include href="./chapters/ch-derivatives-l6,7.ptx" />
     <xi:include href="./chapters/ch-graph-behavior-l8,9.ptx" />
 
-    <!-- Бүлэг 6: Интеграл. Хэсгүүд нь тусдаа файлд байгаа тул нэг бүлэгт
-         багцалснаар дугаарлалт 6.1, 6.2, ... болно. -->
+    <!-- Бүлэг 8: Интеграл (Лекц 13–16). Хэсгүүд нь тусдаа файлд байгаа тул нэг
+         бүлэгт багцалснаар дугаарлалт 8.1, 8.2, ... болно. Хэсгүүдийн дараалал
+         лекцийн дарааллыг дагана. -->
     <chapter xml:id="ch-integrals">
       <title>Интеграл</title>
+      <!-- Лекц 13 -->
       <xi:include href="./chapters/sec-antider.ptx" />
-      <xi:include href="./chapters/sec-definite-integral.ptx" />
+      <xi:include href="./chapters/sem-13.ptx" />
+      <xi:include href="./chapters/hw-13.ptx" />
+      <!-- Лекц 14 -->
       <xi:include href="./chapters/sec-integration-techniques-1.ptx" />
+      <xi:include href="./chapters/sec-irrational-integrals.ptx" />
+      <xi:include href="./chapters/sem-14.ptx" />
+      <xi:include href="./chapters/hw-14.ptx" />
+      <!-- Лекц 15 -->
+      <xi:include href="./chapters/sec-definite-integral.ptx" />
+      <xi:include href="./chapters/sec-definite-integral-methods.ptx" />
+      <xi:include href="./chapters/semhw-15.ptx" />
+      <!-- Лекц 16 -->
       <xi:include href="./chapters/sec-integration-techniques-2.ptx" />
       <xi:include href="./chapters/sec-applications-integration.ptx" />
+      <xi:include href="./chapters/semhw-16.ptx" />
     </chapter>
     <!-- Бүлэг 6: Уламжлалын теоремүүд ба хэрэглээ (2 лекц + 2 семинар) -->
     <!-- <xi:include href="./chapters/ch-derivative-apps.ptx" /> -->

@@ -50,7 +50,7 @@
     <title>Агшин зуурын өөрчлөлтийн хурд: Уламжлал</title>
 
     <introduction xml:id="intro-sec-deriv-intro">
-      <p>§3.1-д өөрчлөлтийн харьцааг авч үзсэн:</p>
+      <p><xref ref="sec-limit-intro"/>-д өөрчлөлтийн харьцааг авч үзсэн:</p>
       <me>\frac{f(c+h)-f(c)}{h}.</me>
       <p>Энэ нь <m>x=c</m> ба <m>x=c+h</m> цэгүүдийн хооронд функцийн
       дундаж өөрчлөлтийн хурдыг илэрхийлнэ. <m>h\to 0</m> үед энэ
@@ -229,7 +229,7 @@
     </subsection>
 
     <exercises xml:id="exercises-deriv-intro">
-      <title>§4.1 Дасгалууд</title>
+      <title>Дасгалууд</title>
 
       <exercise xml:id="ex-d1-1">
         <statement>
@@ -428,7 +428,7 @@
     </subsection>
 
     <exercises xml:id="exercises-deriv-interp">
-      <title>§4.2 Дасгалууд</title>
+      <title>Дасгалууд</title>
 
       <exercise xml:id="ex-d2-1">
         <statement>
@@ -615,7 +615,7 @@
     </subsection>
 
     <exercises xml:id="exercises-basic-diff">
-      <title>§4.3 Дасгалууд</title>
+      <title>Дасгалууд</title>
 
       <exercise xml:id="ex-d3-1">
         <statement>
@@ -762,7 +762,7 @@
     </example>
 
     <exercises xml:id="exercises-prod-quot">
-      <title>§4.4 Дасгалууд</title>
+      <title>Дасгалууд</title>
 
       <exercise xml:id="ex-d4-1">
         <statement>
@@ -815,12 +815,12 @@
        AI-тай дасгал хийх (Лекц 7)
        ============================================================ -->
   <section xml:id="sec-ai-practice-l6">
-    <title>AI-тай дасгал хийх (Лекц 7)</title>
+    <title>AI-тай дасгал хийх (Лекц 8)</title>
     <introduction>
-      <p>Лекц 7-гийн сэдвүүдээр Claude AI-тай дасгал хий.</p>
+      <p>Лекц 8-ын сэдвүүдээр Claude AI-тай дасгал хий.</p>
     </introduction>
     <interactive xml:id="ai-practice-l6"
-      iframe="ai-practice.html?topics=уламжлалын тодорхойлолт,зэрэгт функцийн дүрэм,тригонометрийн уламжлал,үржвэрийн дүрэм,харьцааны дүрэм&amp;label=Лекц 7-гийн сэдвүүд"
+      iframe="ai-practice.html?topics=уламжлалын тодорхойлолт,зэрэгт функцийн дүрэм,тригонометрийн уламжлал,үржвэрийн дүрэм,харьцааны дүрэм&amp;label=Лекц 8-ын сэдвүүд"
       width="100%" aspect="4:3" />
   </section>
 
@@ -828,7 +828,7 @@
        Семинар 7 — Уламжлал I (Лекц 7)
        ============================================================ -->
   <section xml:id="sec-seminar-6-deriv">
-    <title>Семинар 7</title>
+    <title>Семинар 8</title>
     <exercises xml:id="exercises-seminar-6-deriv">
       <introduction>
         <p>Хамрах сэдэв: уламжлалын тодорхойлолт, үндсэн дүрмүүд,
@@ -885,7 +885,7 @@
        Гэрийн даалгавар 7
        ============================================================ -->
   <section xml:id="sec-homework-6-deriv">
-    <title>Гэрийн даалгавар 7</title>
+    <title>Гэрийн даалгавар 8</title>
     <exercises xml:id="exercises-homework-6-deriv">
       <introduction>
         <p>Бодолтыг бүрэн үндэслэлтэй бичиж ирнэ.</p>
@@ -1005,7 +1005,7 @@
     </example>
 
     <exercises xml:id="exercises-chain-rule">
-      <title>§4.5 Дасгалууд</title>
+      <title>Дасгалууд</title>
 
       <exercise xml:id="ex-d5-1">
         <statement>
@@ -1196,7 +1196,7 @@
     </example>
 
     <exercises xml:id="exercises-implicit">
-      <title>§4.6–§4.7 Дасгалууд</title>
+      <title>Дасгалууд</title>
 
       <exercise xml:id="ex-d6-1">
         <statement>
@@ -1330,7 +1330,7 @@
     </subsection>
 
     <exercises xml:id="exercises-differential">
-      <title>§4.8–§4.9 Дасгалууд</title>
+      <title>Дасгалууд</title>
 
       <exercise xml:id="ex-tang-norm-1">
         <statement>
@@ -1360,12 +1360,12 @@
        AI-тай дасгал хийх (Лекц 8)
        ============================================================ -->
   <section xml:id="sec-ai-practice-l7">
-    <title>AI-тай дасгал хийх (Лекц 8)</title>
+    <title>AI-тай дасгал хийх (Лекц 9–10)</title>
     <introduction>
-      <p>Лекц 8-ын сэдвүүдээр Claude AI-тай дасгал хий.</p>
+      <p>Лекц 9, 10-ын сэдвүүдээр Claude AI-тай дасгал хий.</p>
     </introduction>
     <interactive xml:id="ai-practice-l7"
-      iframe="ai-practice.html?topics=гинжин дүрэм,параметр функц,далд ялгах,дээд эрэмбийн уламжлал,дифференциал&amp;label=Лекц 8-ын сэдвүүд"
+      iframe="ai-practice.html?topics=гинжин дүрэм,параметр функц,далд ялгах,дээд эрэмбийн уламжлал,дифференциал&amp;label=Лекц 9, 10-ын сэдвүүд"
       width="100%" aspect="4:3" />
   </section>
 
@@ -1373,7 +1373,7 @@
        Семинар 8 — Уламжлал II (Лекц 8)
        ============================================================ -->
   <section xml:id="sec-seminar-7-deriv">
-    <title>Семинар 8</title>
+    <title>Семинар 9</title>
     <exercises xml:id="exercises-seminar-7-deriv">
       <introduction>
         <p>Хамрах сэдэв: гинжин дүрэм, параметр функц, далд ялгах,
@@ -1459,7 +1459,7 @@
        Гэрийн даалгавар 8
        ============================================================ -->
   <section xml:id="sec-homework-7-deriv">
-    <title>Гэрийн даалгавар 8</title>
+    <title>Гэрийн даалгавар 9</title>
     <exercises xml:id="exercises-homework-7-deriv">
       <introduction>
         <p>Бодолтыг бүрэн үндэслэлтэй бичиж ирнэ.</p>
@@ -1509,6 +1509,86 @@
           цэгүүд дээрх шүргэгч шулуунууд перпендикуляр бол тэдгээрийн
           огтолцолын цэг нь <m>y = -\dfrac{1}{4}</m> шулуун дээр
           оршихыг батал.</p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <!-- Семинар 10 (latex/lectures/seminars.tex) -->
+  <section xml:id="sec-seminar-10-deriv">
+    <title>Семинар 10</title>
+    <exercises xml:id="exercises-seminar-10-deriv">
+      <introduction>
+        <p>Хамрах сэдэв: дээд эрэмбийн уламжлал, <m>n</m> эрэмбийн уламжлал, далд ба параметр функцийн уламжлал (Лекц 10).</p>
+      </introduction>
+      <exercise xml:id="sem10-1">
+        <statement>
+          <p>Дараах функцүүдийн заагдсан эрэмбийн уламжлалыг ол.</p>
+          <p><ol>
+          <li><m>y = x^2 - 3x + 2,\quad y'' = ?</m></li>
+          <li><m>y=1-x^2-x^4, \quad y'''=?</m></li>
+          <li><m>y=(1+x)^6, \quad y'''(2)=?</m></li>
+          <li><m>y=(x^3+1)^8, \quad y'''=?</m></li>
+          <li><m>y=\cos ^2 x, \quad y'''=?</m></li>
+          <li><m>y=\dfrac{1}{1-x}, \quad y^{(5)}=?</m></li>
+          <li><m>y = xe^{x^2},\quad y'' = ?</m></li>
+          <li><m>y = x^3\ln(x),\quad y^{(4)} = ?</m></li>
+          <li><m>y = \ln(x+\sqrt{1+x^2}),\quad y'' = ?</m></li>
+          <li><m>y = \sqrt{1-x^2}\arcsin x,\quad y'' = ?</m></li>
+        </ol></p>
+        </statement>
+      </exercise>
+      <exercise xml:id="sem10-2">
+        <statement>
+          <p>Дараах функцүүдийн <m>n</m> эрэмбийн уламжлалыг ол.</p>
+          <p><ol>
+          <li><m>y = e^{ax}</m></li>
+          <li><m>y = e^{-x}</m></li>
+          <li><m>y = \sin^2x</m></li>
+          <li><m>y = xe^x</m></li>
+          <li><m>y = x\ln x</m></li>
+          <li><m>y = (x^2+x-1)\cos x</m></li>
+          <li><m>y = e^{x}\cos x</m></li>
+          <li><m>y = x^{n-1}e^{\frac{1}{x}}</m></li>
+        </ol></p>
+        </statement>
+      </exercise>
+      <exercise xml:id="sem10-3">
+        <statement>
+          <p>Далд функцийн уламжлал ол.</p>
+          <p><ol>
+          <li><m>\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}-1=0</m> , <m>\dfrac{d^2y}{dx^2}</m></li>
+          <li><m>y=\tan(x+y)</m> , <m>\dfrac{d^3y}{dx^3}</m></li>
+          <li><m>y^3+x^3-3axy=0</m> , <m>y''</m></li>
+          <li><m>e^{x+y}-xy=0</m> , <m>y''</m></li>
+        </ol></p>
+        </statement>
+      </exercise>
+      <exercise xml:id="sem10-4">
+        <statement>
+          <p>Параметр функцийн уламжлал ол.</p>
+          <p><ol>
+          <li><m>\begin{cases}
+          x=at^2\\
+          y=bt^3
+          \end{cases}</m> , <m>\dfrac{d^2y}{dx^2}</m></li>
+          <li><m>\begin{cases}
+          x=a\cos t\\
+          y=b\sin t
+          \end{cases} , \dfrac{d^3y}{dx^3}</m></li>
+          <li><m>\begin{cases}
+          x=t-\sin t\\
+          y=1-\cos t
+          \end{cases} , \dfrac{d^2y}{dx^2}</m></li>
+          <li><m>\begin{cases}
+          x=\ln t\\
+          y=t^2-1
+          \end{cases} , \dfrac{d^3y}{dx^3}</m></li>
+          <li><m>\begin{cases}
+          x=e^t\sin t\\
+          y=e^t\cos t
+          \end{cases}</m> бол <m>y''(x+y)^2-2(xy^{\prime}-y)=0</m> биелэхийг батал.</li>
+        </ol></p>
         </statement>
       </exercise>
     </exercises>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Семинар ба гэрийн даалгавар 16. Эх сурвалж: latex/lectures/homework.tex -->
+<section xml:id="sec-semhw-16" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Семинар ба гэрийн даалгавар 16</title>
+  <exercises xml:id="exercises-semhw-16">
+    <introduction>
+      <p>Хамрах сэдэв: өргөтгөсөн интеграл, муруйн хоорондох талбай, муруйн урт, эргэлтийн биетийн эзэлхүүн (Лекц 16).</p>
+    </introduction>
+    <exercise xml:id="semhw16-1">
+      <statement>
+        <p><m>y=x^2</m> ба <m>y=x+3</m> функцийн графикуудаар хүрээлэгдсэн хэсгийн талбайг ол.</p>
+      </statement>
+    </exercise>
+    <exercise xml:id="semhw16-2">
+      <statement>
+        <p><m>y=\dfrac{1}{1+x^2}</m> , <m>(1;+\infty)</m> хэсгийн доорх талбайг ол.</p>
+      </statement>
+    </exercise>
+    <exercise xml:id="semhw16-3">
+      <statement>
+        <p><m>y=f(x)</m> функцийн гарфикийн <m>(a;b)</m> хэсгийг <m>ox</m> тэнхлэгийг тойруулан эргүүлэхэд үүсэх биетийн эзэлхүүн <m>\displaystyle\pi\int\limits_a^b f^2(x) dx</m> байхыг батал.</p>
+      </statement>
+    </exercise>
+    <exercise xml:id="semhw16-4">
+      <statement>
+        <p><m>y=\sqrt{x}</m> функцийн гарфикийн <m>(1;3)</m> хэсгийг <m>ox</m> тэнхлэгийг тойруулан эргүүлэхэд үүсэх биетийн эзэлхүүн ол.</p>
+      </statement>
+    </exercise>
+    <exercise xml:id="semhw16-5">
+      <statement>
+        <p>Интеграл бод.</p>
+        <p><ol>
+        <li><m>\displaystyle\int\limits_1^5\dfrac{1}{x\sqrt{x-1}} dx</m></li>
+        <li><m>\displaystyle\int\limits_5^{\infty}\dfrac{1}{x\sqrt{x-1}}</m></li>
+        <li><m>\displaystyle\int\limits_{-\infty}^1\dfrac{1}{(1+x^2)^2}</m></li>
+        <li><m>\displaystyle\int\limits_0^{\infty}x^3e^{-x^2}dx</m></li>
+      </ol></p>
+      </statement>
+    </exercise>
+    <exercise xml:id="semhw16-6">
+      <statement>
+        <p>Талбай ол.</p>
+        <p><ol>
+        <li><m>y=\sin x\quad , 0\leq x\leq \pi</m></li>
+        <li><m>y=\ln x \quad , 1\leq x\leq e</m></li>
+        <li><m>y=e^x</m> ба <m>y=3x+1</m> хүрээлэгдсэн</li>
+        <li><m>y=x(x-1)(x-2)</m> ба <m>ox</m> тэнхлэгээр хүрээлэгдсэн</li>
+      </ol></p>
+      </statement>
+    </exercise>
+    <exercise xml:id="semhw16-7">
+      <statement>
+        <p>Муруйн урт ол.</p>
+        <p><ol>
+        <li><m>y=\ln x\quad , \sqrt{3}\leq x\leq \sqrt{5}</m></li>
+        <li><m>y=\dfrac{x^2}{2}-\ln x \quad , 1\leq x\leq e</m></li>
+      </ol></p>
+      </statement>
+    </exercise>
+    <exercise xml:id="semhw16-8">
+      <statement>
+        <p>Эзэлхүүн ол.</p>
+        <p><ol>
+        <li><m>y=\cos x</m> функцийн <m>0\leq x\leq \dfrac{\pi}{2}</m> хэсгийг <m>ox</m> тэнхлэгийг тойруулан эргүүлэхэд үүсэх биет</li>
+        <li><p><m>R=1</m> , <m>H=2</m> үед эдэлхүүн ол</p>
+        <image source="cyltairdas.png" width="30%"/></li>
+        <li><m>h</m> өндөртэй, <m>r</m> ба <m>R</m> суурийн радиустай огтлогдсон конусын эзэлхүүн бодох томьёог эргэлтийн биеийн эзэлхүүн олох томьёог ашиглан гарга. <m>r=R=2</m> үед бодож шалга.</li>
+      </ol></p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

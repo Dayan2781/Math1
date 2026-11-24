@@ -347,7 +347,7 @@
   </exercises>
 
   <exercises xml:id="exercises-seminar-tech1">
-    <title>Семинар</title>
+    <title>Семинарын нэмэлт бодлогууд</title>
 
     <introduction><p>Орлуулах арга хэрэглэн интеграл бод.</p></introduction>
     <exercise><statement><p><m>\int (x+1)^{15}\,dx</m></p></statement></exercise>
@@ -392,7 +392,7 @@
   </exercises>
 
   <exercises xml:id="exercises-hw-tech1">
-    <title>Гэрийн даалгавар</title>
+    <title>Нэмэлт гэрийн даалгавар</title>
     <exercise><statement><p><m>\int xe^{3x}\,dx</m></p></statement></exercise>
     <exercise><statement><p><m>\int x\cos 2x\,dx</m></p></statement></exercise>
     <exercise><statement><p><m>\int x\sin 3x\,dx</m></p></statement></exercise>

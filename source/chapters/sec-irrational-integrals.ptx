@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Лекц 14: Иррационал функцийн интеграл. Эх сурвалж: latex/lectures/lec14-integration-techniques.tex -->
+<section xml:id="sec-irrational-integrals" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Иррационал функцийн интеграл</title>
+  <introduction>
+    <p>Иррационал интеграл гэдэг нь интегралын тэмдэгтийн дор квадрат язгуур, ерөнхийдөө <m>x</m>-ийн бутархай зэрэг ( <m>\sqrt{\phantom{x}}</m>, <m>\sqrt[n]{\phantom{x}}</m> ) орсон интегралуудыг хэлнэ. Жишээлбэл:
+    <me>\int \sqrt{x+1}\,dx,\qquad
+    \int \frac{dx}{\sqrt{x^2+4}},\qquad
+    \int \frac{x\,dx}{\sqrt{1-x^2}},\ \text{г.м.}</me></p>
+    <p>Ийм интегралуудыг бодоход орлуулах арга түгээмэл ашиглана.</p>
+  </introduction>
+  <subsection xml:id="subsec-irrational-1-1">
+    <title><m>\sqrt{ax+b}</m> хэлбэрийн иррационал интеграл</title>
+    <p>Ихэвчлэн <m>x</m>–ийг язгууртай тэнцүүлэх буюу
+    <me>ax+b=t^2</me>
+    гэсэн орлуулга хэрэглэнэ.</p>
+    <example>
+      <p><me>\int \sqrt{x+1}\,dx.</me></p>
+      <p>Орлуулая:
+      <me>x+1 = t^2 \quad\Rightarrow\quad x = t^2-1,\quad dx = 2t\,dt.</me>
+      Тэгвэл
+      <me>\sqrt{x+1} = \sqrt{t^2} = t \quad (t\gt 0\ \text{мужийг авч болно}).</me></p>
+      <p>Интеграл:
+      <me>\int \sqrt{x+1}\,dx
+      = \int t \cdot 2t\,dt
+      = 2\int t^2\,dt
+      = 2\cdot \frac{t^3}{3} + C
+      = \frac{2}{3}t^3 + C.</me></p>
+      <p>Энд <m>t^2 = x+1</m> тул <m>t=\sqrt{x+1}</m>:
+      <me>\int \sqrt{x+1}\,dx
+      = \frac{2}{3}(x+1)^{3/2} + C.</me></p>
+    </example>
+  </subsection>
+  <subsection xml:id="subsec-irrational-1-2">
+    <title><m>\sqrt{x^2+a^2}</m> ба <m>\sqrt{x^2-a^2}</m>: тригонометр орлуулга</title>
+    <p>Квадрат язгуур дотор тэгш өнцөгт гурвалжин үүсгэж болохоор хэлбэр байвал тригонометр орлуулга ашиглана.</p>
+    <p><ul>
+    <li><m>\sqrt{x^2+a^2}</m> үед <m>x = a\tan t</m> гэж орлуулна.</li>
+    <li><m>\sqrt{x^2-a^2}</m> үед <m>x = a\sec t</m> (эсвэл <m>x=a\cosh t</m> гэх мэт) гэж орлуулна.</li>
+    <li><m>\sqrt{a^2-x^2}</m> үед <m>x = a\sin t</m> гэж орлуулна.</li>
+  </ul></p>
+    <example>
+      <p><me>\int \frac{dx}{\sqrt{x^2+4}}.</me></p>
+      <p>Энд <m>x^2+4 = x^2+2^2</m> тул <m>x=2\tan t</m> гэж орлуулвал:
+      <me>x = 2\tan t \quad\Rightarrow\quad dx = 2\sec^2 t\,dt.</me>
+      Мөн
+      <me>\sqrt{x^2+4}
+      = \sqrt{4\tan^2 t + 4}
+      = 2\sqrt{\tan^2 t+1}
+      = 2\sec t.</me></p>
+      <p>Интеграл:
+      <me>\int \frac{dx}{\sqrt{x^2+4}}
+      = \int \frac{2\sec^2 t\,dt}{2\sec t}
+      = \int \sec t\,dt.</me></p>
+      <p><m>\displaystyle \int \sec t\,dt = \ln|\sec t + \tan t| + C</m> тул:
+      <me>\int \frac{dx}{\sqrt{x^2+4}}
+      = \ln|\sec t + \tan t| + C.</me></p>
+      <p>Одоо <m>x</m>-руу буцаая. <m>x=2\tan t \Rightarrow \tan t = \dfrac{x}{2}</m>.
+      Тэгвэл
+      <me>\sec t = \sqrt{1+\tan^2 t}
+      = \sqrt{1+\frac{x^2}{4}}
+      = \frac{\sqrt{x^2+4}}{2}.</me></p>
+      <p>Ингээд
+      <me>\sec t + \tan t = \frac{\sqrt{x^2+4}}{2} + \frac{x}{2}
+      = \frac{\sqrt{x^2+4}+x}{2}.</me></p>
+      <p>Тогтмол <m>\ln 2</m>-г <m>C</m>-д шингээж болдог тул:
+      <me>\int \frac{dx}{\sqrt{x^2+4}}
+      = \ln\bigl|\sqrt{x^2+4}+x\bigr| + C.</me></p>
+    </example>
+  </subsection>
+  <subsection xml:id="subsec-irrational-1-3">
+    <title>Дифференциал биномын интеграл (Чебышёвын теорем)</title>
+    <p>Рациналь <m>m,n,p</m> тоонуудын хувьд дараах интеграл
+    <me>\int x^{m}(a+b x^{n})^{p}\,dx</me>
+    ерөнхий тохиолдолд энгийн функцээр илэрхийлэгдэхгүй. Гэхдээ зөвхөн дараах
+    <alert>гурван тусгай нөхцөл</alert> биелэх үед рациональ функцийн интегралд шилжүүлж болдог. Үүнийг Чебышёвын теорем гэнэ.</p>
+    <p><alert>Тохиолдол 1. <m>p</m> — бүхэл тоо.</alert></p>
+    <p>Хэрэв
+    <me>p\in \mathbb{Z},</me>
+    бол
+    <me>x = z^{N},</me>
+    орлуулга хэрэглэнэ. Энд <m>N</m> нь <m>m</m> болон <m>n</m>–ийн <em>ерөнхий хуваарь</em>.</p>
+    <p><alert>Тохиолдол 2. <m>\dfrac{m+1}{n}</m> — бүхэл тоо.</alert></p>
+    <p>Хэрэв
+    <me>\frac{m+1}{n}\in\mathbb{Z},</me>
+    бол дараах орлуулгыг хэрэглэнэ:
+    <me>a + b x^{n} = z^{N},</me>
+    энд <m>N</m> нь <m>p</m> бутархайн <em>хуваарь</em>.</p>
+    <p><alert>Тохиолдол 3. <m>\dfrac{m+1}{n}+p</m> — бүхэл тоо.</alert></p>
+    <p>Хэрэв
+    <me>\frac{m+1}{n} + p \in \mathbb{Z},</me>
+    бол дараах орлуулга хэрэглэнэ:
+    <me>a x^{-n} + b = z^{N},</me>
+    энд мөн <m>N</m> нь <m>p</m> бутархайн хуваарь.</p>
+    <p><alert>Тайлбар.</alert></p>
+    <p>Хэрэв <m>n=1</m> бол дээрх гурван нөхцөл нь дараахтай тэнцэнэ:</p>
+    <p><ol>
+    <li><m>p</m> — бүхэл;</li>
+    <li><m>m</m> — бүхэл;</li>
+    <li><m>m+p</m> — бүхэл.</li>
+  </ol></p>
+    <example>
+      <p>Дараах интегралыг бодъё:
+      <me>\int x^3(2+x^4)^{1/2}\,dx.</me></p>
+      <p>Энд <m>m=3</m>, <m>n=4</m>, <m>p=\frac12</m>. Шалгах:
+      <me>\frac{m+1}{n} = \frac{4}{4} = 1 \in \mathbb{Z},</me>
+      тиймээс <em>Тохиолдол 2</em> биелж байна.</p>
+      <p>Орлуулга хийвэл:
+      <me>2 + x^4 = t^2, \qquad t = \sqrt{2+x^4}.</me>
+      Мөн
+      <me>4x^3\,dx = 2t\,dt \quad\Rightarrow\quad x^3dx = \frac{t}{2}\,dt.</me></p>
+      <p>Интегралыг орлуулж бодъё:
+      <me>\int x^3(2+x^4)^{1/2}\,dx
+      = \int \left( \frac{t}{2}\right)t\,dt
+      = \frac12\int t^2 \, dt
+      = \frac{t^3}{6} + C.</me></p>
+      <p>Буцааж орлуулбал:
+      <me>\boxed{
+      \int x^3(2+x^4)^{1/2}\,dx
+      = \frac{(2+x^4)^{3/2}}{6} + C.
+      }</me></p>
+    </example>
+  </subsection>
+</section>

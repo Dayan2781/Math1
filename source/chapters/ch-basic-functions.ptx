@@ -23,7 +23,7 @@
       </ul>
     </p>
 
-    <p>Бүлэг 1-д бид функцийн ерөнхий ойлголтыг авч үзсэн. Энэ бүлэгт бид
+    <p><xref ref="ch-sets-functions"/>-д бид функцийн ерөнхий ойлголтыг авч үзсэн. Энэ бүлэгт бид
     <em>тодорхой нэрлэгдсэн үндсэн функцүүд</em>-ийг (полином, тригонометр,
     илтгэгч г.м.) нарийвчлан судална. Эдгээр функцүүд нь бүх Математик Анализ-ын
     хичээлд (хязгаар, уламжлал, интеграл) хэрэглэгдэх <em>үндсэн материал</em>
@@ -775,6 +775,28 @@
 
 
 
+<!-- Графикийн хувиргалт (Лекц 4, latex/lectures/lec04-basic-functions.tex) -->
+<section xml:id="sec-graph-transformations">
+  <title>Графикийн хувиргалт</title>
+  <p><m>y=f(x)</m> функцийн график мэдэгдэж байг. <m>a,b\in\R</m>, <m>k\gt 0</m> байхад:</p>
+  <table xml:id="table-graph-transformations"><title>Графикийн хувиргалтууд</title>
+    <tabular halign="left" top="major" bottom="major">
+      <row bottom="minor"><cell>Функц</cell><cell>Графикт хийгдэх хувиргалт</cell></row>
+      <row><cell><m>y=f(x-a)</m></cell><cell><m>OX</m> тэнхлэгийн дагуу <m>a</m>-аар шилжинэ</cell></row>
+      <row><cell><m>y=f(x)+b</m></cell><cell><m>OY</m> тэнхлэгийн дагуу <m>b</m>-ээр шилжинэ</cell></row>
+      <row><cell><m>y=k\,f(x)</m></cell><cell><m>OY</m> чиглэлд <m>k</m> дахин сунана/шахагдана</cell></row>
+      <row><cell><m>y=f(kx)</m></cell><cell><m>OX</m> чиглэлд <m>k</m> дахин шахагдана/сунана</cell></row>
+      <row><cell><m>y=-f(x)</m></cell><cell><m>OX</m> тэнхлэгийн хувьд тусгал</cell></row>
+      <row><cell><m>y=f(-x)</m></cell><cell><m>OY</m> тэнхлэгийн хувьд тусгал</cell></row>
+      <row><cell><m>y=|f(x)|</m></cell><cell><m>OX</m>-ээс доорх хэсгийг дээш тусгана</cell></row>
+      <row><cell><m>y=f(|x|)</m></cell><cell><m>x\ge0</m> хэсгийг үлдээж, <m>OY</m>-ийн хувьд тусгана</cell></row>
+  </tabular></table>
+  <example>
+    <p><m>y=(x-1)^2-2</m> графикийг <m>y=x^2</m> параболыг баруун тийш <m>1</m>, доош <m>2</m> шилжүүлж гаргана.
+    Орой нь <m>(1,-2)</m> цэг.</p>
+  </example>
+</section>
+
 <section xml:id="sec-sequences">
   <title>Дараалал</title>
 
@@ -872,7 +894,7 @@
     </solution>
   </example>
 
-  <p><alert>Тайлбар.</alert> Монотон ба зааглагдсан чанар нь Бүлэг 3-д
+  <p><alert>Тайлбар.</alert> Монотон ба зааглагдсан чанар нь <xref ref="ch-limits"/>-д
   үзэх <em>дарааллын хязгаар</em>-ын онолын гол түлхүүр болно: монотон,
   зааглагдсан дараалал бүр хязгаартай (Вейерштрассын теорем).</p>
 </section>
@@ -1075,7 +1097,7 @@
     <title>Төгсгөлгүй буурах геометр прогресс</title>
 
     <p>Хэрэв <m>|q| \lt 1</m> бол <m>n</m> өсөхөд <m>q^n</m> тэг рүү
-    дөхнө (үүнийг Бүлэг 3-д нарийн батална). Тиймээс нийлбэрийн томьёонд
+    дөхнө (үүнийг <xref ref="ch-limits"/>-д нарийн батална). Тиймээс нийлбэрийн томьёонд
     <m>q^n \to 0</m> гэж үзвэл</p>
     <me>S = b_1 + b_1 q + b_1 q^2 + \cdots = \frac{b_1}{1 - q},
     \qquad |q| \lt 1</me>
@@ -1135,21 +1157,50 @@
       </solution>
     </example>
   </subsection>
+
+  <!-- Лекц 5, latex/lectures/lec05-trig-exp-log.tex -->
+  <subsection xml:id="subsec-arith-geom-progression">
+    <title>Арифметик-геометр прогресс</title>
+    <definition><statement>
+        <p><m>q,d\in\R</m> байхад <m>a_{n+1}=q\,a_n+d</m> рекуррент томьёогоор тодорхойлогдох <m>\{a_n\}</m>-г
+        <em>арифметик-геометр прогресс</em> гэнэ.</p>
+    </statement></definition>
+    <remark>
+      <p><m>q=1</m> бол <m>d</m> ялгавартай арифметик прогресс, <m>d=0</m> бол <m>q</m> хуваартай геометр прогресс.</p>
+    </remark>
+    <p><m>q\neq1</m> үед ерөнхий гишүүнийг олъё. <m>a_{n+1}-c=q(a_n-c)</m> байх <m>c</m> тоог хайвал
+    <m>a_{n+1}=qa_n+c(1-q)</m> тул <m>c(1-q)=d</m>, өөрөөр хэлбэл <m>c=\dfrac{d}{1-q}</m>.
+    <m>b_n=a_n-c</m> гэвэл <m>b_{n+1}=qb_n</m> тул <m>\{b_n\}</m> геометр прогресс ба <m>b_n=b_1q^{n-1}</m>. Иймд
+    <me>\boxed{a_n=\frac{d}{1-q}+\left(a_1-\frac{d}{1-q}\right)q^{n-1}.}</me></p>
+    <example>
+      <p><m>a_1=2</m>, <m>a_{n+1}=2a_n-3</m>.</p>
+      <p><ol>
+      <li>Гишүүдийг цувуулан бичвэл <m>a_2=1</m>, <m>a_3=-1</m>, <m>a_4=-5</m>, <m>a_5=-13</m>, <m>a_6=-29</m>, <m>a_7=-61</m>.</li>
+      <li><m>a_{n+1}-c=2(a_n-c)</m>-ийг задалбал <m>a_{n+1}=2a_n-c</m> тул <m>c=3</m>.</li>
+      <li><m>b_n=a_n-3</m> гэвэл <m>b_1=-1</m>, <m>b_{n+1}=2b_n</m> тул <m>b_n=-2^{n-1}</m>.</li>
+      <li>Иймд <m>\boxed{a_n=3-2^{n-1}}</m>. Шалгалт: <m>a_7=3-64=-61</m>. ✓</li>
+    </ol></p>
+    </example>
+    <example>
+      <p><m>a_1=5</m>, <m>a_{n+1}=3a_n+4</m>. Энд <m>q=3</m>, <m>d=4</m> тул <m>c=\dfrac{4}{1-3}=-2</m>.
+      <m>b_n=a_n+2</m> гэвэл <m>b_1=7</m>, <m>b_n=7\cdot3^{n-1}</m>. Иймд <m>\boxed{a_n=7\cdot3^{n-1}-2.}</m></p>
+    </example>
+  </subsection>
 </section>
 
 <section xml:id="sec-ai-practice-l2">
-  <title>AI-тай дасгал хийх (Лекц 3)</title>
+  <title>AI-тай дасгал хийх (Лекц 4)</title>
   <introduction>
-    <p>Лекц 3-т үзсэн сэдвүүдээр Claude AI-тай дасгал хий. Сэдэв сонгоод
+    <p>Лекц 4-т үзсэн сэдвүүдээр Claude AI-тай дасгал хий. Сэдэв сонгоод
     бодлого үүсгүүлж, өөрөө бодсоны дараа хариулаа шалгуул.</p>
   </introduction>
   <interactive xml:id="ai-practice-l2"
-    iframe="ai-practice.html?topics=тэгш ба сондгой функц,монотон функц,зааглагдсан функц,олон гишүүнт функц,дараалал,арифметик прогресс,геометр прогресс&amp;label=Лекц 3-т сэдвүүд"
+    iframe="ai-practice.html?topics=тэгш ба сондгой функц,монотон функц,зааглагдсан функц,олон гишүүнт функц,дараалал,арифметик прогресс,геометр прогресс&amp;label=Лекц 4-ийн сэдвүүд"
     width="100%" aspect="4:3" />
 </section>
 
 <section xml:id="sec-seminar-2">
-  <title>Семинар 3</title>
+  <title>Семинар 4</title>
 
   <exercises xml:id="exercises-seminar-2">
     <introduction>
@@ -1311,7 +1362,7 @@
 </section>
 
 <section xml:id="sec-homework-2">
-  <title>Гэрийн даалгавар 3</title>
+  <title>Гэрийн даалгавар 4</title>
 
   <exercises xml:id="exercises-homework-2">
     <introduction>
@@ -1602,7 +1653,7 @@
 <section xml:id="sec-inverse-trig">
   <title>Тригонометрийн урвуу функцүүд</title>
 
-  <p>Бүлэг 1-д бид зөвхөн <em>биектив</em> функц урвуу функцтэй байдгийг
+  <p><xref ref="ch-sets-functions"/>-д бид зөвхөн <em>биектив</em> функц урвуу функцтэй байдгийг
   үзсэн. Тригонометр функцүүд үет учраас <m>\mathbb{R}</m> дээрээ биектив
   биш: жишээ нь <m>\sin x = \dfrac{1}{2}</m> тэгшитгэл төгсгөлгүй олон
   шийдтэй. Тиймээс урвуу функц тодорхойлохын тулд тригонометр функц бүрийн
@@ -1801,7 +1852,7 @@
     <p><alert>Тайлбар.</alert> Рационал илтгэгчтэй зэргийг сургуулийн
     хөтөлбөрөөс мэднэ: <m>a^{p/q} = \sqrt[q]{a^p}</m>. Дурын бодит
     илтгэгчтэй <m>a^x</m> зэргийг нарийн тодорхойлохдоо рационал
-    илтгэгчүүдийн хязгаар болгон авдаг бөгөөд үүнийг Бүлэг 3-д хязгаарын
+    илтгэгчүүдийн хязгаар болгон авдаг бөгөөд үүнийг <xref ref="ch-limits"/>-д хязгаарын
     ойлголт дээр тулгуурлан тайлбарлана.</p>
 
     <theorem xml:id="thm-exp-properties">
@@ -1955,19 +2006,45 @@
   </subsection>
 </section>
 
+<!-- Лекц 5, latex/lectures/lec05-trig-exp-log.tex -->
+<section xml:id="sec-elementary-summary">
+  <title>Үндсэн элементар функцүүдийн нэгтгэл</title>
+  <definition><statement>
+      <p>Тогтмол, зэрэгт, илтгэгч, логарифм, тригонометр ба урвуу тригонометр функцүүдийг
+      <em>үндсэн элементар функц</em> гэнэ. Эдгээрээс арифметик үйлдэл болон нийлмэл функц
+      авах үйлдлийг төгсгөлөг удаа хэрэглэж гаргасан функцийг <em>элементар функц</em> гэнэ.</p>
+  </statement></definition>
+  <table xml:id="table-elementary-functions"><title>Үндсэн элементар функцүүдийн чанарууд</title>
+    <tabular halign="left" top="major" bottom="major">
+      <row bottom="minor"><cell>Функц</cell><cell><m>D(f)</m></cell><cell><m>E(f)</m></cell><cell>Тэгш/сондгой</cell><cell>Монотон</cell><cell>Зааглагдсан</cell></row>
+      <row><cell><m>x^2</m></cell><cell><m>\R</m></cell><cell><m>[0;+\infty)</m></cell><cell>тэгш</cell><cell>биш</cell><cell>доороос</cell></row>
+      <row><cell><m>x^3</m></cell><cell><m>\R</m></cell><cell><m>\R</m></cell><cell>сондгой</cell><cell>өсдөг</cell><cell>үгүй</cell></row>
+      <row bottom="minor"><cell><m>\frac1x</m></cell><cell><m>\R\setminus\{0\}</m></cell><cell><m>\R\setminus\{0\}</m></cell><cell>сондгой</cell><cell>биш<m>^{*}</m></cell><cell>үгүй</cell></row>
+      <row><cell><m>\sin x</m></cell><cell><m>\R</m></cell><cell><m>[-1;1]</m></cell><cell>сондгой</cell><cell>биш</cell><cell>тийм</cell></row>
+      <row><cell><m>\cos x</m></cell><cell><m>\R</m></cell><cell><m>[-1;1]</m></cell><cell>тэгш</cell><cell>биш</cell><cell>тийм</cell></row>
+      <row bottom="minor"><cell><m>\tg x</m></cell><cell><m>x\neq\frac{\pi}{2}+k\pi</m></cell><cell><m>\R</m></cell><cell>сондгой</cell><cell>биш<m>^{*}</m></cell><cell>үгүй</cell></row>
+      <row><cell><m>\arcsin x</m></cell><cell><m>[-1;1]</m></cell><cell><m>\left[-\frac{\pi}{2};\frac{\pi}{2}\right]</m></cell><cell>сондгой</cell><cell>өсдөг</cell><cell>тийм</cell></row>
+      <row><cell><m>\arccos x</m></cell><cell><m>[-1;1]</m></cell><cell><m>[0;\pi]</m></cell><cell>аль ч биш</cell><cell>буурдаг</cell><cell>тийм</cell></row>
+      <row bottom="minor"><cell><m>\arctg x</m></cell><cell><m>\R</m></cell><cell><m>\left(-\frac{\pi}{2};\frac{\pi}{2}\right)</m></cell><cell>сондгой</cell><cell>өсдөг</cell><cell>тийм</cell></row>
+      <row><cell><m>e^x</m></cell><cell><m>\R</m></cell><cell><m>(0;+\infty)</m></cell><cell>аль ч биш</cell><cell>өсдөг</cell><cell>доороос</cell></row>
+      <row><cell><m>\ln x</m></cell><cell><m>(0;+\infty)</m></cell><cell><m>\R</m></cell><cell>хамаарахгүй</cell><cell>өсдөг</cell><cell>үгүй</cell></row>
+  </tabular></table>
+  <p><m>^{*}</m> Тодорхойлогдох мужийн интервал бүр дээр хатуу монотон.</p>
+</section>
+
 <section xml:id="sec-ai-practice-l3">
-  <title>AI-тай дасгал хийх (Лекц 4)</title>
+  <title>AI-тай дасгал хийх (Лекц 5)</title>
   <introduction>
-    <p>Лекц 4-т үзсэн сэдвүүдээр Claude AI-тай дасгал хий. Сэдэв сонгоод
+    <p>Лекц 5-д үзсэн сэдвүүдээр Claude AI-тай дасгал хий. Сэдэв сонгоод
     бодлого үүсгүүлж, өөрөө бодсоны дараа хариулаа шалгуул.</p>
   </introduction>
   <interactive xml:id="ai-practice-l3"
-    iframe="ai-practice.html?topics=тригонометр функц,урвуу тригонометр функц,илтгэгч ба логарифм функц&amp;label=Лекц 4-т сэдвүүд"
+    iframe="ai-practice.html?topics=тригонометр функц,урвуу тригонометр функц,илтгэгч ба логарифм функц&amp;label=Лекц 5-ын сэдвүүд"
     width="100%" aspect="4:3" />
 </section>
 
 <section xml:id="sec-seminar-3">
-  <title>Семинар 4</title>
+  <title>Семинар 5</title>
 
   <exercises xml:id="exercises-seminar-3">
     <introduction>
@@ -2127,7 +2204,7 @@
   </exercises>
 </section>
 <section xml:id="sec-homework-3">
-  <title>Гэрийн даалгавар 4</title>
+  <title>Гэрийн даалгавар 5</title>
 
   <exercises xml:id="exercises-homework-3">
     <introduction>
