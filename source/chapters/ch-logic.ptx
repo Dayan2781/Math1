@@ -95,6 +95,34 @@
           </ol>
         </p>
       </statement>
+      <solution>
+        <p>Хэллэг бүрийг уншаад зогсохгүй үнэн эсэхийг нь тогтооё.
+          <ol>
+            <li><p><alert>Үнэн.</alert> <m>x \gt 1</m> бол хоёр талыг эерэг
+              <m>x</m>-ээр үржүүлбэл <m>x^2 \gt x</m>, харин <m>x \gt 1</m> тул
+              <m>x^2 \gt x \gt 1</m>.</p></li>
+
+            <li><p><alert>Үнэн.</alert> <m>n^2 = 25 \Leftrightarrow n = 5</m> эсвэл
+              <m>n = -5</m>. <m>-5 \notin \mathbb{N}</m> тул натурал тоонуудын дунд
+              ганцхан шийд <m>n = 5</m> байна. (Хэрэв <m>\mathbb{N}</m>-ийн оронд
+              <m>\mathbb{Z}</m> авбал хоёр шийдтэй болж, хэллэг худал болно.)</p></li>
+
+            <li><p><alert>Үнэн.</alert> Энэ бол тэгш тооны тодорхойлолт өөрөө:
+              <m>n</m> тэгш <m>\Rightarrow</m> <m>n</m> 2-т хуваагдана
+              <m>\Rightarrow</m> <m>n = 2k</m>; эсрэгээр <m>n = 2k</m> бол
+              <m>n</m> 2-т хуваагдана.</p></li>
+
+            <li><p><alert>Үнэн.</alert> <m>\epsilon \gt 0</m> өгөгдсөн гэе.
+              <m>\delta = \min\{1, \epsilon\}</m> гэж сонгоё. Хэрэв
+              <m>|x - 1| \lt \delta \le 1</m> бол <m>0 \lt x \lt 2</m>, ялангуяа
+              <m>x \ne -1</m> тул
+              <me>\left|\frac{x^2 - 1}{x + 1}\right| = \left|\frac{(x-1)(x+1)}{x+1}\right| = |x - 1| \lt \delta \le \epsilon.</me>
+              Ингэж дурын <m>\epsilon</m>-ийн хувьд тохирох <m>\delta</m>-г
+              <em>олж заасан</em> тул хэллэг үнэн. Кванторуудын дараалал чухал:
+              <m>\delta</m> нь <m>\epsilon</m>-ээс хамаарч болно.</p></li>
+          </ol>
+        </p>
+      </solution>
     </example>
   </introduction>
 
@@ -129,6 +157,26 @@
             </ul>
           </p>
         </statement>
+        <solution>
+          <p>Өгүүлбэр бүрийн хувьд үнэний утгыг <em>нэг утгатай</em> тогтоож
+          болох эсэхийг шалгана.
+            <ul>
+              <li><m>5 \lt 9</m>: <m>9 - 5 = 4 \gt 0</m> тул үнэн, үнэний утга нь
+              <m>1</m>.</li>
+              <li><m>7 = 2 \cdot 3 + 1</m> буюу 2-т хуваахад 1 үлдэгдэлтэй, сондгой
+              тул <q>7 нь тэгш</q> худал, үнэний утга нь <m>0</m>.</li>
+              <li><m>\pi</m> иррационал болох нь батлагдсан (И. Ламберт, 1761) тул
+              хэллэг худал. Энд бид баталгааг нь мэдэхгүй байсан ч үнэний утга нь
+              нэг утгатай тогтоогдсон байгаа нь чухал.</li>
+              <li><m>x \ge 0</m> бол <m>x^2 = x \cdot x \ge 0</m>; <m>x \lt 0</m> бол
+              хоёр сөрөг тооны үржвэр эерэг тул <m>x^2 \gt 0</m>. Иймд бүх
+              <m>x</m>-ийн хувьд үнэн.</li>
+              <li>Цас орсон эсэхийг цаг уурын мэдээллээр шалгаж болох тул үнэн
+              эсвэл худлын аль нэг нь заавал байна. Бид хариуг нь одоо мэдэхгүй ч
+              энэ нь хэллэг юм.</li>
+            </ul>
+          </p>
+        </solution>
       </example>
 
       <remark xml:id="rem-not-propositions">
@@ -244,6 +292,18 @@
             </ul>
           </p>
         </statement>
+        <solution>
+          <p>Тодорхой нөхцөл авч шалгая: бороо ороогүй, гэвч усалгааны машин
+          явсан тул газар нойтон байв. Тэгвэл <m>A = 0</m>, <m>B = 1</m>.
+          Үнэний хүснэгтийн 3-р мөрөөс
+          <me>\lnot A = 1,\quad A \lor B = 1,\quad A \land B = 0,\quad A \Rightarrow B = 1.</me>
+          Сүүлийнх нь сонирхолтой: бороо ороогүй тул <q>Бороо орсон бол газар
+          нойтон</q> гэсэн амлалт зөрчигдөөгүй, иймд үнэн.</p>
+
+          <p>Харин бороо орсон (<m>A = 1</m>) боловч газар хуурай
+          (<m>B = 0</m>) байсан бол <m>A \Rightarrow B = 0</m> болно. Энэ нь
+          импликаци худал болох <em>цорын ганц</em> тохиолдол юм.</p>
+        </solution>
       </example>
 
       <remark xml:id="rem-vacuous-truth">
@@ -277,6 +337,25 @@
             </ul>
           </p>
         </statement>
+        <solution>
+          <p>Энд хувьсагчтай хэллэгүүдийг <q>бүх <m>x</m> (<m>y</m>, <m>n</m>)-ийн
+          хувьд</q> гэж ойлгоно.
+            <ul>
+              <li><m>x = 2</m> бол <m>x^2 = 2 \cdot 2 = 4</m>. Нөхцөл үнэн үед
+              дүгнэлт үргэлж үнэн тул импликаци үнэн.</li>
+              <li>Эсрэг жишээ: <m>x = 2</m> бол <m>x^2 = 4</m> үнэн, гэвч
+              <m>x = -2</m> худал. Импликаци <q>үнэн <m>\Rightarrow</m> худал</q>
+              болж байгаа тул худал.</li>
+              <li><m>(\Rightarrow)</m>: <m>x + 5 = y + 3</m>-ийн хоёр талаас 3-ыг
+              хасвал <m>x + 2 = y</m>. <m>(\Leftarrow)</m>: <m>x + 2 = y</m>-ийн
+              хоёр талд 3-ыг нэмбэл <m>x + 5 = y + 3</m>. Хоёр чиглэл хоёулаа үнэн
+              тул эквивалент.</li>
+              <li><m>(\Rightarrow)</m>: <m>10</m> ба <m>12</m>-ын хооронд орших
+              бүхэл тоо зөвхөн <m>11</m>. <m>(\Leftarrow)</m>: <m>n = 11</m> бол
+              <m>10 \lt 11 \lt 12</m> бөгөөд бүхэл. Иймд эквивалент.</li>
+            </ul>
+          </p>
+        </solution>
       </example>
     </subsection>
 
@@ -415,8 +494,14 @@
           <p>Хэрэв <m>n</m> тэгш бол <m>n^2</m> тэгш байхыг батал.</p>
         </statement>
         <solution>
-          <p><m>n = 2k</m> гэж бичиж болно. Иймд
-          <m>n^2 = 4k^2 = 2(2k^2)</m> нь тэгш.</p>
+          <p><alert>Өгөгдөл:</alert> <m>n</m> тэгш.
+          <alert>Зорилго:</alert> <m>n^2</m> тэгш, өөрөөр хэлбэл
+          <m>n^2 = 2m</m> байх бүхэл <m>m</m> олдохыг харуулах.</p>
+
+          <p>Тэгш тооны тодорхойлолтоор <m>n = 2k</m> байх бүхэл <m>k</m> олдоно.
+          Тэгвэл
+          <me>n^2 = (2k)^2 = 4k^2 = 2\,(2k^2).</me>
+          <m>m = 2k^2</m> нь бүхэл тоо тул <m>n^2 = 2m</m> нь тэгш. <m>\blacksquare</m></p>
         </solution>
       </example>
     </subsection>
@@ -432,9 +517,19 @@
           <p>Хэрэв <m>n^2</m> тэгш бол <m>n</m> тэгш.</p>
         </statement>
         <solution>
-          <p>Урвуу хэллэгийг батлая: <m>n</m> сондгой бол <m>n^2</m> сондгой.
-          <m>n = 2k + 1 \Rightarrow n^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1</m>
-          сондгой. Иймд эхний хэллэг үнэн.</p>
+          <p><m>P = \{n^2 \text{ тэгш}\}</m>, <m>Q = \{n \text{ тэгш}\}</m> гэвэл
+          бид <m>P \Rightarrow Q</m>-г батлах ёстой. Шууд батлахад
+          <m>n^2 = 2m</m>-ээс <m>n</m>-ийн тухай мэдээлэл гаргахад хэцүү
+          (<m>\sqrt{2m}</m> гэх мэт). Иймд урвуу хэллэг
+          <m>\lnot Q \Rightarrow \lnot P</m>, өөрөөр хэлбэл <q><m>n</m> сондгой бол
+          <m>n^2</m> сондгой</q> гэдгийг батлая.</p>
+
+          <p><m>n</m> сондгой бол <m>n = 2k + 1</m> байх бүхэл <m>k</m> олдоно.
+          Тэгвэл
+          <me>n^2 = (2k+1)^2 = 4k^2 + 4k + 1 = 2\,(2k^2 + 2k) + 1</me>
+          нь сондгой. <xref ref="ex-contrapositive"/>-ийн ёсоор
+          <m>\lnot Q \Rightarrow \lnot P</m> ба <m>P \Rightarrow Q</m> эквивалент
+          тул эхний хэллэг үнэн. <m>\blacksquare</m></p>
         </solution>
       </example>
     </subsection>
@@ -450,11 +545,23 @@
           <p><m>\sqrt{2}</m> иррационал тоо юм.</p>
         </statement>
         <solution>
-          <p>Эсрэгээр нь таамаглая: <m>\sqrt{2} = \dfrac{a}{b}</m>
-          (<m>\text{ХИЕХ}(a, b) = 1</m>). Тэгвэл <m>a^2 = 2b^2</m> тул
-          <m>a^2</m> тэгш, иймд <m>a = 2k</m>. Үүнийг орлуулбал <m>b^2 = 2k^2</m>,
-          иймээс <m>b</m> бас тэгш. Энэ нь <m>\text{ХИЕХ}(a, b) = 1</m>-тэй
-          зөрчилдөнө. Иймд <m>\sqrt{2}</m> иррационал.</p>
+          <p><alert>1-р алхам (эсрэгээр таамаглах).</alert> <m>\sqrt{2}</m>
+          рационал гэе. Тэгвэл <m>\sqrt{2} = \dfrac{a}{b}</m> байх
+          <m>a \in \mathbb{Z}</m>, <m>b \in \mathbb{N}</m> олдох ба бутархайг
+          хураасан гэж үзэж болно: <m>\text{ХИЕХ}(a, b) = 1</m>.</p>
+
+          <p><alert>2-р алхам.</alert> Хоёр талыг квадрат зэрэгт дэвшүүлбэл
+          <m>2 = \dfrac{a^2}{b^2}</m>, өөрөөр хэлбэл <m>a^2 = 2b^2</m>. Иймд
+          <m>a^2</m> тэгш, <xref ref="ex-contrapositive-proof"/>-ийн ёсоор
+          <m>a</m> тэгш: <m>a = 2k</m>.</p>
+
+          <p><alert>3-р алхам.</alert> Орлуулбал <m>4k^2 = 2b^2</m>, эндээс
+          <m>b^2 = 2k^2</m>. Дахин мөн жишээгээр <m>b</m> тэгш.</p>
+
+          <p><alert>4-р алхам (зөрчил).</alert> <m>a</m>, <m>b</m> хоёулаа 2-т
+          хуваагдах тул <m>\text{ХИЕХ}(a, b) \ge 2</m>. Энэ нь
+          <m>\text{ХИЕХ}(a, b) = 1</m>-тэй зөрчилдөнө. Иймд таамаглал худал,
+          <m>\sqrt{2}</m> иррационал. <m>\blacksquare</m></p>
         </solution>
       </example>
     </subsection>
@@ -471,8 +578,17 @@
           <p><q>Бүх тэгш тоо 4-т хуваагдана.</q></p>
         </statement>
         <solution>
-          <p><m>6</m> нь тэгш боловч <m>4</m>-т хуваагдахгүй. Иймд хэллэг
-          худал.</p>
+          <p>Хэллэгийг квантороор бичвэл
+          <m>\forall n \in \mathbb{Z}\ (n \text{ тэгш} \Rightarrow 4 \mid n)</m>.
+          Үүний үгүйсгэл нь
+          <m>\exists n \in \mathbb{Z}\ (n \text{ тэгш} \land 4 \nmid n)</m>
+          (<xref ref="thm-negation-compound"/>). Иймд ганц тохирох <m>n</m>
+          олоход хангалттай.</p>
+
+          <p><m>n = 6 = 2 \cdot 3</m> нь тэгш, харин <m>6 = 4 \cdot 1 + 2</m> тул
+          <m>4</m>-т хуваагдахгүй. Иймд хэллэг худал. (Нэг эсрэг жишээ хангалттай;
+          <m>4</m>, <m>8</m> гэх мэт хэллэгийг хангах жишээнүүд байгаа нь юуг ч
+          батлахгүй.)</p>
         </solution>
       </example>
     </subsection>
@@ -498,8 +614,12 @@
           <p><alert>Суурь (<m>n = 1</m>):</alert> ЗГТ <m>= 1</m>,
           БГТ <m>= \dfrac{1 \cdot 2}{2} = 1</m>. ✓</p>
 
-          <p><alert>Шилжилт:</alert> <m>n = k</m> үед үнэн гэе. <m>n = k+1</m>
-          үед үнэн болохыг батлая:
+          <p><alert>Индукцийн таамаглал:</alert> <m>n = k</m> үед үнэн гэе:
+          <m>1 + 2 + \cdots + k = \dfrac{k(k+1)}{2}</m>.</p>
+
+          <p><alert>Шилжилт:</alert> <m>n = k+1</m> үед
+          <m>1 + 2 + \cdots + (k+1) = \dfrac{(k+1)(k+2)}{2}</m> болохыг батлая.
+          Эхний <m>k</m> гишүүнд таамаглалыг хэрэглэвэл:
           <md>
             <mrow>1 + 2 + \cdots + k + (k+1) \amp= \frac{k(k+1)}{2} + (k+1)</mrow>
             <mrow>\amp= \frac{k(k+1) + 2(k+1)}{2} = \frac{(k+1)(k+2)}{2}. \checkmark</mrow>
@@ -507,6 +627,45 @@
           Иймд индукцийн зарчмаар дурын натурал <m>n</m>-д адилтгал үнэн.</p>
         </proof>
       </example>
+
+      <example xml:id="ex-induction-divisibility">
+        <title>Хуваагдах чанарыг индукцээр батлах</title>
+        <statement>
+          <p>Дурын натурал <m>n</m> тооны хувьд <m>n^3 + 2n</m> нь <m>3</m>-т
+          хуваагдана.</p>
+        </statement>
+        <solution>
+          <p><m>P(n) = \{3 \mid n^3 + 2n\}</m> гэе.</p>
+
+          <p><alert>Суурь (<m>n = 1</m>):</alert>
+          <m>1^3 + 2 \cdot 1 = 3</m> нь <m>3</m>-т хуваагдана. ✓</p>
+
+          <p><alert>Индукцийн таамаглал:</alert> <m>n = k</m> үед үнэн гэе:
+          <m>k^3 + 2k = 3m</m> байх бүхэл <m>m</m> олдоно.</p>
+
+          <p><alert>Шилжилт:</alert> <m>n = k+1</m> үед илэрхийллийг задалж,
+          таамаглалд орсон <m>k^3 + 2k</m> хэсгийг ялгаж гаргая:
+          <md>
+            <mrow>(k+1)^3 + 2(k+1) \amp= k^3 + 3k^2 + 3k + 1 + 2k + 2</mrow>
+            <mrow>\amp= (k^3 + 2k) + 3(k^2 + k + 1)</mrow>
+            <mrow>\amp= 3m + 3(k^2 + k + 1) = 3\,(m + k^2 + k + 1).</mrow>
+          </md>
+          <m>m + k^2 + k + 1</m> нь бүхэл тул <m>(k+1)^3 + 2(k+1)</m> нь
+          <m>3</m>-т хуваагдана. ✓</p>
+
+          <p>Индукцийн зарчмаар бүх <m>n \in \mathbb{N}</m>-ийн хувьд
+          <m>3 \mid n^3 + 2n</m>. <m>\blacksquare</m></p>
+        </solution>
+      </example>
+
+      <remark xml:id="rem-induction-strategy">
+        <p>Шилжилтийн алхамд <m>P(k+1)</m>-ийн илэрхийллээс <m>P(k)</m>-д орсон
+        хэсгийг <em>ялгаж гаргах</em> нь гол санаа юм. Нийлбэрийн адилтгалд энэ нь
+        эхний <m>k</m> гишүүн, хуваагдах чанарт <m>k^3 + 2k</m> байлаа. Мөн суурийг
+        заавал <m>n = 1</m>-ээс эхлэх албагүй: <m>P(n_0)</m> үнэн бөгөөд
+        <m>k \ge n_0</m> үед <m>P(k) \Rightarrow P(k+1)</m> бол бүх
+        <m>n \ge n_0</m>-ийн хувьд <m>P(n)</m> үнэн.</p>
+      </remark>
     </subsection>
   </section>
 
@@ -549,11 +708,17 @@
         <statement>
           <p>Батал: <m>P\land(P\lor Q)\Leftrightarrow P</m> (absorption).</p>
         </statement>
+        <hint>
+          <p>Хоёр тохиолдол авч үз: <m>P</m> үнэн бол <m>P\lor Q</m> үнэн тул зүүн тал <m>1\land 1</m>; <m>P</m> худал бол үржвэр шууд худал. Эсвэл 4 мөртэй үнэний хүснэгт байгуул.</p>
+        </hint>
       </exercise>
       <exercise xml:id="logic-sem-7">
         <statement>
           <p><m>(P\Rightarrow Q)\lor(Q\Rightarrow P)</m> нь тавтологи мөн эсэхийг тогтоо.</p>
         </statement>
+        <hint>
+          <p><xref ref="logic-sem-3"/>-ийн ёсоор <m>P\Rightarrow Q \Leftrightarrow \lnot P\lor Q</m>. Хоёр импликацийг ингэж бичээд коммутатив, ассоциатив чанараар бүлэглэвэл <m>P\lor\lnot P</m> гарч ирнэ (<xref ref="ex-excluded-middle"/>).</p>
+        </hint>
       </exercise>
       <exercise xml:id="logic-sem-8">
         <statement>
@@ -561,6 +726,9 @@
           <m>P\Rightarrow Q</m> хэллэгийг <m>n=6</m>, <m>n=7</m> ба <m>n=10</m> тохиолдолд шалга.
           <m>P\Leftrightarrow Q</m> теоремийг батал.</p>
         </statement>
+        <hint>
+          <p><m>n=7</m> үед нөхцөл <m>P</m> худал тул импликаци ямар байх вэ? <m>P\Rightarrow Q</m>: <m>n=2k</m> гэж ав. <m>Q\Rightarrow P</m>: урвуу хэллэгийг батал, <m>n</m> сондгой бол <m>n^2</m> сондгой тул 4-т хуваагдахгүй.</p>
+        </hint>
       </exercise>
       <exercise xml:id="logic-sem-9">
         <statement>
@@ -578,16 +746,25 @@
           <p><q>Хэрэв тоо 6-д хуваагдвал 3-д хуваагдана</q> хэллэгийн урвуу хэллэгийг бичээд
           үнэн эсэхийг дүгнэ.</p>
         </statement>
+        <hint>
+          <p>Энэ номонд <m>P\Rightarrow Q</m>-ийн урвуу хэллэг нь <m>\lnot Q\Rightarrow\lnot P</m> (<xref ref="ex-contrapositive"/>). <q>3-т хуваагдахгүй бол ...</q> гэж бич. Анхны хэллэг <m>6=2\cdot 3</m> тул үнэн; эквивалент хэллэгүүдийн үнэний утга ижил.</p>
+        </hint>
       </exercise>
       <exercise xml:id="logic-sem-12">
         <statement>
           <p>Шууд батал: хэрэв <m>n</m> сондгой бол <m>n^2</m> сондгой.</p>
         </statement>
+        <hint>
+          <p><m>n=2k+1</m> гэж аваад <m>n^2</m>-ийг <m>2(\ldots)+1</m> хэлбэрт бич (<xref ref="ex-direct-proof"/>-тэй адил).</p>
+        </hint>
       </exercise>
       <exercise xml:id="logic-sem-13">
         <statement>
           <p>Эсрэгээс нь батал: хэрэв <m>ab</m> сондгой бол <m>a</m> ба <m>b</m> сондгой.</p>
         </statement>
+        <hint>
+          <p><m>ab</m> сондгой, гэвч <m>a</m> эсвэл <m>b</m>-ийн аль нэг нь тэгш гэж үз (<xref ref="thm-logic-laws"/>-ийн Де Морганы хууль). <m>a=2k</m> бол <m>ab=2(kb)</m> ямар тоо вэ?</p>
+        </hint>
       </exercise>
       <exercise xml:id="logic-sem-14">
         <statement>
@@ -596,27 +773,42 @@
           Ийм дараалалын жишээ гарга.
           <m>\exists M \gt 0, \forall n \in \mathbb{N}, (|a_n| \lt M)</m> чанарын үгүйсгэл бич.</p>
         </statement>
+        <hint>
+          <p>Энэ нь <em>зааглагдсан</em> дараалал. Утгууд нь нэг завсарт оршдог дараалал, жишээ нь <m>a_n=\tfrac1n</m> эсвэл <m>a_n=(-1)^n</m>-ийн хувьд ямар <m>M</m> тохирох вэ? Үгүйсгэхдээ <m>\lnot\exists \Leftrightarrow \forall\lnot</m>, <m>\lnot\forall \Leftrightarrow \exists\lnot</m> гэж солиод <m>|a_n|\lt M</m>-ийг үгүйсгэ.</p>
+        </hint>
       </exercise>
       <exercise xml:id="logic-sem-15">
         <statement>
           <p>Эквивалент: <m>(P\Rightarrow Q)\Leftrightarrow(\lnot Q\Rightarrow\lnot P)</m>.</p>
         </statement>
+        <hint>
+          <p><xref ref="ex-contrapositive"/>-ийн хүснэгтийг өөрөө байгуул, эсвэл хоёр талыг <m>\lnot P\lor Q</m> хэлбэрт шилжүүл (<xref ref="logic-sem-3"/>).</p>
+        </hint>
       </exercise>
       <exercise xml:id="logic-sem-16">
         <statement>
           <p>Шууд батал: хэрэв <m>a</m> бүхэл бол <m>a^2+a</m> тэгш.</p>
         </statement>
+        <hint>
+          <p><m>a^2+a=a(a+1)</m> нь дараалсан хоёр бүхэл тооны үржвэр. <m>a</m> тэгш ба <m>a</m> сондгой гэсэн хоёр тохиолдол авч үз.</p>
+        </hint>
       </exercise>
       <exercise xml:id="logic-sem-17">
         <statement>
           <p>Дараах өгүүлбэрийн үгүйсгэлийг кванторыг зөв байршуулж бүрэн бич:
           <m>\forall y \in \mathbb{R}, \exists x \in \mathbb{R}, (f(x) = y)</m>.</p>
         </statement>
+        <hint>
+          <p>Кванторыг зүүнээс баруун тийш нэг нэгээр нь үгүйсгэ: <m>\forall\to\exists</m>, <m>\exists\to\forall</m>, эцэст нь <m>f(x)=y</m>-г <m>f(x)\ne y</m> болго. Энэ өгүүлбэр нь <m>f</m> сурьектив гэдгийг илэрхийлдэг.</p>
+        </hint>
       </exercise>
       <exercise xml:id="logic-sem-18">
         <statement>
           <p><m>\sqrt{6}</m> иррационал болохыг батал.</p>
         </statement>
+        <hint>
+          <p><xref ref="ex-sqrt2-irrational"/>-ийн алхмыг давт: <m>\sqrt6=\tfrac ab</m>, <m>\text{ХИЕХ}(a,b)=1</m> гэвэл <m>a^2=6b^2=2(3b^2)</m> тул <m>a</m> тэгш. <m>a=2k</m>-г орлуулаад <m>b</m>-ийн тухай дүгнэ.</p>
+        </hint>
       </exercise>
       <exercise xml:id="logic-sem-19">
         <statement>
@@ -630,6 +822,9 @@
         <statement>
           <p><m>1^2+2^2+\cdots+n^2=\dfrac{n(n+1)(2n+1)}{6}</m> батал.</p>
         </statement>
+        <hint>
+          <p><xref ref="ex-induction-gauss"/>-тэй адил. Шилжилтэд <m>\dfrac{k(k+1)(2k+1)}{6}+(k+1)^2</m>-аас <m>(k+1)</m>-ийг гаргаад хаалтан доторх <m>2k^2+7k+6</m>-г үржигдэхүүн болгон задал.</p>
+        </hint>
       </exercise>
       <exercise xml:id="logic-sem-21">
         <statement>
@@ -638,6 +833,9 @@
           \qquad \binom{n}{k}=\frac{n!}{k!(n-k)!}\ (0\le k\le n)</me>
           индукцээр батал.</p>
         </statement>
+        <hint>
+          <p>Эхлээд <m>\binom{n}{k-1}+\binom{n}{k}=\binom{n+1}{k}</m> (Паскалийн адилтгал)-ыг факториалын томьёогоор батал. Шилжилтэд <m>(a+b)^{n+1}=(a+b)(a+b)^n</m> гэж задлаад, хоёр нийлбэрийн индексийг нэгэн ижил <m>a^{n+1-k}b^k</m> гишүүнд тааруулж шилжүүл.</p>
+        </hint>
       </exercise>
       <exercise xml:id="logic-sem-22">
         <statement>
@@ -647,6 +845,9 @@
           <me>a^n+b^n=(a+b)\left(\sum_{k=0}^{n-1}(-1)^k a^{\,n-1-k} b^{\,k}\right)</me>
           байдгийг батал.</p>
         </statement>
+        <hint>
+          <p>Баруун талыг задлахад гишүүд хорогдоно (телескоп), эсвэл индукцээр: <m>a^{n+1}-b^{n+1}=a\,(a^n-b^n)+b^n(a-b)</m>. Хоёр дахь томьёонд эхний томьёоны <m>b</m>-г <m>-b</m>-ээр солиод <m>n</m> сондгой үед <m>(-b)^n=-b^n</m> гэдгийг ашигла.</p>
+        </hint>
       </exercise>
       <exercise xml:id="logic-sem-23">
         <statement>
@@ -654,6 +855,9 @@
           <me>a^n-b^n \ge n\,b^{\,n-1}(a-b)</me>
           батал.</p>
         </statement>
+        <hint>
+          <p><xref ref="logic-sem-22"/>-ийн задаргааг ашигла. <m>a\gt b\gt 0</m> тул нийлбэрийн <m>n</m> гишүүн бүр <m>a^{n-1-k}b^k\ge b^{\,n-1}</m> байна.</p>
+        </hint>
       </exercise>
     </exercises>
   </section>
