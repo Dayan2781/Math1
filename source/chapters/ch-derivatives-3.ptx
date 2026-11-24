@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-derivatives-3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Параметр, далд функц ба дээд эрэмбийн уламжлал</title>
+
+  <introduction>
+    <p>Лекц 10. Параметр ба далд функцийн уламжлал, дээд эрэмбийн уламжлалын онолыг <xref ref="sec-parametric-derivative"/>, <xref ref="sec-implicit-derivative"/>, <xref ref="sec-higher-derivatives"/>-д үзсэн. Энэ бүлэгт тэдгээрийг AI дасгал ба семинарын бодлогоор бэхжүүлнэ.</p>
+  </introduction>
+
+  <section xml:id="sec-ai-practice-l10">
+    <title>AI-тай дасгал хийх (Лекц 10)</title>
+    <introduction>
+      <p>Лекц 10-т үзсэн сэдвүүдээр Claude AI-тай дасгал хий. Сэдэв сонгоод
+      бодлого үүсгүүлж, өөрөө бодсоны дараа хариулаа шалгуул.</p>
+    </introduction>
+    <interactive xml:id="ai-practice-l10"
+      iframe="ai-practice.html?topics=параметр функцийн уламжлал,далд функцийн уламжлал,дээд эрэмбийн уламжлал,n эрэмбийн уламжлал,Лейбницийн томьёо&amp;label=Лекц 10-ын сэдвүүд"
+      width="100%" aspect="4:3" />
+  </section>
+
+  <!-- Семинар 10 (latex/lectures/seminars.tex) -->
+  <section xml:id="sec-seminar-10-deriv">
+    <title>Семинар 10</title>
+    <exercises xml:id="exercises-seminar-10-deriv">
+      <introduction>
+        <p>Хамрах сэдэв: дээд эрэмбийн уламжлал, <m>n</m> эрэмбийн уламжлал, далд ба параметр функцийн уламжлал (Лекц 10).</p>
+      </introduction>
+      <exercise xml:id="sem10-1">
+        <statement>
+          <p>Дараах функцүүдийн заагдсан эрэмбийн уламжлалыг ол.</p>
+          <p><ol>
+          <li><m>y = x^2 - 3x + 2,\quad y'' = ?</m></li>
+          <li><m>y=1-x^2-x^4, \quad y'''=?</m></li>
+          <li><m>y=(1+x)^6, \quad y'''(2)=?</m></li>
+          <li><m>y=(x^3+1)^8, \quad y'''=?</m></li>
+          <li><m>y=\cos ^2 x, \quad y'''=?</m></li>
+          <li><m>y=\dfrac{1}{1-x}, \quad y^{(5)}=?</m></li>
+          <li><m>y = xe^{x^2},\quad y'' = ?</m></li>
+          <li><m>y = x^3\ln(x),\quad y^{(4)} = ?</m></li>
+          <li><m>y = \ln(x+\sqrt{1+x^2}),\quad y'' = ?</m></li>
+          <li><m>y = \sqrt{1-x^2}\arcsin x,\quad y'' = ?</m></li>
+        </ol></p>
+        </statement>
+        <hint><p>Дараалан ялга. Хялбаршуулах санаа: (5) <m>\cos^2x=\tfrac{1+\cos2x}{2}</m>; (6) <m>\left(\tfrac{1}{1-x}\right)^{(n)}=\dfrac{n!}{(1-x)^{n+1}}</m>; (8) <m>(x^3\ln x)'=3x^2\ln x+x^2</m>-ээс эхэлж үргэлжлүүл; (9) <m>y'=\dfrac{1}{\sqrt{1+x^2}}</m>; (10) <m>y'=1-\dfrac{x\arcsin x}{\sqrt{1-x^2}}</m>.</p></hint>
+      </exercise>
+      <exercise xml:id="sem10-2">
+        <statement>
+          <p>Дараах функцүүдийн <m>n</m> эрэмбийн уламжлалыг ол.</p>
+          <p><ol>
+          <li><m>y = e^{ax}</m></li>
+          <li><m>y = e^{-x}</m></li>
+          <li><m>y = \sin^2x</m></li>
+          <li><m>y = xe^x</m></li>
+          <li><m>y = x\ln x</m></li>
+          <li><m>y = (x^2+x-1)\cos x</m></li>
+          <li><m>y = e^{x}\cos x</m></li>
+          <li><m>y = x^{n-1}e^{\frac{1}{x}}</m></li>
+        </ol></p>
+        </statement>
+        <hint><p>Эхний хэдэн уламжлалыг бичээд зүй тогтлыг таагаад индукцээр батал. Хэрэгтэй томьёо: <m>(\cos x)^{(n)}=\cos\!\left(x+\tfrac{n\pi}{2}\right)</m>; (3)-д <m>\sin^2x=\tfrac{1-\cos2x}{2}</m>; (4), (5), (6)-д Лейбницийн томьёо (олон гишүүнт хэсэг хэдэн удаа ялгахад тэг болох вэ?); (7)-д <m>(e^x\cos x)'=\sqrt2\,e^x\cos\!\left(x+\tfrac\pi4\right)</m>.</p></hint>
+      </exercise>
+      <exercise xml:id="sem10-3">
+        <statement>
+          <p>Далд функцийн уламжлал ол.</p>
+          <p><ol>
+          <li><m>\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}-1=0</m> , <m>\dfrac{d^2y}{dx^2}</m></li>
+          <li><m>y=\tan(x+y)</m> , <m>\dfrac{d^3y}{dx^3}</m></li>
+          <li><m>y^3+x^3-3axy=0</m> , <m>y''</m></li>
+          <li><m>e^{x+y}-xy=0</m> , <m>y''</m></li>
+        </ol></p>
+        </statement>
+        <hint><p>Эхлээд <m>y'</m>-ийг ол. Дараа нь <m>y'</m>-ийн илэрхийллийг дахин <m>x</m>-ээр ялгаж (<m>y</m> нь <m>x</m>-ийн функц гэдгийг санаж), гарсан <m>y'</m>-ийн оронд олсон илэрхийллээ орлуул. Муруйн тэгшитгэлээр хялбарчилж болно, жишээ нь (1)-д <m>b^2x^2+a^2y^2=a^2b^2</m>.</p></hint>
+      </exercise>
+      <exercise xml:id="sem10-4">
+        <statement>
+          <p>Параметр функцийн уламжлал ол.</p>
+          <p><ol>
+          <li><m>\begin{cases}
+          x=at^2\\
+          y=bt^3
+          \end{cases}</m> , <m>\dfrac{d^2y}{dx^2}</m></li>
+          <li><m>\begin{cases}
+          x=a\cos t\\
+          y=b\sin t
+          \end{cases} , \dfrac{d^3y}{dx^3}</m></li>
+          <li><m>\begin{cases}
+          x=t-\sin t\\
+          y=1-\cos t
+          \end{cases} , \dfrac{d^2y}{dx^2}</m></li>
+          <li><m>\begin{cases}
+          x=\ln t\\
+          y=t^2-1
+          \end{cases} , \dfrac{d^3y}{dx^3}</m></li>
+          <li><m>\begin{cases}
+          x=e^t\sin t\\
+          y=e^t\cos t
+          \end{cases}</m> бол <m>y''(x+y)^2-2(xy^{\prime}-y)=0</m> биелэхийг батал.</li>
+        </ol></p>
+        </statement>
+        <hint><p><m>y'_x=\dfrac{y'_t}{x'_t}</m>, <m>y''_{xx}=\dfrac{(y'_x)'_t}{x'_t}</m>, <m>y'''_{xxx}=\dfrac{(y''_{xx})'_t}{x'_t}</m>. (5)-д <m>y'</m>, <m>y''</m>-ийг <m>t</m>-ээр олоод <m>x+y</m> ба <m>xy'-y</m>-г <m>e^t</m>, <m>\sin t</m>, <m>\cos t</m>-ээр илэрхийлж орлуул.</p></hint>
+      </exercise>
+    </exercises>
+  </section>
+
+</chapter>
