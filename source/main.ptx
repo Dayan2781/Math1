@@ -137,20 +137,24 @@
       <title>Интеграл</title>
       <!-- Лекц 13 -->
       <xi:include href="./chapters/sec-antider.ptx" />
+      <xi:include href="./chapters/ai-13.ptx" />
       <xi:include href="./chapters/sem-13.ptx" />
       <xi:include href="./chapters/hw-13.ptx" />
       <!-- Лекц 14 -->
       <xi:include href="./chapters/sec-integration-techniques-1.ptx" />
       <xi:include href="./chapters/sec-irrational-integrals.ptx" />
+      <xi:include href="./chapters/ai-14.ptx" />
       <xi:include href="./chapters/sem-14.ptx" />
       <xi:include href="./chapters/hw-14.ptx" />
       <!-- Лекц 15 -->
       <xi:include href="./chapters/sec-definite-integral.ptx" />
       <xi:include href="./chapters/sec-definite-integral-methods.ptx" />
+      <xi:include href="./chapters/ai-15.ptx" />
       <xi:include href="./chapters/semhw-15.ptx" />
       <!-- Лекц 16 -->
       <xi:include href="./chapters/sec-integration-techniques-2.ptx" />
       <xi:include href="./chapters/sec-applications-integration.ptx" />
+      <xi:include href="./chapters/ai-16.ptx" />
       <xi:include href="./chapters/semhw-16.ptx" />
     </chapter>
     <!-- Бүлэг 6: Уламжлалын теоремүүд ба хэрэглээ (2 лекц + 2 семинар) -->
