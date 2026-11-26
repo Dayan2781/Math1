@@ -1,0 +1,78 @@
+% Лекц 7: семинар ба гэрийн даалгавар. Бодлогууд: Г.Н. Берман, "Сборник задач по курсу
+% математического анализа" (22-р хэвлэл). [Б.N] нь номын бодлогын дугаар.
+
+\ProblemSet{Семинар 7}
+\begin{frame}[allowframebreaks]{Семинар 7}
+\pgroup{Дарааллын хязгаар.}
+\begin{plist}
+\prob{176}{$u_1=0{,}9;\ u_2=0{,}99;\ \dots;\ u_n=0{,}\underbrace{99\dots9}_{n};\ \dots$ \ $\lim u_n$ хэд вэ? $|u_n-\lim u_n|\le0{,}0001$ байхын тулд $n$ ямар байх вэ?}
+\prob{178}{$u_n=\frac{n-1}{n+1}$ дараалал $n\to\infty$ үед 1-д тэмүүлэхийг батал. Ямар $n$-ээс эхлэн $|u_n-1|\le10^{-4}$ болох вэ?}
+\prob{181}{$u_n=\frac{4n^2+1}{3n^2+2}$ дараалал $\frac43$-д монотон өсөж тэмүүлэхийг батал. Ямар $n$-ээс эхлэн $\frac43-u_n<\varepsilon$ болох вэ?}
+\prob{184}{$u_n=1+(-1)^n$ дараалал хязгааргүйг батал.}
+\prob{186}{Хязгаартай юу: 1) $u_n=n\sin\frac{n\pi}{2}$; \ 2) $u_n=\frac{\sin\frac{n\pi}{2}}{\lg n}$ \ ($n>1$)?}
+\prob{220}{$u_1=\sqrt6,\ u_2=\sqrt{6+u_1},\ \dots,\ u_n=\sqrt{6+u_{n-1}}$. Энэ дараалал хязгаартайг батлаад хязгаарыг ол.}
+\end{plist}
+\pgroup{Дарааллын хязгаарыг ол.}
+\begin{plist}
+\prob{246}{$\displaystyle\lim_{n\to\infty}\frac{(n+1)^2}{2n^2}$}
+\prob{248}{$\displaystyle\lim_{n\to\infty}\frac{n^3-100n^2+1}{100n^2+15n}$}
+\prob{250}{$\displaystyle\lim_{n\to\infty}\frac{(n+1)^4-(n-1)^4}{(n+1)^4+(n-1)^4}$}
+\prob{261}{$\displaystyle\lim_{n\to\infty}\frac{1}{n^2}(1+2+3+\dots+n)$}
+\prob{265}{$\displaystyle\lim_{n\to\infty}\Bigl(\frac{1}{1\cdot3}+\frac{1}{3\cdot5}+\dots+\frac{1}{(2n-1)(2n+1)}\Bigr)$}
+\prob{266}{$\displaystyle\lim_{n\to\infty}\frac{2^n-1}{2^n+1}$}
+\end{plist}
+\pgroup{Гайхамшигт хязгаар ашиглан ол.}
+\begin{plist}
+\prob{314}{$\displaystyle\lim_{x\to0}\frac{\sin3x}{x}$}
+\prob{317}{$\displaystyle\lim_{x\to0}\frac{\tg2x}{\sin5x}$}
+\prob{321}{$\displaystyle\lim_{x\to0}\frac{1-\cos x}{x^2}$}
+\prob{327}{$\displaystyle\lim_{x\to0}\Bigl(\frac{1}{\sin x}-\frac{1}{\tg x}\Bigr)$}
+\prob{353}{$\displaystyle\lim_{x\to\infty}\Bigl(1+\frac1x\Bigr)^{\frac{x+1}{x}}$}
+\prob{355}{$\displaystyle\lim_{x\to\infty}\Bigl(\frac{x+1}{x-2}\Bigr)^{2x-1}$}
+\prob{365}{$\displaystyle\lim_{x\to0}\frac{\ln(1+kx)}{x}$}
+\prob{370}{$\displaystyle\lim_{x\to0}\frac{e^{2x}-1}{3x}$}
+\end{plist}
+\end{frame}
+
+\ProblemSet{Гэрийн даалгавар 7}
+\begin{frame}[allowframebreaks]{Гэрийн даалгавар 7}
+\pgroup{Дарааллын хязгаар.}
+\begin{plist}
+\prob{177}{$u_n=\frac{1}{n^2}$. $\lim u_n$-г ол. $|u_n-\lim u_n|<\varepsilon$ байхын тулд $n$ ямар байх вэ?}
+\prob{179}{$v_n=\frac{1}{n}\cos\frac{n\pi}{2}$. $\lim v_n$-г ол. $|v_n-\lim v_n|\le0{,}001$ байхын тулд $n$ ямар байх вэ? $v_n$ өөрийн хязгаарын утгыг авах уу?}
+\prob{180}{$u_n=\frac{2^n-1}{2^n}$ ($n$ сондгой), \ $u_n=\frac{2^n+1}{2^n}$ ($n$ тэгш). $\lim u_n$-г олж, $|u_n-\lim u_n|<10^{-4}$ байх $n$-г тогтоо.}
+\prob{182}{$u_n=\frac{\sqrt{n^2+a^2}}{n}$ дарааллын хязгаар 1 болохыг батал. Ямар $n$-ээс эхлэн $|1-u_n|<\varepsilon$ болох вэ?}
+\prob{185}{$u_n=\frac{2^n+(-2)^n}{2^n}$ хязгааргүй, харин $v_n=\frac{2^n+(-2)^n}{3^n}$ хязгаартайг батал. Хязгаар нь хэд вэ?}
+\prob{196}{$u_n=2n+1$ дараалал $n\to\infty$ үед төгсгөлгүй их болохыг батал. Ямар $n$-ээс эхлэн $u_n>N$ болох вэ?}
+\prob{217}{$u_n=\frac12+\frac{1}{2\cdot4}+\dots+\frac{1}{2\cdot4\cdots2n}$ дараалал хязгаартайг батал.}
+\end{plist}
+\pgroup{Дарааллын хязгаарыг ол.}
+\begin{plist}
+\prob{247}{$\displaystyle\lim_{n\to\infty}\frac{(n+1)^3-(n-1)^3}{(n+1)^2+(n-1)^2}$}
+\prob{249}{$\displaystyle\lim_{n\to\infty}\frac{1000n^3+3n^2}{0{,}001n^4-100n^3+1}$}
+\prob{251}{$\displaystyle\lim_{n\to\infty}\frac{(2n+1)^4-(n-1)^4}{(2n+1)^4+(n-1)^4}$}
+\prob{252}{$\displaystyle\lim_{n\to\infty}\frac{\sqrt[3]{n^3+2n-1}}{n+2}$}
+\prob{253}{$\displaystyle\lim_{n\to\infty}\frac{\sqrt[4]{n^2+n}}{n+1}$}
+\prob{254}{$\displaystyle\lim_{n\to\infty}\frac{(\sqrt{n^2+1}+n)^2}{\sqrt[3]{n^6+1}}$}
+\prob{258}{$\displaystyle\lim_{n\to\infty}\frac{(n+2)!+(n+1)!}{(n+3)!}$}
+\prob{262}{$\displaystyle\lim_{n\to\infty}\Bigl(\frac{1+2+\dots+n}{n+2}-\frac n2\Bigr)$}
+\prob{263}{$\displaystyle\lim_{n\to\infty}\frac{1-2+3-4+\dots-2n}{\sqrt{n^2+1}}$}
+\prob{267}{$\displaystyle\lim_{n\to\infty}\frac{2^{1/n}-1}{2^{1/n}+1}$}
+\end{plist}
+\pgroup{Функцийн хязгаарыг ол.}
+\begin{plist}
+\prob{315}{$\displaystyle\lim_{x\to0}\frac{\tg kx}{x}$}
+\prob{316}{$\displaystyle\lim_{x\to0}\frac{\sin\alpha x}{\sin\beta x}$}
+\prob{319}{$\displaystyle\lim_{x\to0}\frac{2\arcsin x}{3x}$}
+\prob{322}{$\displaystyle\lim_{x\to0}\frac{1-\cos^2x}{x\sin2x}$}
+\prob{328}{$\displaystyle\lim_{x\to\frac{\pi}{2}}\frac{1-\sin x}{\bigl(\frac{\pi}{2}-x\bigr)^2}$}
+\prob{331}{$\displaystyle\lim_{x\to\frac{\pi}{2}}\Bigl(\frac{\pi}{2}-x\Bigr)\tg x$}
+\prob{351}{$\displaystyle\lim_{x\to\infty}\Bigl(\frac{x}{1+x}\Bigr)^x$}
+\prob{356}{$\displaystyle\lim_{x\to\infty}\Bigl(\frac{3x-4}{3x+2}\Bigr)^{\frac{x+1}{3}}$}
+\prob{358}{$\displaystyle\lim_{x\to\pm\infty}\Bigl(\frac{x+1}{2x-1}\Bigr)^x$}
+\prob{360}{$\displaystyle\lim_{x\to\infty}\Bigl(1+\frac{1}{x^2}\Bigr)^x$}
+\prob{363}{$\displaystyle\lim_{x\to0}(1+\sin x)^{\frac{1}{\sin x}}$}
+\prob{368}{$\displaystyle\lim_{x\to e}\frac{\ln x-1}{x-e}$}
+\prob{371}{$\displaystyle\lim_{x\to1}\frac{e^x-e}{x-1}$}
+\end{plist}
+\end{frame}
