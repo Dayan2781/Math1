@@ -81,6 +81,10 @@
 \newcommand{\Sx}{\mathrm{S}}
 \newcommand{\itcol}[1]{{\itshape\textcolor{red}{#1}}}
 \newcommand{\arccot}{\mathbf{arccot}}
+\providecommand{\tg}{\operatorname{tg}}
+\providecommand{\ctg}{\operatorname{ctg}}
+\providecommand{\arctg}{\operatorname{arctg}}
+\providecommand{\arcctg}{\operatorname{arcctg}}
 
 % ---------- Теорем маягийн орчнууд ----------
 % beamer-ийн \note (илтгэгчийн тэмдэглэл) командыг "Санамж" орчноор солино
@@ -131,6 +135,22 @@
 \newif\ifshowsolutions
 \showsolutionstrue   % бодолтыг нуух бол \showsolutionsfalse
 \NewEnviron{solution}{\ifshowsolutions\par\smallskip\noindent\textit{Бодолт. }\BODY\par\smallskip\fi}
+
+
+% ---------- Семинар ба гэрийн даалгаврын бодлогууд (Г.Н. Берман) ----------
+% \ProblemSet{Семинар 10}  -> шинэ хэсэг, дугаарлалт 1-ээс
+% \pgroup{заавар}          -> бүлэг бодлогын заавар
+% \begin{plist} \prob{936}{$x=a\cos t$} \end{plist}  -> [Б.936] нь Берманы дугаар
+\newcounter{pnum}
+\mode<presentation>{\newcommand{\ProblemSet}[1]{\setcounter{pnum}{0}\section{#1}}}
+\mode<article>{\newcommand{\ProblemSet}[1]{\setcounter{pnum}{0}\section*{#1}\addcontentsline{toc}{section}{#1}}}
+\newcommand{\bn}[1]{\hfill{\color{mathgray}\scriptsize[Б.#1]}}
+\newcommand{\prob}[2]{\stepcounter{pnum}\item[\textbf{\thepnum.}] #2\bn{#1}}
+
+\newcommand{\pr}[1]{\stepcounter{pnum}\item[\textbf{\thepnum.}] #1}
+\newcommand{\pgroup}[1]{\par\smallskip\noindent\textbf{#1}\par}
+\mode<presentation>{\newenvironment{plist}{\begin{enumerate}[leftmargin=2.2em,itemsep=3pt]}{\end{enumerate}}}
+\mode<article>{\newenvironment{plist}{\begin{multicols}{2}\begin{enumerate}[leftmargin=2.2em,itemsep=2pt]}{\end{enumerate}\end{multicols}}}
 
 % ---------- Лекцийн гарчиг ----------
 % \MathLecture{дугаар}{гарчиг}: слайдад гарчгийн хуудас, хэвлэхэд \chapter
