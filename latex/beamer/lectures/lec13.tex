@@ -17,7 +17,6 @@
 \begin{example}
     $(x^2+x-1)'=2x+1$ тул $x^2+x-1$ нь $2x+1$ функцийн эх функц юм.
 \end{example}
-  $f'(x)=g'(x)$ ) бол $f(x)=g(x)+C$
 \end{frame}
 
 \begin{frame}[allowframebreaks]{Уламжлалын урвуу үйлдэл. Эх функц}
@@ -84,6 +83,123 @@ $
 \end{example}
 \end{frame}
 
+\section{Орлуулах арга}
+\begin{frame}[allowframebreaks]{Орлуулах арга}
+\begin{theorem}[Орлуулах арга]\label{orluulah}
+$\displaystyle\int f(u)\,du=F(u)+C$ ба $u=\varphi(x)$ нь дифференциалчлагддаг функц бол
+\[
+\int f\bigl(\varphi(x)\bigr)\varphi'(x)\,dx=F\bigl(\varphi(x)\bigr)+C .
+\]
+\end{theorem}
+\begin{prof}
+Давхар функцийн уламжлалын дүрмээр
+$\bigl(F(\varphi(x))\bigr)'=F'(\varphi(x))\,\varphi'(x)=f(\varphi(x))\,\varphi'(x)$.
+Иймд $F(\varphi(x))$ нь $f(\varphi(x))\varphi'(x)$ функцийн эх функц болно.
+\end{prof}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Орлуулах арга}
+$\varphi'(x)\,dx=d\varphi(x)$ тул теоремыг
+\[
+\int f\bigl(\varphi(x)\bigr)\,d\varphi(x)=\int f(u)\,du\Big|_{u=\varphi(x)}
+\]
+гэж бичиж болно. Үүнийг \emph{дифференциалын доор оруулах} гэж нэрлэдэг.
+Ихэвчлэн хэрэглэгддэг хувиргалтууд:
+\[
+\renewcommand{\arraystretch}{1.6}
+\begin{array}{ll@{\qquad}ll}
+dx=\dfrac1a\,d(ax+b)\ (a\ne0), & & \dfrac{dx}{x}=d(\ln|x|), \\
+x\,dx=\dfrac12\,d(x^2), & & e^x\,dx=d(e^x), \\
+\cos x\,dx=d(\sin x), & & \dfrac{dx}{\cos^2x}=d(\tg x), \\
+\sin x\,dx=-d(\cos x), & & \dfrac{dx}{2\sqrt x}=d(\sqrt x).
+\end{array}
+\]
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Орлуулах арга}
+\begin{cor}
+$\displaystyle\int f(x)\,dx=F(x)+C$ бол
+\begin{enumerate}
+\item $\displaystyle\int f(ax+b)\,dx=\frac1a\,F(ax+b)+C$, \quad $a\ne0$;
+\item $\displaystyle\int\frac{\varphi'(x)}{\varphi(x)}\,dx=\ln|\varphi(x)|+C$.
+\end{enumerate}
+\end{cor}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Орлуулах арга}
+\begin{example}
+\begin{enumerate}
+\item $\displaystyle\int(3x-1)^5\,dx=\frac13\int(3x-1)^5\,d(3x-1)=\frac{(3x-1)^6}{18}+C$.
+\item $\displaystyle\int\cos(2x+1)\,dx=\frac12\sin(2x+1)+C$.
+\item $\displaystyle\int\frac{dx}{a^2+x^2}=\frac1a\int\frac{d(x/a)}{1+(x/a)^2}=\frac1a\arctg\frac xa+C$, \ ($a>0$).
+\item $\displaystyle\int\frac{dx}{\sqrt{a^2-x^2}}=\int\frac{d(x/a)}{\sqrt{1-(x/a)^2}}=\arcsin\frac xa+C$, \ ($a>0$).
+\end{enumerate}
+\end{example}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Орлуулах арга}
+\begin{example}
+\begin{enumerate}
+\item $\displaystyle\int x\,e^{x^2}dx$. \ $u=x^2$, $du=2x\,dx$ гэвэл
+$\displaystyle\int x\,e^{x^2}dx=\frac12\int e^u\,du=\frac12e^{x^2}+C$.
+\item $\displaystyle\int\tg x\,dx=\int\frac{\sin x}{\cos x}\,dx=-\int\frac{d(\cos x)}{\cos x}=-\ln|\cos x|+C$.
+\item $\displaystyle\int\sin^3x\cos x\,dx=\int\sin^3x\,d(\sin x)=\frac{\sin^4x}{4}+C$.
+\item $\displaystyle\int\frac{\ln x}{x}\,dx=\int\ln x\,d(\ln x)=\frac{\ln^2x}{2}+C$.
+\item $\displaystyle\int\frac{2x+3}{x^2+3x+5}\,dx=\int\frac{d(x^2+3x+5)}{x^2+3x+5}=\ln(x^2+3x+5)+C$.
+\end{enumerate}
+\end{example}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Орлуулах арга}
+\begin{theorem}[Хувьсагч солих]\label{huvsagch}
+$x=\psi(t)$ нь $T$ завсар дээр дифференциалчлагддаг, хатуу монотон функц бөгөөд $t=\psi^{-1}(x)$ урвуутай байг. Хэрэв
+$\displaystyle\int f\bigl(\psi(t)\bigr)\psi'(t)\,dt=G(t)+C$ бол
+\[
+\int f(x)\,dx=G\bigl(\psi^{-1}(x)\bigr)+C .
+\]
+\end{theorem}
+\begin{prof}
+Урвуу функцийн уламжлалаар $\bigl(\psi^{-1}(x)\bigr)'=\dfrac1{\psi'(t)}$. Иймд
+$\bigl(G(\psi^{-1}(x))\bigr)'=G'(t)\cdot\dfrac1{\psi'(t)}=f(\psi(t))=f(x)$.
+\end{prof}
+\begin{remark}
+Энэ аргад шинэ хувьсагчийг $x=\psi(t)$ хэлбэрээр сонгоно. Интегралчилсны дараа $t=\psi^{-1}(x)$-ийг орлуулж, анхны хувьсагч руу буцна.
+\end{remark}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Орлуулах арга}
+\begin{example}
+$\displaystyle\int x\sqrt{x-1}\,dx$. \ $t=\sqrt{x-1}$ гэвэл $x=t^2+1$, $dx=2t\,dt$. Иймд
+\[
+\int x\sqrt{x-1}\,dx=\int(t^2+1)\,t\cdot2t\,dt=\frac{2t^5}{5}+\frac{2t^3}{3}+C
+=\frac25(x-1)^{5/2}+\frac23(x-1)^{3/2}+C .
+\]
+\end{example}
+\begin{example}
+$\displaystyle\int\frac{dx}{1+\sqrt x}$. \ $x=t^2$ ($t\ge0$), $dx=2t\,dt$ гэвэл
+\[
+\int\frac{2t\,dt}{1+t}=2\int\Bigl(1-\frac1{1+t}\Bigr)dt=2t-2\ln(1+t)+C=2\sqrt x-2\ln(1+\sqrt x)+C .
+\]
+\end{example}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Орлуулах арга}
+\begin{example}
+$\displaystyle\int\sqrt{1-x^2}\,dx$. \ $x=\sin t$, $t\in[-\frac\pi2,\frac\pi2]$ гэвэл $dx=\cos t\,dt$, $\sqrt{1-x^2}=\cos t$. Иймд
+\[
+\int\sqrt{1-x^2}\,dx=\int\cos^2t\,dt=\int\frac{1+\cos2t}{2}\,dt=\frac t2+\frac{\sin2t}{4}+C .
+\]
+$\sin2t=2\sin t\cos t=2x\sqrt{1-x^2}$ тул
+\[
+\int\sqrt{1-x^2}\,dx=\frac12\arcsin x+\frac x2\sqrt{1-x^2}+C .
+\]
+\end{example}
+\begin{remark}
+$\sqrt{a^2-x^2}$ агуулсан интегралд $x=a\sin t$, \ $\sqrt{a^2+x^2}$ агуулсан интегралд $x=a\tg t$,
+\ $\sqrt[n]{ax+b}$ агуулсан интегралд $t=\sqrt[n]{ax+b}$ орлуулгыг ихэвчлэн хэрэглэнэ.
+\end{remark}
+\end{frame}
+
 \section{Хэсэгчлэн интегралчлах арга}
 \begin{frame}[allowframebreaks]{Хэсэгчлэн интегралчлах арга}
 $\displaystyle \int g'(x)f(x)\,dx = f(x)g(x) - \int g(x)f'(x)\,dx$ томьёог
@@ -137,7 +253,7 @@ $$\int 2xe^{x}\,dx= 2xe^{x}-\int 2e^{x}\,dx$$ болно. Иймд
 болно. $\int e^x (-\cos x) dx$ интегралын хувьд  $f(x)=-\cos x, g'(x)=e^x$ гэж авбал
 
 $$\int e^x (-\cos x) dx=e^x (-\cos x)-\int e^x(-\sin x) dx$$ болно. Хэрэв $I=\displaystyle\int e^{x}\sin x\,dx$ гэвэл 
-$I=e^x\sin x-\frac{e^{x}}{2}(\sin x - \cos x) + C.$
+$I=e^x\sin x-e^x\cos x-I$ болох тул $I=\dfrac{e^{x}}{2}(\sin x - \cos x) + C.$
 \end{example}
 \end{frame}
 
