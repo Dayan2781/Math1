@@ -1,0 +1,11 @@
+_build/
+pdf/
+*.aux
+*.log
+*.nav
+*.snm
+*.toc
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk

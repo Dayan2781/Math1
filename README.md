@@ -18,6 +18,7 @@
 | `latex/preamble.tex` | Бүх лекцийн PDF-д хуваалцах преамбл |
 | `latex/lectures/` | Лекц, семинар, гэрийн даалгаврын LaTeX эх файлууд |
 | `latex/pictures/` | LaTeX-д ашиглах зургууд |
+| `latex/beamer/` | Нэг эх файлаас хичээлийн слайд (beamer) ба хэвлэх хувилбар, Overleaf-д бэлэн (XeLaTeX). Дэлгэрэнгүйг `latex/beamer/README.md`-ээс |
 
 ## Шинэ лекц нэмэх
 

@@ -1,0 +1,41 @@
+% !TEX program = xelatex
+% =====================================================================
+%  Математик I В — ХЭВЛЭХ ХУВИЛБАР (A4, beamerarticle)
+%  Слайдтай яг ижил lectures/lecNN.tex файлаас үүснэ.
+%  Нэг лекц хэвлэх бол дугаарыг нь бичнэ (01 ... 16),
+%  бүх 16 лекцийг нэг ном болгох бол all гэж бичнэ.
+% =====================================================================
+\providecommand*{\LECTURE}{all}
+
+\documentclass[11pt,a4paper,oneside]{book}
+\usepackage[noamsthm]{beamerarticle}
+\usepackage[margin=2.2cm]{geometry}
+\definecolor{mathblue}{RGB}{0,82,155}
+\definecolor{mathred}{RGB}{178,34,34}
+\definecolor{mathgreen}{RGB}{0,120,60}
+\definecolor{mathgray}{RGB}{90,90,90}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=mathblue}
+
+\input{common/preamble}
+% Хэвлэхэд frame-ийн гарчиг давхардахгүй (бүлэг, дэд бүлгийн гарчиг хангалттай)
+\setbeamertemplate{frametitle}{}
+% "Бүлэг" биш "Лекц" гэж гарна
+\gappto\captionsmongolian{\renewcommand{\chaptername}{Лекц}}
+
+\begin{document}
+\def\ALL{all}
+\ifx\LECTURE\ALL
+  \title{Математик I В\\[4pt]\large\coursename}
+  \author{МУИС, Математикийн тэнхим}
+  \date{\semester}
+  \maketitle
+  \tableofcontents
+  \input{lectures/lec01}\input{lectures/lec02}\input{lectures/lec03}\input{lectures/lec04}
+  \input{lectures/lec05}\input{lectures/lec06}\input{lectures/lec07}\input{lectures/lec08}
+  \input{lectures/lec09}\input{lectures/lec10}\input{lectures/lec11}\input{lectures/lec12}
+  \input{lectures/lec13}\input{lectures/lec14}\input{lectures/lec15}\input{lectures/lec16}
+\else
+  \input{lectures/lec\LECTURE}
+\fi
+\end{document}
