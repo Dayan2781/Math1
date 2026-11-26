@@ -1,0 +1,26 @@
+% !TEX program = xelatex
+% =====================================================================
+%  Математик I В — ХИЧЭЭЛ ДЭЭР ҮЗҮҮЛЭХ СЛАЙД (beamer, 16:9)
+%  Аль лекцийг гаргахаа доорх мөрөнд бичнэ: 01 ... 16
+% =====================================================================
+\providecommand*{\LECTURE}{01}
+
+\documentclass[aspectratio=169,11pt,noamsthm]{beamer}
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\definecolor{mathblue}{RGB}{0,82,155}
+\definecolor{mathred}{RGB}{178,34,34}
+\definecolor{mathgreen}{RGB}{0,120,60}
+\definecolor{mathgray}{RGB}{90,90,90}
+\setbeamercolor{structure}{fg=mathblue}
+\usefonttheme[onlymath]{serif}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{frametitle continuation}{\ifnum\insertcontinuationcount>1(\insertcontinuationcount)\fi}
+\author{}
+\institute{МУИС, Математикийн тэнхим}
+
+\input{common/preamble}
+
+\begin{document}
+\input{lectures/lec\LECTURE}
+\end{document}

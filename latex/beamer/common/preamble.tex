@@ -1,0 +1,145 @@
+% =====================================================================
+%  Математик I В — слайд ба хэвлэх хувилбарт хуваалцах преамбл
+%  slides.tex (beamer) ба print.tex (book + beamerarticle) хоёулаа \input хийнэ.
+%  \mode<presentation>{...} зөвхөн слайдад, \mode<article>{...} зөвхөн хэвлэхэд.
+%  XeLaTeX-ээр хөрвүүлнэ (Overleaf: Menu -> Compiler -> XeLaTeX; latexmkrc үүнийг
+%  автоматаар тохируулна).
+% =====================================================================
+
+% ---------- Хэл ба фонт ----------
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\usepackage{polyglossia}
+\setdefaultlanguage{mongolian}
+\setotherlanguage{english}
+
+% Фонтууд TeX Live-д (тиймээс Overleaf-д) байдаг файлуудаас ачаалагдана.
+% Слайд: Noto Sans (дэлгэц дээр тод уншигдана); хэвлэх: CMU Serif (Computer Modern-ийн
+% кирилл хувилбар, томьёотой нэг загвартай).
+\newcommand{\MathSansNoto}{%
+  \setsansfont{NotoSans}[Extension=.ttf, UprightFont=*-Regular, BoldFont=*-Bold,
+    ItalicFont=*-Italic, BoldItalicFont=*-BoldItalic]%
+  \newfontfamily\cyrillicfontsf{NotoSans}[Extension=.ttf, UprightFont=*-Regular,
+    BoldFont=*-Bold, ItalicFont=*-Italic, BoldItalicFont=*-BoldItalic]}
+\newcommand{\MathSansCMU}{%
+  \setsansfont{cmunss.otf}[BoldFont=cmunsx.otf, ItalicFont=cmunsi.otf, BoldItalicFont=cmunso.otf]%
+  \newfontfamily\cyrillicfontsf{cmunss.otf}[BoldFont=cmunsx.otf, ItalicFont=cmunsi.otf,
+    BoldItalicFont=cmunso.otf]}
+\setmainfont{cmunrm.otf}[BoldFont=cmunbx.otf, ItalicFont=cmunti.otf, BoldItalicFont=cmunbi.otf]
+\newfontfamily\cyrillicfont{cmunrm.otf}[BoldFont=cmunbx.otf, ItalicFont=cmunti.otf,
+  BoldItalicFont=cmunbi.otf]
+\setmonofont{cmuntt.otf}[BoldFont=cmuntb.otf, ItalicFont=cmunit.otf, BoldItalicFont=cmuntx.otf]
+\newfontfamily\cyrillicfonttt{cmuntt.otf}[BoldFont=cmuntb.otf, ItalicFont=cmunit.otf,
+  BoldItalicFont=cmuntx.otf]
+\mode<presentation>{\IfFontExistsTF{NotoSans-Regular.ttf}{\MathSansNoto}{\MathSansCMU}}
+\mode<article>{\MathSansCMU}
+
+% ---------- Багцууд ----------
+\usepackage{amsmath,mathtools,amssymb,amsfonts}
+\mode<article>{\usepackage{amsthm}}
+\usepackage{mathrsfs}
+\usepackage{newunicodechar}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{environ}
+\usepackage{tikz}
+\usetikzlibrary{arrows,arrows.meta,calc,patterns,decorations.pathreplacing,positioning}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage[export]{adjustbox}
+\graphicspath{{pictures/}}
+
+% Зураг/хүснэгт хуудсанд (слайдад) багтахгүй бол л жижигрүүлнэ
+\mode<presentation>{\newenvironment{fitbox}{\adjustbox{max width=\linewidth,max totalheight=.68\textheight}\bgroup}{\egroup}}
+\mode<article>{\newenvironment{fitbox}{\adjustbox{max width=\linewidth,max totalheight=.85\textheight}\bgroup}{\egroup}}
+% Слайдад олон баганыг нэг багана болгоно: allowframebreaks зөвхөн нэг баганыг
+% хуудас хооронд таслаж чадна. Хэвлэх хувилбарт multicols хэвээр.
+\mode<presentation>{\RenewDocumentEnvironment{multicols}{m o o}{}{}}
+
+% Эх файлд шууд бичигдсэн Юникод тэмдэгтүүд
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{⇔}{\ensuremath{\Leftrightarrow}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+
+% beamer-ийн itemize/enumerate загварыг enumitem эвдэхгүй байлгах
+\mode<presentation>{\setlist{label*=\usebeamertemplate{itemize item}}
+  \setlist[enumerate]{label=\arabic*.}
+  \setlist[enumerate,2]{label=\alph*)}
+  \setlist{topsep=2pt,itemsep=2pt,leftmargin=1.5em}}
+\mode<article>{\setlist[itemize]{topsep=3pt,itemsep=3pt,leftmargin=1.3em}
+  \setlist[enumerate]{topsep=4pt,itemsep=4pt,leftmargin=1.6em}}
+
+% ---------- Макро ----------
+\newcommand{\coursename}{Нэг хувьсагчийн функцийн онол 1В (MATH102)}
+\newcommand{\semester}{2026 оны намар}
+\newcommand{\smallbigcup}{\mathop{\textstyle\bigcup}}
+\newcommand{\smallbigcap}{\mathop{\textstyle\bigcap}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Sx}{\mathrm{S}}
+\newcommand{\itcol}[1]{{\itshape\textcolor{red}{#1}}}
+\newcommand{\arccot}{\mathbf{arccot}}
+
+% ---------- Теорем маягийн орчнууд ----------
+% beamer-ийн \note (илтгэгчийн тэмдэглэл) командыг "Санамж" орчноор солино
+\let\note\relax\let\endnote\relax
+\mode<article>{%
+  \newtheorem{theorem}{Теорем}[chapter]
+  \newtheorem{proposition}{Өгүүлбэр}[chapter]
+  \newtheorem{lemma}{Лемма}[section]
+  \theoremstyle{definition}
+  \newtheorem{definition}{Тодорхойлолт}[chapter]
+  \newtheorem{example}{Жишээ}[chapter]
+  \theoremstyle{remark}
+  \newtheorem*{remark}{Тэмдэглэл}
+  \newtheorem*{prof}{Баталгаа}
+  \newtheorem*{note}{Санамж}
+  \newtheorem*{cor}{Мөрдөлгөө}
+  \renewcommand{\proofname}{Баталгаа}}
+% Слайдад хайрцаггүй (allowframebreaks хуудас хооронд таслах боломжтой) хувилбар
+\mode<presentation>{%
+  \newcommand{\MathEnv}[4]{% #1 орчин, #2 нэр, #3 өнгө, #4 дугаартай эсэх (1/0)
+    \ifnum#4=1 \newcounter{#1}\fi
+    \newenvironment{#1}[1][]{%
+      \par\medskip
+      \ifnum#4=1 \refstepcounter{#1}\fi
+      \begin{trivlist}\item[\hskip\labelsep{\color{#3}\bfseries #2\ifnum#4=1~\thechapter.\arabic{#1}\fi.%
+        \if\relax\detokenize{##1}\relax\else\ (##1)\fi}]\ignorespaces}%
+      {\end{trivlist}\par\medskip}}
+  \newcounter{chapter}
+  \MathEnv{theorem}{Теорем}{mathred}{1}
+  \MathEnv{proposition}{Өгүүлбэр}{mathred}{1}
+  \MathEnv{lemma}{Лемма}{mathred}{1}
+  \MathEnv{definition}{Тодорхойлолт}{mathblue}{1}
+  \MathEnv{example}{Жишээ}{mathgreen}{1}
+  \MathEnv{remark}{Тэмдэглэл}{mathgray}{0}
+  \MathEnv{note}{Санамж}{mathgray}{0}
+  \MathEnv{cor}{Мөрдөлгөө}{mathred}{0}
+  \newenvironment{prof}[1][]{\par\smallskip\begin{trivlist}\item[\hskip\labelsep{\itshape Баталгаа.}]\ignorespaces}%
+    {\hfill$\square$\end{trivlist}\par\medskip}
+  \providecommand{\qedhere}{}
+  \providecommand{\paragraph}{}
+  \renewcommand{\paragraph}[1]{\par\medskip\noindent{\bfseries #1}\enskip}
+  \let\proof\relax\let\endproof\relax
+  \newenvironment{proof}[1][]{\begin{prof}}{\end{prof}}}
+
+% Бодлого ба бодолт
+\newcounter{problem}
+\newenvironment{problem}[1][]{\refstepcounter{problem}\par\noindent\textbf{Бодлого~\theproblem.}~#1}{\par}
+\newif\ifshowsolutions
+\showsolutionstrue   % бодолтыг нуух бол \showsolutionsfalse
+\NewEnviron{solution}{\ifshowsolutions\par\smallskip\noindent\textit{Бодолт. }\BODY\par\smallskip\fi}
+
+% ---------- Лекцийн гарчиг ----------
+% \MathLecture{дугаар}{гарчиг}: слайдад гарчгийн хуудас, хэвлэхэд \chapter
+\newcommand{\MathLecture}[2]{%
+  \setcounter{chapter}{\numexpr#1-1\relax}%
+  \mode<article>{\chapter{#2}}%
+  \mode<presentation>{\stepcounter{chapter}%
+    \setcounter{definition}{0}\setcounter{theorem}{0}\setcounter{example}{0}%
+    \setcounter{proposition}{0}\setcounter{lemma}{0}%
+    \title[Лекц #1]{Лекц #1. #2}\subtitle{\coursename}\date{\semester}%
+    \begin{frame}[plain]\titlepage\end{frame}%
+    \begin{frame}{Агуулга}\tableofcontents\end{frame}}}
