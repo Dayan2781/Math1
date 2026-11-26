@@ -1,0 +1,77 @@
+% Лекц 2: семинар ба гэрийн даалгавар. Бодлогууд хөнгөнөөс хүнд рүү эрэмбэлэгдсэн.
+
+\ProblemSet{Семинар 2}
+\begin{frame}[allowframebreaks]{Семинар 2}
+\pgroup{Олонлог.}
+\begin{plist}
+\pr{Логик хэлбэрээр бич: $x\in A\cup B$, $x\in A\cap B$, $x\in A\setminus B$.}
+\pr{$|A|=5$, $|B|=7$, $A\cap B=\emptyset$ бол $|A\cup B|$ хэд вэ?}
+\pr{$U=\mathbb Z$, $A$ нь тэгш тоонууд, $B$ нь 3-т хуваагддаг тоонууд. $A^c$, $B^c$, $A\triangle B$-г тодорхойл. Энд $A\triangle B:=(A\setminus B)\cup(B\setminus A)$.}
+\pr{Батал: а) $A\subseteq B\Leftrightarrow A\cap B=A$; б) $A\subseteq B\Leftrightarrow A\cup B=B$.}
+\pr{$A\subseteq B\subseteq C$ бол $C\setminus B\subseteq C\setminus A$ болохыг батал.}
+\pr{$A\times(B\cup C)=(A\times B)\cup(A\times C)$ болохыг батал.}
+\pr{$A\times B=B\times A$ байх нөхцөлийг ол.}
+\pr{Төгсгөлөг олонлогуудын хувьд $|A\cup B|=|A|+|B|-|A\cap B|$ болохыг батал.}
+\end{plist}
+\pgroup{Функц.}
+\begin{plist}
+\pr{$X=\{a,b\}$, $Y=\{1,2,3\}$. $X\to Y$ бүх буулгалтын тоог ол.}
+\pr{$f(x)=x^2+1$, $g(x)=3x-1$, $h(x)=\frac{x+1}{3}$ бол $f\circ g$, $g\circ g$, $g\circ f$, $g\circ h$, $(f\circ g)\circ h$, $f\circ(g\circ h)$-г ол.}
+\pr{Тодорхойлогдох мужийг ол: а) $y=\sqrt{x^3-3x+2}$; б) $y=\arcsin(2x-1)$; в) $y=\dfrac{x^3-3x}{x^2-1}$; г) $y=\ln(3-x-2x^2)$.}
+\pr{Графикийг зур: а) $y=2x-3$; б) $y=-x^2-2x+3$; в) $y=x^3-3x$; г) $y=\dfrac{\sin x}{x}$; д) $y=\ln x$.}
+\pr{$h(x)=\dfrac{x}{1+x^2}$ тэгш, сондгой эсэхийг тодорхойл.}
+\pr{$g(x)=\dfrac{f(x)+f(-x)}{2}$ тэгш функц болохыг батал.}
+\pr{$f:\R\to\R$, $f(x)=x^2+1$. Иньектив, сурьектив, биектив эсэхийг тогтоо. Дүрийг ол.}
+\pr{$f:\R\to\R$, $f(x)=x^3-3x$. Иньектив, сурьектив, биектив эсэхийг тогтоо. Урвуутай бол урвууг ол.}
+\pr{$f:[0,\pi]\to[-1,1]$, $f(x)=\cos x$. Урвууг нь бич.}
+\pr{$g:[-\frac\pi2,\frac\pi2]\to[-1,1]$, $g(x)=\sin x$. Урвууг нь бич.}
+\pr{$f:[-1,1]\to[0,2]$ байх а) иньектив ч биш, сурьектив ч биш; б) иньектив биш, сурьектив; в) биектив буулгалтын жишээг графикаар үзүүл.}
+\pr{$f:X\to Y$, $g:Y\to Z$ иньектив бол $g\circ f$ иньектив болохыг батал.}
+\end{plist}
+\end{frame}
+
+\ProblemSet{Гэрийн даалгавар 2}
+\begin{frame}[allowframebreaks]{Гэрийн даалгавар 2}
+\pgroup{Олонлог.}
+\begin{plist}
+\pr{$|A|=5$, $|B|=4$, $|A\cap B|=2$ бол $|A\cup B|$ хэд вэ?}
+\pr{$A\subseteq U$ бол $A\cup A^c=U$, $A\cap A^c=\emptyset$ болохыг батал.}
+\pr{$A=\{1,2,3,4\}$, $B=\{3,4,5\}$ бол $A\cup B$, $A\cap B$, $A\setminus B$, $B\setminus A$-г ол. $A\times B$ хэдэн элементтэй вэ?}
+\pr{$\{a,b,c\}$ олонлогийн бүх дэд олонлогийг жагсаа. $n$ элементтэй олонлог хэдэн дэд олонлогтой вэ?}
+\pr{$X=\{0,1\}^3$. $|X|$-ийг олж, элементүүдийг жагсаа.}
+\pr{Батал: $(A\cup B)\setminus C=(A\setminus C)\cup(B\setminus C)$.}
+\pr{Батал: $(A\cap B)^c=A^c\cup B^c$.}
+\pr{Батал: $A\triangle B=(A\cup B)\setminus(A\cap B)$.}
+\pr{Батал: $A\setminus(B\cup C)=(A\setminus B)\cap(A\setminus C)$.}
+\end{plist}
+\pgroup{Функц, тэгш ба сондгой функц.}
+\begin{plist}
+\pr{$f:\R\to\R$, $f(x)=ax+b$. Иньектив, сурьектив байх $a,b$-ийн нөхцөлийг ол.}
+\pr{$f:\R\to\R$, $f(x)=x^2$ яагаад урвуугүй вэ? Ямар мужид хязгаарлавал урвуутай болох вэ?}
+\pr{$f:\R\setminus\{3\}\to\R\setminus\{2\}$, $f(x)=\dfrac{2x+1}{x-3}$ биектив болохыг харуулж, урвууг ол.}
+\pr{$h(x)=x^4-3x^2+2$ тэгш, сондгой эсэхийг дүгнэ.}
+\pr{$p(x)=x^5-2x^3+x$ тэгш, сондгой эсэхийг дүгнэ.}
+\pr{$f,g$ тэгш бол $f\cdot g$ тэгш болохыг батал.}
+\pr{$f,g$ сондгой бол $f\cdot g$ тэгш болохыг батал.}
+\pr{$f$ тэгш, $g$ сондгой бол $f\circ g$ ямар функц болохыг шалга.}
+\pr{$g(x)=\dfrac{f(x)-f(-x)}{2}$ сондгой функц болохыг батал.}
+\pr{Тэгш хэмтэй мужид тодорхойлогдсон дурын функцийг тэгш ба сондгой функцийн нийлбэрээр нэг утгатай илэрхийлж болохыг батал.}
+\end{plist}
+\pgroup{Дараалал.}
+\begin{plist}
+\pr{$d_n=n^2$ дараалал өсөх, үл буурах, буурах алин бэ?}
+\pr{$e_n=(-1)^n$ монотон уу? Зааглагдсан уу?}
+\pr{$a_n=\dfrac{n}{n+1}$ монотон уу? Дээд, доод зааг нь юу вэ?}
+\pr{$a_1=2$, $a_{n+1}=2a_n+1$ бол ерөнхий гишүүнийг ол.}
+\pr{$b_1=1$, $b_{n+1}=3b_n-2$ бол $b_n$-ийг ол.}
+\end{plist}
+\pgroup{Буулгалт ба олонлогийн чадал.}
+\begin{plist}
+\pr{$f:X\to Y$, $g:Y\to Z$ сурьектив бол $g\circ f$ сурьектив болохыг батал.}
+\pr{$g\circ f$ иньектив бол $f$ иньектив болохыг батал. $g$ иньектив байх албатай юу?}
+\pr{$f:X\to Y$, $A,B\subseteq X$ бол $f(A\cup B)=f(A)\cup f(B)$, $f(A\cap B)\subseteq f(A)\cap f(B)$ болохыг батал. Тэнцэл биелэхгүй жишээ гарга.}
+\pr{$\N$ ба тэгш натурал тоонуудын олонлог, мөн $\N$ ба $\mathbb Z$ тэнцүү чадалтай болохыг харуул.}
+\pr{$A=\{x\in\R\mid x^3+2x^2-x-2>0\}$, $B=\{x\in\R\mid x^2+ax+b\le0\}$. $A\cup B=\{x\mid x+2>0\}$, $A\cap B=\{x\mid 1<x\le3\}$ байх $a,b$-ийн бүх утгыг ол.}
+\pr{$A\subset\N$ олонлог а) $1\in A$; б) $2n+1\in A\Rightarrow n\in A$; в) $n\in A\Rightarrow 3n+1\in A$ нөхцлүүдийг хангадаг бол $2,17,2025,1000000\in A$ байх уу?}
+\end{plist}
+\end{frame}

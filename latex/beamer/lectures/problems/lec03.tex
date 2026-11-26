@@ -1,0 +1,79 @@
+% Лекц 3: семинар ба гэрийн даалгавар. Бодлогууд хөнгөнөөс хүнд рүү эрэмбэлэгдсэн.
+% Натурал тоо 1-ээс эхэлнэ (лекцийн A1--A5, N1--N2, U1--U2, Z1--Z2).
+
+\ProblemSet{Семинар 3}
+\begin{frame}[allowframebreaks]{Семинар 3}
+\pgroup{Сануулга.}
+$n+1=S(n)$, $n+S(m)=S(n+m)$; $n\cdot1=n$, $n\cdot S(m)=n\cdot m+n$; $n^1=n$, $n^{S(m)}=n^m\cdot n$;
+$m<n\iff\exists k\ (n=m+k)$. Нэмэх, үржихийн коммутатив, ассоциатив, дистрибутив чанарууд ба трихотомийг ашиглаж болно.
+$2=S(1)$, $3=S(2)$, \dots{} гэж тэмдэглэнэ.
+\pgroup{Аксиом ба тодорхойлолтоос батал.}
+\begin{plist}
+\pr{$2+2=4$}
+\pr{$2+3\ne6$}
+\pr{$2\cdot4=8$}
+\pr{$n+2=S(S(n))$}
+\pr{$n\cdot2=n+n$}
+\pr{$n\cdot3=n+n+n$}
+\pr{$1^n=1$ (индукцээр)}
+\pr{$a^n\ge1$}
+\pr{$\forall n\ (n\ne S(n))$}
+\pr{$n\ne1$ бол $n>1$}
+\pr{$m+n\ne m$}
+\pr{$a+c=b+c\Rightarrow a=b$ ($c$ дээр индукцлэн, A4-ийг ашигла)}
+\end{plist}
+\pgroup{Эрэмбэ ба зэрэг.}
+\begin{plist}
+\pr{$a<b\Rightarrow S(a)\le b$}
+\pr{$a<b\Rightarrow a+c<b+c$}
+\pr{$a<b\Leftrightarrow a\cdot c<b\cdot c$}
+\pr{$a^{m+n}=a^m\cdot a^n$-г $n$ дээр индукцлэн батал.}
+\pr{$a^{mn}=(a^m)^n$-г $n$ дээр индукцлэн батал.}
+\pr{$(ab)^n=a^nb^n$}
+\pr{$1+2+\cdots+n=\dfrac{n(n+1)}{2}$}
+\pr{$n<2^n$}
+\end{plist}
+\end{frame}
+
+\ProblemSet{Гэрийн даалгавар 3}
+\begin{frame}[allowframebreaks]{Гэрийн даалгавар 3}
+\pgroup{Аксиом ба тодорхойлолтоос батал.}
+\begin{plist}
+\pr{$3+4=7$}
+\pr{$3\cdot3=9$}
+\pr{$2^3=8$}
+\pr{$n+3=S(S(S(n)))$}
+\pr{$S(a)+b=S(a+b)$-г $b$ дээр индукцлэн батал.}
+\pr{$a+S(b)=S(a)+b$}
+\pr{$1\cdot n=n$ (индукцээр)}
+\pr{$S(n)\cdot m=n\cdot m+m$}
+\pr{$(a+b)\cdot c=a\cdot c+b\cdot c$}
+\pr{$(a+b)^2=a^2+2ab+b^2$ томьёог зөвхөн коммутатив, ассоциатив, дистрибутив чанараас гарга.}
+\pr{$a\cdot b=a\Rightarrow b=1$}
+\end{plist}
+\pgroup{Эрэмбэ.}
+\begin{plist}
+\pr{$a\le b\Rightarrow a<b+c$}
+\pr{$a\le b$ ба $b<c$ бол $a<c$}
+\pr{$a\le b\Rightarrow a\cdot c\le b\cdot c$}
+\pr{$a<b$, $c<d$ бол $a+c<b+d$}
+\pr{$a<b$, $c<d$ бол $a\cdot c<b\cdot d$}
+\pr{$n$ ба $S(n)$-ийн хооронд натурал тоо байхгүй: $n<m<S(n)$ байх $m$ олдохгүй.}
+\pr{$a\ne1$ бол $a=S(m)$ байх $m$ цор ганц олдоно.}
+\pr{$a>1$ бол $a^n<a^{n+1}$}
+\pr{$a\cdot c=b\cdot c\Rightarrow a=b$}
+\pr{$a\le b\iff a=b$ эсвэл $\exists k\ (b=a+k)$ тодорхойлолтыг ашиглан трихотомийг бүрэн батал.}
+\end{plist}
+\pgroup{Математик индукц.}
+\begin{plist}
+\pr{$1+3+5+\cdots+(2n-1)=n^2$}
+\pr{$1^3+2^3+\cdots+n^3=\Bigl(\dfrac{n(n+1)}{2}\Bigr)^2$}
+\pr{$1\cdot2+2\cdot3+\cdots+n(n+1)=\dfrac{n(n+1)(n+2)}{3}$}
+\pr{$n^3+2n$ нь 3-т хуваагдана.}
+\pr{$n\ge4$ үед $n!>2^n$}
+\pr{Бернуллийн тэнцэтгэл биш: $x>-1$ бол $(1+x)^n\ge1+nx$.}
+\pr{$n\ge8$ бол $n=3a+5b$ байх $a,b\ge0$ бүхэл тоо олдоно.}
+\pr{$n\ge2$ натурал тоо бүр анхны тоонуудын үржвэрт задарна (бүрэн индукц).}
+\pr{$\N$-ийн хоосон биш дэд олонлог бүр хамгийн бага элементтэй болохыг индукцийн аксиомоос батал.}
+\end{plist}
+\end{frame}

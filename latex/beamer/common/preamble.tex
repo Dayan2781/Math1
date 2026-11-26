@@ -146,6 +146,8 @@
 \mode<article>{\newcommand{\ProblemSet}[1]{\setcounter{pnum}{0}\section*{#1}\addcontentsline{toc}{section}{#1}}}
 \newcommand{\bn}[1]{\hfill{\color{mathgray}\scriptsize[Б.#1]}}
 \newcommand{\prob}[2]{\stepcounter{pnum}\item[\textbf{\thepnum.}] #2\bn{#1}}
+
+\newcommand{\pr}[1]{\stepcounter{pnum}\item[\textbf{\thepnum.}] #1}
 \newcommand{\pgroup}[1]{\par\smallskip\noindent\textbf{#1}\par}
 \mode<presentation>{\newenvironment{plist}{\begin{enumerate}[leftmargin=2.2em,itemsep=3pt]}{\end{enumerate}}}
 \mode<article>{\newenvironment{plist}{\begin{multicols}{2}\begin{enumerate}[leftmargin=2.2em,itemsep=2pt]}{\end{enumerate}\end{multicols}}}
